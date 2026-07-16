@@ -1,0 +1,35 @@
+---
+import { COPY, NAV, SITE, type Locale } from '../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="bg-forest-deep text-white">
+  <div class="container-shell grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <p class="font-display text-3xl">{SITE.displayName}</p>
+      <p class="mt-4 max-w-md text-sm text-white/70">{COPY[locale].footerSummary}</p>
+      <p class="mt-6 inline-block border border-gold/40 px-3 py-2 text-xs text-gold">{SITE.legalName}</p>
+    </div>
+    <div>
+      <h2 class="text-xs font-bold uppercase tracking-[.16em] text-gold">{locale === 'id' ? 'Navigasi' : 'Navigation'}</h2>
+      <ul class="mt-4 grid gap-2 text-sm text-white/75">
+        {NAV[locale].map((item) => <li><a class="hover:text-white" href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="text-xs font-bold uppercase tracking-[.16em] text-gold">{locale === 'id' ? 'Hubungi' : 'Contact'}</h2>
+      <address class="mt-4 grid gap-2 text-sm not-italic text-white/75">
+        <a href={SITE.whatsappHref} rel="noopener noreferrer">WhatsApp {SITE.whatsappDisplay}</a>
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <span>{SITE.address}</span>
+      </address>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="container-shell flex flex-col justify-between gap-3 py-6 text-xs text-white/55 md:flex-row">
+      <p>© {year} {SITE.displayName}. {locale === 'id' ? 'Hak cipta dilindungi.' : 'All rights reserved.'}</p>
+      <p>{COPY[locale].legal}</p>
+    </div>
+  </div>
+</footer>

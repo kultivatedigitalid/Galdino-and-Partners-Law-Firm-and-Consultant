@@ -1,0 +1,34 @@
+---
+import type { Locale } from '../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const labels = locale === 'id'
+  ? ['Kebutuhan bisnis', 'Struktur legal', 'Izin usaha', 'Kepatuhan']
+  : ['Business need', 'Legal structure', 'Business licence', 'Compliance'];
+---
+<div class="relative min-h-[28rem] overflow-hidden rounded-[2rem] bg-forest-deep p-7 text-white shadow-soft" aria-label={locale === 'id' ? 'Peta alur regulasi bisnis' : 'Business regulatory pathway'}>
+  <div class="absolute -right-24 -top-24 size-64 rounded-full border border-gold/40"></div>
+  <div class="absolute -right-12 -top-12 size-40 rounded-full border border-white/10"></div>
+  <p class="text-xs font-bold uppercase tracking-[.18em] text-gold">{locale === 'id' ? 'Peta regulasi' : 'Regulatory map'}</p>
+  <div class="mt-12 grid gap-4">
+    {labels.map((label, index) => (
+      <div class:list={['path-node flex items-center justify-between rounded-xl border p-4', index === 2 ? 'border-gold bg-white/10' : 'border-white/15']}>
+        <div class="flex items-center gap-3">
+          <span class:list={['grid size-8 place-items-center rounded-full text-xs', index === 2 ? 'bg-gold text-forest-deep' : 'bg-white/10']}>{index + 1}</span>
+          <span class="text-sm font-semibold">{label}</span>
+        </div>
+        <span aria-hidden="true" class="text-gold">→</span>
+      </div>
+    ))}
+  </div>
+  <p class="absolute bottom-7 left-7 max-w-[16rem] text-xs leading-relaxed text-white/60">
+    {locale === 'id' ? 'Visual konseptual — jalur final mengikuti sektor, skala, dan profil risiko usaha.' : 'Conceptual visual — the final pathway depends on sector, scale, and business risk profile.'}
+  </p>
+</div>
+<style>
+  .path-node { animation: settle 700ms ease both; }
+  .path-node:nth-child(2) { animation-delay: 90ms; }
+  .path-node:nth-child(3) { animation-delay: 180ms; }
+  .path-node:nth-child(4) { animation-delay: 270ms; }
+  @keyframes settle { from { opacity: 0; transform: translateX(14px); } }
+</style>

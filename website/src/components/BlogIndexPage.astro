@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from './PageHero.astro';
+import ArticleCard from './ArticleCard.astro';
+import { getPublishedPosts } from '../utils/blog';
+import type { Locale } from '../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+const posts = await getPublishedPosts(locale);
+const categories = [...new Set(posts.map((post) => post.data.category))];
+const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+---
+<BaseLayout locale={locale} title={id ? 'Insight Hukum & Perizinan | Galdino & Partner' : 'Legal & Licensing Insights | Galdino & Partner'} description={id ? 'Artikel praktis mengenai perizinan usaha, OSS-RBA, legalitas perusahaan, kepatuhan, dan perkembangan regulasi.' : 'Practical articles on business licensing, OSS-RBA, corporate legality, compliance, and regulatory developments.'}>
+  <PageHero eyebrow={id ? 'Pusat insight' : 'Insight centre'} title={id ? 'Memahami regulasi sebelum mengambil langkah.' : 'Understand regulation before taking action.'} lead={id ? 'Panduan praktis dan analisis umum untuk membantu pemilik bisnis serta tim legal menyiapkan keputusan yang lebih baik.' : 'Practical guidance and general analysis to help business owners and legal teams prepare better decisions.'} />
+  <section class="section-space"><div class="container-shell">
+    <div class="flex flex-wrap gap-2" aria-label={id ? 'Filter kategori artikel' : 'Article category filters'}>
+      <button class="filter active" type="button" data-filter="all">{id ? 'Semua' : 'All'}</button>
+      {categories.map((category) => <button class="filter" type="button" data-filter={category}>{category}</button>)}
+    </div>
+    <div id="article-list" class="mt-10">
+      {posts.map((post) => <div data-category={post.data.category}><ArticleCard post={post} /></div>)}
+    </div>
+    <div class="mt-14 border-t border-line pt-8"><h2 class="text-xs font-bold uppercase tracking-[.16em] text-muted">Tags</h2><div class="mt-4 flex flex-wrap gap-2">{tags.map((tag) => <span class="rounded-full border border-line px-3 py-1 text-xs text-muted">#{tag}</span>)}</div></div>
+  </div></section>
+</BaseLayout>
+<style>
+  .filter { border: 1px solid var(--color-line); border-radius: 999px; padding: .55rem .9rem; color: var(--color-muted); font-size: .78rem; font-weight: 700; }
+  .filter:hover, .filter.active { border-color: var(--color-forest); background: var(--color-forest); color: white; }
+</style>
+<script>
+  const filters = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const articles = document.querySelectorAll<HTMLElement>('[data-category]');
+  filters.forEach((button) => button.addEventListener('click', () => {
+    filters.forEach((item) => item.classList.remove('active'));
+    button.classList.add('active');
+    articles.forEach((article) => {
+      article.hidden = button.dataset.filter !== 'all' && article.dataset.category !== button.dataset.filter;
+    });
+  }));
+</script>
