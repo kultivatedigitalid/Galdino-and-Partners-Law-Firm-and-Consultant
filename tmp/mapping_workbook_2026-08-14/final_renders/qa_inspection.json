@@ -1,0 +1,160 @@
+{
+  "sheetNames": [
+    "00_Dashboard",
+    "01_GLOBAL",
+    "02_Page_Questions",
+    "03_Content_ID",
+    "04_Content_EN",
+    "05_Proof_Placeholders",
+    "06_Positioning_Tone_QA",
+    "07_Approval_Actions",
+    "08_Source_Notes",
+    "09_Page_Section_Mapping",
+    "10_Asset_Register",
+    "11_Reference_Register",
+    "12_Mapping_QA"
+  ],
+  "inspections": {
+    "09_Page_Section_Mapping": {
+      "ndjson": "{\"kind\":\"table\",\"sheet\":\"09_Page_Section_Mapping\",\"address\":\"A1:AE50\",\"values\":[[\"PAGE–SECTION MAPPING / IMPLEMENTATION CONTROL\"]],\"valuesTruncated\":true}",
+      "truncated": false,
+      "metadata": {
+        "revision": "bbse0a",
+        "target": {
+          "id": "wb/b9u58y",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "table",
+          "tokens": [
+            "table"
+          ]
+        },
+        "include": {
+          "requested": "values,formulas",
+          "tokens": [
+            "values",
+            "formulas"
+          ]
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    },
+    "10_Asset_Register": {
+      "ndjson": "{\"kind\":\"table\",\"sheet\":\"10_Asset_Register\",\"address\":\"A1:P22\",\"rows\":22,\"cols\":16,\"values\":[[\"ASSET REGISTER / LAUNCH GOVERNANCE\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Complete inventory of 18 raster/vector assets found in the current codebase, including dimensions, usage, placeholder status, evidence/consent and launch decision.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Dummy, generated, concept, preview and undocumented-rights assets are not company facts. They must not be used as final claims, metadata evidence, or structured-data proof before verification and approval.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Asset ID\",\"File Path\",\"Format\",\"Dimensions\",\"Size KB\",\"Used By\",\"Page / Section\",\"Current Role\",\"Classification\",\"Rights / Consent\",\"Launch Decision\",\"Alt Text / Copy Source\",\"Replacement Required\",\"Source Evidence\",\"Approval Status\",\"Register QA\"],[\"AST-001\",\"public/assets/gp-logo-brand.png\",\"PNG\",\"600 × 413\",151.3,\"Header; Footer; schema; company video; regulatory map\",\"GLOBAL\",\"Brand mark\",\"DIPERTAHANKAN – CURRENT MASTER\",\"Project asset; ownership/source record not included\",\"KEEP – CURRENT MASTER ASSET\",\"Logo alt remains decorative where adjacent brand text exists\",\"NO\",\"docs/DESIGN_SYSTEM.md; docs/COMPONENT_GUIDELINES.md\",\"CURRENT PROJECT ASSET\",\"PASS\"],[\"AST-002\",\"public/assets/gp-logo-home.png\",\"PNG\",\"1784 × 881\",221,\"No code usage found\",\"UNUSED\",\"Legacy/alternate brand asset\",\"MENUNGGU VERIFIKASI – UNUSED\",\"Not documented\",\"DO NOT USE UNTIL ROLE IS CONFIRMED\",\"N/A\",\"YES / ARCHIVE DECISION\",\"codebase-wide import/path scan\",\"NOT APPROVED\",\"PASS\"],[\"AST-003\",\"public/assets/gp-logo.png\",\"PNG\",\"826 × 565\",195,\"No code usage found\",\"UNUSED\",\"Legacy/alternate brand asset\",\"MENUNGGU VERIFIKASI – UNUSED\",\"Not documented\",\"DO NOT USE UNTIL ROLE IS CONFIRMED\",\"N/A\",\"YES / ARCHIVE DECISION\",\"codebase-wide import/path scan\",\"NOT APPROVED\",\"PASS\"],[\"AST-004\",\"public/favicon.svg\",\"SVG\",\"64 × 64\",0.3,\"BaseLayout\",\"GLOBAL\",\"Favicon\",\"DIPERTAHANKAN\",\"Project-generated vector; source record not included\",\"KEEP – VERIFY FINAL BRAND MATCH\",\"Decorative browser icon\",\"NO\",\"src/layouts/BaseLayout.astro\",\"PROVISIONAL\",\"PASS\"],[\"AST-005\",\"public/og-default.svg\",\"SVG\",\"1200 × 630\",0.6,\"BaseLayout; 6 preview articles\",\"GLOBAL / BLOG\",\"Open Graph / article placeholder\",\"PLACEHOLDER INTERNAL\",\"Project-generated vector\",\"REPLACE OR VALIDATE PLATFORM SUPPORT BEFORE LAUNCH\",\"Metadata image; no alt field\",\"YES\",\"docs/SEO_GUIDELINES.md; src/content/blog/**\",\"NOT APPROVED\",\"PASS\"],[\"AST-006\",\"src/assets/company-carousel-01.webp\",\"WEBP\",\"1600 × 965\",64.5,\"CompanyGallery\",\"HOME / PROFILE\",\"Company gallery image\",\"MENUNGGU VERIFIKASI\",\"Source/rights not documented\",\"VERIFY SOURCE, RIGHTS, AND FINAL ROLE\",\"Alt copy is set in CompanyGallery\",\"MAYBE\",\"src/components/CompanyGallery.astro\",\"NOT APPROVED\",\"PASS\"],[\"AST-007\",\"src/assets/company-carousel-02.webp\",\"WEBP\",\"1596 × 985\",68.4,\"CompanyGallery\",\"HOME / PROFILE\",\"Company gallery image\",\"MENUNGGU VERIFIKASI\",\"Source/rights not documented\",\"VERIFY SOURCE, RIGHTS, AND FINAL ROLE\",\"Alt copy is set in CompanyGallery\",\"MAYBE\",\"src/components/CompanyGallery.astro\",\"NOT APPROVED\",\"PASS\"],[\"AST-008\",\"src/assets/company-carousel-03.webp\",\"WEBP\",\"1536 × 1024\",78.6,\"CompanyGallery\",\"HOME / PROFILE\",\"Company gallery image\",\"MENUNGGU VERIFIKASI\",\"Source/rights not documented\",\"VERIFY SOURCE, RIGHTS, AND FINAL ROLE\",\"Alt copy is set in CompanyGallery\",\"MAYBE\",\"src/components/CompanyGallery.astro\",\"NOT APPROVED\",\"PASS\"],[\"AST-009\",\"src/assets/company-carousel-04.webp\",\"WEBP\",\"1537 × 1023\",89.2,\"CompanyGallery\",\"HOME / PROFILE\",\"Company gallery image\",\"MENUNGGU VERIFIKASI\",\"Source/rights not documented\",\"VERIFY SOURCE, RIGHTS, AND FINAL ROLE\",\"Alt copy is set in CompanyGallery\",\"MAYBE\",\"src/components/CompanyGallery.astro\",\"NOT APPROVED\",\"PASS\"],[\"AST-010\",\"src/assets/company-carousel-05.webp\",\"WEBP\",\"1537 × 1023\",42.3,\"CompanyGallery\",\"HOME / PROFILE\",\"Company gallery image\",\"MENUNGGU VERIFIKASI\",\"Source/rights not documented\",\"VERIFY SOURCE, RIGHTS, AND FINAL ROLE\",\"Alt copy is set in CompanyGallery\",\"MAYBE\",\"src/components/CompanyGallery.astro\",\"NOT APPROVED\",\"PASS\"],[\"AST-011\",\"src/assets/experience-business-licensing.png\",\"PNG\",\"1586 × 992\",1722,\"ExperienceShowcase\",\"HOME\",\"Experience concept image\",\"DATA DUMMY / REPLACEABLE\",\"No approved case evidence/consent\",\"STAGING ONLY; REMOVE OR REPLACE BEFORE LAUNCH\",\"Current alt/caption must not imply a real case\",\"YES\",\"docs/DESIGN_SYSTEM.md; 05_Proof_Placeholders\",\"BLOCKED\",\"PASS\"],[\"AST-012\",\"src/assets/experience-compliance-review.png\",\"PNG\",\"1448 × 1086\",1782.1,\"ExperienceShowcase\",\"HOME\",\"Experience concept image\",\"DATA DUMMY / REPLACEABLE\",\"No approved case evidence/consent\",\"STAGING ONLY; REMOVE OR REPLACE BEFORE LAUNCH\",\"Current alt/caption must not imply a real case\",\"YES\",\"docs/DESIGN_SYSTEM.md; 05_Proof_Placeholders\",\"BLOCKED\",\"PASS\"],[\"AST-013\",\"src/assets/experience-investment-project.png\",\"PNG\",\"1448 × 1086\",1991,\"ExperienceShowcase\",\"HOME\",\"Experience concept image\",\"DATA DUMMY / REPLACEABLE\",\"No approved case evidence/consent\",\"STAGING ONLY; REMOVE OR REPLACE BEFORE LAUNCH\",\"Current alt/caption must not imply a real case\",\"YES\",\"docs/DESIGN_SYSTEM.md; 05_Proof_Placeholders\",\"BLOCKED\",\"PASS\"],[\"AST-014\",\"src/assets/home-licensing-hero.webp\",\"WEBP\",\"1536 × 1024\",49.2,\"HomeHero\",\"HOME\",\"Hero concept image\",\"PLACEHOLDER INTERNAL / CONCEPT\",\"Source/rights not documented\",\"VERIFY OR REPLACE BEFORE FINAL LAUNCH CLAIMS\",\"Alt text exists in component\",\"YES\",\"docs/DESIGN_SYSTEM.md; src/components/home/HomeHero.astro\",\"NOT APPROVED\",\"PASS\"],[\"AST-015\",\"src/assets/profile-company-hero-centered.webp\",\"WEBP\",\"1672 × 941\",88.3,\"ProfilePage\",\"PROFILE\",\"Profile hero concept image\",\"PLACEHOLDER INTERNAL / GENERATED\",\"Generated concept; official team photo/consent missing\",\"REPLACE BEFORE LAUNCH\",\"Caption explicitly identifies concept visual\",\"YES\",\"docs/DESIGN_SYSTEM.md; docs/PAGE_SPECIFICATIONS.md\",\"BLOCKED\",\"PASS\"],[\"AST-016\",\"src/assets/team-kelvin-anata-lian.webp\",\"WEBP\",\"1024 × 1536\",42.8,\"TeamCarousel; PersonProfilePage\",\"PROFILE\",\"Team concept portrait\",\"DATA DUMMY / GENERATED\",\"Identity/photo consent not verified\",\"STAGING ONLY; REPLACE OR REMOVE BEFORE LAUNCH\",\"Concept portrait alt text in src/data/profile.ts\",\"YES\",\"docs/DESIGN_SYSTEM.md; src/data/profile.ts\",\"BLOCKED\",\"PASS\"],[\"AST-017\",\"src/assets/team-maria-indah-putri.webp\",\"WEBP\",\"1024 × 1536\",41.6,\"TeamCarousel; PersonProfilePage\",\"PROFILE\",\"Team concept portrait\",\"DATA DUMMY / GENERATED\",\"Identity/photo consent not verified\",\"STAGING ONLY; REPLACE OR REMOVE BEFORE LAUNCH\",\"Concept portrait alt text in src/data/profile.ts\",\"YES\",\"docs/DESIGN_SYSTEM.md; src/data/profile.ts\",\"BLOCKED\",\"PASS\"],[\"AST-018\",\"src/assets/team-michael-alvaro.webp\",\"WEBP\",\"1024 × 1536\",44.4,\"TeamCarousel; PersonProfilePage\",\"PROFILE\",\"Team concept portrait\",\"DATA DUMMY / GENERATED\",\"Identity/photo consent not verified\",\"STAGING ONLY; REPLACE OR REMOVE BEFORE LAUNCH\",\"Concept portrait alt text in src/data/profile.ts\",\"YES\",\"docs/DESIGN_SYSTEM.md; src/data/profile.ts\",\"BLOCKED\",\"PASS\"]]}",
+      "truncated": false,
+      "metadata": {
+        "revision": "erdsd0",
+        "target": {
+          "id": "wb/xhdxpg",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "table",
+          "tokens": [
+            "table"
+          ]
+        },
+        "include": {
+          "requested": "values,formulas",
+          "tokens": [
+            "values",
+            "formulas"
+          ]
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    },
+    "11_Reference_Register": {
+      "ndjson": "{\"kind\":\"table\",\"sheet\":\"11_Reference_Register\",\"address\":\"A1:M31\",\"rows\":31,\"cols\":13,\"values\":[[\"REFERENCE REGISTER / SOURCE TRACEABILITY\",null,null,null,null,null,null,null,null,null,null,null,null],[\"Traceable implementation, documentation, workbook, audit and project-decision sources used for each mapping and launch-control decision.\",null,null,null,null,null,null,null,null,null,null,null,null],[\"Priority follows the agreed hierarchy: actual implementation first unless clearly placeholder/dummy; then latest aligned Fase 2 content; confirmed governance/legal limits; supporting references last.\",null,null,null,null,null,null,null,null,null,null,null,null],[\"Reference ID\",\"Reference Type\",\"Source / Path\",\"Relevant Section\",\"Used By\",\"Purpose\",\"Reuse Scope\",\"Priority\",\"Status\",\"Known Limitation\",\"Last Verified\",\"Owner / Reviewer\",\"Register QA\"],[\"REF-SHEET-001\",\"Workbook source\",\"GP_Fase2_Website_Content_Sheet_Final_Aligned_2026-08-06.xlsx\",\"All 9 original sheets\",\"All content IDs\",\"Approved working copy, questions, dependencies, QA, actions, and source hierarchy\",\"GLOBAL\",\"PRIMARY\",\"CURRENT SOURCE\",\"Copy is not yet approved or mapped\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-001\",\"Data/config\",\"src/data/site.ts\",\"Identity, navigation, contact, 4 service categories, project placeholders\",\"GLOBAL; Services; Contact; Experiences\",\"Actual centralized website data\",\"GLOBAL\",\"PRIMARY\",\"IMPLEMENTED WITH PLACEHOLDERS\",\"Legal name/domain/address/registration remain placeholder in code\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-002\",\"Composition\",\"src/components/HomePage.astro\",\"Home section order\",\"H-001–H-012; WEB-H-001–002\",\"Actual Home component composition\",\"HOME\",\"PRIMARY\",\"IMPLEMENTED\",\"Two implemented website-only prototype sections\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-003\",\"Component\",\"src/components/home/HomeHero.astro\",\"Hero image, copy, Contact and Services CTAs\",\"H-001\",\"Home hero structural reference\",\"HOME HERO\",\"PRIMARY\",\"IMPLEMENTED\",\"Uses concept hero asset\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-004\",\"Component/data\",\"src/components/home/ClientRegister.astro; src/data/home.ts\",\"Six labelled dummy client marks\",\"WEB-H-001\",\"Website-only client register\",\"HOME\",\"SECONDARY\",\"PROTOTYPE\",\"No publication consent/evidence\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-005\",\"Component\",\"src/components/home/CompanySnapshot.astro; src/components/CompanyGallery.astro\",\"Company positioning, gallery, statistics\",\"H-009; P-002\",\"Credibility/identity layout reference\",\"HOME / PROFILE\",\"PRIMARY\",\"PARTIAL\",\"Statistics and some identity data are placeholders\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-006\",\"Component/data\",\"src/components/home/ServiceCarousel.astro; src/data/home.ts\",\"15-item prototype service rail\",\"H-003–H-007\",\"Existing carousel interaction and mismatch evidence\",\"HOME SERVICES\",\"PRIMARY\",\"PROTOTYPE / MISMATCH\",\"Does not match the approved 4-category content structure\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-007\",\"Component\",\"src/components/home/PermitProcess.astro\",\"Four-step process and Contact CTA\",\"H-008\",\"Process structure reference\",\"HOME\",\"PRIMARY\",\"IMPLEMENTED\",\"Operational detail depends on engagement scope\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-008\",\"Component\",\"src/components/home/CompanyVideo.astro\",\"Non-interactive company film placeholder\",\"WEB-H-002\",\"Website-only media placeholder\",\"HOME\",\"SECONDARY\",\"PROTOTYPE\",\"No final video/media content\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-009\",\"Component/data\",\"src/components/home/ExperienceShowcase.astro; src/data/site.ts\",\"Experience grid and placeholder metadata\",\"H-010; E-002\",\"Prototype experience reference\",\"HOME / EXPERIENCES\",\"PRIMARY\",\"PROTOTYPE\",\"Evidence and consent missing\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-010\",\"Component/content\",\"src/components/home/HomeInsights.astro; src/content/blog/**\",\"Latest article preview\",\"H-011; B-002\",\"Article preview structure\",\"HOME / BLOG\",\"PRIMARY\",\"PREVIEW\",\"Articles require editorial/legal review\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-011\",\"Component\",\"src/components/home/HomeFinalCta.astro\",\"Shared final CTA\",\"H-012; P-006\",\"Shared CTA reference\",\"HOME / PROFILE\",\"PRIMARY\",\"IMPLEMENTED\",\"Labels still need content approval\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-012\",\"Component/data\",\"src/components/ProfilePage.astro; src/data/profile.ts\",\"Profile hero, company, identity, team composition\",\"P-001–P-005\",\"Actual Profile structure and data\",\"PROFILE\",\"PRIMARY\",\"PARTIAL / PROTOTYPE\",\"Identity/team placeholders remain in code\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-013\",\"Component/data\",\"src/components/profile/TeamCarousel.astro; src/data/profile.ts\",\"Three person cards and routes\",\"P-005\",\"Prototype team directory reference\",\"PROFILE\",\"PRIMARY\",\"PROTOTYPE\",\"Team identities/credentials/photos/consent not verified\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-014\",\"Component\",\"src/components/PersonProfilePage.astro\",\"Person hero, contacts, overview, noindex\",\"PD-001\",\"Profile-detail prototype reference\",\"PROFILE DETAIL\",\"PRIMARY\",\"PROTOTYPE / NOINDEX\",\"No Person schema until verification\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-015\",\"Component/data\",\"src/components/ContentPage.astro; src/data/site.ts\",\"Services and Projects page implementation\",\"S-001–S-008; E-001–E-002\",\"Actual category/project structures\",\"SERVICES / EXPERIENCES\",\"PRIMARY\",\"PARTIAL / PROTOTYPE\",\"Services lacks S-002/S-007; projects are placeholders\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-016\",\"Component/data\",\"src/components/ContactPage.astro; src/data/site.ts\",\"Direct channels, address, urgency boundary\",\"C-001; C-004; C-005\",\"Contact page structure\",\"CONTACT\",\"PRIMARY\",\"PARTIAL\",\"Address/privacy/legal contact remain unresolved for launch\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-017\",\"Component\",\"src/components/ContactForm.astro\",\"Fields, consent, validation, inline status\",\"C-002; C-003; C-004\",\"Inquiry form UI and current status behavior\",\"CONTACT\",\"PRIMARY\",\"IMPLEMENTED / POP-UP PENDING\",\"Success state is inline, not the confirmed pop-up\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-018\",\"API\",\"src/pages/api/contact.ts; .env.example\",\"Validation, rate limiting, Resend delivery, dry-run\",\"C-003\",\"Inquiry delivery flow\",\"CONTACT API\",\"PRIMARY\",\"IMPLEMENTED / ENV PENDING\",\"Requires production Resend/domain environment values\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-019\",\"Component/content\",\"src/components/BlogIndexPage.astro; src/components/ArticleCard.astro; src/content/blog/**\",\"Blog hero, filters, cards\",\"B-001–B-002\",\"Blog listing implementation\",\"BLOG\",\"PRIMARY\",\"PREVIEW\",\"Substantive articles are not launch-approved\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CODE-020\",\"Component/content\",\"src/components/BlogPostPage.astro; src/content/blog/**\",\"Article template, disclaimer, translation, related posts\",\"A-001\",\"Article detail implementation\",\"ARTICLE DETAIL\",\"PRIMARY\",\"PREVIEW\",\"Legal/editorial review metadata remains required\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-DOC-001\",\"Documentation\",\"docs/PAGE_SPECIFICATIONS.md\",\"Page orders, routes, placeholder rules\",\"All current page mappings\",\"Expected structure and explicit prototype behavior\",\"GLOBAL\",\"PRIMARY\",\"CURRENT DOC\",\"Some specs do not match implemented content sheet sections\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-DOC-002\",\"Documentation\",\"docs/REQUIREMENTS.md\",\"Functional, non-functional, content integrity, definition of done\",\"Global; FAQ; Privacy; Terms\",\"Build/launch requirements\",\"GLOBAL\",\"PRIMARY\",\"CURRENT DOC\",\"Privacy/Terms remain absent\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-DOC-003\",\"Documentation\",\"docs/DESIGN_SYSTEM.md\",\"Brand assets and replaceable concept imagery\",\"Asset register\",\"Asset classification and visual governance\",\"GLOBAL\",\"PRIMARY\",\"CURRENT DOC\",\"Source/rights evidence is not embedded\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-DOC-004\",\"Documentation\",\"docs/SEO_GUIDELINES.md\",\"Schema, noindex, metadata and launch checks\",\"Profile Detail; Blog; Global\",\"Indexing and metadata governance\",\"GLOBAL\",\"PRIMARY\",\"CURRENT DOC\",\"Production domain and raster social image remain open\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-AUDIT-001\",\"Generated audit\",\"codebase audit 2026-08-14\",\"91 text files + 18 assets + 21 routes\",\"All mapping/register rows\",\"Completeness evidence for the codebase scan\",\"GLOBAL\",\"PRIMARY\",\"COMPLETE READ-ONLY AUDIT\",\"Generated from the current local codebase; no code was modified\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"],[\"REF-CTX-001\",\"Project decision context\",\"User confirmations in current project context\",\"Operator/year/location; dummy high-fidelity; 4 categories; preview-only articles; domain pending; Kultivate contact; pop-up; Resend-only\",\"Global; Home; Contact; Blog\",\"Resolves implementation labels without inventing facts\",\"GLOBAL\",\"PRIMARY\",\"CONFIRMED CONTEXT\",\"Registration number, public launch contacts, final domain, policies and approvals remain open\",\"2026-08-14\",\"Project Lead / UI-UX / Legal as applicable\",\"PASS\"]]}",
+      "truncated": false,
+      "metadata": {
+        "revision": "rhea5u",
+        "target": {
+          "id": "wb/wlpchx",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "table",
+          "tokens": [
+            "table"
+          ]
+        },
+        "include": {
+          "requested": "values,formulas",
+          "tokens": [
+            "values",
+            "formulas"
+          ]
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    },
+    "12_Mapping_QA": {
+      "ndjson": "{\"kind\":\"table\",\"sheet\":\"12_Mapping_QA\",\"address\":\"A1:U26\",\"rows\":26,\"cols\":21,\"values\":[[\"MAPPING QA / CHECKABILITY CONTROL\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Page-level QA that distinguishes completed internal mapping work from human review, copy approval, legal approval, evidence, consent, production configuration and launch readiness.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"The workbook does not self-approve. FINAL RESULT becomes CHECKABLE only after UI/UX Review and Approval Status are both APPROVED and the structural/asset/reference checks pass.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"QA ID\",\"Page\",\"Lifecycle\",\"Route ID\",\"Route EN\",\"Route Status\",\"Content Blocks\",\"Website-only Blocks\",\"Copy Ready\",\"Copy Blocked\",\"Structure QA\",\"Implementation Match\",\"Asset / Reference QA\",\"Wireframe State\",\"UI/UX Review\",\"Approval Status\",\"Open Blocker\",\"Recommended Action\",\"Final Result\",\"Reviewer\",\"Review Date\"],[\"MQA-01\",\"GLOBAL\",\"CURRENT\",\"N/A\",\"N/A\",\"N/A\",0,0,0,0,\"N/A\",\"PARTIAL – SITE.TS PLACEHOLDERS; LEGAL PAGES ABSENT\",\"SEE REGISTERS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"LEGAL/CONTACT/DOMAIN OPEN\",\"Confirm launch contacts, domain, Privacy, Terms, and approved global labels.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-02\",\"Home\",\"CURRENT + PROTOTYPE/PREVIEW\",\"/id/\",\"/en/\",\"EXISTS\",12,2,11,1,\"PASS\",\"PARTIAL – H-002 MISSING; 4/15 SERVICE MISMATCH; 2 WEBSITE-ONLY PROTOTYPES\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"COPY/EVIDENCE/UI-UX OPEN\",\"Resolve problem-section decision, convert service rail to four categories, and gate dummy previews.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-03\",\"Profile\",\"CURRENT + PROTOTYPE\",\"/id/profile/\",\"/en/profile/\",\"EXISTS\",6,0,5,1,\"PASS\",\"PARTIAL – P-004 MISSING; TEAM/IDENTITY PLACEHOLDERS\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"TEAM/IDENTITY/UI-UX OPEN\",\"Apply confirmed identity, decide P-003/P-004 structure, and remove/replace dummy team before launch.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-04\",\"Profile Detail\",\"CURRENT PROTOTYPE / NOINDEX\",\"/id/profile/[slug]/\",\"/en/profile/[slug]/\",\"EXISTS / NOINDEX\",1,0,0,1,\"PASS\",\"PROTOTYPE – DUMMY IDENTITIES\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"VERIFICATION/CONSENT OPEN\",\"Keep noindex; replace with verified professionals or remove routes.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-05\",\"Services\",\"CURRENT\",\"/id/services/\",\"/en/services/\",\"EXISTS\",8,0,8,0,\"PASS\",\"PARTIAL – S-002 AND S-007 MISSING\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"COPY/UI-UX/SCOPE OPEN\",\"Create or merge decision guide and initial-information blocks; retain category-level scope boundary.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-06\",\"Our Experiences\",\"CURRENT PROTOTYPE\",\"/id/projects/\",\"/en/projects/\",\"EXISTS / PROTOTYPE\",2,0,0,2,\"PASS\",\"PROTOTYPE – NO APPROVED CASES\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"EVIDENCE/CONSENT OPEN\",\"Remove from launch or populate only approved, confidentiality-safe cases.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-07\",\"Blog\",\"CURRENT PREVIEW\",\"/id/blog/\",\"/en/blog/\",\"EXISTS / PREVIEW\",2,0,1,1,\"PASS\",\"PREVIEW – ARTICLES NOT APPROVED\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"EDITORIAL/LEGAL REVIEW OPEN\",\"Keep preview-only until articles are reviewed; exclude from launch if review is incomplete.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-08\",\"Article Detail\",\"CURRENT PREVIEW\",\"/id/blog/[slug]/\",\"/en/blog/[slug]/\",\"EXISTS / PREVIEW\",1,0,0,1,\"PASS\",\"PREVIEW – REVIEW METADATA MISSING\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"EDITORIAL/LEGAL REVIEW OPEN\",\"Require source, reviewer, review date, applicability and legal sign-off for each article.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-09\",\"Contact\",\"CURRENT\",\"/id/contact/\",\"/en/contact/\",\"EXISTS\",5,0,4,1,\"PASS\",\"PARTIAL – INLINE SUCCESS; ADDRESS/PRIVACY/LAUNCH CONTACT OPEN\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"LEGAL/UI/ENV OPEN\",\"Implement thank-you pop-up, confirm launch channels/address/privacy, and configure production Resend/domain values.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-10\",\"Service Details\",\"BACKLOG\",\"MISSING\",\"MISSING\",\"ROUTES MISSING\",4,0,0,4,\"PASS\",\"NOT IMPLEMENTED\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"BUSINESS SCOPE/COPY/WIREFRAME OPEN\",\"Do not implement until each category scope, exclusions, deliverables, reviewer model, and examples are approved.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-11\",\"FAQ\",\"BACKLOG\",\"MISSING\",\"MISSING\",\"ROUTE MISSING\",1,0,0,1,\"PASS\",\"NOT IMPLEMENTED – ANSWERS MISSING\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"LEGAL/OPERATIONAL REVIEW OPEN\",\"Draft and review answers before creating the route/component.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-12\",\"Privacy Policy\",\"BACKLOG / LAUNCH BLOCKER\",\"MISSING\",\"MISSING\",\"ROUTE/CONTENT MISSING\",1,0,0,1,\"PASS\",\"NOT IMPLEMENTED – LAUNCH BLOCKER\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"DATA-FLOW/LEGAL APPROVAL OPEN\",\"Confirm actual data flow and obtain approved policy before public launch.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[\"MQA-13\",\"Terms & Disclaimer\",\"BACKLOG / LAUNCH BLOCKER\",\"MISSING\",\"MISSING\",\"ROUTE/CONTENT MISSING\",1,0,0,1,\"PASS\",\"NOT IMPLEMENTED – LAUNCH BLOCKER\",\"PASS\",\"NOT REVIEWED / SEE MAPPING\",\"NOT REVIEWED\",\"NOT APPROVED\",\"LEGAL DRAFT/APPROVAL OPEN\",\"Obtain approved terms/disclaimer before public launch.\",\"NOT CHECKABLE – REVIEW/APPROVAL PENDING\",null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"MAPPING SUMMARY\",null,null,null,null,null,null,null,null,\"STATUS DEFINITIONS\",null,null,null,null,null,null,null,null,null,null,null],[\"Total mapping rows\",46,null,null,null,null,null,null,null,\"DRAFT MAPPING – READY FOR UI/UX REVIEW\",null,null,null,\"Structure is mapped, but reviewer sign-off has not occurred.\",null,null,null,null,null,null,null],[\"Aligned content blocks\",44,null,null,null,null,null,null,null,\"DRAFT MAPPING – GAP OPEN\",null,null,null,\"A section/route/structure mismatch remains open.\",null,null,null,null,null,null,null],[\"Website-only prototype sections\",2,null,null,null,null,null,null,null,\"BLOCKED – COPY/DEPENDENCY\",null,null,null,\"Copy, evidence, consent, policy, or business dependency is unresolved.\",null,null,null,null,null,null,null],[\"Copy-ready blocks\",29,null,null,null,null,null,null,null,\"OPEN – DOCUMENT DECISION REQUIRED\",null,null,null,\"The website contains a section that the 44-block content sheet does not.\",null,null,null,null,null,null,null],[\"Final MAPPED rows\",0,null,null,null,null,null,null,null,\"MAPPED\",null,null,null,\"Reserved for future use only after copy approval, UI/UX approval, reviewer and date are complete.\",null,null,null,null,null,null,null],[\"UI/UX approved page rows\",0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]]}",
+      "truncated": false,
+      "metadata": {
+        "revision": "t5wuy6",
+        "target": {
+          "id": "wb/75x81l",
+          "beforeLines": 0,
+          "afterLines": 0
+        },
+        "kind": {
+          "requested": "table",
+          "tokens": [
+            "table"
+          ]
+        },
+        "include": {
+          "requested": "values,formulas",
+          "tokens": [
+            "values",
+            "formulas"
+          ]
+        },
+        "exclude": {
+          "tokens": []
+        },
+        "notices": []
+      }
+    }
+  },
+  "formulaErrors": {
+    "ndjson": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+    "truncated": false,
+    "metadata": {
+      "revision": "j3es4s",
+      "target": {
+        "id": "wb/zf5bqt",
+        "beforeLines": 0,
+        "afterLines": 0
+      },
+      "kind": {
+        "requested": "match",
+        "tokens": [
+          "match"
+        ]
+      },
+      "include": {
+        "tokens": []
+      },
+      "exclude": {
+        "tokens": []
+      },
+      "notices": []
+    }
+  }
+}

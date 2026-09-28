@@ -1,0 +1,20 @@
+{
+  "source_sha256": "2ff093b8653baaa0d21f8e92ddc6fca15b7dd1896e6518069e07592c1f51eb47",
+  "output_sha256": "c7d09666feabe48f770d17207c45b75030d7b14c6c8b6744d24896457255debe",
+  "output_size_bytes": 79038,
+  "sections": 1,
+  "tables": 127,
+  "question_banners_annotated": 50,
+  "appendix_question_headings": 50,
+  "identity_fields_filled": 7,
+  "final_attestations_annotated": 4,
+  "package_diff": {
+    "missing_parts": [],
+    "added_parts": [],
+    "changed_parts": [
+      "docProps/core.xml",
+      "word/document.xml"
+    ]
+  },
+  "result": "PASS"
+}

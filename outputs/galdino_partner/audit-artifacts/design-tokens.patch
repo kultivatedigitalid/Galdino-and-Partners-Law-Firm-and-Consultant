@@ -1,0 +1,238 @@
+diff --git a/src/styles/global.css b/src/styles/global.css
+--- a/src/styles/global.css
++++ b/src/styles/global.css
+@@ -18,6 +18,19 @@
+   --layer-header: 40;
+   --layer-menu: 50;
+   --layer-dock: 35;
++  --brand-black: #0b0b0c;
++  --brand-white: #fff;
++  --brand-paper: #f4f3f1;
++  --brand-red: #c4142a;
++  --brand-red-bright: #ed2942;
++  --brand-red-deep: #710d1b;
++  --brand-gold: #b18a4b;
++  --brand-muted: #5f5f63;
++  --brand-line: #deddda;
++  --brand-line-strong: #b9b8b5;
++  --brand-ease: cubic-bezier(.22, 1, .36, 1);
++  --brand-section-space: clamp(4.5rem, 7vw, 7rem);
++  --brand-type-hero: clamp(3rem, 4.5vw, 4rem);
++  --brand-type-section: clamp(2.25rem, 3.8vw, 3.5rem);
++  --brand-type-card: clamp(1.45rem, 2.2vw, 2rem);
+ }
+diff --git a/src/components/HomePage.astro b/src/components/HomePage.astro
+--- a/src/components/HomePage.astro
++++ b/src/components/HomePage.astro
+@@ -61,20 +61,20 @@
+ <style is:global>
+   .home-redesign {
+-    --home-black: #0b0b0c;
+-    --home-white: #fff;
+-    --home-paper: #f4f3f1;
+-    --home-red: #c4142a;
+-    --home-red-bright: #ed2942;
+-    --home-red-deep: #710d1b;
+-    --home-gold: #b18a4b;
+-    --home-muted: #66666a;
+-    --home-line: #deddda;
+-    --home-line-strong: #b9b8b5;
+-    --home-ease: cubic-bezier(.22, 1, .36, 1);
++    --home-black: var(--brand-black);
++    --home-white: var(--brand-white);
++    --home-paper: var(--brand-paper);
++    --home-red: var(--brand-red);
++    --home-red-bright: var(--brand-red-bright);
++    --home-red-deep: var(--brand-red-deep);
++    --home-gold: var(--brand-gold);
++    --home-muted: var(--brand-muted);
++    --home-line: var(--brand-line);
++    --home-line-strong: var(--brand-line-strong);
++    --home-ease: var(--brand-ease);
+     overflow: clip;
+     background: var(--home-paper);
+     color: var(--home-black);
+   }
+-  .home-redesign .home-section { padding-block: clamp(5.2rem, 9vw, 9rem); }
++  .home-redesign .home-section { padding-block: var(--brand-section-space); }
+   .home-redesign .home-kicker {
+     display: inline-flex;
+     align-items: center;
+@@ -82,7 +82,7 @@
+     gap: .7rem;
+     margin: 0;
+     color: var(--home-black);
+-    font-size: .65rem;
++    font-size: .7rem;
+     font-weight: 820;
+-    letter-spacing: .15em;
++    letter-spacing: .12em;
+     line-height: 1.35;
+     text-transform: uppercase;
+   }
+@@ -91,10 +91,10 @@
+     max-width: 18ch;
+     margin: 1.25rem 0 0;
+     font-family: var(--font-display);
+-    font-size: clamp(2.35rem, 5vw, 5rem);
+-    font-weight: 560;
+-    letter-spacing: -.04em;
+-    line-height: .94;
++    font-size: var(--brand-type-section);
++    font-weight: 570;
++    letter-spacing: -.035em;
++    line-height: .98;
+     text-wrap: balance;
+   }
+@@ -124,6 +124,7 @@
+   .home-redesign .home-rule-link {
+     position: relative;
+     width: fit-content;
++    min-height: 2.75rem;
+     display: inline-flex;
+     align-items: center;
+@@ -133,8 +134,8 @@
+   .home-redesign .home-rule-link::after { position: absolute; right: 0; bottom: -.35rem; left: 0; height: 1px; background: var(--home-red); content: ''; transform: scaleX(.25); transform-origin: left; transition: transform 190ms var(--home-ease); }
+   .home-redesign .home-rule-link > .arrow-icon { transition: transform 170ms var(--home-ease); }
+   .home-redesign :focus-visible { outline-color: var(--home-red-bright); }
+-  .home-motion-ready .home-redesign [data-home-reveal] { opacity: .001; transform: translateY(12px); transition: opacity 520ms var(--home-ease), transform 520ms var(--home-ease); }
++  .home-motion-ready .home-redesign [data-home-reveal] { opacity: .001; transform: translateY(12px); transition: opacity 500ms var(--home-ease), transform 500ms var(--home-ease); }
+   .home-motion-ready .home-redesign [data-home-reveal].home-visible { opacity: 1; transform: none; }
+@@ -155,8 +156,8 @@
+   }
+   @media (max-width: 640px) {
+-    .home-redesign .home-section { padding-block: 4.75rem; }
+-    .home-redesign .home-heading { font-size: clamp(2.25rem, 11vw, 3.4rem); line-height: .97; }
++    .home-redesign .home-section { padding-block: 4.5rem; }
++    .home-redesign .home-heading { font-size: clamp(2.15rem, 10vw, 2.85rem); line-height: 1; }
+   }
+diff --git a/src/components/ProfilePage.astro b/src/components/ProfilePage.astro
+--- a/src/components/ProfilePage.astro
++++ b/src/components/ProfilePage.astro
+@@ -177,20 +177,19 @@
+ <style is:global>
+   .profile-redesign {
+-    --profile-black: #0b0b0c;
+-    --profile-white: #fff;
+-    --profile-paper: #f4f3f1;
+-    --profile-paper-shade: #ebeaE8;
+-    --profile-red: #c4142a;
+-    --profile-red-bright: #ed2942;
+-    --profile-red-deep: #710d1b;
+-    --profile-gold: #b18a4b;
+-    --profile-muted: #5f5f63;
+-    --profile-line: #deddda;
+-    --profile-line-strong: #b9b8b5;
+-    --profile-ease: cubic-bezier(.22, 1, .36, 1);
++    --profile-black: var(--brand-black);
++    --profile-white: var(--brand-white);
++    --profile-paper: var(--brand-paper);
++    --profile-red: var(--brand-red);
++    --profile-red-bright: var(--brand-red-bright);
++    --profile-red-deep: var(--brand-red-deep);
++    --profile-gold: var(--brand-gold);
++    --profile-muted: var(--brand-muted);
++    --profile-line: var(--brand-line);
++    --profile-line-strong: var(--brand-line-strong);
++    --profile-ease: var(--brand-ease);
+     overflow: clip;
+     background: var(--profile-paper);
+     color: var(--profile-black);
+   }
+-  .profile-redesign .profile-section { padding-block: clamp(5.2rem, 8.5vw, 8.5rem); }
++  .profile-redesign .profile-section { padding-block: var(--brand-section-space); }
+@@ -199,17 +198,18 @@
+     padding-bottom: .35rem;
+     color: var(--profile-black);
+-    font-size: .72rem;
+-    font-weight: 780;
++    font-size: .7rem;
++    font-weight: 800;
++    letter-spacing: .04em;
+   }
+   .profile-redesign .profile-heading {
+     max-width: 18ch;
+     margin: 0;
+     font-family: var(--font-display);
+-    font-size: clamp(2.5rem, 5.5vw, 5.4rem);
++    font-size: var(--brand-type-section);
+     font-weight: 570;
+-    letter-spacing: -.04em;
+-    line-height: .96;
++    letter-spacing: -.035em;
++    line-height: .98;
+     text-wrap: balance;
+   }
+@@ -238,6 +238,7 @@
+   .profile-redesign .profile-rule-link {
+     position: relative;
+     width: fit-content;
++    min-height: 2.75rem;
+     display: inline-flex;
+     align-items: center;
+@@ -259,17 +260,17 @@
+   body:has(.profile-redesign) .contact-dock__pulse { background: #fff; box-shadow: 0 0 0 4px rgb(255 255 255 / .16); }
+ 
+   .profile-hero { background: var(--profile-white); }
+-  .profile-hero__grid { min-height: clamp(39rem, calc(100svh - 5rem), 49rem); display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(25rem, .98fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-block: clamp(2.25rem, 5vw, 4.5rem); }
++  .profile-hero__grid { min-height: clamp(39rem, 100svh, 49rem); display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(25rem, .98fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; padding-top: clamp(7rem, 10vw, 8.5rem); padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+   .profile-hero__copy { max-width: 43rem; }
+-  .profile-hero h1 { max-width: 11ch; margin: 1.5rem 0 0; font-family: var(--font-display); font-size: clamp(3.5rem, 7vw, 6rem); font-weight: 570; letter-spacing: -.04em; line-height: .92; text-wrap: balance; }
+-  .profile-hero__lead { max-width: 37rem; margin: 1.5rem 0 0; color: var(--profile-muted); font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.62; text-wrap: pretty; }
++  .profile-hero h1 { max-width: 14ch; margin: 1.35rem 0 0; font-family: var(--font-display); font-size: var(--brand-type-hero); font-weight: 570; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
++  .profile-hero__lead { max-width: 35rem; margin: 1.25rem 0 0; color: var(--profile-muted); font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.58; text-wrap: pretty; }
+   .profile-hero__copy > .profile-button { margin-top: 2rem; }
+@@ -308,7 +309,7 @@
+ 
+   .profile-final { background: var(--profile-red-deep); color: #fff; }
+   .profile-final__grid { min-height: 24rem; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: center; padding-block: clamp(4.5rem, 8vw, 7rem); }
+-  .profile-final h2 { max-width: 17ch; margin: 0; font-family: var(--font-display); font-size: clamp(2.5rem, 5.4vw, 5.3rem); font-weight: 570; letter-spacing: -.04em; line-height: .95; text-wrap: balance; }
++  .profile-final h2 { max-width: 17ch; margin: 0; font-family: var(--font-display); font-size: var(--brand-type-section); font-weight: 570; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
+@@ -320,9 +321,9 @@
+   }
+   @media (max-width: 900px) {
+-    .profile-hero__grid { min-height: 0; grid-template-columns: 1fr; padding-top: 4.5rem; }
++    .profile-hero__grid { min-height: 0; grid-template-columns: 1fr; padding-top: 7.5rem; }
+@@ -332,11 +333,11 @@
+   }
+   @media (max-width: 640px) {
+-    .profile-redesign .profile-section { padding-block: 4.75rem; }
+-    .profile-redesign .profile-heading { font-size: clamp(2.35rem, 11vw, 3.5rem); }
+-    .profile-hero__grid { gap: 2.5rem; padding-top: 3.5rem; padding-bottom: 0; }
+-    .profile-hero h1 { max-width: 11ch; font-size: clamp(3rem, 15vw, 4.4rem); }
++    .profile-redesign .profile-section { padding-block: 4.5rem; }
++    .profile-redesign .profile-heading { font-size: clamp(2.15rem, 10vw, 2.85rem); }
++    .profile-hero__grid { gap: 2.5rem; padding-top: 6.5rem; padding-bottom: 0; }
++    .profile-hero h1 { max-width: 14ch; font-size: clamp(2.65rem, 11vw, 3.25rem); }
+     .profile-hero__lead { font-size: .96rem; }
+diff --git a/src/styles/profile-polish.css b/src/styles/profile-polish.css
+--- a/src/styles/profile-polish.css
++++ b/src/styles/profile-polish.css
+@@ -1,13 +1,4 @@
+ /* Route-scoped refinements shared by the redesigned Profile surface and its shell. */
+-.profile-redesign .profile-hero h1 {
+-  max-width: 15ch;
+-  font-size: clamp(3.25rem, 5.4vw, 4.8rem);
+-}
+-
+-html[lang='en'] .profile-redesign .profile-hero h1 {
+-  font-size: clamp(3.1rem, 5.1vw, 4.55rem);
+-}
+-
+ .profile-redesign .profile-rule-link,
+ .profile-redesign .profile-member__actions a {
+@@ -25,17 +16,3 @@
+   display: inline-flex;
+   align-items: center;
+ }
+-
+-@media (max-width: 640px) {
+-  .profile-redesign .profile-hero h1 {
+-    max-width: 15ch;
+-    font-size: clamp(2.65rem, 11.5vw, 3.5rem);
+-  }
+-
+-  html[lang='en'] .profile-redesign .profile-hero h1 {
+-    font-size: clamp(2.45rem, 10.5vw, 3.25rem);
+-  }
+-}

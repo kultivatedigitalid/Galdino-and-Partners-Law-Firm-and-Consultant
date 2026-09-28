@@ -1,0 +1,97 @@
+{
+  "table": {
+    "ndjson": "{\"kind\":\"table\",\"sheet\":\"13_Checklist_Evidence\",\"address\":\"A1:F33\",\"rows\":33,\"cols\":6,\"values\":[[\"CHECKLIST LANGKAH 05-06 / STATUS & EVIDENCE\",null,null,null,null,null],[\"Rekomendasi centang per 14 Agustus 2026: 17 item bisa dicentang, 12 item belum bisa. Semua kotak tetap dibiarkan kosong agar keputusan centang dilakukan oleh pemilik/reviewer.\",null,null,null,null,null],[\"BISA DICENTANG tidak sama dengan COPY APPROVED atau MAPPED. C37 hanya menilai metode penyusunan draft mapping; C50 tetap ditahan sampai copy dan UI/UX memperoleh approval.\",null,null,null,null,null],[\"Langkah\",\"Ref Checklist\",\"Mini-Step\",\"Kotak\",\"Bisa Dicentang Sekarang?\",\"Penjelasan & Keberadaan Bukti\"],[\"Langkah 05\",\"C22\",\"Buat Website Content Sheet\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Workbook content sudah tersedia dan tetap utuh dalam versi ini. Bukti: 01_GLOBAL s.d. 08_Source_Notes; khusus isi bilingual: 03_Content_ID!A4:Q48 dan 04_Content_EN!A4:Q48.\"],[\"Langkah 05\",\"C23\",\"Tentukan pertanyaan yang perlu dijawab pada setiap halaman\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Pertanyaan utama per halaman telah didokumentasikan. Bukti: 02_Page_Questions!A4:I17 dan keterkaitannya dengan halaman pada 09_Page_Section_Mapping!D5:D50.\"],[\"Langkah 05\",\"C24\",\"Tulis final copy secara langsung\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Copy ID/EN sudah ditulis pada level yang tersedia; bagian yang belum layak final tidak disamarkan dan diberi status blocked/placeholder. Bukti: 03_Content_ID!A4:Q48, 04_Content_EN!A4:Q48, serta 09_Page_Section_Mapping!U5:V50.\"],[\"Langkah 05\",\"C25\",\"Masukkan headline, body, supporting points, bukti, dan CTA\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Komponen copy dan CTA telah dicatat dalam content sheet; bukti/dependensi ditautkan ke register. Bukti: 03_Content_ID!A4:Q48, 04_Content_EN!A4:Q48, 05_Proof_Placeholders, dan 09_Page_Section_Mapping!L5:X50.\"],[\"Langkah 05\",\"C26\",\"Cantumkan sumber bukti atau Asset ID\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Setiap baris mapping memiliki Asset ID/N/A yang beralasan, Reference ID, dan Source Evidence. Bukti: 09_Page_Section_Mapping!O5:P50 serta AA5:AA50; inventaris lengkap di 10_Asset_Register dan 11_Reference_Register.\"],[\"Langkah 05\",\"C27\",\"Tulis global copy satu kali pada bagian GLOBAL\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Global copy dipusatkan satu kali dan tidak diduplikasi per halaman. Bukti: 01_GLOBAL; keputusan global/legal/contact juga diringkas pada 00_Dashboard dan 08_Source_Notes.\"],[\"Langkah 05\",\"C28\",\"Pastikan tidak ada fakta buatan, klaim tanpa bukti, atau placeholder\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Belum dapat dicentang karena dummy/placeholder memang masih ada untuk high-fidelity prototype dan beberapa bukti/consent belum tersedia. Bukti: 05_Proof_Placeholders; 10_Asset_Register!I5:O22 (DATA DUMMY, PLACEHOLDER INTERNAL, BLOCKED); 12_Mapping_QA!Q5:R17.\"],[\"Langkah 05\",\"C29\",\"Copywriter melakukan self-check\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Self-check dokumenter telah dilakukan terhadap positioning, tone, dependensi, approval action, mapping, dan formula. Bukti: 06_Positioning_Tone_QA, 07_Approval_Actions, 12_Mapping_QA; hasil QA file mencatat 0 formula error.\"],[\"Langkah 05\",\"C30\",\"Ubah status menjadi READY FOR FACT CHECK\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Status tersebut belum diterapkan. Bukti: 09_Page_Section_Mapping!U5:U50 berisi 29 READY FOR CONTENT APPROVAL dan sisanya blocked, bukan READY FOR FACT CHECK.\"],[\"Langkah 05\",\"C31\",\"Klien memeriksa kebenaran fakta satu kali\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Belum ada bukti pemeriksaan fakta oleh klien, reviewer, atau tanggal review. Bukti kosong: 09_Page_Section_Mapping!AD5:AE50; approval actions masih terbuka pada 07_Approval_Actions.\"],[\"Langkah 05\",\"C32\",\"Perbaiki fakta yang salah dan ubah status menjadi FACT CHECKED\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Tidak ada status FACT CHECKED dan masih ada fakta legal/contact/team/evidence yang menunggu verifikasi. Bukti: 05_Proof_Placeholders, 07_Approval_Actions, 12_Mapping_QA!Q5:R17.\"],[\"Langkah 05\",\"C33\",\"Brand Manager memeriksa positioning, tone, dan kualitas pesan\",\"[ ]\",\"BELUM BISA DICENTANG\",\"QA internal tersedia, tetapi belum ada sign-off Brand Manager/reviewer bertanggal. Bukti: 06_Positioning_Tone_QA dan kolom reviewer/tanggal yang masih kosong pada 09_Page_Section_Mapping!AD5:AE50.\"],[\"Langkah 05\",\"C34\",\"Copywriter menyelesaikan perbaikan terakhir\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Perbaikan terakhir belum dapat dinyatakan selesai karena 15 dari 44 content block masih blocked/dependent. Bukti: ringkasan 12_Mapping_QA!A20:B25 dan blocker per halaman di Q5:R17.\"],[\"Langkah 05\",\"C35\",\"Ubah seluruh halaman menjadi COPY APPROVED\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Tidak ada baris/page yang berstatus approved. Bukti: 09_Page_Section_Mapping!Z5:Z50 seluruhnya NOT APPROVED; 12_Mapping_QA!P5:P17 seluruhnya NOT APPROVED.\"],[\"Langkah 05\",\"C36\",\"Gate 2\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Gate 2 bergantung pada fact check, Brand Manager review, perbaikan akhir, dan COPY APPROVED; prasyarat C30-C35 belum terpenuhi. Bukti: status approval pada 09_Page_Section_Mapping dan 12_Mapping_QA.\"],[\"Langkah 06\",\"C37\",\"Kerjakan satu halaman sampai selesai\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Dapat dicentang sebagai metode kerja draft mapping: seluruh baris sudah dikelompokkan per Page dan diurutkan, dengan 46 mapping rows untuk 44 content block + 2 website-only. Bukti: 09_Page_Section_Mapping!A5:H50. Ini tidak berarti status final MAPPED.\"],[\"Langkah 06\",\"C38\",\"Baca seluruh copy yang sudah COPY APPROVED\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Tidak ada copy yang berstatus COPY APPROVED, sehingga prasyarat literal item ini belum ada. Bukti: 09_Page_Section_Mapping!Z5:Z50 = NOT APPROVED; 12_Mapping_QA!B25 = 0 final MAPPED.\"],[\"Langkah 06\",\"C39\",\"Kelompokkan copy berdasarkan tujuan pesan\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Copy telah dikelompokkan melalui Page, Section/Component, Section Family, Variant, dan catatan keputusan. Bukti: 09_Page_Section_Mapping!D5:Q50.\"],[\"Langkah 06\",\"C40\",\"Beri nomor urutan section\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Kolom Order terisi pada seluruh 46 baris mapping. Bukti: 09_Page_Section_Mapping!H5:H50; QA per halaman: 12_Mapping_QA!K5:K17 = PASS.\"],[\"Langkah 06\",\"C41\",\"Pilih Section Family\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Section Family terisi pada seluruh 46 baris. Bukti: 09_Page_Section_Mapping!J5:J50.\"],[\"Langkah 06\",\"C42\",\"Pilih variant berdasarkan perbedaan struktur\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Variant struktural terisi pada seluruh 46 baris dan dibedakan berdasarkan bentuk section, bukan sekadar copy/warna. Bukti: 09_Page_Section_Mapping!K5:K50 serta Structure Note di Q5:Q50.\"],[\"Langkah 06\",\"C43\",\"Cantumkan Asset ID\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Kolom Asset ID terisi pada seluruh 46 baris; N/A digunakan secara eksplisit bila media tidak diperlukan/masih diputuskan. Aset nyata terinventarisasi menjadi 18 ID. Bukti: 09_Page_Section_Mapping!O5:O50 dan 10_Asset_Register!A5:P22.\"],[\"Langkah 06\",\"C44\",\"Cantumkan Reference ID jika menggunakan referensi\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Reference ID terisi pada seluruh 46 baris dan 27 sumber tercatat dengan lokasi, tujuan, status, serta keterbatasan. Bukti: 09_Page_Section_Mapping!P5:P50 dan 11_Reference_Register!A5:M31.\"],[\"Langkah 06\",\"C45\",\"Isi Structure Note hanya untuk kebutuhan khusus\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Structure Note terisi sebagai catatan khusus untuk gap implementasi, batas prototype, keputusan merge/create/remove, approval, atau dependensi--bukan sebagai spesifikasi styling. Bukti: 09_Page_Section_Mapping!Q5:Q50.\"],[\"Langkah 06\",\"C46\",\"Jangan menentukan props, styling, atau struktur code\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Mapping tidak menetapkan props atau styling. Lokasi component/code hanya dicantumkan sebagai bukti kondisi aktual dan traceability. Bukti: header 09_Page_Section_Mapping tidak memiliki kolom props/styling; referensi implementasi berada di M5:N50.\"],[\"Langkah 06\",\"C47\",\"Buat wireframe hanya jika struktur sulit dijelaskan\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Kebutuhan wireframe dan Wireframe ID sudah ditentukan, tetapi entri bertanda TO CREATE/FULL PAGE belum memiliki artefak wireframe final. Bukti: 09_Page_Section_Mapping!R5:S50 dan status Wireframe pada 12_Mapping_QA!N5:N17.\"],[\"Langkah 06\",\"C48\",\"Pastikan tidak ada copy yang hilang atau terpasang dua kali\",\"[ ]\",\"BISA DICENTANG SEKARANG\",\"Coverage dan keunikan sudah diaudit: 44 content block masing-masing dipetakan satu kali, ditambah 2 website-only yang dipisahkan; Mapping ID dan Content ID unik. Bukti: 09_Page_Section_Mapping!A5:C50 dan ringkasan 12_Mapping_QA!A20:B25.\"],[\"Langkah 06\",\"C49\",\"UI/UX melakukan pemeriksaan mapping satu kali\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Belum ada review UI/UX. Bukti: 09_Page_Section_Mapping!Y5:Y50 seluruhnya NOT REVIEWED; 12_Mapping_QA!O5:O17 seluruhnya NOT REVIEWED; reviewer/tanggal kosong.\"],[\"Langkah 06\",\"C50\",\"Ubah Website Content Sheet menjadi MAPPED\",\"[ ]\",\"BELUM BISA DICENTANG\",\"Status final MAPPED sengaja belum diberikan karena copy approval dan UI/UX approval belum ada. Bukti: 12_Mapping_QA!B25 = 0 final MAPPED dan 12_Mapping_QA!B26 = 0 UI/UX approved page rows.\"]]}",
+    "truncated": false,
+    "metadata": {
+      "revision": "m1yy53",
+      "target": {
+        "id": "wb/uuts56",
+        "beforeLines": 0,
+        "afterLines": 0
+      },
+      "kind": {
+        "requested": "table",
+        "tokens": [
+          "table"
+        ]
+      },
+      "include": {
+        "requested": "values,formulas",
+        "tokens": [
+          "values",
+          "formulas"
+        ]
+      },
+      "exclude": {
+        "tokens": []
+      },
+      "notices": []
+    }
+  },
+  "badEncoding": {
+    "ndjson": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+    "truncated": false,
+    "metadata": {
+      "revision": "7bpnn9",
+      "target": {
+        "id": "wb/1q58v9",
+        "beforeLines": 0,
+        "afterLines": 0
+      },
+      "kind": {
+        "requested": "match",
+        "tokens": [
+          "match"
+        ]
+      },
+      "include": {
+        "tokens": []
+      },
+      "exclude": {
+        "tokens": []
+      },
+      "notices": []
+    }
+  },
+  "formulaErrors": {
+    "ndjson": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+    "truncated": false,
+    "metadata": {
+      "revision": "a6udre",
+      "target": {
+        "id": "wb/p9x5gw",
+        "beforeLines": 0,
+        "afterLines": 0
+      },
+      "kind": {
+        "requested": "match",
+        "tokens": [
+          "match"
+        ]
+      },
+      "include": {
+        "tokens": []
+      },
+      "exclude": {
+        "tokens": []
+      },
+      "notices": []
+    }
+  },
+  "sheets": [
+    "00_Dashboard",
+    "01_GLOBAL",
+    "02_Page_Questions",
+    "03_Content_ID",
+    "04_Content_EN",
+    "05_Proof_Placeholders",
+    "06_Positioning_Tone_QA",
+    "07_Approval_Actions",
+    "08_Source_Notes",
+    "09_Page_Section_Mapping",
+    "10_Asset_Register",
+    "11_Reference_Register",
+    "12_Mapping_QA",
+    "13_Checklist_Evidence"
+  ]
+}

@@ -1,0 +1,23 @@
+# Component Guidelines
+
+- Use PascalCase for `.astro` components, camelCase for functions, and kebab-case for routes and Markdown slugs.
+- Keep route files thin and compose dedicated page components.
+- Define TypeScript interfaces for props and use the `Locale` union.
+- Use semantic elements first. Do not replace buttons or links with clickable `div` elements.
+- Prefer Tailwind utilities for shared styling. Distinctive Home and Profile compositions may use scoped or route-scoped CSS.
+- Do not add a UI or animation framework for isolated interactions. Native scroll-snap, pointer events, forms, and short scripts are preferred.
+- Never read secrets in prerendered components or client scripts.
+- Put editable business and navigation facts in `src/data/site.ts`, Home content in `src/data/home.ts`, Profile content in `src/data/profile.ts`, and editorial articles in Markdown.
+- New bilingual components must receive `locale` and contain complete ID/EN copy. Do not hide missing translations.
+- A component is reusable when it represents a stable visual or content pattern. Avoid wrappers that merely rename one utility class.
+- Use the transparent `public/assets/gp-logo-brand.png` master mark in Header, Footer, schema, and branded visuals. Keep the asset background-free; use only a restrained image drop shadow where contrast support is required.
+- `CompanyGallery.astro` is the single carousel implementation shared by Home and Profile.
+- Home sections live in `src/components/home/`. Profile uses `ProfilePage.astro`, the compact directory in `src/components/profile/TeamCarousel.astro`, and `PersonProfilePage.astro` for person detail routes.
+- `ArrowIcon.astro` supplies encoding-safe right, left, and up-right arrows. Do not introduce text glyph arrows in new interactive controls.
+- Carousel controls must expose 44px targets, disabled edge states, status feedback, ArrowLeft/ArrowRight support, and reduced-motion behaviour. Service carousels never autoplay; the company image gallery may autoplay only when motion is allowed and must remain manually draggable.
+- Team member links point to the existing bilingual `/profile/[slug]/` routes. Placeholder person pages remain `noindex,follow` until identity, photograph, and credentials are verified.
+- Placeholder identities, credentials, contacts, statistics, clients, prices, video, and projects must remain visibly marked until verified.
+- Do not emit Person schema for placeholder team members.
+- All animation must have a purpose, use transform or opacity where possible, retain visible no-JavaScript content, and include reduced-motion behaviour.
+- Fixed widgets must not cover core mobile content. `ContactDock.astro` remains hidden below 768px.
+- Test Home and Profile at 320x568, 390x844, 834x1112, and 1440x900 before release.

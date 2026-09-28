@@ -1,0 +1,15 @@
+/* Route-scoped refinements shared by the redesigned Profile surface and its shell. */
+.profile-redesign .profile-member__action,
+.person-page .person-contact a,
+.person-page .person-back {
+  min-height: 2.75rem;
+  align-items: center;
+}
+
+.site-header .brand {
+  min-height: 2.75rem;
+}
+
+footer.footer-redesign {
+  background-color: #0b0b0c;
+}

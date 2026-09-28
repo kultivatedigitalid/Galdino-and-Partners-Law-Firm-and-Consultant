@@ -1,0 +1,227 @@
+---
+import { Image } from 'astro:assets';
+import companyImage1 from '../assets/company-carousel-01.webp';
+import companyImage2 from '../assets/company-carousel-02.webp';
+import companyImage3 from '../assets/company-carousel-03.webp';
+import companyImage4 from '../assets/company-carousel-04.webp';
+import companyImage5 from '../assets/company-carousel-05.webp';
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  surface?: 'home' | 'profile';
+}
+
+const { locale, surface = 'home' } = Astro.props;
+const id = locale === 'id';
+const slides = id ? [
+  { image: companyImage1, alt: 'Profesional hukum menelaah dan menandatangani dokumen perizinan usaha' },
+  { image: companyImage2, alt: 'Kesepakatan bisnis dalam proses konsultasi legal' },
+  { image: companyImage3, alt: 'Tim profesional hukum di lingkungan institusional' },
+  { image: companyImage4, alt: 'Diskusi strategi legal dan bisnis bersama tim' },
+  { image: companyImage5, alt: 'Konsultasi kebutuhan legalitas bersama klien bisnis' },
+] : [
+  { image: companyImage1, alt: 'Legal professional reviewing and signing business licensing documents' },
+  { image: companyImage2, alt: 'Business agreement during a legal consultation' },
+  { image: companyImage3, alt: 'Legal professionals in an institutional setting' },
+  { image: companyImage4, alt: 'Legal and business strategy discussion with a team' },
+  { image: companyImage5, alt: 'Business legality consultation with clients' },
+];
+---
+
+<div
+  class:list={['company-gallery', { 'company-gallery--profile': surface === 'profile' }]}
+  data-company-gallery
+  data-home-reveal={surface === 'home' ? true : undefined}
+  data-profile-reveal={surface === 'profile' ? true : undefined}
+  aria-label={id ? 'Galeri perusahaan' : 'Company gallery'}
+  aria-roledescription="carousel"
+  role="region"
+>
+  <div
+    class="company-gallery__viewport"
+    data-carousel-viewport
+    tabindex="0"
+    aria-label={id ? 'Geser untuk melihat galeri perusahaan' : 'Swipe to browse the company gallery'}
+  >
+    <div class="company-gallery__track" data-carousel-track>
+      {slides.map((slide, index) => (
+        <figure class="company-gallery__slide" data-carousel-slide aria-hidden={index === 0 ? 'false' : 'true'}>
+          <Image
+            src={slide.image}
+            alt={slide.alt}
+            widths={[640, 960, 1280, 1600]}
+            sizes="(min-width: 850px) 46vw, 100vw"
+            loading={index === 0 ? 'eager' : 'lazy'}
+            quality={82}
+          />
+        </figure>
+      ))}
+    </div>
+  </div>
+  <div class="company-gallery__controls">
+    <div class="company-gallery__dots" role="group" aria-label={id ? 'Pilih foto galeri' : 'Choose gallery image'}>
+      {slides.map((_, index) => (
+        <button
+          type="button"
+          class="company-gallery__dot"
+          data-carousel-dot
+          aria-label={`${id ? 'Tampilkan foto' : 'Show image'} ${index + 1}`}
+          aria-pressed={index === 0 ? 'true' : 'false'}
+        ></button>
+      ))}
+    </div>
+    <p class="sr-only" data-carousel-status aria-live="polite"></p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-company-gallery]').forEach((carousel) => {
+    if (carousel.dataset.galleryReady === 'true') return;
+    carousel.dataset.galleryReady = 'true';
+
+    const viewport = carousel.querySelector<HTMLElement>('[data-carousel-viewport]');
+    const slides = Array.from(carousel.querySelectorAll<HTMLElement>('[data-carousel-slide]'));
+    const dots = Array.from(carousel.querySelectorAll<HTMLButtonElement>('[data-carousel-dot]'));
+    const status = carousel.querySelector<HTMLElement>('[data-carousel-status]');
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!viewport || !slides.length) return;
+
+    let activeIndex = 0;
+    let timer: number | undefined;
+    let settleTimer: number | undefined;
+    let scrollFrame: number | undefined;
+    let dragging = false;
+    let pointerId: number | undefined;
+    let dragStartX = 0;
+    let dragStartLeft = 0;
+
+    const updateState = (index: number, announce = false) => {
+      activeIndex = Math.min(slides.length - 1, Math.max(0, index));
+      slides.forEach((slide, slideIndex) => slide.setAttribute('aria-hidden', String(slideIndex !== activeIndex)));
+      dots.forEach((dot, dotIndex) => dot.setAttribute('aria-pressed', String(dotIndex === activeIndex)));
+      if (announce && status) status.textContent = `${activeIndex + 1} / ${slides.length}`;
+    };
+
+    const setSlide = (requestedIndex: number, announce = true, instant = false) => {
+      const nextIndex = (requestedIndex + slides.length) % slides.length;
+      updateState(nextIndex, announce);
+      viewport.scrollTo({
+        left: slides[nextIndex]?.offsetLeft ?? viewport.clientWidth * nextIndex,
+        behavior: instant || reducedMotion ? 'auto' : 'smooth',
+      });
+    };
+
+    const stop = () => {
+      if (timer) window.clearInterval(timer);
+      timer = undefined;
+    };
+
+    const start = () => {
+      stop();
+      if (!reducedMotion) timer = window.setInterval(() => setSlide(activeIndex + 1, false), 6000);
+    };
+
+    const scheduleRestart = () => {
+      if (settleTimer) window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(start, 900);
+    };
+
+    viewport.addEventListener('scroll', () => {
+      stop();
+      if (!scrollFrame) {
+        scrollFrame = window.requestAnimationFrame(() => {
+          scrollFrame = undefined;
+          const nextIndex = Math.round(viewport.scrollLeft / Math.max(viewport.clientWidth, 1));
+          updateState(nextIndex);
+        });
+      }
+      scheduleRestart();
+    }, { passive: true });
+
+    viewport.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      setSlide(activeIndex + (event.key === 'ArrowLeft' ? -1 : 1));
+      scheduleRestart();
+    });
+
+    viewport.addEventListener('pointerdown', (event) => {
+      stop();
+      if (event.pointerType !== 'mouse' || event.button !== 0 || dragging) return;
+      dragging = true;
+      pointerId = event.pointerId;
+      dragStartX = event.clientX;
+      dragStartLeft = viewport.scrollLeft;
+      viewport.setPointerCapture(event.pointerId);
+      viewport.classList.add('is-dragging');
+    });
+
+    viewport.addEventListener('pointermove', (event) => {
+      if (!dragging || event.pointerId !== pointerId) return;
+      event.preventDefault();
+      viewport.scrollLeft = dragStartLeft - (event.clientX - dragStartX);
+    });
+
+    const endDrag = (event: PointerEvent) => {
+      if (!dragging || event.pointerId !== pointerId) {
+        scheduleRestart();
+        return;
+      }
+      dragging = false;
+      viewport.classList.remove('is-dragging');
+      if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+      pointerId = undefined;
+      setSlide(Math.round(viewport.scrollLeft / Math.max(viewport.clientWidth, 1)));
+      scheduleRestart();
+    };
+
+    viewport.addEventListener('pointerup', endDrag);
+    viewport.addEventListener('pointercancel', endDrag);
+    dots.forEach((dot, index) => dot.addEventListener('click', () => {
+      setSlide(index);
+      scheduleRestart();
+    }));
+    carousel.addEventListener('pointerenter', stop);
+    carousel.addEventListener('pointerleave', () => {
+      if (!dragging) start();
+    });
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', (event) => {
+      if (!carousel.contains(event.relatedTarget as Node)) start();
+    });
+
+    new ResizeObserver(() => setSlide(activeIndex, false, true)).observe(viewport);
+    start();
+  });
+</script>
+
+<style>
+  .company-gallery { min-width: 0; display: flex; flex-direction: column; }
+  .company-gallery--profile { position: relative; }
+  .company-gallery__viewport { width: 100%; min-width: 0; aspect-ratio: 4 / 3; overflow-x: auto; overflow-y: hidden; background: var(--brand-black); cursor: grab; scroll-behavior: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; touch-action: pan-y pinch-zoom; }
+  .company-gallery__viewport::-webkit-scrollbar { display: none; }
+  .company-gallery__viewport.is-dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+  .company-gallery__track { display: flex; width: 100%; height: 100%; }
+  .company-gallery__slide { position: relative; flex: 0 0 100%; width: 100%; height: 100%; margin: 0; scroll-snap-align: start; scroll-snap-stop: always; }
+  .company-gallery__slide :global(img) { width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) contrast(1.05); pointer-events: none; user-select: none; }
+  .company-gallery__controls { display: flex; justify-content: center; padding-top: .45rem; }
+  .company-gallery__dots { display: flex; align-items: center; justify-content: center; }
+  .company-gallery__dot { width: 2.75rem; height: 2.75rem; border: 0; background: transparent; cursor: pointer; padding: 0; }
+  .company-gallery__dot::after { display: block; width: 1.35rem; height: 2px; margin: auto; background: var(--brand-line-strong); content: ''; transition: background-color 170ms ease, transform 170ms var(--brand-ease); }
+  .company-gallery__dot[aria-pressed='true']::after { background: var(--brand-red); transform: scaleX(1.15); }
+  @media (min-width: 850px) {
+    .company-gallery:not(.company-gallery--profile) { height: 100%; }
+    .company-gallery:not(.company-gallery--profile) .company-gallery__viewport { flex: 1 1 auto; min-height: var(--company-gallery-height, clamp(19rem, 25vw, 24rem)); aspect-ratio: auto; }
+  }
+  @media (min-width: 901px) {
+    .company-gallery--profile { height: 100%; }
+    .company-gallery--profile .company-gallery__viewport { flex: 1 1 auto; min-height: var(--company-gallery-height, clamp(22rem, 30vw, 28rem)); aspect-ratio: auto; }
+    .company-gallery--profile .company-gallery__controls { position: absolute; bottom: .7rem; left: 50%; z-index: 2; border: 1px solid rgb(255 255 255 / .18); background: rgb(11 11 12 / .62); padding: 0 .25rem; transform: translateX(-50%); }
+    .company-gallery--profile .company-gallery__dot::after { background: rgb(255 255 255 / .52); }
+    .company-gallery--profile .company-gallery__dot[aria-pressed='true']::after { background: #fff; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .company-gallery__dot::after { transition-duration: .01ms; }
+  }
+</style>

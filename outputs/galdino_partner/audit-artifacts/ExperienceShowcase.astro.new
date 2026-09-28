@@ -1,0 +1,174 @@
+---
+import { Image } from 'astro:assets';
+import licensingImage from '../website/src/assets/experience-business-licensing.png';
+import complianceImage from '../website/src/assets/experience-compliance-review.png';
+import investmentImage from '../website/src/assets/experience-investment-project.png';
+import type { Locale } from '../website/src/data/site';
+import ArrowIcon from '../website/src/components/icons/ArrowIcon.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+const items = id ? [
+  {
+    image: licensingImage,
+    type: 'Perizinan usaha',
+    year: '[TAHUN]',
+    title: 'Legalitas dan izin operasional perusahaan',
+    description: 'Pendampingan dari pemetaan kebutuhan hingga kesiapan izin operasional.',
+    alt: 'Konsultan perizinan dan pelaku usaha menelaah matriks izin serta rencana operasional',
+  },
+  {
+    image: complianceImage,
+    type: 'Legal advisory',
+    year: '[TAHUN]',
+    title: 'Review kepatuhan untuk ekspansi bisnis',
+    description: 'Penilaian kewajiban regulasi sebelum aktivitas dan lokasi baru berjalan.',
+    alt: 'Tim legal dan bisnis menelaah rencana lokasi serta kewajiban regulasi',
+  },
+  {
+    image: investmentImage,
+    type: 'Investasi',
+    year: '[TAHUN]',
+    title: 'Perizinan proyek investasi',
+    description: 'Koordinasi izin, dokumen, dan dependensi untuk kebutuhan investasi.',
+    alt: 'Konsultan dan perwakilan proyek menelaah peta perizinan di lokasi pengembangan industri',
+  },
+] : [
+  {
+    image: licensingImage,
+    type: 'Business licensing',
+    year: '[YEAR]',
+    title: 'Corporate legality and operational licensing',
+    description: 'Support from requirement mapping through operational permit readiness.',
+    alt: 'A licensing consultant and business representative reviewing a permit matrix and operational plan',
+  },
+  {
+    image: complianceImage,
+    type: 'Legal advisory',
+    year: '[YEAR]',
+    title: 'Compliance review for business expansion',
+    description: 'Regulatory obligations assessed before a new activity or location begins.',
+    alt: 'Legal and business professionals reviewing a location plan and regulatory obligations',
+  },
+  {
+    image: investmentImage,
+    type: 'Investment',
+    year: '[YEAR]',
+    title: 'Investment project licensing',
+    description: 'Permit, document, and dependency coordination for investment requirements.',
+    alt: 'A consultant and project representative reviewing licensing plans at an industrial development site',
+  },
+];
+---
+
+<section class="experience-section home-section" aria-labelledby="experience-title">
+  <div class="container-shell">
+    <header class="experience-section__header" data-home-reveal>
+      <div>
+        <p class="home-kicker">Our Experiences</p>
+        <h2 id="experience-title" class="home-heading">
+          {id ? 'Pengalaman relevan. Kerahasiaan tetap terjaga.' : 'Relevant experience. Client confidentiality preserved.'}
+        </h2>
+      </div>
+      <a class="home-rule-link" href={`/${locale}/projects/`}>
+        {id ? 'Lihat seluruh pengalaman' : 'View all experience'} <ArrowIcon />
+      </a>
+    </header>
+
+    <div class="experience-grid">
+      {items.map((item, index) => (
+        <article class:list={['experience-card', index === 0 && 'experience-card--featured']} data-home-reveal>
+          <a href={`/${locale}/projects/`} aria-label={`${item.title}. ${id ? 'Lihat pengalaman' : 'View experience'}`}>
+            <figure class="experience-card__visual">
+              <Image
+                src={item.image}
+                alt={item.alt}
+                widths={[480, 720, 960, 1280, 1600]}
+                sizes={index === 0 ? '(min-width: 1000px) 60vw, 100vw' : '(min-width: 1000px) 24vw, (min-width: 680px) 50vw, 100vw'}
+                loading="lazy"
+                quality={82}
+              />
+            </figure>
+            <div class="experience-card__content">
+              <div class="experience-card__meta">
+                <span>{item.type}</span>
+                <span>{item.year}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <span class="experience-card__action">
+                {id ? 'Lihat pengalaman' : 'View experience'} <ArrowIcon direction="up-right" />
+              </span>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <p class="experience-section__note">
+      {id
+        ? '[PLACEHOLDER: gambar, tahun, dan detail proyek menunggu verifikasi serta persetujuan publikasi.]'
+        : '[PLACEHOLDER: images, years, and project details await verification and publication approval.]'}
+    </p>
+  </div>
+</section>
+
+<style>
+  .experience-section { background: var(--home-white); }
+  .experience-section__header { display: grid; gap: 1.5rem; }
+  .experience-section__header :global(.home-heading) { max-width: 15ch; }
+  .experience-grid { display: grid; gap: 1.5rem; margin-top: clamp(2.75rem, 5vw, 4.5rem); }
+  .experience-card { min-width: 0; transition: transform 200ms var(--home-ease); }
+  .experience-card > a { height: 100%; display: grid; color: var(--home-black); text-decoration: none; }
+  .experience-card__visual { position: relative; min-width: 0; margin: 0; overflow: hidden; background: var(--home-black); }
+  .experience-card__visual :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(.66) contrast(1.06) brightness(.9);
+    transition: filter 260ms var(--home-ease), transform 300ms var(--home-ease);
+  }
+  .experience-card__content { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; padding-top: 1.25rem; border-top: 3px solid var(--home-red); }
+  .experience-card__meta { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: var(--home-muted); font-size: .66rem; font-weight: 780; line-height: 1.4; text-transform: uppercase; }
+  .experience-card h3 { max-width: 19ch; margin: 1rem 0 0; font-family: var(--font-display); font-size: var(--brand-type-card); font-weight: 590; letter-spacing: -.03em; line-height: 1.04; text-wrap: balance; }
+  .experience-card p { max-width: 39rem; margin: .8rem 0 0; color: var(--home-muted); font-size: .84rem; line-height: 1.55; }
+  .experience-card__action { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .45rem; margin-top: auto; padding-top: 1.25rem; color: var(--home-red-deep); font-size: .73rem; font-weight: 800; }
+  .experience-card__action :global(.arrow-icon) { transition: transform 180ms var(--home-ease); }
+  .experience-section__note { max-width: 48rem; margin: 1.5rem 0 0; color: var(--home-muted); font-size: .64rem; line-height: 1.5; }
+
+  @media (min-width: 1000px) {
+    .experience-section__header { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+    .experience-grid { grid-template-columns: minmax(0, 1.38fr) minmax(21rem, .62fr); grid-template-rows: repeat(2, minmax(15rem, 1fr)); gap: 1.75rem; }
+    .experience-card--featured { grid-row: 1 / span 2; }
+    .experience-card--featured > a { grid-template-rows: minmax(0, 1fr) auto; }
+    .experience-card--featured .experience-card__visual { aspect-ratio: 16 / 10; }
+    .experience-card--featured .experience-card__content { min-height: 12.5rem; }
+    .experience-card:not(.experience-card--featured) > a { grid-template-columns: minmax(10rem, .88fr) minmax(0, 1.12fr); gap: 1.15rem; }
+    .experience-card:not(.experience-card--featured) .experience-card__visual { min-height: 15rem; }
+    .experience-card:not(.experience-card--featured) .experience-card__content { padding-top: 1rem; }
+    .experience-card:not(.experience-card--featured) h3 { margin-top: .75rem; font-size: clamp(1.35rem, 1.7vw, 1.65rem); }
+    .experience-card:not(.experience-card--featured) p { font-size: .75rem; }
+  }
+  @media (min-width: 680px) and (max-width: 999px) {
+    .experience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .experience-card--featured { grid-column: 1 / -1; }
+    .experience-card__visual { aspect-ratio: 16 / 10; }
+  }
+  @media (max-width: 679px) {
+    .experience-card__visual { aspect-ratio: 16 / 10; }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .experience-card:hover,
+    .experience-card:focus-within { transform: translateY(-4px); }
+    .experience-card:hover .experience-card__visual :global(img),
+    .experience-card:focus-within .experience-card__visual :global(img) { filter: saturate(.82) contrast(1.05) brightness(.94); transform: scale(1.025); }
+    .experience-card:hover .experience-card__action :global(.arrow-icon),
+    .experience-card:focus-within .experience-card__action :global(.arrow-icon) { transform: translate(3px, -3px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .experience-card,
+    .experience-card__visual :global(img),
+    .experience-card__action :global(.arrow-icon) { transform: none !important; transition-duration: .01ms; }
+  }
+</style>

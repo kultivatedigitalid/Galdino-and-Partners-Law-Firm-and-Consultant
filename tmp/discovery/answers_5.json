@@ -1,0 +1,119 @@
+[
+  {
+    "number": "5.1",
+    "title": "Urutkan tiga pekerjaan terpenting website.",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Urutan kerja yang paling dekat dengan Purpose project adalah: (1) menjelaskan penawaran/layanan perizinan dan legal-regulasi agar decision-maker memahami kebutuhan; (2) membantu pengunjung menilai kredibilitas melalui profil, proses, pengalaman, dan konten; (3) memulai konsultasi melalui form, WhatsApp, atau email. Project juga menempatkan regulatory content sebagai tugas penting, tetapi dokumentasi tidak secara eksplisit menyebut tiga item tersebut sebagai ranking yang disetujui stakeholder.",
+    "short": "Draft urutan dari Purpose project: 1) menjelaskan penawaran; 2) membangun/menilai kredibilitas; 3) menghasilkan konsultasi. Ranking stakeholder belum eksplisit.",
+    "sources": ["docs/PROJECT_CONTEXT.md — Purpose.", "src/components/HomePage.astro — section composition layanan, company, experience, insight, CTA.", "src/components/ContactPage.astro — kanal konsultasi."],
+    "missing": "Persetujuan ranking dan KPI untuk tiap pekerjaan.",
+    "recommendation": "Bukan kondisi project saat ini — validasi urutan ini dengan stakeholder dan hubungkan tiap pekerjaan ke satu KPI.",
+    "additional": "Prioritas bisnis, funnel, dan indikator keberhasilan."
+  },
+  {
+    "number": "5.2",
+    "title": "Bagaimana alur setelah pengunjung tertarik?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Alur terimplementasi: pengunjung memilih CTA konsultasi menuju /{locale}/contact/ atau membuka WhatsApp; formulir meminta nama, email, nomor WhatsApp, perusahaan/organisasi, jenis layanan, pesan, dan consent, dengan locale serta honeypot tersembunyi; browser mengirim FormData ke POST /api/contact; server memeriksa origin dan content type, rate limit, normalisasi/validasi, lalu mengirim email melalui Resend ke recipient yang ditentukan CONTACT_TO_EMAIL. Contact copy menyatakan informasi awal akan ditinjau sebelum langkah berikutnya diusulkan. Nama penerima/PIC, workflow follow-up aktual, dan waktu respons normal tidak tersedia. WhatsApp adalah jalur terpisah dan bukan tujuan otomatis submission form.",
+    "short": "CTA → halaman kontak/WhatsApp; form → POST /api/contact → validasi + rate limit → email via Resend. PIC, langkah follow-up internal, dan waktu respons belum tersedia.",
+    "sources": ["src/components/ContactForm.astro — field, client validation, fetch, status, dan reset.", "src/pages/api/contact.ts — POST flow, rate limit, validation, Resend delivery, error responses.", "src/components/ContactPage.astro — janji review informasi awal dan kanal langsung.", ".env.example — hanya nama variabel konfigurasi tujuan/sender, bukan workflow bisnis."],
+    "missing": "PIC penerima, triage, assignment, SLA respons, dan langkah sales setelah email.",
+    "recommendation": "Bukan kondisi project saat ini — dokumentasikan owner inbox, routing, SLA, dan fallback agar implementasi teknis tersambung ke proses bisnis.",
+    "additional": "Nama inbox/owner, SOP lead handling, jam layanan, dan response-time target."
+  },
+  {
+    "number": "5.3",
+    "title": "Inquiry seperti apa yang dianggap berkualitas?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Form dan copy meminta perusahaan/organisasi, jenis layanan, aktivitas/kebutuhan, lokasi, dan target waktu; ini memberi struktur awal untuk menilai inquiry. Namun tidak ada definisi qualified lead terkait industri, wilayah, anggaran/nilai proyek, decision authority, readiness, atau disqualification.",
+    "short": "Data awal yang diminta: organisasi, layanan, aktivitas/kebutuhan, lokasi, dan target waktu; definisi qualified lead belum ada.",
+    "sources": ["src/components/ContactForm.astro — field wajib dan message prompt.", "src/components/home/HomeFinalCta.astro — meminta aktivitas, lokasi, dan target.", "src/utils/contact.ts — aturan validasi field."],
+    "missing": "Kriteria kualitas, scoring, budget, authority, need, timing, wilayah, dan minimum engagement.",
+    "recommendation": "Bukan kondisi project saat ini — definisikan lead qualification dan sesuaikan field tanpa menambah friksi yang tidak perlu.",
+    "additional": "Kriteria deal yang diterima/ditolak dan data win/loss."
+  },
+  {
+    "number": "5.4",
+    "title": "Informasi apa yang wajib tersedia di website?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Informasi/struktur yang sudah ada: Home; Profile perusahaan; direktori tiga nama tim dan detail profil bilingual; Services (4 kategori bersama dan 15 entri homepage); Our Experiences/Projects; proses empat langkah; Blog/Insight; Contact; disclaimer informasi umum; direct WhatsApp/email; metadata/structured data. Belum final atau masih placeholder: legal name, alamat, registrasi, tahun berdiri, credential/kontak profesional, statistik, harga tertentu, project outcome/tahun, client logos, testimonial, official photography, privacy policy, terms, video, serta detail scope. Tidak ditemukan certificate/permit showcase, company-profile download, careers, tender information, FAQ, atau verified achievements. REQUIREMENTS menyebut FAQ pada homepage, tetapi implementasi HomePage tidak memuat komponen FAQ; kondisi aktual diprioritaskan.",
+    "short": "Tersedia: layanan, proses, profil/tim, experience placeholder, blog, kontak, disclaimer, bilingual metadata. Banyak identitas/bukti masih placeholder; FAQ/download/certificates/careers belum diimplementasikan.",
+    "sources": ["src/components/HomePage.astro — section aktual homepage tanpa FAQ.", "src/components/ContentPage.astro — Services dan Projects.", "src/components/ProfilePage.astro dan src/components/PersonProfilePage.astro — profil/tim.", "src/components/BlogIndexPage.astro dan src/components/BlogPostPage.astro — blog.", "src/data/site.ts, src/data/home.ts, src/data/profile.ts — status placeholder.", "docs/REQUIREMENTS.md — requirement FAQ yang berbeda dari implementasi aktual."],
+    "missing": "Keputusan informasi wajib final dan data siap publikasi.",
+    "recommendation": "Bukan kondisi project saat ini — tetapkan content acceptance checklist; jangan launch sebagai final sebelum placeholder kritis diselesaikan.",
+    "additional": "Approved content inventory, legal/privacy copy, evidence, credential, dan scope final."
+  },
+  {
+    "number": "5.5",
+    "title": "Apakah website membutuhkan fungsi khusus?",
+    "status": "Terkonfirmasi",
+    "answer": "Fungsi khusus yang benar-benar terimplementasi: lebih dari satu bahasa (ID/EN); file-based localized routes; blog Markdown dengan filter kategori/tags, related posts, paired translationKey, dan draft exclusion; dynamic static routes untuk artikel dan profil tim; RSS per locale; sitemap integration dan robots; serverless contact form; external email delivery; optional distributed rate limiting; same-origin/content-type checks; carousels/drag/keyboard; scroll-preserving language switch; reduced-motion handling; schema JSON-LD. Tidak ditemukan banyak cabang, large product catalog/search produk, upload dokumen, download katalog, careers, event registration, login/user area, payment online, CRM/ERP, atau CMS. Dokumentasi menyatakan no CMS dan no file upload.",
+    "short": "Centang: lebih dari satu bahasa. Lainnya: bilingual blog/RSS/SEO, serverless contact + email, optional rate limit, accessible carousels. Tidak ada login, upload, payment, CMS, CRM/ERP, atau product search.",
+    "sources": ["astro.config.mjs — i18n, static output, Vercel adapter, sitemap.", "src/pages — route ID/EN, dynamic blog/profile, RSS, robots, API.", "src/pages/api/contact.ts — serverless integration.", "src/components/CompanyGallery.astro dan src/components/home/ServiceCarousel.astro — carousel interactions.", "docs/PROJECT_CONTEXT.md — no CMS; no WebGL/3D.", "docs/SERVERLESS_CONTACT_FORM.md — no file uploads."],
+    "recommendation": "Bukan kondisi project saat ini — jangan mencentang fungsi yang hanya disebut sebagai pilihan form atau requirement lama tanpa file implementasi."
+  },
+  {
+    "number": "5.6",
+    "title": "Apabila membutuhkan lebih dari satu bahasa, jelaskan kebutuhannya.",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Bahasa yang diimplementasikan adalah Bahasa Indonesia dan English. Bahasa Indonesia adalah default tetapi tetap diprefix /id/; English memakai /en/; root / redirect 302 ke /id/. Seluruh fixed page tersedia pada kedua locale, tiga artikel memiliki pasangan translationKey, dan tiga person routes menggunakan slug sama di kedua bahasa. Source sudah berisi materi bilingual. Penyedia/penanggung jawab terjemahan dan proses approval tidak disebutkan.",
+    "short": "Bahasa: ID dan EN; seluruh fixed routes, 3 pasangan artikel, dan 3 profil tim sudah punya versi bilingual. Penyedia/approver terjemahan belum ada.",
+    "sources": ["astro.config.mjs — locale list, default, prefix behavior.", "src/pages/index.astro — redirect root ke /id/.", "src/pages/id dan src/pages/en — route pairs.", "src/content/blog — tiga pasangan artikel via translationKey.", "docs/I18N_GUIDELINES.md — parity dan natural translation rules."],
+    "missing": "Translation owner, review workflow, dan legal terminology approver.",
+    "recommendation": "Bukan kondisi project saat ini — tetapkan penerjemah/reviewer dan checklist parity sebelum publish.",
+    "additional": "Nama translation owner, legal reviewer, dan source-of-truth bahasa."
+  },
+  {
+    "number": "5.7",
+    "title": "Untuk kebutuhan apa perusahaan paling ingin ditemukan di Google?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Topic model project menetapkan tema: konsultan perizinan, law firm Indonesia, perizinan usaha, legalitas perusahaan, OSS-RBA, izin sektoral, kepatuhan regulasi, serta project and investment licensing. Services diarahkan ke commercial intent; Profile dan Projects ke entity trust; blog ke informational intent. Wilayah yang dinyatakan adalah Indonesia. Tidak ada keyword research, Search Console, volume, ranking, customer-language evidence, atau daftar website yang sering muncul.",
+    "short": "Tema SEO project: konsultan perizinan/law firm Indonesia, perizinan usaha, legalitas, OSS-RBA, izin sektoral, compliance, project/investment licensing. Data keyword/ranking/competitor SERP belum ada.",
+    "sources": ["docs/SEO_GUIDELINES.md — Topic model dan page intent.", "src/components/HomePage.astro — localized SEO title/description.", "src/content/blog — enam artikel bilingual pada OSS-RBA, NIB, ekspansi, dan compliance.", "src/layouts/BaseLayout.astro — canonical, hreflang, Open Graph, Organization/LegalService schema."],
+    "missing": "Keyword research, wilayah/kota prioritas, bahasa pelanggan, volume, current rankings, dan SERP competitors.",
+    "recommendation": "Bukan kondisi project saat ini — gunakan topic model sebagai seed, lalu lakukan riset berbasis data terpisah; jangan menganggapnya hasil keyword research.",
+    "additional": "Search Console/analytics, target market, keyword data, dan SERP review."
+  },
+  {
+    "number": "5.8",
+    "title": "Apakah perusahaan sudah memiliki website dan riwayat SEO?",
+    "status": "Belum dapat dikonfirmasi",
+    "answer": "Codebase membangun website baru, tetapi domain pada konfigurasi masih example placeholder dan tidak ada data website lama, analytics, Search Console, ranking, traffic, redirect map, atau riwayat pekerjaan SEO. Implementasi SEO teknis tersedia, tetapi itu bukan riwayat SEO.",
+    "short": "Website lama dan riwayat SEO tidak tersedia; domain masih placeholder. SEO teknis baru sudah diimplementasikan.",
+    "sources": ["astro.config.mjs — fallback site memakai example domain.", "src/data/site.ts — SITE.domain masih example domain.", "docs/PROJECT_CONTEXT.md — domain belum final.", "docs/SEO_GUIDELINES.md — checklist sebelum launch, bukan historical data."],
+    "missing": "URL lama, platform, sitemap, ranking pages, traffic, backlinks, redirect requirements, dan bagian yang harus dipertahankan.",
+    "recommendation": "Bukan kondisi project saat ini — audit domain lama dan buat redirect inventory sebelum mengganti website.",
+    "additional": "URL produksi/legacy, Search Console, analytics, sitemap, crawl, dan historical SEO reports."
+  },
+  {
+    "number": "5.9",
+    "title": "Setelah formulir diisi, data perlu dikirim atau dicatat ke mana?",
+    "status": "Terkonfirmasi",
+    "answer": "Data form dikirim sebagai email melalui Resend ke mailbox yang dikonfigurasi dengan CONTACT_TO_EMAIL. Website tidak menyimpan submission. Upstash, bila dikonfigurasi, hanya dipakai untuk counter rate limit dan bukan penyimpanan isi lead. WhatsApp dan mailto tersedia sebagai kanal langsung terpisah; submission form tidak otomatis dikirim ke WhatsApp. Tidak ada CRM, Google Sheets, ERP, marketing automation, helpdesk, recruitment system, payment system, atau database lead pada source.",
+    "short": "Centang Email. Form → Resend → mailbox CONTACT_TO_EMAIL; tidak disimpan di website. WhatsApp terpisah; tidak ada CRM/Sheets/ERP/automation.",
+    "sources": ["src/pages/api/contact.ts — Resend API call dan env names.", "docs/SERVERLESS_CONTACT_FORM.md — no submission storage dan external processors.", "src/components/ContactPage.astro — WhatsApp/email direct channels."],
+    "recommendation": "Bukan kondisi project saat ini — konfirmasi retention/privacy pada mailbox dan tambah CRM hanya bila workflow bisnis memerlukannya."
+  },
+  {
+    "number": "5.10",
+    "title": "Apa yang perlu dapat diukur setelah website diluncurkan?",
+    "status": "Belum dapat dikonfirmasi",
+    "answer": "Tidak ada analytics, tag manager, event tracking, conversion API, consent manager, atau data layer pada dependency/config/source. Titik interaksi yang dapat diukur secara potensial memang ada—CTA WhatsApp, mailto, form submit, service/detail clicks, article visits, language switch—tetapi tracking-nya belum diimplementasikan dan project tidak menetapkan KPI.",
+    "short": "Belum ada analytics/event tracking. WhatsApp click, form submit, organic traffic, dan lead quality adalah kandidat, bukan kondisi terimplementasi.",
+    "sources": ["package.json — tidak memuat analytics dependency.", "src/layouts/BaseLayout.astro — tidak memuat analytics script.", "src/components/ContactForm.astro — form behavior tanpa event analytics.", "vercel.json — CSP connect-src hanya self; external analytics belum diizinkan."],
+    "missing": "KPI, tool analytics, consent basis, event naming, ownership, dan target.",
+    "recommendation": "Bukan kondisi project saat ini — minimal ukur form success, WhatsApp click, organic landing traffic, dan qualified lead setelah privacy/consent disetujui.",
+    "additional": "Measurement plan, legal/privacy approval, analytics vendor, baseline, dan targets."
+  },
+  {
+    "number": "5.11",
+    "title": "Siapa yang akan memperbarui konten website setelah diluncurkan?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Model maintenance yang didokumentasikan adalah file-based: business/navigation facts di src/data/site.ts, homepage di src/data/home.ts, profile di src/data/profile.ts, dan artikel pada Markdown Content Collections. Tidak ada CMS. Workflow meminta paired translations, draft selama review, legal/editorial approval, updatedDate untuk revisi substantif, dan build/QA. Tidak ada nama/jabatan penanggung jawab, frekuensi, atau kebutuhan training.",
+    "short": "Konten dipelihara melalui TypeScript data + Markdown tanpa CMS; owner, frekuensi, dan training belum ditetapkan.",
+    "sources": ["docs/COMPONENT_GUIDELINES.md — lokasi sumber data/content.", "docs/DEVELOPMENT_WORKFLOW.md — content workflow dan QA.", "docs/PROJECT_CONTEXT.md — no CMS.", "src/content.config.ts — schema blog."],
+    "missing": "Content owner, reviewer legal, deployment owner, cadence, dan skill akses repository.",
+    "recommendation": "Bukan kondisi project saat ini — tunjuk content owner dan developer/deployment owner; siapkan training Git/Markdown atau pertimbangkan CMS hanya bila workflow editorial membutuhkan.",
+    "additional": "Nama owner, kemampuan teknis, frekuensi update, approval chain, dan kebutuhan training."
+  }
+]

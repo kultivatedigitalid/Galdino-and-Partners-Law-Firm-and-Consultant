@@ -1,0 +1,98 @@
+[
+  {
+    "number": "6.1",
+    "title": "Materi apa saja yang sudah dimiliki dan siap digunakan?",
+    "status": "Sebagian terkonfirmasi",
+    "short": "Project sudah memuat logo, aset gambar lokal, data layanan, profil tim awal, artikel bilingual, dan pedoman desain; sebagian besar bukti perusahaan dan aset resmi masih berstatus placeholder, concept-generated, atau belum terverifikasi.",
+    "answer": "Materi yang tersedia di repository meliputi logo utama dan variannya, favicon/OG asset, galeri perusahaan, foto profil perusahaan, tiga potret tim, tiga gambar pengalaman/project, katalog layanan, profil tim awal, tiga artikel Bahasa Indonesia beserta tiga terjemahan Inggris, serta dokumentasi requirements/design/implementation. Kesiapan penggunaan final belum dapat disamaratakan: dokumentasi menandai hero/profile/team imagery sebagai generated concept/replaceable, project imagery sebagai replaceable context image, dan sejumlah data perusahaan sebagai placeholder. Tidak ditemukan company profile final, sertifikat/penghargaan terverifikasi, testimoni, logo klien berizin, bukti proyek terverifikasi, dokumen legal publik, atau video resmi.",
+    "sources": [
+      "public/assets/ — aset logo, favicon, OG, galeri, profile, team, dan experience yang tersedia lokal.",
+      "src/data/site.ts; src/data/home.ts; src/data/profile.ts — materi teks layanan, perusahaan, tim, dan homepage.",
+      "src/content/blog/id/; src/content/blog/en/ — tiga artikel per bahasa.",
+      "docs/DESIGN_SYSTEM.md — status generated concept, replaceable image, dan aturan aset.",
+      "docs/PROJECT_CONTEXT.md; docs/CONTENT_MASTER.md — daftar data/aset yang masih placeholder atau memerlukan verifikasi."
+    ],
+    "missing": "Hak penggunaan, persetujuan final, sumber asli, lisensi, dan status keaslian seluruh aset gambar tidak tercatat lengkap di project.",
+    "recommendation": "Rekomendasi (bukan kondisi project saat ini): buat asset register yang memuat pemilik, sumber, lisensi/consent, status approved, versi final, dan halaman penggunaan untuk setiap aset.",
+    "additional": "Diperlukan konfirmasi stakeholder dan bukti hak penggunaan untuk mengubah status aset dari konsep/placeholder menjadi siap produksi."
+  },
+  {
+    "number": "6.2",
+    "title": "Apakah ada data atau angka yang bisa meningkatkan kepercayaan?",
+    "status": "Belum dapat dikonfirmasi",
+    "short": "Project menyediakan slot statistik, tetapi seluruh nilainya masih [DATA]; tidak ada angka kepercayaan yang terverifikasi.",
+    "answer": "Homepage memiliki empat slot statistik untuk projects handled, licensing processes supported, industries served, dan years of combined experience. Semua nilai aktual masih menggunakan marker [DATA]. Tahun berdiri juga belum terverifikasi. Tidak ditemukan angka keberhasilan, jumlah klien, jumlah perkara/proyek, SLA, rating, atau metrik lain yang dapat dinyatakan sebagai fakta.",
+    "sources": [
+      "src/data/home.ts — HOME_STATS berisi empat metrik dengan value [DATA].",
+      "docs/CONTENT_MASTER.md — statistik, founding year, dan business data ditandai placeholder/unverified.",
+      "docs/PLACEHOLDER_REGISTER.md — daftar marker [DATA] yang wajib diganti sebelum go-live."
+    ],
+    "missing": "Nilai statistik, periode pengukuran, definisi metrik, pemilik data, dan bukti pendukung belum tersedia.",
+    "recommendation": "Rekomendasi (bukan kondisi project saat ini): hanya tampilkan angka setelah definisi, periode, sumber, dan approver terdokumentasi; jika belum, hapus blok statistik dari rilis produksi.",
+    "additional": "Diperlukan dataset internal terverifikasi beserta metode perhitungan dan persetujuan penggunaan publik."
+  },
+  {
+    "number": "6.3",
+    "title": "Link folder aset",
+    "status": "Belum dapat dikonfirmasi",
+    "short": "Tidak ditemukan link folder aset eksternal; project hanya merujuk aset lokal di public/assets dan source asset directories.",
+    "answer": "Tidak ada URL Google Drive, Dropbox, OneDrive folder, DAM, atau repository aset eksternal yang tercatat dalam project. Aset yang dipakai website berada lokal di public/assets, src/assets, dan source file terkait.",
+    "sources": [
+      "public/assets/ — lokasi aset publik yang digunakan website.",
+      "src/assets/ — lokasi aset sumber yang diimpor oleh komponen.",
+      "docs/PROJECT_CONTEXT.md; docs/HANDOFF_CHECKLIST.md — meminta asset mapping/final approval, tanpa memberikan link folder eksternal."
+    ],
+    "missing": "Link folder aset bersama dan hak aksesnya tidak tersedia.",
+    "recommendation": "Rekomendasi (bukan kondisi project saat ini): sediakan satu folder aset resmi dengan struktur logo, photography, team, project evidence, legal approvals, dan archive; cantumkan link serta aturan akses di handoff.",
+    "additional": "Diperlukan link folder dari pemilik project dan konfirmasi siapa yang boleh mengakses/mengubah aset."
+  },
+  {
+    "number": "6.4",
+    "title": "Siapa yang mengumpulkan dan menyetujui aset?",
+    "status": "Belum dapat dikonfirmasi",
+    "short": "Tidak ada nama asset owner atau approver final di project.",
+    "answer": "Dokumentasi menyebut perlunya owner/approver untuk konten dan aset, tetapi tidak menetapkan nama atau jabatan yang bertanggung jawab mengumpulkan maupun menyetujui aset.",
+    "sources": [
+      "docs/HANDOFF_CHECKLIST.md — approval, ownership, dan replacement checklist masih perlu dilengkapi.",
+      "docs/PROJECT_CONTEXT.md — source of truth memerlukan client-approved facts tanpa menetapkan PIC.",
+      "docs/PLACEHOLDER_REGISTER.md — owner/resolution untuk placeholder belum seluruhnya ditetapkan."
+    ],
+    "missing": "Nama PIC pengumpulan aset, approver legal/brand, alur persetujuan, dan SLA belum tersedia.",
+    "recommendation": "Rekomendasi (bukan kondisi project saat ini): tetapkan minimal Asset PIC, Brand Approver, dan Legal/Compliance Approver beserta status dan tanggal approval per aset.",
+    "additional": "Diperlukan keputusan stakeholder mengenai nama, jabatan, wewenang, dan proses approval."
+  },
+  {
+    "number": "6.5",
+    "title": "Apakah ada batasan penggunaan aset?",
+    "status": "Terkonfirmasi",
+    "short": "Ada: identitas klien/proyek, testimoni, dan logo harus berizin; kerahasiaan wajib diverifikasi; concept/placeholder tidak boleh dianggap final.",
+    "answer": "Project menetapkan bahwa client logos, testimonials, project identities, dan detail sensitif hanya boleh dipublikasikan setelah consent/approval. Confidentiality constraints harus diverifikasi. Generated concept dan replaceable imagery harus diganti atau disetujui sebelum go-live. Placeholder, mock data, dan marker [DATA]/[VERIFY] tidak boleh dianggap sebagai fakta final. Artikel hukum memerlukan subject-matter dan current-law review sebelum publikasi final.",
+    "sources": [
+      "docs/PROJECT_CONTEXT.md — confidentiality, consent, client-approved facts, dan batas klaim.",
+      "docs/DESIGN_SYSTEM.md — generated concept/replaceable asset rules dan larangan penggunaan final tanpa approval.",
+      "docs/CONTENT_MASTER.md — legal claims, credentials, project evidence, dan contact data memerlukan verifikasi.",
+      "docs/HANDOFF_CHECKLIST.md — content, legal, accessibility, asset, dan go-live approvals.",
+      "src/data/site.ts — disclaimer bahwa outcome/approval tetap berada pada regulator/authority terkait."
+    ],
+    "missing": "Dokumen lisensi, consent release, embargo, dan daftar aset dengan batasan spesifik belum disertakan.",
+    "recommendation": "Rekomendasi (bukan kondisi project saat ini): simpan bukti consent/lisensi per aset dan terapkan approval gate sebelum aset dipindahkan ke status production-ready.",
+    "additional": "Diperlukan dokumen consent/lisensi dan keputusan legal untuk setiap aset pihak ketiga atau materi klien."
+  },
+  {
+    "number": "6.6",
+    "title": "Aset apa yang masih perlu dibuat atau diperbarui?",
+    "status": "Terkonfirmasi",
+    "short": "Backlog project mencakup identitas perusahaan resmi, foto/credential tim, bukti proyek, statistik, logo/testimoni berizin, dokumen legal publik, rincian layanan final, dan video resmi.",
+    "answer": "Project secara eksplisit masih memerlukan: legal name, office address, registration/legal identifiers, domain produksi dan founding year; final service scope/deliverables/exclusions/prices/timelines; official team photography, credentials, bios, dan contact details; verified project/case evidence beserta outcomes; client logos dan testimonials dengan consent; statistik terverifikasi; privacy/terms; official company video; penggantian concept/replaceable imagery; serta keputusan final atas CTA/WhatsApp/email dan konten legal. Target tanggal dan owner belum tersedia.",
+    "sources": [
+      "docs/PLACEHOLDER_REGISTER.md — daftar placeholder dan data yang wajib diselesaikan.",
+      "docs/CONTENT_MASTER.md — identity, services, team, evidence, statistics, legal copy, dan contact gaps.",
+      "docs/DESIGN_SYSTEM.md — concept/replaceable imagery yang perlu diganti atau disetujui.",
+      "docs/HANDOFF_CHECKLIST.md — remaining verification, approvals, production assets, legal pages, dan release gates.",
+      "src/data/site.ts; src/data/home.ts; src/data/profile.ts — marker [VERIFY], [DATA], dan placeholder yang masih hidup di implementasi."
+    ],
+    "missing": "Owner, prioritas, budget, sumber aset, dan target penyelesaian per item tidak tercatat.",
+    "recommendation": "Rekomendasi (bukan kondisi project saat ini): ubah backlog ini menjadi asset/content tracker dengan kolom owner, approver, due date, evidence link, consent/licence, destination page, dan release status.",
+    "additional": "Diperlukan keputusan stakeholder tentang prioritas rilis, PIC, tanggal target, dan standar bukti untuk setiap item."
+  }
+]

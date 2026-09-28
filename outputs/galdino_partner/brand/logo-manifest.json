@@ -1,0 +1,126 @@
+{
+  "brand": "Galdino & Partner",
+  "master_source": "outputs/galdino_partner/website/public/assets/gp-logo-brand.png",
+  "master_sha256": "92c2079247e08515100b3c7861c738db9b280f591b66f2dd6ffe3de187e012ed",
+  "master_dimensions": [
+    600,
+    413
+  ],
+  "logo_geometry": "Preserved exactly; no redesign or recolouring.",
+  "backgrounds": {
+    "white": "#ffffff",
+    "black": "#0b0b0c",
+    "transparent": "alpha"
+  },
+  "format_note": "JPEG does not support transparency, so only white and black background variants are supplied.",
+  "assets": [
+    {
+      "file": "galdino-partner-logo-black-bg.jpg",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        600,
+        413
+      ],
+      "alpha_extrema": null,
+      "sha256": "2a836d479e37e9cca18cb651aa08ae47e9f67ea96e4a78924695cf270ae552cd",
+      "bytes": 134375
+    },
+    {
+      "file": "galdino-partner-logo-black-bg.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size": [
+        600,
+        413
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "sha256": "6729618be3e1d75391ff4b80bca24f393bcabe9d86eaf8b3351b2789eba0754f",
+      "bytes": 147467
+    },
+    {
+      "file": "galdino-partner-logo-black-bg.webp",
+      "format": "WEBP",
+      "mode": "RGB",
+      "size": [
+        600,
+        413
+      ],
+      "alpha_extrema": null,
+      "sha256": "4917a8bffd1319394892a08230a6fa1798a6b3c2685ec3f1a7fbd4ed23799861",
+      "bytes": 98870
+    },
+    {
+      "file": "galdino-partner-logo-transparent.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size": [
+        600,
+        413
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "92c2079247e08515100b3c7861c738db9b280f591b66f2dd6ffe3de187e012ed",
+      "bytes": 154964
+    },
+    {
+      "file": "galdino-partner-logo-transparent.webp",
+      "format": "WEBP",
+      "mode": "RGBA",
+      "size": [
+        600,
+        413
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "1fdfe9853cf4dfc4655150d554667c9c57012a517dda10bf41fdff9018f35e45",
+      "bytes": 110374
+    },
+    {
+      "file": "galdino-partner-logo-white-bg.jpg",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        600,
+        413
+      ],
+      "alpha_extrema": null,
+      "sha256": "11b88dc7686fd62b7688a739a44e9894af273ef285ca1aaab02fafab9fab3de1",
+      "bytes": 131220
+    },
+    {
+      "file": "galdino-partner-logo-white-bg.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "size": [
+        600,
+        413
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "sha256": "0fac32db197618e727a3023be10d663d06169a27bf69206fb6b54560252b5336",
+      "bytes": 145945
+    },
+    {
+      "file": "galdino-partner-logo-white-bg.webp",
+      "format": "WEBP",
+      "mode": "RGB",
+      "size": [
+        600,
+        413
+      ],
+      "alpha_extrema": null,
+      "sha256": "5e8cedc915f472fd9909323943ac1e3e4a213c984728e2ee3111eca333e17f4a",
+      "bytes": 99296
+    }
+  ]
+}

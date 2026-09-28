@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="description" content="Preview konsep interaktif WebGL untuk website Galdino and Partner." />
+    <title>Mockup 3 - Regulatory Constellation | Galdino and Partner</title>
+    <link rel="stylesheet" href="assets/base.css" />
+    <link rel="stylesheet" href="assets/mockup-3.css" />
+    <script src="assets/ui.js" defer></script>
+    <script src="assets/regulatory-webgl.js" defer></script>
+  </head>
+  <body class="mockup-three">
+    <a class="skip-link" href="#main">Lewati ke konten utama</a>
+    <div class="concept-notice">Eksplorasi desain 03 - WebGL adalah opsi pembanding; konten utama tetap tersedia tanpa animasi.</div>
+
+    <header class="site-header" data-sticky="true">
+      <div class="container nav-shell">
+        <a class="brand" href="#top" aria-label="Galdino and Partner - kembali ke atas"><span class="brand-mark">G&amp;P</span><span>Galdino and Partner</span></a>
+        <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+        <nav class="nav-links" aria-label="Navigasi utama" data-menu data-open="false">
+          <a href="#meaning">Konsep</a><a href="#services">Services</a><a href="#process">Process</a><a href="#experience">Experience</a><a href="#insights">Blog</a><a class="button" href="#contact">Konsultasi awal</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Legal &amp; regulatory intelligence</p>
+            <h1>Kompleksitas dipetakan menjadi langkah yang jelas.</h1>
+            <p class="lede">Galdino and Partner membantu memahami keterkaitan kebutuhan hukum, dokumen, perizinan, dan kepatuhan sebelum menentukan ruang lingkup pendampingan.</p>
+            <div class="signal-line" aria-label="Prinsip layanan"><span>Pemetaan kebutuhan</span><span>Ruang lingkup terukur</span><span>Status terkonfirmasi</span></div>
+            <div class="button-row"><a class="button" href="#contact">Jadwalkan konsultasi awal</a><a class="button button--secondary" href="#meaning">Mengapa visual ini relevan?</a></div>
+          </div>
+
+          <div class="webgl-stage" data-regulatory-stage data-webgl-state="loading" aria-describedby="webgl-description">
+            <canvas aria-hidden="true"></canvas>
+            <svg class="webgl-fallback" viewBox="0 0 500 500" role="img" aria-label="Fallback statis berupa jaringan kebutuhan hukum dan perizinan">
+              <path d="M250 250 140 150M250 250 360 140M250 250 390 300M250 250 140 355M140 150 360 140M360 140 390 300M390 300 140 355M140 355 140 150M140 150 82 242M82 242 140 355M360 140 438 220M438 220 390 300" fill="none" />
+              <circle cx="250" cy="250" r="9" class="accent"/><circle cx="140" cy="150" r="6"/><circle cx="360" cy="140" r="6"/><circle cx="390" cy="300" r="6"/><circle cx="140" cy="355" r="6"/><circle cx="82" cy="242" r="4"/><circle cx="438" cy="220" r="4"/>
+            </svg>
+            <span class="stage-caption">Lightweight WebGL island</span>
+            <span class="stage-label stage-label--one"><b>Input</b><span>Konteks bisnis</span></span>
+            <span class="stage-label stage-label--two"><b>Dependencies</b><span>Dokumen &amp; regulasi</span></span>
+            <span class="stage-label stage-label--three"><b>Authority</b><span>Keputusan berwenang</span></span>
+            <span class="stage-label stage-label--four"><b>Output</b><span>Langkah &amp; status</span></span>
+          </div>
+          <p id="webgl-description" class="form-note">Elemen visual merepresentasikan hubungan antar-persyaratan; bukan alat diagnosis hukum otomatis.</p>
+        </div>
+      </section>
+
+      <section class="meaning-band section--compact" id="meaning">
+        <div class="container meaning-grid">
+          <div class="meaning-item"><p class="eyebrow">Makna visual</p><strong>Bukan dekorasi.</strong><span>Jaringan menggambarkan bahwa satu kebutuhan bisnis dapat memiliki dependensi hukum dan perizinan yang saling terkait.</span></div>
+          <div class="meaning-item"><strong>Node</strong><span>Kebutuhan, dokumen, komitmen, atau pihak yang relevan dalam suatu proses.</span></div>
+          <div class="meaning-item"><strong>Connection</strong><span>Ketergantungan yang perlu dipetakan sebelum langkah kerja ditentukan.</span></div>
+          <div class="meaning-item"><strong>Core</strong><span>Tujuan bisnis klien yang menjadi pusat pembahasan, bukan teknologi itu sendiri.</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-head"><div><p class="eyebrow">Service architecture</p><h2>Dua jalur, satu konteks bisnis.</h2></div><p class="lede">Interaksi hanya membantu orientasi. Nama layanan rinci dan sektor final tetap menunggu validasi kompetensi serta kesiapan operasional.</p></div>
+          <div class="service-map">
+            <article class="service-node"><span class="tag">Pillar 01</span><h3>Legal Services</h3><p>Memahami persoalan hukum bisnis dan menentukan ruang lingkup pendampingan yang relevan berdasarkan konteks serta dokumen awal.</p><a class="text-link" href="#contact">Petakan kebutuhan hukum</a></article>
+            <article class="service-node"><span class="tag">Pillar 02</span><h3>Konsultasi Perizinan</h3><p>Menilai kebutuhan, prasyarat, dan tahapan; keputusan penerbitan tetap berada pada otoritas yang berwenang.</p><a class="text-link" href="#contact">Mulai konsultasi awal</a></article>
+          </div>
+          <div class="pathway-grid" aria-label="Jalur perizinan"><article><b>NODE 01</b><span>Kesiapan usaha &amp; struktur perusahaan</span></article><article><b>NODE 02</b><span>OSS RBA &amp; identifikasi kebutuhan izin</span></article><article><b>NODE 03</b><span>Perizinan sektoral yang telah dikonfirmasi</span></article><article><b>NODE 04</b><span>Kepatuhan, pembaruan &amp; kebutuhan khusus</span></article></div>
+        </div>
+      </section>
+
+      <section class="section process-section" id="process">
+        <div class="container">
+          <div class="section-head"><div><p class="eyebrow">Human-led process</p><h2>Teknologi memvisualkan. Tim tetap menilai.</h2></div><p class="lede">Website tidak memberikan kesimpulan legal otomatis. Setiap kasus spesifik diarahkan ke konsultasi dan pemeriksaan manusia.</p></div>
+          <div class="process-orbit"><article><b>01</b><span>Konsultasi awal</span></article><article><b>02</b><span>Pemeriksaan dokumen</span></article><article><b>03</b><span>Pemetaan kebutuhan &amp; regulasi</span></article><article><b>04</b><span>Pendampingan proses</span></article><article><b>05</b><span>Pembaruan status</span></article></div>
+        </div>
+      </section>
+
+      <section class="section evidence-section" id="experience">
+        <div class="container">
+          <div class="section-head"><div><p class="eyebrow">Evidence layer</p><h2>Experience yang tetap aman untuk publik.</h2></div><p class="lede">Kartu adalah contoh format. Identitas klien, nilai, dokumen, dan fakta rahasia tidak digunakan tanpa izin tertulis.</p></div>
+          <div class="cards"><article class="card evidence-card"><span class="tag">Format contoh</span><h3>Regulatory Advisory</h3><p>Kebutuhan, peran tim, dan ruang lingkup yang dapat dijelaskan.</p><p class="meta">Hasil proses hanya bila aman dan disetujui.</p></article><article class="card evidence-card"><span class="tag">Format contoh</span><h3>Corporate Matter</h3><p>Ringkasan relevansi pengalaman tanpa klaim spekulatif.</p><p class="meta">Tanpa nama klien atau nilai transaksi.</p></article><article class="card evidence-card"><span class="tag">Format contoh</span><h3>Licensing Support</h3><p>Status dan tahapan yang dapat dikonfirmasi, bukan janji penerbitan.</p><p class="meta">Keputusan tetap pada otoritas terkait.</p></article></div>
+        </div>
+      </section>
+
+      <section class="section" id="insights">
+        <div class="container">
+          <div class="section-head"><div><p class="eyebrow">Knowledge graph</p><h2>Konten yang saling menguatkan.</h2></div><p class="lede">Hub page dan artikel pendukung membangun jalur dari pertanyaan informasional menuju halaman layanan dan konsultasi.</p></div>
+          <div class="cards"><article class="card insight-card"><p class="meta">Pillar concept</p><h3>Panduan memetakan kebutuhan perizinan usaha</h3><p>Hub ke topik OSS RBA, dokumen, sektor, dan kepatuhan.</p></article><article class="card insight-card"><p class="meta">Supporting concept</p><h3>Dokumen awal untuk konsultasi yang lebih efektif</h3><p>Menjawab intent praktis tanpa meminta unggahan sensitif.</p></article><article class="card insight-card"><p class="meta">Supporting concept</p><h3>Membaca status proses tanpa janji hasil</h3><p>Menjelaskan batas informasi dan peran otoritas terkait.</p></article></div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container contact-grid">
+          <div><p class="eyebrow">Start with context</p><h2>Mulai dari kebutuhan yang ingin dipetakan.</h2><p>Informasi awal ditinjau tim untuk menentukan kecocokan. Jangan sertakan dokumen rahasia atau sensitif melalui formulir publik.</p><p class="form-note">WebGL tidak digunakan dalam proses pengiriman data atau penilaian kebutuhan.</p></div>
+          <form data-prototype-form>
+            <div class="form-grid"><div class="field"><label for="m3-name">Nama</label><input id="m3-name" name="name" autocomplete="name" /></div><div class="field"><label for="m3-org">Organisasi</label><input id="m3-org" name="organization" autocomplete="organization" /></div><div class="field"><label for="m3-contact">Email / telepon</label><input id="m3-contact" name="contact" autocomplete="email" /></div><div class="field"><label for="m3-path">Jalur kebutuhan</label><select id="m3-path" name="path"><option>Belum yakin</option><option>Layanan hukum</option><option>Konsultasi perizinan</option></select></div><div class="field field--wide"><label for="m3-message">Ringkasan kebutuhan</label><textarea id="m3-message" name="message"></textarea></div><p class="form-note field--wide">Persetujuan Privacy Policy wajib pada implementasi production.</p><div class="field--wide button-row"><button class="button" type="submit">Kirim permintaan awal</button><a class="button button--secondary" href="#contact">Pilihan WhatsApp</a></div><p class="form-note field--wide" tabindex="-1" data-form-status aria-live="polite"></p></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark">G&amp;P</span><span>Galdino and Partner</span></a><p>Legal and regulatory advisory company profile. WebGL adalah enhancement opsional; informasi inti tetap HTML-first.</p></div><div class="footer-col"><h2>Explore</h2><a href="#meaning">Konsep</a><a href="#services">Services</a><a href="#process">Process</a><a href="#experience">Experience</a></div><div class="footer-col"><h2>Contact</h2><span>Email - menunggu konfirmasi</span><span>Telepon - menunggu konfirmasi</span><span>Alamat - menunggu konfirmasi</span></div><div class="footer-col"><h2>Legal</h2><a href="#contact">Privacy Policy</a><a href="#contact">Disclaimer</a><span>Fraud Alert - bila diperlukan</span></div></div><div class="footer-bottom"><span>&copy; <span data-year></span> Galdino and Partner. Preview konsep.</span><span>Static HTML fallback tersedia tanpa WebGL.</span></div></div></footer>
+    <a class="prototype-badge" href="index.html">Kembali ke galeri mockup</a>
+  </body>
+</html>

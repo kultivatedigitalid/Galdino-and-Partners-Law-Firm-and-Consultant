@@ -1,0 +1,524 @@
+P001 [Normal] KULTIVATE / WEBSITE DISCOVERY SYSTEM
+P002 [K Title] Client Discovery Form
+P003 [K Subtitle] Formulir lengkap untuk memahami bisnis, pelanggan, positioning, brand, website, dan kesiapan aset.
+T004 [Normal Table] rows=1
+  R01:  || 
+P005 [Normal] 
+T006 [Normal Table] rows=1
+  R01: 35–45 MENIT / Estimasi pengisian || 6 BAGIAN / Alur terstruktur || 1 SUMBER DATA / Tanpa formulir terpisah
+P007 [Normal] 
+T008 [Normal Table] rows=1
+  R01: Anda memberikan fakta, pengalaman, prioritas, dan batasan. Tim KULTIVATE menerjemahkannya menjadi positioning, pesan utama, sitemap, UX, strategi SEO, serta kebutuhan teknis.
+P009 [Normal] 
+P010 [K Section] Cara Menggunakan Formulir Ini
+T011 [Normal Table] rows=1
+  R01: Yang perlu Anda isi / Fakta bisnis, pengalaman menghadapi pelanggan, prioritas perusahaan, bukti yang tersedia, preferensi brand, kebutuhan website, dan batasan penggunaan aset.
+P012 [Normal] 
+T013 [Normal Table] rows=1
+  R01: Yang tidak perlu Anda tentukan / Positioning final, sitemap, jumlah halaman, hierarki informasi, desain final, keyword research, dan arsitektur teknis. Seluruh keputusan tersebut merupakan pekerjaan tim KULTIVATE.
+P014 [Normal] 
+T015 [Normal Table] rows=1
+  R01: Tiga jenis pertanyaan / WAJIB dijawab semua klien. DISARANKAN dijawab apabila datanya tersedia. JIKA RELEVAN hanya diisi apabila kondisinya berlaku.
+P016 [Normal] 
+T017 [Normal Table] rows=1
+  R01: Cara menjawab / Gunakan bahasa sederhana dan kondisi nyata. Apabila belum tahu, tulis “belum tahu”. Jangan menulis password, OTP, atau akses sensitif di formulir ini.
+P018 [Normal] 
+P019 [K Heading] Identitas Proyek
+T020 [Normal Table] rows=7
+  R01: Nama perusahaan / brand || Klik dan ketik
+  R02: Nama proyek || Klik dan ketik
+  R03: PIC utama + kontak || Klik dan ketik
+  R04: Pemberi persetujuan final || Klik dan ketik
+  R05: Penyedia informasi / aset || Klik dan ketik
+  R06: Target website tayang || Klik dan ketik
+  R07: Alasan target tersebut || Klik dan ketik
+P021 [Normal] 
+T022 [Normal Table] rows=1
+  R01: Aturan persetujuan / Tetapkan satu pemberi persetujuan final. Masukan dari pihak lain sebaiknya dikumpulkan melalui PIC utama agar arahan revisi tidak saling bertentangan.
+P023 [Normal] 
+P024 [Normal] 
+T025 [Normal Table] rows=1
+  R01: 01 || Bisnis / Memahami cara perusahaan bekerja, menghasilkan pendapatan, bertumbuh, dan memilih prioritas. / ESTIMASI BAGIAN: 7–9 MENIT
+P026 [Normal] 
+T027 [Normal Table] rows=1
+  R01: WAJIB || 1.1  Jelaskan perusahaan Anda dalam satu paragraf.
+P028 [K Helper] Ceritakan apa yang dijual, siapa yang dibantu, cara umum perusahaan melayani pelanggan, dan wilayah operasinya. Hindari slogan seperti “terbaik” atau “terpercaya”.
+T029 [Normal Table] rows=1
+  R01: Contoh jawaban  Kami adalah kontraktor interior yang membantu perusahaan dan pemilik rumah merancang serta membangun interior custom, mulai dari desain sampai instalasi, untuk wilayah Jabodetabek.
+T030 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P031 [Normal] 
+T032 [Normal Table] rows=1
+  R01: WAJIB || 1.2  Daftar produk atau layanan yang aktif ditawarkan.
+P033 [K Helper] Maksimal delapan. Beri prioritas: 1 = paling penting bagi bisnis, 2 = penting, 3 = pendukung.
+T034 [Normal Table] rows=9
+  R01: Produk / layanan || Penjelasan satu kalimat || Prioritas
+  R02: Contoh: Kitchen set custom || Desain, produksi, dan instalasi sesuai ukuran ruang. || 1
+  R03:  ||  || 
+  R04:  ||  || 
+  R05:  ||  || 
+  R06:  ||  || 
+  R07:  ||  || 
+  R08:  ||  || 
+  R09:  ||  || 
+P035 [Normal] 
+T036 [Normal Table] rows=1
+  R01: WAJIB || 1.3  Bagaimana perusahaan menghasilkan pendapatan?
+P037 [K Helper] Pilih semua yang sesuai, lalu jelaskan pola transaksi yang paling umum.
+T038 [Normal Table] rows=5
+  R01: ☐ Proyek satu kali || ☐ Penjualan produk
+  R02: ☐ Kontrak tahunan || ☐ Retainer bulanan
+  R03: ☐ Langganan || ☐ Komisi
+  R04: ☐ Tender / procurement || ☐ Distributor / reseller
+  R05: ☐ Kombinasi beberapa model || ☐ Lainnya: __________________
+P039 [Normal] 
+T040 [Normal Table] rows=1
+  R01: Jelaskan pola pembayaran atau transaksi yang paling umum...
+P041 [Normal] 
+T042 [Normal Table] rows=1
+  R01: WAJIB || 1.4  Di mana perusahaan beroperasi dan melayani pelanggan?
+P043 [K Helper] Tuliskan lokasi kantor, cabang, area layanan, atau batas wilayah yang penting.
+T044 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P045 [Normal] 
+T046 [Normal Table] rows=1
+  R01: DISARANKAN || 1.5  Apa tiga momen penting dalam perjalanan perusahaan?
+P047 [K Helper] Gunakan milestone yang membantu calon pelanggan memahami perkembangan, kemampuan, atau kredibilitas perusahaan.
+T048 [Normal Table] rows=4
+  R01: Tahun || Peristiwa penting || Mengapa penting
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P049 [Normal] 
+T050 [Normal Table] rows=1
+  R01: WAJIB || 1.6  Dari mana pelanggan biasanya mengenal perusahaan Anda?
+P051 [K Helper] Pilih maksimal tiga sumber yang paling sering menghasilkan pelanggan.
+T052 [Normal Table] rows=5
+  R01: ☐ Rekomendasi / relasi || ☐ Google / mesin pencari
+  R02: ☐ Media sosial || ☐ Tim sales
+  R03: ☐ Tender / procurement || ☐ Marketplace
+  R04: ☐ Iklan || ☐ Pelanggan lama
+  R05: ☐ Event / pameran || ☐ Lainnya: __________________
+P053 [Normal] 
+P054 [Normal] 
+T055 [Normal Table] rows=1
+  R01: WAJIB || 1.7  Apa masalah marketing atau penjualan yang paling terasa saat ini?
+P056 [K Helper] Pilih maksimal dua masalah yang benar-benar memengaruhi bisnis.
+T057 [Normal Table] rows=5
+  R01: ☐ Perusahaan kurang mudah ditemukan || ☐ Sulit membangun kepercayaan
+  R02: ☐ Layanan sulit dipahami || ☐ Terlalu bergantung pada rekomendasi
+  R03: ☐ Sales berulang kali menjelaskan hal yang sama || ☐ Calon pelanggan hanya membandingkan harga
+  R04: ☐ Portofolio sulit ditunjukkan || ☐ Inquiry banyak tetapi tidak relevan
+  R05: ☐ Konversi rendah || ☐ Lainnya: __________________
+P058 [Normal] 
+T059 [Normal Table] rows=1
+  R01: WAJIB || 1.8  Apa tiga prioritas bisnis dalam 12–24 bulan ke depan?
+P060 [K Helper] Pilih maksimal tiga. Website akan dirancang untuk mendukung prioritas tersebut.
+T061 [Normal Table] rows=5
+  R01: ☐ Meningkatkan revenue || ☐ Mendapatkan proyek bernilai lebih besar
+  R02: ☐ Masuk ke segmen pasar baru || ☐ Memperluas wilayah layanan
+  R03: ☐ Memperkenalkan produk / layanan baru || ☐ Mengurangi ketergantungan pada referral
+  R04: ☐ Mendukung tender / procurement || ☐ Mendukung pembukaan cabang
+  R05: ☐ Memperkuat kredibilitas || ☐ Lainnya: __________________
+P062 [Normal] 
+T063 [Normal Table] rows=1
+  R01: WAJIB || 1.9  Perubahan apa yang ingin dirasakan setelah website baru digunakan?
+P064 [K Helper] Fokus pada perubahan yang dapat dilihat atau dirasakan tim, bukan sekadar “website lebih bagus”.
+T065 [Normal Table] rows=1
+  R01: Contoh jawaban  Calon pelanggan sudah memahami layanan dan melihat portofolio sebelum menghubungi sales, sehingga percakapan awal menjadi lebih berkualitas.
+T066 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P067 [Normal] 
+T068 [Normal Table] rows=1
+  R01: WAJIB || 1.10  Permintaan atau proyek seperti apa yang tidak cocok untuk perusahaan Anda?
+P069 [K Helper] Tuliskan batas minimum, wilayah, jenis pekerjaan, tenggat, atau tipe klien yang memang tidak ingin diterima.
+T070 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P071 [Normal] 
+P072 [Normal] 
+T073 [Normal Table] rows=1
+  R01: 02 || Pelanggan / Memahami siapa yang membeli, apa yang mereka alami, dan apa yang membuat mereka mengambil keputusan. / ESTIMASI BAGIAN: 8–10 MENIT
+P074 [Normal] 
+T075 [Normal Table] rows=1
+  R01: WAJIB || 2.1  Gambarkan pelanggan atau proyek yang paling ingin diperoleh.
+P076 [K Helper] Sebutkan jenis orang/perusahaan, lokasi, kebutuhan, nilai proyek atau pembelian, serta tingkat kesiapannya.
+T077 [Normal Table] rows=1
+  R01: Contoh jawaban  Perusahaan swasta di Jabodetabek yang membutuhkan renovasi kantor senilai minimal Rp150 juta dan sudah memiliki target waktu pengerjaan.
+T078 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P079 [Normal] 
+T080 [Normal Table] rows=1
+  R01: WAJIB || 2.2  Siapa yang terlibat dalam keputusan pembelian?
+P081 [K Helper] Orangnya boleh sama. Kami perlu tahu siapa yang menggunakan, mencari, memengaruhi, dan menyetujui pembelian.
+T082 [Normal Table] rows=5
+  R01: Peran || Siapa biasanya? || Apa yang mereka butuhkan dari website?
+  R02: Pengguna produk / layanan ||  || 
+  R03: Mencari / membandingkan vendor ||  || 
+  R04: Memengaruhi keputusan ||  || 
+  R05: Memberikan persetujuan final ||  || 
+P083 [Normal] 
+T084 [Normal Table] rows=1
+  R01: WAJIB || 2.3  Dalam situasi apa pelanggan mulai merasa membutuhkan solusi Anda?
+P085 [K Helper] Jelaskan pemicu yang membuat kebutuhan menjadi nyata atau mendesak.
+T086 [Normal Table] rows=1
+  R01: Contoh jawaban  Kantor baru akan dibuka, kapasitas lama sudah tidak cukup, vendor sebelumnya gagal, atau perusahaan sedang menyiapkan tender.
+T087 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P088 [Normal] 
+P089 [Normal] 
+T090 [Normal Table] rows=1
+  R01: WAJIB || 2.4  Apa masalah, dampak, dan hasil yang paling penting bagi pelanggan?
+T091 [Normal Table] rows=4
+  R01: Masalah yang dialami || Dampaknya || Hasil yang mereka inginkan
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P092 [Normal] 
+T093 [Normal Table] rows=1
+  R01: WAJIB || 2.5  Apa yang biasanya membuat pelanggan akhirnya membeli atau justru batal membeli?
+T094 [Normal Table] rows=4
+  R01: Alasan akhirnya membeli || Alasan akhirnya tidak membeli
+  R02:  || 
+  R03:  || 
+  R04:  || 
+P095 [Normal] 
+T096 [Normal Table] rows=1
+  R01: WAJIB || 2.6  Apa yang paling membuat pelanggan ragu, dan apa yang membuat mereka percaya?
+T097 [Normal Table] rows=4
+  R01: Keraguan / kekhawatiran || Bukti atau penjelasan yang membantu
+  R02:  || 
+  R03:  || 
+  R04:  || 
+P098 [Normal] 
+P099 [Normal] 
+T100 [Normal Table] rows=1
+  R01: WAJIB || 2.7  Apa yang biasanya dibandingkan pelanggan saat memilih vendor?
+P101 [K Helper] Pilih maksimal tiga dan jelaskan bagaimana pelanggan menilainya.
+T102 [Normal Table] rows=4
+  R01: Kriteria || Bagaimana pelanggan menilainya?
+  R02:  || 
+  R03:  || 
+  R04:  || 
+P103 [Normal] 
+T104 [Normal Table] rows=1
+  R01: WAJIB || 2.8  Alternatif apa yang biasanya dipertimbangkan selain memilih perusahaan Anda?
+P105 [K Helper] Alternatif tidak selalu kompetitor langsung. Pelanggan bisa menunda, mengerjakan sendiri, membeli produk jadi, atau memilih vendor lebih murah.
+T106 [Normal Table] rows=4
+  R01: Alternatif || Mengapa dipertimbangkan? || Kekurangannya menurut pelanggan
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P107 [Normal] 
+T108 [Normal Table] rows=1
+  R01: OPSIONAL || 2.9  Tuliskan pertanyaan atau kalimat yang benar-benar sering digunakan pelanggan.
+P109 [K Helper] Tulis apa adanya. Bagian ini sangat membantu tim copywriting dan SEO.
+T110 [Normal Table] rows=1
+  R01: Contoh jawaban  “Bisa selesai sebelum grand opening?” / “Kalau lokasi di luar kota bagaimana?” / “Sudah pernah mengerjakan proyek sejenis?”
+T111 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P112 [Normal] 
+P113 [Normal] 
+T114 [Normal Table] rows=1
+  R01: 03 || Positioning / Memahami medan persaingan, keunggulan, diferensiasi, dan bukti yang dapat dipercaya. / ESTIMASI BAGIAN: 6–8 MENIT
+P115 [Normal] 
+T116 [Normal Table] rows=1
+  R01: WAJIB || 3.1  Setelah melihat website, apa satu hal yang paling penting untuk dipahami atau diingat orang?
+P117 [K Helper] Jawab dalam satu kalimat sederhana. Tidak perlu terdengar seperti slogan.
+T118 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P119 [Normal] 
+T120 [Normal Table] rows=1
+  R01: WAJIB || 3.2  Siapa kompetitor yang paling sering dibandingkan dengan perusahaan Anda?
+P121 [K Helper] Maksimal tiga. Fokus pada kompetitor yang benar-benar muncul dalam proses penjualan.
+T122 [Normal Table] rows=4
+  R01: Nama / URL || Mengapa sering dibandingkan? || Apa yang mereka lakukan dengan baik?
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P123 [Normal] 
+T124 [Normal Table] rows=1
+  R01: WAJIB || 3.3  Apa tiga kemampuan atau kualitas terbaik perusahaan Anda?
+P125 [K Helper] Keunggulan boleh belum unik. Yang penting konkret dan relevan bagi pelanggan.
+T126 [Normal Table] rows=4
+  R01: Keunggulan || Manfaat bagi pelanggan || Contoh / bukti awal
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P127 [Normal] 
+P128 [Normal] 
+T129 [Normal Table] rows=1
+  R01: WAJIB || 3.4  Dari keunggulan tersebut, apa yang benar-benar berbeda dibandingkan kompetitor atau alternatif lain?
+P130 [K Helper] Jelaskan proses, model layanan, kepemilikan fasilitas, keahlian, sistem, pengalaman, atau hasil yang sulit diklaim dengan cara yang sama oleh kompetitor.
+T131 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P132 [Normal] 
+T133 [Normal Table] rows=1
+  R01: WAJIB || 3.5  Hubungkan klaim, bukti, dan manfaatnya.
+P134 [K Helper] Setiap klaim utama harus memiliki bukti yang dapat ditunjukkan.
+T135 [Normal Table] rows=4
+  R01: Klaim / alasan memilih || Bukti yang tersedia || Manfaat bagi pelanggan
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P136 [Normal] 
+T137 [Normal Table] rows=1
+  R01: WAJIB || 3.6  Apakah ada klaim, istilah, nama klien, proyek, atau aset yang tidak boleh digunakan?
+P138 [K Helper] Sebutkan informasi rahasia, klaim yang belum terverifikasi, logo klien tanpa izin, atau materi yang sensitif.
+T139 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P140 [Normal] 
+P141 [Normal] 
+T142 [Normal Table] rows=1
+  R01: 04 || Brand / Memahami karakter, cara berkomunikasi, aturan visual, dan ruang eksplorasi desain. / ESTIMASI BAGIAN: 5–7 MENIT
+P143 [Normal] 
+T144 [Normal Table] rows=1
+  R01: WAJIB || 4.1  Bagaimana status brand guideline perusahaan?
+T145 [Normal Table] rows=3
+  R01: ☐ Wajib diikuti sepenuhnya || ☐ Masih berlaku, tetapi boleh dikembangkan
+  R02: ☐ Sudah tidak relevan || ☐ Hanya memiliki logo dan warna
+  R03: ☐ Belum memiliki brand guideline || ☐ Belum tahu
+P146 [Normal] 
+T147 [Normal Table] rows=1
+  R01: WAJIB || 4.2  Pilih maksimal tiga karakter brand.
+T148 [Normal Table] rows=5
+  R01: ☐ Profesional || ☐ Tepercaya || ☐ Tegas
+  R02: ☐ Ramah || ☐ Modern || ☐ Premium
+  R03: ☐ Sederhana || ☐ Berani || ☐ Hangat
+  R04: ☐ Edukatif || ☐ Teknologis || ☐ Industrial
+  R05: ☐ Elegan || ☐ Kreatif || ☐ Lainnya: __________________
+P149 [Normal] 
+T150 [Normal Table] rows=1
+  R01: WAJIB || 4.3  Pilih satu gaya komunikasi utama.
+T151 [Normal Table] rows=4
+  R01: ☐ Formal dan korporat || ☐ Profesional, mudah dipahami
+  R02: ☐ Tegas dan langsung || ☐ Ramah dan komunikatif
+  R03: ☐ Edukatif dan informatif || ☐ Eksklusif dan premium
+  R04: ☐ Santai dan dekat || ☐ Mengikuti rekomendasi tim
+P152 [Normal] 
+T153 [Normal Table] rows=1
+  R01: DISARANKAN || 4.4  Tuliskan istilah yang wajib digunakan dan gaya yang harus dihindari.
+T154 [Normal Table] rows=2
+  R01: Istilah / kata wajib || Klik dan ketik
+  R02: Kata / gaya yang harus dihindari || Klik dan ketik
+P155 [Normal] 
+T156 [Normal Table] rows=1
+  R01: WAJIB || 4.5  Seberapa bebas tim KULTIVATE dapat mengembangkan tampilan brand?
+T157 [Normal Table] rows=4
+  R01: ☐ Harus mengikuti guideline secara ketat
+  R02: ☐ Boleh dikembangkan selama identitas utama dipertahankan
+  R03: ☐ Terbuka untuk perubahan cukup besar
+  R04: ☐ Membutuhkan rekomendasi penuh dari tim
+P158 [Normal] 
+P159 [Normal] 
+T160 [Normal Table] rows=1
+  R01: DISARANKAN || 4.6  Adakah warna, simbol, foto, ilustrasi, atau gaya visual yang wajib dipakai atau dilarang?
+T161 [Normal Table] rows=2
+  R01: Wajib dipertahankan || Klik dan ketik
+  R02: Tidak boleh digunakan || Klik dan ketik
+P162 [Normal] 
+T163 [Normal Table] rows=1
+  R01: DISARANKAN || 4.7  Website atau brand apa yang menjadi referensi?
+P164 [K Helper] Maksimal tiga. Boleh dari industri lain. Jelaskan pola yang disukai dan yang tidak ingin ditiru.
+T165 [Normal Table] rows=4
+  R01: Nama / URL || Yang disukai || Yang tidak ingin ditiru
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P166 [Normal] 
+T167 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 4.8  Apakah perusahaan memiliki parent company, subbrand, atau beberapa unit bisnis?
+P168 [K Helper] Jelaskan hubungan antarbrand, logo utama, dan brand mana yang harus paling menonjol di website.
+T169 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P170 [Normal] 
+P171 [Normal] 
+T172 [Normal Table] rows=1
+  R01: 05 || Website / Menentukan pekerjaan utama website, alur konversi, SEO, integrasi, dan cara website dikelola. / ESTIMASI BAGIAN: 8–10 MENIT
+P173 [Normal] 
+T174 [Normal Table] rows=1
+  R01: WAJIB || 5.1  Urutkan tiga pekerjaan terpenting website.
+P175 [K Helper] Contoh: membangun kepercayaan, menghasilkan inquiry, menjelaskan layanan, menunjukkan portofolio, membantu sales, atau mendukung tender.
+T176 [Normal Table] rows=4
+  R01: Urutan || Pekerjaan website || Mengapa penting?
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P177 [Normal] 
+T178 [Normal Table] rows=1
+  R01: WAJIB || 5.2  Bagaimana alur setelah pengunjung tertarik?
+P179 [K Helper] Isi alur paling umum. Tim KULTIVATE akan menentukan bentuk tombol dan formulir yang paling tepat.
+T180 [Normal Table] rows=5
+  R01: Tindakan utama pengunjung || Klik dan ketik
+  R02: Inquiry diterima oleh || Klik dan ketik
+  R03: Informasi minimum yang dibutuhkan || Klik dan ketik
+  R04: Langkah berikutnya || Klik dan ketik
+  R05: Waktu respons normal || Klik dan ketik
+P181 [Normal] 
+T182 [Normal Table] rows=1
+  R01: WAJIB || 5.3  Inquiry seperti apa yang dianggap berkualitas?
+P183 [K Helper] Sebutkan jenis pelanggan, kebutuhan, lokasi, anggaran atau nilai proyek, target waktu, dan tingkat kesiapan yang diinginkan.
+T184 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P185 [Normal] 
+P186 [Normal] 
+T187 [Normal Table] rows=1
+  R01: WAJIB || 5.4  Informasi apa yang wajib tersedia di website?
+P188 [K Helper] Tim KULTIVATE akan menentukan apakah informasi tersebut menjadi halaman tersendiri atau digabung dengan halaman lain.
+T189 [Normal Table] rows=5
+  R01: ☐ Seluruh layanan || ☐ Produk tertentu || ☐ Portofolio / proyek
+  R02: ☐ Proses kerja || ☐ Testimoni || ☐ Sertifikat / izin
+  R03: ☐ Profil tim || ☐ Lokasi / cabang || ☐ Download company profile
+  R04: ☐ Informasi tender || ☐ Karier || ☐ FAQ
+  R05: ☐ Data / pencapaian || ☐ Legal disclaimer || ☐ Lainnya: __________________
+P190 [Normal] 
+T191 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 5.5  Apakah website membutuhkan fungsi khusus?
+T192 [Normal Table] rows=6
+  R01: ☐ Lebih dari satu bahasa || ☐ Banyak cabang / lokasi
+  R02: ☐ Katalog produk besar || ☐ Filter / pencarian produk
+  R03: ☐ Upload dokumen || ☐ Download katalog / file
+  R04: ☐ Integrasi sistem lain || ☐ Karier / lowongan
+  R05: ☐ Pendaftaran acara || ☐ Login / area pengguna
+  R06: ☐ Pembayaran online || ☐ Lainnya: __________________
+P193 [Normal] 
+T194 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 5.6  Apabila membutuhkan lebih dari satu bahasa, jelaskan kebutuhannya.
+T195 [Normal Table] rows=4
+  R01: Bahasa || Halaman yang dibutuhkan || Materi tersedia? || Penyedia terjemahan
+  R02:  ||  ||  || 
+  R03:  ||  ||  || 
+  R04:  ||  ||  || 
+P196 [Normal] 
+T197 [Normal Table] rows=1
+  R01: WAJIB || 5.7  Untuk kebutuhan apa perusahaan paling ingin ditemukan di Google?
+P198 [K Helper] Tidak perlu melakukan keyword research. Tuliskan layanan, masalah pelanggan, wilayah, dan istilah yang menurut Anda sering digunakan pelanggan.
+T199 [Normal Table] rows=4
+  R01: Layanan / produk prioritas || Klik dan ketik
+  R02: Wilayah pencarian utama || Klik dan ketik
+  R03: Istilah yang digunakan pelanggan || Klik dan ketik
+  R04: Website yang sering muncul di Google || Klik dan ketik
+P200 [Normal] 
+T201 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 5.8  Apakah perusahaan sudah memiliki website dan riwayat SEO?
+T202 [Normal Table] rows=6
+  R01: Alamat website || Klik dan ketik
+  R02: Halaman yang menghasilkan inquiry || Klik dan ketik / belum tahu
+  R03: Halaman yang tidak boleh kehilangan ranking || Klik dan ketik / belum tahu
+  R04: Pernah melakukan SEO? || Ya / Tidak / Belum tahu
+  R05: Bagian yang ingin dipertahankan || Klik dan ketik
+  R06: Bagian yang paling ingin diperbaiki || Klik dan ketik
+P203 [Normal] 
+T204 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 5.9  Setelah formulir diisi, data perlu dikirim atau dicatat ke mana?
+T205 [Normal Table] rows=5
+  R01: ☐ Email || ☐ WhatsApp
+  R02: ☐ CRM || ☐ Google Sheets
+  R03: ☐ ERP || ☐ Marketing automation
+  R04: ☐ Helpdesk || ☐ Sistem rekrutmen
+  R05: ☐ Sistem pembayaran || ☐ Sistem internal lainnya
+P206 [Normal] 
+T207 [Normal Table] rows=1
+  R01: Nama sistem atau catatan singkat...
+P208 [Normal] 
+T209 [Normal Table] rows=1
+  R01: WAJIB || 5.10  Apa yang perlu dapat diukur setelah website diluncurkan?
+T210 [Normal Table] rows=5
+  R01: ☐ Klik WhatsApp || ☐ Formulir masuk
+  R02: ☐ Panggilan telepon || ☐ Download company profile
+  R03: ☐ Permintaan quotation || ☐ Pendaftaran
+  R04: ☐ Traffic organik || ☐ Lead berkualitas
+  R05: ☐ Penjualan / transaksi || ☐ Lainnya: __________________
+P211 [Normal] 
+P212 [Normal] 
+T213 [Normal Table] rows=1
+  R01: DISARANKAN || 5.11  Siapa yang akan memperbarui konten website setelah diluncurkan?
+T214 [Normal Table] rows=4
+  R01: Penanggung jawab || Klik dan ketik
+  R02: Konten yang sering berubah || Klik dan ketik
+  R03: Frekuensi pembaruan || Klik dan ketik
+  R04: Apakah membutuhkan training? || Ya / Tidak / Belum tahu
+P215 [Normal] 
+T216 [Normal Table] rows=1
+  R01: 06 || Aset / Memetakan materi yang tersedia, pemiliknya, izin penggunaan, dan kekurangan yang perlu disiapkan. / ESTIMASI BAGIAN: 5–7 MENIT
+P217 [Normal] 
+T218 [Normal Table] rows=1
+  R01: WAJIB || 6.1  Materi apa yang sudah dimiliki?
+P219 [K Helper] Cukup pilih yang tersedia. Tim KULTIVATE yang akan menilai apakah materinya siap dipakai, perlu diperbarui, atau perlu dibuat ulang.
+T220 [Normal Table] rows=9
+  R01: ☐ Logo / identitas brand || ☐ Brand guideline
+  R02: ☐ Company profile || ☐ Informasi produk / layanan
+  R03: ☐ Foto perusahaan / kantor || ☐ Foto tim
+  R04: ☐ Foto produk / proyek || ☐ Video
+  R05: ☐ Portofolio / studi kasus || ☐ Testimoni
+  R06: ☐ Logo klien || ☐ Sertifikat / penghargaan
+  R07: ☐ Brosur / katalog || ☐ Data / angka pendukung
+  R08: ☐ Profil tim / ahli || ☐ Dokumen legal / izin
+  R09: ☐ Lainnya: __________________ || 
+P221 [Normal] 
+T222 [Normal Table] rows=1
+  R01: DISARANKAN || 6.2  Data atau angka apa yang dapat digunakan untuk memperkuat kepercayaan?
+P223 [K Helper] Contoh: tahun pengalaman, jumlah proyek, jumlah pelanggan, kapasitas produksi, cabang, ukuran tim, hasil studi kasus, atau waktu pengerjaan.
+T224 [Normal Table] rows=6
+  R01: Data / angka || Nilai || Bukti tersedia? || Boleh dipublikasikan?
+  R02:  ||  ||  || 
+  R03:  ||  ||  || 
+  R04:  ||  ||  || 
+  R05:  ||  ||  || 
+  R06:  ||  ||  || 
+P225 [Normal] 
+T226 [Normal Table] rows=1
+  R01: WAJIB || 6.3  Tautan folder materi dan aset.
+P227 [K Helper] Gunakan satu folder utama. Pastikan aksesnya dapat dibuka tim KULTIVATE. Jangan menulis password di formulir.
+T228 [Normal Table] rows=1
+  R01: Tempel tautan folder di sini...
+P229 [Normal] 
+T230 [Normal Table] rows=1
+  R01: WAJIB || 6.4  Siapa pemilik atau penanggung jawab utama aset?
+T231 [Normal Table] rows=3
+  R01: Nama / jabatan || Klik dan ketik
+  R02: Kontak || Klik dan ketik
+  R03: Jenis aset yang dikelola || Klik dan ketik
+P232 [Normal] 
+T233 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 6.5  Apakah ada batasan penggunaan konten atau visual?
+P234 [K Helper] Contoh: foto klien tidak boleh dipublikasikan, logo tertentu belum mendapat izin, proyek masih rahasia, atau foto hanya boleh digunakan pada halaman tertentu.
+T235 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P236 [Normal] 
+T237 [Normal Table] rows=1
+  R01: DISARANKAN || 6.6  Aset apa yang sudah diketahui masih perlu dibuat atau diperbarui?
+P238 [K Helper] Tidak perlu menilai kualitas secara detail. Cukup sebutkan materi yang belum ada atau sudah jelas tidak layak digunakan.
+T239 [Normal Table] rows=6
+  R01: Aset || Kondisi saat ini || Penanggung jawab || Target tersedia
+  R02:  ||  ||  || 
+  R03:  ||  ||  || 
+  R04:  ||  ||  || 
+  R05:  ||  ||  || 
+  R06:  ||  ||  || 
+P240 [Normal] 
+T241 [Normal Table] rows=1
+  R01: Catatan keamanan / Jangan menuliskan password, kode OTP, data kartu, atau akses sensitif dalam formulir. Akses teknis dikumpulkan melalui onboarding terpisah.
+P242 [Normal] 
+P243 [K Section] Selesai. Berikutnya, giliran tim KULTIVATE.
+P244 [K Subtitle] Setelah formulir diterima, tim akan meninjau jawaban, melakukan follow-up terarah, menyusun fondasi strategis, dan menghasilkan brief khusus untuk Brand Strategist, Copywriter, UI/UX, SEO, serta Developer.
+T245 [Normal Table] rows=2
+  R01: 01 || 02 || 03 || 04
+  R02: Review jawaban / Memeriksa kelengkapan dan konsistensi. || Follow-up terarah / Hanya menanyakan bagian yang benar-benar diperlukan. || Strategic synthesis / Mengerucutkan data menjadi keputusan. || Handoff divisi / Membuat brief siap produksi untuk setiap tim.
+P246 [Normal] 
+P247 [K Heading] Konfirmasi Akhir
+T248 [Normal Table] rows=4
+  R01: ☐ Jawaban menggambarkan kondisi perusahaan saat ini.
+  R02: ☐ Tautan folder aset dapat dibuka tim KULTIVATE.
+  R03: ☐ Klaim, angka, logo klien, dan materi sensitif telah diberi catatan.
+  R04: ☐ PIC utama dan pemberi persetujuan final telah ditentukan.
+P249 [Normal] 
+P250 [K Heading] Identitas Pengisi
+T251 [Normal Table] rows=3
+  R01: Nama pengisi || Klik dan ketik
+  R02: Jabatan || Klik dan ketik
+  R03: Tanggal pengisian || Klik dan ketik
+P252 [Normal] 
+P253 [K Heading] Catatan tambahan untuk tim KULTIVATE
+T254 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P255 [Normal] 

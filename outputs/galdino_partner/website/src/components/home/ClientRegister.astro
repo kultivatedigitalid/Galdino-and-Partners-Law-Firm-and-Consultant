@@ -1,0 +1,64 @@
+---
+import { HOME_CLIENTS } from '../../data/home';
+import type { Locale } from '../../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+---
+
+<section class="client-register" aria-labelledby="client-register-title">
+  <div class="container-shell client-register__grid">
+    <div class="client-register__intro">
+      <p class="home-kicker">{id ? 'Dipercaya lintas sektor' : 'Trusted across sectors'}</p>
+      <h2 id="client-register-title">{id ? 'Pengalaman yang dibangun dari pekerjaan nyata.' : 'Experience built through real engagements.'}</h2>
+      <p>{id ? 'Logo masih berupa dummy. Identitas klien ditampilkan setelah izin publikasi.' : 'Logos are temporary. Client identities will appear after publication approval.'}</p>
+    </div>
+    <div class="client-register__list" role="list">
+      {HOME_CLIENTS[locale].map((client) => (
+        <div class="client-register__item" role="listitem" data-home-reveal>
+          <div class={`client-register__logo client-register__logo--${client.variant}`} aria-hidden="true">
+            <span>{client.mark}</span>
+          </div>
+          <div class="client-register__meta">
+            <strong>{client.name}</strong>
+            <small>{client.sector}</small>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .client-register { border-bottom: 1px solid var(--home-line); background: var(--home-white); }
+  .client-register__grid { display: grid; }
+  .client-register__intro { padding-block: clamp(2.8rem, 5vw, 4.5rem); }
+  .client-register__intro h2 { max-width: 17ch; margin: 1rem 0 0; font-family: var(--font-display); font-size: clamp(1.8rem, 3.4vw, 3rem); font-weight: 560; letter-spacing: -.035em; line-height: 1; }
+  .client-register__intro > p:last-child { max-width: 31rem; margin: 1.2rem 0 0; color: var(--home-muted); font-size: .74rem; line-height: 1.55; }
+  .client-register__list { display: grid; border-top: 1px solid var(--home-line); }
+  .client-register__item { min-width: 0; display: grid; grid-template-columns: 4.4rem minmax(0, 1fr); align-items: center; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid var(--home-line); }
+  .client-register__logo { width: 4rem; height: 2.7rem; display: grid; place-items: center; color: var(--home-black); }
+  .client-register__logo span { font-family: var(--font-display); font-size: 1.05rem; font-weight: 820; letter-spacing: -.04em; }
+  .client-register__logo--block { background: var(--home-black); color: #fff; }
+  .client-register__logo--round { width: 2.9rem; height: 2.9rem; border: 1px solid var(--home-red); border-radius: 50%; color: var(--home-red-deep); }
+  .client-register__logo--outline { border: 1px solid var(--home-line-strong); }
+  .client-register__logo--split { border-left: .45rem solid var(--home-red); background: var(--home-paper); }
+  .client-register__logo--serif span { font-family: Georgia, serif; font-weight: 600; letter-spacing: .03em; }
+  .client-register__logo--wide { width: 4.25rem; border-bottom: 3px solid var(--home-gold); }
+  .client-register__meta { min-width: 0; display: grid; gap: .3rem; }
+  .client-register__meta strong { overflow: hidden; font-family: var(--font-display); font-size: .82rem; font-weight: 690; letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap; }
+  .client-register__meta small { color: var(--home-muted); font-size: .59rem; line-height: 1.35; }
+  @media (min-width: 900px) {
+    .client-register__grid { grid-template-columns: .72fr 1.28fr; gap: clamp(2.5rem, 6vw, 6rem); }
+    .client-register__intro { border-right: 1px solid var(--home-line); padding-right: 2.75rem; }
+    .client-register__list { grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 0; }
+    .client-register__item { align-content: center; padding: 1.25rem; border-right: 1px solid var(--home-line); }
+    .client-register__item:nth-child(3n) { border-right: 0; }
+    .client-register__item:nth-last-child(-n + 3) { border-bottom: 0; }
+  }
+  @media (max-width: 899px) and (min-width: 560px) {
+    .client-register__list { grid-template-columns: 1fr 1fr; }
+    .client-register__item:nth-child(odd) { padding-right: 1rem; border-right: 1px solid var(--home-line); }
+    .client-register__item:nth-child(even) { padding-left: 1rem; }
+  }
+</style>

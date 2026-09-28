@@ -1,0 +1,82 @@
+---
+import { HOME_STATS } from '../../data/home';
+import { SITE, type Locale } from '../../data/site';
+import CompanyGallery from '../CompanyGallery.astro';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+---
+
+<section class="company-section home-section" aria-labelledby="company-title">
+  <div class="container-shell">
+    <header class="company-section__header" data-home-reveal>
+      <p class="home-kicker">{id ? 'Tentang perusahaan' : 'About the company'}</p>
+      <a class="home-rule-link" href={`/${locale}/profile/`}>
+        {id ? 'Kenali kami lebih lanjut' : 'Learn more about us'} <ArrowIcon />
+      </a>
+    </header>
+    <div class="company-section__content">
+      <CompanyGallery locale={locale} surface="home" />
+      <div class="company-section__copy">
+        <h2 id="company-title" class="home-heading" data-home-reveal>
+          {id ? 'Ketelitian hukum untuk kemajuan bisnis.' : 'Legal precision for business progress.'}
+        </h2>
+        <div class="company-section__statement" data-home-reveal>
+          {id ? (
+            <>
+              <p><strong>{SITE.displayName}</strong>—{SITE.legalName}—adalah firma hukum dan konsultan perizinan yang mendampingi bisnis mengurus legalitas, izin usaha, serta kepatuhan regulasi. Pendampingan dimulai dari pemetaan aktivitas, klasifikasi usaha, dan kebutuhan dokumen hingga koordinasi proses izin.</p>
+              <p>Beroperasi sejak <mark>[PLACEHOLDER: TAHUN BERDIRI]</mark>, rekam jejak, cakupan proyek, dan pencapaian perusahaan akan ditampilkan setelah verifikasi. Visi kami adalah membuat proses perizinan lebih jelas, tertib, dan dapat ditelusuri; dengan ketelitian hukum, komunikasi progres, dan fokus pada penyelesaian kebutuhan izin sebagai pembeda utama.</p>
+            </>
+          ) : (
+            <>
+              <p><strong>{SITE.displayName}</strong>—{SITE.legalName}—is a law firm and licensing consultancy supporting businesses with corporate legality, business permits, and regulatory compliance. The engagement begins with activity mapping, business classification, and document requirements, then continues through permit-process coordination.</p>
+              <p>Operating since <mark>[PLACEHOLDER: YEAR ESTABLISHED]</mark>, the firm's track record, project coverage, and achievements will be published after verification. Our vision is to make licensing clearer, orderly, and traceable, with legal precision, progress communication, and a focus on resolving permit needs as our core differentiators.</p>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-shell company-stats" aria-label={id ? 'Statistik perusahaan - data menunggu verifikasi' : 'Company statistics - data pending verification'}>
+    {HOME_STATS[locale].map((stat) => (
+      <div class="company-stat" data-home-reveal>
+        <strong>{stat.value}</strong>
+        <span>{stat.label}</span>
+        <small>{id ? 'Menunggu verifikasi' : 'Pending verification'}</small>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .company-section { background: var(--brand-surface-soft); }
+  .company-section.home-section { padding-bottom: clamp(3rem, 4.5vw, 4.5rem); }
+  .company-section__header { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--home-line-strong); }
+  .company-section__content { display: grid; gap: clamp(1.5rem, 3vw, 3rem); padding-top: clamp(2.25rem, 4.5vw, 4.25rem); }
+  .company-section__copy { display: flex; flex-direction: column; gap: clamp(1.5rem, 3vw, 2.5rem); }
+  .company-section__copy :global(.home-heading) { margin: 0; }
+  .company-section__statement { max-width: 50rem; color: var(--home-muted); font-size: clamp(.92rem, 1.15vw, 1.04rem); line-height: 1.67; text-wrap: pretty; }
+  .company-section__statement p { margin: 0; }
+  .company-section__statement p + p { margin-top: .95rem; }
+  .company-section__statement strong { color: var(--home-black); font-weight: 760; }
+  .company-section__statement mark { border-radius: .15rem; background: #e9dfe0; padding: .08rem .24rem; color: var(--home-red-deep); font-weight: 760; }
+  .company-stats { display: grid; margin-top: clamp(3rem, 6vw, 5.8rem); border-top: 1px solid var(--home-line-strong); }
+  .company-stat { display: grid; grid-template-columns: 1fr auto; gap: .2rem 1rem; padding: 1.3rem 0; border-bottom: 1px solid var(--home-line); }
+  .company-stat strong { color: var(--home-red); font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 580; letter-spacing: -.04em; }
+  .company-stat span { align-self: end; color: var(--home-black); font-size: .75rem; font-weight: 760; }
+  .company-stat small { grid-column: 2; color: var(--home-muted); font-size: .58rem; text-transform: uppercase; letter-spacing: .08em; }
+  @media (min-width: 850px) {
+    .company-section__content { grid-template-columns: minmax(0, .9fr) minmax(25rem, 1.1fr); align-items: stretch; gap: clamp(2rem, 3.5vw, 3.5rem); }
+    .company-section__copy { min-height: 100%; justify-content: space-between; padding-block: .15rem 3.2rem; }
+    .company-stats { grid-template-columns: repeat(4, 1fr); }
+    .company-stat { min-height: 10rem; display: flex; flex-direction: column; justify-content: space-between; padding: 1.35rem; border-right: 1px solid var(--home-line); border-bottom: 0; }
+    .company-stat:first-child { padding-left: 0; }
+    .company-stat:last-child { border-right: 0; padding-right: 0; }
+    .company-stat span { max-width: 10rem; align-self: auto; }
+  }
+  @media (max-width: 540px) {
+    .company-section__header { align-items: flex-start; flex-direction: column; }
+  }
+</style>

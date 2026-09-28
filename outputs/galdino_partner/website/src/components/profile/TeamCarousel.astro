@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+import kelvinImage from '../../assets/team-kelvin-anata-lian.webp';
+import mariaImage from '../../assets/team-maria-indah-putri.webp';
+import michaelImage from '../../assets/team-michael-alvaro.webp';
+import { PROFILE_CONTENT } from '../../data/profile';
+import type { Locale } from '../../data/site';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const content = PROFILE_CONTENT[locale].team;
+const imageByKey = {
+  kelvin: kelvinImage,
+  maria: mariaImage,
+  michael: michaelImage,
+};
+---
+
+<section id="team" class="profile-team profile-section" aria-labelledby="profile-team-title">
+  <div class="container-shell">
+    <header class="profile-team__header" data-profile-reveal>
+      <p class="profile-context">{content.context}</p>
+      <div>
+        <h2 id="profile-team-title" class="profile-heading">{content.title}</h2>
+        <p class="profile-team__intro">{content.intro}</p>
+      </div>
+    </header>
+
+    <div class="profile-team__grid">
+      {content.members.map((member, index) => (
+        <article class="profile-member" data-profile-reveal>
+          <a href={`/${locale}/profile/${member.slug}/`} aria-label={`${content.profileAction}: ${member.name}`}>
+            <figure class="profile-member__visual">
+              <Image
+                src={imageByKey[member.imageKey]}
+                alt={member.imageAlt}
+                widths={[420, 640, 840]}
+                sizes="(min-width: 900px) 31vw, (min-width: 620px) 48vw, 100vw"
+                loading="lazy"
+                quality={80}
+              />
+              <figcaption>{locale === 'id' ? 'Visual konsep - foto resmi menyusul' : 'Concept portrait - official photo to follow'}</figcaption>
+              <span class="profile-member__number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+            </figure>
+            <div class="profile-member__content">
+              <h3>{member.name}</h3>
+              <p class="profile-member__role">{member.role}</p>
+              <ul aria-label={locale === 'id' ? 'Keahlian' : 'Expertise'}>
+                {member.expertise.map((item) => <li>{item}</li>)}
+              </ul>
+              <span class="profile-member__action">{content.profileAction}<ArrowIcon /></span>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .profile-team { background: var(--profile-white); }
+  .profile-team.profile-section { padding-block: clamp(2.25rem, 3.4vw, 3rem); }
+  .profile-team__header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 39rem) minmax(0, 1fr); align-items: start; gap: clamp(1rem, 2.5vw, 2rem); padding-bottom: 1.1rem; border-bottom: 1px solid var(--profile-line-strong); }
+  .profile-team__header > .profile-context { grid-column: 1; justify-self: start; }
+  .profile-team__header > div { grid-column: 2; display: grid; justify-items: center; gap: .55rem; text-align: center; }
+  .profile-team__header .profile-heading { max-width: 18ch; font-size: clamp(2rem, 3vw, 2.7rem); line-height: 1; }
+  .profile-team__intro { max-width: 39rem; margin: 0 auto; color: #4a4a4e; font-size: .84rem; line-height: 1.5; text-wrap: pretty; }
+  .profile-team__grid { width: min(100%, 52rem); display: grid; gap: clamp(.75rem, 1.2vw, 1rem); margin: clamp(1rem, 1.7vw, 1.35rem) auto 0; }
+  .profile-member { min-width: 0; border: 1px solid var(--profile-line-strong); background: #f8f7f5; }
+  .profile-member:nth-child(2) { background: #efeeeb; }
+  .profile-member > a { height: 100%; display: flex; flex-direction: column; color: var(--profile-black); text-decoration: none; }
+  .profile-member__visual { position: relative; aspect-ratio: 5 / 6; margin: 0; overflow: hidden; background: var(--profile-black); }
+  .profile-member__visual :global(img) { width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(1.04) brightness(.94); transition: filter 260ms var(--profile-ease), transform 320ms var(--profile-ease); }
+  .profile-member__visual::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgb(11 11 12 / .58)); content: ''; pointer-events: none; }
+  .profile-member__visual figcaption { position: absolute; right: .9rem; bottom: .75rem; left: .9rem; z-index: 1; color: rgb(255 255 255 / .82); font-size: .56rem; font-weight: 760; letter-spacing: .06em; line-height: 1.35; }
+  .profile-member__number { position: absolute; top: .8rem; right: .8rem; z-index: 1; min-width: 2rem; display: grid; place-items: center; border: 1px solid rgb(255 255 255 / .5); background: rgb(11 11 12 / .48); padding: .28rem; color: #fff; font-size: .61rem; font-weight: 820; }
+  .profile-member__content { min-height: 11.5rem; flex: 1 1 auto; display: flex; flex-direction: column; padding: clamp(.9rem, 1.5vw, 1.15rem); }
+  .profile-member h3 { margin: 0; font-family: var(--font-display); font-size: clamp(1.4rem, 1.8vw, 1.7rem); font-weight: 590; letter-spacing: -.035em; line-height: 1.02; overflow-wrap: anywhere; text-wrap: balance; }
+  .profile-member__role { margin: .5rem 0 0; color: var(--profile-red-deep); font-size: .76rem; font-weight: 800; line-height: 1.45; }
+  .profile-member ul { display: flex; flex-wrap: wrap; gap: .38rem; margin: .7rem 0 0; padding: 0; list-style: none; }
+  .profile-member li { border: 1px solid var(--profile-line-strong); background: rgb(255 255 255 / .62); padding: .3rem .45rem; color: var(--profile-black); font-size: .61rem; font-weight: 720; line-height: 1.25; }
+  .profile-member__action { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .5rem; margin-top: auto; padding-top: .75rem; border-top: 1px solid var(--profile-line); color: var(--profile-black); font-size: .72rem; font-weight: 820; }
+  .profile-member__action :global(.arrow-icon) { transition: transform 170ms var(--profile-ease); }
+  @media (min-width: 900px) {
+    .profile-team__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 899px) {
+    .profile-team__header { grid-template-columns: 1fr; align-items: start; gap: .85rem; }
+    .profile-team__header > .profile-context, .profile-team__header > div { grid-column: 1; }
+    .profile-team__header > div { width: 100%; }
+    .profile-team__grid { grid-auto-flow: column; grid-auto-columns: min(78vw, 18rem); overflow-x: auto; scroll-snap-type: x mandatory; }
+    .profile-member { scroll-snap-align: start; }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .profile-member:hover .profile-member__visual :global(img), .profile-member:focus-within .profile-member__visual :global(img) { filter: saturate(1) contrast(1.03) brightness(.98); transform: scale(1.025); }
+    .profile-member:hover .profile-member__action :global(.arrow-icon), .profile-member:focus-within .profile-member__action :global(.arrow-icon) { transform: translateX(3px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .profile-member__visual :global(img), .profile-member__action :global(.arrow-icon) { transition-duration: .01ms; }
+  }
+</style>

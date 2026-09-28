@@ -1,0 +1,12 @@
+---
+import PersonProfilePage from '../../../components/PersonProfilePage.astro';
+import { PROFILE_CONTENT, type ProfileMember } from '../../../data/profile';
+
+export function getStaticPaths() {
+  return PROFILE_CONTENT.id.team.members.map((member) => ({ params: { slug: member.slug }, props: { member } }));
+}
+interface Props { member: ProfileMember; }
+const { member } = Astro.props;
+const alternateUrl = new URL(`/en/profile/${member.slug}/`, Astro.site).toString();
+---
+<PersonProfilePage locale="id" member={member} alternateUrl={alternateUrl} />

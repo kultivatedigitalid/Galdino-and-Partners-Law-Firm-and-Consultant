@@ -1,0 +1,146 @@
+[
+  {
+    "number": "3.1",
+    "title": "Setelah melihat website, apa satu hal yang paling penting untuk dipahami atau diingat orang?",
+    "status": "Terkonfirmasi",
+    "answer": "Arah pesan utama project adalah: Galdino & Partner membantu bisnis memetakan persyaratan, menyiapkan dokumen, dan mengawal pengurusan izin hingga tindak lanjut, dengan kemampuan legal dan regulasi sebagai pendukung. Dokumentasi menegaskan positioning permit handling first dan melarang jaminan atas hasil yang dikendalikan otoritas.",
+    "short": "Pesan utama: pengurusan izin bisnis melalui pemetaan persyaratan, penyiapan dokumen, pengawalan proses, dan tindak lanjut — tanpa menjamin hasil otoritas.",
+    "sources": ["src/components/home/HomeHero.astro — headline, lead, proof, dan CTA utama.", "docs/PAGE_SPECIFICATIONS.md — homepage positioning permit handling first.", "docs/PROJECT_CONTEXT.md — positioning dan larangan guarantee authority-controlled outcomes."],
+    "recommendation": "Bukan kondisi project saat ini — pertahankan pesan ini sebagai draft utama dan minta approval final stakeholder."
+  },
+  {
+    "number": "3.2",
+    "title": "Siapa kompetitor yang paling sering dibandingkan dengan perusahaan Anda?",
+    "status": "Belum dapat dikonfirmasi",
+    "answer": "Tidak ada nama, URL, atau analisis kompetitor dalam codebase dan dokumentasi project.",
+    "short": "Kompetitor aktual tidak tersedia di project.",
+    "sources": ["src/data — tidak memuat competitor records.", "docs/PROJECT_CONTEXT.md — tidak memuat competitor comparison."],
+    "missing": "Maksimal tiga kompetitor yang benar-benar muncul dalam proses penjualan dan URL-nya.",
+    "recommendation": "Bukan kondisi project saat ini — isi hanya kompetitor yang disebut oleh prospek/sales, bukan hasil pencarian umum.",
+    "additional": "Win/loss notes, proposal pembanding, atau wawancara sales."
+  },
+  {
+    "number": "3.3",
+    "title": "Apa tiga kemampuan atau kualitas terbaik perusahaan Anda?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Tiga kualitas yang dinyatakan project adalah: (1) ketelitian hukum; (2) komunikasi progres; (3) fokus pada penyelesaian kebutuhan izin melalui pemetaan langkah yang jelas. Manfaat yang dimaksud adalah proses lebih tertib, dapat ditelusuri, dan siap mendukung keputusan. Project tidak memiliki bukti operasional terverifikasi untuk menguatkan klaim tersebut.",
+    "short": "Kualitas yang dinyatakan project: ketelitian hukum, komunikasi progres, dan fokus penyelesaian/pemetaan kebutuhan izin; bukti bisnis belum tersedia.",
+    "sources": ["src/data/profile.ts — company paragraphs menyebut legal precision, progress communication, dan focus on resolution.", "src/components/home/CompanySnapshot.astro — nilai pembeda yang sama dengan marker rekam jejak belum terverifikasi.", "docs/PROJECT_CONTEXT.md — positioning ordered, decision-ready steps."],
+    "missing": "Contoh kasus, SOP, credential, testimonial, atau KPI yang membuktikan tiap kualitas.",
+    "recommendation": "Bukan kondisi project saat ini — pertahankan sebagai hipotesis klaim sampai bukti dan approver tersedia.",
+    "additional": "Bukti proses, case evidence, feedback klien, dan credential."
+  },
+  {
+    "number": "3.4",
+    "title": "Dari keunggulan tersebut, apa yang benar-benar berbeda dibandingkan kompetitor atau alternatif lain?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Project menyebut kombinasi ketelitian hukum, komunikasi progres, fokus penyelesaian, serta penerjemahan kompleksitas regulasi menjadi langkah yang terurut sebagai nilai pembeda yang diinginkan. Tidak ada competitor evidence yang membuktikan bahwa kombinasi ini unik atau sulit ditiru.",
+    "short": "Diferensiasi yang diinginkan: regulatory complexity menjadi langkah terurut, didukung legal precision dan progress communication; keunikannya belum terbukti.",
+    "sources": ["docs/PROJECT_CONTEXT.md — Positioning.", "src/data/profile.ts — differentiating values dalam company paragraphs.", "docs/CONTENT_GUIDELINES.md — process transparency sebagai dasar trust."],
+    "missing": "Perbandingan kompetitor, proses proprietary, SLA, credential, atau bukti hasil.",
+    "recommendation": "Bukan kondisi project saat ini — jangan menyatakan 'unik' sebelum pembanding dan bukti diverifikasi.",
+    "additional": "Process map, benchmark kompetitor yang bersumber dari sales, dan evidence."
+  },
+  {
+    "number": "3.5",
+    "title": "Hubungkan klaim, bukti, dan manfaatnya.",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Klaim yang ada beserta status bukti: (1) 'pemetaan persyaratan dan pengawalan proses' — bukti yang tersedia hanya implementasi copy/process empat langkah pada website, bukan bukti delivery klien — manfaat yang dikomunikasikan: kebutuhan menjadi rencana kerja; (2) 'pengalaman relevan' — project/hasil/tahun masih placeholder — manfaat yang dituju: kredibilitas; (3) 'tim perizinan/legal' — nama, role, dan expertise ada di data, tetapi foto, credential, kontak, dan identitas profesional belum diverifikasi — manfaat yang dituju: kejelasan siapa yang menangani. Belum ada claim-evidence pair yang siap dianggap terverifikasi secara bisnis.",
+    "short": "Klaim proses, pengalaman, dan tim sudah distrukturkan, tetapi bukti klien, hasil, tahun, credential, dan foto resmi belum tersedia.",
+    "sources": ["src/components/home/PermitProcess.astro — empat langkah proses.", "src/data/site.ts — PROJECTS masih placeholder.", "src/data/profile.ts — nama/role/expertise dengan credential/contact placeholder.", "docs/PROJECT_CONTEXT.md — project evidence dan professional roster belum final."],
+    "missing": "Bukti publishable untuk setiap klaim.",
+    "recommendation": "Bukan kondisi project saat ini — buat evidence register: klaim, sumber, owner, tanggal verifikasi, izin publikasi, dan manfaat.",
+    "additional": "Dokumen case, izin klien, credential, statistik, testimonial, dan approver."
+  },
+  {
+    "number": "3.6",
+    "title": "Apakah ada klaim, istilah, nama klien, proyek, atau aset yang tidak boleh digunakan?",
+    "status": "Terkonfirmasi",
+    "answer": "Ya. Project melarang jaminan hasil yang dikendalikan otoritas, istilah 'guarantee', 'fastest', '100% approved', dan superlatif tanpa dukungan. Nama/logo/testimonial klien dan detail proyek tidak boleh dipublikasikan tanpa verifikasi substansi serta izin tertulis. Legal name, registrasi, profesional, outcome, angka, harga, foto konsep, dan aset ber-marker placeholder/dummy tidak boleh diperlakukan sebagai fakta final. Artikel legal memerlukan subject-matter review dan current-law verification sebelum produksi.",
+    "short": "Larangan terkonfirmasi: guarantee/fastest/100% approved/superlatif tanpa bukti; identitas/aset klien tanpa izin; seluruh placeholder/dummy sebagai fakta; artikel legal tanpa review.",
+    "sources": ["docs/CONTENT_GUIDELINES.md — voice, kata yang dihindari, placeholder, dan legal review.", "docs/REQUIREMENTS.md — content integrity.", "docs/COMPONENT_GUIDELINES.md — placeholder identities, statistics, clients, prices, video, projects.", "docs/PAGE_SPECIFICATIONS.md — client logos/testimonials memerlukan izin tertulis."],
+    "recommendation": "Bukan kondisi project saat ini — pertahankan marker sampai evidence register dan approval publikasi lengkap."
+  },
+  {
+    "number": "4.1",
+    "title": "Bagaimana status brand guideline perusahaan?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Project memiliki design system internal yang rinci dan menyebut mark merah-hitam-emas sebagai approved transparent brand asset. Namun tidak ditemukan dokumen brand guideline korporat terpisah atau pernyataan stakeholder tentang apakah guideline wajib diikuti sepenuhnya, boleh dikembangkan, atau sudah tidak relevan. Karena itu pilihan form tidak dapat dicentang secara pasti.",
+    "short": "Design system website dan logo approved tersedia; status brand guideline korporat tidak diketahui.",
+    "sources": ["docs/DESIGN_SYSTEM.md — direction, brand assets, tokens, typography, responsive, dan motion.", "public/assets/gp-logo-brand.png — master mark yang digunakan.", "src/styles/global.css — shared brand tokens."],
+    "missing": "Brand manual korporat, versi, pemilik, dan tingkat kebebasan penggunaan.",
+    "recommendation": "Bukan kondisi project saat ini — pisahkan 'design system website' dari 'brand guideline korporat' dan minta approver mengonfirmasi statusnya.",
+    "additional": "File guideline, logo pack resmi, aturan warna/type, dan approval owner."
+  },
+  {
+    "number": "4.2",
+    "title": "Pilih maksimal tiga karakter brand.",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Untuk arah website, tiga karakter yang paling eksplisit dari project adalah Modern (modern clarity), Premium, dan Tegas (decisive). Dokumen juga menyebut legal-oriented dan business-focused, sementara voice harus calm, precise, practical, dan commercially aware. Ini adalah arah desain/copy project, bukan hasil konfirmasi brand stakeholder pada form.",
+    "short": "Arah website: Modern, Premium, Tegas; konfirmasi brand stakeholder belum tersedia.",
+    "sources": ["docs/DESIGN_SYSTEM.md — modern clarity, premium, decisive, legal-oriented, business-focused.", "docs/CONTENT_GUIDELINES.md — calm, precise, practical, commercially aware voice."],
+    "missing": "Persetujuan stakeholder bahwa tiga karakter tersebut mewakili brand perusahaan.",
+    "recommendation": "Bukan kondisi project saat ini — minta approver memilih maksimal tiga dan memberi contoh perilaku/copy untuk tiap karakter.",
+    "additional": "Brand workshop atau approval tertulis."
+  },
+  {
+    "number": "4.3",
+    "title": "Pilih satu gaya komunikasi utama.",
+    "status": "Terkonfirmasi",
+    "answer": "Gaya komunikasi utama yang paling sesuai dengan aturan project adalah 'Profesional, mudah dipahami'. Project meminta penjelasan regulasi dalam bahasa sederhana tanpa menghilangkan nuansa hukum, dengan voice tenang, presisi, praktis, dan sadar konteks komersial.",
+    "short": "Profesional, mudah dipahami.",
+    "sources": ["docs/CONTENT_GUIDELINES.md — Voice dan Conversion copy.", "docs/PROJECT_CONTEXT.md — menghubungkan kebutuhan legal dengan operasi bisnis tanpa guarantee."],
+    "recommendation": "Bukan kondisi project saat ini — pertahankan gaya ini dan lakukan legal/editorial review untuk tiap artikel."
+  },
+  {
+    "number": "4.4",
+    "title": "Tuliskan istilah yang wajib digunakan dan gaya yang harus dihindari.",
+    "status": "Terkonfirmasi",
+    "answer": "Istilah/gaya yang dianjurkan: membantu, memetakan, meninjau/review, mengawal/guide, aktivitas, masalah, dan langkah berikutnya. Gaya yang dihindari: jaminan hasil, 'tercepat', '100% approved', superlatif tanpa dukungan, menyederhanakan nuansa hukum, serta klaim authority-controlled outcome.",
+    "short": "Gunakan: membantu, memetakan, review/meninjau, mengawal/guide. Hindari: guarantee, fastest, 100% approved, superlatif tanpa bukti, dan janji hasil otoritas.",
+    "sources": ["docs/CONTENT_GUIDELINES.md — kata kerja yang digunakan/dihindari dan aturan conversion copy.", "docs/PROJECT_CONTEXT.md — larangan guarantee authority-controlled outcomes."],
+    "recommendation": "Bukan kondisi project saat ini — jadikan daftar ini checklist copy review dan tambahkan istilah legal resmi yang disetujui subject-matter reviewer."
+  },
+  {
+    "number": "4.5",
+    "title": "Seberapa bebas tim KULTIVATE dapat mengembangkan tampilan brand?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Source sudah menerapkan arah visual yang preskriptif: monochrome surfaces, brand red, restrained gold, square-edged components, system typography, dan purposeful motion. Namun tidak ada pernyataan stakeholder yang menentukan tingkat kebebasan tim KULTIVATE terhadap identitas utama.",
+    "short": "Implementasi mengikuti design system yang ketat; mandat kebebasan KULTIVATE belum dinyatakan.",
+    "sources": ["docs/DESIGN_SYSTEM.md — direction dan aturan visual.", "src/styles/global.css — brand tokens.", "src/components/HomePage.astro dan src/components/ProfilePage.astro — page-scoped brand aliases."],
+    "missing": "Batas perubahan logo, warna, tipografi, layout, fotografi, dan tone.",
+    "recommendation": "Bukan kondisi project saat ini — pilih 'boleh dikembangkan selama identitas utama dipertahankan' hanya jika approver menyetujuinya; jangan mencentang tanpa approval.",
+    "additional": "Keputusan tertulis brand owner."
+  },
+  {
+    "number": "4.6",
+    "title": "Adakah warna, simbol, foto, ilustrasi, atau gaya visual yang wajib dipakai atau dilarang?",
+    "status": "Terkonfirmasi",
+    "answer": "Wajib/ditetapkan project: transparent red-black-gold master logo tanpa background plate; monochrome white/black/paper surfaces; primary red untuk action/active/focus; gold sebagai aksen sekunder; system sans typography; foto/visual harus memiliki alt text dan izin. Dilarang/dihindari: white/off-white plate di belakang logo, glassmorphism, glow, decorative looping animation, excessive gradients, generic icon grids, repeated identical cards, WebGL/3D, unverified imagery/claims. Seluruh concept imagery harus diganti dengan aset resmi sebelum klaim launch difinalkan.",
+    "short": "Pertahankan logo transparan merah-hitam-emas, red/black/white + restrained gold; hindari plate logo, glassmorphism, glow, WebGL/3D, dekorasi berlebih, dan concept imagery final.",
+    "sources": ["docs/DESIGN_SYSTEM.md — brand assets, tokens, prohibited patterns, dan concept imagery.", "docs/PROJECT_CONTEXT.md — no WebGL/3D.", "docs/ACCESSIBILITY_GUIDELINES.md — alt text dan accessible visuals."],
+    "recommendation": "Bukan kondisi project saat ini — lengkapi asset usage register dan persetujuan foto sebelum mengganti marker concept."
+  },
+  {
+    "number": "4.7",
+    "title": "Website atau brand apa yang menjadi referensi?",
+    "status": "Sebagian terkonfirmasi",
+    "answer": "Satu referensi internal yang disebut adalah 'Mockup 1' sebagai production direction. Project tidak memuat URL atau nama brand/website eksternal yang menjadi referensi, sehingga tiga referensi form tidak dapat diisi.",
+    "short": "Referensi internal: Mockup 1. Tidak ada referensi website/brand eksternal di project.",
+    "sources": ["docs/DESIGN_SYSTEM.md — production direction follows Mockup 1.", "docs/ARCHITECTURE.md — HomePage owns Mockup 1 section composition."],
+    "missing": "Nama/URL referensi eksternal dan aspek yang disukai/tidak ingin ditiru.",
+    "recommendation": "Bukan kondisi project saat ini — bila dibutuhkan, stakeholder mengisi maksimal tiga referensi; jangan mengarang dari gaya implementasi.",
+    "additional": "URL, screenshot, dan penjelasan pola yang disukai/dihindari."
+  },
+  {
+    "number": "4.8",
+    "title": "Apakah perusahaan memiliki parent company, subbrand, atau beberapa unit bisnis?",
+    "status": "Belum dapat dikonfirmasi",
+    "answer": "Tidak ditemukan parent company, subbrand, unit bisnis, atau relasi antarbrand. Source hanya mendefinisikan satu display name dan short name.",
+    "short": "Struktur parent company/subbrand/unit bisnis tidak tersedia.",
+    "sources": ["src/data/site.ts — SITE hanya mendefinisikan satu displayName dan shortName.", "docs/PROJECT_CONTEXT.md — tidak memuat arsitektur brand."],
+    "missing": "Struktur korporat/brand dan aturan logo/hierarki.",
+    "recommendation": "Bukan kondisi project saat ini — konfirmasi dengan dokumen korporat dan brand owner.",
+    "additional": "Daftar entitas/unit, hubungan hukum, brand yang harus menonjol, dan logo resmi."
+  }
+]

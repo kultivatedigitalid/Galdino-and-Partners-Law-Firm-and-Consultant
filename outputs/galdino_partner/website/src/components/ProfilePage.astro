@@ -1,0 +1,250 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/profile-company-hero-centered.webp';
+import { PROFILE_CONTENT } from '../data/profile';
+import type { Locale } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CompanyGallery from './CompanyGallery.astro';
+import ArrowIcon from './icons/ArrowIcon.astro';
+import HomeFinalCta from './home/HomeFinalCta.astro';
+import TeamCarousel from './profile/TeamCarousel.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const content = PROFILE_CONTENT[locale];
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const profileSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfilePage',
+      name: content.seo.title,
+      description: content.seo.description,
+      url: pageUrl,
+      inLanguage: locale === 'id' ? 'id-ID' : 'en-US',
+      about: {
+        '@type': ['LegalService', 'Organization'],
+        name: 'Galdino & Partner',
+        url: new URL(`/${locale}/`, Astro.site).toString(),
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: new URL(`/${locale}/`, Astro.site).toString() },
+        { '@type': 'ListItem', position: 2, name: 'Profile', item: pageUrl },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout locale={locale} title={content.seo.title} description={content.seo.description}>
+  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(profileSchema)} />
+
+  <div class="profile-redesign">
+    <section class="profile-hero" aria-labelledby="profile-hero-title">
+      <figure class="profile-hero__visual">
+        <Image
+          src={heroImage}
+          alt={content.hero.imageAlt}
+          widths={[800, 1200, 1672]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          quality={84}
+        />
+        <figcaption>{content.hero.imagePlaceholder}</figcaption>
+      </figure>
+      <div class="container-shell profile-hero__inner">
+        <div class="profile-hero__copy">
+          <p class="profile-context">{content.hero.context}</p>
+          <h1 id="profile-hero-title">{content.hero.title}</h1>
+          <p class="profile-hero__lead">{content.hero.lead}</p>
+          <a class="profile-button profile-button--red" href="#team">
+            {content.hero.cta}<ArrowIcon />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-company profile-section" aria-labelledby="profile-company-title">
+      <div class="container-shell">
+        <p class="profile-context" data-profile-reveal>{content.company.context}</p>
+        <div class="profile-company__statement">
+          <CompanyGallery locale={locale} surface="profile" />
+          <div class="profile-company__content" data-profile-reveal>
+            <header class="profile-company__header">
+              <h2 id="profile-company-title" class="profile-heading">
+                <span>{content.company.titleLines[0]}</span>
+                <span>{content.company.titleLines[1]}</span>
+              </h2>
+            </header>
+            <div class="profile-company__copy">
+              {content.company.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-company__registry" data-profile-reveal>
+          <h3>{content.company.factsTitle}</h3>
+          <dl>
+            {content.company.facts.map((fact) => (
+              <div>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <TeamCarousel locale={locale} />
+    <HomeFinalCta locale={locale} />
+  </div>
+
+  <script>
+    const profileElements = document.querySelectorAll<HTMLElement>('[data-profile-reveal]');
+    const reduceProfileMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if ('IntersectionObserver' in window && !reduceProfileMotion) {
+      document.documentElement.classList.add('profile-motion-ready');
+      const profileObserver = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('profile-visible');
+            instance.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+      profileElements.forEach((element) => profileObserver.observe(element));
+    }
+  </script>
+</BaseLayout>
+
+<style is:global>
+  .profile-redesign {
+    --profile-black: var(--brand-black);
+    --profile-white: var(--brand-white);
+    --profile-paper: var(--brand-paper);
+    --profile-red: var(--brand-red);
+    --profile-red-bright: var(--brand-red-bright);
+    --profile-red-deep: var(--brand-red-deep);
+    --profile-gold: var(--brand-gold);
+    --profile-muted: var(--brand-muted);
+    --profile-line: var(--brand-line);
+    --profile-line-strong: var(--brand-line-strong);
+    --profile-ease: var(--brand-ease);
+    overflow: clip;
+    background: var(--profile-paper);
+    color: var(--profile-black);
+  }
+  .profile-redesign .profile-section { padding-block: var(--brand-section-space); }
+  .profile-redesign .profile-context {
+    width: fit-content;
+    margin: 0;
+    border-bottom: 2px solid var(--profile-red);
+    padding-bottom: .35rem;
+    color: var(--profile-black);
+    font-size: .7rem;
+    font-weight: 820;
+    letter-spacing: .04em;
+  }
+  .profile-redesign .profile-heading {
+    max-width: 18ch;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: var(--brand-type-section);
+    font-weight: 570;
+    letter-spacing: -.035em;
+    line-height: .98;
+    text-wrap: balance;
+  }
+  .profile-redesign .profile-button {
+    min-height: 3.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    border: 1px solid transparent;
+    padding: .78rem 1.25rem;
+    font-size: .78rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 160ms var(--profile-ease), background-color 170ms var(--profile-ease), color 170ms var(--profile-ease);
+  }
+  .profile-redesign .profile-button--red { background: var(--profile-red); color: #fff; }
+  .profile-redesign .profile-button :where(.arrow-icon) { transition: transform 170ms var(--profile-ease); }
+  .profile-redesign .profile-button:active { transform: scale(.97); }
+  .profile-redesign :focus-visible { outline-color: var(--profile-red-bright); }
+  .profile-motion-ready .profile-redesign [data-profile-reveal] { opacity: .001; transform: translateY(12px); transition: opacity 500ms var(--profile-ease), transform 500ms var(--profile-ease); transition-delay: var(--profile-reveal-delay, 0ms); }
+  .profile-motion-ready .profile-redesign [data-profile-reveal].profile-visible { opacity: 1; transform: none; }
+  body:has(.profile-redesign) .contact-dock__link { background: linear-gradient(120deg, #710d1b 0%, #9c1021 48%, #c4142a 100%); background-position: 0 50%; background-size: 180% 100%; box-shadow: 0 12px 34px rgb(38 3 8 / .24); opacity: 1; transition: background-position 260ms var(--profile-ease), box-shadow 200ms var(--profile-ease), transform 170ms var(--profile-ease); }
+  body:has(.profile-redesign) .contact-dock__pulse { background: #fff; box-shadow: 0 0 0 4px rgb(255 255 255 / .16); }
+
+  .profile-hero { position: relative; min-height: clamp(40rem, 100svh, 51rem); overflow: hidden; background: var(--profile-black); color: #fff; }
+  .profile-hero::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(11 11 12 / .94) 0%, rgb(41 4 10 / .84) 30%, rgb(55 6 14 / .34) 49%, transparent 68%), linear-gradient(180deg, rgb(11 11 12 / .28), transparent 28%, rgb(11 11 12 / .18)); content: ''; pointer-events: none; }
+  .profile-hero__visual { position: absolute; inset: 0; margin: 0; }
+  .profile-hero__visual :where(img) { width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: center; }
+  .profile-hero__visual figcaption { position: absolute; right: 1.25rem; bottom: 1rem; z-index: 2; max-width: 24rem; background: rgb(11 11 12 / .72); padding: .35rem .5rem; color: rgb(255 255 255 / .82); font-size: .56rem; font-weight: 760; letter-spacing: .055em; }
+  .profile-hero__inner { position: relative; z-index: 2; min-height: inherit; display: flex; align-items: center; padding-top: 5.5rem; padding-bottom: 2.5rem; }
+  .profile-hero__copy { width: min(43vw, 35rem); }
+  .profile-hero .profile-context { border-bottom-color: var(--profile-red-bright); color: #fff; }
+  .profile-hero h1 { max-width: 12ch; margin: 1.25rem 0 0; color: #fff; font-family: var(--font-display); font-size: var(--brand-type-hero); font-weight: 570; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
+  .profile-hero__lead { max-width: 31rem; margin: 1.15rem 0 0; color: rgb(255 255 255 / .84); font-size: clamp(.98rem, 1.2vw, 1.12rem); line-height: 1.58; text-wrap: pretty; }
+  .profile-hero__copy > .profile-button { margin-top: 1.75rem; }
+
+  .profile-company { background: var(--brand-surface-soft); }
+  .profile-company__header { display: grid; gap: .9rem; padding-bottom: clamp(1.25rem, 2.2vw, 1.75rem); border-bottom: 1px solid var(--profile-line-strong); }
+  .profile-company__header .profile-heading { max-width: 19ch; }
+  .profile-company__header .profile-heading span { display: block; }
+  .profile-company__statement { --company-gallery-height: clamp(23rem, 29vw, 27rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(24rem, 1fr); gap: clamp(2rem, 4vw, 4rem); align-items: stretch; margin-top: clamp(1.5rem, 2.8vw, 2.25rem); }
+  .profile-company__content { min-width: 0; display: grid; align-content: start; gap: clamp(1.35rem, 2.4vw, 2rem); padding-block: .1rem; }
+  .profile-company__copy { max-width: 44rem; display: grid; gap: 1rem; }
+  .profile-company__copy p { margin: 0; color: #353538; font-size: clamp(.94rem, 1.15vw, 1.04rem); line-height: 1.68; text-wrap: pretty; }
+  .profile-company__registry { margin-top: clamp(3.5rem, 6vw, 5.5rem); }
+  .profile-company__registry h3 { margin: 0 0 1rem; font-size: .76rem; font-weight: 820; }
+  .profile-company__registry dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--profile-line-strong); }
+  .profile-company__registry dl > div { min-height: 7.5rem; padding: 1.2rem 1.2rem 1.2rem 0; border-bottom: 1px solid var(--profile-line-strong); }
+  .profile-company__registry dl > div:nth-child(odd) { border-right: 1px solid var(--profile-line-strong); }
+  .profile-company__registry dl > div:nth-child(even) { padding-left: 1.2rem; }
+  .profile-company__registry dt { color: var(--profile-muted); font-size: .66rem; font-weight: 760; }
+  .profile-company__registry dd { margin: 1.2rem 0 0; color: var(--profile-black); font-size: clamp(.82rem, 1.15vw, 1rem); font-weight: 720; line-height: 1.45; overflow-wrap: anywhere; }
+  @media (hover: hover) and (pointer: fine) {
+    .profile-redesign .profile-button--red:hover { background: #a30f22; transform: translateY(-2px); }
+    .profile-redesign .profile-button:hover :where(.arrow-icon) { transform: translateX(3px); }
+    body:has(.profile-redesign) .contact-dock__link:hover { background-position: 100% 50%; box-shadow: 0 15px 42px rgb(38 3 8 / .32); transform: translateY(-2px); }
+  }
+  @media (max-width: 900px) {
+    .profile-hero { min-height: 0; padding-top: 6.5rem; }
+    .profile-hero::after { display: none; }
+    .profile-hero__inner { min-height: 0; padding-top: 2rem; padding-bottom: 2.5rem; }
+    .profile-hero__copy { width: min(100%, 42rem); }
+    .profile-hero__visual { position: relative; inset: auto; aspect-ratio: 16 / 9; order: 2; }
+    .profile-hero { display: flex; flex-direction: column; }
+    .profile-hero__inner { order: 1; }
+    .profile-hero__visual :where(img) { width: 100%; height: 100%; margin: 0; object-position: center; }
+    .profile-company__statement { grid-template-columns: 1fr; gap: 2rem; }
+    .profile-company__content { gap: 1.35rem; padding: 0; }
+  }
+  @media (max-width: 640px) {
+    .profile-redesign .profile-section { padding-block: 4.5rem; }
+    .profile-redesign .profile-heading { font-size: clamp(2.15rem, 10vw, 2.85rem); }
+    .profile-hero { padding-top: 5rem; }
+    .profile-hero__inner { padding-top: 1.7rem; }
+    .profile-hero h1 { max-width: 13ch; font-size: clamp(2.65rem, 11vw, 3.25rem); }
+    .profile-hero__lead { font-size: .94rem; }
+    .profile-hero__visual { aspect-ratio: 16 / 9; }
+    .profile-hero__visual :where(img) { width: 100%; height: 100%; object-position: center; }
+    .profile-hero__visual figcaption { right: .7rem; bottom: .7rem; left: .7rem; }
+    .profile-company__registry dl { grid-template-columns: 1fr; }
+    .profile-company__registry dl > div { min-height: 7rem; padding-inline: 0; border-right: 0 !important; }
+    .profile-company__registry dl > div:nth-child(even) { padding-left: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .profile-motion-ready .profile-redesign [data-profile-reveal] { opacity: 1; transform: none; transition-duration: .01ms; transition-delay: 0ms; }
+    .profile-redesign .profile-button, .profile-redesign .profile-button :where(.arrow-icon), body:has(.profile-redesign) .contact-dock__link { transition-duration: .01ms; }
+  }
+</style>

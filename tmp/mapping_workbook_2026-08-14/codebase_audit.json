@@ -1,0 +1,3168 @@
+{
+  "root": "C:/Users/Joshua/OneDrive/Documents/Law/outputs/galdino_partner/website",
+  "generatedAt": "2026-08-14T09:29:38.481Z",
+  "coverage": {
+    "totalFiles": 109,
+    "textFilesRead": 91,
+    "binaryOrAssetFiles": 18,
+    "totalTextLines": 11164,
+    "totalTextBytes": 480155
+  },
+  "files": [
+    {
+      "file": ".env.example",
+      "bytes": 397,
+      "lines": 9,
+      "sha256": "407004af83e216638faa830e0e89ae9320a0bc8c370897ed522773b92f56004a",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": ".gitignore",
+      "bytes": 69,
+      "lines": 9,
+      "sha256": "3ccba79e3308a5d6547d02d0043ecc5ece7ba7b44d83e193ea93072c1eb2e3af",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": ".vscode/extensions.json",
+      "bytes": 87,
+      "lines": 5,
+      "sha256": "cc8f4bcdc3c31be539aa67fbdacaaac4c9fcccb55b02048acf02f56e623ef682",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": ".vscode/launch.json",
+      "bytes": 207,
+      "lines": 12,
+      "sha256": "461accad2f8d7604a8470fb4705b84768bcf24791b0974d49cba0d96c3fea857",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "AGENTS.md",
+      "bytes": 874,
+      "lines": 23,
+      "sha256": "258e71559ecd267cdca0f9751feb80e3249b79fd4b67e534247788cfdb4522c4",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "astro.config.mjs",
+      "bytes": 594,
+      "lines": 23,
+      "sha256": "725a143d2c666a53174ee5d2430de32384747de3f15623ae6e227e5c85b95807",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "CLAUDE.md",
+      "bytes": 874,
+      "lines": 23,
+      "sha256": "258e71559ecd267cdca0f9751feb80e3249b79fd4b67e534247788cfdb4522c4",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/ACCESSIBILITY_GUIDELINES.md",
+      "bytes": 1215,
+      "lines": 17,
+      "sha256": "5ef2a743613112db01b719efb08b3bbffac44194a971253784f0c458efdf1470",
+      "placeholderCount": 1,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "bytes": 3146,
+      "lines": 50,
+      "sha256": "e03a1d0256f2f96ffa0ace22a1a368e0acc42caefdf7f3df6303c960281c6d6c",
+      "placeholderCount": 1,
+      "dummyCount": 1,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/COMPONENT_GUIDELINES.md",
+      "bytes": 2801,
+      "lines": 24,
+      "sha256": "beea0d52db36f6b9b4a0f34248d4183f50a6631964c2cdc77f9e9338f2c5b6b5",
+      "placeholderCount": 3,
+      "dummyCount": 0,
+      "noindexCount": 1
+    },
+    {
+      "file": "docs/CONTENT_GUIDELINES.md",
+      "bytes": 1313,
+      "lines": 22,
+      "sha256": "7c0ff896ccc267c4340f984fcce3bfbf3fc2e95d546e2123b3ad6fef8a9edd5c",
+      "placeholderCount": 2,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/DEPLOYMENT.md",
+      "bytes": 1450,
+      "lines": 26,
+      "sha256": "889287fc9b2a5576396d8250ce788a469d8c0f830725d23cf9d30f806d381104",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/DESIGN_SYSTEM.md",
+      "bytes": 5396,
+      "lines": 61,
+      "sha256": "bc47410e12e58edf1ef2c619be1ffe30c09b521a1f1ec0d6917fa6c04250bddc",
+      "placeholderCount": 1,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/DEVELOPMENT_WORKFLOW.md",
+      "bytes": 1379,
+      "lines": 22,
+      "sha256": "bb6fd977300d662fa08b09cadb36167386cc370055e886c003dd11ca1edc069b",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/I18N_GUIDELINES.md",
+      "bytes": 1536,
+      "lines": 22,
+      "sha256": "ad93a411fd13905ec38099b4f543fdb0f01e80f50a1386195bdb9b8691824152",
+      "placeholderCount": 1,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "bytes": 5019,
+      "lines": 53,
+      "sha256": "77cddd6d0b2c1d767af7618b213ac50c334d695edaa28b27f383ee1448194e0d",
+      "placeholderCount": 9,
+      "dummyCount": 1,
+      "noindexCount": 1
+    },
+    {
+      "file": "docs/PROJECT_CONTEXT.md",
+      "bytes": 1443,
+      "lines": 24,
+      "sha256": "829c4f04bac92119d44083381cad2b2d460b5c09628c9fd1e8017dad980c18f3",
+      "placeholderCount": 2,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/REQUIREMENTS.md",
+      "bytes": 1482,
+      "lines": 25,
+      "sha256": "c62bbeae840428d6df3518d234c1ba1ad3791e9f2a8c08e9541bb775a4474e20",
+      "placeholderCount": 1,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "docs/SEO_GUIDELINES.md",
+      "bytes": 2196,
+      "lines": 26,
+      "sha256": "d9cdc3cc17edc8d750425dd2d585afc97f989bb34e85699983a9b04199f8c724",
+      "placeholderCount": 4,
+      "dummyCount": 0,
+      "noindexCount": 2
+    },
+    {
+      "file": "docs/SERVERLESS_CONTACT_FORM.md",
+      "bytes": 1482,
+      "lines": 24,
+      "sha256": "6737cb1ccd396a84a1f5ae87cb7bc909153bf654dce7cc8229b4b47bbe730d23",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "package-lock.json",
+      "bytes": 233373,
+      "lines": 6588,
+      "sha256": "a931e69858ce4770e71106d5e954e605a08c9661eb3ecf35d3d8a215d617d889",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "package.json",
+      "bytes": 785,
+      "lines": 33,
+      "sha256": "1dd14e73498166b5857ce94ca0184059b5178b56a8f71f4cfe50fba94e9cd491",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "README.md",
+      "bytes": 1458,
+      "lines": 38,
+      "sha256": "20f61acaf2da682da1b65d189daa587a5d44837b65248b93e761fd1545fee416",
+      "placeholderCount": 2,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "scripts/validate-project.mjs",
+      "bytes": 2206,
+      "lines": 39,
+      "sha256": "5de674257b3bc93d6728c65980fe05c3ef8b4f2d744e3d2dad826ede2f403d34",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/ArticleCard.astro",
+      "bytes": 1108,
+      "lines": 21,
+      "sha256": "fa461ea5276136c8490b101b60f4c6f43b222680c14a26da888a0cbed0710fac",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "bytes": 3019,
+      "lines": 42,
+      "sha256": "ef56246c9a12f816ca7de1cdc58290c1f1f96558b28bf1cbabea9ba93d085635",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "bytes": 3569,
+      "lines": 55,
+      "sha256": "5bc4e36d523c77f85eaf45f1398bfc7d20f6a7ba421e377c8f5f0dcd8f64b4e1",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "bytes": 10495,
+      "lines": 227,
+      "sha256": "0e3d3e5cfbdf0cac610f49ebc1506342c90eec6f3effe7602b0de55dba16ad45",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/ContactDock.astro",
+      "bytes": 630,
+      "lines": 19,
+      "sha256": "34750bee754e714f4ea01ca898172588afa82c32ab27278d88cea5328051fb93",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "bytes": 4810,
+      "lines": 61,
+      "sha256": "912544cff6e1965aa441bbad5c1b53ff73d3912c0fdfb664358906c0ae69e7b4",
+      "placeholderCount": 1,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "bytes": 2167,
+      "lines": 14,
+      "sha256": "f6391e13cb2b389235d88202c88f1e66b154e8510583227f7fb382b96f8d3f90",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "bytes": 5858,
+      "lines": 84,
+      "sha256": "d732c24b1dfafe29ca7cef07f65c8a5d631cff307e752649a106f6d08419f0d8",
+      "placeholderCount": 6,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "bytes": 3247,
+      "lines": 58,
+      "sha256": "d6893a7e6b4cf40c19da4656c36fdb3982a9fc29a72b3f12329cfabd62a9f72d",
+      "placeholderCount": 2,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/Header.astro",
+      "bytes": 12784,
+      "lines": 217,
+      "sha256": "c3c841227d59b56b97f6adc4524e80b0c1afafb85b9337fdbcbea98903a966e0",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/ClientRegister.astro",
+      "bytes": 4381,
+      "lines": 65,
+      "sha256": "4b54dbeefd6199234b1914fa1b1ebf1fdcff9a103ce2c20e4d0b50fdfdec3ff2",
+      "placeholderCount": 0,
+      "dummyCount": 1,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "bytes": 5791,
+      "lines": 82,
+      "sha256": "35619a042f07f2a8c53f83c44c0b457260f00a4bcbd2e5d90fd05e5419d3115c",
+      "placeholderCount": 2,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/CompanyVideo.astro",
+      "bytes": 4382,
+      "lines": 59,
+      "sha256": "a44c386233c1eda4322370a0df542d36cd88581b37fdf0e630f60a9f1cfbf8dc",
+      "placeholderCount": 2,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "bytes": 8899,
+      "lines": 156,
+      "sha256": "41dc631c87c61aae629f7dbc24b276065237e3f4a5d8d12eca39f152dc86fe30",
+      "placeholderCount": 2,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/HomeFinalCta.astro",
+      "bytes": 4007,
+      "lines": 48,
+      "sha256": "f3bcd4db8c33f92f877e21aa28d0515e4ebc543ef6fd52a02097e31f2abad748",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "bytes": 7773,
+      "lines": 306,
+      "sha256": "c26201f1725a4e813b52fad7d9dacc4ecbe6ba11e35ac173e4097a5c5d8e4253",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "bytes": 6869,
+      "lines": 100,
+      "sha256": "412e1c45266cad33c1f8b7372267cc3523147c23e1f35413d2e0d53317229b26",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/PermitProcess.astro",
+      "bytes": 4162,
+      "lines": 64,
+      "sha256": "618ba8a362678345f66e8a02b68a893387b8b0e3f6259456efaff91931c48d6e",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "bytes": 9963,
+      "lines": 168,
+      "sha256": "21501030188cb0abd353d8ddd178451396e80e6a204f135f5275bbe8c1f8fee7",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/home/ServiceVisual.astro",
+      "bytes": 4174,
+      "lines": 124,
+      "sha256": "8d23485a2f66c14778ed2b1fe295f0c1072c180a38077031459e55f2ebca18e6",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "bytes": 7820,
+      "lines": 167,
+      "sha256": "51b2f0540414c29d1bb71c6aa17a305f68c3912dd94237bb67ad9ad2bfe69220",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/icons/ArrowIcon.astro",
+      "bytes": 720,
+      "lines": 36,
+      "sha256": "e365734249d14ad4f8b38229528b673166e805ad3040092127a813556f4b757c",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/PageHero.astro",
+      "bytes": 391,
+      "lines": 17,
+      "sha256": "71735827a0bee8d8c915204f1999eed306d9517127ae6b6eb417f9826ffd5ef8",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "bytes": 10972,
+      "lines": 153,
+      "sha256": "e4279aea6f6eba25eeed9778fe3224142ddc1b916e1b719eb22be5f00b1af850",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 1
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "bytes": 7121,
+      "lines": 102,
+      "sha256": "a054d3b1d02fde3aab8f217778a29c74493cfb0d7b8f0fc84561a6eb50c66147",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "bytes": 13478,
+      "lines": 250,
+      "sha256": "e6a2c7dd29f57b6e6002c2085dd7e43fef1c33a05a19b5a0fc680e31ebad1f3c",
+      "placeholderCount": 1,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/components/RegulatoryMap.astro",
+      "bytes": 3156,
+      "lines": 44,
+      "sha256": "957c8fdece5ca9a5ef62b402afaa8d429de1f1cd7781dc3aa01ed16fa63d8204",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/content/blog/en/after-business-identification-issued.md",
+      "bytes": 1496,
+      "lines": 29,
+      "sha256": "b3d5afbb076a3221565b5f840b8710a6278a1782ef979ece9a692e813dfd9860",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/content/blog/en/legality-checklist-business-expansion.md",
+      "bytes": 1659,
+      "lines": 30,
+      "sha256": "f3ce0f21615b389b3ab72a5a24cd4510e527eeadf61a1df8d41be87b86ea2a61",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/content/blog/en/understanding-risk-based-licensing.md",
+      "bytes": 1969,
+      "lines": 42,
+      "sha256": "d77461df449353f77df46bf5e633e965892810834d04a2717faa596f803df61f",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/content/blog/id/checklist-legalitas-ekspansi.md",
+      "bytes": 1641,
+      "lines": 30,
+      "sha256": "492e13a479f8a696eab58a295ca5c0e090db77060ef5c3d5223f4f8b18eeb160",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/content/blog/id/memahami-perizinan-berbasis-risiko.md",
+      "bytes": 1953,
+      "lines": 42,
+      "sha256": "73ccc765fb320757cf04d999d474a6693bb9ed971097e1b059608be9229f91e9",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/content/blog/id/setelah-nib-terbit.md",
+      "bytes": 1541,
+      "lines": 29,
+      "sha256": "f7814010441195bd61ec78cfa2aa0bf5557992062737d9de6a5dd48d427760b3",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/content.config.ts",
+      "bytes": 661,
+      "lines": 23,
+      "sha256": "8a7cc0c070570c2a29781ade96f6237e78e6181fa62e95c43fa592cd8deccf19",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/data/home.ts",
+      "bytes": 7849,
+      "lines": 89,
+      "sha256": "2f6c1042ce94a9f5d03da3bf47f29304db2e4e05b2a65c90d8bbc7f55ecacee0",
+      "placeholderCount": 12,
+      "dummyCount": 12,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/data/profile.ts",
+      "bytes": 9170,
+      "lines": 200,
+      "sha256": "c7ea8970d67bb82b3883396507ec88c5680613104ababfad82e1f5a2075669b9",
+      "placeholderCount": 31,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/data/site.ts",
+      "bytes": 4894,
+      "lines": 83,
+      "sha256": "fc890c520e79909c18246191755edf5de77500a0473ced8ee246fa2117c2e59b",
+      "placeholderCount": 11,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "bytes": 3811,
+      "lines": 88,
+      "sha256": "70856f6c67eac75e82c34b936785bace82de434aeee39262473e2597a4fc6f72",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/api/contact.ts",
+      "bytes": 5057,
+      "lines": 109,
+      "sha256": "d5c9e238f28aaa46eb77a146293801dff31ee643cf9ef4bcbeffe86d8d5db4a8",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/blog/index.astro",
+      "bytes": 107,
+      "lines": 5,
+      "sha256": "e725fe7a49b2fd4e5422748b951e936e84285d472738f48ef75d47e8b6ab554e",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/blog/[slug].astro",
+      "bytes": 357,
+      "lines": 10,
+      "sha256": "6bf1e0d7673001877ffe0e33d057b20ace6243ffdbf46780dfad7ad8c0a60cbb",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/contact.astro",
+      "bytes": 98,
+      "lines": 5,
+      "sha256": "ba970e059c18bb5714f7ee244e68e8a44d1e6ab99de80a6ba3bb723904a97180",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/index.astro",
+      "bytes": 89,
+      "lines": 5,
+      "sha256": "6ed123d19d9dae1950b09ac247dfbc92706cbbe5dd9892c2d95a367c7723a3e0",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/profile/[slug].astro",
+      "bytes": 550,
+      "lines": 12,
+      "sha256": "486b8b262afbfeb4ce7d86352200310c735f63b3aca8ab27c21fa558674120ad",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/profile.astro",
+      "bytes": 98,
+      "lines": 5,
+      "sha256": "062dadcce162689032477ff989aabab91aeab8d37c6d90eb60d2973894b28bef",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/projects.astro",
+      "bytes": 114,
+      "lines": 5,
+      "sha256": "329374d5b9af4ac608ef5d42d89c7073f67657e5c306f81dda61d46d59157dd1",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/rss.xml.ts",
+      "bytes": 551,
+      "lines": 14,
+      "sha256": "0e933ada3b97cda44dfe362d56c1b1aa20c8da91513fa78723bea3474bb80552",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/en/services.astro",
+      "bytes": 114,
+      "lines": 5,
+      "sha256": "9bef3ae9bea9663645289e2d38d988cb019101a25950b624898551a5142f31a6",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/blog/index.astro",
+      "bytes": 107,
+      "lines": 5,
+      "sha256": "cf69d0fb775c8b2d51921b49dc1bc926bb7b3343d3184f08072f68d770b8ca3f",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/blog/[slug].astro",
+      "bytes": 357,
+      "lines": 10,
+      "sha256": "f6dce5a0d0c7c7d8dd4dfff0adc57662ea0500acf9dbecea0ac97a0d0fb1bc7e",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/contact.astro",
+      "bytes": 98,
+      "lines": 5,
+      "sha256": "30f519e3379015b3259cc43f4d3f41a04fca598aa991e48a5919dd46d454ce88",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/index.astro",
+      "bytes": 89,
+      "lines": 5,
+      "sha256": "2cd0b74a1c6bbb5793465a044c2e0b92cf5f0ac7864bbf6e2ccb3149e7734b03",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/profile/[slug].astro",
+      "bytes": 550,
+      "lines": 12,
+      "sha256": "596100586deb8204ee479b182fc5a2cf5266c334d714d3bfb671716345a56970",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/profile.astro",
+      "bytes": 98,
+      "lines": 5,
+      "sha256": "fbdf014bccde9b62348f833d8e9fe6b989b3c70833a04151f3aa372886900215",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/projects.astro",
+      "bytes": 114,
+      "lines": 5,
+      "sha256": "4db21557e0e207c365881b398553de6be4c97511900cf8f5c8146e901df617dd",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/rss.xml.ts",
+      "bytes": 549,
+      "lines": 14,
+      "sha256": "9e991b67786755c630f6f51c6fbdb402af2809ba27dd93c38ac5627877b3b58c",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/id/services.astro",
+      "bytes": 114,
+      "lines": 5,
+      "sha256": "09dcc4bcfb682a459b330c93fb7f079c97689ccc96a39e298d09a6a855c01f0c",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/index.astro",
+      "bytes": 44,
+      "lines": 4,
+      "sha256": "700b79e579405a3ad0e6de50788db1c5d8848583de3402ff61db8841b4212a7e",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/pages/robots.txt.ts",
+      "bytes": 249,
+      "lines": 8,
+      "sha256": "66afdb553158a329d96dbdecf73bb44ba901b6d66670dd18d825edc163e129c4",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/styles/contrast.css",
+      "bytes": 249,
+      "lines": 15,
+      "sha256": "0d0f20e59fbec809edf7087627bc9e41c4c0c7bb4ca2adc7e074b7087f31ffc9",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/styles/global.css",
+      "bytes": 7540,
+      "lines": 162,
+      "sha256": "922b7c96a8d593818f263275b226bbc76ac9ee4af405f181bee52be2b5f6e80d",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/styles/profile-polish.css",
+      "bytes": 342,
+      "lines": 15,
+      "sha256": "d0469fa0ef1db9b647ca36ccd8aa79ae24c791234be3adf66b81e01e06ad936f",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/utils/blog.ts",
+      "bytes": 629,
+      "lines": 18,
+      "sha256": "fa9df1b69b99cca36b0610957c13060011a3935af007a5bac987aea57aa0cba4",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/utils/contact.ts",
+      "bytes": 1723,
+      "lines": 49,
+      "sha256": "b8a8754714dc9ebbb20cd22c60093d417d873211805206caa9f5ae64eae5f8c8",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "src/utils/i18n.ts",
+      "bytes": 224,
+      "lines": 7,
+      "sha256": "94d909be00676e5c2e3724c8c853e75fbfaf4194ff1f2ca1790dae90889553dd",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "tsconfig.json",
+      "bytes": 109,
+      "lines": 6,
+      "sha256": "b5b0a5b04a14cddd7713c5e1c82e86c79c17c2f86b170e26e9b170b3d5e01cd9",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    },
+    {
+      "file": "vercel.json",
+      "bytes": 663,
+      "lines": 17,
+      "sha256": "8bd83904ec4c4938874f3735625a7fc29bc44e383d24f133859a49efa5cf083a",
+      "placeholderCount": 0,
+      "dummyCount": 0,
+      "noindexCount": 0
+    }
+  ],
+  "assetFiles": [
+    {
+      "file": "public/assets/gp-logo-brand.png",
+      "size": 154964,
+      "extension": ".png"
+    },
+    {
+      "file": "public/assets/gp-logo-home.png",
+      "size": 226343,
+      "extension": ".png"
+    },
+    {
+      "file": "public/assets/gp-logo.png",
+      "size": 199703,
+      "extension": ".png"
+    },
+    {
+      "file": "public/favicon.svg",
+      "size": 270,
+      "extension": ".svg"
+    },
+    {
+      "file": "public/og-default.svg",
+      "size": 584,
+      "extension": ".svg"
+    },
+    {
+      "file": "src/assets/company-carousel-01.webp",
+      "size": 66050,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/company-carousel-02.webp",
+      "size": 69992,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/company-carousel-03.webp",
+      "size": 80504,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/company-carousel-04.webp",
+      "size": 91380,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/company-carousel-05.webp",
+      "size": 43282,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/experience-business-licensing.png",
+      "size": 1763304,
+      "extension": ".png"
+    },
+    {
+      "file": "src/assets/experience-compliance-review.png",
+      "size": 1824824,
+      "extension": ".png"
+    },
+    {
+      "file": "src/assets/experience-investment-project.png",
+      "size": 2038761,
+      "extension": ".png"
+    },
+    {
+      "file": "src/assets/home-licensing-hero.webp",
+      "size": 50364,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/profile-company-hero-centered.webp",
+      "size": 90464,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/team-kelvin-anata-lian.webp",
+      "size": 43854,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/team-maria-indah-putri.webp",
+      "size": 42560,
+      "extension": ".webp"
+    },
+    {
+      "file": "src/assets/team-michael-alvaro.webp",
+      "size": 45434,
+      "extension": ".webp"
+    }
+  ],
+  "routes": [
+    {
+      "file": "src/pages/api/contact.ts",
+      "route": "/api/contact"
+    },
+    {
+      "file": "src/pages/en/blog/index.astro",
+      "route": "/en/blog/"
+    },
+    {
+      "file": "src/pages/en/blog/[slug].astro",
+      "route": "/en/blog/[slug]"
+    },
+    {
+      "file": "src/pages/en/contact.astro",
+      "route": "/en/contact"
+    },
+    {
+      "file": "src/pages/en/index.astro",
+      "route": "/en/"
+    },
+    {
+      "file": "src/pages/en/profile/[slug].astro",
+      "route": "/en/profile/[slug]"
+    },
+    {
+      "file": "src/pages/en/profile.astro",
+      "route": "/en/profile"
+    },
+    {
+      "file": "src/pages/en/projects.astro",
+      "route": "/en/projects"
+    },
+    {
+      "file": "src/pages/en/rss.xml.ts",
+      "route": "/en/rss.xml"
+    },
+    {
+      "file": "src/pages/en/services.astro",
+      "route": "/en/services"
+    },
+    {
+      "file": "src/pages/id/blog/index.astro",
+      "route": "/id/blog/"
+    },
+    {
+      "file": "src/pages/id/blog/[slug].astro",
+      "route": "/id/blog/[slug]"
+    },
+    {
+      "file": "src/pages/id/contact.astro",
+      "route": "/id/contact"
+    },
+    {
+      "file": "src/pages/id/index.astro",
+      "route": "/id/"
+    },
+    {
+      "file": "src/pages/id/profile/[slug].astro",
+      "route": "/id/profile/[slug]"
+    },
+    {
+      "file": "src/pages/id/profile.astro",
+      "route": "/id/profile"
+    },
+    {
+      "file": "src/pages/id/projects.astro",
+      "route": "/id/projects"
+    },
+    {
+      "file": "src/pages/id/rss.xml.ts",
+      "route": "/id/rss.xml"
+    },
+    {
+      "file": "src/pages/id/services.astro",
+      "route": "/id/services"
+    },
+    {
+      "file": "src/pages/index.astro",
+      "route": "/"
+    },
+    {
+      "file": "src/pages/robots.txt.ts",
+      "route": "/robots.txt"
+    }
+  ],
+  "imports": [
+    {
+      "file": "astro.config.mjs",
+      "line": 2,
+      "target": "astro/config"
+    },
+    {
+      "file": "astro.config.mjs",
+      "line": 3,
+      "target": "@astrojs/vercel"
+    },
+    {
+      "file": "astro.config.mjs",
+      "line": 4,
+      "target": "@astrojs/sitemap"
+    },
+    {
+      "file": "astro.config.mjs",
+      "line": 5,
+      "target": "@tailwindcss/vite"
+    },
+    {
+      "file": "scripts/validate-project.mjs",
+      "line": 1,
+      "target": "node:fs"
+    },
+    {
+      "file": "scripts/validate-project.mjs",
+      "line": 2,
+      "target": "node:path"
+    },
+    {
+      "file": "src/components/ArticleCard.astro",
+      "line": 2,
+      "target": "../utils/blog"
+    },
+    {
+      "file": "src/components/ArticleCard.astro",
+      "line": 3,
+      "target": "../utils/blog"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 2,
+      "target": "../layouts/BaseLayout.astro"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 3,
+      "target": "./PageHero.astro"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 4,
+      "target": "./ArticleCard.astro"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 5,
+      "target": "../utils/blog"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 6,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 2,
+      "target": "astro:content"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 3,
+      "target": "../layouts/BaseLayout.astro"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 4,
+      "target": "./ArticleCard.astro"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 5,
+      "target": "../utils/blog"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 2,
+      "target": "astro:assets"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 3,
+      "target": "../assets/company-carousel-01.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 4,
+      "target": "../assets/company-carousel-02.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 5,
+      "target": "../assets/company-carousel-03.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 6,
+      "target": "../assets/company-carousel-04.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 7,
+      "target": "../assets/company-carousel-05.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 8,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/ContactDock.astro",
+      "line": 2,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/ContactDock.astro",
+      "line": 3,
+      "target": "./icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "line": 2,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 2,
+      "target": "../layouts/BaseLayout.astro"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 3,
+      "target": "./PageHero.astro"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 4,
+      "target": "./ContactForm.astro"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 5,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 2,
+      "target": "../layouts/BaseLayout.astro"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 3,
+      "target": "./PageHero.astro"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 4,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "line": 2,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 2,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 3,
+      "target": "../utils/i18n"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 4,
+      "target": "./icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/home/ClientRegister.astro",
+      "line": 2,
+      "target": "../../data/home"
+    },
+    {
+      "file": "src/components/home/ClientRegister.astro",
+      "line": 3,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 2,
+      "target": "../../data/home"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 3,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 4,
+      "target": "../CompanyGallery.astro"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 5,
+      "target": "../icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/home/CompanyVideo.astro",
+      "line": 2,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 2,
+      "target": "astro:assets"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 3,
+      "target": "../../assets/experience-business-licensing.png"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 4,
+      "target": "../../assets/experience-compliance-review.png"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 5,
+      "target": "../../assets/experience-investment-project.png"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 6,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 7,
+      "target": "../icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/home/HomeFinalCta.astro",
+      "line": 2,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/HomeFinalCta.astro",
+      "line": 3,
+      "target": "../icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 2,
+      "target": "astro:assets"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 3,
+      "target": "../../assets/home-licensing-hero.webp"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 4,
+      "target": "../icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 5,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 2,
+      "target": "../../utils/blog"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 3,
+      "target": "../../utils/blog"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 4,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 5,
+      "target": "../icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/home/PermitProcess.astro",
+      "line": 2,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/PermitProcess.astro",
+      "line": 3,
+      "target": "../icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 2,
+      "target": "../../data/home"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 3,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 4,
+      "target": "../icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 5,
+      "target": "./ServiceVisual.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 2,
+      "target": "../layouts/BaseLayout.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 3,
+      "target": "./home/HomeHero.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 4,
+      "target": "./home/ClientRegister.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 5,
+      "target": "./home/ServiceCarousel.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 6,
+      "target": "./home/PermitProcess.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 7,
+      "target": "./home/CompanySnapshot.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 8,
+      "target": "./home/CompanyVideo.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 9,
+      "target": "./home/ExperienceShowcase.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 10,
+      "target": "./home/HomeInsights.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 11,
+      "target": "./home/HomeFinalCta.astro"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 12,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 13,
+      "target": "../utils/blog"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 2,
+      "target": "astro:assets"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 3,
+      "target": "../assets/team-kelvin-anata-lian.webp"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 4,
+      "target": "../assets/team-maria-indah-putri.webp"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 5,
+      "target": "../assets/team-michael-alvaro.webp"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 6,
+      "target": "../data/profile"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 7,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 8,
+      "target": "../layouts/BaseLayout.astro"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 9,
+      "target": "./icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 10,
+      "target": "./home/HomeFinalCta.astro"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 2,
+      "target": "astro:assets"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 3,
+      "target": "../../assets/team-kelvin-anata-lian.webp"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 4,
+      "target": "../../assets/team-maria-indah-putri.webp"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 5,
+      "target": "../../assets/team-michael-alvaro.webp"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 6,
+      "target": "../../data/profile"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 7,
+      "target": "../../data/site"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 8,
+      "target": "../icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 2,
+      "target": "astro:assets"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 3,
+      "target": "../assets/profile-company-hero-centered.webp"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 4,
+      "target": "../data/profile"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 5,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 6,
+      "target": "../layouts/BaseLayout.astro"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 7,
+      "target": "./CompanyGallery.astro"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 8,
+      "target": "./icons/ArrowIcon.astro"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 9,
+      "target": "./home/HomeFinalCta.astro"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 10,
+      "target": "./profile/TeamCarousel.astro"
+    },
+    {
+      "file": "src/components/RegulatoryMap.astro",
+      "line": 2,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/content.config.ts",
+      "line": 1,
+      "target": "astro:content"
+    },
+    {
+      "file": "src/content.config.ts",
+      "line": 2,
+      "target": "astro/loaders"
+    },
+    {
+      "file": "src/content.config.ts",
+      "line": 3,
+      "target": "astro/zod"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 1,
+      "target": "./site"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 1,
+      "target": "./site"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 2,
+      "target": "./site"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 2,
+      "target": "../styles/global.css"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 3,
+      "target": "../styles/contrast.css"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 4,
+      "target": "../styles/profile-polish.css"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 5,
+      "target": "../components/Header.astro"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 6,
+      "target": "../components/Footer.astro"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 7,
+      "target": "../components/ContactDock.astro"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 8,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/pages/api/contact.ts",
+      "line": 1,
+      "target": "astro"
+    },
+    {
+      "file": "src/pages/api/contact.ts",
+      "line": 2,
+      "target": "../../utils/contact"
+    },
+    {
+      "file": "src/pages/en/blog/index.astro",
+      "line": 2,
+      "target": "../../../components/BlogIndexPage.astro"
+    },
+    {
+      "file": "src/pages/en/blog/[slug].astro",
+      "line": 2,
+      "target": "../../../components/BlogPostPage.astro"
+    },
+    {
+      "file": "src/pages/en/blog/[slug].astro",
+      "line": 3,
+      "target": "../../../utils/blog"
+    },
+    {
+      "file": "src/pages/en/contact.astro",
+      "line": 2,
+      "target": "../../components/ContactPage.astro"
+    },
+    {
+      "file": "src/pages/en/index.astro",
+      "line": 2,
+      "target": "../../components/HomePage.astro"
+    },
+    {
+      "file": "src/pages/en/profile/[slug].astro",
+      "line": 2,
+      "target": "../../../components/PersonProfilePage.astro"
+    },
+    {
+      "file": "src/pages/en/profile/[slug].astro",
+      "line": 3,
+      "target": "../../../data/profile"
+    },
+    {
+      "file": "src/pages/en/profile.astro",
+      "line": 2,
+      "target": "../../components/ProfilePage.astro"
+    },
+    {
+      "file": "src/pages/en/projects.astro",
+      "line": 2,
+      "target": "../../components/ContentPage.astro"
+    },
+    {
+      "file": "src/pages/en/rss.xml.ts",
+      "line": 1,
+      "target": "@astrojs/rss"
+    },
+    {
+      "file": "src/pages/en/rss.xml.ts",
+      "line": 2,
+      "target": "../../utils/blog"
+    },
+    {
+      "file": "src/pages/en/services.astro",
+      "line": 2,
+      "target": "../../components/ContentPage.astro"
+    },
+    {
+      "file": "src/pages/id/blog/index.astro",
+      "line": 2,
+      "target": "../../../components/BlogIndexPage.astro"
+    },
+    {
+      "file": "src/pages/id/blog/[slug].astro",
+      "line": 2,
+      "target": "../../../components/BlogPostPage.astro"
+    },
+    {
+      "file": "src/pages/id/blog/[slug].astro",
+      "line": 3,
+      "target": "../../../utils/blog"
+    },
+    {
+      "file": "src/pages/id/contact.astro",
+      "line": 2,
+      "target": "../../components/ContactPage.astro"
+    },
+    {
+      "file": "src/pages/id/index.astro",
+      "line": 2,
+      "target": "../../components/HomePage.astro"
+    },
+    {
+      "file": "src/pages/id/profile/[slug].astro",
+      "line": 2,
+      "target": "../../../components/PersonProfilePage.astro"
+    },
+    {
+      "file": "src/pages/id/profile/[slug].astro",
+      "line": 3,
+      "target": "../../../data/profile"
+    },
+    {
+      "file": "src/pages/id/profile.astro",
+      "line": 2,
+      "target": "../../components/ProfilePage.astro"
+    },
+    {
+      "file": "src/pages/id/projects.astro",
+      "line": 2,
+      "target": "../../components/ContentPage.astro"
+    },
+    {
+      "file": "src/pages/id/rss.xml.ts",
+      "line": 1,
+      "target": "@astrojs/rss"
+    },
+    {
+      "file": "src/pages/id/rss.xml.ts",
+      "line": 2,
+      "target": "../../utils/blog"
+    },
+    {
+      "file": "src/pages/id/services.astro",
+      "line": 2,
+      "target": "../../components/ContentPage.astro"
+    },
+    {
+      "file": "src/pages/robots.txt.ts",
+      "line": 1,
+      "target": "astro"
+    },
+    {
+      "file": "src/styles/global.css",
+      "line": 1,
+      "target": "tailwindcss"
+    },
+    {
+      "file": "src/utils/blog.ts",
+      "line": 1,
+      "target": "astro:content"
+    },
+    {
+      "file": "src/utils/blog.ts",
+      "line": 2,
+      "target": "../data/site"
+    },
+    {
+      "file": "src/utils/i18n.ts",
+      "line": 1,
+      "target": "../data/site"
+    }
+  ],
+  "componentUsages": [
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 14,
+      "component": "BaseLayout"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 15,
+      "component": "PageHero"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 22,
+      "component": "ArticleCard"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 32,
+      "component": "HTMLButtonElement"
+    },
+    {
+      "file": "src/components/BlogIndexPage.astro",
+      "line": 33,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 28,
+      "component": "BaseLayout"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 45,
+      "component": "Content"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 53,
+      "component": "ArticleCard"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 50,
+      "component": "Image"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 79,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 83,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 84,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 85,
+      "component": "HTMLButtonElement"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 86,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/ContactDock.astro",
+      "line": 11,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "line": 32,
+      "component": "HTMLFormElement"
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "line": 33,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "line": 40,
+      "component": "HTMLButtonElement"
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "line": 41,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 10,
+      "component": "BaseLayout"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 11,
+      "component": "PageHero"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 12,
+      "component": "ContactForm"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 19,
+      "component": "BaseLayout"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 20,
+      "component": "PageHero"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 53,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 154,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 155,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 163,
+      "component": "HTMLButtonElement"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 164,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 183,
+      "component": "HTMLAnchorElement"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 17,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 21,
+      "component": "CompanyGallery"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 71,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 84,
+      "component": "Image"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 98,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/HomeFinalCta.astro",
+      "line": 17,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/HomeFinalCta.astro",
+      "line": 18,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 42,
+      "component": "Image"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 60,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 63,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 20,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 35,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 44,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/PermitProcess.astro",
+      "line": 38,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 23,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 32,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 35,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 54,
+      "component": "ServiceVisual"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 63,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 127,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 128,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 129,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 130,
+      "component": "HTMLButtonElement"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 131,
+      "component": "HTMLButtonElement"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 132,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 28,
+      "component": "BaseLayout"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 30,
+      "component": "HomeHero"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 31,
+      "component": "ClientRegister"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 32,
+      "component": "CompanySnapshot"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 33,
+      "component": "ServiceCarousel"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 34,
+      "component": "PermitProcess"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 35,
+      "component": "CompanyVideo"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 36,
+      "component": "ExperienceShowcase"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 37,
+      "component": "HomeInsights"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 38,
+      "component": "HomeFinalCta"
+    },
+    {
+      "file": "src/components/HomePage.astro",
+      "line": 42,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 34,
+      "component": "BaseLayout"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 42,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 55,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 60,
+      "component": "Image"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 92,
+      "component": "HomeFinalCta"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 35,
+      "component": "Image"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 52,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 42,
+      "component": "BaseLayout"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 48,
+      "component": "Image"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 65,
+      "component": "ArrowIcon"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 75,
+      "component": "CompanyGallery"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 103,
+      "component": "TeamCarousel"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 104,
+      "component": "HomeFinalCta"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 108,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 10,
+      "component": "Locale"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 56,
+      "component": "Locale"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 75,
+      "component": "Locale"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 47,
+      "component": "Locale"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 68,
+      "component": "Header"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 70,
+      "component": "Footer"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 71,
+      "component": "ContactDock"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 84,
+      "component": "HTMLElement"
+    },
+    {
+      "file": "src/pages/en/blog/index.astro",
+      "line": 4,
+      "component": "BlogIndexPage"
+    },
+    {
+      "file": "src/pages/en/blog/[slug].astro",
+      "line": 9,
+      "component": "BlogPostPage"
+    },
+    {
+      "file": "src/pages/en/contact.astro",
+      "line": 4,
+      "component": "ContactPage"
+    },
+    {
+      "file": "src/pages/en/index.astro",
+      "line": 4,
+      "component": "HomePage"
+    },
+    {
+      "file": "src/pages/en/profile/[slug].astro",
+      "line": 12,
+      "component": "PersonProfilePage"
+    },
+    {
+      "file": "src/pages/en/profile.astro",
+      "line": 4,
+      "component": "ProfilePage"
+    },
+    {
+      "file": "src/pages/en/projects.astro",
+      "line": 4,
+      "component": "ContentPage"
+    },
+    {
+      "file": "src/pages/en/services.astro",
+      "line": 4,
+      "component": "ContentPage"
+    },
+    {
+      "file": "src/pages/id/blog/index.astro",
+      "line": 4,
+      "component": "BlogIndexPage"
+    },
+    {
+      "file": "src/pages/id/blog/[slug].astro",
+      "line": 9,
+      "component": "BlogPostPage"
+    },
+    {
+      "file": "src/pages/id/contact.astro",
+      "line": 4,
+      "component": "ContactPage"
+    },
+    {
+      "file": "src/pages/id/index.astro",
+      "line": 4,
+      "component": "HomePage"
+    },
+    {
+      "file": "src/pages/id/profile/[slug].astro",
+      "line": 12,
+      "component": "PersonProfilePage"
+    },
+    {
+      "file": "src/pages/id/profile.astro",
+      "line": 4,
+      "component": "ProfilePage"
+    },
+    {
+      "file": "src/pages/id/projects.astro",
+      "line": 4,
+      "component": "ContentPage"
+    },
+    {
+      "file": "src/pages/id/services.astro",
+      "line": 4,
+      "component": "ContentPage"
+    }
+  ],
+  "links": [
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 33,
+      "href": "/${locale}/blog/"
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "line": 7,
+      "href": "/api/contact"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 12,
+      "href": "mailto:${SITE.email}"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 46,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 80,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "line": 10,
+      "href": "/${locale}/"
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "line": 29,
+      "href": "mailto:${SITE.email}"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 26,
+      "href": "#main-content"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 53,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 16,
+      "href": "/${locale}/profile/"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 70,
+      "href": "/${locale}/projects/"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 82,
+      "href": "/${locale}/projects/"
+    },
+    {
+      "file": "src/components/home/HomeFinalCta.astro",
+      "line": 17,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 59,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 62,
+      "href": "/${locale}/services/"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 20,
+      "href": "/${locale}/blog/"
+    },
+    {
+      "file": "src/components/home/PermitProcess.astro",
+      "line": 37,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 23,
+      "href": "/${locale}/services/"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 62,
+      "href": "/${locale}/services/"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 42,
+      "href": "/${locale}/profile/#team"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 55,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 56,
+      "href": "mailto:${SITE.email}"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 33,
+      "href": "/${locale}/profile/${member.slug}/"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 64,
+      "href": "#team"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 48,
+      "href": "/favicon.svg"
+    }
+  ],
+  "flags": [
+    {
+      "file": ".env.example",
+      "line": 2,
+      "text": "RESEND_API_KEY=re_replace_with_resend_api_key"
+    },
+    {
+      "file": "docs/ACCESSIBILITY_GUIDELINES.md",
+      "line": 13,
+      "text": "- Team/project placeholder images are text surfaces until real assets receive descriptive alt text."
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "line": 5,
+      "text": "Astro prerenders all pages and feeds. `src/pages/api/contact.ts` declares `prerender = false`, so the Vercel adapter emits only that route as a function. This preserves static page performance while allowing server-side validation, rate limiting, and secure email delivery."
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "line": 24,
+      "text": "|   |-- site.ts              identity, navigation, contact, shared placeholders"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "line": 25,
+      "text": "|   `-- home.ts              Home services, dummy client marks, and statistics"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "line": 26,
+      "text": "|-- layouts/                 metadata, schema, shell, and global behaviour"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "line": 30,
+      "text": "`-- content.config.ts        collection schema"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "line": 39,
+      "text": "- `BaseLayout.astro` owns metadata, schema, header, footer, the optional desktop contact dock, and global reveal behaviour."
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "line": 49,
+      "text": "- Add a CMS only if editorial workflow requires it; do not change routing or the content schema without migration notes."
+    },
+    {
+      "file": "docs/COMPONENT_GUIDELINES.md",
+      "line": 13,
+      "text": "- Use the transparent `public/assets/gp-logo-brand.png` master mark in Header, Footer, schema, and branded visuals. Keep the asset background-free; use only a restrained image drop shadow where contrast support is required."
+    },
+    {
+      "file": "docs/COMPONENT_GUIDELINES.md",
+      "line": 18,
+      "text": "- Team member links point to the existing bilingual `/profile/[slug]/` routes. Placeholder person pages remain `noindex,follow` until identity, photograph, and credentials are verified."
+    },
+    {
+      "file": "docs/COMPONENT_GUIDELINES.md",
+      "line": 19,
+      "text": "- Placeholder identities, credentials, contacts, statistics, clients, prices, video, and projects must remain visibly marked until verified."
+    },
+    {
+      "file": "docs/COMPONENT_GUIDELINES.md",
+      "line": 20,
+      "text": "- Do not emit Person schema for placeholder team members."
+    },
+    {
+      "file": "docs/CONTENT_GUIDELINES.md",
+      "line": 11,
+      "text": "## Placeholders"
+    },
+    {
+      "file": "docs/CONTENT_GUIDELINES.md",
+      "line": 13,
+      "text": "Use `[PLACEHOLDER — DESCRIPTION]`. Replace centrally where possible. Before removing a marker, record the source and approver for legal name, registration, professionals, project outcomes, testimonial, or logo."
+    },
+    {
+      "file": "docs/DEPLOYMENT.md",
+      "line": 9,
+      "text": "5. Verify the Resend sender domain and recipient."
+    },
+    {
+      "file": "docs/DEPLOYMENT.md",
+      "line": 20,
+      "text": "- Sitemap, robots, RSS, canonical URLs, and social previews use the final domain."
+    },
+    {
+      "file": "docs/DESIGN_SYSTEM.md",
+      "line": 13,
+      "text": "The approved transparent red-black-gold mark is stored at `public/assets/gp-logo-brand.png` and is used across Header, Footer, branded visuals, and organization schema. The mark is rendered without a background plate so its transparent edge remains visible. A restrained image-only drop shadow may be used on dark surfaces; never add a white or off-white rectangle behind the logo."
+    },
+    {
+      "file": "docs/DESIGN_SYSTEM.md",
+      "line": 15,
+      "text": "The Home hero is stored at `src/assets/home-licensing-hero.webp`. The Home experience grid uses `experience-business-licensing.png`, `experience-compliance-review.png`, and `experience-investment-project.png` as replaceable, context-specific placeholders. Profile uses `profile-company-hero-centered.webp` as a generated, replaceable red-black team banner with a centered focal crop. The team directory uses three generated, replaceable portrait assets: `team-kelvin-anata-lian.webp`, `team-maria-ind"
+    },
+    {
+      "file": "docs/DEVELOPMENT_WORKFLOW.md",
+      "line": 8,
+      "text": "6. Preview and manually test mobile, tablet, desktop, keyboard, reduced motion, and form states."
+    },
+    {
+      "file": "docs/I18N_GUIDELINES.md",
+      "line": 21,
+      "text": "Profile ID and EN copy may be phrased naturally for each language, but role, expertise, placeholder status, and service meaning must remain equivalent."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 11,
+      "text": "3. Static client register immediately after the hero. Six visibly labelled dummy marks test the composition; real identities require publication consent."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 12,
+      "text": "4. Complete company positioning statement including clearly marked founding-year and record placeholders, a Profile CTA aligned with the section label, a compact five-image gallery, and four clearly unverified statistics."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 15,
+      "text": "7. Art-directed company-video placeholder that does not expose a non-functional play control. At desktop width the section is capped near one viewport."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 16,
+      "text": "8. Confidentiality-safe Our Experiences editorial image grid with one featured and two supporting case-study cards, concise metadata, clearly marked year/image placeholders, and a link to the complete page."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 17,
+      "text": "9. Editorial preview of the three latest published Markdown articles."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 20,
+      "text": "Home uses the transparent `gp-logo-brand.png` mark in its header, company-film placeholder, schema, and footer."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 28,
+      "text": "1. Centered red-black editorial team banner with a concise team-and-licensing promise, one anchor CTA, and a clearly labelled generated placeholder visual."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 29,
+      "text": "2. A visible company label, the two-line heading \"Kami Hadir Membantu / Bisnis Anda\", an enlarged version of the accessible five-image gallery used on Home aligned to the company-description column, two complete company paragraphs, and a registry for legal name, founding year, registration, and address placeholders."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 30,
+      "text": "3. A compact three-member directory for Kelvin Anata Lian, Maria Indah Putri, and Michael Alvaro, using generated 5:6 concept portraits, name, position, expertise, and bottom-aligned CTAs to each bilingual person route. The full directory fits within a standard desktop viewport; each person detail page exposes email, domicile, and phone placeholders in the opening viewport."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 33,
+      "text": "Profile content lives in `src/data/profile.ts`. The three supplied member names are present, while generated concept portraits, personal contacts, credentials, founding year, registration, and office address remain clearly replaceable until verified. Person detail pages exist at `/id/profile/[slug]/` and `/en/profile/[slug]/`; they stay `noindex,follow` and do not emit Person schema until identities are verified."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 36,
+      "text": "Four initial service categories with an indicative-scope placeholder. Final deliverables, exclusions, timelines, and authority boundaries require business approval. The Home service rail may present the broader centralized list while the full page awaits its dedicated redesign."
+    },
+    {
+      "file": "docs/PAGE_SPECIFICATIONS.md",
+      "line": 48,
+      "text": "Direct WhatsApp/email, office placeholder, urgency warning, accessible form, consent, status feedback, and server delivery. It remains accessible through consultation CTAs even though Contact is not a navbar item."
+    },
+    {
+      "file": "docs/PROJECT_CONTEXT.md",
+      "line": 19,
+      "text": "Legal name, domain, address, registration, final services, professional roster, official photography, project evidence, testimonials, client logos, privacy policy, and terms remain structured placeholders. `src/data/site.ts` is the central source for business identity, navigation, contact details, service categories, and experience placeholders."
+    },
+    {
+      "file": "docs/REQUIREMENTS.md",
+      "line": 8,
+      "text": "- Markdown blog with requested frontmatter, category filtering, tags, related posts, translations, SEO, structured data, RSS, and draft exclusion."
+    },
+    {
+      "file": "docs/REQUIREMENTS.md",
+      "line": 15,
+      "text": "- Canonical, hreflang, metadata, Open Graph, sitemap, robots, LegalService/Organization schema, and Article schema."
+    },
+    {
+      "file": "docs/REQUIREMENTS.md",
+      "line": 20,
+      "text": "No fabricated claims, results, team members, testimonials, registration numbers, or client relationships. Placeholders must remain visibly labelled until approved information is supplied."
+    },
+    {
+      "file": "docs/SEO_GUIDELINES.md",
+      "line": 5,
+      "text": "`BaseLayout` supplies unique title/description, canonical, hreflang, Open Graph, Twitter card, and Organization/LegalService JSON-LD. `x-default` resolves to the Indonesian equivalent of the current page. The transparent red-black-gold master logo is used by all routes and organization schema. Home, Profile, and placeholder person routes use the red theme color and immersive header configuration."
+    },
+    {
+      "file": "docs/SEO_GUIDELINES.md",
+      "line": 7,
+      "text": "Profile adds `ProfilePage` and `BreadcrumbList` structured data. Placeholder person routes emit BreadcrumbList only and remain `noindex,follow`; Person schema must not be emitted until names, roles, credentials, photographs, and professional identities are verified. Blog pages add Article JSON-LD."
+    },
+    {
+      "file": "docs/SEO_GUIDELINES.md",
+      "line": 23,
+      "text": "Replace `PUBLIC_SITE_URL`; confirm the production domain in metadata and search tools; provide a raster 1200x630 social image if platform SVG support is insufficient; verify schema with a validator; ensure placeholders are not indexed as final claims; review sitemap and redirect behaviour."
+    },
+    {
+      "file": "docs/SEO_GUIDELINES.md",
+      "line": 25,
+      "text": "Replace Profile member placeholders before removing `noindex` from individual routes or adding Person schema. Verify that official photographs have consent, descriptive alt text, and appropriate Astro image widths."
+    },
+    {
+      "file": "docs/SERVERLESS_CONTACT_FORM.md",
+      "line": 5,
+      "text": "`ContactForm.astro` submits `FormData` to `POST /api/contact`. The Vercel function checks same-origin requests and content type, applies a rate limit, parses and normalises fields, silently accepts a filled honeypot, validates all required data, escapes email HTML, and calls the Resend REST API."
+    },
+    {
+      "file": "docs/SERVERLESS_CONTACT_FORM.md",
+      "line": 9,
+      "text": "- `RESEND_API_KEY`: server-only Resend key."
+    },
+    {
+      "file": "docs/SERVERLESS_CONTACT_FORM.md",
+      "line": 11,
+      "text": "- `CONTACT_FROM_EMAIL`: sender on a Resend-verified domain."
+    },
+    {
+      "file": "docs/SERVERLESS_CONTACT_FORM.md",
+      "line": 19,
+      "text": "No submission is stored by the site. Resend/email and Vercel logs remain external processors and must be reflected in the approved privacy notice. Never log form contents. Rotate exposed secrets. Do not accept file uploads. The UI warns users not to send sensitive documents."
+    },
+    {
+      "file": "package-lock.json",
+      "line": 2818,
+      "text": "\"json-schema-traverse\": \"^0.4.1\","
+    },
+    {
+      "file": "package-lock.json",
+      "line": 4140,
+      "text": "\"node_modules/json-schema-traverse\": {"
+    },
+    {
+      "file": "package-lock.json",
+      "line": 4142,
+      "text": "\"resolved\": \"https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz\","
+    },
+    {
+      "file": "package-lock.json",
+      "line": 6454,
+      "text": "\"json-schema-traverse\": \"^1.0.0\","
+    },
+    {
+      "file": "package-lock.json",
+      "line": 6487,
+      "text": "\"node_modules/yaml-language-server/node_modules/json-schema-traverse\": {"
+    },
+    {
+      "file": "package-lock.json",
+      "line": 6489,
+      "text": "\"resolved\": \"https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz\","
+    },
+    {
+      "file": "package.json",
+      "line": 14,
+      "text": "\"preview\": \"astro preview\","
+    },
+    {
+      "file": "README.md",
+      "line": 24,
+      "text": "npm run preview   # preview a built static site"
+    },
+    {
+      "file": "README.md",
+      "line": 25,
+      "text": "npm run validate  # route, link, placeholder, and documentation checks"
+    },
+    {
+      "file": "README.md",
+      "line": 31,
+      "text": "1. Replace structured placeholders through `src/data/site.ts` and approved content."
+    },
+    {
+      "file": "README.md",
+      "line": 33,
+      "text": "3. Configure Resend and, preferably, Upstash variables described in `.env.example`."
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 15,
+      "text": "const articleSchema = {"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 16,
+      "text": "'@context': 'https://schema.org',"
+    },
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 29,
+      "text": "<script slot=\"head\" is:inline type=\"application/ld+json\" set:html={JSON.stringify(articleSchema)} />"
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "line": 19,
+      "text": "<label class=\"field\"><span>{id ? 'Pesan' : 'Message'} *</span><textarea name=\"message\" rows=\"6\" required minlength=\"20\" maxlength=\"3000\" placeholder={id ? 'Jelaskan aktivitas usaha, kebutuhan, dan target waktu secara ringkas.' : 'Briefly describe your business activity, requirement, and target timing.'}></textarea></label>"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 14,
+      "text": "? { title: 'Pengalaman & Proyek | Galdino & Partner', description: 'Contoh pengalaman pendampingan legalitas usaha, kepatuhan regulasi, perizinan proyek, dan investasi.', eyebrow: 'Pengalaman', h1: 'Mandat yang disusun di sekitar kebutuhan klien.', lead: 'Kerahasiaan adalah prinsip utama. Contoh di bawah adalah struktur placeholder hingga detail yang layak publik telah disetujui.' }"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 15,
+      "text": ": { title: 'Experience & Projects | Galdino & Partner', description: 'Representative experience in business legality, regulatory compliance, project licensing, and investment assistance.', eyebrow: 'Experience', h1: 'Engagements structured around client needs.', lead: 'Confidentiality is fundamental. The examples below remain structured placeholders until public-facing details are approved.' },"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 32,
+      "text": "<p class=\"mt-2 text-sm text-muted\">[PLACEHOLDER: {id ? 'detail deliverable, batas layanan, estimasi, dan dokumen yang diperlukan.' : 'deliverables, scope boundaries, estimate, and required documents.'}]</p>"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 65,
+      "text": "<p class=\"mt-5 border-l-2 border-gold pl-3 text-xs text-muted\">[PLACEHOLDER: {id ? 'hasil terverifikasi dan izin publikasi' : 'verified outcome and publication consent'}]</p>"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 72,
+      "text": "<p class=\"mt-3 text-muted\">{id ? '[PLACEHOLDER: hanya ditampilkan setelah izin tertulis dan verifikasi substansi.]' : '[PLACEHOLDER: displayed only after written consent and content verification.]'}</p>"
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "line": 17,
+      "text": "<p class=\"footer-placeholder mt-7 max-w-full overflow-wrap-anywhere text-xs\">{SITE.legalName}</p>"
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "line": 48,
+      "text": ".footer-placeholder { color: rgb(255 255 255 / .62); }"
+    },
+    {
+      "file": "src/components/home/ClientRegister.astro",
+      "line": 14,
+      "text": "<p>{id ? 'Logo masih berupa dummy. Identitas klien ditampilkan setelah izin publikasi.' : 'Logos are temporary. Client identities will appear after publication approval.'}</p>"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 30,
+      "text": "<p>Beroperasi sejak <mark>[PLACEHOLDER: TAHUN BERDIRI]</mark>, rekam jejak, cakupan proyek, dan pencapaian perusahaan akan ditampilkan setelah verifikasi. Visi kami adalah membuat proses perizinan lebih jelas, tertib, dan dapat ditelusuri; dengan ketelitian hukum, komunikasi progres, dan fokus pada penyelesaian kebutuhan izin sebagai pembeda utama.</p>"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 35,
+      "text": "<p>Operating since <mark>[PLACEHOLDER: YEAR ESTABLISHED]</mark>, the firm's track record, project coverage, and achievements will be published after verification. Our vision is to make licensing clearer, orderly, and traceable, with legal precision, progress communication, and a focus on resolving permit needs as our core differentiators.</p>"
+    },
+    {
+      "file": "src/components/home/CompanyVideo.astro",
+      "line": 18,
+      "text": "<p>{id ? '[PLACEHOLDER VIDEO RESMI]' : '[OFFICIAL VIDEO PLACEHOLDER]'}</p>"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 107,
+      "text": "? '[PLACEHOLDER: gambar, tahun, dan detail proyek menunggu verifikasi serta persetujuan publikasi.]'"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 108,
+      "text": ": '[PLACEHOLDER: images, years, and project details await verification and publication approval.]'}"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 23,
+      "text": "const breadcrumbSchema = {"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 24,
+      "text": "'@context': 'https://schema.org',"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 35,
+      "text": "<meta slot=\"head\" name=\"robots\" content=\"noindex,follow\" />"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 36,
+      "text": "<script slot=\"head\" is:inline type=\"application/ld+json\" set:html={JSON.stringify(breadcrumbSchema)} />"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 16,
+      "text": "const profileSchema = {"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 17,
+      "text": "'@context': 'https://schema.org',"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 43,
+      "text": "<script slot=\"head\" is:inline type=\"application/ld+json\" set:html={JSON.stringify(profileSchema)} />"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 57,
+      "text": "<figcaption>{content.hero.imagePlaceholder}</figcaption>"
+    },
+    {
+      "file": "src/content.config.ts",
+      "line": 7,
+      "text": "schema: z.object({"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 12,
+      "text": "{ slug: 'pendirian-pt-cv', title: 'Pendirian PT & CV', description: 'Penentuan bentuk usaha, persiapan dokumen, dan koordinasi proses pendirian.', price: '[PLACEHOLDER HARGA]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 13,
+      "text": "{ slug: 'pendirian-pt-pma', title: 'Pendirian PT PMA', description: 'Pendampingan struktur investasi, dokumen korporasi, dan legalitas awal perusahaan.', price: '[PLACEHOLDER HARGA]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 14,
+      "text": "{ slug: 'nib-oss-rba', title: 'NIB & OSS-RBA', description: 'Pemetaan KBLI, tingkat risiko, dan pengurusan identitas usaha melalui OSS-RBA.', price: '[PLACEHOLDER HARGA]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 23,
+      "text": "{ slug: 'perubahan-perseroan', title: 'Perubahan Data Perseroan', description: 'Koordinasi perubahan anggaran dasar, data perseroan, dan pembaruan legalitas.', price: '[PLACEHOLDER HARGA]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 24,
+      "text": "{ slug: 'lkpm', title: 'LKPM & Pelaporan Berkala', description: 'Pendampingan penyiapan data dan penyampaian laporan kegiatan penanaman modal.', price: '[PLACEHOLDER HARGA]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 25,
+      "text": "{ slug: 'haki', title: 'HAKI & Perlindungan Merek', description: 'Pemeriksaan awal dan koordinasi pendaftaran merek serta hak kekayaan intelektual.', price: '[PLACEHOLDER HARGA]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 29,
+      "text": "{ slug: 'company-establishment', title: 'PT & CV Establishment', description: 'Entity selection, document preparation, and establishment process coordination.', price: '[PRICE PLACEHOLDER]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 30,
+      "text": "{ slug: 'foreign-investment-company', title: 'Foreign Investment Company', description: 'Investment structure, corporate documents, and initial business legality assistance.', price: '[PRICE PLACEHOLDER]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 31,
+      "text": "{ slug: 'business-identification', title: 'Business ID & OSS-RBA', description: 'Business classification, risk mapping, and registration through OSS-RBA.', price: '[PRICE PLACEHOLDER]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 40,
+      "text": "{ slug: 'corporate-changes', title: 'Corporate Data Changes', description: 'Corporate document changes and business legality updates.', price: '[PRICE PLACEHOLDER]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 41,
+      "text": "{ slug: 'investment-reporting', title: 'Investment Activity Reporting', description: 'Data preparation and investment activity report submission assistance.', price: '[PRICE PLACEHOLDER]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 42,
+      "text": "{ slug: 'intellectual-property', title: 'Trademark & IP Protection', description: 'Preliminary review and coordination of trademark and IP registration.', price: '[PRICE PLACEHOLDER]' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 58,
+      "text": "{ mark: 'AR', name: '[DUMMY] ARUNA', sector: 'Manufaktur', variant: 'block' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 59,
+      "text": "{ mark: 'N+', name: '[DUMMY] NUSA', sector: 'Teknologi', variant: 'round' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 60,
+      "text": "{ mark: 'PRM', name: '[DUMMY] PRIMA', sector: 'Perdagangan', variant: 'outline' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 61,
+      "text": "{ mark: 'VX', name: '[DUMMY] VERTEX', sector: 'Konstruksi', variant: 'split' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 62,
+      "text": "{ mark: 'LT', name: '[DUMMY] LINTAS', sector: 'Logistik', variant: 'serif' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 63,
+      "text": "{ mark: 'KR', name: '[DUMMY] KARYA', sector: 'Properti', variant: 'wide' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 66,
+      "text": "{ mark: 'AR', name: '[DUMMY] ARUNA', sector: 'Manufacturing', variant: 'block' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 67,
+      "text": "{ mark: 'N+', name: '[DUMMY] NUSA', sector: 'Technology', variant: 'round' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 68,
+      "text": "{ mark: 'PRM', name: '[DUMMY] PRIMA', sector: 'Trade', variant: 'outline' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 69,
+      "text": "{ mark: 'VX', name: '[DUMMY] VERTEX', sector: 'Construction', variant: 'split' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 70,
+      "text": "{ mark: 'LT', name: '[DUMMY] LINTAS', sector: 'Logistics', variant: 'serif' },"
+    },
+    {
+      "file": "src/data/home.ts",
+      "line": 71,
+      "text": "{ mark: 'KR', name: '[DUMMY] KARYA', sector: 'Property', variant: 'wide' },"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 29,
+      "text": "imagePlaceholder: string;"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 59,
+      "text": "imagePlaceholder: '[VISUAL KONSEP: GANTI DENGAN FOTO TIM RESMI]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 65,
+      "text": "'Beroperasi sejak [PLACEHOLDER: TAHUN BERDIRI], perusahaan membangun rekam jejak dalam kebutuhan legalitas dan perizinan bisnis yang akan dipublikasikan setelah verifikasi. Visi kami adalah membuat proses izin lebih jelas, tertib, dan dapat ditelusuri, dengan ketelitian hukum, komunikasi progres, dan fokus pada penyelesaian sebagai nilai pembeda.',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 71,
+      "text": "{ label: 'Beroperasi sejak', value: '[PLACEHOLDER: TAHUN BERDIRI]' },"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 87,
+      "text": "credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 88,
+      "text": "email: '[PLACEHOLDER: EMAIL PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 89,
+      "text": "phone: '[PLACEHOLDER: NOMOR TELEPON PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 90,
+      "text": "domicile: '[PLACEHOLDER: DOMISILI / KANTOR]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 100,
+      "text": "credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 101,
+      "text": "email: '[PLACEHOLDER: EMAIL PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 102,
+      "text": "phone: '[PLACEHOLDER: NOMOR TELEPON PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 103,
+      "text": "domicile: '[PLACEHOLDER: DOMISILI / KANTOR]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 113,
+      "text": "credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 114,
+      "text": "email: '[PLACEHOLDER: EMAIL PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 115,
+      "text": "phone: '[PLACEHOLDER: NOMOR TELEPON PROFESIONAL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 116,
+      "text": "domicile: '[PLACEHOLDER: DOMISILI / KANTOR]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 135,
+      "text": "imagePlaceholder: '[CONCEPT VISUAL: REPLACE WITH THE OFFICIAL TEAM PHOTO]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 141,
+      "text": "'Operating since [PLACEHOLDER: YEAR ESTABLISHED], the firm is building a track record in business legality and licensing that will be published after verification. Our vision is to make permits clearer, orderly, and traceable, with legal precision, progress communication, and a focus on resolution as our differentiating values.',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 147,
+      "text": "{ label: 'Operating since', value: '[PLACEHOLDER: YEAR ESTABLISHED]' },"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 163,
+      "text": "credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 164,
+      "text": "email: '[PLACEHOLDER: PROFESSIONAL EMAIL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 165,
+      "text": "phone: '[PLACEHOLDER: PROFESSIONAL PHONE NUMBER]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 166,
+      "text": "domicile: '[PLACEHOLDER: DOMICILE / OFFICE]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 176,
+      "text": "credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 177,
+      "text": "email: '[PLACEHOLDER: PROFESSIONAL EMAIL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 178,
+      "text": "phone: '[PLACEHOLDER: PROFESSIONAL PHONE NUMBER]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 179,
+      "text": "domicile: '[PLACEHOLDER: DOMICILE / OFFICE]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 189,
+      "text": "credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 190,
+      "text": "email: '[PLACEHOLDER: PROFESSIONAL EMAIL]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 191,
+      "text": "phone: '[PLACEHOLDER: PROFESSIONAL PHONE NUMBER]',"
+    },
+    {
+      "file": "src/data/profile.ts",
+      "line": 192,
+      "text": "domicile: '[PLACEHOLDER: DOMICILE / OFFICE]',"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 4,
+      "text": "legalName: '[PLACEHOLDER — NAMA LEGAL PERUSAHAAN]',"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 8,
+      "text": "address: '[PLACEHOLDER — ALAMAT KANTOR RESMI]',"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 9,
+      "text": "registration: '[PLACEHOLDER — NOMOR REGISTRASI / LEGAL]',"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 13,
+      "text": "privacyStatus: '[PLACEHOLDER — KEBIJAKAN PRIVASI MENUNGGU REVIEW]',"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 14,
+      "text": "termsStatus: '[PLACEHOLDER — SYARAT & KETENTUAN MENUNGGU REVIEW]',"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 68,
+      "text": "{ type: 'Perizinan usaha', title: '[PLACEHOLDER — Pengurusan legalitas dan izin operasional perusahaan]', outcome: 'Ruang lingkup, industri, periode, dan hasil menunggu persetujuan publikasi.' },"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 69,
+      "text": "{ type: 'Legal advisory', title: '[PLACEHOLDER — Review kepatuhan regulasi untuk ekspansi bisnis]', outcome: 'Detail pengalaman akan ditambahkan setelah verifikasi kerahasiaan klien.' },"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 70,
+      "text": "{ type: 'Investasi', title: '[PLACEHOLDER — Pendampingan perizinan proyek investasi]', outcome: 'Nilai proyek dan identitas pihak terkait tidak ditampilkan sebelum disetujui.' },"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 73,
+      "text": "{ type: 'Business licensing', title: '[PLACEHOLDER — Corporate legality and operational licensing engagement]', outcome: 'Scope, industry, period, and outcome await publication approval.' },"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 74,
+      "text": "{ type: 'Legal advisory', title: '[PLACEHOLDER — Regulatory compliance review for business expansion]', outcome: 'Experience details will be added after client-confidentiality verification.' },"
+    },
+    {
+      "file": "src/data/site.ts",
+      "line": 75,
+      "text": "{ type: 'Investment', title: '[PLACEHOLDER — Investment project licensing assistance]', outcome: 'Project value and related party identities remain unpublished pending approval.' },"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 30,
+      "text": "'@context': 'https://schema.org',"
+    },
+    {
+      "file": "src/pages/api/contact.ts",
+      "line": 4,
+      "text": "export const prerender = false;"
+    },
+    {
+      "file": "src/pages/api/contact.ts",
+      "line": 81,
+      "text": "const apiKey = import.meta.env.RESEND_API_KEY;"
+    },
+    {
+      "file": "src/pages/api/contact.ts",
+      "line": 90,
+      "text": "const response = await fetch('https://api.resend.com/emails', {"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "scope_note": "Audit ini menggunakan source implementasi pada outputs/galdino_partner/website. Folder Galdino-and-Partners-Law-Firm-and-Consultant/website hanya berisi node_modules dan .astro, sedangkan Git di folder tersebut tidak memuat file pada HEAD; karena itu folder tersebut tidak digunakan untuk mengklaim fitur. Dokumentasi dibaca sebagai konteks/rencana, sementara kondisi aktual diprioritaskan dari source code. Nilai placeholder, dummy, concept, pending, dan awaiting approval tidak diperlakukan sebagai fakta bisnis terverifikasi.",
+  "identity": [
+    {
+      "label": "Nama perusahaan / brand",
+      "status": "Terkonfirmasi",
+      "answer": "Galdino & Partner. Ini adalah display name yang dipakai konsisten pada data pusat, metadata, schema, header, footer, dan README. Nama legal perusahaan masih berupa placeholder sehingga tidak dapat disamakan dengan nama brand.",
+      "sources": ["src/data/site.ts — SITE.displayName berisi nama brand; SITE.legalName masih placeholder.", "README.md — judul project adalah Galdino & Partner Website."]
+    },
+    {
+      "label": "Nama proyek",
+      "status": "Terkonfirmasi",
+      "answer": "Galdino & Partner Website — website bilingual berorientasi produksi untuk konsultan perizinan dan firma hukum.",
+      "sources": ["README.md — judul dan deskripsi project.", "package.json — package name galdino-partner-website."]
+    },
+    {
+      "label": "PIC utama + kontak",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ada PIC project yang ditetapkan di source atau dokumentasi. Project memiliki kanal kontak publik, tetapi kanal tersebut tidak dinyatakan sebagai PIC project discovery.",
+      "sources": ["src/data/site.ts — hanya memuat kanal kontak publik SITE.email dan SITE.whatsappHref.", "docs/PROJECT_CONTEXT.md — tidak menetapkan PIC project."],
+      "missing": "Nama, jabatan, kewenangan, email, dan nomor kontak PIC project.",
+      "recommendation": "Bukan kondisi project saat ini — tunjuk satu PIC yang mengonsolidasikan jawaban dan revisi.",
+      "additional": "Nama dan kontak PIC yang ditunjuk stakeholder."
+    },
+    {
+      "label": "Pemberi persetujuan final",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ditemukan nama atau role pemberi persetujuan final.",
+      "sources": ["docs/DEVELOPMENT_WORKFLOW.md — menyebut kebutuhan reviewer dan content approvals, tetapi tidak menetapkan orang/role persetujuan final."],
+      "missing": "Identitas dan ruang kewenangan approver final.",
+      "recommendation": "Bukan kondisi project saat ini — tetapkan satu approver final untuk legal, brand, dan publikasi.",
+      "additional": "Nama, jabatan, dan kategori keputusan yang disetujui."
+    },
+    {
+      "label": "Penyedia informasi / aset",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ditemukan pemilik atau penyedia informasi/aset. Source hanya mencatat aset yang tersedia dan aset yang masih perlu diganti.",
+      "sources": ["docs/DESIGN_SYSTEM.md — menginventarisasi logo dan visual concept/replaceable.", "src/assets — menyimpan aset gambar lokal tanpa metadata pemilik bisnis."],
+      "missing": "Nama penanggung jawab aset dan bukti izin penggunaan.",
+      "recommendation": "Bukan kondisi project saat ini — tetapkan satu asset owner dan satu folder master berizin akses.",
+      "additional": "Nama/jabatan pemilik aset, jenis aset, dan bukti izin publikasi."
+    },
+    {
+      "label": "Target website tayang",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ada tanggal target launch di source atau dokumentasi.",
+      "sources": ["docs/DEPLOYMENT.md — berisi langkah dan checklist deployment tanpa tanggal.", "docs/PROJECT_CONTEXT.md — menyebut keputusan launch bilingual, bukan jadwal."],
+      "missing": "Tanggal target dan milestone menuju produksi.",
+      "recommendation": "Bukan kondisi project saat ini — tetapkan tanggal setelah identitas legal, aset resmi, kebijakan privasi, terms, dan konfigurasi produksi selesai.",
+      "additional": "Tanggal target, hard deadline, dan dependensi eksternal."
+    },
+    {
+      "label": "Alasan target tersebut",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Karena target tayang tidak tersedia, alasannya juga tidak dapat dikonfirmasi.",
+      "sources": ["docs/DEPLOYMENT.md — tidak memuat alasan tanggal peluncuran."],
+      "missing": "Konteks komersial, kampanye, tender, event, atau kewajiban lain yang mengikat tanggal.",
+      "recommendation": "Bukan kondisi project saat ini — dokumentasikan alasan deadline agar prioritas scope dapat dinilai.",
+      "additional": "Alasan bisnis dan konsekuensi apabila jadwal bergeser."
+    }
+  ],
+  "questions": [
+    {
+      "number": "1.1",
+      "title": "Jelaskan perusahaan Anda dalam satu paragraf.",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Menurut konteks project, Galdino & Partner diposisikan sebagai konsultan perizinan usaha, firma hukum, dan mitra legal-regulasi di Indonesia. Website menjelaskan pendampingan untuk legalitas perusahaan, perizinan berbasis risiko dan sektoral, kepatuhan/legal advisory, serta perizinan proyek dan investasi. Alur yang ditampilkan mencakup pemetaan aktivitas dan klasifikasi usaha, penyiapan dokumen, koordinasi pengajuan, pemantauan progres, dan tindak lanjut. Legal name, alamat, registrasi, final service scope, dan bukti rekam jejak masih placeholder atau menunggu persetujuan sehingga paragraf ini adalah deskripsi dalam project, bukan verifikasi eksternal atas perusahaan.",
+      "short": "Deskripsi project: konsultan perizinan dan firma hukum di Indonesia yang memetakan kebutuhan, menyiapkan dokumen, mengoordinasikan proses, serta membantu tindak lanjut; identitas legal dan bukti usaha belum lengkap.",
+      "sources": ["docs/PROJECT_CONTEXT.md — Purpose, Audience, Positioning, dan Current status.", "src/data/site.ts — SERVICES dan business identity placeholders.", "src/components/home/CompanySnapshot.astro — uraian proses layanan dan marker rekam jejak belum terverifikasi."],
+      "missing": "Nama legal, alamat resmi, registrasi, wilayah kantor/cabang, final scope, dan bukti operasional.",
+      "recommendation": "Bukan kondisi project saat ini — gunakan paragraf ini hanya sebagai draft, lalu minta persetujuan bisnis/legal sebelum publikasi.",
+      "additional": "Dokumen legal perusahaan, profil resmi, daftar layanan final, dan wilayah layanan yang disetujui."
+    },
+    {
+      "number": "1.2",
+      "title": "Daftar produk atau layanan yang aktif ditawarkan.",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Empat kategori layanan yang benar-benar didefinisikan pada sumber data bersama adalah: (1) Pendirian & Legalitas Usaha — struktur badan usaha, dokumen korporasi, NIB, dan fondasi legal operasional; (2) Perizinan Berbasis Risiko — KBLI, tingkat risiko, OSS-RBA, dan izin sektoral; (3) Kepatuhan & Legal Advisory — review kepatuhan, risiko regulasi, dan dukungan hukum; (4) Perizinan Proyek & Investasi — koordinasi dokumen dan jalur izin untuk ekspansi/proyek/investasi. Homepage juga memuat 15 entri layanan yang lebih rinci, tetapi beberapa harga masih placeholder dan dokumentasi menyatakan final services belum disetujui. Prioritas bisnis 1/2/3 tidak tersedia.",
+      "short": "4 kategori terimplementasi: Pendirian & Legalitas Usaha; Perizinan Berbasis Risiko; Kepatuhan & Legal Advisory; Perizinan Proyek & Investasi. Status aktif/final dan prioritas bisnis belum disetujui.",
+      "sources": ["src/data/site.ts — SERVICES.id berisi empat kategori bersama.", "src/data/home.ts — HOME_SERVICES.id berisi 15 entri rinci dengan sebagian price placeholder.", "docs/PROJECT_CONTEXT.md — final services masih placeholder.", "docs/PAGE_SPECIFICATIONS.md — final deliverables, exclusions, timelines, dan authority boundaries memerlukan approval."],
+      "missing": "Konfirmasi bahwa layanan aktif secara komersial, prioritas 1/2/3, deliverable, pengecualian, harga, timeline, dan batas kewenangan.",
+      "recommendation": "Bukan kondisi project saat ini — gunakan empat kategori sebagai kerangka awal dan pilih maksimal delapan layanan final bersama owner bisnis.",
+      "additional": "Daftar layanan yang benar-benar dijual, kontribusi revenue, margin/prioritas, ruang lingkup, dan partner eksternal."
+    },
+    {
+      "number": "1.3",
+      "title": "Bagaimana perusahaan menghasilkan pendapatan?",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ditemukan model pendapatan, pola kontrak, invoice, pembayaran, retainer, tender, komisi, atau transaksi. Label harga/estimasi pada homepage adalah konten presentasi dan sebagian masih placeholder; tidak membuktikan model revenue.",
+      "short": "Model pendapatan dan pola pembayaran tidak tersedia di project.",
+      "sources": ["src/data/home.ts — field price hanya berisi placeholder atau 'Estimasi setelah asesmen'.", "package.json — tidak memiliki dependency pembayaran atau billing."],
+      "missing": "Jenis transaksi, kontrak, cara penetapan fee, termin, dan proporsi tiap model.",
+      "recommendation": "Bukan kondisi project saat ini — pilih model aktual (mis. proyek satu kali/retainer/tender) dan jelaskan alur pembayaran yang paling umum.",
+      "additional": "Contoh proposal/kontrak/invoice yang sudah dianonimkan atau penjelasan owner bisnis."
+    },
+    {
+      "number": "1.4",
+      "title": "Di mana perusahaan beroperasi dan melayani pelanggan?",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Cakupan yang dinyatakan project adalah Indonesia. Target audiens mencakup perusahaan Indonesia dan investor/tim internasional yang membutuhkan orientasi berbahasa Inggris untuk kegiatan di Indonesia. Alamat kantor, cabang, dan batas wilayah layanan masih placeholder.",
+      "short": "Area served yang dinyatakan: Indonesia; alamat kantor, cabang, dan batas wilayah belum tersedia.",
+      "sources": ["docs/PROJECT_CONTEXT.md — audience dan positioning di Indonesia.", "src/layouts/BaseLayout.astro — Organization/LegalService schema memakai areaServed: Indonesia.", "src/data/site.ts — SITE.address masih placeholder."],
+      "missing": "Alamat resmi, daftar cabang, kota/provinsi prioritas, dan apakah layanan nasional/remote.",
+      "recommendation": "Bukan kondisi project saat ini — konfirmasi kantor fisik dan area yang realistis dilayani sebelum menambahkan local SEO.",
+      "additional": "Alamat legal, alamat operasional, cabang, dan wilayah prioritas."
+    },
+    {
+      "number": "1.5",
+      "title": "Apa tiga momen penting dalam perjalanan perusahaan?",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ada milestone perusahaan yang terverifikasi. Tahun berdiri, rekam jejak, statistik, dan detail pengalaman masih placeholder.",
+      "short": "Milestone dan tahun perusahaan tidak tersedia; seluruh rekam jejak masih placeholder.",
+      "sources": ["src/data/profile.ts — tahun berdiri masih placeholder.", "src/data/home.ts — HOME_STATS seluruhnya [DATA].", "src/data/site.ts — PROJECTS berstatus placeholder/menunggu izin publikasi."],
+      "missing": "Tahun berdiri, milestone legal/operasional, proyek penting, ekspansi, dan bukti pendukung.",
+      "recommendation": "Bukan kondisi project saat ini — isi hanya milestone yang memiliki dokumen dan izin publikasi.",
+      "additional": "Tanggal, deskripsi peristiwa, bukti, dan approver publikasi."
+    },
+    {
+      "number": "1.6",
+      "title": "Dari mana pelanggan biasanya mengenal perusahaan Anda?",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Project mengimplementasikan kanal Google/SEO, artikel, WhatsApp, email, dan formulir web, tetapi tidak memuat data sumber pelanggan aktual atau atribusi lead. Karena itu tidak ada maksimal tiga sumber yang dapat dipilih secara faktual.",
+      "short": "Kanal website tersedia (SEO/blog, WhatsApp, email, formulir), tetapi sumber pelanggan aktual tidak terbukti.",
+      "sources": ["docs/SEO_GUIDELINES.md — topic model dan peran halaman untuk search intent.", "src/components/ContactPage.astro — WhatsApp, email, dan form.", "src/components/ContactForm.astro — pengiriman inquiry web."],
+      "missing": "Data CRM, wawancara sales, atau laporan atribusi lead.",
+      "recommendation": "Bukan kondisi project saat ini — minta sales memilih tiga sumber aktual berdasarkan 6-12 bulan terakhir.",
+      "additional": "Jumlah lead/win per sumber dan periode pengukuran."
+    },
+    {
+      "number": "1.7",
+      "title": "Apa masalah marketing atau penjualan yang paling terasa saat ini?",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Project menjelaskan tujuan website untuk membantu orang memahami penawaran, menilai kredibilitas, membaca konten, dan memulai konsultasi, tetapi tidak menyatakan dua masalah marketing/sales aktual yang paling terasa.",
+      "short": "Project memuat tujuan komunikasi dan konversi, bukan bukti masalah marketing/sales aktual.",
+      "sources": ["docs/PROJECT_CONTEXT.md — Purpose menjelaskan tugas website.", "src/components/HomePage.astro — komposisi layanan, pengalaman, insight, dan CTA."],
+      "missing": "Masalah yang dialami sales, data conversion, kualitas inquiry, dan ketergantungan channel.",
+      "recommendation": "Bukan kondisi project saat ini — validasi maksimal dua masalah melalui owner/sales; jangan otomatis menganggap tujuan website sebagai pain point.",
+      "additional": "Wawancara sales, funnel saat ini, volume/kualitas lead, dan alasan lost deal."
+    },
+    {
+      "number": "1.8",
+      "title": "Apa tiga prioritas bisnis dalam 12–24 bulan ke depan?",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ditemukan roadmap atau prioritas bisnis 12-24 bulan. Sasaran website dan keputusan teknis tersedia, tetapi bukan prioritas pertumbuhan perusahaan.",
+      "short": "Prioritas bisnis 12–24 bulan tidak tersedia di project.",
+      "sources": ["docs/PROJECT_CONTEXT.md — hanya memuat purpose, audience, positioning, status, dan approved technical decisions.", "docs/REQUIREMENTS.md — memuat scope website, bukan roadmap bisnis."],
+      "missing": "Target revenue, segmen, wilayah, layanan baru, tender, cabang, atau kredibilitas yang diprioritaskan.",
+      "recommendation": "Bukan kondisi project saat ini — pilih tiga prioritas yang memiliki owner dan indikator hasil.",
+      "additional": "Roadmap bisnis, target 12-24 bulan, dan KPI."
+    },
+    {
+      "number": "1.9",
+      "title": "Perubahan apa yang ingin dirasakan setelah website baru digunakan?",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Perubahan yang dinyatakan pada level project: pengambil keputusan dapat memahami penawaran, menilai kredibilitas, membaca konten regulasi yang berguna, dan memulai konsultasi. Website juga diarahkan untuk menerjemahkan kompleksitas regulasi menjadi langkah yang terurut dan siap dijadikan dasar keputusan. Tidak ada baseline atau target kuantitatif untuk membuktikan perubahan tersebut.",
+      "short": "Target project: penawaran lebih dipahami, kredibilitas lebih mudah dinilai, konten regulasi dapat dibaca, dan konsultasi dapat dimulai; KPI belum ditetapkan.",
+      "sources": ["docs/PROJECT_CONTEXT.md — Purpose dan Positioning.", "src/components/home/HomeHero.astro — CTA konsultasi dan layanan.", "src/components/ContactForm.astro — alur inquiry yang diimplementasikan."],
+      "missing": "Baseline, KPI, target conversion, target lead quality, dan periode evaluasi.",
+      "recommendation": "Bukan kondisi project saat ini — ubah tujuan kualitatif ini menjadi metrik launch dan pasca-launch.",
+      "additional": "KPI saat ini, target 3/6/12 bulan, dan sumber data pengukuran."
+    },
+    {
+      "number": "1.10",
+      "title": "Permintaan atau proyek seperti apa yang tidak cocok untuk perusahaan Anda?",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Satu batas yang tertulis jelas: formulir website bukan kanal untuk keadaan darurat hukum atau tenggat pada hari yang sama. Project juga menegaskan final service scope, exclusions, authority boundaries, dan external partners belum dikonfirmasi, sehingga batas minimum nilai, wilayah, jenis pekerjaan, dan tipe klien belum tersedia.",
+      "short": "Teridentifikasi: bukan kanal keadaan darurat hukum atau tenggat hari yang sama. Batas layanan lain belum dikonfirmasi.",
+      "sources": ["src/components/ContactPage.astro — urgency warning.", "docs/PAGE_SPECIFICATIONS.md — final deliverables, exclusions, timelines, dan authority boundaries memerlukan approval.", "src/components/ContentPage.astro — scope note masih placeholder."],
+      "missing": "Minimum fee/nilai proyek, jenis perkara di luar scope, wilayah, lead time, dan tipe klien yang ditolak.",
+      "recommendation": "Bukan kondisi project saat ini — definisikan disqualification criteria dan tampilkan yang relevan secara aman.",
+      "additional": "Kebijakan intake, scope hukum, SLA, minimum engagement, dan batas geografis."
+    },
+    {
+      "number": "2.1",
+      "title": "Gambarkan pelanggan atau proyek yang paling ingin diperoleh.",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Audiens yang dituju adalah pemilik bisnis, founder, direktur, tim operasional, dan in-house legal di Indonesia; investor serta tim internasional yang memerlukan orientasi bahasa Inggris; dan perusahaan yang sedang mendirikan, memperluas, menertibkan, atau menjaga aktivitas bisnis di Indonesia. Lokasi spesifik, nilai proyek, anggaran, dan tingkat kesiapan ideal tidak tersedia.",
+      "short": "Target audience project: decision-maker dan tim operasional/legal, termasuk investor/tim internasional, untuk pendirian, ekspansi, regularisasi, atau kepatuhan bisnis di Indonesia; nilai proyek dan kesiapan belum ada.",
+      "sources": ["docs/PROJECT_CONTEXT.md — Audience.", "src/components/home/HomeHero.astro — fokus kebutuhan izin dan konsultasi.", "src/components/ContactForm.astro — meminta organisasi, layanan, aktivitas, kebutuhan, dan target waktu."],
+      "missing": "Industri prioritas, ukuran perusahaan, lokasi, nilai engagement, urgensi, dan readiness.",
+      "recommendation": "Bukan kondisi project saat ini — definisikan satu ICP primer dan satu sekunder dengan kriteria firmografis dan kesiapan.",
+      "additional": "Data deal terbaik, nilai proyek, industri, lokasi, siklus jual, dan kebutuhan berulang."
+    },
+    {
+      "number": "2.2",
+      "title": "Siapa yang terlibat dalam keputusan pembelian?",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Project hanya mengidentifikasi kelompok audiens: business owners, founders, directors, operations teams, in-house legal teams, investors, dan international teams. Tidak ada bukti yang memetakan siapa pengguna layanan, siapa yang mencari/membandingkan vendor, siapa influencer, dan siapa approver final dalam proses pembelian.",
+      "short": "Kelompok audiens tersedia, tetapi peran buying committee belum dipetakan.",
+      "sources": ["docs/PROJECT_CONTEXT.md — Audience.", "docs/PROJECT_CONTEXT.md — Purpose menyebut decision-makers secara umum."],
+      "missing": "Buying roles, kebutuhan informasi per role, dan approval chain.",
+      "recommendation": "Bukan kondisi project saat ini — wawancarai sales untuk memetakan user, researcher, influencer, dan approver.",
+      "additional": "Contoh tiga proses penjualan terbaru dan stakeholder pada setiap tahap."
+    },
+    {
+      "number": "2.3",
+      "title": "Dalam situasi apa pelanggan mulai merasa membutuhkan solusi Anda?",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Situasi yang dipakai dalam content model adalah ketika perusahaan mendirikan usaha, memperluas lokasi/aktivitas, menertibkan legalitas, menjaga kepatuhan, memetakan OSS-RBA/KBLI, mengurus izin sektoral, atau menjalankan proyek/investasi. Ini adalah skenario konten dan layanan dalam project, bukan hasil riset perilaku pelanggan.",
+      "short": "Skenario project: pendirian, ekspansi, regularisasi, kepatuhan, OSS-RBA/KBLI, izin sektoral, serta proyek/investasi; belum tervalidasi sebagai trigger pelanggan aktual.",
+      "sources": ["docs/PROJECT_CONTEXT.md — Audience dan positioning.", "src/data/site.ts — SERVICES.", "src/content/blog/id/checklist-legalitas-ekspansi.md — skenario ekspansi.", "src/content/blog/id/setelah-nib-terbit.md — kewajiban pasca-NIB."],
+      "missing": "Trigger aktual, frekuensi, urgensi, dan bahasa yang digunakan pelanggan.",
+      "recommendation": "Bukan kondisi project saat ini — validasi skenario melalui inquiry dan wawancara sales, lalu prioritaskan tiga trigger utama.",
+      "additional": "Contoh inquiry, call notes, dan alasan pelanggan menghubungi."
+    },
+    {
+      "number": "2.4",
+      "title": "Apa masalah, dampak, dan hasil yang paling penting bagi pelanggan?",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Content project menggambarkan tiga pola: (1) kompleksitas regulasi/kebutuhan izin yang belum terpetakan — keputusan dan urutan kerja menjadi tidak jelas — hasil yang dituju adalah langkah terurut dan siap diputuskan; (2) aktivitas, klasifikasi, data OSS, dan operasi berpotensi tidak selaras — dapat memicu pengulangan dokumen/perubahan struktur — hasil yang dituju adalah pemetaan yang konsisten; (3) kewajiban lanjutan setelah NIB dapat terlewat — kepatuhan sulit dilacak — hasil yang dituju adalah register, kalender, dan bukti proses. Pola ini berasal dari positioning dan artikel project, bukan data riset pelanggan.",
+      "short": "Project memodelkan masalah regulatory complexity, ketidaksinkronan legal-operasional, dan kewajiban pasca-izin; dampak/hasilnya belum tervalidasi dengan pelanggan.",
+      "sources": ["docs/PROJECT_CONTEXT.md — Positioning: regulatory complexity menjadi ordered, decision-ready steps.", "src/content/blog/id/memahami-perizinan-berbasis-risiko.md — risiko pengulangan dokumen dan perubahan struktur.", "src/content/blog/id/setelah-nib-terbit.md — kalender kepatuhan dan bukti proses."],
+      "missing": "Urutan prioritas, bukti dari pelanggan, besaran dampak, dan outcome komersial.",
+      "recommendation": "Bukan kondisi project saat ini — gunakan tiga pola sebagai hipotesis riset, bukan klaim final.",
+      "additional": "Wawancara pelanggan, lost-deal notes, keluhan, dan hasil engagement terukur."
+    },
+    {
+      "number": "2.5",
+      "title": "Apa yang biasanya membuat pelanggan akhirnya membeli atau justru batal membeli?",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ditemukan data win/loss, objection log, pipeline, atau alasan pembelian/pembatalan.",
+      "short": "Alasan membeli dan batal membeli tidak tersedia.",
+      "sources": ["docs/PROJECT_CONTEXT.md — tidak memuat data penjualan.", "src — tidak memiliki CRM atau penyimpanan sales."],
+      "missing": "Alasan win/loss, waktu keputusan, harga, trust, scope, dan procurement constraints.",
+      "recommendation": "Bukan kondisi project saat ini — rangkum minimal 10 deal menang/kalah terbaru dan kelompokkan alasannya.",
+      "additional": "Data CRM atau wawancara sales/partner."
+    },
+    {
+      "number": "2.6",
+      "title": "Apa yang paling membuat pelanggan ragu, dan apa yang membuat mereka percaya?",
+      "status": "Sebagian terkonfirmasi",
+      "answer": "Project menetapkan bahwa trust harus dibangun melalui transparansi proses dan kredensial terverifikasi, bukan metrik yang dibesar-besarkan. Namun data kredensial, statistik, bukti proyek, testimonial, dan logo klien masih placeholder/dummy atau menunggu izin. Keraguan pelanggan aktual tidak didokumentasikan.",
+      "short": "Prinsip trust project: proses transparan dan bukti terverifikasi; bukti utama saat ini belum tersedia dan keraguan aktual belum diriset.",
+      "sources": ["docs/CONTENT_GUIDELINES.md — trust melalui process transparency dan verified credentials.", "docs/PROJECT_CONTEXT.md — project evidence, testimonials, client logos, dan professional roster belum final.", "src/data/home.ts — statistik [DATA] dan client marks [DUMMY]."],
+      "missing": "Objection aktual dan bukti yang benar-benar meyakinkan pelanggan.",
+      "recommendation": "Bukan kondisi project saat ini — prioritaskan bukti izin publikasi, proses kerja, credential, dan case evidence; jangan menghapus marker sebelum verifikasi.",
+      "additional": "Objection log, testimonial berizin, credential, project proof, dan angka dengan sumber."
+    },
+    {
+      "number": "2.7",
+      "title": "Apa yang biasanya dibandingkan pelanggan saat memilih vendor?",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ada customer research atau sales evidence mengenai kriteria perbandingan vendor. Project menonjolkan ketelitian hukum, transparansi scope/proses, komunikasi progres, dan kredensial terverifikasi, tetapi itu adalah arah positioning, bukan bukti cara pelanggan menilai vendor.",
+      "short": "Kriteria perbandingan vendor belum tersedia; atribut positioning tidak boleh dianggap sebagai data pelanggan.",
+      "sources": ["docs/PROJECT_CONTEXT.md — Positioning.", "docs/CONTENT_GUIDELINES.md — trust principles.", "src/components/home/CompanySnapshot.astro — nilai pembeda yang masih disertai placeholder rekam jejak."],
+      "missing": "Tiga kriteria utama dan cara pelanggan menilainya.",
+      "recommendation": "Bukan kondisi project saat ini — tanyakan sales/pelanggan apakah scope, bukti, kecepatan, komunikasi, harga, atau pengalaman sektor yang paling menentukan.",
+      "additional": "Interview notes, proposal comparison, dan procurement criteria."
+    },
+    {
+      "number": "2.8",
+      "title": "Alternatif apa yang biasanya dipertimbangkan selain memilih perusahaan Anda?",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ditemukan alternatif langsung maupun tidak langsung dalam project.",
+      "short": "Alternatif pelanggan tidak tersedia.",
+      "sources": ["docs/PROJECT_CONTEXT.md — tidak memuat competitor/alternative analysis.", "src/data — tidak memuat data alternatif atau kompetitor."],
+      "missing": "Alternatif seperti internal legal, konsultan lain, notaris, pengurusan mandiri, menunda, atau vendor murah dan alasan pemilihannya.",
+      "recommendation": "Bukan kondisi project saat ini — isi dari pengalaman sales, bukan dari asumsi industri.",
+      "additional": "Nama/jenis alternatif dari inquiry nyata dan alasan pelanggan mempertimbangkannya."
+    },
+    {
+      "number": "2.9",
+      "title": "Tuliskan pertanyaan atau kalimat yang benar-benar sering digunakan pelanggan.",
+      "status": "Belum dapat dikonfirmasi",
+      "answer": "Tidak ada kutipan pelanggan, FAQ berdasarkan inquiry, transkrip, atau log pencarian. Placeholder form meminta aktivitas usaha, kebutuhan, lokasi, dan target waktu, tetapi itu adalah prompt buatan project, bukan bahasa pelanggan aktual.",
+      "short": "Tidak ada kutipan atau kalimat pelanggan aktual di project.",
+      "sources": ["src/components/ContactForm.astro — prompt form buatan project.", "docs/CONTENT_GUIDELINES.md — aturan penulisan, bukan customer quotes."],
+      "missing": "Pertanyaan verbatim dari email, WhatsApp, sales calls, dan search terms.",
+      "recommendation": "Bukan kondisi project saat ini — kumpulkan dan anonimisasi minimal 20 pertanyaan nyata untuk copy/SEO.",
+      "additional": "Export inquiry yang dianonimkan, call notes, dan Search Console jika tersedia."
+    },

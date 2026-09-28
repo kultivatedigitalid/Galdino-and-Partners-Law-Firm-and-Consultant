@@ -1,0 +1,305 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../../assets/home-licensing-hero.webp";
+import ArrowIcon from "../icons/ArrowIcon.astro";
+import { COPY, type Locale } from "../../data/site";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const id = locale === "id";
+const text = id
+  ? {
+      kicker: "Jasa pengurusan perizinan usaha",
+      title: "Pengurusan Izin untuk Bisnis Anda",
+      lead: "Kami petakan persyaratan, siapkan dokumen, dan kawal proses izin hingga tindak lanjut.",
+      services: "Lihat layanan & estimasi",
+      visual:
+        "Konsultan perizinan dan pelaku usaha menelaah dokumen persyaratan",
+      proof: [
+        "OSS-RBA & izin sektoral",
+        "Ruang lingkup transparan",
+        "Pendampingan hingga tindak lanjut",
+      ],
+    }
+  : {
+      kicker: "Business licensing services",
+      title: "Business Permit Support for Your Company",
+      lead: "We map requirements, prepare documents, and guide the permit process through follow-up.",
+      services: "View services & estimates",
+      visual:
+        "A licensing consultant and business owner reviewing permit requirements",
+      proof: [
+        "OSS-RBA & sectoral permits",
+        "Transparent scope",
+        "Support through follow-up",
+      ],
+    };
+---
+
+<section class="home-hero" aria-labelledby="home-hero-title">
+  <Image
+    class="home-hero__image"
+    src={heroImage}
+    alt={text.visual}
+    widths={[640, 960, 1280, 1600, 1920]}
+    sizes="100vw"
+    loading="eager"
+    fetchpriority="high"
+    quality={84}
+  />
+  <div class="home-hero__veil" aria-hidden="true"></div>
+  <div class="container-shell home-hero__inner">
+    <div class="home-hero__copy">
+      <p class="home-kicker home-kicker--light home-hero__kicker">{text.kicker}</p>
+      <h1 id="home-hero-title">{text.title}</h1>
+      <p class="home-hero__lead">{text.lead}</p>
+      <div class="home-hero__actions">
+        <a class="home-button home-button--red" href={`/${locale}/contact/`}>
+          {COPY[locale].consult}<ArrowIcon />
+        </a>
+        <a class="home-button home-button--ghost" href={`/${locale}/services/`}>
+          {text.services}<ArrowIcon />
+        </a>
+      </div>
+      <ul
+        class="home-hero__proof"
+        aria-label={id ? "Cakupan pendampingan" : "Assistance coverage"}
+      >
+        {text.proof.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .home-hero {
+    position: relative;
+    height: 100svh;
+    min-height: 34rem;
+    overflow: clip;
+    background: #0b0b0c;
+    color: #fff;
+    isolation: isolate;
+  }
+  .home-hero__image {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% 50%;
+  }
+  .home-hero__veil {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(
+        90deg,
+        rgb(8 8 9 / 0.97) 0%,
+        rgb(8 8 9 / 0.88) 36%,
+        rgb(8 8 9 / 0.34) 67%,
+        rgb(8 8 9 / 0.1) 100%
+      ),
+      linear-gradient(0deg, rgb(8 8 9 / 0.58), transparent 46%);
+  }
+  .home-hero::after {
+    position: absolute;
+    right: clamp(1.25rem, 4vw, 4rem);
+    bottom: 0;
+    width: clamp(5rem, 9vw, 8rem);
+    height: 0.28rem;
+    background: var(--home-red);
+    content: "";
+  }
+  .home-hero__inner {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: clamp(6.5rem, 12vh, 8rem);
+    padding-bottom: clamp(1.5rem, 4vh, 3rem);
+  }
+  .home-hero__copy {
+    width: min(40rem, 61%);
+  }
+  .home-hero__kicker {
+    color: #fff;
+  }
+  .home-hero h1 {
+    max-width: 14ch;
+    margin: clamp(0.75rem, 1.8vh, 1.25rem) 0 0;
+    font-family: var(--font-display);
+    font-size: var(--brand-type-hero);
+    font-weight: 570;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+  .home-hero__lead {
+    max-width: 29rem;
+    margin: clamp(0.9rem, 2vh, 1.35rem) 0 0;
+    color: rgb(255 255 255 / 0.78);
+    font-size: clamp(0.92rem, 1.5vw, 1.08rem);
+    line-height: 1.52;
+    text-wrap: pretty;
+  }
+  .home-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: clamp(1.75rem, 3.5vh, 2.35rem);
+  }
+  .home-hero__proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    margin: clamp(1rem, 2.25vh, 1.5rem) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .home-hero__proof li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgb(255 255 255 / 0.68);
+    font-size: clamp(0.66rem, 1.25vh, 0.76rem);
+    font-weight: 680;
+  }
+  .home-hero__proof li::before {
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: var(--home-red);
+    content: "";
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .home-hero__kicker,
+    .home-hero h1,
+    .home-hero__lead,
+    .home-hero__actions,
+    .home-hero__proof {
+      animation: home-hero-enter 520ms var(--home-ease) both;
+    }
+    .home-hero h1 {
+      animation-delay: 45ms;
+    }
+    .home-hero__lead {
+      animation-delay: 90ms;
+    }
+    .home-hero__actions {
+      animation-delay: 135ms;
+    }
+    .home-hero__proof {
+      animation-delay: 180ms;
+    }
+  }
+  @keyframes home-hero-enter {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .home-hero {
+      height: 100svh;
+      min-height: 34rem;
+    }
+    .home-hero__inner {
+      padding-top: 6.5rem;
+      padding-bottom: 1.5rem;
+    }
+    .home-hero__copy {
+      width: min(39rem, 82%);
+    }
+    .home-hero__image {
+      object-position: 63% 50%;
+    }
+    .home-hero__veil {
+      background:
+        linear-gradient(
+          90deg,
+          rgb(8 8 9 / 0.97),
+          rgb(8 8 9 / 0.8) 58%,
+          rgb(8 8 9 / 0.3)
+        ),
+        linear-gradient(0deg, rgb(8 8 9 / 0.6), transparent 55%);
+    }
+  }
+  @media (max-width: 640px) {
+    .home-hero {
+      min-height: 31rem;
+    }
+    .home-hero__inner {
+      align-items: center;
+      padding-block: 1rem;
+    }
+    .home-hero__copy {
+      position: static;
+      width: 100%;
+    }
+    .home-hero__image {
+      object-position: 67% 50%;
+    }
+    .home-hero__veil {
+      background: linear-gradient(
+        0deg,
+        rgb(8 8 9 / 0.99) 2%,
+        rgb(8 8 9 / 0.89) 52%,
+        rgb(8 8 9 / 0.38) 100%
+      );
+    }
+    .home-hero h1 {
+      max-width: 14ch;
+      font-size: clamp(2.35rem, 10.5vw, 3.1rem);
+      line-height: 0.98;
+    }
+    .home-hero__lead {
+      max-width: 31rem;
+      font-size: clamp(0.78rem, 1.75vh, 0.92rem);
+    }
+    .home-hero__actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-top: clamp(1.5rem, 3.5vh, 2rem);
+    }
+    .home-hero__actions :global(.home-button) {
+      min-height: 2.85rem;
+      padding-inline: 0.9rem;
+      font-size: 0.72rem;
+    }
+    .home-hero__proof {
+      gap: 0.32rem 0.8rem;
+    }
+    .home-hero__proof li {
+      font-size: 0.62rem;
+    }
+    .home-hero__proof li:last-child {
+      display: none;
+    }
+  }
+  @media (max-width: 380px), (max-height: 650px) {
+    .home-hero__inner {
+      padding-top: 5.8rem;
+      padding-bottom: .75rem;
+    }
+    .home-hero h1 {
+      font-size: clamp(2.15rem, 9.8vw, 2.65rem);
+    }
+    .home-hero__lead {
+      line-height: 1.42;
+    }
+    .home-hero__proof {
+      margin-top: 0.7rem;
+    }
+  }
+</style>

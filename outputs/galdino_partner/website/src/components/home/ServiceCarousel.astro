@@ -1,0 +1,167 @@
+---
+import { HOME_SERVICES } from '../../data/home';
+import type { Locale } from '../../data/site';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+import ServiceVisual from './ServiceVisual.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+const services = HOME_SERVICES[locale];
+const carouselId = `home-services-${locale}`;
+---
+
+<section class="service-section home-section" aria-labelledby="service-title">
+  <div class="container-shell">
+    <header class="service-section__header">
+      <div data-home-reveal>
+        <p class="home-kicker">{id ? 'Layanan pengurusan izin' : 'Permit handling services'}</p>
+        <h2 id="service-title" class="home-heading">{id ? 'Mulai dari izin yang Anda butuhkan.' : 'Start with the permit you need.'}</h2>
+      </div>
+      <div class="service-section__aside" data-home-reveal>
+        <p>{id ? 'Pilih kebutuhan terdekat. Jalur, dokumen, dan dependensinya dikonfirmasi saat asesmen awal.' : 'Choose the closest need. We confirm the pathway, documents, and dependencies during the initial assessment.'}</p>
+        <a class="home-rule-link" href={`/${locale}/services/`}>{id ? 'Lihat seluruh layanan' : 'View all services'} <ArrowIcon /></a>
+      </div>
+    </header>
+
+    <div class="service-carousel" data-service-carousel>
+      <div class="service-carousel__toolbar">
+        <p><strong>{services.length}</strong> {id ? 'kategori layanan tersedia' : 'service categories available'}</p>
+        <div class="service-carousel__controls">
+          <button type="button" data-carousel-prev aria-controls={carouselId} aria-label={id ? 'Layanan sebelumnya' : 'Previous service'}>
+            <ArrowIcon direction="left" />
+          </button>
+          <button type="button" data-carousel-next aria-controls={carouselId} aria-label={id ? 'Layanan berikutnya' : 'Next service'}>
+            <ArrowIcon />
+          </button>
+        </div>
+      </div>
+      <div
+        id={carouselId}
+        class="service-carousel__track"
+        tabindex="0"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={id ? 'Daftar layanan pengurusan izin' : 'Permit handling service list'}
+        data-carousel-track
+      >
+        {services.map((service, index) => (
+          <article class="service-card" data-carousel-card>
+            <div class="service-card__top">
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <small>{id ? 'PERIZINAN' : 'LICENSING'}</small>
+            </div>
+            <ServiceVisual slug={service.slug} title={service.title} />
+            <h3>{service.title}</h3>
+            <p class="service-card__description">{service.description}</p>
+            <div class="service-card__footer">
+              <div>
+                <small>{id ? 'Estimasi biaya' : 'Cost estimate'}</small>
+                <strong>{service.price}</strong>
+              </div>
+              <a href={`/${locale}/services/`} aria-label={`${id ? 'Lihat detail' : 'View details'}: ${service.title}`}>
+                {id ? 'Detail' : 'Details'} <ArrowIcon direction="up-right" />
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="sr-only" aria-live="polite" data-carousel-status></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-section { overflow: clip; background: var(--home-paper); }
+  .service-section__header { display: grid; gap: 2rem; }
+  .service-section__aside { max-width: 34rem; }
+  .service-section__aside p { margin: 0 0 1.25rem; color: var(--home-muted); font-size: .88rem; }
+  .service-carousel { margin-top: clamp(2.5rem, 5vw, 4.5rem); }
+  .service-carousel__toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+  .service-carousel__toolbar p { margin: 0; color: var(--home-muted); font-size: .72rem; }
+  .service-carousel__toolbar strong { color: var(--home-red); font-family: var(--font-display); font-size: 1.2rem; }
+  .service-carousel__controls { display: flex; gap: .45rem; }
+  .service-carousel__controls button { width: 2.75rem; height: 2.75rem; display: grid; place-items: center; border: 1px solid var(--home-line-strong); border-radius: 50%; background: transparent; color: var(--home-black); cursor: pointer; transition: color 170ms var(--home-ease), background-color 170ms var(--home-ease), border-color 170ms var(--home-ease), transform 140ms var(--home-ease); }
+  .service-carousel__controls button:disabled { cursor: default; opacity: .3; }
+  .service-carousel__controls button:active:not(:disabled) { transform: scale(.97); }
+  .service-carousel__track { display: flex; gap: .8rem; overflow-x: auto; padding: .1rem 0 1rem; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--home-red) var(--home-line); }
+  .service-carousel__track:focus-visible { outline-offset: .3rem; }
+  .service-card { position: relative; flex: 0 0 calc((100% - 2.4rem) / 4); min-height: 31rem; display: flex; flex-direction: column; padding: 1.35rem; border: 1px solid var(--home-line); background: var(--home-white); scroll-snap-align: start; transition: border-color 180ms var(--home-ease), transform 180ms var(--home-ease); }
+  .service-card::before { position: absolute; top: -1px; right: -1px; left: -1px; height: .2rem; background: var(--home-red); content: ''; transform: scaleX(.22); transform-origin: left; transition: transform 220ms var(--home-ease); }
+  .service-card__top { display: flex; align-items: center; justify-content: space-between; }
+  .service-card__top > span { color: var(--home-red); font-size: .67rem; font-weight: 850; }
+  .service-card small { color: var(--home-muted); font-size: .58rem; font-weight: 780; letter-spacing: .12em; text-transform: uppercase; }
+  .service-card h3 { max-width: 13ch; min-height: 2.08em; margin: 1.15rem 0 0; font-family: var(--font-display); font-size: clamp(1.45rem, 1.85vw, 1.95rem); font-weight: 590; letter-spacing: -.035em; line-height: 1.04; }
+  .service-card__description { min-height: 3.1em; margin: .8rem 0 0; color: var(--home-muted); font-size: .72rem; line-height: 1.5; }
+  .service-card__footer { display: grid; gap: .9rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--home-line); }
+  .service-card__footer > div { display: grid; gap: .3rem; }
+  .service-card__footer strong { font-size: .72rem; font-weight: 780; }
+  .service-card__footer a { width: fit-content; min-height: 2.75rem; display: inline-flex; align-items: center; gap: .35rem; color: var(--home-red); font-size: .73rem; font-weight: 800; text-decoration: none; }
+  .service-card__footer :global(.arrow-icon) { transition: transform 170ms var(--home-ease); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .service-carousel__controls button:hover:not(:disabled) { border-color: var(--home-red); background: var(--home-red); color: #fff; }
+    .service-card:hover { border-color: var(--home-line-strong); transform: translateY(-4px); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card__footer a:hover :global(.arrow-icon) { transform: translate(2px, -2px); }
+  }
+  @media (min-width: 900px) {
+    .service-section__header { grid-template-columns: 1.2fr .8fr; align-items: end; }
+    .service-section__aside { justify-self: end; }
+  }
+  @media (max-width: 1050px) {
+    .service-card { flex-basis: calc((100% - .8rem) / 2); min-height: 30rem; }
+  }
+  @media (max-width: 640px) {
+    .service-card { flex-basis: 86%; min-height: 29rem; }
+    .service-carousel__toolbar p { max-width: 12rem; line-height: 1.35; }
+    .service-card h3 { min-height: 0; }
+    .service-card__description { min-height: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .service-carousel__track { scroll-behavior: auto; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-service-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector<HTMLElement>('[data-carousel-track]');
+    const cards = Array.from(carousel.querySelectorAll<HTMLElement>('[data-carousel-card]'));
+    const previous = carousel.querySelector<HTMLButtonElement>('[data-carousel-prev]');
+    const next = carousel.querySelector<HTMLButtonElement>('[data-carousel-next]');
+    const status = carousel.querySelector<HTMLElement>('[data-carousel-status]');
+    if (!track || !cards.length || !previous || !next) return;
+
+    const positionOf = (card: HTMLElement) => card.offsetLeft - cards[0].offsetLeft;
+    const activeIndex = () => {
+      const left = track.scrollLeft;
+      return cards.reduce((closest, card, index) =>
+        Math.abs(positionOf(card) - left) < Math.abs(positionOf(cards[closest]) - left) ? index : closest, 0);
+    };
+    const update = () => {
+      const index = activeIndex();
+      previous.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      if (status) status.textContent = `${index + 1} / ${cards.length}`;
+    };
+    const move = (direction: number) => {
+      const nextIndex = Math.min(cards.length - 1, Math.max(0, activeIndex() + direction));
+      track.scrollTo({
+        left: positionOf(cards[nextIndex]),
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      });
+    };
+
+    previous.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    track.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        move(event.key === 'ArrowLeft' ? -1 : 1);
+      }
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(track);
+    update();
+  });
+</script>

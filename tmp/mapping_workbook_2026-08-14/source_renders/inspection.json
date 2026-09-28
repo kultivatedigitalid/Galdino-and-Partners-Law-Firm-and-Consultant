@@ -1,0 +1,303 @@
+{
+  "names": [
+    "00_Dashboard",
+    "01_GLOBAL",
+    "02_Page_Questions",
+    "03_Content_ID",
+    "04_Content_EN",
+    "05_Proof_Placeholders",
+    "06_Positioning_Tone_QA",
+    "07_Approval_Actions",
+    "08_Source_Notes"
+  ],
+  "inspections": [
+    {
+      "sheetName": "00_Dashboard",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"00_Dashboard\",\"address\":\"A1:Z80\",\"rows\":80,\"cols\":26,\"values\":[[\"FASE 2 — WEBSITE CONTENT SHEET / EXECUTIVE DASHBOARD\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Galdino & Partner — final copy, page questions, GLOBAL system copy, proof con...\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"HALAMAN DALAM PLAN\",null,null,\"CONTENT BLOCKS\",null,null,\"READY FOR APPROVAL\",null,null,\"CRITICAL ACTIONS\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[16,null,null,44,null,null,29,null,null,10,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Includes GLOBAL and backlog questions\",\"7\",\"7\",\"44 structured blocks per language\",\"7\",\"7\",\"Blocks marked READY FOR CONTENT APPROVAL\",\"7\",\"7\",\"Critical priority, regardless of current status\",\"7\",\"7\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"WHAT IS COMPLETE\",null,null,null,null,null,\"NON-NEGOTIABLE PUBLICATION GATES\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"• GLOBAL copy written once: navigation, CTA, footer, disclaimer, form states,...\",null,null,null,null,null,\"• Approve public GP phone, email, WhatsApp, and full address.\\n• Verify regist...\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"CONTENT STATUS SUMMARY\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Metric\",\"Count\",null,\"Metric\",\"Value\",\"Interpretation\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Current/core page questions\",5,null,\"Average QA score\",4.35164835164835,\"Message quality before publication readiness\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Prototype/preview page questions\",4,null,\"Review-ready blocks\",29,\"Blocks marked READY FOR CONTENT APPROVAL\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Backlog/launch-blocker questions\",7,null,\"Blocked / gated blocks\",15,\"Requires evidence, data, legal review, or implementation\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Blocked content blocks\",15,null,\"Open actions\",16,\"Status is not DONE/REMOVED\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Page\",\"Average QA\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"GLOBAL\",4.71428571428571,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Home\",4.85714285714286,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Profile\",4.57142857142857,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Profile Detail\",4.14285714285714,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Services\",4.85714285714286,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Our Experiences\",4.14285714285714,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Blog\",4.42857142857143,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Article Detail\",4.14285714285714,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Contact\",4.71428571428571,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Service Details\",4.42857142857143,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"FAQ\",4.14285714285714,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Privacy Policy\",3.71428571428571,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Terms & Disclaimer\",3.71428571428571,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"WORKBOOK MAP\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Sheet\",\"Activity / Output\",null,null,null,null,\"Use\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"01_GLOBAL\",\"Global copy once\",null,null,null,null,\"Navigation, CTA, footer, disclaimer, form, modal, metadata, labels\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"02_Page_Questions\",\"Questions per page\",null,null,null,null,\"Primary and supporting questions, answerability, publication note\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"03_Content_ID\",\"Final Indonesian copy\",null,null,null,null,\"Headline, body, supporting points, evidence, CTA, status, dependency\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"04_Content_EN\",\"Final English copy\",null,null,null,null,\"Natural equivalent; official Indonesian terms retained where needed\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"05_Proof_Placeholders\",\"Evidence control\",null,null,null,null,\"Confirmed, pending, dummy, consent-required, do-not-publish, launch gates\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"06_Positioning_Tone_QA\",\"Message QA\",null,null,null,null,\"Positioning, tone, clarity, evidence, CTA, bilingual, readiness scores\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"07_Approval_Actions\",\"Execution actions\",null,null,null,null,\"Owner, priority, status, launch impact, reference\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"08_Source_Notes\",\"Source governance\",null,null,null,null,\"Source hierarchy and application rules\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],\"valuesTruncated\":true,\"valuesPreviewRows\":75,\"valuesPreviewCols\":26,\"valuesPreviewAddress\":\"A1:Z75\"}",
+        "truncated": false,
+        "metadata": {
+          "revision": "ud56qu",
+          "target": {
+            "id": "wb/tlmsq2",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    },
+    {
+      "sheetName": "01_GLOBAL",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"01_GLOBAL\",\"address\":\"A1:Z80\",\"values\":[[\"FASE 2 — GLOBAL WEBSITE COPY\"]],\"valuesTruncated\":true}",
+        "truncated": false,
+        "metadata": {
+          "revision": "najlvc",
+          "target": {
+            "id": "wb/xbyz9b",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    },
+    {
+      "sheetName": "02_Page_Questions",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"02_Page_Questions\",\"address\":\"A1:Z80\",\"values\":[[\"FASE 2 — PERTANYAAN YANG HARUS DIJAWAB SETIAP HALAMAN\"]],\"valuesTruncated\":true}",
+        "truncated": false,
+        "metadata": {
+          "revision": "aikhaz",
+          "target": {
+            "id": "wb/ly25fm",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    },
+    {
+      "sheetName": "03_Content_ID",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"03_Content_ID\",\"address\":\"A1:Z80\",\"values\":[[\"FASE 2 — WEBSITE CONTENT SHEET (BAHASA INDONESIA)\"]],\"valuesTruncated\":true}",
+        "truncated": false,
+        "metadata": {
+          "revision": "30n6l5",
+          "target": {
+            "id": "wb/zo1x1z",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    },
+    {
+      "sheetName": "04_Content_EN",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"04_Content_EN\",\"address\":\"A1:Z80\",\"values\":[[\"FASE 2 — WEBSITE CONTENT SHEET (ENGLISH)\"]],\"valuesTruncated\":true}",
+        "truncated": false,
+        "metadata": {
+          "revision": "rqg94n",
+          "target": {
+            "id": "wb/j3bq7m",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    },
+    {
+      "sheetName": "05_Proof_Placeholders",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"05_Proof_Placeholders\",\"address\":\"A1:Z80\",\"values\":[[\"FASE 2 — PROOF, PLACEHOLDER & PUBLICATION CONTROL\"]],\"valuesTruncated\":true}",
+        "truncated": false,
+        "metadata": {
+          "revision": "v1z3rq",
+          "target": {
+            "id": "wb/ec9t4f",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    },
+    {
+      "sheetName": "06_Positioning_Tone_QA",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"06_Positioning_Tone_QA\",\"address\":\"A1:Z80\",\"values\":[[\"FASE 2 — POSITIONING, TONE & MESSAGE QUALITY QA\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Skor 1–5 menilai apakah copy konsisten dengan positioning permit-handling-fir...\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Status dokumen: FINAL DRAFT UNTUK CONTENT APPROVAL — placeholder, preview, da...\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Page\",\"Scope Reviewed\",\"Positioning\",\"Tone\",\"Clarity\",\"Evidence Discipline\",\"CTA Specificity\",\"Bilingual Equivalence\",\"Publication Readiness\",\"Average Score\",\"Key Finding\",\"Required Action\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"GLOBAL\",\"Global identity, navigation, form, legal boundary\",5,5,5,5,5,5,3,4.714285714285714,\"CTA label, contacts, consent, Privacy/Terms require approval.\",\"Approve global labels; keep placeholders gated.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Home\",\"Positioning, category orientation, process, credibility, previews, CTA\",5,5,5,5,5,5,4,4.85714285714286,\"Experience and article sections depend on approved evidence/review.\",\"Launch final sections; remove gated previews if dependencies remain.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Profile\",\"Identity, approach, principles, team, CTA\",5,5,5,5,4,5,3,4.57142857142857,\"Team directory is dummy; registration number pending.\",\"Publish identity/approach; replace/remove team section.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Profile Detail\",\"Individual professional profile\",5,5,4,5,4,5,1,4.14285714285714,\"All profile facts and images are dummy.\",\"Keep noindex; replace with verified data or remove routes.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Services\",\"Four categories, decision guide, initial inputs, boundary\",5,5,5,5,5,5,4,4.85714285714286,\"Detailed scope, prices, timelines, sector coverage remain pending.\",\"Publish category-level copy only; do not imply detail routes exist.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Our Experiences\",\"Case-study framework\",5,5,4,5,4,5,1,4.14285714285714,\"No approved case evidence or consent.\",\"Remove at launch or populate only approved cases.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Blog\",\"Insight listing framework\",5,5,5,5,4,5,2,4.42857142857143,\"Actual articles are preview-only.\",\"Review articles or exclude listing/content from launch.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Article Detail\",\"Reviewed article template\",5,5,4,5,4,5,1,4.14285714285714,\"Substantive content, sources, reviewer, and dates missing.\",\"No launch until legal/editorial review.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Contact\",\"Inquiry copy, preparation, process, boundaries\",5,5,5,5,5,5,3,4.71428571428571,\"Public contacts, consent, Privacy route, response SLA pending.\",\"Approve contact/privacy; implement modal; avoid public SLA.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Service Details\",\"Four category detail templates\",5,5,4,5,5,5,2,4.42857142857143,\"Deliverables, exclusions, checklist, timeline, fees incomplete.\",\"Complete and approve each detail page before implementation.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"FAQ\",\"Questions and framing\",5,5,4,5,4,5,1,4.14285714285714,\"Answers require legal and operational review.\",\"Do not launch answer content until approved.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Privacy Policy\",\"Policy gate only\",5,5,3,5,2,5,1,3.71428571428571,\"Actual data-processing facts and legal review absent.\",\"Confirm flow and obtain approved policy.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[\"Terms & Disclaimer\",\"Terms gate only\",5,5,3,5,2,5,1,3.71428571428571,\"Governing and liability terms absent.\",\"Obtain legal draft and approval.\",null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],\"valuesTruncated\":true}",
+        "truncated": false,
+        "metadata": {
+          "revision": "2oerde",
+          "target": {
+            "id": "wb/jahb26",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    },
+    {
+      "sheetName": "07_Approval_Actions",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"07_Approval_Actions\",\"address\":\"A1:Z80\",\"values\":[[\"FASE 2 — APPROVAL & IMPLEMENTATION ACTIONS\"]],\"valuesTruncated\":true}",
+        "truncated": false,
+        "metadata": {
+          "revision": "c5bt36",
+          "target": {
+            "id": "wb/p2jcv3",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    },
+    {
+      "sheetName": "08_Source_Notes",
+      "inspected": {
+        "ndjson": "{\"kind\":\"table\",\"sheet\":\"08_Source_Notes\",\"address\":\"A1:Z80\",\"values\":[[\"FASE 2 — SOURCE & DECISION NOTES\"]],\"valuesTruncated\":true}",
+        "truncated": false,
+        "metadata": {
+          "revision": "rl6rqw",
+          "target": {
+            "id": "wb/ti28iv",
+            "beforeLines": 0,
+            "afterLines": 0
+          },
+          "kind": {
+            "requested": "table",
+            "tokens": [
+              "table"
+            ]
+          },
+          "include": {
+            "requested": "values,formulas",
+            "tokens": [
+              "values",
+              "formulas"
+            ]
+          },
+          "exclude": {
+            "tokens": []
+          },
+          "notices": []
+        }
+      }
+    }
+  ]
+}

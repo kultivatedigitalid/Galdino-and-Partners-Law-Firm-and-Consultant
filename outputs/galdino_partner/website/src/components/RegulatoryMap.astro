@@ -1,0 +1,43 @@
+---
+import type { Locale } from '../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+const labels = id
+  ? ['Struktur legal', 'Perizinan', 'Kepatuhan']
+  : ['Legal structure', 'Licensing', 'Compliance'];
+---
+<div class="practice-visual" role="img" aria-label={id ? 'Ilustrasi jalur legalitas, perizinan, dan kepatuhan bisnis' : 'Illustration of a business legal, licensing, and compliance pathway'}>
+  <div class="practice-visual__arcs" aria-hidden="true"></div>
+  <div class="practice-visual__mark" aria-hidden="true">
+    <img src="/assets/gp-logo-brand.png" width="600" height="413" alt="" fetchpriority="high" />
+  </div>
+  <p class="practice-visual__caption">{id ? 'Mitra hukum & regulasi bisnis' : 'Business legal & regulatory partner'}</p>
+  <ol class="practice-visual__rail" aria-hidden="true">
+    {labels.map((label, index) => (
+      <li><span>0{index + 1}</span><strong>{label}</strong></li>
+    ))}
+  </ol>
+</div>
+
+<style>
+  .practice-visual { position: relative; min-height: clamp(29rem, 48vw, 37rem); overflow: hidden; border-radius: 1.1rem 1.1rem 7rem 1.1rem; background: linear-gradient(150deg, #e1ebe5 0 36%, #d0e0d8 36% 100%); isolation: isolate; }
+  .practice-visual::before { position: absolute; inset: 0; z-index: -1; background: linear-gradient(135deg, transparent 0 48%, rgb(16 54 56 / .05) 48% 49%, transparent 49%); content: ""; }
+  .practice-visual::after { position: absolute; right: -10%; bottom: -17%; z-index: -1; width: 76%; aspect-ratio: 1; border-radius: 999px; background: var(--color-forest-deep); content: ""; }
+  .practice-visual__arcs { position: absolute; top: -8rem; right: -7rem; width: 22rem; aspect-ratio: 1; border: 1px solid rgb(16 54 56 / .18); border-radius: 999px; }
+  .practice-visual__arcs::before, .practice-visual__arcs::after { position: absolute; border: 1px solid rgb(16 54 56 / .15); border-radius: inherit; content: ""; }
+  .practice-visual__arcs::before { inset: 3rem; }
+  .practice-visual__arcs::after { inset: 6rem; }
+  .practice-visual__mark { position: absolute; top: 15%; left: 9%; width: min(67%, 24rem); }
+  .practice-visual__mark img { width: 100%; filter: drop-shadow(0 16px 24px rgb(9 42 44 / .13)); }
+  .practice-visual__caption { position: absolute; top: 8%; left: 8%; margin: 0; color: var(--color-forest); font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+  .practice-visual__rail { position: absolute; right: 7%; bottom: 8%; left: 26%; margin: 0; display: grid; gap: .1rem; padding: 0; color: white; list-style: none; }
+  .practice-visual__rail li { display: grid; grid-template-columns: 2rem 1fr; align-items: center; gap: .7rem; border-bottom: 1px solid rgb(255 255 255 / .15); padding: .72rem .15rem; }
+  .practice-visual__rail span { color: #d9b878; font-size: .66rem; font-weight: 800; }
+  .practice-visual__rail strong { font-size: .79rem; font-weight: 650; }
+  @media (max-width: 767px) {
+    .practice-visual { min-height: 27rem; border-radius: 1rem 1rem 5rem 1rem; }
+    .practice-visual__mark { top: 18%; width: 75%; }
+    .practice-visual__rail { left: 18%; }
+  }
+</style>

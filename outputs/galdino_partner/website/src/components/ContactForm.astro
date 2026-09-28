@@ -1,0 +1,60 @@
+---
+import { SERVICE_OPTIONS, type Locale } from '../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+---
+<form id="contact-form" class="surface grid gap-5 p-6 md:p-8" action="/api/contact" method="post" novalidate>
+  <input type="hidden" name="locale" value={locale} />
+  <div class="absolute -left-[9999px]" aria-hidden="true">
+    <label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+  <div class="grid gap-5 md:grid-cols-2">
+    <label class="field"><span>{id ? 'Nama' : 'Name'} *</span><input name="name" autocomplete="name" required minlength="2" maxlength="100" /></label>
+    <label class="field"><span>Email *</span><input name="email" type="email" autocomplete="email" required maxlength="160" /></label>
+    <label class="field"><span>{id ? 'Nomor WhatsApp' : 'WhatsApp number'} *</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required minlength="8" maxlength="24" /></label>
+    <label class="field"><span>{id ? 'Perusahaan / organisasi' : 'Company / organisation'} *</span><input name="company" autocomplete="organization" required minlength="2" maxlength="140" /></label>
+  </div>
+  <label class="field"><span>{id ? 'Jenis layanan' : 'Service type'} *</span><select name="service" required><option value="">{id ? 'Pilih kebutuhan' : 'Select a requirement'}</option>{SERVICE_OPTIONS[locale].map((option) => <option value={option}>{option}</option>)}</select></label>
+  <label class="field"><span>{id ? 'Pesan' : 'Message'} *</span><textarea name="message" rows="6" required minlength="20" maxlength="3000" placeholder={id ? 'Jelaskan aktivitas usaha, kebutuhan, dan target waktu secara ringkas.' : 'Briefly describe your business activity, requirement, and target timing.'}></textarea></label>
+  <label class="flex items-start gap-3 text-sm text-muted"><input class="mt-1 size-4 accent-forest" name="consent" type="checkbox" value="true" required /><span>{id ? 'Saya menyetujui pemrosesan data ini untuk menanggapi permintaan konsultasi. *' : 'I consent to this data being processed to respond to my consultation request. *'}</span></label>
+  <div id="form-status" class="hidden rounded-lg p-4 text-sm" role="status" aria-live="polite"></div>
+  <button class="button-primary w-fit disabled:cursor-wait disabled:opacity-60" type="submit"><span class="button-label">{id ? 'Kirim permintaan' : 'Send enquiry'}</span><span aria-hidden="true">→</span></button>
+  <p class="text-xs text-muted">{id ? 'Jangan kirim dokumen sensitif melalui formulir awal ini.' : 'Do not send sensitive documents through this initial form.'}</p>
+</form>
+<style>
+  .field { display: grid; gap: .45rem; color: var(--color-ink); font-size: .82rem; font-weight: 650; }
+  .field input, .field select, .field textarea { width: 100%; border: 1px solid var(--color-line); border-radius: .65rem; background: white; padding: .8rem .9rem; color: var(--color-ink); font-weight: 400; }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--color-gold); outline: 2px solid rgb(176 131 64 / .2); }
+  .field [aria-invalid="true"] { border-color: #9f2f2f; }
+</style>
+<script>
+  const form = document.querySelector<HTMLFormElement>('#contact-form');
+  const status = document.querySelector<HTMLElement>('#form-status');
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const label = button?.querySelector<HTMLElement>('.button-label');
+    const locale = new FormData(form).get('locale') === 'en' ? 'en' : 'id';
+    if (button) button.disabled = true;
+    if (label) label.textContent = locale === 'id' ? 'Mengirim…' : 'Sending…';
+    if (status) { status.className = 'hidden'; status.textContent = ''; }
+    try {
+      const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message || 'Request failed');
+      if (status) { status.className = 'rounded-lg bg-sage p-4 text-sm text-forest'; status.textContent = data.message; }
+      form.reset();
+      status?.focus();
+    } catch (error) {
+      if (status) { status.className = 'rounded-lg bg-red-50 p-4 text-sm text-red-800'; status.textContent = error instanceof Error ? error.message : (locale === 'id' ? 'Terjadi kesalahan.' : 'Something went wrong.'); }
+    } finally {
+      if (button) button.disabled = false;
+      if (label) label.textContent = locale === 'id' ? 'Kirim permintaan' : 'Send enquiry';
+    }
+  });
+</script>

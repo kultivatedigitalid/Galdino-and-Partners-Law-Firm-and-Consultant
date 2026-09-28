@@ -1,0 +1,546 @@
+body.mockup-three {
+  --surface: #071b22;
+  --ink: #e9f3ef;
+  --heading: #f4f8f5;
+  --muted: #9eb2b2;
+  --accent: #39c9b8;
+  --accent-2: #e3a958;
+  --focus: #f0b65e;
+  --header-bg: rgba(7, 27, 34, 0.8);
+  --header-bg-solid: #0a2027;
+  --header-border: rgba(143, 205, 197, 0.18);
+  --button-ink: #071b22;
+  --button-border: rgba(133, 204, 197, 0.33);
+  --card-bg: rgba(14, 45, 52, 0.68);
+  --card-border: rgba(113, 190, 181, 0.18);
+  --tag-border: rgba(86, 214, 196, 0.32);
+  --tag-ink: #7adccc;
+  --field-bg: rgba(4, 24, 30, 0.72);
+  --field-ink: #e9f3ef;
+  --field-border: rgba(119, 194, 187, 0.3);
+  --footer-bg: #041218;
+  --footer-ink: #e9f3ef;
+  --footer-muted: #8fa8a8;
+  --font-heading: "Aptos Display", "Segoe UI Variable Display", ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 75% 5%, rgba(24, 126, 118, 0.22), transparent 28rem),
+    #071b22;
+}
+
+.mockup-three .concept-notice {
+  --notice-bg: #e3a958;
+  --notice-ink: #122027;
+  font-weight: 760;
+}
+
+.mockup-three .site-header {
+  color: #e9f3ef;
+}
+
+.mockup-three .brand-mark {
+  border-color: #4fd1c1;
+  color: #75e0d3;
+}
+
+.mockup-three .nav-links a:not(.button):hover {
+  color: #6fe0d2;
+}
+
+.mockup-three .hero {
+  position: relative;
+  min-height: min(900px, calc(100svh - 6rem));
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 7vw, 7rem);
+  border-bottom: 1px solid rgba(117, 209, 199, 0.15);
+}
+
+.mockup-three .hero::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(96, 174, 167, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96, 174, 167, 0.04) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(to right, #000, transparent 92%);
+  content: "";
+}
+
+.mockup-three .hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(28rem, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+}
+
+.mockup-three .hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.mockup-three .hero-copy h1 {
+  max-width: 11ch;
+  background: linear-gradient(100deg, #f5faf7 0 70%, #8fe6d9);
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(3rem, 6.2vw, 6.15rem);
+}
+
+.mockup-three .hero-copy .lede {
+  max-width: 52ch;
+  color: #afc1c0;
+}
+
+.mockup-three .signal-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 2rem 0;
+}
+
+.mockup-three .signal-line span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #adc2c1;
+  font-size: 0.69rem;
+}
+
+.mockup-three .signal-line span::before {
+  width: 0.38rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #3cd0bd;
+  box-shadow: 0 0 1rem rgba(60, 208, 189, 0.7);
+  content: "";
+}
+
+.mockup-three .webgl-stage {
+  position: relative;
+  min-height: clamp(32rem, 64vw, 45rem);
+  overflow: hidden;
+  border: 1px solid rgba(99, 202, 190, 0.19);
+  border-radius: 50% 50% 2rem 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(20, 139, 128, 0.2), transparent 42%),
+    rgba(5, 25, 31, 0.48);
+  isolation: isolate;
+}
+
+.mockup-three .webgl-stage::before,
+.mockup-three .webgl-stage::after {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(85, 210, 195, 0.13);
+  border-radius: 50%;
+  content: "";
+}
+
+.mockup-three .webgl-stage::before {
+  inset: 14%;
+}
+
+.mockup-three .webgl-stage::after {
+  inset: 27%;
+}
+
+.mockup-three .webgl-stage canvas,
+.mockup-three .webgl-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mockup-three .webgl-stage canvas {
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.mockup-three .webgl-fallback {
+  z-index: 1;
+  padding: 12%;
+  opacity: 0.9;
+  transition: opacity 600ms ease;
+}
+
+.mockup-three .webgl-fallback path {
+  stroke: rgba(64, 204, 187, 0.38);
+  stroke-width: 1;
+}
+
+.mockup-three .webgl-fallback circle {
+  fill: #43d1bd;
+}
+
+.mockup-three .webgl-fallback circle.accent {
+  fill: #e5ac5b;
+}
+
+.mockup-three .webgl-stage[data-webgl-state="active"] canvas {
+  opacity: 1;
+}
+
+.mockup-three .webgl-stage[data-webgl-state="active"] .webgl-fallback {
+  opacity: 0.08;
+}
+
+.mockup-three .stage-label {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  gap: 0.15rem;
+  min-width: 8.5rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(94, 209, 196, 0.25);
+  border-radius: 0.55rem;
+  background: rgba(4, 24, 30, 0.66);
+  backdrop-filter: blur(8px);
+}
+
+.mockup-three .stage-label b {
+  color: #e6b064;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mockup-three .stage-label span {
+  color: #d3e3df;
+  font-size: 0.68rem;
+}
+
+.mockup-three .stage-label--one { top: 12%; left: 10%; }
+.mockup-three .stage-label--two { top: 25%; right: 6%; }
+.mockup-three .stage-label--three { right: 12%; bottom: 16%; }
+.mockup-three .stage-label--four { bottom: 9%; left: 12%; }
+
+.mockup-three .stage-caption {
+  position: absolute;
+  z-index: 4;
+  top: 1.3rem;
+  right: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #88aaa7;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mockup-three .stage-caption::before {
+  width: 0.4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #47d3c0;
+  box-shadow: 0 0 0.8rem #47d3c0;
+  content: "";
+}
+
+.mockup-three .meaning-band {
+  background: #0c2931;
+}
+
+.mockup-three .meaning-grid {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  border-inline: 1px solid rgba(118, 199, 190, 0.15);
+}
+
+.mockup-three .meaning-item {
+  min-height: 10rem;
+  padding: 1.6rem;
+  border-left: 1px solid rgba(118, 199, 190, 0.15);
+}
+
+.mockup-three .meaning-item:first-child {
+  border-left: 0;
+}
+
+.mockup-three .meaning-item strong,
+.mockup-three .meaning-item span {
+  display: block;
+}
+
+.mockup-three .meaning-item strong {
+  margin-bottom: 0.7rem;
+  color: #e9f4f0;
+  font-size: 0.9rem;
+}
+
+.mockup-three .meaning-item span {
+  color: #8fa9a8;
+  font-size: 0.72rem;
+}
+
+.mockup-three .meaning-item .eyebrow {
+  color: #e5ad5b;
+}
+
+.mockup-three .service-map {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.mockup-three .service-node {
+  position: relative;
+  min-height: 24rem;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(103, 200, 189, 0.18);
+  border-radius: 1.2rem;
+  background: linear-gradient(145deg, rgba(16, 58, 65, 0.85), rgba(7, 30, 37, 0.92));
+}
+
+.mockup-three .service-node::after {
+  position: absolute;
+  right: -5rem;
+  bottom: -5rem;
+  width: 15rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(62, 205, 187, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2.5rem rgba(62, 205, 187, 0.025), 0 0 0 5rem rgba(62, 205, 187, 0.018);
+  content: "";
+}
+
+.mockup-three .service-node h3 {
+  max-width: 14ch;
+  margin-top: 3rem;
+  color: #eff8f4;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+.mockup-three .service-node p {
+  max-width: 47ch;
+  color: #9db2b1;
+}
+
+.mockup-three .service-node .text-link {
+  position: absolute;
+  z-index: 2;
+  bottom: 2rem;
+  left: clamp(1.5rem, 4vw, 3rem);
+  color: #6ee1d3;
+}
+
+.mockup-three .pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.mockup-three .pathway-grid article {
+  min-height: 10.5rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(105, 196, 186, 0.17);
+  border-radius: 0.75rem;
+  background: rgba(12, 45, 52, 0.54);
+}
+
+.mockup-three .pathway-grid b,
+.mockup-three .pathway-grid span {
+  display: block;
+}
+
+.mockup-three .pathway-grid b {
+  margin-bottom: 2.2rem;
+  color: #e6ad5c;
+  font-size: 0.68rem;
+}
+
+.mockup-three .pathway-grid span {
+  color: #c1d1cf;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.mockup-three .process-section {
+  background: linear-gradient(140deg, #e5e1d4, #cdded8);
+  color: #0c2b30;
+}
+
+.mockup-three .process-section h2,
+.mockup-three .process-section .lede {
+  color: inherit;
+}
+
+.mockup-three .process-section .eyebrow {
+  color: #176e69;
+}
+
+.mockup-three .process-orbit {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+}
+
+.mockup-three .process-orbit article {
+  min-height: 17rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(18, 75, 76, 0.17);
+  border-radius: 7rem 7rem 0.8rem 0.8rem;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.mockup-three .process-orbit b,
+.mockup-three .process-orbit span {
+  display: block;
+}
+
+.mockup-three .process-orbit b {
+  display: grid;
+  width: 2.4rem;
+  aspect-ratio: 1;
+  place-items: center;
+  margin: 0 auto 3.7rem;
+  border: 1px solid #1c7974;
+  border-radius: 50%;
+  color: #176e69;
+  font-size: 0.68rem;
+}
+
+.mockup-three .process-orbit span {
+  color: #284d4e;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+.mockup-three .evidence-section {
+  background: #06181f;
+}
+
+.mockup-three .evidence-card {
+  display: flex;
+  min-height: 22rem;
+  flex-direction: column;
+  background: linear-gradient(160deg, rgba(17, 56, 64, 0.75), rgba(8, 31, 38, 0.85));
+}
+
+.mockup-three .evidence-card .meta {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(113, 193, 183, 0.16);
+  color: #8fa8a7;
+}
+
+.mockup-three .insight-card {
+  position: relative;
+  min-height: 21rem;
+  overflow: hidden;
+}
+
+.mockup-three .insight-card::after {
+  position: absolute;
+  right: -2.5rem;
+  bottom: -2.5rem;
+  width: 7rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(67, 209, 189, 0.18);
+  border-radius: 50%;
+  content: "";
+}
+
+.mockup-three .contact-section {
+  background:
+    radial-gradient(circle at 90% 20%, rgba(59, 205, 186, 0.2), transparent 24rem),
+    #0b2931;
+}
+
+.mockup-three .contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(24rem, 1fr);
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+@media (max-width: 1000px) {
+  .mockup-three .hero-grid,
+  .mockup-three .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mockup-three .hero-grid > *,
+  .mockup-three .contact-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .mockup-three .webgl-stage {
+    min-height: 36rem;
+  }
+
+  .mockup-three .meaning-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mockup-three .meaning-item:first-child {
+    border-left: 1px solid rgba(118, 199, 190, 0.15);
+  }
+
+  .mockup-three .pathway-grid,
+  .mockup-three .process-orbit {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .mockup-three .hero-copy h1 {
+    font-size: 2.55rem;
+    line-height: 1.02;
+    text-wrap: wrap;
+  }
+
+  .mockup-three .hero-copy .lede {
+    font-size: 1rem;
+  }
+
+  .mockup-three .service-map,
+  .mockup-three .pathway-grid,
+  .mockup-three .process-orbit,
+  .mockup-three .meaning-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mockup-three .webgl-stage {
+    min-height: 27rem;
+    border-radius: 50% 50% 1rem 50%;
+  }
+
+  .mockup-three .stage-label {
+    min-width: 6.5rem;
+    padding: 0.45rem 0.55rem;
+  }
+
+  .mockup-three .stage-label span {
+    font-size: 0.58rem;
+  }
+
+  .mockup-three .stage-caption {
+    display: none;
+  }
+
+  .mockup-three .meaning-item,
+  .mockup-three .meaning-item:first-child {
+    border-top: 1px solid rgba(118, 199, 190, 0.15);
+    border-left: 1px solid rgba(118, 199, 190, 0.15);
+  }
+
+  .mockup-three .process-orbit article {
+    min-height: 12rem;
+  }
+
+  .mockup-three .process-orbit b {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mockup-three .webgl-stage canvas {
+    opacity: 0.28;
+  }
+}

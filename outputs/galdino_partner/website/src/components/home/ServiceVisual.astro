@@ -1,0 +1,123 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+}
+
+const { slug, title } = Astro.props;
+const entitySlugs = ['pendirian-pt-cv', 'pendirian-pt-pma', 'company-establishment', 'foreign-investment-company', 'perubahan-perseroan', 'corporate-changes'];
+const placeSlugs = ['kkpr-lokasi', 'spatial-approval', 'lingkungan', 'environmental-approval', 'pbg-slf', 'building-approval'];
+const industrySlugs = ['konstruksi', 'construction-licensing', 'industri', 'industrial-licensing', 'perdagangan', 'trade-distribution'];
+const identitySlugs = ['haki', 'intellectual-property'];
+const projectSlugs = ['proyek-investasi', 'project-investment'];
+
+const kind = entitySlugs.includes(slug)
+  ? 'entity'
+  : placeSlugs.includes(slug)
+    ? 'place'
+    : industrySlugs.includes(slug)
+      ? 'industry'
+      : identitySlugs.includes(slug)
+        ? 'identity'
+        : projectSlugs.includes(slug)
+          ? 'project'
+          : 'document';
+---
+
+<figure class={`service-visual service-visual--${kind}`} aria-label={title}>
+  <svg viewBox="0 0 320 150" role="img" aria-hidden="true" focusable="false">
+    {kind === 'entity' && (
+      <>
+        <rect x="56" y="56" width="90" height="66" rx="2" />
+        <path d="M72 122V82h58v40M88 96h9m15 0h9m-33 14h9m15 0h9M48 56h106M101 36l52 20H49l52-20Z" />
+        <rect x="180" y="30" width="82" height="94" rx="3" />
+        <path d="M198 53h46m-46 17h46m-46 17h28m5 18 9 9 17-21" />
+      </>
+    )}
+    {kind === 'document' && (
+      <>
+        <path d="M76 25h108l42 42v58H76V25Z" />
+        <path d="M184 25v42h42M101 58h51m-51 20h93m-93 20h57" />
+        <circle cx="218" cy="105" r="27" />
+        <path d="m205 105 9 9 18-20" />
+      </>
+    )}
+    {kind === 'place' && (
+      <>
+        <path d="m38 104 61-32 61 28 67-36 55 26v38H38v-24Z" />
+        <path d="m99 72 2 56m59-28 2 28m65-64 1 64" />
+        <path d="M160 20c-19 0-34 15-34 34 0 28 34 58 34 58s34-30 34-58c0-19-15-34-34-34Z" />
+        <circle cx="160" cy="54" r="11" />
+      </>
+    )}
+    {kind === 'industry' && (
+      <>
+        <path d="M44 124V65l61 27V64l61 28V51l53 24v49H44Z" />
+        <path d="M219 124V31h35v93M69 107h17m28 0h17m28 0h17m24 0h17M230 51h14" />
+        <circle cx="256" cy="61" r="24" />
+        <path d="M256 48v13l9 6" />
+      </>
+    )}
+    {kind === 'identity' && (
+      <>
+        <path d="M160 21 241 52v42c0 20-13 37-34 50l-47-19-47 19c-21-13-34-30-34-50V52l81-31Z" />
+        <circle cx="160" cy="78" r="28" />
+        <path d="m146 78 10 10 20-23M128 121l32-13 32 13" />
+      </>
+    )}
+    {kind === 'project' && (
+      <>
+        <path d="M49 108 108 46l56 53 66-68 42 42" />
+        <circle cx="49" cy="108" r="11" />
+        <circle cx="108" cy="46" r="11" />
+        <circle cx="164" cy="99" r="11" />
+        <circle cx="230" cy="31" r="11" />
+        <circle cx="272" cy="73" r="11" />
+        <path d="M49 126h223" />
+      </>
+    )}
+  </svg>
+</figure>
+
+<style>
+  .service-visual {
+    position: relative;
+    height: 8.6rem;
+    margin: 1.1rem 0 0;
+    overflow: hidden;
+    background: #161617;
+    color: #fff;
+  }
+  .service-visual::after {
+    position: absolute;
+    inset: auto -1.75rem -3.5rem auto;
+    width: 8rem;
+    aspect-ratio: 1;
+    border: 1.5rem solid rgb(196 20 42 / .72);
+    border-radius: 50%;
+    content: '';
+  }
+  .service-visual svg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    vector-effect: non-scaling-stroke;
+    transition: transform 240ms var(--home-ease);
+  }
+  .service-visual--place { background: var(--home-red-deep); }
+  .service-visual--industry { background: #28282a; }
+  .service-visual--identity { background: #f0eeea; color: var(--home-red-deep); }
+  .service-visual--project { background: var(--home-red); }
+  .service-visual--entity::after,
+  .service-visual--identity::after { border-color: rgb(177 138 75 / .75); }
+  @media (hover: hover) and (pointer: fine) {
+    :global(.service-card:hover) .service-visual svg { transform: scale(1.025); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .service-visual svg { transition-duration: .01ms; }
+  }
+</style>

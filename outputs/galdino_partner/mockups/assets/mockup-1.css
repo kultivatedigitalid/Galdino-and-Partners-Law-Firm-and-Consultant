@@ -1,0 +1,453 @@
+body.mockup-one {
+  --surface: #f5f3ec;
+  --surface-strong: #e9eee8;
+  --ink: #102d2f;
+  --heading: #0a2527;
+  --muted: #5d6b69;
+  --accent: #0e8e83;
+  --accent-2: #d19b54;
+  --focus: #e7a85a;
+  --header-bg: rgba(245, 243, 236, 0.92);
+  --header-bg-solid: #f5f3ec;
+  --header-border: rgba(13, 55, 56, 0.13);
+  --card-bg: rgba(255, 255, 255, 0.62);
+  --card-border: rgba(13, 63, 64, 0.12);
+  --button-radius: 999px;
+  --font-heading: "Aptos Display", "Segoe UI Variable Display", ui-sans-serif, system-ui, sans-serif;
+}
+
+.mockup-one .hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(4.2rem, 9vw, 8.4rem);
+}
+
+.mockup-one .hero::before {
+  position: absolute;
+  top: -18rem;
+  right: -18rem;
+  width: 44rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(14, 142, 131, 0.19);
+  border-radius: 50%;
+  box-shadow: 0 0 0 5rem rgba(14, 142, 131, 0.03), 0 0 0 10rem rgba(14, 142, 131, 0.025);
+  content: "";
+}
+
+.mockup-one .hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.03fr) minmax(23rem, 0.82fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+}
+
+.mockup-one .hero-copy h1 {
+  max-width: 11.5ch;
+}
+
+.mockup-one .hero-copy .lede {
+  max-width: 55ch;
+  margin-bottom: 2rem;
+}
+
+.mockup-one .hero-note {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  margin-top: 2rem;
+  color: #486160;
+  font-size: 0.75rem;
+}
+
+.mockup-one .hero-note::before {
+  width: 2.6rem;
+  height: 1px;
+  background: var(--accent-2);
+  content: "";
+}
+
+.mockup-one .photo-direction {
+  position: relative;
+  min-height: 35rem;
+  overflow: hidden;
+  border-radius: 1.4rem 1.4rem 8rem 1.4rem;
+  background:
+    linear-gradient(150deg, rgba(4, 28, 31, 0.05), rgba(4, 28, 31, 0.42)),
+    radial-gradient(circle at 64% 24%, rgba(255, 210, 150, 0.65), transparent 22%),
+    linear-gradient(145deg, #d9ddd4 0 34%, #7ba39b 34% 56%, #173f42 56% 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.mockup-one .photo-direction::before,
+.mockup-one .photo-direction::after {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  content: "";
+}
+
+.mockup-one .photo-direction::before {
+  top: 10%;
+  right: 10%;
+  width: 45%;
+  height: 58%;
+  border-radius: 999px 999px 0 0;
+}
+
+.mockup-one .photo-direction::after {
+  right: 18%;
+  bottom: 12%;
+  width: 46%;
+  height: 1px;
+  transform: rotate(-42deg);
+  transform-origin: right;
+}
+
+.mockup-one .photo-label {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  left: 1.1rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.8rem 0.8rem 5rem 0.8rem;
+  background: rgba(7, 35, 37, 0.76);
+  color: #eef7f2;
+  backdrop-filter: blur(12px);
+}
+
+.mockup-one .photo-label strong,
+.mockup-one .photo-label span {
+  display: block;
+}
+
+.mockup-one .photo-label strong {
+  margin-bottom: 0.25rem;
+  font-size: 0.82rem;
+}
+
+.mockup-one .photo-label span {
+  color: #bcd2cf;
+  font-size: 0.72rem;
+}
+
+.mockup-one .trust-strip {
+  border-block: 1px solid rgba(14, 70, 70, 0.12);
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.mockup-one .trust-grid {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  align-items: stretch;
+}
+
+.mockup-one .trust-item {
+  min-height: 8.3rem;
+  padding: 1.5rem clamp(1rem, 2.5vw, 2.2rem);
+  border-left: 1px solid rgba(14, 70, 70, 0.12);
+}
+
+.mockup-one .trust-item:first-child {
+  display: grid;
+  align-content: center;
+  padding-left: 0;
+  border-left: 0;
+}
+
+.mockup-one .trust-item strong,
+.mockup-one .trust-item span {
+  display: block;
+}
+
+.mockup-one .trust-item strong {
+  margin-bottom: 0.35rem;
+  color: #173f40;
+  font-size: 0.9rem;
+}
+
+.mockup-one .trust-item span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.mockup-one .overview-grid {
+  display: grid;
+  grid-template-columns: minmax(17rem, 0.65fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.mockup-one .overview-quote {
+  align-self: start;
+  padding-left: 1.35rem;
+  border-left: 3px solid var(--accent-2);
+  color: #315353;
+  font-size: 0.82rem;
+}
+
+.mockup-one .service-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.mockup-one .pillar-card {
+  position: relative;
+  min-height: 28rem;
+  overflow: hidden;
+  padding: clamp(1.6rem, 4vw, 3rem);
+  border-radius: 1.35rem;
+}
+
+.mockup-one .pillar-card--legal {
+  background: #113b3d;
+  color: #eef4ef;
+}
+
+.mockup-one .pillar-card--permit {
+  border: 1px solid rgba(13, 69, 68, 0.15);
+  background: #e2ebe5;
+  color: #143a3b;
+}
+
+.mockup-one .pillar-card h3 {
+  max-width: 13ch;
+  margin-top: 5rem;
+  color: inherit;
+  font-size: clamp(2rem, 3.6vw, 3.3rem);
+}
+
+.mockup-one .pillar-card p {
+  max-width: 48ch;
+  color: inherit;
+  opacity: 0.77;
+}
+
+.mockup-one .pillar-card .text-link {
+  position: absolute;
+  right: clamp(1.6rem, 4vw, 3rem);
+  bottom: clamp(1.6rem, 4vw, 3rem);
+  left: clamp(1.6rem, 4vw, 3rem);
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid currentColor;
+}
+
+.mockup-one .permit-paths {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.mockup-one .permit-paths div {
+  padding: 1rem;
+  border: 1px solid rgba(17, 72, 71, 0.13);
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.mockup-one .permit-paths b,
+.mockup-one .permit-paths span {
+  display: block;
+}
+
+.mockup-one .permit-paths b {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+.mockup-one .permit-paths span {
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.mockup-one .process-band {
+  background: #0b2d30;
+  color: #eaf3ef;
+}
+
+.mockup-one .process-band .eyebrow {
+  color: #76d8ca;
+}
+
+.mockup-one .process-band h2,
+.mockup-one .process-band .lede {
+  color: inherit;
+}
+
+.mockup-one .process-band .lede {
+  opacity: 0.72;
+}
+
+.mockup-one .process-rail {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mockup-one .process-step {
+  position: relative;
+  padding: 2.25rem 1.2rem 0 0;
+}
+
+.mockup-one .process-step::before {
+  position: absolute;
+  top: -0.32rem;
+  left: 0;
+  width: 0.62rem;
+  aspect-ratio: 1;
+  border: 2px solid #0b2d30;
+  border-radius: 50%;
+  background: #d7a15a;
+  box-shadow: 0 0 0 1px #d7a15a;
+  content: "";
+}
+
+.mockup-one .process-step b,
+.mockup-one .process-step span {
+  display: block;
+}
+
+.mockup-one .process-step b {
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+}
+
+.mockup-one .process-step span {
+  color: #a9c0bd;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.mockup-one .experience-card {
+  display: flex;
+  min-height: 21rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mockup-one .experience-card:nth-child(2) {
+  transform: translateY(2rem);
+}
+
+.mockup-one .experience-card .meta {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(14, 64, 63, 0.14);
+}
+
+.mockup-one .values {
+  background: #e7ece5;
+}
+
+.mockup-one .value-item {
+  padding-top: 1.15rem;
+  border-top: 2px solid #b98848;
+}
+
+.mockup-one .article-card {
+  display: flex;
+  min-height: 20rem;
+  flex-direction: column;
+}
+
+.mockup-one .article-card .text-link {
+  margin-top: auto;
+}
+
+.mockup-one .contact-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(24rem, 1.05fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  padding: clamp(2rem, 5vw, 5rem);
+  border-radius: 1.6rem;
+  background: #fdfcf8;
+  box-shadow: var(--shadow-soft);
+}
+
+.mockup-one .contact-section {
+  background: linear-gradient(145deg, #cfded7, #e9e3d6);
+}
+
+@media (max-width: 920px) {
+  .mockup-one .hero-grid,
+  .mockup-one .contact-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mockup-one .hero-grid > *,
+  .mockup-one .contact-shell > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .mockup-one .photo-direction {
+    min-height: 29rem;
+  }
+
+  .mockup-one .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mockup-one .trust-item:first-child {
+    padding-left: clamp(1rem, 2.5vw, 2.2rem);
+  }
+
+  .mockup-one .trust-item:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .mockup-one .permit-paths,
+  .mockup-one .process-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mockup-one .process-step {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .mockup-one .process-rail {
+    border-top: 0;
+  }
+
+  .mockup-one .process-step::before {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .mockup-one .hero-copy h1 {
+    font-size: 2.3rem;
+    letter-spacing: -0.055em;
+    text-wrap: wrap;
+  }
+
+  .mockup-one .hero-copy .lede {
+    font-size: 1rem;
+  }
+
+  .mockup-one .overview-grid,
+  .mockup-one .service-layout,
+  .mockup-one .permit-paths,
+  .mockup-one .process-rail,
+  .mockup-one .trust-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mockup-one .trust-item,
+  .mockup-one .trust-item:nth-child(odd) {
+    border-top: 1px solid rgba(14, 70, 70, 0.12);
+    border-left: 0;
+  }
+
+  .mockup-one .experience-card:nth-child(2) {
+    transform: none;
+  }
+
+  .mockup-one .contact-shell {
+    padding: 1.3rem;
+  }
+}

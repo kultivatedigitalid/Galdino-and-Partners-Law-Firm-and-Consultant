@@ -1,0 +1,156 @@
+diff --git a/src/data/profile.ts b/src/data/profile.ts
+--- a/src/data/profile.ts
++++ b/src/data/profile.ts
+@@ -71,15 +71,14 @@
+     hero: {
+       context: 'Galdino & Partner / Profile',
+       title: 'Tim hukum untuk izin bisnis.',
+-      lead: 'Kami menggabungkan pemahaman regulasi, koordinasi dokumen, dan konteks bisnis untuk mengawal kebutuhan izin Anda.',
++      lead: 'Kami memetakan regulasi, menyiapkan dokumen, dan mengawal izin sesuai kebutuhan bisnis.',
+@@ -79,8 +78,7 @@
+     company: {
+       title: 'Mitra regulasi, bukan sekadar pengurus dokumen.',
+       paragraphs: [
+-        'Galdino & Partner mendampingi bisnis memahami kewajiban, menyiapkan legalitas, dan menavigasi proses perizinan dengan jalur kerja yang dapat ditelusuri.',
+-        'Kami menempatkan pekerjaan hukum dan perizinan sebagai bagian dari kesiapan bisnis. Setiap langkah disusun berdasarkan aktivitas, tingkat risiko, sektor, serta tujuan operasional klien.',
++        'Galdino & Partner membantu bisnis memahami kewajiban, menyiapkan legalitas, dan menavigasi perizinan berdasarkan aktivitas, risiko, sektor, dan tujuan operasional.',
+       ],
+@@ -93,8 +91,8 @@
+     team: {
+       context: 'Orang di balik pendampingan',
+-      title: 'Keahlian yang hadir ketika keputusan harus dibuat.',
+-      intro: 'Tiga profil awal berikut menunjukkan struktur informasi tim. Nama, foto, kredensial, dan kontak personal akan diganti setelah data resmi diverifikasi.',
++      title: 'Orang yang menangani kebutuhan izin Anda.',
++      intro: 'Tiga profil awal ini akan dilengkapi nama, foto, kredensial, dan kontak resmi setelah verifikasi.',
+@@ -111,7 +109,7 @@
+           name: '[PLACEHOLDER: NAMA PARTNER 01]',
+           role: 'Partner, Perizinan Korporasi',
+           credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',
+-          summary: 'Berfokus pada struktur badan usaha, dokumen korporasi, legalitas awal, dan kesiapan operasional perusahaan.',
++          summary: 'Menangani struktur badan usaha, dokumen korporasi, dan kesiapan legal operasional.',
+@@ -123,7 +121,7 @@
+           name: '[PLACEHOLDER: NAMA KONSULTAN 02]',
+           role: 'Senior Consultant, OSS-RBA',
+           credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',
+-          summary: 'Mendampingi pemetaan KBLI, tingkat risiko, persyaratan OSS-RBA, serta koordinasi izin sektoral.',
++          summary: 'Menangani pemetaan KBLI, risiko OSS-RBA, dan koordinasi izin sektoral.',
+@@ -135,8 +133,8 @@
+           name: '[PLACEHOLDER: NAMA KONSULTAN 03]',
+           role: 'Legal Consultant, Compliance',
+           credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',
+-          summary: 'Menangani review kepatuhan, kebutuhan proyek dan investasi, serta dokumentasi tindak lanjut regulasi.',
++          summary: 'Menangani kepatuhan regulasi serta kebutuhan izin proyek dan investasi.',
+@@ -145,8 +143,8 @@
+     },
+     expertise: {
+-      title: 'Keahlian mengikuti kebutuhan izin, bukan paket generik.',
+-      intro: 'Setiap mandat dipimpin oleh profil yang paling dekat dengan isu, lalu didukung anggota lain ketika jalur izin saling berkaitan.',
++      title: 'Keahlian yang mengikuti kebutuhan izin.',
++      intro: 'Setiap mandat dipimpin anggota yang paling relevan, dengan dukungan lintas keahlian bila jalur izin terkait.',
+@@ -173,23 +171,23 @@
+     },
+     principles: {
+-      title: 'Cara kerja yang menjaga keputusan tetap jelas.',
+-      intro: 'Pendampingan yang baik bukan hanya menghasilkan dokumen. Klien juga perlu memahami status, dependensi, dan tindakan berikutnya.',
++      title: 'Kerja yang jelas, teliti, dan dapat ditelusuri.',
++      intro: 'Klien memahami status, dependensi, dan langkah berikutnya sepanjang proses.',
+       items: [
+         {
+           title: 'Kejelasan keputusan',
+-          body: 'Opsi, konsekuensi, dan dependensi dijelaskan dalam bahasa yang dapat digunakan oleh tim bisnis.',
++          body: 'Opsi, konsekuensi, dan dependensi dijelaskan dalam bahasa bisnis.',
+         },
+         {
+           title: 'Ketelitian proses',
+-          body: 'Data, klasifikasi, dokumen, dan kewajiban diperiksa sebelum proses bergerak ke tahap berikutnya.',
++          body: 'Data, klasifikasi, dokumen, dan kewajiban diperiksa sebelum tahap berikutnya.',
+         },
+         {
+           title: 'Tanggung jawab progres',
+-          body: 'Status pekerjaan, hambatan, dan tindak lanjut dikomunikasikan melalui jejak kerja yang mudah ditelusuri.',
++          body: 'Status, hambatan, dan tindak lanjut dicatat serta dikomunikasikan.',
+         },
+       ],
+     },
+     finalCta: {
+-      title: 'Temukan tim yang tepat untuk kebutuhan izin Anda.',
+-      body: 'Sampaikan jenis usaha, aktivitas, dan izin yang sedang dibutuhkan. Kami akan membantu memetakan langkah awalnya.',
++      title: 'Bicarakan kebutuhan izin dengan tim kami.',
++      body: 'Sampaikan jenis usaha, aktivitas, dan izin yang dibutuhkan. Kami petakan langkah awalnya.',
+@@ -191,15 +189,14 @@
+     hero: {
+       context: 'Galdino & Partner / Profile',
+-      title: 'The legal team behind your permits.',
+-      lead: 'We combine regulatory insight, document coordination, and business context to guide each licensing requirement.',
++      title: 'The legal team for your business permits.',
++      lead: 'We map regulations, prepare documents, and guide permits around your business needs.',
+@@ -199,8 +196,7 @@
+     company: {
+       title: 'A regulatory partner, not merely a document processor.',
+       paragraphs: [
+-        'Galdino & Partner helps businesses understand their obligations, prepare their legal foundations, and navigate licensing through a traceable working process.',
+-        'We treat legal and licensing work as part of business readiness. Each pathway is shaped by the activity, risk level, sector, and operational objective.',
++        'Galdino & Partner helps businesses understand obligations, prepare legal foundations, and navigate licensing around the activity, risk, sector, and operational objective.',
+       ],
+@@ -213,8 +209,8 @@
+     team: {
+       context: 'People behind the engagement',
+-      title: 'The right expertise when decisions need to be made.',
+-      intro: 'These first three profiles demonstrate the intended team structure. Names, photographs, credentials, and personal contacts will be replaced after verification.',
++      title: 'The people handling your permit needs.',
++      intro: 'These three initial profiles will be completed with verified names, photographs, credentials, and official contacts.',
+@@ -231,7 +227,7 @@
+           name: '[PLACEHOLDER: PARTNER NAME 01]',
+           role: 'Partner, Corporate Licensing',
+           credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',
+-          summary: 'Focused on business entity structures, corporate documents, initial legality, and operational readiness.',
++          summary: 'Handles business structures, corporate documents, and operational legal readiness.',
+@@ -243,7 +239,7 @@
+           name: '[PLACEHOLDER: CONSULTANT NAME 02]',
+           role: 'Senior Consultant, OSS-RBA',
+           credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',
+-          summary: 'Supports business classification, risk-level mapping, OSS-RBA requirements, and sectoral permit coordination.',
++          summary: 'Handles business classification, OSS-RBA risk mapping, and sectoral permit coordination.',
+@@ -255,8 +251,8 @@
+           name: '[PLACEHOLDER: CONSULTANT NAME 03]',
+           role: 'Legal Consultant, Compliance',
+           credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',
+-          summary: 'Handles compliance reviews, project and investment requirements, and regulatory follow-up documentation.',
++          summary: 'Handles regulatory compliance and project and investment licensing needs.',
+@@ -265,8 +261,8 @@
+     },
+     expertise: {
+-      title: 'Expertise shaped around the permit, not a generic package.',
+-      intro: 'Each engagement is led by the profile closest to the issue, with support from others when licensing pathways overlap.',
++      title: 'Expertise aligned with each permit need.',
++      intro: 'Each engagement is led by the most relevant team member, with cross-disciplinary support when permit pathways overlap.',
+@@ -293,23 +289,23 @@
+     },
+     principles: {
+-      title: 'A working method that keeps decisions clear.',
+-      intro: 'Good assistance goes beyond producing documents. Clients should also understand status, dependencies, and the next action.',
++      title: 'Clear, precise, and traceable work.',
++      intro: 'Clients can follow status, dependencies, and next steps throughout the process.',
+       items: [
+         {
+           title: 'Decision clarity',
+-          body: 'Options, consequences, and dependencies are explained in language a business team can use.',
++          body: 'Options, consequences, and dependencies are explained in business language.',
+         },
+         {
+           title: 'Process precision',
+-          body: 'Data, classifications, documents, and obligations are checked before work moves to the next stage.',
++          body: 'Data, classifications, documents, and obligations are checked before the next stage.',
+         },
+         {
+           title: 'Progress accountability',
+-          body: 'Status, constraints, and follow-up actions are communicated through a traceable working record.',
++          body: 'Status, constraints, and follow-up actions are recorded and communicated.',
+         },
+       ],
+     },
+     finalCta: {
+-      title: 'Find the right team for your permit requirement.',
+-      body: 'Tell us about the business, activity, and permit you need. We will help map the appropriate first step.',
++      title: 'Discuss your permit needs with our team.',
++      body: 'Tell us about the business, activity, and permit you need. We will map the first step.',

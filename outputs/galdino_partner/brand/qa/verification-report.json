@@ -1,0 +1,298 @@
+{
+  "result": "PASS",
+  "pdf": {
+    "file": "Galdino-and-Partner-Brand-Guidelines.pdf",
+    "bytes": 7086503,
+    "sha256": "c965ee796ff4aca2439ceea633ec66e6e574950389dbaef9583573cf52282847",
+    "pages": 23
+  },
+  "page_dimensions": [
+    841.89,
+    595.28
+  ],
+  "logo_master_unchanged": true,
+  "logo_files": [
+    {
+      "file": "galdino-partner-logo-black-bg.jpg",
+      "format": "JPEG",
+      "mode": "RGB",
+      "sha256": "2a836d479e37e9cca18cb651aa08ae47e9f67ea96e4a78924695cf270ae552cd"
+    },
+    {
+      "file": "galdino-partner-logo-black-bg.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "sha256": "6729618be3e1d75391ff4b80bca24f393bcabe9d86eaf8b3351b2789eba0754f"
+    },
+    {
+      "file": "galdino-partner-logo-black-bg.webp",
+      "format": "WEBP",
+      "mode": "RGB",
+      "sha256": "4917a8bffd1319394892a08230a6fa1798a6b3c2685ec3f1a7fbd4ed23799861"
+    },
+    {
+      "file": "galdino-partner-logo-transparent.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "sha256": "92c2079247e08515100b3c7861c738db9b280f591b66f2dd6ffe3de187e012ed"
+    },
+    {
+      "file": "galdino-partner-logo-transparent.webp",
+      "format": "WEBP",
+      "mode": "RGBA",
+      "sha256": "1fdfe9853cf4dfc4655150d554667c9c57012a517dda10bf41fdff9018f35e45"
+    },
+    {
+      "file": "galdino-partner-logo-white-bg.jpg",
+      "format": "JPEG",
+      "mode": "RGB",
+      "sha256": "11b88dc7686fd62b7688a739a44e9894af273ef285ca1aaab02fafab9fab3de1"
+    },
+    {
+      "file": "galdino-partner-logo-white-bg.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "sha256": "0fac32db197618e727a3023be10d663d06169a27bf69206fb6b54560252b5336"
+    },
+    {
+      "file": "galdino-partner-logo-white-bg.webp",
+      "format": "WEBP",
+      "mode": "RGB",
+      "sha256": "5e8cedc915f472fd9909323943ac1e3e4a213c984728e2ee3111eca333e17f4a"
+    }
+  ],
+  "rendered_pages": [
+    {
+      "page": 1,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 7505.39,
+      "sha256": "82c876fdad3652baf336d296b3be6bb054e43451b35481b0e6fd3982cba604e5"
+    },
+    {
+      "page": 2,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 620.21,
+      "sha256": "9c9fe232906d7af3d0b286631b08c6919642cbbde72ed92154b6287ac1706d13"
+    },
+    {
+      "page": 3,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 1440.0,
+      "sha256": "530320d4df59e2434e5d745f697441ee111b4a5c3846c0b91ee98479328c152e"
+    },
+    {
+      "page": 4,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 758.76,
+      "sha256": "ca03cf233c7f824b15bea761032fe572f0d89cb10550613bafdbc1fa0be7ce54"
+    },
+    {
+      "page": 5,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 3265.64,
+      "sha256": "70d401c2660198cad25b239c61ff583df041f8ca63e23eb1af2b89d60740631e"
+    },
+    {
+      "page": 6,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 745.59,
+      "sha256": "fa7f5fd021a4261fbfe4134719bc201d90a495069cdc62d9469b93dcabeb3dce"
+    },
+    {
+      "page": 7,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 9677.23,
+      "sha256": "afe5f50343e47c72b8745c7cb156058d27ca512cbd0c79f92cb7b03f5a6ac1d5"
+    },
+    {
+      "page": 8,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 1772.06,
+      "sha256": "6c35efa02f27b7bdb7b6c87367974428eeb34fd27e3d0217252614f0e3b98c70"
+    },
+    {
+      "page": 9,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 767.43,
+      "sha256": "0ac5ddc8d11302722f2c9d0aa92972eabd351a4f56da545674b571a7d427a780"
+    },
+    {
+      "page": 10,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 2251.81,
+      "sha256": "1840a74e0f14f8b2bf58743d5f41a4ffe4236929d9d6fd9eeb3f1a7b9b2cc0ed"
+    },
+    {
+      "page": 11,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 3172.96,
+      "sha256": "89a507eca8bd08e0378f7339a16691dcb98c042bf804720a733604bb665f2414"
+    },
+    {
+      "page": 12,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 5722.47,
+      "sha256": "6a2f3adf70e83a268a71d17aada354223fc1a89fa7cb5d093fda259d4de62b7a"
+    },
+    {
+      "page": 13,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 653.16,
+      "sha256": "6e1159592bdb0641cbc4ca1f75af963d85bd7f9ea8eb646a32104236d10b1b3f"
+    },
+    {
+      "page": 14,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 4365.97,
+      "sha256": "4a5dfee37a19e81bd24309bbf78130d2e3cf9ae4ed78ffd83716ab23c949cf80"
+    },
+    {
+      "page": 15,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 845.55,
+      "sha256": "b1cd7e9cabf2ea224e411f65b8a52bed80bb23f509c75effeaa882fee3ab4c3e"
+    },
+    {
+      "page": 16,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 2774.19,
+      "sha256": "26c0c2b3da597599a971f58de8efa4bd04df88ebb43d5caabc1c6fe38d4aba57"
+    },
+    {
+      "page": 17,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 951.75,
+      "sha256": "79b1aeb1db0bc829af09a86509274ff72b6e535c68a3a8746bfaf3eee794287e"
+    },
+    {
+      "page": 18,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 4911.59,
+      "sha256": "ea05de1ae58f2d4d6701e94b8728b4562d8671f1abd0bed5d3f85dbe1faab9b3"
+    },
+    {
+      "page": 19,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 1371.02,
+      "sha256": "520c9d7478d5ab772ad14cfaf7b1242ab2906caef0c7174b58e7943ab9ab7516"
+    },
+    {
+      "page": 20,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 5704.79,
+      "sha256": "523ab3effd7e0b32c33ed4820d49c8cb7915b2e27a51685dc49bd8d7a5b04342"
+    },
+    {
+      "page": 21,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 2139.31,
+      "sha256": "4b328bda96ddd672464d88dba157bbbfe3814ffcf916198d87fbaaa77d9de8a0"
+    },
+    {
+      "page": 22,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 674.13,
+      "sha256": "56393f3d3c07ac06e4bc808952f91f66a82af66321d082ed31160e60f770fe80"
+    },
+    {
+      "page": 23,
+      "size": [
+        1404,
+        993
+      ],
+      "variance": 340.53,
+      "sha256": "d42869a186f9e1d526bf3faa64216c2cabae1f76bc272fb4ab4034dc4d453673"
+    }
+  ],
+  "contact_sheets": [
+    {
+      "file": "contact-sheet-01.jpg",
+      "size": [
+        1152,
+        1206
+      ],
+      "pages": 12,
+      "sha256": "a168d9384261041d365550ef8eb12397782cfaf7ffc2819f11338a3660ec42b8"
+    },
+    {
+      "file": "contact-sheet-02.jpg",
+      "size": [
+        1152,
+        1206
+      ],
+      "pages": 11,
+      "sha256": "3503af3f863eb9d96de011adf513ea5e5f4867887686e19a8072a6ee0126e72b"
+    }
+  ],
+  "content_checks": {
+    "required_headings": 10,
+    "replacement_characters": 0,
+    "placeholder_markers": 0
+  }
+}

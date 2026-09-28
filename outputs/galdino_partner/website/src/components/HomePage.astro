@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeHero from './home/HomeHero.astro';
+import ClientRegister from './home/ClientRegister.astro';
+import ServiceCarousel from './home/ServiceCarousel.astro';
+import PermitProcess from './home/PermitProcess.astro';
+import CompanySnapshot from './home/CompanySnapshot.astro';
+import CompanyVideo from './home/CompanyVideo.astro';
+import ExperienceShowcase from './home/ExperienceShowcase.astro';
+import HomeInsights from './home/HomeInsights.astro';
+import HomeFinalCta from './home/HomeFinalCta.astro';
+import type { Locale } from '../data/site';
+import { getPublishedPosts } from '../utils/blog';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+const posts = (await getPublishedPosts(locale)).slice(0, 3);
+const seo = id ? {
+  title: 'Jasa Pengurusan Perizinan Usaha Indonesia | Galdino & Partner',
+  description: 'Pengurusan NIB, OSS-RBA, izin sektoral, legalitas perusahaan, dan kepatuhan regulasi untuk bisnis di Indonesia. Mulai dari kebutuhan izin Anda.',
+} : {
+  title: 'Business Permit & Licensing Services Indonesia | Galdino & Partner',
+  description: 'Business identification, OSS-RBA, sectoral permits, company legality, and regulatory compliance support for businesses in Indonesia.',
+};
+---
+
+<BaseLayout locale={locale} title={seo.title} description={seo.description}>
+  <div class="home-redesign">
+    <HomeHero locale={locale} />
+    <ClientRegister locale={locale} />
+    <CompanySnapshot locale={locale} />
+    <ServiceCarousel locale={locale} />
+    <PermitProcess locale={locale} />
+    <CompanyVideo locale={locale} />
+    <ExperienceShowcase locale={locale} />
+    <HomeInsights locale={locale} posts={posts} />
+    <HomeFinalCta locale={locale} />
+  </div>
+
+  <script>
+    const elements = document.querySelectorAll<HTMLElement>('[data-home-reveal]');
+    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries, instance) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('home-visible');
+            instance.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -5% 0px', threshold: 0.08 });
+      elements.forEach((element) => observer.observe(element));
+      document.documentElement.classList.add('home-motion-ready');
+    }
+  </script>
+</BaseLayout>
+
+<style is:global>
+  .home-redesign {
+    --home-black: var(--brand-black);
+    --home-white: var(--brand-white);
+    --home-paper: var(--brand-paper);
+    --home-red: var(--brand-red);
+    --home-red-bright: var(--brand-red-bright);
+    --home-red-deep: var(--brand-red-deep);
+    --home-gold: var(--brand-gold);
+    --home-muted: var(--brand-muted);
+    --home-line: var(--brand-line);
+    --home-line-strong: var(--brand-line-strong);
+    --home-ease: var(--brand-ease);
+    overflow: clip;
+    background: var(--home-paper);
+    color: var(--home-black);
+  }
+  .home-redesign .home-section { padding-block: var(--brand-section-space); }
+  .home-redesign .home-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    margin: 0;
+    color: var(--home-black);
+    font-size: .7rem;
+    font-weight: 820;
+    letter-spacing: .12em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+  .home-redesign .home-kicker::before { width: 1.8rem; height: 2px; flex: 0 0 auto; background: var(--home-red); content: ''; }
+  .home-redesign .home-kicker--light { color: #fff; }
+  .home-redesign .home-heading {
+    max-width: 18ch;
+    margin: 1.25rem 0 0;
+    font-family: var(--font-display);
+    font-size: var(--brand-type-section);
+    font-weight: 570;
+    letter-spacing: -.035em;
+    line-height: .98;
+    text-wrap: balance;
+  }
+  .home-redesign .home-heading--light { color: #fff; }
+  .home-redesign .home-button {
+    display: inline-flex;
+    min-height: 3.15rem;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: .76rem 1.25rem;
+    font-size: .78rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 170ms var(--home-ease), background-color 170ms var(--home-ease), border-color 170ms var(--home-ease), color 170ms var(--home-ease);
+  }
+  .home-redesign .home-button > .arrow-icon { display: inline-block; transition: transform 170ms var(--home-ease); }
+  .home-redesign .home-button--red { background: var(--home-red); color: #fff; }
+  .home-redesign .home-button--ghost { border-color: rgb(255 255 255 / .42); color: #fff; }
+  .home-redesign .home-button--white { background: #fff; color: var(--home-black); }
+  .home-redesign .home-button:active { transform: scale(.97); }
+  .home-redesign .home-rule-link {
+    position: relative;
+    width: fit-content;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    color: var(--home-black);
+    font-size: .78rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .home-redesign .home-rule-link::after { position: absolute; right: 0; bottom: -.35rem; left: 0; height: 1px; background: var(--home-red); content: ''; transform: scaleX(.25); transform-origin: left; transition: transform 190ms var(--home-ease); }
+  .home-redesign .home-rule-link > .arrow-icon { transition: transform 170ms var(--home-ease); }
+  .home-redesign :focus-visible { outline-color: var(--home-red-bright); }
+  .home-motion-ready .home-redesign [data-home-reveal] { opacity: .001; transform: translateY(12px); transition: opacity 500ms var(--home-ease), transform 500ms var(--home-ease); }
+  .home-motion-ready .home-redesign [data-home-reveal].home-visible { opacity: 1; transform: none; }
+  body:has(.home-redesign) .contact-dock__link {
+    background: linear-gradient(120deg, #710d1b 0%, #9c1021 48%, #c4142a 100%);
+    background-position: 0 50%;
+    background-size: 180% 100%;
+    box-shadow: 0 12px 34px rgb(38 3 8 / .24);
+    opacity: 1;
+    transition: background-position 260ms var(--home-ease), box-shadow 200ms var(--home-ease), transform 170ms var(--home-ease);
+  }
+  body:has(.home-redesign) .contact-dock__pulse { background: #fff; box-shadow: 0 0 0 4px rgb(255 255 255 / .16); }
+  body:has(.home-redesign) footer { background-color: #0b0b0c; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .home-redesign .home-button--red:hover { background: #a30f22; transform: translateY(-2px); }
+    .home-redesign .home-button--ghost:hover { border-color: #fff; background: #fff; color: var(--home-black); transform: translateY(-2px); }
+    .home-redesign .home-button--white:hover { background: var(--home-black); color: #fff; transform: translateY(-2px); }
+    .home-redesign .home-button:hover > .arrow-icon, .home-redesign .home-rule-link:hover > .arrow-icon { transform: translateX(3px); }
+    .home-redesign .home-rule-link:hover::after { transform: scaleX(1); }
+    body:has(.home-redesign) .contact-dock__link:hover { background-position: 100% 50%; box-shadow: 0 15px 42px rgb(38 3 8 / .32); opacity: 1; transform: translateY(-2px); }
+  }
+  @media (max-width: 640px) {
+    .home-redesign .home-section { padding-block: 4.5rem; }
+    .home-redesign .home-heading { font-size: clamp(2.15rem, 10vw, 2.85rem); line-height: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .home-motion-ready .home-redesign [data-home-reveal] { opacity: 1; transform: none; transition-duration: .01ms; }
+    body:has(.home-redesign) .contact-dock__link { transition-duration: .01ms; }
+  }
+</style>

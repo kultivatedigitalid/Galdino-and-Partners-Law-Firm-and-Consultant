@@ -1,0 +1,58 @@
+---
+import type { Locale } from '../../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+---
+
+<section class="video-section" aria-labelledby="video-title">
+  <div class="container-shell video-section__layout">
+    <div class="video-section__poster" data-home-reveal>
+      <div class="video-section__monogram" aria-hidden="true">
+        <img src="/assets/gp-logo-brand.png" width="600" height="413" alt="" loading="lazy" />
+      </div>
+      <div class="video-section__status">
+        <span>FILM / 01</span>
+        <strong>{id ? 'Video perusahaan sedang dipersiapkan' : 'Company film is being prepared'}</strong>
+      </div>
+      <p>{id ? '[PLACEHOLDER VIDEO RESMI]' : '[OFFICIAL VIDEO PLACEHOLDER]'}</p>
+    </div>
+    <div class="video-section__copy" data-home-reveal>
+      <p class="home-kicker">{id ? 'Cara kami bekerja' : 'How we work'}</p>
+      <h2 id="video-title" class="home-heading">{id ? 'Kebutuhan izin menjadi rencana kerja.' : 'Turning permit needs into a work plan.'}</h2>
+      <p>{id ? 'Video ini akan memperlihatkan pemetaan kebutuhan, koordinasi dokumen, pelaporan progres, dan tindak lanjut setelah izin terbit.' : 'The video will show requirement mapping, document coordination, progress reporting, and post-issuance follow-up.'}</p>
+      <small>{id ? 'Tidak ada media yang diputar sebelum aset final tersedia.' : 'No media is played until the final asset is available.'}</small>
+    </div>
+  </div>
+</section>
+
+<style>
+  .video-section { padding-block: clamp(.75rem, 1.5vw, 1.25rem); background: var(--home-paper); }
+  .video-section__layout { display: grid; }
+  .video-section__poster { position: relative; min-height: clamp(23rem, 50vw, 38rem); display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: clamp(1.4rem, 3vw, 2.6rem); background: var(--home-red-deep); color: #fff; isolation: isolate; }
+  .video-section__poster::before { position: absolute; inset: -35% auto auto 43%; z-index: -1; width: 70%; aspect-ratio: 1; border: 1px solid rgb(255 255 255 / .16); border-radius: 50%; content: ''; }
+  .video-section__poster::after { position: absolute; right: 0; bottom: 0; z-index: -1; width: 42%; height: 55%; background: var(--home-red); clip-path: polygon(100% 0, 100% 100%, 0 100%); content: ''; }
+  .video-section__monogram { position: relative; width: clamp(10rem, 24vw, 18rem); aspect-ratio: 1.5; overflow: hidden; opacity: .96; }
+  .video-section__monogram img { position: absolute; top: 50%; left: 50%; width: 248%; height: auto; max-width: none; transform: translate(-50%, -50%); }
+  .video-section__status { max-width: 26rem; display: grid; gap: .5rem; }
+  .video-section__status span, .video-section__poster > p { margin: 0; font-size: .61rem; font-weight: 820; letter-spacing: .14em; text-transform: uppercase; }
+  .video-section__status strong { font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.8rem); font-weight: 560; letter-spacing: -.03em; line-height: 1; }
+  .video-section__poster > p { align-self: end; color: rgb(255 255 255 / .58); }
+  .video-section__copy { align-content: center; padding: clamp(2.25rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 4rem); background: var(--home-white); }
+  .video-section__copy h2 { max-width: 12ch; margin-top: 1.2rem; font-size: clamp(2.25rem, 4.5vw, 4.35rem); }
+  .video-section__copy > p:not(.home-kicker) { max-width: 32rem; margin: 1.35rem 0 0; color: var(--home-muted); font-size: .84rem; }
+  .video-section__copy small { display: block; max-width: 28rem; margin-top: 1.5rem; padding-top: .9rem; border-top: 1px solid var(--home-line); color: var(--home-muted); font-size: .63rem; }
+  @media (min-width: 900px) {
+    .video-section { height: calc(100svh - 5rem); min-height: 38rem; max-height: 52rem; }
+    .video-section__layout { height: 100%; grid-template-columns: 1.08fr .92fr; }
+    .video-section__poster { min-height: 0; height: 100%; }
+    .video-section__copy { height: 100%; }
+  }
+  @media (min-width: 900px) and (max-height: 720px) {
+    .video-section { min-height: 34rem; }
+    .video-section__poster { padding: 1.5rem; }
+    .video-section__monogram { width: 11rem; }
+    .video-section__copy { padding-block: 2rem; }
+    .video-section__copy h2 { font-size: clamp(2.1rem, 4.2vw, 3.6rem); }
+  }
+</style>

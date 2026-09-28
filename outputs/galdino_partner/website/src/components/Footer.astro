@@ -1,0 +1,58 @@
+---
+import { COPY, NAV, SITE, type Locale } from '../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="footer-redesign">
+  <div class="container-shell grid gap-12 py-16 md:grid-cols-[1.35fr_.8fr_1fr] md:py-20">
+    <div>
+      <a class="footer-brand" href={`/${locale}/`}>
+        <span class="footer-logo-frame" aria-hidden="true">
+          <img class="footer-logo" src="/assets/gp-logo-brand.png" width="600" height="413" alt="" loading="lazy" />
+        </span>
+        <span class="font-display text-2xl font-semibold tracking-[-.03em]">{SITE.displayName}</span>
+      </a>
+      <p class="footer-summary mt-5 max-w-md text-sm">{COPY[locale].footerSummary}</p>
+      <p class="footer-placeholder mt-7 max-w-full overflow-wrap-anywhere text-xs">{SITE.legalName}</p>
+    </div>
+    <div>
+      <h2 class="footer-heading">{locale === 'id' ? 'Navigasi' : 'Navigation'}</h2>
+      <ul class="footer-links mt-5 grid gap-2.5 text-sm">
+        {NAV[locale].map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-heading">{locale === 'id' ? 'Hubungi' : 'Contact'}</h2>
+      <address class="footer-contact mt-5 grid gap-2.5 text-sm not-italic">
+        <a class="break-words" href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp {SITE.whatsappDisplay}</a>
+        <a class="break-all" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <span class="break-words">{SITE.address}</span>
+      </address>
+    </div>
+  </div>
+  <div class="footer-legal">
+    <div class="container-shell flex flex-col justify-between gap-3 py-6 text-xs md:flex-row">
+      <p>&copy; {year} {SITE.displayName}. {locale === 'id' ? 'Hak cipta dilindungi.' : 'All rights reserved.'}</p>
+      <p class="max-w-2xl md:text-right">{COPY[locale].legal}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer-redesign { background: #0b0b0c; color: #fff; }
+  .footer-brand { display: inline-flex; align-items: center; gap: .8rem; color: #fff; text-decoration: none; }
+  .footer-logo-frame { width: 4.6rem; height: 3.35rem; display: grid; flex: 0 0 auto; place-items: center; }
+  .footer-logo { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 1px 1px rgb(255 255 255 / .38)) drop-shadow(0 4px 9px rgb(0 0 0 / .24)); }
+  .footer-summary { color: rgb(255 255 255 / .78); line-height: 1.65; }
+  .footer-placeholder { color: rgb(255 255 255 / .62); }
+  .footer-heading { margin: 0; color: #d9b878; font-size: .7rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+  .footer-links { margin-bottom: 0; padding: 0; color: rgb(255 255 255 / .78); list-style: none; }
+  .footer-links a, .footer-contact a { min-height: 2.75rem; display: inline-flex; align-items: center; color: inherit; text-underline-offset: .25rem; transition: color 170ms var(--brand-ease); }
+  .footer-contact { color: rgb(255 255 255 / .78); }
+  .footer-legal { border-top: 1px solid rgb(255 255 255 / .16); color: rgb(255 255 255 / .64); }
+  .footer-legal p { margin: 0; }
+  @media (hover: hover) and (pointer: fine) {
+    .footer-links a:hover, .footer-contact a:hover { color: #fff; }
+  }
+</style>

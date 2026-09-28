@@ -1,0 +1,18 @@
+---
+import { SITE, type Locale } from '../data/site';
+import ArrowIcon from './icons/ArrowIcon.astro';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+---
+<aside class="contact-dock" aria-label={locale === 'id' ? 'Kontak cepat' : 'Quick contact'}>
+  <a class="contact-dock__link" href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer">
+    <span class="contact-dock__pulse" aria-hidden="true"></span>
+    <span class="contact-dock__label">WhatsApp</span>
+    <ArrowIcon direction="up-right" />
+  </a>
+</aside>
+<style>
+  @media (max-width: 767px) {
+    .contact-dock { display: none; }
+  }
+</style>

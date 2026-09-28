@@ -1,0 +1,105 @@
+diff --git a/src/components/home/ClientRegister.astro b/src/components/home/ClientRegister.astro
+--- a/src/components/home/ClientRegister.astro
++++ b/src/components/home/ClientRegister.astro
+@@ -11,7 +11,7 @@
+       <p class="home-kicker">{id ? 'Dipercaya lintas sektor' : 'Trusted across sectors'}</p>
+       <h2 id="client-register-title">{id ? 'Pengalaman yang dibangun dari pekerjaan nyata.' : 'Experience built through real engagements.'}</h2>
+-      <p>{id ? 'Logo berikut adalah dummy untuk menguji komposisi. Identitas klien resmi ditampilkan setelah persetujuan publikasi.' : 'The marks below are layout dummies. Verified client identities will appear after publication approval.'}</p>
++      <p>{id ? 'Logo masih berupa dummy. Identitas klien ditampilkan setelah izin publikasi.' : 'Logos are temporary. Client identities will appear after publication approval.'}</p>
+diff --git a/src/components/home/CompanySnapshot.astro b/src/components/home/CompanySnapshot.astro
+--- a/src/components/home/CompanySnapshot.astro
++++ b/src/components/home/CompanySnapshot.astro
+@@ -62,12 +62,12 @@
+       <div class="company-section__copy">
+         <h2 id="company-title" class="home-heading" data-home-reveal>
+-          {id ? 'Ketelitian hukum yang bekerja untuk kemajuan bisnis.' : 'Legal precision working for business progress.'}
++          {id ? 'Ketelitian hukum untuk kemajuan bisnis.' : 'Legal precision for business progress.'}
+         </h2>
+         <p class="company-section__statement" data-home-reveal>
+           {id
+-            ? <><strong>{SITE.displayName}</strong> <mark>[NAMA LEGAL MENUNGGU KONFIRMASI]</mark> adalah penyedia jasa pengurusan perizinan dan mitra hukum-regulasi untuk bisnis di Indonesia. Beroperasi sejak <mark>[TAHUN]</mark>, perusahaan mendampingi legalitas, izin usaha, dan kepatuhan melalui pemetaan yang jelas, koordinasi dokumen yang disiplin, serta komunikasi progres yang dapat ditelusuri. Rekam jejak dan visi final akan dipublikasikan setelah verifikasi; pembeda utamanya adalah fokus pada penyelesaian kebutuhan izin, bukan konsultasi per jam.</>
+-            : <><strong>{SITE.displayName}</strong> <mark>[LEGAL NAME PENDING CONFIRMATION]</mark> is a permit-handling provider and legal-regulatory partner for businesses in Indonesia. Operating since <mark>[YEAR]</mark>, the company supports business legality, permits, and compliance through clear mapping, disciplined document coordination, and traceable progress communication. Its verified track record and final vision will be published after review; its defining focus is resolving permit needs rather than selling hourly consultations.</>}
++            ? <><strong>{SITE.displayName}</strong> membantu bisnis mengurus legalitas, izin usaha, dan kepatuhan regulasi melalui pemetaan yang jelas, dokumentasi yang disiplin, dan progres yang dapat ditelusuri. Fokus kami adalah menyelesaikan kebutuhan izin, bukan menjual konsultasi per jam.</>
++            : <><strong>{SITE.displayName}</strong> helps businesses manage corporate legality, permits, and regulatory compliance through clear mapping, disciplined documentation, and traceable progress. We focus on resolving permit requirements, not selling hourly consultations.</>}
+         </p>
+@@ -163,7 +163,6 @@
+   .company-section__statement { max-width: 50rem; margin: 0; color: var(--home-muted); font-size: clamp(.96rem, 1.4vw, 1.18rem); line-height: 1.65; text-wrap: pretty; }
+   .company-section__statement strong { color: var(--home-black); font-weight: 760; }
+-  .company-section__statement mark { background: rgb(196 20 42 / .08); color: var(--home-red-deep); font-size: .8em; font-weight: 760; }
+diff --git a/src/components/home/ServiceCarousel.astro b/src/components/home/ServiceCarousel.astro
+--- a/src/components/home/ServiceCarousel.astro
++++ b/src/components/home/ServiceCarousel.astro
+@@ -20,7 +20,7 @@
+       </div>
+       <div class="service-section__aside" data-home-reveal>
+-        <p>{id ? 'Pilih kebutuhan terdekat. Kami memastikan jalur, dokumen, dan dependensinya pada asesmen awal.' : 'Choose the closest requirement. We confirm its pathway, documents, and dependencies in the initial assessment.'}</p>
++        <p>{id ? 'Pilih kebutuhan terdekat. Jalur, dokumen, dan dependensinya dikonfirmasi saat asesmen awal.' : 'Choose the closest need. We confirm the pathway, documents, and dependencies during the initial assessment.'}</p>
+@@ -73,7 +73,7 @@
+-  .service-card__footer a { width: fit-content; display: inline-flex; align-items: center; gap: .35rem; color: var(--home-red); font-size: .73rem; font-weight: 800; text-decoration: none; }
++  .service-card__footer a { width: fit-content; min-height: 2.75rem; display: inline-flex; align-items: center; gap: .35rem; color: var(--home-red); font-size: .73rem; font-weight: 800; text-decoration: none; }
+diff --git a/src/components/home/PermitProcess.astro b/src/components/home/PermitProcess.astro
+--- a/src/components/home/PermitProcess.astro
++++ b/src/components/home/PermitProcess.astro
+@@ -5,15 +5,15 @@
+ const { locale } = Astro.props;
+ const id = locale === 'id';
+ const steps = id ? [
+-  ['01', 'Ceritakan izin yang dibutuhkan', 'Kami memahami aktivitas, lokasi, skala, dan target waktu bisnis Anda.'],
+-  ['02', 'Terima peta persyaratan', 'Jalur izin, dokumen, dependensi, estimasi biaya, dan batas kewenangan dijelaskan.'],
+-  ['03', 'Dokumen disiapkan & diajukan', 'Tim mengoordinasikan kelengkapan dan mengawal proses sesuai ruang lingkup.'],
+-  ['04', 'Pantau progres sampai tindak lanjut', 'Status disampaikan pada titik penting, termasuk kewajiban setelah izin terbit.'],
++  ['01', 'Ceritakan izin yang dibutuhkan', 'Sampaikan aktivitas, lokasi, skala, dan target waktu.'],
++  ['02', 'Terima peta persyaratan', 'Kami petakan jalur izin, dokumen, biaya, dan dependensinya.'],
++  ['03', 'Dokumen disiapkan & diajukan', 'Tim menyiapkan kelengkapan dan mengawal pengajuan sesuai ruang lingkup.'],
++  ['04', 'Pantau progres sampai tindak lanjut', 'Anda menerima progres dan kewajiban setelah izin terbit.'],
+ ] : [
+-  ['01', 'Tell us the permit you need', 'We understand your activity, location, scale, and business timeline.'],
+-  ['02', 'Receive a requirement map', 'The pathway, documents, dependencies, cost estimate, and limits of authority are explained.'],
+-  ['03', 'Documents are prepared and filed', 'The team coordinates completeness and guides the agreed process.'],
+-  ['04', 'Track progress through follow-up', 'Status is shared at key points, including obligations after issuance.'],
++  ['01', 'Tell us the permit you need', 'Share the activity, location, scale, and target timeline.'],
++  ['02', 'Receive a requirement map', 'We map the permit pathway, documents, costs, and dependencies.'],
++  ['03', 'Documents are prepared and filed', 'The team prepares requirements and guides filing within scope.'],
++  ['04', 'Track progress through follow-up', 'You receive progress updates and post-issuance obligations.'],
+@@ -48,7 +48,7 @@
+-  .process-rail { display: grid; margin: clamp(3rem, 6vw, 5.5rem) 0 0; padding: 0; border-top: 1px solid rgb(255 255 255 / .2); list-style: none; }
++  .process-rail { display: grid; margin: clamp(2.75rem, 4.5vw, 4rem) 0 0; padding: 0; border-top: 1px solid rgb(255 255 255 / .2); list-style: none; }
+@@ -59,7 +59,7 @@
+   @media (min-width: 800px) {
+     .process-rail { grid-template-columns: repeat(4, 1fr); }
+-    .process-rail li { grid-template-columns: 1fr; align-content: start; min-height: 18rem; padding: 1.5rem 1.4rem 1.5rem 0; border-right: 1px solid rgb(255 255 255 / .2); border-bottom: 0; }
++    .process-rail li { grid-template-columns: 1fr; align-content: start; min-height: 15rem; padding: 1.5rem 1.4rem 1.5rem 0; border-right: 1px solid rgb(255 255 255 / .2); border-bottom: 0; }
+@@ -67,7 +67,7 @@
+-    .process-rail h3 { margin-top: 2.4rem; }
++    .process-rail h3 { margin-top: 1.8rem; }
+diff --git a/src/components/home/CompanyVideo.astro b/src/components/home/CompanyVideo.astro
+--- a/src/components/home/CompanyVideo.astro
++++ b/src/components/home/CompanyVideo.astro
+@@ -19,8 +19,8 @@
+     <div class="video-section__copy" data-home-reveal>
+       <p class="home-kicker">{id ? 'Cara kami bekerja' : 'How we work'}</p>
+-      <h2 id="video-title" class="home-heading">{id ? 'Dari kebutuhan izin menjadi rencana kerja yang nyata.' : 'From a permit need to a concrete work plan.'}</h2>
+-      <p>{id ? 'Video ini nantinya menjelaskan pemetaan kebutuhan, koordinasi dokumen, pelaporan progres, dan pencatatan kewajiban setelah izin terbit.' : 'This film will explain requirement mapping, document coordination, progress reporting, and post-issuance obligations.'}</p>
++      <h2 id="video-title" class="home-heading">{id ? 'Kebutuhan izin menjadi rencana kerja.' : 'Turning permit needs into a work plan.'}</h2>
++      <p>{id ? 'Video ini akan memperlihatkan pemetaan kebutuhan, koordinasi dokumen, pelaporan progres, dan tindak lanjut setelah izin terbit.' : 'The video will show requirement mapping, document coordination, progress reporting, and post-issuance follow-up.'}</p>
+diff --git a/src/components/home/HomeInsights.astro b/src/components/home/HomeInsights.astro
+--- a/src/components/home/HomeInsights.astro
++++ b/src/components/home/HomeInsights.astro
+@@ -15,7 +15,7 @@
+       <div>
+         <p class="home-kicker">{id ? 'Insight terbaru' : 'Latest insights'}</p>
+-        <h2 id="insights-title" class="home-heading">{id ? 'Informasi regulasi untuk keputusan yang lebih siap.' : 'Regulatory context for better-prepared decisions.'}</h2>
++        <h2 id="insights-title" class="home-heading">{id ? 'Regulasi untuk keputusan bisnis.' : 'Regulatory insight for business decisions.'}</h2>
+diff --git a/src/components/home/HomeFinalCta.astro b/src/components/home/HomeFinalCta.astro
+--- a/src/components/home/HomeFinalCta.astro
++++ b/src/components/home/HomeFinalCta.astro
+@@ -10,8 +10,8 @@
+     <div data-home-reveal>
+       <p class="home-kicker home-kicker--light">{id ? 'Mulai pengurusan izin' : 'Start your permit process'}</p>
+-      <h2 id="final-cta-title">{id ? 'Punya izin tertentu yang harus segera diurus?' : 'Have a specific permit that needs to be handled?'}</h2>
+-      <p>{id ? 'Sampaikan aktivitas usaha, lokasi, dan target Anda. Langkah berikutnya adalah asesmen kebutuhan serta penetapan ruang lingkup - bukan komitmen tanpa kejelasan.' : 'Share your business activity, location, and target. The next step is a needs assessment and a defined scope - not an unclear commitment.'}</p>
++      <h2 id="final-cta-title">{id ? 'Siap mengurus izin bisnis Anda?' : 'Ready to handle your business permits?'}</h2>
++      <p>{id ? 'Sampaikan aktivitas, lokasi, dan target Anda. Kami mulai dengan asesmen kebutuhan dan ruang lingkup yang jelas.' : 'Share your activity, location, and target. We begin with a clear needs assessment and scope.'}</p>
+@@ -27,7 +27,7 @@
+-  .final-cta h2 { max-width: 14ch; margin: 1.2rem 0 0; font-family: var(--font-display); font-size: clamp(2.65rem, 6.3vw, 6rem); font-weight: 580; letter-spacing: -.04em; line-height: .91; text-wrap: balance; }
++  .final-cta h2 { max-width: 14ch; margin: 1.2rem 0 0; font-family: var(--font-display); font-size: var(--brand-type-section); font-weight: 570; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }

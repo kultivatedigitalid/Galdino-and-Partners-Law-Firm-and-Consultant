@@ -1,0 +1,1090 @@
+P001 [Normal] KULTIVATE / WEBSITE DISCOVERY SYSTEM
+P002 [K Title] Client Discovery Form
+P003 [K Subtitle] Formulir lengkap untuk memahami bisnis, pelanggan, positioning, brand, website, dan kesiapan aset.
+T004 [Normal Table] rows=1
+  R01:  || 
+P005 [Normal] 
+T006 [Normal Table] rows=1
+  R01: 35–45 MENIT / Estimasi pengisian || 6 BAGIAN / Alur terstruktur || 1 SUMBER DATA / Tanpa formulir terpisah
+P007 [Normal] 
+T008 [Normal Table] rows=1
+  R01: Anda memberikan fakta, pengalaman, prioritas, dan batasan. Tim KULTIVATE menerjemahkannya menjadi positioning, pesan utama, sitemap, UX, strategi SEO, serta kebutuhan teknis.
+P009 [Normal] 
+P010 [K Section] Cara Menggunakan Formulir Ini
+T011 [Normal Table] rows=1
+  R01: Yang perlu Anda isi / Fakta bisnis, pengalaman menghadapi pelanggan, prioritas perusahaan, bukti yang tersedia, preferensi brand, kebutuhan website, dan batasan penggunaan aset.
+P012 [Normal] 
+T013 [Normal Table] rows=1
+  R01: Yang tidak perlu Anda tentukan / Positioning final, sitemap, jumlah halaman, hierarki informasi, desain final, keyword research, dan arsitektur teknis. Seluruh keputusan tersebut merupakan pekerjaan tim KULTIVATE.
+P014 [Normal] 
+T015 [Normal Table] rows=1
+  R01: Tiga jenis pertanyaan / WAJIB dijawab semua klien. DISARANKAN dijawab apabila datanya tersedia. JIKA RELEVAN hanya diisi apabila kondisinya berlaku.
+P016 [Normal] 
+T017 [Normal Table] rows=1
+  R01: Cara menjawab / Gunakan bahasa sederhana dan kondisi nyata. Apabila belum tahu, tulis “belum tahu”. Jangan menulis password, OTP, atau akses sensitif di formulir ini.
+P018 [Normal] 
+P019 [K Heading] Identitas Proyek
+T020 [Normal Table] rows=7
+  R01: Nama perusahaan / brand || Status: Terkonfirmasi / Jawaban berdasarkan project: Galdino & Partner. Ini adalah display name yang dipakai konsisten pada data pusat, metadata, schema, header, footer, dan README. Nama legal perusahaan masih berupa placeholder sehingga tidak dapat disamakan dengan nama brand. / Sumber dan rincian: Lampiran Analisis — Identitas Proyek / Nama perusahaan / brand.
+  R02: Nama proyek || Status: Terkonfirmasi / Jawaban berdasarkan project: Galdino & Partner Website — website bilingual berorientasi produksi untuk konsultan perizinan dan firma hukum. / Sumber dan rincian: Lampiran Analisis — Identitas Proyek / Nama proyek.
+  R03: PIC utama + kontak || Status: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Tidak ada PIC project yang ditetapkan di source atau dokumentasi. Project memiliki kanal kontak publik, tetapi kanal tersebut tidak dinyatakan sebagai PIC project discovery. / Sumber dan rincian: Lampiran Analisis — Identitas Proyek / PIC utama + kontak.
+  R04: Pemberi persetujuan final || Status: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Tidak ditemukan nama atau role pemberi persetujuan final. / Sumber dan rincian: Lampiran Analisis — Identitas Proyek / Pemberi persetujuan final.
+  R05: Penyedia informasi / aset || Status: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Tidak ditemukan pemilik atau penyedia informasi/aset. Source hanya mencatat aset yang tersedia dan aset yang masih perlu diganti. / Sumber dan rincian: Lampiran Analisis — Identitas Proyek / Penyedia informasi / aset.
+  R06: Target website tayang || Status: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Tidak ada tanggal target launch di source atau dokumentasi. / Sumber dan rincian: Lampiran Analisis — Identitas Proyek / Target website tayang.
+  R07: Alasan target tersebut || Status: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Karena target tayang tidak tersedia, alasannya juga tidak dapat dikonfirmasi. / Sumber dan rincian: Lampiran Analisis — Identitas Proyek / Alasan target tersebut.
+P021 [Normal] 
+T022 [Normal Table] rows=1
+  R01: Aturan persetujuan / Tetapkan satu pemberi persetujuan final. Masukan dari pihak lain sebaiknya dikumpulkan melalui PIC utama agar arahan revisi tidak saling bertentangan.
+P023 [Normal] 
+P024 [Normal] 
+T025 [Normal Table] rows=1
+  R01: 01 || Bisnis / Memahami cara perusahaan bekerja, menghasilkan pendapatan, bertumbuh, dan memilih prioritas. / ESTIMASI BAGIAN: 7–9 MENIT
+P026 [Normal] 
+T027 [Normal Table] rows=1
+  R01: WAJIB || 1.1  Jelaskan perusahaan Anda dalam satu paragraf. / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Deskripsi project: konsultan perizinan dan firma hukum di Indonesia yang memetakan kebutuhan, menyiapkan dokumen, mengoordinasikan proses, serta membantu tindak lanjut; identitas legal dan bukti usaha belum lengkap. / Sumber dan rincian: Lampiran Analisis — 1.1.
+P028 [K Helper] Ceritakan apa yang dijual, siapa yang dibantu, cara umum perusahaan melayani pelanggan, dan wilayah operasinya. Hindari slogan seperti “terbaik” atau “terpercaya”.
+T029 [Normal Table] rows=1
+  R01: Contoh jawaban  Kami adalah kontraktor interior yang membantu perusahaan dan pemilik rumah merancang serta membangun interior custom, mulai dari desain sampai instalasi, untuk wilayah Jabodetabek.
+T030 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P031 [Normal] 
+T032 [Normal Table] rows=1
+  R01: WAJIB || 1.2  Daftar produk atau layanan yang aktif ditawarkan. / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: 4 kategori terimplementasi: Pendirian & Legalitas Usaha; Perizinan Berbasis Risiko; Kepatuhan & Legal Advisory; Perizinan Proyek & Investasi. Status aktif/final dan prioritas bisnis belum disetujui. / Sumber dan rincian: Lampiran Analisis — 1.2.
+P033 [K Helper] Maksimal delapan. Beri prioritas: 1 = paling penting bagi bisnis, 2 = penting, 3 = pendukung.
+T034 [Normal Table] rows=9
+  R01: Produk / layanan || Penjelasan satu kalimat || Prioritas
+  R02: Contoh: Kitchen set custom || Desain, produksi, dan instalasi sesuai ukuran ruang. || 1
+  R03:  ||  || 
+  R04:  ||  || 
+  R05:  ||  || 
+  R06:  ||  || 
+  R07:  ||  || 
+  R08:  ||  || 
+  R09:  ||  || 
+P035 [Normal] 
+T036 [Normal Table] rows=1
+  R01: WAJIB || 1.3  Bagaimana perusahaan menghasilkan pendapatan? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Model pendapatan dan pola pembayaran tidak tersedia di project. / Sumber dan rincian: Lampiran Analisis — 1.3.
+P037 [K Helper] Pilih semua yang sesuai, lalu jelaskan pola transaksi yang paling umum.
+T038 [Normal Table] rows=5
+  R01: ☐ Proyek satu kali || ☐ Penjualan produk
+  R02: ☐ Kontrak tahunan || ☐ Retainer bulanan
+  R03: ☐ Langganan || ☐ Komisi
+  R04: ☐ Tender / procurement || ☐ Distributor / reseller
+  R05: ☐ Kombinasi beberapa model || ☐ Lainnya: __________________
+P039 [Normal] 
+T040 [Normal Table] rows=1
+  R01: Jelaskan pola pembayaran atau transaksi yang paling umum...
+P041 [Normal] 
+T042 [Normal Table] rows=1
+  R01: WAJIB || 1.4  Di mana perusahaan beroperasi dan melayani pelanggan? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Area served yang dinyatakan: Indonesia; alamat kantor, cabang, dan batas wilayah belum tersedia. / Sumber dan rincian: Lampiran Analisis — 1.4.
+P043 [K Helper] Tuliskan lokasi kantor, cabang, area layanan, atau batas wilayah yang penting.
+T044 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P045 [Normal] 
+T046 [Normal Table] rows=1
+  R01: DISARANKAN || 1.5  Apa tiga momen penting dalam perjalanan perusahaan? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Milestone dan tahun perusahaan tidak tersedia; seluruh rekam jejak masih placeholder. / Sumber dan rincian: Lampiran Analisis — 1.5.
+P047 [K Helper] Gunakan milestone yang membantu calon pelanggan memahami perkembangan, kemampuan, atau kredibilitas perusahaan.
+T048 [Normal Table] rows=4
+  R01: Tahun || Peristiwa penting || Mengapa penting
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P049 [Normal] 
+T050 [Normal Table] rows=1
+  R01: WAJIB || 1.6  Dari mana pelanggan biasanya mengenal perusahaan Anda? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Kanal website tersedia (SEO/blog, WhatsApp, email, formulir), tetapi sumber pelanggan aktual tidak terbukti. / Sumber dan rincian: Lampiran Analisis — 1.6.
+P051 [K Helper] Pilih maksimal tiga sumber yang paling sering menghasilkan pelanggan.
+T052 [Normal Table] rows=5
+  R01: ☐ Rekomendasi / relasi || ☐ Google / mesin pencari
+  R02: ☐ Media sosial || ☐ Tim sales
+  R03: ☐ Tender / procurement || ☐ Marketplace
+  R04: ☐ Iklan || ☐ Pelanggan lama
+  R05: ☐ Event / pameran || ☐ Lainnya: __________________
+P053 [Normal] 
+P054 [Normal] 
+T055 [Normal Table] rows=1
+  R01: WAJIB || 1.7  Apa masalah marketing atau penjualan yang paling terasa saat ini? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Project memuat tujuan komunikasi dan konversi, bukan bukti masalah marketing/sales aktual. / Sumber dan rincian: Lampiran Analisis — 1.7.
+P056 [K Helper] Pilih maksimal dua masalah yang benar-benar memengaruhi bisnis.
+T057 [Normal Table] rows=5
+  R01: ☐ Perusahaan kurang mudah ditemukan || ☐ Sulit membangun kepercayaan
+  R02: ☐ Layanan sulit dipahami || ☐ Terlalu bergantung pada rekomendasi
+  R03: ☐ Sales berulang kali menjelaskan hal yang sama || ☐ Calon pelanggan hanya membandingkan harga
+  R04: ☐ Portofolio sulit ditunjukkan || ☐ Inquiry banyak tetapi tidak relevan
+  R05: ☐ Konversi rendah || ☐ Lainnya: __________________
+P058 [Normal] 
+T059 [Normal Table] rows=1
+  R01: WAJIB || 1.8  Apa tiga prioritas bisnis dalam 12–24 bulan ke depan? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Prioritas bisnis 12–24 bulan tidak tersedia di project. / Sumber dan rincian: Lampiran Analisis — 1.8.
+P060 [K Helper] Pilih maksimal tiga. Website akan dirancang untuk mendukung prioritas tersebut.
+T061 [Normal Table] rows=5
+  R01: ☐ Meningkatkan revenue || ☐ Mendapatkan proyek bernilai lebih besar
+  R02: ☐ Masuk ke segmen pasar baru || ☐ Memperluas wilayah layanan
+  R03: ☐ Memperkenalkan produk / layanan baru || ☐ Mengurangi ketergantungan pada referral
+  R04: ☐ Mendukung tender / procurement || ☐ Mendukung pembukaan cabang
+  R05: ☐ Memperkuat kredibilitas || ☐ Lainnya: __________________
+P062 [Normal] 
+T063 [Normal Table] rows=1
+  R01: WAJIB || 1.9  Perubahan apa yang ingin dirasakan setelah website baru digunakan? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Target project: penawaran lebih dipahami, kredibilitas lebih mudah dinilai, konten regulasi dapat dibaca, dan konsultasi dapat dimulai; KPI belum ditetapkan. / Sumber dan rincian: Lampiran Analisis — 1.9.
+P064 [K Helper] Fokus pada perubahan yang dapat dilihat atau dirasakan tim, bukan sekadar “website lebih bagus”.
+T065 [Normal Table] rows=1
+  R01: Contoh jawaban  Calon pelanggan sudah memahami layanan dan melihat portofolio sebelum menghubungi sales, sehingga percakapan awal menjadi lebih berkualitas.
+T066 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P067 [Normal] 
+T068 [Normal Table] rows=1
+  R01: WAJIB || 1.10  Permintaan atau proyek seperti apa yang tidak cocok untuk perusahaan Anda? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Teridentifikasi: bukan kanal keadaan darurat hukum atau tenggat hari yang sama. Batas layanan lain belum dikonfirmasi. / Sumber dan rincian: Lampiran Analisis — 1.10.
+P069 [K Helper] Tuliskan batas minimum, wilayah, jenis pekerjaan, tenggat, atau tipe klien yang memang tidak ingin diterima.
+T070 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P071 [Normal] 
+P072 [Normal] 
+T073 [Normal Table] rows=1
+  R01: 02 || Pelanggan / Memahami siapa yang membeli, apa yang mereka alami, dan apa yang membuat mereka mengambil keputusan. / ESTIMASI BAGIAN: 8–10 MENIT
+P074 [Normal] 
+T075 [Normal Table] rows=1
+  R01: WAJIB || 2.1  Gambarkan pelanggan atau proyek yang paling ingin diperoleh. / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Target audience project: decision-maker dan tim operasional/legal, termasuk investor/tim internasional, untuk pendirian, ekspansi, regularisasi, atau kepatuhan bisnis di Indonesia; nilai proyek dan kesiapan belum ada. / Sumber dan rincian: Lampiran Analisis — 2.1.
+P076 [K Helper] Sebutkan jenis orang/perusahaan, lokasi, kebutuhan, nilai proyek atau pembelian, serta tingkat kesiapannya.
+T077 [Normal Table] rows=1
+  R01: Contoh jawaban  Perusahaan swasta di Jabodetabek yang membutuhkan renovasi kantor senilai minimal Rp150 juta dan sudah memiliki target waktu pengerjaan.
+T078 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P079 [Normal] 
+T080 [Normal Table] rows=1
+  R01: WAJIB || 2.2  Siapa yang terlibat dalam keputusan pembelian? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Kelompok audiens tersedia, tetapi peran buying committee belum dipetakan. / Sumber dan rincian: Lampiran Analisis — 2.2.
+P081 [K Helper] Orangnya boleh sama. Kami perlu tahu siapa yang menggunakan, mencari, memengaruhi, dan menyetujui pembelian.
+T082 [Normal Table] rows=5
+  R01: Peran || Siapa biasanya? || Apa yang mereka butuhkan dari website?
+  R02: Pengguna produk / layanan ||  || 
+  R03: Mencari / membandingkan vendor ||  || 
+  R04: Memengaruhi keputusan ||  || 
+  R05: Memberikan persetujuan final ||  || 
+P083 [Normal] 
+T084 [Normal Table] rows=1
+  R01: WAJIB || 2.3  Dalam situasi apa pelanggan mulai merasa membutuhkan solusi Anda? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Skenario project: pendirian, ekspansi, regularisasi, kepatuhan, OSS-RBA/KBLI, izin sektoral, serta proyek/investasi; belum tervalidasi sebagai trigger pelanggan aktual. / Sumber dan rincian: Lampiran Analisis — 2.3.
+P085 [K Helper] Jelaskan pemicu yang membuat kebutuhan menjadi nyata atau mendesak.
+T086 [Normal Table] rows=1
+  R01: Contoh jawaban  Kantor baru akan dibuka, kapasitas lama sudah tidak cukup, vendor sebelumnya gagal, atau perusahaan sedang menyiapkan tender.
+T087 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P088 [Normal] 
+P089 [Normal] 
+T090 [Normal Table] rows=1
+  R01: WAJIB || 2.4  Apa masalah, dampak, dan hasil yang paling penting bagi pelanggan? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Project memodelkan masalah regulatory complexity, ketidaksinkronan legal-operasional, dan kewajiban pasca-izin; dampak/hasilnya belum tervalidasi dengan pelanggan. / Sumber dan rincian: Lampiran Analisis — 2.4.
+T091 [Normal Table] rows=4
+  R01: Masalah yang dialami || Dampaknya || Hasil yang mereka inginkan
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P092 [Normal] 
+T093 [Normal Table] rows=1
+  R01: WAJIB || 2.5  Apa yang biasanya membuat pelanggan akhirnya membeli atau justru batal membeli? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Alasan membeli dan batal membeli tidak tersedia. / Sumber dan rincian: Lampiran Analisis — 2.5.
+T094 [Normal Table] rows=4
+  R01: Alasan akhirnya membeli || Alasan akhirnya tidak membeli
+  R02:  || 
+  R03:  || 
+  R04:  || 
+P095 [Normal] 
+T096 [Normal Table] rows=1
+  R01: WAJIB || 2.6  Apa yang paling membuat pelanggan ragu, dan apa yang membuat mereka percaya? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Prinsip trust project: proses transparan dan bukti terverifikasi; bukti utama saat ini belum tersedia dan keraguan aktual belum diriset. / Sumber dan rincian: Lampiran Analisis — 2.6.
+T097 [Normal Table] rows=4
+  R01: Keraguan / kekhawatiran || Bukti atau penjelasan yang membantu
+  R02:  || 
+  R03:  || 
+  R04:  || 
+P098 [Normal] 
+P099 [Normal] 
+T100 [Normal Table] rows=1
+  R01: WAJIB || 2.7  Apa yang biasanya dibandingkan pelanggan saat memilih vendor? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Kriteria perbandingan vendor belum tersedia; atribut positioning tidak boleh dianggap sebagai data pelanggan. / Sumber dan rincian: Lampiran Analisis — 2.7.
+P101 [K Helper] Pilih maksimal tiga dan jelaskan bagaimana pelanggan menilainya.
+T102 [Normal Table] rows=4
+  R01: Kriteria || Bagaimana pelanggan menilainya?
+  R02:  || 
+  R03:  || 
+  R04:  || 
+P103 [Normal] 
+T104 [Normal Table] rows=1
+  R01: WAJIB || 2.8  Alternatif apa yang biasanya dipertimbangkan selain memilih perusahaan Anda? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Alternatif pelanggan tidak tersedia. / Sumber dan rincian: Lampiran Analisis — 2.8.
+P105 [K Helper] Alternatif tidak selalu kompetitor langsung. Pelanggan bisa menunda, mengerjakan sendiri, membeli produk jadi, atau memilih vendor lebih murah.
+T106 [Normal Table] rows=4
+  R01: Alternatif || Mengapa dipertimbangkan? || Kekurangannya menurut pelanggan
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P107 [Normal] 
+T108 [Normal Table] rows=1
+  R01: OPSIONAL || 2.9  Tuliskan pertanyaan atau kalimat yang benar-benar sering digunakan pelanggan. / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Tidak ada kutipan atau kalimat pelanggan aktual di project. / Sumber dan rincian: Lampiran Analisis — 2.9.
+P109 [K Helper] Tulis apa adanya. Bagian ini sangat membantu tim copywriting dan SEO.
+T110 [Normal Table] rows=1
+  R01: Contoh jawaban  “Bisa selesai sebelum grand opening?” / “Kalau lokasi di luar kota bagaimana?” / “Sudah pernah mengerjakan proyek sejenis?”
+T111 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P112 [Normal] 
+P113 [Normal] 
+T114 [Normal Table] rows=1
+  R01: 03 || Positioning / Memahami medan persaingan, keunggulan, diferensiasi, dan bukti yang dapat dipercaya. / ESTIMASI BAGIAN: 6–8 MENIT
+P115 [Normal] 
+T116 [Normal Table] rows=1
+  R01: WAJIB || 3.1  Setelah melihat website, apa satu hal yang paling penting untuk dipahami atau diingat orang? / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Pesan utama: pengurusan izin bisnis melalui pemetaan persyaratan, penyiapan dokumen, pengawalan proses, dan tindak lanjut — tanpa menjamin hasil otoritas. / Sumber dan rincian: Lampiran Analisis — 3.1.
+P117 [K Helper] Jawab dalam satu kalimat sederhana. Tidak perlu terdengar seperti slogan.
+T118 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P119 [Normal] 
+T120 [Normal Table] rows=1
+  R01: WAJIB || 3.2  Siapa kompetitor yang paling sering dibandingkan dengan perusahaan Anda? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Kompetitor aktual tidak tersedia di project. / Sumber dan rincian: Lampiran Analisis — 3.2.
+P121 [K Helper] Maksimal tiga. Fokus pada kompetitor yang benar-benar muncul dalam proses penjualan.
+T122 [Normal Table] rows=4
+  R01: Nama / URL || Mengapa sering dibandingkan? || Apa yang mereka lakukan dengan baik?
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P123 [Normal] 
+T124 [Normal Table] rows=1
+  R01: WAJIB || 3.3  Apa tiga kemampuan atau kualitas terbaik perusahaan Anda? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Kualitas yang dinyatakan project: ketelitian hukum, komunikasi progres, dan fokus penyelesaian/pemetaan kebutuhan izin; bukti bisnis belum tersedia. / Sumber dan rincian: Lampiran Analisis — 3.3.
+P125 [K Helper] Keunggulan boleh belum unik. Yang penting konkret dan relevan bagi pelanggan.
+T126 [Normal Table] rows=4
+  R01: Keunggulan || Manfaat bagi pelanggan || Contoh / bukti awal
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P127 [Normal] 
+P128 [Normal] 
+T129 [Normal Table] rows=1
+  R01: WAJIB || 3.4  Dari keunggulan tersebut, apa yang benar-benar berbeda dibandingkan kompetitor atau alternatif lain? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Diferensiasi yang diinginkan: regulatory complexity menjadi langkah terurut, didukung legal precision dan progress communication; keunikannya belum terbukti. / Sumber dan rincian: Lampiran Analisis — 3.4.
+P130 [K Helper] Jelaskan proses, model layanan, kepemilikan fasilitas, keahlian, sistem, pengalaman, atau hasil yang sulit diklaim dengan cara yang sama oleh kompetitor.
+T131 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P132 [Normal] 
+T133 [Normal Table] rows=1
+  R01: WAJIB || 3.5  Hubungkan klaim, bukti, dan manfaatnya. / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Klaim proses, pengalaman, dan tim sudah distrukturkan, tetapi bukti klien, hasil, tahun, credential, dan foto resmi belum tersedia. / Sumber dan rincian: Lampiran Analisis — 3.5.
+P134 [K Helper] Setiap klaim utama harus memiliki bukti yang dapat ditunjukkan.
+T135 [Normal Table] rows=4
+  R01: Klaim / alasan memilih || Bukti yang tersedia || Manfaat bagi pelanggan
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P136 [Normal] 
+T137 [Normal Table] rows=1
+  R01: WAJIB || 3.6  Apakah ada klaim, istilah, nama klien, proyek, atau aset yang tidak boleh digunakan? / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Larangan terkonfirmasi: guarantee/fastest/100% approved/superlatif tanpa bukti; identitas/aset klien tanpa izin; seluruh placeholder/dummy sebagai fakta; artikel legal tanpa review. / Sumber dan rincian: Lampiran Analisis — 3.6.
+P138 [K Helper] Sebutkan informasi rahasia, klaim yang belum terverifikasi, logo klien tanpa izin, atau materi yang sensitif.
+T139 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P140 [Normal] 
+P141 [Normal] 
+T142 [Normal Table] rows=1
+  R01: 04 || Brand / Memahami karakter, cara berkomunikasi, aturan visual, dan ruang eksplorasi desain. / ESTIMASI BAGIAN: 5–7 MENIT
+P143 [Normal] 
+T144 [Normal Table] rows=1
+  R01: WAJIB || 4.1  Bagaimana status brand guideline perusahaan? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Design system website dan logo approved tersedia; status brand guideline korporat tidak diketahui. / Sumber dan rincian: Lampiran Analisis — 4.1.
+T145 [Normal Table] rows=3
+  R01: ☐ Wajib diikuti sepenuhnya || ☐ Masih berlaku, tetapi boleh dikembangkan
+  R02: ☐ Sudah tidak relevan || ☐ Hanya memiliki logo dan warna
+  R03: ☐ Belum memiliki brand guideline || ☐ Belum tahu
+P146 [Normal] 
+T147 [Normal Table] rows=1
+  R01: WAJIB || 4.2  Pilih maksimal tiga karakter brand. / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Arah website: Modern, Premium, Tegas; konfirmasi brand stakeholder belum tersedia. / Sumber dan rincian: Lampiran Analisis — 4.2.
+T148 [Normal Table] rows=5
+  R01: ☐ Profesional || ☐ Tepercaya || ☐ Tegas
+  R02: ☐ Ramah || ☐ Modern || ☐ Premium
+  R03: ☐ Sederhana || ☐ Berani || ☐ Hangat
+  R04: ☐ Edukatif || ☐ Teknologis || ☐ Industrial
+  R05: ☐ Elegan || ☐ Kreatif || ☐ Lainnya: __________________
+P149 [Normal] 
+T150 [Normal Table] rows=1
+  R01: WAJIB || 4.3  Pilih satu gaya komunikasi utama. / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Profesional, mudah dipahami. / Sumber dan rincian: Lampiran Analisis — 4.3.
+T151 [Normal Table] rows=4
+  R01: ☐ Formal dan korporat || ☐ Profesional, mudah dipahami
+  R02: ☐ Tegas dan langsung || ☐ Ramah dan komunikatif
+  R03: ☐ Edukatif dan informatif || ☐ Eksklusif dan premium
+  R04: ☐ Santai dan dekat || ☐ Mengikuti rekomendasi tim
+P152 [Normal] 
+T153 [Normal Table] rows=1
+  R01: DISARANKAN || 4.4  Tuliskan istilah yang wajib digunakan dan gaya yang harus dihindari. / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Gunakan: membantu, memetakan, review/meninjau, mengawal/guide. Hindari: guarantee, fastest, 100% approved, superlatif tanpa bukti, dan janji hasil otoritas. / Sumber dan rincian: Lampiran Analisis — 4.4.
+T154 [Normal Table] rows=2
+  R01: Istilah / kata wajib || Klik dan ketik
+  R02: Kata / gaya yang harus dihindari || Klik dan ketik
+P155 [Normal] 
+T156 [Normal Table] rows=1
+  R01: WAJIB || 4.5  Seberapa bebas tim KULTIVATE dapat mengembangkan tampilan brand? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Implementasi mengikuti design system yang ketat; mandat kebebasan KULTIVATE belum dinyatakan. / Sumber dan rincian: Lampiran Analisis — 4.5.
+T157 [Normal Table] rows=4
+  R01: ☐ Harus mengikuti guideline secara ketat
+  R02: ☐ Boleh dikembangkan selama identitas utama dipertahankan
+  R03: ☐ Terbuka untuk perubahan cukup besar
+  R04: ☐ Membutuhkan rekomendasi penuh dari tim
+P158 [Normal] 
+P159 [Normal] 
+T160 [Normal Table] rows=1
+  R01: DISARANKAN || 4.6  Adakah warna, simbol, foto, ilustrasi, atau gaya visual yang wajib dipakai atau dilarang? / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Pertahankan logo transparan merah-hitam-emas, red/black/white + restrained gold; hindari plate logo, glassmorphism, glow, WebGL/3D, dekorasi berlebih, dan concept imagery final. / Sumber dan rincian: Lampiran Analisis — 4.6.
+T161 [Normal Table] rows=2
+  R01: Wajib dipertahankan || Klik dan ketik
+  R02: Tidak boleh digunakan || Klik dan ketik
+P162 [Normal] 
+T163 [Normal Table] rows=1
+  R01: DISARANKAN || 4.7  Website atau brand apa yang menjadi referensi? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Referensi internal: Mockup 1. Tidak ada referensi website/brand eksternal di project. / Sumber dan rincian: Lampiran Analisis — 4.7.
+P164 [K Helper] Maksimal tiga. Boleh dari industri lain. Jelaskan pola yang disukai dan yang tidak ingin ditiru.
+T165 [Normal Table] rows=4
+  R01: Nama / URL || Yang disukai || Yang tidak ingin ditiru
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P166 [Normal] 
+T167 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 4.8  Apakah perusahaan memiliki parent company, subbrand, atau beberapa unit bisnis? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Struktur parent company/subbrand/unit bisnis tidak tersedia. / Sumber dan rincian: Lampiran Analisis — 4.8.
+P168 [K Helper] Jelaskan hubungan antarbrand, logo utama, dan brand mana yang harus paling menonjol di website.
+T169 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P170 [Normal] 
+P171 [Normal] 
+T172 [Normal Table] rows=1
+  R01: 05 || Website / Menentukan pekerjaan utama website, alur konversi, SEO, integrasi, dan cara website dikelola. / ESTIMASI BAGIAN: 8–10 MENIT
+P173 [Normal] 
+T174 [Normal Table] rows=1
+  R01: WAJIB || 5.1  Urutkan tiga pekerjaan terpenting website. / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Draft urutan dari Purpose project: 1) menjelaskan penawaran; 2) membangun/menilai kredibilitas; 3) menghasilkan konsultasi. Ranking stakeholder belum eksplisit. / Sumber dan rincian: Lampiran Analisis — 5.1.
+P175 [K Helper] Contoh: membangun kepercayaan, menghasilkan inquiry, menjelaskan layanan, menunjukkan portofolio, membantu sales, atau mendukung tender.
+T176 [Normal Table] rows=4
+  R01: Urutan || Pekerjaan website || Mengapa penting?
+  R02:  ||  || 
+  R03:  ||  || 
+  R04:  ||  || 
+P177 [Normal] 
+T178 [Normal Table] rows=1
+  R01: WAJIB || 5.2  Bagaimana alur setelah pengunjung tertarik? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: CTA → halaman kontak/WhatsApp; form → POST /api/contact → validasi + rate limit → email via Resend. PIC, langkah follow-up internal, dan waktu respons belum tersedia. / Sumber dan rincian: Lampiran Analisis — 5.2.
+P179 [K Helper] Isi alur paling umum. Tim KULTIVATE akan menentukan bentuk tombol dan formulir yang paling tepat.
+T180 [Normal Table] rows=5
+  R01: Tindakan utama pengunjung || Klik dan ketik
+  R02: Inquiry diterima oleh || Klik dan ketik
+  R03: Informasi minimum yang dibutuhkan || Klik dan ketik
+  R04: Langkah berikutnya || Klik dan ketik
+  R05: Waktu respons normal || Klik dan ketik
+P181 [Normal] 
+T182 [Normal Table] rows=1
+  R01: WAJIB || 5.3  Inquiry seperti apa yang dianggap berkualitas? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Data awal yang diminta: organisasi, layanan, aktivitas/kebutuhan, lokasi, dan target waktu; definisi qualified lead belum ada. / Sumber dan rincian: Lampiran Analisis — 5.3.
+P183 [K Helper] Sebutkan jenis pelanggan, kebutuhan, lokasi, anggaran atau nilai proyek, target waktu, dan tingkat kesiapan yang diinginkan.
+T184 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P185 [Normal] 
+P186 [Normal] 
+T187 [Normal Table] rows=1
+  R01: WAJIB || 5.4  Informasi apa yang wajib tersedia di website? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Tersedia: layanan, proses, profil/tim, experience placeholder, blog, kontak, disclaimer, bilingual metadata. Banyak identitas/bukti masih placeholder; FAQ/download/certificates/careers belum diimplementasikan. / Sumber dan rincian: Lampiran Analisis — 5.4.
+P188 [K Helper] Tim KULTIVATE akan menentukan apakah informasi tersebut menjadi halaman tersendiri atau digabung dengan halaman lain.
+T189 [Normal Table] rows=5
+  R01: ☐ Seluruh layanan || ☐ Produk tertentu || ☐ Portofolio / proyek
+  R02: ☐ Proses kerja || ☐ Testimoni || ☐ Sertifikat / izin
+  R03: ☐ Profil tim || ☐ Lokasi / cabang || ☐ Download company profile
+  R04: ☐ Informasi tender || ☐ Karier || ☐ FAQ
+  R05: ☐ Data / pencapaian || ☐ Legal disclaimer || ☐ Lainnya: __________________
+P190 [Normal] 
+T191 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 5.5  Apakah website membutuhkan fungsi khusus? / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Centang: lebih dari satu bahasa. Lainnya: bilingual blog/RSS/SEO, serverless contact + email, optional rate limit, accessible carousels. Tidak ada login, upload, payment, CMS, CRM/ERP, atau product search. / Sumber dan rincian: Lampiran Analisis — 5.5.
+T192 [Normal Table] rows=6
+  R01: ☐ Lebih dari satu bahasa || ☐ Banyak cabang / lokasi
+  R02: ☐ Katalog produk besar || ☐ Filter / pencarian produk
+  R03: ☐ Upload dokumen || ☐ Download katalog / file
+  R04: ☐ Integrasi sistem lain || ☐ Karier / lowongan
+  R05: ☐ Pendaftaran acara || ☐ Login / area pengguna
+  R06: ☐ Pembayaran online || ☐ Lainnya: __________________
+P193 [Normal] 
+T194 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 5.6  Apabila membutuhkan lebih dari satu bahasa, jelaskan kebutuhannya. / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Bahasa: ID dan EN; seluruh fixed routes, 3 pasangan artikel, dan 3 profil tim sudah punya versi bilingual. Penyedia/approver terjemahan belum ada. / Sumber dan rincian: Lampiran Analisis — 5.6.
+T195 [Normal Table] rows=4
+  R01: Bahasa || Halaman yang dibutuhkan || Materi tersedia? || Penyedia terjemahan
+  R02:  ||  ||  || 
+  R03:  ||  ||  || 
+  R04:  ||  ||  || 
+P196 [Normal] 
+T197 [Normal Table] rows=1
+  R01: WAJIB || 5.7  Untuk kebutuhan apa perusahaan paling ingin ditemukan di Google? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Tema SEO project: konsultan perizinan/law firm Indonesia, perizinan usaha, legalitas, OSS-RBA, izin sektoral, compliance, project/investment licensing. Data keyword/ranking/competitor SERP belum ada. / Sumber dan rincian: Lampiran Analisis — 5.7.
+P198 [K Helper] Tidak perlu melakukan keyword research. Tuliskan layanan, masalah pelanggan, wilayah, dan istilah yang menurut Anda sering digunakan pelanggan.
+T199 [Normal Table] rows=4
+  R01: Layanan / produk prioritas || Klik dan ketik
+  R02: Wilayah pencarian utama || Klik dan ketik
+  R03: Istilah yang digunakan pelanggan || Klik dan ketik
+  R04: Website yang sering muncul di Google || Klik dan ketik
+P200 [Normal] 
+T201 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 5.8  Apakah perusahaan sudah memiliki website dan riwayat SEO? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Website lama dan riwayat SEO tidak tersedia; domain masih placeholder. SEO teknis baru sudah diimplementasikan. / Sumber dan rincian: Lampiran Analisis — 5.8.
+T202 [Normal Table] rows=6
+  R01: Alamat website || Klik dan ketik
+  R02: Halaman yang menghasilkan inquiry || Klik dan ketik / belum tahu
+  R03: Halaman yang tidak boleh kehilangan ranking || Klik dan ketik / belum tahu
+  R04: Pernah melakukan SEO? || Ya / Tidak / Belum tahu
+  R05: Bagian yang ingin dipertahankan || Klik dan ketik
+  R06: Bagian yang paling ingin diperbaiki || Klik dan ketik
+P203 [Normal] 
+T204 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 5.9  Setelah formulir diisi, data perlu dikirim atau dicatat ke mana? / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Centang Email. Form → Resend → mailbox CONTACT_TO_EMAIL; tidak disimpan di website. WhatsApp terpisah; tidak ada CRM/Sheets/ERP/automation. / Sumber dan rincian: Lampiran Analisis — 5.9.
+T205 [Normal Table] rows=5
+  R01: ☐ Email || ☐ WhatsApp
+  R02: ☐ CRM || ☐ Google Sheets
+  R03: ☐ ERP || ☐ Marketing automation
+  R04: ☐ Helpdesk || ☐ Sistem rekrutmen
+  R05: ☐ Sistem pembayaran || ☐ Sistem internal lainnya
+P206 [Normal] 
+T207 [Normal Table] rows=1
+  R01: Nama sistem atau catatan singkat...
+P208 [Normal] 
+T209 [Normal Table] rows=1
+  R01: WAJIB || 5.10  Apa yang perlu dapat diukur setelah website diluncurkan? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Belum ada analytics/event tracking. WhatsApp click, form submit, organic traffic, dan lead quality adalah kandidat, bukan kondisi terimplementasi. / Sumber dan rincian: Lampiran Analisis — 5.10.
+T210 [Normal Table] rows=5
+  R01: ☐ Klik WhatsApp || ☐ Formulir masuk
+  R02: ☐ Panggilan telepon || ☐ Download company profile
+  R03: ☐ Permintaan quotation || ☐ Pendaftaran
+  R04: ☐ Traffic organik || ☐ Lead berkualitas
+  R05: ☐ Penjualan / transaksi || ☐ Lainnya: __________________
+P211 [Normal] 
+P212 [Normal] 
+T213 [Normal Table] rows=1
+  R01: DISARANKAN || 5.11  Siapa yang akan memperbarui konten website setelah diluncurkan? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Konten dipelihara melalui TypeScript data + Markdown tanpa CMS; owner, frekuensi, dan training belum ditetapkan. / Sumber dan rincian: Lampiran Analisis — 5.11.
+T214 [Normal Table] rows=4
+  R01: Penanggung jawab || Klik dan ketik
+  R02: Konten yang sering berubah || Klik dan ketik
+  R03: Frekuensi pembaruan || Klik dan ketik
+  R04: Apakah membutuhkan training? || Ya / Tidak / Belum tahu
+P215 [Normal] 
+T216 [Normal Table] rows=1
+  R01: 06 || Aset / Memetakan materi yang tersedia, pemiliknya, izin penggunaan, dan kekurangan yang perlu disiapkan. / ESTIMASI BAGIAN: 5–7 MENIT
+P217 [Normal] 
+T218 [Normal Table] rows=1
+  R01: WAJIB || 6.1  Materi apa yang sudah dimiliki? / Status audit: Sebagian terkonfirmasi / Jawaban berdasarkan project: Project sudah memuat logo, aset gambar lokal, data layanan, profil tim awal, artikel bilingual, dan pedoman desain; sebagian besar bukti perusahaan dan aset resmi masih berstatus placeholder, concept-generated, atau belum terverifikasi. / Sumber dan rincian: Lampiran Analisis — 6.1.
+P219 [K Helper] Cukup pilih yang tersedia. Tim KULTIVATE yang akan menilai apakah materinya siap dipakai, perlu diperbarui, atau perlu dibuat ulang.
+T220 [Normal Table] rows=9
+  R01: ☐ Logo / identitas brand || ☐ Brand guideline
+  R02: ☐ Company profile || ☐ Informasi produk / layanan
+  R03: ☐ Foto perusahaan / kantor || ☐ Foto tim
+  R04: ☐ Foto produk / proyek || ☐ Video
+  R05: ☐ Portofolio / studi kasus || ☐ Testimoni
+  R06: ☐ Logo klien || ☐ Sertifikat / penghargaan
+  R07: ☐ Brosur / katalog || ☐ Data / angka pendukung
+  R08: ☐ Profil tim / ahli || ☐ Dokumen legal / izin
+  R09: ☐ Lainnya: __________________ || 
+P221 [Normal] 
+T222 [Normal Table] rows=1
+  R01: DISARANKAN || 6.2  Data atau angka apa yang dapat digunakan untuk memperkuat kepercayaan? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Project menyediakan slot statistik, tetapi seluruh nilainya masih [DATA]; tidak ada angka kepercayaan yang terverifikasi. / Sumber dan rincian: Lampiran Analisis — 6.2.
+P223 [K Helper] Contoh: tahun pengalaman, jumlah proyek, jumlah pelanggan, kapasitas produksi, cabang, ukuran tim, hasil studi kasus, atau waktu pengerjaan.
+T224 [Normal Table] rows=6
+  R01: Data / angka || Nilai || Bukti tersedia? || Boleh dipublikasikan?
+  R02:  ||  ||  || 
+  R03:  ||  ||  || 
+  R04:  ||  ||  || 
+  R05:  ||  ||  || 
+  R06:  ||  ||  || 
+P225 [Normal] 
+T226 [Normal Table] rows=1
+  R01: WAJIB || 6.3  Tautan folder materi dan aset. / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Tidak ditemukan link folder aset eksternal; project hanya merujuk aset lokal di public/assets dan source asset directories. / Sumber dan rincian: Lampiran Analisis — 6.3.
+P227 [K Helper] Gunakan satu folder utama. Pastikan aksesnya dapat dibuka tim KULTIVATE. Jangan menulis password di formulir.
+T228 [Normal Table] rows=1
+  R01: Tempel tautan folder di sini...
+P229 [Normal] 
+T230 [Normal Table] rows=1
+  R01: WAJIB || 6.4  Siapa pemilik atau penanggung jawab utama aset? / Status audit: Belum dapat dikonfirmasi / Jawaban berdasarkan project: Tidak ada nama asset owner atau approver final di project. / Sumber dan rincian: Lampiran Analisis — 6.4.
+T231 [Normal Table] rows=3
+  R01: Nama / jabatan || Klik dan ketik
+  R02: Kontak || Klik dan ketik
+  R03: Jenis aset yang dikelola || Klik dan ketik
+P232 [Normal] 
+T233 [Normal Table] rows=1
+  R01: JIKA RELEVAN || 6.5  Apakah ada batasan penggunaan konten atau visual? / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Ada: identitas klien/proyek, testimoni, dan logo harus berizin; kerahasiaan wajib diverifikasi; concept/placeholder tidak boleh dianggap final. / Sumber dan rincian: Lampiran Analisis — 6.5.
+P234 [K Helper] Contoh: foto klien tidak boleh dipublikasikan, logo tertentu belum mendapat izin, proyek masih rahasia, atau foto hanya boleh digunakan pada halaman tertentu.
+T235 [Normal Table] rows=1
+  R01: Klik dan ketik jawaban Anda...
+P236 [Normal] 
+T237 [Normal Table] rows=1
+  R01: DISARANKAN || 6.6  Aset apa yang sudah diketahui masih perlu dibuat atau diperbarui? / Status audit: Terkonfirmasi / Jawaban berdasarkan project: Backlog project mencakup identitas perusahaan resmi, foto/credential tim, bukti proyek, statistik, logo/testimoni berizin, dokumen legal publik, rincian layanan final, dan video resmi. / Sumber dan rincian: Lampiran Analisis — 6.6.
+P238 [K Helper] Tidak perlu menilai kualitas secara detail. Cukup sebutkan materi yang belum ada atau sudah jelas tidak layak digunakan.
+T239 [Normal Table] rows=6
+  R01: Aset || Kondisi saat ini || Penanggung jawab || Target tersedia
+  R02:  ||  ||  || 
+  R03:  ||  ||  || 
+  R04:  ||  ||  || 
+  R05:  ||  ||  || 
+  R06:  ||  ||  || 
+P240 [Normal] 
+T241 [Normal Table] rows=1
+  R01: Catatan keamanan / Jangan menuliskan password, kode OTP, data kartu, atau akses sensitif dalam formulir. Akses teknis dikumpulkan melalui onboarding terpisah.
+P242 [Normal] 
+P243 [K Section] Selesai. Berikutnya, giliran tim KULTIVATE.
+P244 [K Subtitle] Setelah formulir diterima, tim akan meninjau jawaban, melakukan follow-up terarah, menyusun fondasi strategis, dan menghasilkan brief khusus untuk Brand Strategist, Copywriter, UI/UX, SEO, serta Developer.
+T245 [Normal Table] rows=2
+  R01: 01 || 02 || 03 || 04
+  R02: Review jawaban / Memeriksa kelengkapan dan konsistensi. || Follow-up terarah / Hanya menanyakan bagian yang benar-benar diperlukan. || Strategic synthesis / Mengerucutkan data menjadi keputusan. || Handoff divisi / Membuat brief siap produksi untuk setiap tim.
+P246 [Normal] 
+P247 [K Heading] Konfirmasi Akhir
+T248 [Normal Table] rows=4
+  R01: ☐ Jawaban menggambarkan kondisi perusahaan saat ini. / Status audit: Belum dapat dikonfirmasi dari codebase; kondisi bisnis memerlukan validasi stakeholder.
+  R02: ☐ Tautan folder aset dapat dibuka tim KULTIVATE. / Status audit: Belum dapat dikonfirmasi; link folder aset eksternal tidak ditemukan.
+  R03: ☐ Klaim, angka, logo klien, dan materi sensitif telah diberi catatan. / Status audit: Sebagian terkonfirmasi; placeholder dan batas publikasi dicatat, tetapi attestation tetap memerlukan persetujuan stakeholder.
+  R04: ☐ PIC utama dan pemberi persetujuan final telah ditentukan. / Status audit: Belum dapat dikonfirmasi; PIC utama dan approver final tidak ditetapkan di project.
+P249 [Normal] 
+P250 [K Heading] Identitas Pengisi
+T251 [Normal Table] rows=3
+  R01: Nama pengisi || Status: Belum dapat dikonfirmasi dari project.
+  R02: Jabatan || Status: Belum dapat dikonfirmasi dari project.
+  R03: Tanggal pengisian || Status: Belum dapat dikonfirmasi dari project.
+P252 [Normal] 
+P253 [K Heading] Catatan tambahan untuk tim KULTIVATE
+T254 [Normal Table] rows=1
+  R01: Catatan audit: Dokumen diisi hanya dari bukti repository. Tidak ada sumber eksternal yang digunakan. / Batasan: Placeholder, mock, dummy, concept, [DATA], [VERIFY], pending, dan awaiting approval tidak diperlakukan sebagai kondisi bisnis terverifikasi.
+P255 [Normal] 
+P256 [Normal] 
+P257 [K Title] Lampiran Analisis Berdasarkan Project
+P258 [K Subtitle] Jawaban lengkap, status verifikasi, sumber, gap informasi, rekomendasi, dan data tambahan yang dibutuhkan.
+P259 [Normal] Ruang lingkup audit: Audit ini menggunakan source implementasi pada outputs/galdino_partner/website. Folder Galdino-and-Partners-Law-Firm-and-Consultant/website hanya berisi node_modules dan .astro, sedangkan Git di folder tersebut tidak memuat file pada HEAD; karena itu folder tersebut tidak digunakan untuk mengklaim fitur. Dokumentasi dibaca sebagai konteks/rencana, sementara kondisi aktual diprioritaskan dari source code. Nilai placeholder, dummy, concept, pending, dan awaiting approval tidak diperlakukan sebagai fakta bisnis terverifikasi.
+P260 [Normal] Legenda status: Terkonfirmasi = terbukti langsung; Sebagian terkonfirmasi = hanya sebagian bukti tersedia; Belum dapat dikonfirmasi = bukti tidak cukup; Pertanyaan kurang jelas = makna membutuhkan konteks tambahan.
+P261 [Normal] Prinsip pembacaan: Implementasi aktual diprioritaskan atas dokumentasi. Rencana, TODO, placeholder, mock, dummy, generated concept, dan data menunggu approval disebutkan secara eksplisit dan tidak diperlakukan sebagai fitur/fakta final.
+P262 [K Section] Identitas Proyek
+P263 [K Heading] Nama perusahaan / brand
+P264 [Normal] Status: Terkonfirmasi
+P265 [Normal] Jawaban berdasarkan project: Galdino & Partner. Ini adalah display name yang dipakai konsisten pada data pusat, metadata, schema, header, footer, dan README. Nama legal perusahaan masih berupa placeholder sehingga tidak dapat disamakan dengan nama brand.
+P266 [Normal] Sumber dalam project:
+P267 [List Bullet] src/data/site.ts — SITE.displayName berisi nama brand; SITE.legalName masih placeholder.
+P268 [List Bullet] README.md — judul project adalah Galdino & Partner Website.
+P269 [Normal] Rekomendasi: Tidak ada rekomendasi tambahan; gunakan kondisi terkonfirmasi di atas.
+P270 [K Heading] Nama proyek
+P271 [Normal] Status: Terkonfirmasi
+P272 [Normal] Jawaban berdasarkan project: Galdino & Partner Website — website bilingual berorientasi produksi untuk konsultan perizinan dan firma hukum.
+P273 [Normal] Sumber dalam project:
+P274 [List Bullet] README.md — judul dan deskripsi project.
+P275 [List Bullet] package.json — package name galdino-partner-website.
+P276 [Normal] Rekomendasi: Tidak ada rekomendasi tambahan; gunakan kondisi terkonfirmasi di atas.
+P277 [K Heading] PIC utama + kontak
+P278 [Normal] Status: Belum dapat dikonfirmasi
+P279 [Normal] Jawaban berdasarkan project: Tidak ada PIC project yang ditetapkan di source atau dokumentasi. Project memiliki kanal kontak publik, tetapi kanal tersebut tidak dinyatakan sebagai PIC project discovery.
+P280 [Normal] Sumber dalam project:
+P281 [List Bullet] src/data/site.ts — hanya memuat kanal kontak publik SITE.email dan SITE.whatsappHref.
+P282 [List Bullet] docs/PROJECT_CONTEXT.md — tidak menetapkan PIC project.
+P283 [Normal] Informasi yang belum tersedia atau belum pasti: Nama, jabatan, kewenangan, email, dan nomor kontak PIC project.
+P284 [Normal] Rekomendasi: Bukan kondisi project saat ini — tunjuk satu PIC yang mengonsolidasikan jawaban dan revisi.
+P285 [Normal] Data tambahan yang dibutuhkan: Nama dan kontak PIC yang ditunjuk stakeholder.
+P286 [K Heading] Pemberi persetujuan final
+P287 [Normal] Status: Belum dapat dikonfirmasi
+P288 [Normal] Jawaban berdasarkan project: Tidak ditemukan nama atau role pemberi persetujuan final.
+P289 [Normal] Sumber dalam project:
+P290 [List Bullet] docs/DEVELOPMENT_WORKFLOW.md — menyebut kebutuhan reviewer dan content approvals, tetapi tidak menetapkan orang/role persetujuan final.
+P291 [Normal] Informasi yang belum tersedia atau belum pasti: Identitas dan ruang kewenangan approver final.
+P292 [Normal] Rekomendasi: Bukan kondisi project saat ini — tetapkan satu approver final untuk legal, brand, dan publikasi.
+P293 [Normal] Data tambahan yang dibutuhkan: Nama, jabatan, dan kategori keputusan yang disetujui.
+P294 [K Heading] Penyedia informasi / aset
+P295 [Normal] Status: Belum dapat dikonfirmasi
+P296 [Normal] Jawaban berdasarkan project: Tidak ditemukan pemilik atau penyedia informasi/aset. Source hanya mencatat aset yang tersedia dan aset yang masih perlu diganti.
+P297 [Normal] Sumber dalam project:
+P298 [List Bullet] docs/DESIGN_SYSTEM.md — menginventarisasi logo dan visual concept/replaceable.
+P299 [List Bullet] src/assets — menyimpan aset gambar lokal tanpa metadata pemilik bisnis.
+P300 [Normal] Informasi yang belum tersedia atau belum pasti: Nama penanggung jawab aset dan bukti izin penggunaan.
+P301 [Normal] Rekomendasi: Bukan kondisi project saat ini — tetapkan satu asset owner dan satu folder master berizin akses.
+P302 [Normal] Data tambahan yang dibutuhkan: Nama/jabatan pemilik aset, jenis aset, dan bukti izin publikasi.
+P303 [K Heading] Target website tayang
+P304 [Normal] Status: Belum dapat dikonfirmasi
+P305 [Normal] Jawaban berdasarkan project: Tidak ada tanggal target launch di source atau dokumentasi.
+P306 [Normal] Sumber dalam project:
+P307 [List Bullet] docs/DEPLOYMENT.md — berisi langkah dan checklist deployment tanpa tanggal.
+P308 [List Bullet] docs/PROJECT_CONTEXT.md — menyebut keputusan launch bilingual, bukan jadwal.
+P309 [Normal] Informasi yang belum tersedia atau belum pasti: Tanggal target dan milestone menuju produksi.
+P310 [Normal] Rekomendasi: Bukan kondisi project saat ini — tetapkan tanggal setelah identitas legal, aset resmi, kebijakan privasi, terms, dan konfigurasi produksi selesai.
+P311 [Normal] Data tambahan yang dibutuhkan: Tanggal target, hard deadline, dan dependensi eksternal.
+P312 [K Heading] Alasan target tersebut
+P313 [Normal] Status: Belum dapat dikonfirmasi
+P314 [Normal] Jawaban berdasarkan project: Karena target tayang tidak tersedia, alasannya juga tidak dapat dikonfirmasi.
+P315 [Normal] Sumber dalam project:
+P316 [List Bullet] docs/DEPLOYMENT.md — tidak memuat alasan tanggal peluncuran.
+P317 [Normal] Informasi yang belum tersedia atau belum pasti: Konteks komersial, kampanye, tender, event, atau kewajiban lain yang mengikat tanggal.
+P318 [Normal] Rekomendasi: Bukan kondisi project saat ini — dokumentasikan alasan deadline agar prioritas scope dapat dinilai.
+P319 [Normal] Data tambahan yang dibutuhkan: Alasan bisnis dan konsekuensi apabila jadwal bergeser.
+P320 [K Section] Bagian 01 — Bisnis
+P321 [K Heading] 1.1  Jelaskan perusahaan Anda dalam satu paragraf.
+P322 [Normal] Status: Sebagian terkonfirmasi
+P323 [Normal] Jawaban berdasarkan project: Menurut konteks project, Galdino & Partner diposisikan sebagai konsultan perizinan usaha, firma hukum, dan mitra legal-regulasi di Indonesia. Website menjelaskan pendampingan untuk legalitas perusahaan, perizinan berbasis risiko dan sektoral, kepatuhan/legal advisory, serta perizinan proyek dan investasi. Alur yang ditampilkan mencakup pemetaan aktivitas dan klasifikasi usaha, penyiapan dokumen, koordinasi pengajuan, pemantauan progres, dan tindak lanjut. Legal name, alamat, registrasi, final service scope, dan bukti rekam jejak masih placeholder atau menunggu persetujuan sehingga paragraf ini adalah deskripsi dalam project, bukan verifikasi eksternal atas perusahaan.
+P324 [Normal] Sumber dalam project:
+P325 [List Bullet] docs/PROJECT_CONTEXT.md — Purpose, Audience, Positioning, dan Current status.
+P326 [List Bullet] src/data/site.ts — SERVICES dan business identity placeholders.
+P327 [List Bullet] src/components/home/CompanySnapshot.astro — uraian proses layanan dan marker rekam jejak belum terverifikasi.
+P328 [Normal] Informasi yang belum tersedia atau belum pasti: Nama legal, alamat resmi, registrasi, wilayah kantor/cabang, final scope, dan bukti operasional.
+P329 [Normal] Rekomendasi: Bukan kondisi project saat ini — gunakan paragraf ini hanya sebagai draft, lalu minta persetujuan bisnis/legal sebelum publikasi.
+P330 [Normal] Data tambahan yang dibutuhkan: Dokumen legal perusahaan, profil resmi, daftar layanan final, dan wilayah layanan yang disetujui.
+P331 [K Heading] 1.2  Daftar produk atau layanan yang aktif ditawarkan.
+P332 [Normal] Status: Sebagian terkonfirmasi
+P333 [Normal] Jawaban berdasarkan project: Empat kategori layanan yang benar-benar didefinisikan pada sumber data bersama adalah: (1) Pendirian & Legalitas Usaha — struktur badan usaha, dokumen korporasi, NIB, dan fondasi legal operasional; (2) Perizinan Berbasis Risiko — KBLI, tingkat risiko, OSS-RBA, dan izin sektoral; (3) Kepatuhan & Legal Advisory — review kepatuhan, risiko regulasi, dan dukungan hukum; (4) Perizinan Proyek & Investasi — koordinasi dokumen dan jalur izin untuk ekspansi/proyek/investasi. Homepage juga memuat 15 entri layanan yang lebih rinci, tetapi beberapa harga masih placeholder dan dokumentasi menyatakan final services belum disetujui. Prioritas bisnis 1/2/3 tidak tersedia.
+P334 [Normal] Sumber dalam project:
+P335 [List Bullet] src/data/site.ts — SERVICES.id berisi empat kategori bersama.
+P336 [List Bullet] src/data/home.ts — HOME_SERVICES.id berisi 15 entri rinci dengan sebagian price placeholder.
+P337 [List Bullet] docs/PROJECT_CONTEXT.md — final services masih placeholder.
+P338 [List Bullet] docs/PAGE_SPECIFICATIONS.md — final deliverables, exclusions, timelines, dan authority boundaries memerlukan approval.
+P339 [Normal] Informasi yang belum tersedia atau belum pasti: Konfirmasi bahwa layanan aktif secara komersial, prioritas 1/2/3, deliverable, pengecualian, harga, timeline, dan batas kewenangan.
+P340 [Normal] Rekomendasi: Bukan kondisi project saat ini — gunakan empat kategori sebagai kerangka awal dan pilih maksimal delapan layanan final bersama owner bisnis.
+P341 [Normal] Data tambahan yang dibutuhkan: Daftar layanan yang benar-benar dijual, kontribusi revenue, margin/prioritas, ruang lingkup, dan partner eksternal.
+P342 [K Heading] 1.3  Bagaimana perusahaan menghasilkan pendapatan?
+P343 [Normal] Status: Belum dapat dikonfirmasi
+P344 [Normal] Jawaban berdasarkan project: Tidak ditemukan model pendapatan, pola kontrak, invoice, pembayaran, retainer, tender, komisi, atau transaksi. Label harga/estimasi pada homepage adalah konten presentasi dan sebagian masih placeholder; tidak membuktikan model revenue.
+P345 [Normal] Sumber dalam project:
+P346 [List Bullet] src/data/home.ts — field price hanya berisi placeholder atau 'Estimasi setelah asesmen'.
+P347 [List Bullet] package.json — tidak memiliki dependency pembayaran atau billing.
+P348 [Normal] Informasi yang belum tersedia atau belum pasti: Jenis transaksi, kontrak, cara penetapan fee, termin, dan proporsi tiap model.
+P349 [Normal] Rekomendasi: Bukan kondisi project saat ini — pilih model aktual (mis. proyek satu kali/retainer/tender) dan jelaskan alur pembayaran yang paling umum.
+P350 [Normal] Data tambahan yang dibutuhkan: Contoh proposal/kontrak/invoice yang sudah dianonimkan atau penjelasan owner bisnis.
+P351 [K Heading] 1.4  Di mana perusahaan beroperasi dan melayani pelanggan?
+P352 [Normal] Status: Sebagian terkonfirmasi
+P353 [Normal] Jawaban berdasarkan project: Cakupan yang dinyatakan project adalah Indonesia. Target audiens mencakup perusahaan Indonesia dan investor/tim internasional yang membutuhkan orientasi berbahasa Inggris untuk kegiatan di Indonesia. Alamat kantor, cabang, dan batas wilayah layanan masih placeholder.
+P354 [Normal] Sumber dalam project:
+P355 [List Bullet] docs/PROJECT_CONTEXT.md — audience dan positioning di Indonesia.
+P356 [List Bullet] src/layouts/BaseLayout.astro — Organization/LegalService schema memakai areaServed: Indonesia.
+P357 [List Bullet] src/data/site.ts — SITE.address masih placeholder.
+P358 [Normal] Informasi yang belum tersedia atau belum pasti: Alamat resmi, daftar cabang, kota/provinsi prioritas, dan apakah layanan nasional/remote.
+P359 [Normal] Rekomendasi: Bukan kondisi project saat ini — konfirmasi kantor fisik dan area yang realistis dilayani sebelum menambahkan local SEO.
+P360 [Normal] Data tambahan yang dibutuhkan: Alamat legal, alamat operasional, cabang, dan wilayah prioritas.
+P361 [K Heading] 1.5  Apa tiga momen penting dalam perjalanan perusahaan?
+P362 [Normal] Status: Belum dapat dikonfirmasi
+P363 [Normal] Jawaban berdasarkan project: Tidak ada milestone perusahaan yang terverifikasi. Tahun berdiri, rekam jejak, statistik, dan detail pengalaman masih placeholder.
+P364 [Normal] Sumber dalam project:
+P365 [List Bullet] src/data/profile.ts — tahun berdiri masih placeholder.
+P366 [List Bullet] src/data/home.ts — HOME_STATS seluruhnya [DATA].
+P367 [List Bullet] src/data/site.ts — PROJECTS berstatus placeholder/menunggu izin publikasi.
+P368 [Normal] Informasi yang belum tersedia atau belum pasti: Tahun berdiri, milestone legal/operasional, proyek penting, ekspansi, dan bukti pendukung.
+P369 [Normal] Rekomendasi: Bukan kondisi project saat ini — isi hanya milestone yang memiliki dokumen dan izin publikasi.
+P370 [Normal] Data tambahan yang dibutuhkan: Tanggal, deskripsi peristiwa, bukti, dan approver publikasi.
+P371 [K Heading] 1.6  Dari mana pelanggan biasanya mengenal perusahaan Anda?
+P372 [Normal] Status: Belum dapat dikonfirmasi
+P373 [Normal] Jawaban berdasarkan project: Project mengimplementasikan kanal Google/SEO, artikel, WhatsApp, email, dan formulir web, tetapi tidak memuat data sumber pelanggan aktual atau atribusi lead. Karena itu tidak ada maksimal tiga sumber yang dapat dipilih secara faktual.
+P374 [Normal] Sumber dalam project:
+P375 [List Bullet] docs/SEO_GUIDELINES.md — topic model dan peran halaman untuk search intent.
+P376 [List Bullet] src/components/ContactPage.astro — WhatsApp, email, dan form.
+P377 [List Bullet] src/components/ContactForm.astro — pengiriman inquiry web.
+P378 [Normal] Informasi yang belum tersedia atau belum pasti: Data CRM, wawancara sales, atau laporan atribusi lead.
+P379 [Normal] Rekomendasi: Bukan kondisi project saat ini — minta sales memilih tiga sumber aktual berdasarkan 6-12 bulan terakhir.
+P380 [Normal] Data tambahan yang dibutuhkan: Jumlah lead/win per sumber dan periode pengukuran.
+P381 [K Heading] 1.7  Apa masalah marketing atau penjualan yang paling terasa saat ini?
+P382 [Normal] Status: Belum dapat dikonfirmasi
+P383 [Normal] Jawaban berdasarkan project: Project menjelaskan tujuan website untuk membantu orang memahami penawaran, menilai kredibilitas, membaca konten, dan memulai konsultasi, tetapi tidak menyatakan dua masalah marketing/sales aktual yang paling terasa.
+P384 [Normal] Sumber dalam project:
+P385 [List Bullet] docs/PROJECT_CONTEXT.md — Purpose menjelaskan tugas website.
+P386 [List Bullet] src/components/HomePage.astro — komposisi layanan, pengalaman, insight, dan CTA.
+P387 [Normal] Informasi yang belum tersedia atau belum pasti: Masalah yang dialami sales, data conversion, kualitas inquiry, dan ketergantungan channel.
+P388 [Normal] Rekomendasi: Bukan kondisi project saat ini — validasi maksimal dua masalah melalui owner/sales; jangan otomatis menganggap tujuan website sebagai pain point.
+P389 [Normal] Data tambahan yang dibutuhkan: Wawancara sales, funnel saat ini, volume/kualitas lead, dan alasan lost deal.
+P390 [K Heading] 1.8  Apa tiga prioritas bisnis dalam 12–24 bulan ke depan?
+P391 [Normal] Status: Belum dapat dikonfirmasi
+P392 [Normal] Jawaban berdasarkan project: Tidak ditemukan roadmap atau prioritas bisnis 12-24 bulan. Sasaran website dan keputusan teknis tersedia, tetapi bukan prioritas pertumbuhan perusahaan.
+P393 [Normal] Sumber dalam project:
+P394 [List Bullet] docs/PROJECT_CONTEXT.md — hanya memuat purpose, audience, positioning, status, dan approved technical decisions.
+P395 [List Bullet] docs/REQUIREMENTS.md — memuat scope website, bukan roadmap bisnis.
+P396 [Normal] Informasi yang belum tersedia atau belum pasti: Target revenue, segmen, wilayah, layanan baru, tender, cabang, atau kredibilitas yang diprioritaskan.
+P397 [Normal] Rekomendasi: Bukan kondisi project saat ini — pilih tiga prioritas yang memiliki owner dan indikator hasil.
+P398 [Normal] Data tambahan yang dibutuhkan: Roadmap bisnis, target 12-24 bulan, dan KPI.
+P399 [K Heading] 1.9  Perubahan apa yang ingin dirasakan setelah website baru digunakan?
+P400 [Normal] Status: Sebagian terkonfirmasi
+P401 [Normal] Jawaban berdasarkan project: Perubahan yang dinyatakan pada level project: pengambil keputusan dapat memahami penawaran, menilai kredibilitas, membaca konten regulasi yang berguna, dan memulai konsultasi. Website juga diarahkan untuk menerjemahkan kompleksitas regulasi menjadi langkah yang terurut dan siap dijadikan dasar keputusan. Tidak ada baseline atau target kuantitatif untuk membuktikan perubahan tersebut.
+P402 [Normal] Sumber dalam project:
+P403 [List Bullet] docs/PROJECT_CONTEXT.md — Purpose dan Positioning.
+P404 [List Bullet] src/components/home/HomeHero.astro — CTA konsultasi dan layanan.
+P405 [List Bullet] src/components/ContactForm.astro — alur inquiry yang diimplementasikan.
+P406 [Normal] Informasi yang belum tersedia atau belum pasti: Baseline, KPI, target conversion, target lead quality, dan periode evaluasi.
+P407 [Normal] Rekomendasi: Bukan kondisi project saat ini — ubah tujuan kualitatif ini menjadi metrik launch dan pasca-launch.
+P408 [Normal] Data tambahan yang dibutuhkan: KPI saat ini, target 3/6/12 bulan, dan sumber data pengukuran.
+P409 [K Heading] 1.10  Permintaan atau proyek seperti apa yang tidak cocok untuk perusahaan Anda?
+P410 [Normal] Status: Sebagian terkonfirmasi
+P411 [Normal] Jawaban berdasarkan project: Satu batas yang tertulis jelas: formulir website bukan kanal untuk keadaan darurat hukum atau tenggat pada hari yang sama. Project juga menegaskan final service scope, exclusions, authority boundaries, dan external partners belum dikonfirmasi, sehingga batas minimum nilai, wilayah, jenis pekerjaan, dan tipe klien belum tersedia.
+P412 [Normal] Sumber dalam project:
+P413 [List Bullet] src/components/ContactPage.astro — urgency warning.
+P414 [List Bullet] docs/PAGE_SPECIFICATIONS.md — final deliverables, exclusions, timelines, dan authority boundaries memerlukan approval.
+P415 [List Bullet] src/components/ContentPage.astro — scope note masih placeholder.
+P416 [Normal] Informasi yang belum tersedia atau belum pasti: Minimum fee/nilai proyek, jenis perkara di luar scope, wilayah, lead time, dan tipe klien yang ditolak.
+P417 [Normal] Rekomendasi: Bukan kondisi project saat ini — definisikan disqualification criteria dan tampilkan yang relevan secara aman.
+P418 [Normal] Data tambahan yang dibutuhkan: Kebijakan intake, scope hukum, SLA, minimum engagement, dan batas geografis.
+P419 [K Section] Bagian 02 — Pelanggan
+P420 [K Heading] 2.1  Gambarkan pelanggan atau proyek yang paling ingin diperoleh.
+P421 [Normal] Status: Sebagian terkonfirmasi
+P422 [Normal] Jawaban berdasarkan project: Audiens yang dituju adalah pemilik bisnis, founder, direktur, tim operasional, dan in-house legal di Indonesia; investor serta tim internasional yang memerlukan orientasi bahasa Inggris; dan perusahaan yang sedang mendirikan, memperluas, menertibkan, atau menjaga aktivitas bisnis di Indonesia. Lokasi spesifik, nilai proyek, anggaran, dan tingkat kesiapan ideal tidak tersedia.
+P423 [Normal] Sumber dalam project:
+P424 [List Bullet] docs/PROJECT_CONTEXT.md — Audience.
+P425 [List Bullet] src/components/home/HomeHero.astro — fokus kebutuhan izin dan konsultasi.
+P426 [List Bullet] src/components/ContactForm.astro — meminta organisasi, layanan, aktivitas, kebutuhan, dan target waktu.
+P427 [Normal] Informasi yang belum tersedia atau belum pasti: Industri prioritas, ukuran perusahaan, lokasi, nilai engagement, urgensi, dan readiness.
+P428 [Normal] Rekomendasi: Bukan kondisi project saat ini — definisikan satu ICP primer dan satu sekunder dengan kriteria firmografis dan kesiapan.
+P429 [Normal] Data tambahan yang dibutuhkan: Data deal terbaik, nilai proyek, industri, lokasi, siklus jual, dan kebutuhan berulang.
+P430 [K Heading] 2.2  Siapa yang terlibat dalam keputusan pembelian?
+P431 [Normal] Status: Sebagian terkonfirmasi
+P432 [Normal] Jawaban berdasarkan project: Project hanya mengidentifikasi kelompok audiens: business owners, founders, directors, operations teams, in-house legal teams, investors, dan international teams. Tidak ada bukti yang memetakan siapa pengguna layanan, siapa yang mencari/membandingkan vendor, siapa influencer, dan siapa approver final dalam proses pembelian.
+P433 [Normal] Sumber dalam project:
+P434 [List Bullet] docs/PROJECT_CONTEXT.md — Audience.
+P435 [List Bullet] docs/PROJECT_CONTEXT.md — Purpose menyebut decision-makers secara umum.
+P436 [Normal] Informasi yang belum tersedia atau belum pasti: Buying roles, kebutuhan informasi per role, dan approval chain.
+P437 [Normal] Rekomendasi: Bukan kondisi project saat ini — wawancarai sales untuk memetakan user, researcher, influencer, dan approver.
+P438 [Normal] Data tambahan yang dibutuhkan: Contoh tiga proses penjualan terbaru dan stakeholder pada setiap tahap.
+P439 [K Heading] 2.3  Dalam situasi apa pelanggan mulai merasa membutuhkan solusi Anda?
+P440 [Normal] Status: Sebagian terkonfirmasi
+P441 [Normal] Jawaban berdasarkan project: Situasi yang dipakai dalam content model adalah ketika perusahaan mendirikan usaha, memperluas lokasi/aktivitas, menertibkan legalitas, menjaga kepatuhan, memetakan OSS-RBA/KBLI, mengurus izin sektoral, atau menjalankan proyek/investasi. Ini adalah skenario konten dan layanan dalam project, bukan hasil riset perilaku pelanggan.
+P442 [Normal] Sumber dalam project:
+P443 [List Bullet] docs/PROJECT_CONTEXT.md — Audience dan positioning.
+P444 [List Bullet] src/data/site.ts — SERVICES.
+P445 [List Bullet] src/content/blog/id/checklist-legalitas-ekspansi.md — skenario ekspansi.
+P446 [List Bullet] src/content/blog/id/setelah-nib-terbit.md — kewajiban pasca-NIB.
+P447 [Normal] Informasi yang belum tersedia atau belum pasti: Trigger aktual, frekuensi, urgensi, dan bahasa yang digunakan pelanggan.
+P448 [Normal] Rekomendasi: Bukan kondisi project saat ini — validasi skenario melalui inquiry dan wawancara sales, lalu prioritaskan tiga trigger utama.
+P449 [Normal] Data tambahan yang dibutuhkan: Contoh inquiry, call notes, dan alasan pelanggan menghubungi.
+P450 [K Heading] 2.4  Apa masalah, dampak, dan hasil yang paling penting bagi pelanggan?
+P451 [Normal] Status: Sebagian terkonfirmasi
+P452 [Normal] Jawaban berdasarkan project: Content project menggambarkan tiga pola: (1) kompleksitas regulasi/kebutuhan izin yang belum terpetakan — keputusan dan urutan kerja menjadi tidak jelas — hasil yang dituju adalah langkah terurut dan siap diputuskan; (2) aktivitas, klasifikasi, data OSS, dan operasi berpotensi tidak selaras — dapat memicu pengulangan dokumen/perubahan struktur — hasil yang dituju adalah pemetaan yang konsisten; (3) kewajiban lanjutan setelah NIB dapat terlewat — kepatuhan sulit dilacak — hasil yang dituju adalah register, kalender, dan bukti proses. Pola ini berasal dari positioning dan artikel project, bukan data riset pelanggan.
+P453 [Normal] Sumber dalam project:
+P454 [List Bullet] docs/PROJECT_CONTEXT.md — Positioning: regulatory complexity menjadi ordered, decision-ready steps.
+P455 [List Bullet] src/content/blog/id/memahami-perizinan-berbasis-risiko.md — risiko pengulangan dokumen dan perubahan struktur.
+P456 [List Bullet] src/content/blog/id/setelah-nib-terbit.md — kalender kepatuhan dan bukti proses.
+P457 [Normal] Informasi yang belum tersedia atau belum pasti: Urutan prioritas, bukti dari pelanggan, besaran dampak, dan outcome komersial.
+P458 [Normal] Rekomendasi: Bukan kondisi project saat ini — gunakan tiga pola sebagai hipotesis riset, bukan klaim final.
+P459 [Normal] Data tambahan yang dibutuhkan: Wawancara pelanggan, lost-deal notes, keluhan, dan hasil engagement terukur.
+P460 [K Heading] 2.5  Apa yang biasanya membuat pelanggan akhirnya membeli atau justru batal membeli?
+P461 [Normal] Status: Belum dapat dikonfirmasi
+P462 [Normal] Jawaban berdasarkan project: Tidak ditemukan data win/loss, objection log, pipeline, atau alasan pembelian/pembatalan.
+P463 [Normal] Sumber dalam project:
+P464 [List Bullet] docs/PROJECT_CONTEXT.md — tidak memuat data penjualan.
+P465 [List Bullet] src — tidak memiliki CRM atau penyimpanan sales.
+P466 [Normal] Informasi yang belum tersedia atau belum pasti: Alasan win/loss, waktu keputusan, harga, trust, scope, dan procurement constraints.
+P467 [Normal] Rekomendasi: Bukan kondisi project saat ini — rangkum minimal 10 deal menang/kalah terbaru dan kelompokkan alasannya.
+P468 [Normal] Data tambahan yang dibutuhkan: Data CRM atau wawancara sales/partner.
+P469 [K Heading] 2.6  Apa yang paling membuat pelanggan ragu, dan apa yang membuat mereka percaya?
+P470 [Normal] Status: Sebagian terkonfirmasi
+P471 [Normal] Jawaban berdasarkan project: Project menetapkan bahwa trust harus dibangun melalui transparansi proses dan kredensial terverifikasi, bukan metrik yang dibesar-besarkan. Namun data kredensial, statistik, bukti proyek, testimonial, dan logo klien masih placeholder/dummy atau menunggu izin. Keraguan pelanggan aktual tidak didokumentasikan.
+P472 [Normal] Sumber dalam project:
+P473 [List Bullet] docs/CONTENT_GUIDELINES.md — trust melalui process transparency dan verified credentials.
+P474 [List Bullet] docs/PROJECT_CONTEXT.md — project evidence, testimonials, client logos, dan professional roster belum final.
+P475 [List Bullet] src/data/home.ts — statistik [DATA] dan client marks [DUMMY].
+P476 [Normal] Informasi yang belum tersedia atau belum pasti: Objection aktual dan bukti yang benar-benar meyakinkan pelanggan.
+P477 [Normal] Rekomendasi: Bukan kondisi project saat ini — prioritaskan bukti izin publikasi, proses kerja, credential, dan case evidence; jangan menghapus marker sebelum verifikasi.
+P478 [Normal] Data tambahan yang dibutuhkan: Objection log, testimonial berizin, credential, project proof, dan angka dengan sumber.
+P479 [K Heading] 2.7  Apa yang biasanya dibandingkan pelanggan saat memilih vendor?
+P480 [Normal] Status: Belum dapat dikonfirmasi
+P481 [Normal] Jawaban berdasarkan project: Tidak ada customer research atau sales evidence mengenai kriteria perbandingan vendor. Project menonjolkan ketelitian hukum, transparansi scope/proses, komunikasi progres, dan kredensial terverifikasi, tetapi itu adalah arah positioning, bukan bukti cara pelanggan menilai vendor.
+P482 [Normal] Sumber dalam project:
+P483 [List Bullet] docs/PROJECT_CONTEXT.md — Positioning.
+P484 [List Bullet] docs/CONTENT_GUIDELINES.md — trust principles.
+P485 [List Bullet] src/components/home/CompanySnapshot.astro — nilai pembeda yang masih disertai placeholder rekam jejak.
+P486 [Normal] Informasi yang belum tersedia atau belum pasti: Tiga kriteria utama dan cara pelanggan menilainya.
+P487 [Normal] Rekomendasi: Bukan kondisi project saat ini — tanyakan sales/pelanggan apakah scope, bukti, kecepatan, komunikasi, harga, atau pengalaman sektor yang paling menentukan.
+P488 [Normal] Data tambahan yang dibutuhkan: Interview notes, proposal comparison, dan procurement criteria.
+P489 [K Heading] 2.8  Alternatif apa yang biasanya dipertimbangkan selain memilih perusahaan Anda?
+P490 [Normal] Status: Belum dapat dikonfirmasi
+P491 [Normal] Jawaban berdasarkan project: Tidak ditemukan alternatif langsung maupun tidak langsung dalam project.
+P492 [Normal] Sumber dalam project:
+P493 [List Bullet] docs/PROJECT_CONTEXT.md — tidak memuat competitor/alternative analysis.
+P494 [List Bullet] src/data — tidak memuat data alternatif atau kompetitor.
+P495 [Normal] Informasi yang belum tersedia atau belum pasti: Alternatif seperti internal legal, konsultan lain, notaris, pengurusan mandiri, menunda, atau vendor murah dan alasan pemilihannya.
+P496 [Normal] Rekomendasi: Bukan kondisi project saat ini — isi dari pengalaman sales, bukan dari asumsi industri.
+P497 [Normal] Data tambahan yang dibutuhkan: Nama/jenis alternatif dari inquiry nyata dan alasan pelanggan mempertimbangkannya.
+P498 [K Heading] 2.9  Tuliskan pertanyaan atau kalimat yang benar-benar sering digunakan pelanggan.
+P499 [Normal] Status: Belum dapat dikonfirmasi
+P500 [Normal] Jawaban berdasarkan project: Tidak ada kutipan pelanggan, FAQ berdasarkan inquiry, transkrip, atau log pencarian. Placeholder form meminta aktivitas usaha, kebutuhan, lokasi, dan target waktu, tetapi itu adalah prompt buatan project, bukan bahasa pelanggan aktual.
+P501 [Normal] Sumber dalam project:
+P502 [List Bullet] src/components/ContactForm.astro — prompt form buatan project.
+P503 [List Bullet] docs/CONTENT_GUIDELINES.md — aturan penulisan, bukan customer quotes.
+P504 [Normal] Informasi yang belum tersedia atau belum pasti: Pertanyaan verbatim dari email, WhatsApp, sales calls, dan search terms.
+P505 [Normal] Rekomendasi: Bukan kondisi project saat ini — kumpulkan dan anonimisasi minimal 20 pertanyaan nyata untuk copy/SEO.
+P506 [Normal] Data tambahan yang dibutuhkan: Export inquiry yang dianonimkan, call notes, dan Search Console jika tersedia.
+P507 [K Section] Bagian 03 — Positioning
+P508 [K Heading] 3.1  Setelah melihat website, apa satu hal yang paling penting untuk dipahami atau diingat orang?
+P509 [Normal] Status: Terkonfirmasi
+P510 [Normal] Jawaban berdasarkan project: Arah pesan utama project adalah: Galdino & Partner membantu bisnis memetakan persyaratan, menyiapkan dokumen, dan mengawal pengurusan izin hingga tindak lanjut, dengan kemampuan legal dan regulasi sebagai pendukung. Dokumentasi menegaskan positioning permit handling first dan melarang jaminan atas hasil yang dikendalikan otoritas.
+P511 [Normal] Sumber dalam project:
+P512 [List Bullet] src/components/home/HomeHero.astro — headline, lead, proof, dan CTA utama.
+P513 [List Bullet] docs/PAGE_SPECIFICATIONS.md — homepage positioning permit handling first.
+P514 [List Bullet] docs/PROJECT_CONTEXT.md — positioning dan larangan guarantee authority-controlled outcomes.
+P515 [Normal] Rekomendasi: Bukan kondisi project saat ini — pertahankan pesan ini sebagai draft utama dan minta approval final stakeholder.
+P516 [K Heading] 3.2  Siapa kompetitor yang paling sering dibandingkan dengan perusahaan Anda?
+P517 [Normal] Status: Belum dapat dikonfirmasi
+P518 [Normal] Jawaban berdasarkan project: Tidak ada nama, URL, atau analisis kompetitor dalam codebase dan dokumentasi project.
+P519 [Normal] Sumber dalam project:
+P520 [List Bullet] src/data — tidak memuat competitor records.
+P521 [List Bullet] docs/PROJECT_CONTEXT.md — tidak memuat competitor comparison.
+P522 [Normal] Informasi yang belum tersedia atau belum pasti: Maksimal tiga kompetitor yang benar-benar muncul dalam proses penjualan dan URL-nya.
+P523 [Normal] Rekomendasi: Bukan kondisi project saat ini — isi hanya kompetitor yang disebut oleh prospek/sales, bukan hasil pencarian umum.
+P524 [Normal] Data tambahan yang dibutuhkan: Win/loss notes, proposal pembanding, atau wawancara sales.
+P525 [K Heading] 3.3  Apa tiga kemampuan atau kualitas terbaik perusahaan Anda?
+P526 [Normal] Status: Sebagian terkonfirmasi
+P527 [Normal] Jawaban berdasarkan project: Tiga kualitas yang dinyatakan project adalah: (1) ketelitian hukum; (2) komunikasi progres; (3) fokus pada penyelesaian kebutuhan izin melalui pemetaan langkah yang jelas. Manfaat yang dimaksud adalah proses lebih tertib, dapat ditelusuri, dan siap mendukung keputusan. Project tidak memiliki bukti operasional terverifikasi untuk menguatkan klaim tersebut.
+P528 [Normal] Sumber dalam project:
+P529 [List Bullet] src/data/profile.ts — company paragraphs menyebut legal precision, progress communication, dan focus on resolution.
+P530 [List Bullet] src/components/home/CompanySnapshot.astro — nilai pembeda yang sama dengan marker rekam jejak belum terverifikasi.
+P531 [List Bullet] docs/PROJECT_CONTEXT.md — positioning ordered, decision-ready steps.
+P532 [Normal] Informasi yang belum tersedia atau belum pasti: Contoh kasus, SOP, credential, testimonial, atau KPI yang membuktikan tiap kualitas.
+P533 [Normal] Rekomendasi: Bukan kondisi project saat ini — pertahankan sebagai hipotesis klaim sampai bukti dan approver tersedia.
+P534 [Normal] Data tambahan yang dibutuhkan: Bukti proses, case evidence, feedback klien, dan credential.
+P535 [K Heading] 3.4  Dari keunggulan tersebut, apa yang benar-benar berbeda dibandingkan kompetitor atau alternatif lain?
+P536 [Normal] Status: Sebagian terkonfirmasi
+P537 [Normal] Jawaban berdasarkan project: Project menyebut kombinasi ketelitian hukum, komunikasi progres, fokus penyelesaian, serta penerjemahan kompleksitas regulasi menjadi langkah yang terurut sebagai nilai pembeda yang diinginkan. Tidak ada competitor evidence yang membuktikan bahwa kombinasi ini unik atau sulit ditiru.
+P538 [Normal] Sumber dalam project:
+P539 [List Bullet] docs/PROJECT_CONTEXT.md — Positioning.
+P540 [List Bullet] src/data/profile.ts — differentiating values dalam company paragraphs.
+P541 [List Bullet] docs/CONTENT_GUIDELINES.md — process transparency sebagai dasar trust.
+P542 [Normal] Informasi yang belum tersedia atau belum pasti: Perbandingan kompetitor, proses proprietary, SLA, credential, atau bukti hasil.
+P543 [Normal] Rekomendasi: Bukan kondisi project saat ini — jangan menyatakan 'unik' sebelum pembanding dan bukti diverifikasi.
+P544 [Normal] Data tambahan yang dibutuhkan: Process map, benchmark kompetitor yang bersumber dari sales, dan evidence.
+P545 [K Heading] 3.5  Hubungkan klaim, bukti, dan manfaatnya.
+P546 [Normal] Status: Sebagian terkonfirmasi
+P547 [Normal] Jawaban berdasarkan project: Klaim yang ada beserta status bukti: (1) 'pemetaan persyaratan dan pengawalan proses' — bukti yang tersedia hanya implementasi copy/process empat langkah pada website, bukan bukti delivery klien — manfaat yang dikomunikasikan: kebutuhan menjadi rencana kerja; (2) 'pengalaman relevan' — project/hasil/tahun masih placeholder — manfaat yang dituju: kredibilitas; (3) 'tim perizinan/legal' — nama, role, dan expertise ada di data, tetapi foto, credential, kontak, dan identitas profesional belum diverifikasi — manfaat yang dituju: kejelasan siapa yang menangani. Belum ada claim-evidence pair yang siap dianggap terverifikasi secara bisnis.
+P548 [Normal] Sumber dalam project:
+P549 [List Bullet] src/components/home/PermitProcess.astro — empat langkah proses.
+P550 [List Bullet] src/data/site.ts — PROJECTS masih placeholder.
+P551 [List Bullet] src/data/profile.ts — nama/role/expertise dengan credential/contact placeholder.
+P552 [List Bullet] docs/PROJECT_CONTEXT.md — project evidence dan professional roster belum final.
+P553 [Normal] Informasi yang belum tersedia atau belum pasti: Bukti publishable untuk setiap klaim.
+P554 [Normal] Rekomendasi: Bukan kondisi project saat ini — buat evidence register: klaim, sumber, owner, tanggal verifikasi, izin publikasi, dan manfaat.
+P555 [Normal] Data tambahan yang dibutuhkan: Dokumen case, izin klien, credential, statistik, testimonial, dan approver.
+P556 [K Heading] 3.6  Apakah ada klaim, istilah, nama klien, proyek, atau aset yang tidak boleh digunakan?
+P557 [Normal] Status: Terkonfirmasi
+P558 [Normal] Jawaban berdasarkan project: Ya. Project melarang jaminan hasil yang dikendalikan otoritas, istilah 'guarantee', 'fastest', '100% approved', dan superlatif tanpa dukungan. Nama/logo/testimonial klien dan detail proyek tidak boleh dipublikasikan tanpa verifikasi substansi serta izin tertulis. Legal name, registrasi, profesional, outcome, angka, harga, foto konsep, dan aset ber-marker placeholder/dummy tidak boleh diperlakukan sebagai fakta final. Artikel legal memerlukan subject-matter review dan current-law verification sebelum produksi.
+P559 [Normal] Sumber dalam project:
+P560 [List Bullet] docs/CONTENT_GUIDELINES.md — voice, kata yang dihindari, placeholder, dan legal review.
+P561 [List Bullet] docs/REQUIREMENTS.md — content integrity.
+P562 [List Bullet] docs/COMPONENT_GUIDELINES.md — placeholder identities, statistics, clients, prices, video, projects.
+P563 [List Bullet] docs/PAGE_SPECIFICATIONS.md — client logos/testimonials memerlukan izin tertulis.
+P564 [Normal] Rekomendasi: Bukan kondisi project saat ini — pertahankan marker sampai evidence register dan approval publikasi lengkap.
+P565 [K Section] Bagian 04 — Brand
+P566 [K Heading] 4.1  Bagaimana status brand guideline perusahaan?
+P567 [Normal] Status: Sebagian terkonfirmasi
+P568 [Normal] Jawaban berdasarkan project: Project memiliki design system internal yang rinci dan menyebut mark merah-hitam-emas sebagai approved transparent brand asset. Namun tidak ditemukan dokumen brand guideline korporat terpisah atau pernyataan stakeholder tentang apakah guideline wajib diikuti sepenuhnya, boleh dikembangkan, atau sudah tidak relevan. Karena itu pilihan form tidak dapat dicentang secara pasti.
+P569 [Normal] Sumber dalam project:
+P570 [List Bullet] docs/DESIGN_SYSTEM.md — direction, brand assets, tokens, typography, responsive, dan motion.
+P571 [List Bullet] public/assets/gp-logo-brand.png — master mark yang digunakan.
+P572 [List Bullet] src/styles/global.css — shared brand tokens.
+P573 [Normal] Informasi yang belum tersedia atau belum pasti: Brand manual korporat, versi, pemilik, dan tingkat kebebasan penggunaan.
+P574 [Normal] Rekomendasi: Bukan kondisi project saat ini — pisahkan 'design system website' dari 'brand guideline korporat' dan minta approver mengonfirmasi statusnya.
+P575 [Normal] Data tambahan yang dibutuhkan: File guideline, logo pack resmi, aturan warna/type, dan approval owner.
+P576 [K Heading] 4.2  Pilih maksimal tiga karakter brand.
+P577 [Normal] Status: Sebagian terkonfirmasi
+P578 [Normal] Jawaban berdasarkan project: Untuk arah website, tiga karakter yang paling eksplisit dari project adalah Modern (modern clarity), Premium, dan Tegas (decisive). Dokumen juga menyebut legal-oriented dan business-focused, sementara voice harus calm, precise, practical, dan commercially aware. Ini adalah arah desain/copy project, bukan hasil konfirmasi brand stakeholder pada form.
+P579 [Normal] Sumber dalam project:
+P580 [List Bullet] docs/DESIGN_SYSTEM.md — modern clarity, premium, decisive, legal-oriented, business-focused.
+P581 [List Bullet] docs/CONTENT_GUIDELINES.md — calm, precise, practical, commercially aware voice.
+P582 [Normal] Informasi yang belum tersedia atau belum pasti: Persetujuan stakeholder bahwa tiga karakter tersebut mewakili brand perusahaan.
+P583 [Normal] Rekomendasi: Bukan kondisi project saat ini — minta approver memilih maksimal tiga dan memberi contoh perilaku/copy untuk tiap karakter.
+P584 [Normal] Data tambahan yang dibutuhkan: Brand workshop atau approval tertulis.
+P585 [K Heading] 4.3  Pilih satu gaya komunikasi utama.
+P586 [Normal] Status: Terkonfirmasi
+P587 [Normal] Jawaban berdasarkan project: Gaya komunikasi utama yang paling sesuai dengan aturan project adalah 'Profesional, mudah dipahami'. Project meminta penjelasan regulasi dalam bahasa sederhana tanpa menghilangkan nuansa hukum, dengan voice tenang, presisi, praktis, dan sadar konteks komersial.
+P588 [Normal] Sumber dalam project:
+P589 [List Bullet] docs/CONTENT_GUIDELINES.md — Voice dan Conversion copy.
+P590 [List Bullet] docs/PROJECT_CONTEXT.md — menghubungkan kebutuhan legal dengan operasi bisnis tanpa guarantee.
+P591 [Normal] Rekomendasi: Bukan kondisi project saat ini — pertahankan gaya ini dan lakukan legal/editorial review untuk tiap artikel.
+P592 [K Heading] 4.4  Tuliskan istilah yang wajib digunakan dan gaya yang harus dihindari.
+P593 [Normal] Status: Terkonfirmasi
+P594 [Normal] Jawaban berdasarkan project: Istilah/gaya yang dianjurkan: membantu, memetakan, meninjau/review, mengawal/guide, aktivitas, masalah, dan langkah berikutnya. Gaya yang dihindari: jaminan hasil, 'tercepat', '100% approved', superlatif tanpa dukungan, menyederhanakan nuansa hukum, serta klaim authority-controlled outcome.
+P595 [Normal] Sumber dalam project:
+P596 [List Bullet] docs/CONTENT_GUIDELINES.md — kata kerja yang digunakan/dihindari dan aturan conversion copy.
+P597 [List Bullet] docs/PROJECT_CONTEXT.md — larangan guarantee authority-controlled outcomes.
+P598 [Normal] Rekomendasi: Bukan kondisi project saat ini — jadikan daftar ini checklist copy review dan tambahkan istilah legal resmi yang disetujui subject-matter reviewer.
+P599 [K Heading] 4.5  Seberapa bebas tim KULTIVATE dapat mengembangkan tampilan brand?
+P600 [Normal] Status: Sebagian terkonfirmasi
+P601 [Normal] Jawaban berdasarkan project: Source sudah menerapkan arah visual yang preskriptif: monochrome surfaces, brand red, restrained gold, square-edged components, system typography, dan purposeful motion. Namun tidak ada pernyataan stakeholder yang menentukan tingkat kebebasan tim KULTIVATE terhadap identitas utama.
+P602 [Normal] Sumber dalam project:
+P603 [List Bullet] docs/DESIGN_SYSTEM.md — direction dan aturan visual.
+P604 [List Bullet] src/styles/global.css — brand tokens.
+P605 [List Bullet] src/components/HomePage.astro dan src/components/ProfilePage.astro — page-scoped brand aliases.
+P606 [Normal] Informasi yang belum tersedia atau belum pasti: Batas perubahan logo, warna, tipografi, layout, fotografi, dan tone.
+P607 [Normal] Rekomendasi: Bukan kondisi project saat ini — pilih 'boleh dikembangkan selama identitas utama dipertahankan' hanya jika approver menyetujuinya; jangan mencentang tanpa approval.
+P608 [Normal] Data tambahan yang dibutuhkan: Keputusan tertulis brand owner.
+P609 [K Heading] 4.6  Adakah warna, simbol, foto, ilustrasi, atau gaya visual yang wajib dipakai atau dilarang?
+P610 [Normal] Status: Terkonfirmasi
+P611 [Normal] Jawaban berdasarkan project: Wajib/ditetapkan project: transparent red-black-gold master logo tanpa background plate; monochrome white/black/paper surfaces; primary red untuk action/active/focus; gold sebagai aksen sekunder; system sans typography; foto/visual harus memiliki alt text dan izin. Dilarang/dihindari: white/off-white plate di belakang logo, glassmorphism, glow, decorative looping animation, excessive gradients, generic icon grids, repeated identical cards, WebGL/3D, unverified imagery/claims. Seluruh concept imagery harus diganti dengan aset resmi sebelum klaim launch difinalkan.
+P612 [Normal] Sumber dalam project:
+P613 [List Bullet] docs/DESIGN_SYSTEM.md — brand assets, tokens, prohibited patterns, dan concept imagery.
+P614 [List Bullet] docs/PROJECT_CONTEXT.md — no WebGL/3D.
+P615 [List Bullet] docs/ACCESSIBILITY_GUIDELINES.md — alt text dan accessible visuals.
+P616 [Normal] Rekomendasi: Bukan kondisi project saat ini — lengkapi asset usage register dan persetujuan foto sebelum mengganti marker concept.
+P617 [K Heading] 4.7  Website atau brand apa yang menjadi referensi?
+P618 [Normal] Status: Sebagian terkonfirmasi
+P619 [Normal] Jawaban berdasarkan project: Satu referensi internal yang disebut adalah 'Mockup 1' sebagai production direction. Project tidak memuat URL atau nama brand/website eksternal yang menjadi referensi, sehingga tiga referensi form tidak dapat diisi.
+P620 [Normal] Sumber dalam project:
+P621 [List Bullet] docs/DESIGN_SYSTEM.md — production direction follows Mockup 1.
+P622 [List Bullet] docs/ARCHITECTURE.md — HomePage owns Mockup 1 section composition.
+P623 [Normal] Informasi yang belum tersedia atau belum pasti: Nama/URL referensi eksternal dan aspek yang disukai/tidak ingin ditiru.
+P624 [Normal] Rekomendasi: Bukan kondisi project saat ini — bila dibutuhkan, stakeholder mengisi maksimal tiga referensi; jangan mengarang dari gaya implementasi.
+P625 [Normal] Data tambahan yang dibutuhkan: URL, screenshot, dan penjelasan pola yang disukai/dihindari.
+P626 [K Heading] 4.8  Apakah perusahaan memiliki parent company, subbrand, atau beberapa unit bisnis?
+P627 [Normal] Status: Belum dapat dikonfirmasi
+P628 [Normal] Jawaban berdasarkan project: Tidak ditemukan parent company, subbrand, unit bisnis, atau relasi antarbrand. Source hanya mendefinisikan satu display name dan short name.
+P629 [Normal] Sumber dalam project:
+P630 [List Bullet] src/data/site.ts — SITE hanya mendefinisikan satu displayName dan shortName.
+P631 [List Bullet] docs/PROJECT_CONTEXT.md — tidak memuat arsitektur brand.
+P632 [Normal] Informasi yang belum tersedia atau belum pasti: Struktur korporat/brand dan aturan logo/hierarki.
+P633 [Normal] Rekomendasi: Bukan kondisi project saat ini — konfirmasi dengan dokumen korporat dan brand owner.
+P634 [Normal] Data tambahan yang dibutuhkan: Daftar entitas/unit, hubungan hukum, brand yang harus menonjol, dan logo resmi.
+P635 [K Section] Bagian 05 — Website
+P636 [K Heading] 5.1  Urutkan tiga pekerjaan terpenting website.
+P637 [Normal] Status: Sebagian terkonfirmasi
+P638 [Normal] Jawaban berdasarkan project: Urutan kerja yang paling dekat dengan Purpose project adalah: (1) menjelaskan penawaran/layanan perizinan dan legal-regulasi agar decision-maker memahami kebutuhan; (2) membantu pengunjung menilai kredibilitas melalui profil, proses, pengalaman, dan konten; (3) memulai konsultasi melalui form, WhatsApp, atau email. Project juga menempatkan regulatory content sebagai tugas penting, tetapi dokumentasi tidak secara eksplisit menyebut tiga item tersebut sebagai ranking yang disetujui stakeholder.
+P639 [Normal] Sumber dalam project:
+P640 [List Bullet] docs/PROJECT_CONTEXT.md — Purpose.
+P641 [List Bullet] src/components/HomePage.astro — section composition layanan, company, experience, insight, CTA.
+P642 [List Bullet] src/components/ContactPage.astro — kanal konsultasi.
+P643 [Normal] Informasi yang belum tersedia atau belum pasti: Persetujuan ranking dan KPI untuk tiap pekerjaan.
+P644 [Normal] Rekomendasi: Bukan kondisi project saat ini — validasi urutan ini dengan stakeholder dan hubungkan tiap pekerjaan ke satu KPI.
+P645 [Normal] Data tambahan yang dibutuhkan: Prioritas bisnis, funnel, dan indikator keberhasilan.
+P646 [K Heading] 5.2  Bagaimana alur setelah pengunjung tertarik?
+P647 [Normal] Status: Sebagian terkonfirmasi
+P648 [Normal] Jawaban berdasarkan project: Alur terimplementasi: pengunjung memilih CTA konsultasi menuju /{locale}/contact/ atau membuka WhatsApp; formulir meminta nama, email, nomor WhatsApp, perusahaan/organisasi, jenis layanan, pesan, dan consent, dengan locale serta honeypot tersembunyi; browser mengirim FormData ke POST /api/contact; server memeriksa origin dan content type, rate limit, normalisasi/validasi, lalu mengirim email melalui Resend ke recipient yang ditentukan CONTACT_TO_EMAIL. Contact copy menyatakan informasi awal akan ditinjau sebelum langkah berikutnya diusulkan. Nama penerima/PIC, workflow follow-up aktual, dan waktu respons normal tidak tersedia. WhatsApp adalah jalur terpisah dan bukan tujuan otomatis submission form.
+P649 [Normal] Sumber dalam project:
+P650 [List Bullet] src/components/ContactForm.astro — field, client validation, fetch, status, dan reset.
+P651 [List Bullet] src/pages/api/contact.ts — POST flow, rate limit, validation, Resend delivery, error responses.
+P652 [List Bullet] src/components/ContactPage.astro — janji review informasi awal dan kanal langsung.
+P653 [List Bullet] .env.example — hanya nama variabel konfigurasi tujuan/sender, bukan workflow bisnis.
+P654 [Normal] Informasi yang belum tersedia atau belum pasti: PIC penerima, triage, assignment, SLA respons, dan langkah sales setelah email.
+P655 [Normal] Rekomendasi: Bukan kondisi project saat ini — dokumentasikan owner inbox, routing, SLA, dan fallback agar implementasi teknis tersambung ke proses bisnis.
+P656 [Normal] Data tambahan yang dibutuhkan: Nama inbox/owner, SOP lead handling, jam layanan, dan response-time target.
+P657 [K Heading] 5.3  Inquiry seperti apa yang dianggap berkualitas?
+P658 [Normal] Status: Sebagian terkonfirmasi
+P659 [Normal] Jawaban berdasarkan project: Form dan copy meminta perusahaan/organisasi, jenis layanan, aktivitas/kebutuhan, lokasi, dan target waktu; ini memberi struktur awal untuk menilai inquiry. Namun tidak ada definisi qualified lead terkait industri, wilayah, anggaran/nilai proyek, decision authority, readiness, atau disqualification.
+P660 [Normal] Sumber dalam project:
+P661 [List Bullet] src/components/ContactForm.astro — field wajib dan message prompt.
+P662 [List Bullet] src/components/home/HomeFinalCta.astro — meminta aktivitas, lokasi, dan target.
+P663 [List Bullet] src/utils/contact.ts — aturan validasi field.
+P664 [Normal] Informasi yang belum tersedia atau belum pasti: Kriteria kualitas, scoring, budget, authority, need, timing, wilayah, dan minimum engagement.
+P665 [Normal] Rekomendasi: Bukan kondisi project saat ini — definisikan lead qualification dan sesuaikan field tanpa menambah friksi yang tidak perlu.
+P666 [Normal] Data tambahan yang dibutuhkan: Kriteria deal yang diterima/ditolak dan data win/loss.
+P667 [K Heading] 5.4  Informasi apa yang wajib tersedia di website?
+P668 [Normal] Status: Sebagian terkonfirmasi
+P669 [Normal] Jawaban berdasarkan project: Informasi/struktur yang sudah ada: Home; Profile perusahaan; direktori tiga nama tim dan detail profil bilingual; Services (4 kategori bersama dan 15 entri homepage); Our Experiences/Projects; proses empat langkah; Blog/Insight; Contact; disclaimer informasi umum; direct WhatsApp/email; metadata/structured data. Belum final atau masih placeholder: legal name, alamat, registrasi, tahun berdiri, credential/kontak profesional, statistik, harga tertentu, project outcome/tahun, client logos, testimonial, official photography, privacy policy, terms, video, serta detail scope. Tidak ditemukan certificate/permit showcase, company-profile download, careers, tender information, FAQ, atau verified achievements. REQUIREMENTS menyebut FAQ pada homepage, tetapi implementasi HomePage tidak memuat komponen FAQ; kondisi aktual diprioritaskan.
+P670 [Normal] Sumber dalam project:
+P671 [List Bullet] src/components/HomePage.astro — section aktual homepage tanpa FAQ.
+P672 [List Bullet] src/components/ContentPage.astro — Services dan Projects.
+P673 [List Bullet] src/components/ProfilePage.astro dan src/components/PersonProfilePage.astro — profil/tim.
+P674 [List Bullet] src/components/BlogIndexPage.astro dan src/components/BlogPostPage.astro — blog.
+P675 [List Bullet] src/data/site.ts, src/data/home.ts, src/data/profile.ts — status placeholder.
+P676 [List Bullet] docs/REQUIREMENTS.md — requirement FAQ yang berbeda dari implementasi aktual.
+P677 [Normal] Informasi yang belum tersedia atau belum pasti: Keputusan informasi wajib final dan data siap publikasi.
+P678 [Normal] Rekomendasi: Bukan kondisi project saat ini — tetapkan content acceptance checklist; jangan launch sebagai final sebelum placeholder kritis diselesaikan.
+P679 [Normal] Data tambahan yang dibutuhkan: Approved content inventory, legal/privacy copy, evidence, credential, dan scope final.
+P680 [K Heading] 5.5  Apakah website membutuhkan fungsi khusus?
+P681 [Normal] Status: Terkonfirmasi
+P682 [Normal] Jawaban berdasarkan project: Fungsi khusus yang benar-benar terimplementasi: lebih dari satu bahasa (ID/EN); file-based localized routes; blog Markdown dengan filter kategori/tags, related posts, paired translationKey, dan draft exclusion; dynamic static routes untuk artikel dan profil tim; RSS per locale; sitemap integration dan robots; serverless contact form; external email delivery; optional distributed rate limiting; same-origin/content-type checks; carousels/drag/keyboard; scroll-preserving language switch; reduced-motion handling; schema JSON-LD. Tidak ditemukan banyak cabang, large product catalog/search produk, upload dokumen, download katalog, careers, event registration, login/user area, payment online, CRM/ERP, atau CMS. Dokumentasi menyatakan no CMS dan no file upload.
+P683 [Normal] Sumber dalam project:
+P684 [List Bullet] astro.config.mjs — i18n, static output, Vercel adapter, sitemap.
+P685 [List Bullet] src/pages — route ID/EN, dynamic blog/profile, RSS, robots, API.
+P686 [List Bullet] src/pages/api/contact.ts — serverless integration.
+P687 [List Bullet] src/components/CompanyGallery.astro dan src/components/home/ServiceCarousel.astro — carousel interactions.
+P688 [List Bullet] docs/PROJECT_CONTEXT.md — no CMS; no WebGL/3D.
+P689 [List Bullet] docs/SERVERLESS_CONTACT_FORM.md — no file uploads.
+P690 [Normal] Rekomendasi: Bukan kondisi project saat ini — jangan mencentang fungsi yang hanya disebut sebagai pilihan form atau requirement lama tanpa file implementasi.
+P691 [K Heading] 5.6  Apabila membutuhkan lebih dari satu bahasa, jelaskan kebutuhannya.
+P692 [Normal] Status: Sebagian terkonfirmasi
+P693 [Normal] Jawaban berdasarkan project: Bahasa yang diimplementasikan adalah Bahasa Indonesia dan English. Bahasa Indonesia adalah default tetapi tetap diprefix /id/; English memakai /en/; root / redirect 302 ke /id/. Seluruh fixed page tersedia pada kedua locale, tiga artikel memiliki pasangan translationKey, dan tiga person routes menggunakan slug sama di kedua bahasa. Source sudah berisi materi bilingual. Penyedia/penanggung jawab terjemahan dan proses approval tidak disebutkan.
+P694 [Normal] Sumber dalam project:
+P695 [List Bullet] astro.config.mjs — locale list, default, prefix behavior.
+P696 [List Bullet] src/pages/index.astro — redirect root ke /id/.
+P697 [List Bullet] src/pages/id dan src/pages/en — route pairs.
+P698 [List Bullet] src/content/blog — tiga pasangan artikel via translationKey.
+P699 [List Bullet] docs/I18N_GUIDELINES.md — parity dan natural translation rules.
+P700 [Normal] Informasi yang belum tersedia atau belum pasti: Translation owner, review workflow, dan legal terminology approver.
+P701 [Normal] Rekomendasi: Bukan kondisi project saat ini — tetapkan penerjemah/reviewer dan checklist parity sebelum publish.
+P702 [Normal] Data tambahan yang dibutuhkan: Nama translation owner, legal reviewer, dan source-of-truth bahasa.
+P703 [K Heading] 5.7  Untuk kebutuhan apa perusahaan paling ingin ditemukan di Google?
+P704 [Normal] Status: Sebagian terkonfirmasi
+P705 [Normal] Jawaban berdasarkan project: Topic model project menetapkan tema: konsultan perizinan, law firm Indonesia, perizinan usaha, legalitas perusahaan, OSS-RBA, izin sektoral, kepatuhan regulasi, serta project and investment licensing. Services diarahkan ke commercial intent; Profile dan Projects ke entity trust; blog ke informational intent. Wilayah yang dinyatakan adalah Indonesia. Tidak ada keyword research, Search Console, volume, ranking, customer-language evidence, atau daftar website yang sering muncul.
+P706 [Normal] Sumber dalam project:
+P707 [List Bullet] docs/SEO_GUIDELINES.md — Topic model dan page intent.
+P708 [List Bullet] src/components/HomePage.astro — localized SEO title/description.
+P709 [List Bullet] src/content/blog — enam artikel bilingual pada OSS-RBA, NIB, ekspansi, dan compliance.
+P710 [List Bullet] src/layouts/BaseLayout.astro — canonical, hreflang, Open Graph, Organization/LegalService schema.
+P711 [Normal] Informasi yang belum tersedia atau belum pasti: Keyword research, wilayah/kota prioritas, bahasa pelanggan, volume, current rankings, dan SERP competitors.
+P712 [Normal] Rekomendasi: Bukan kondisi project saat ini — gunakan topic model sebagai seed, lalu lakukan riset berbasis data terpisah; jangan menganggapnya hasil keyword research.
+P713 [Normal] Data tambahan yang dibutuhkan: Search Console/analytics, target market, keyword data, dan SERP review.
+P714 [K Heading] 5.8  Apakah perusahaan sudah memiliki website dan riwayat SEO?
+P715 [Normal] Status: Belum dapat dikonfirmasi
+P716 [Normal] Jawaban berdasarkan project: Codebase membangun website baru, tetapi domain pada konfigurasi masih example placeholder dan tidak ada data website lama, analytics, Search Console, ranking, traffic, redirect map, atau riwayat pekerjaan SEO. Implementasi SEO teknis tersedia, tetapi itu bukan riwayat SEO.
+P717 [Normal] Sumber dalam project:
+P718 [List Bullet] astro.config.mjs — fallback site memakai example domain.
+P719 [List Bullet] src/data/site.ts — SITE.domain masih example domain.
+P720 [List Bullet] docs/PROJECT_CONTEXT.md — domain belum final.
+P721 [List Bullet] docs/SEO_GUIDELINES.md — checklist sebelum launch, bukan historical data.
+P722 [Normal] Informasi yang belum tersedia atau belum pasti: URL lama, platform, sitemap, ranking pages, traffic, backlinks, redirect requirements, dan bagian yang harus dipertahankan.
+P723 [Normal] Rekomendasi: Bukan kondisi project saat ini — audit domain lama dan buat redirect inventory sebelum mengganti website.
+P724 [Normal] Data tambahan yang dibutuhkan: URL produksi/legacy, Search Console, analytics, sitemap, crawl, dan historical SEO reports.
+P725 [K Heading] 5.9  Setelah formulir diisi, data perlu dikirim atau dicatat ke mana?
+P726 [Normal] Status: Terkonfirmasi
+P727 [Normal] Jawaban berdasarkan project: Data form dikirim sebagai email melalui Resend ke mailbox yang dikonfigurasi dengan CONTACT_TO_EMAIL. Website tidak menyimpan submission. Upstash, bila dikonfigurasi, hanya dipakai untuk counter rate limit dan bukan penyimpanan isi lead. WhatsApp dan mailto tersedia sebagai kanal langsung terpisah; submission form tidak otomatis dikirim ke WhatsApp. Tidak ada CRM, Google Sheets, ERP, marketing automation, helpdesk, recruitment system, payment system, atau database lead pada source.
+P728 [Normal] Sumber dalam project:
+P729 [List Bullet] src/pages/api/contact.ts — Resend API call dan env names.
+P730 [List Bullet] docs/SERVERLESS_CONTACT_FORM.md — no submission storage dan external processors.
+P731 [List Bullet] src/components/ContactPage.astro — WhatsApp/email direct channels.
+P732 [Normal] Rekomendasi: Bukan kondisi project saat ini — konfirmasi retention/privacy pada mailbox dan tambah CRM hanya bila workflow bisnis memerlukannya.
+P733 [K Heading] 5.10  Apa yang perlu dapat diukur setelah website diluncurkan?
+P734 [Normal] Status: Belum dapat dikonfirmasi
+P735 [Normal] Jawaban berdasarkan project: Tidak ada analytics, tag manager, event tracking, conversion API, consent manager, atau data layer pada dependency/config/source. Titik interaksi yang dapat diukur secara potensial memang ada—CTA WhatsApp, mailto, form submit, service/detail clicks, article visits, language switch—tetapi tracking-nya belum diimplementasikan dan project tidak menetapkan KPI.
+P736 [Normal] Sumber dalam project:
+P737 [List Bullet] package.json — tidak memuat analytics dependency.
+P738 [List Bullet] src/layouts/BaseLayout.astro — tidak memuat analytics script.
+P739 [List Bullet] src/components/ContactForm.astro — form behavior tanpa event analytics.
+P740 [List Bullet] vercel.json — CSP connect-src hanya self; external analytics belum diizinkan.
+P741 [Normal] Informasi yang belum tersedia atau belum pasti: KPI, tool analytics, consent basis, event naming, ownership, dan target.
+P742 [Normal] Rekomendasi: Bukan kondisi project saat ini — minimal ukur form success, WhatsApp click, organic landing traffic, dan qualified lead setelah privacy/consent disetujui.
+P743 [Normal] Data tambahan yang dibutuhkan: Measurement plan, legal/privacy approval, analytics vendor, baseline, dan targets.
+P744 [K Heading] 5.11  Siapa yang akan memperbarui konten website setelah diluncurkan?
+P745 [Normal] Status: Sebagian terkonfirmasi
+P746 [Normal] Jawaban berdasarkan project: Model maintenance yang didokumentasikan adalah file-based: business/navigation facts di src/data/site.ts, homepage di src/data/home.ts, profile di src/data/profile.ts, dan artikel pada Markdown Content Collections. Tidak ada CMS. Workflow meminta paired translations, draft selama review, legal/editorial approval, updatedDate untuk revisi substantif, dan build/QA. Tidak ada nama/jabatan penanggung jawab, frekuensi, atau kebutuhan training.
+P747 [Normal] Sumber dalam project:
+P748 [List Bullet] docs/COMPONENT_GUIDELINES.md — lokasi sumber data/content.
+P749 [List Bullet] docs/DEVELOPMENT_WORKFLOW.md — content workflow dan QA.
+P750 [List Bullet] docs/PROJECT_CONTEXT.md — no CMS.
+P751 [List Bullet] src/content.config.ts — schema blog.
+P752 [Normal] Informasi yang belum tersedia atau belum pasti: Content owner, reviewer legal, deployment owner, cadence, dan skill akses repository.
+P753 [Normal] Rekomendasi: Bukan kondisi project saat ini — tunjuk content owner dan developer/deployment owner; siapkan training Git/Markdown atau pertimbangkan CMS hanya bila workflow editorial membutuhkan.
+P754 [Normal] Data tambahan yang dibutuhkan: Nama owner, kemampuan teknis, frekuensi update, approval chain, dan kebutuhan training.
+P755 [K Section] Bagian 06 — Aset
+P756 [K Heading] 6.1  Materi apa yang sudah dimiliki?
+P757 [Normal] Status: Sebagian terkonfirmasi
+P758 [Normal] Jawaban berdasarkan project: Materi yang tersedia di repository meliputi logo utama dan variannya, favicon/OG asset, galeri perusahaan, foto profil perusahaan, tiga potret tim, tiga gambar pengalaman/project, katalog layanan, profil tim awal, tiga artikel Bahasa Indonesia beserta tiga terjemahan Inggris, serta dokumentasi requirements/design/implementation. Kesiapan penggunaan final belum dapat disamaratakan: dokumentasi menandai hero/profile/team imagery sebagai generated concept/replaceable, project imagery sebagai replaceable context image, dan sejumlah data perusahaan sebagai placeholder. Tidak ditemukan company profile final, sertifikat/penghargaan terverifikasi, testimoni, logo klien berizin, bukti proyek terverifikasi, dokumen legal publik, atau video resmi.
+P759 [Normal] Sumber dalam project:
+P760 [List Bullet] public/assets/ — aset logo, favicon, OG, galeri, profile, team, dan experience yang tersedia lokal.
+P761 [List Bullet] src/data/site.ts; src/data/home.ts; src/data/profile.ts — materi teks layanan, perusahaan, tim, dan homepage.
+P762 [List Bullet] src/content/blog/id/; src/content/blog/en/ — tiga artikel per bahasa.
+P763 [List Bullet] docs/DESIGN_SYSTEM.md — status generated concept, replaceable image, dan aturan aset.
+P764 [List Bullet] docs/PROJECT_CONTEXT.md; docs/CONTENT_MASTER.md — daftar data/aset yang masih placeholder atau memerlukan verifikasi.
+P765 [Normal] Informasi yang belum tersedia atau belum pasti: Hak penggunaan, persetujuan final, sumber asli, lisensi, dan status keaslian seluruh aset gambar tidak tercatat lengkap di project.
+P766 [Normal] Rekomendasi: Rekomendasi (bukan kondisi project saat ini): buat asset register yang memuat pemilik, sumber, lisensi/consent, status approved, versi final, dan halaman penggunaan untuk setiap aset.
+P767 [Normal] Data tambahan yang dibutuhkan: Diperlukan konfirmasi stakeholder dan bukti hak penggunaan untuk mengubah status aset dari konsep/placeholder menjadi siap produksi.
+P768 [K Heading] 6.2  Data atau angka apa yang dapat digunakan untuk memperkuat kepercayaan?
+P769 [Normal] Status: Belum dapat dikonfirmasi
+P770 [Normal] Jawaban berdasarkan project: Homepage memiliki empat slot statistik untuk projects handled, licensing processes supported, industries served, dan years of combined experience. Semua nilai aktual masih menggunakan marker [DATA]. Tahun berdiri juga belum terverifikasi. Tidak ditemukan angka keberhasilan, jumlah klien, jumlah perkara/proyek, SLA, rating, atau metrik lain yang dapat dinyatakan sebagai fakta.
+P771 [Normal] Sumber dalam project:
+P772 [List Bullet] src/data/home.ts — HOME_STATS berisi empat metrik dengan value [DATA].
+P773 [List Bullet] docs/CONTENT_MASTER.md — statistik, founding year, dan business data ditandai placeholder/unverified.
+P774 [List Bullet] docs/PLACEHOLDER_REGISTER.md — daftar marker [DATA] yang wajib diganti sebelum go-live.
+P775 [Normal] Informasi yang belum tersedia atau belum pasti: Nilai statistik, periode pengukuran, definisi metrik, pemilik data, dan bukti pendukung belum tersedia.
+P776 [Normal] Rekomendasi: Rekomendasi (bukan kondisi project saat ini): hanya tampilkan angka setelah definisi, periode, sumber, dan approver terdokumentasi; jika belum, hapus blok statistik dari rilis produksi.
+P777 [Normal] Data tambahan yang dibutuhkan: Diperlukan dataset internal terverifikasi beserta metode perhitungan dan persetujuan penggunaan publik.
+P778 [K Heading] 6.3  Tautan folder materi dan aset.
+P779 [Normal] Status: Belum dapat dikonfirmasi
+P780 [Normal] Jawaban berdasarkan project: Tidak ada URL Google Drive, Dropbox, OneDrive folder, DAM, atau repository aset eksternal yang tercatat dalam project. Aset yang dipakai website berada lokal di public/assets, src/assets, dan source file terkait.
+P781 [Normal] Sumber dalam project:
+P782 [List Bullet] public/assets/ — lokasi aset publik yang digunakan website.
+P783 [List Bullet] src/assets/ — lokasi aset sumber yang diimpor oleh komponen.
+P784 [List Bullet] docs/PROJECT_CONTEXT.md; docs/HANDOFF_CHECKLIST.md — meminta asset mapping/final approval, tanpa memberikan link folder eksternal.
+P785 [Normal] Informasi yang belum tersedia atau belum pasti: Link folder aset bersama dan hak aksesnya tidak tersedia.
+P786 [Normal] Rekomendasi: Rekomendasi (bukan kondisi project saat ini): sediakan satu folder aset resmi dengan struktur logo, photography, team, project evidence, legal approvals, dan archive; cantumkan link serta aturan akses di handoff.
+P787 [Normal] Data tambahan yang dibutuhkan: Diperlukan link folder dari pemilik project dan konfirmasi siapa yang boleh mengakses/mengubah aset.
+P788 [K Heading] 6.4  Siapa pemilik atau penanggung jawab utama aset?
+P789 [Normal] Status: Belum dapat dikonfirmasi
+P790 [Normal] Jawaban berdasarkan project: Dokumentasi menyebut perlunya owner/approver untuk konten dan aset, tetapi tidak menetapkan nama atau jabatan yang bertanggung jawab mengumpulkan maupun menyetujui aset.
+P791 [Normal] Sumber dalam project:
+P792 [List Bullet] docs/HANDOFF_CHECKLIST.md — approval, ownership, dan replacement checklist masih perlu dilengkapi.
+P793 [List Bullet] docs/PROJECT_CONTEXT.md — source of truth memerlukan client-approved facts tanpa menetapkan PIC.
+P794 [List Bullet] docs/PLACEHOLDER_REGISTER.md — owner/resolution untuk placeholder belum seluruhnya ditetapkan.
+P795 [Normal] Informasi yang belum tersedia atau belum pasti: Nama PIC pengumpulan aset, approver legal/brand, alur persetujuan, dan SLA belum tersedia.
+P796 [Normal] Rekomendasi: Rekomendasi (bukan kondisi project saat ini): tetapkan minimal Asset PIC, Brand Approver, dan Legal/Compliance Approver beserta status dan tanggal approval per aset.
+P797 [Normal] Data tambahan yang dibutuhkan: Diperlukan keputusan stakeholder mengenai nama, jabatan, wewenang, dan proses approval.
+P798 [K Heading] 6.5  Apakah ada batasan penggunaan konten atau visual?
+P799 [Normal] Status: Terkonfirmasi
+P800 [Normal] Jawaban berdasarkan project: Project menetapkan bahwa client logos, testimonials, project identities, dan detail sensitif hanya boleh dipublikasikan setelah consent/approval. Confidentiality constraints harus diverifikasi. Generated concept dan replaceable imagery harus diganti atau disetujui sebelum go-live. Placeholder, mock data, dan marker [DATA]/[VERIFY] tidak boleh dianggap sebagai fakta final. Artikel hukum memerlukan subject-matter dan current-law review sebelum publikasi final.
+P801 [Normal] Sumber dalam project:
+P802 [List Bullet] docs/PROJECT_CONTEXT.md — confidentiality, consent, client-approved facts, dan batas klaim.
+P803 [List Bullet] docs/DESIGN_SYSTEM.md — generated concept/replaceable asset rules dan larangan penggunaan final tanpa approval.
+P804 [List Bullet] docs/CONTENT_MASTER.md — legal claims, credentials, project evidence, dan contact data memerlukan verifikasi.
+P805 [List Bullet] docs/HANDOFF_CHECKLIST.md — content, legal, accessibility, asset, dan go-live approvals.
+P806 [List Bullet] src/data/site.ts — disclaimer bahwa outcome/approval tetap berada pada regulator/authority terkait.
+P807 [Normal] Informasi yang belum tersedia atau belum pasti: Dokumen lisensi, consent release, embargo, dan daftar aset dengan batasan spesifik belum disertakan.
+P808 [Normal] Rekomendasi: Rekomendasi (bukan kondisi project saat ini): simpan bukti consent/lisensi per aset dan terapkan approval gate sebelum aset dipindahkan ke status production-ready.
+P809 [Normal] Data tambahan yang dibutuhkan: Diperlukan dokumen consent/lisensi dan keputusan legal untuk setiap aset pihak ketiga atau materi klien.
+P810 [K Heading] 6.6  Aset apa yang sudah diketahui masih perlu dibuat atau diperbarui?
+P811 [Normal] Status: Terkonfirmasi
+P812 [Normal] Jawaban berdasarkan project: Project secara eksplisit masih memerlukan: legal name, office address, registration/legal identifiers, domain produksi dan founding year; final service scope/deliverables/exclusions/prices/timelines; official team photography, credentials, bios, dan contact details; verified project/case evidence beserta outcomes; client logos dan testimonials dengan consent; statistik terverifikasi; privacy/terms; official company video; penggantian concept/replaceable imagery; serta keputusan final atas CTA/WhatsApp/email dan konten legal. Target tanggal dan owner belum tersedia.
+P813 [Normal] Sumber dalam project:
+P814 [List Bullet] docs/PLACEHOLDER_REGISTER.md — daftar placeholder dan data yang wajib diselesaikan.
+P815 [List Bullet] docs/CONTENT_MASTER.md — identity, services, team, evidence, statistics, legal copy, dan contact gaps.
+P816 [List Bullet] docs/DESIGN_SYSTEM.md — concept/replaceable imagery yang perlu diganti atau disetujui.
+P817 [List Bullet] docs/HANDOFF_CHECKLIST.md — remaining verification, approvals, production assets, legal pages, dan release gates.
+P818 [List Bullet] src/data/site.ts; src/data/home.ts; src/data/profile.ts — marker [VERIFY], [DATA], dan placeholder yang masih hidup di implementasi.
+P819 [Normal] Informasi yang belum tersedia atau belum pasti: Owner, prioritas, budget, sumber aset, dan target penyelesaian per item tidak tercatat.
+P820 [Normal] Rekomendasi: Rekomendasi (bukan kondisi project saat ini): ubah backlog ini menjadi asset/content tracker dengan kolom owner, approver, due date, evidence link, consent/licence, destination page, dan release status.
+P821 [Normal] Data tambahan yang dibutuhkan: Diperlukan keputusan stakeholder tentang prioritas rilis, PIC, tanggal target, dan standar bukti untuk setiap item.

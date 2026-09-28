@@ -1,0 +1,99 @@
+---
+import type { BlogEntry } from '../../utils/blog';
+import { postUrl } from '../../utils/blog';
+import type { Locale } from '../../data/site';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+interface Props { locale: Locale; posts: BlogEntry[]; }
+const { locale, posts } = Astro.props;
+const id = locale === 'id';
+const formatter = new Intl.DateTimeFormat(id ? 'id-ID' : 'en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+const [featured, ...supporting] = posts;
+---
+
+<section class="insights-section home-section" aria-labelledby="insights-title">
+  <div class="container-shell">
+    <header class="insights-section__header" data-home-reveal>
+      <div>
+        <p class="home-kicker">{id ? 'Insight terbaru' : 'Latest insights'}</p>
+        <h2 id="insights-title" class="home-heading">{id ? 'Regulasi untuk keputusan bisnis.' : 'Regulatory insight for business decisions.'}</h2>
+      </div>
+      <a class="home-rule-link" href={`/${locale}/blog/`}>{id ? 'Baca seluruh artikel' : 'Read all articles'} <ArrowIcon /></a>
+    </header>
+
+    {featured ? (
+      <div class="insights-grid">
+        <article class="insight-feature" data-home-reveal>
+          <a class="insight-feature__visual" href={postUrl(featured)} aria-label={featured.data.title}>
+            <span>{featured.data.category}</span>
+            <strong aria-hidden="true">G&amp;P<br />INSIGHT</strong>
+            <small>01 / {String(posts.length).padStart(2, '0')}</small>
+          </a>
+          <div class="insight-feature__copy">
+            <p>{formatter.format(featured.data.publishDate)} / {featured.data.author}</p>
+            <h3><a href={postUrl(featured)}>{featured.data.title}</a></h3>
+            <p>{featured.data.description}</p>
+            <a class="home-rule-link" href={postUrl(featured)}>{id ? 'Baca artikel' : 'Read article'} <ArrowIcon /></a>
+          </div>
+        </article>
+        <div class="insight-supporting">
+          {supporting.map((post, index) => (
+            <article data-home-reveal>
+              <span>0{index + 2}</span>
+              <p>{post.data.category} / {formatter.format(post.data.publishDate)}</p>
+              <h3><a href={postUrl(post)}>{post.data.title}</a></h3>
+              <a href={postUrl(post)} aria-label={`${id ? 'Baca artikel' : 'Read article'}: ${post.data.title}`}><ArrowIcon direction="up-right" /></a>
+            </article>
+          ))}
+        </div>
+      </div>
+    ) : (
+      <p class="insights-empty">{id ? 'Artikel akan dipublikasikan segera.' : 'Articles will be published soon.'}</p>
+    )}
+  </div>
+</section>
+
+<style>
+  .insights-section { background: var(--home-paper); }
+  .insights-section__header { display: grid; gap: 1.5rem; }
+  .insights-grid { display: grid; gap: 1rem; margin-top: clamp(3rem, 6vw, 5rem); }
+  .insight-feature { display: grid; background: var(--home-white); transition: transform 180ms var(--home-ease); }
+  .insight-feature__visual { position: relative; min-height: 23rem; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: 1.5rem; background: var(--home-red-deep); color: #fff; text-decoration: none; isolation: isolate; }
+  .insight-feature__visual::after { position: absolute; z-index: -1; width: 20rem; aspect-ratio: 1; border: 5rem solid var(--home-red); border-radius: 50%; content: ''; transform: translate(65%, 45%); }
+  .insight-feature__visual span, .insight-feature__visual small { font-size: .62rem; font-weight: 820; letter-spacing: .12em; text-transform: uppercase; }
+  .insight-feature__visual strong { font-family: var(--font-display); font-size: clamp(3.3rem, 7vw, 6rem); font-weight: 700; letter-spacing: -.08em; line-height: .69; }
+  .insight-feature__copy { align-content: center; padding: clamp(1.6rem, 4vw, 3.5rem); }
+  .insight-feature__copy > p:first-child { margin: 0; color: var(--home-red); font-size: .62rem; font-weight: 780; text-transform: uppercase; letter-spacing: .08em; }
+  .insight-feature__copy h3 { margin: 1.2rem 0 0; font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.65rem); font-weight: 580; letter-spacing: -.035em; line-height: 1; }
+  .insight-feature__copy h3 a { text-decoration: none; transition: color 170ms ease; }
+  .insight-feature__copy > p:nth-of-type(2) { margin: 1.25rem 0 1.6rem; color: var(--home-muted); font-size: .78rem; }
+  .insight-supporting { display: grid; border-top: 1px solid var(--home-line-strong); }
+  .insight-supporting article { position: relative; min-height: 12rem; display: grid; align-content: start; gap: .6rem; padding: 1.3rem 2.6rem 1.3rem 0; border-bottom: 1px solid var(--home-line); transition: transform 180ms var(--home-ease), background-color 170ms ease; }
+  .insight-supporting article > span { color: var(--home-red); font-size: .62rem; font-weight: 850; }
+  .insight-supporting p { margin: 0; color: var(--home-muted); font-size: .6rem; font-weight: 720; text-transform: uppercase; letter-spacing: .06em; }
+  .insight-supporting h3 { max-width: 29rem; margin: .4rem 0 0; font-family: var(--font-display); font-size: clamp(1.25rem, 2vw, 1.7rem); font-weight: 590; letter-spacing: -.025em; line-height: 1.08; }
+  .insight-supporting h3 a { text-decoration: none; }
+  .insight-supporting article > a { position: absolute; right: 0; top: .75rem; width: 2.75rem; height: 2.75rem; display: grid; place-items: center; color: var(--home-red); font-size: 1.1rem; text-decoration: none; transition: color 170ms ease, transform 160ms var(--home-ease); }
+  .insights-empty { margin-top: 3rem; color: var(--home-muted); }
+  @media (min-width: 850px) {
+    .insights-section__header { grid-template-columns: 1fr auto; align-items: end; }
+    .insights-grid { grid-template-columns: 1.42fr .58fr; }
+    .insight-feature { grid-template-columns: .9fr 1.1fr; }
+    .insight-feature__visual { min-height: 34rem; }
+    .insight-supporting article { min-height: calc(17rem + .5rem); padding-left: 1.4rem; border-left: 1px solid var(--home-line); }
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .insight-feature:hover,
+    .insight-feature:focus-within { transform: translateY(-4px); }
+    .insight-feature:hover .insight-feature__copy h3 a,
+    .insight-feature:focus-within .insight-feature__copy h3 a { color: var(--home-red-deep); }
+    .insight-supporting article:hover,
+    .insight-supporting article:focus-within { background: rgb(196 20 42 / 0.035); transform: translateX(4px); }
+    .insight-supporting article:hover > a,
+    .insight-supporting article:focus-within > a { color: var(--home-red-deep); transform: translate(3px, -3px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .insight-feature,
+    .insight-supporting article,
+    .insight-supporting article > a { transform: none !important; }
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+import type { BlogEntry } from '../utils/blog';
+import { postUrl } from '../utils/blog';
+interface Props { post: BlogEntry; }
+const { post } = Astro.props;
+const formatted = new Intl.DateTimeFormat(post.data.locale === 'id' ? 'id-ID' : 'en-US', { day: 'numeric', month: 'long', year: 'numeric' }).format(post.data.publishDate);
+---
+<article class="group border-t border-line py-7">
+  <div class="grid gap-4 md:grid-cols-[10rem_1fr_auto] md:items-start">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[.14em] text-gold">{post.data.category}</p>
+      <time class="mt-2 block text-xs text-muted" datetime={post.data.publishDate.toISOString()}>{formatted}</time>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl leading-tight md:text-3xl"><a class="decoration-gold underline-offset-4 group-hover:underline" href={postUrl(post)}>{post.data.title}</a></h2>
+      <p class="mt-3 max-w-2xl text-sm text-muted">{post.data.description}</p>
+    </div>
+    <span class="text-2xl text-gold transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+  </div>
+</article>

@@ -1,0 +1,1389 @@
+{
+  "coverage": {
+    "totalFiles": 109,
+    "textFilesRead": 91,
+    "binaryOrAssetFiles": 18,
+    "totalTextLines": 11164,
+    "totalTextBytes": 480155
+  },
+  "routes": [
+    {
+      "file": "src/pages/api/contact.ts",
+      "route": "/api/contact"
+    },
+    {
+      "file": "src/pages/en/blog/index.astro",
+      "route": "/en/blog/"
+    },
+    {
+      "file": "src/pages/en/blog/[slug].astro",
+      "route": "/en/blog/[slug]"
+    },
+    {
+      "file": "src/pages/en/contact.astro",
+      "route": "/en/contact"
+    },
+    {
+      "file": "src/pages/en/index.astro",
+      "route": "/en/"
+    },
+    {
+      "file": "src/pages/en/profile/[slug].astro",
+      "route": "/en/profile/[slug]"
+    },
+    {
+      "file": "src/pages/en/profile.astro",
+      "route": "/en/profile"
+    },
+    {
+      "file": "src/pages/en/projects.astro",
+      "route": "/en/projects"
+    },
+    {
+      "file": "src/pages/en/rss.xml.ts",
+      "route": "/en/rss.xml"
+    },
+    {
+      "file": "src/pages/en/services.astro",
+      "route": "/en/services"
+    },
+    {
+      "file": "src/pages/id/blog/index.astro",
+      "route": "/id/blog/"
+    },
+    {
+      "file": "src/pages/id/blog/[slug].astro",
+      "route": "/id/blog/[slug]"
+    },
+    {
+      "file": "src/pages/id/contact.astro",
+      "route": "/id/contact"
+    },
+    {
+      "file": "src/pages/id/index.astro",
+      "route": "/id/"
+    },
+    {
+      "file": "src/pages/id/profile/[slug].astro",
+      "route": "/id/profile/[slug]"
+    },
+    {
+      "file": "src/pages/id/profile.astro",
+      "route": "/id/profile"
+    },
+    {
+      "file": "src/pages/id/projects.astro",
+      "route": "/id/projects"
+    },
+    {
+      "file": "src/pages/id/rss.xml.ts",
+      "route": "/id/rss.xml"
+    },
+    {
+      "file": "src/pages/id/services.astro",
+      "route": "/id/services"
+    },
+    {
+      "file": "src/pages/index.astro",
+      "route": "/"
+    },
+    {
+      "file": "src/pages/robots.txt.ts",
+      "route": "/robots.txt"
+    }
+  ],
+  "links": [
+    {
+      "file": "src/components/BlogPostPage.astro",
+      "line": 33,
+      "href": "/${locale}/blog/"
+    },
+    {
+      "file": "src/components/ContactForm.astro",
+      "line": 7,
+      "href": "/api/contact"
+    },
+    {
+      "file": "src/components/ContactPage.astro",
+      "line": 12,
+      "href": "mailto:${SITE.email}"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 46,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/ContentPage.astro",
+      "line": 80,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "line": 10,
+      "href": "/${locale}/"
+    },
+    {
+      "file": "src/components/Footer.astro",
+      "line": 29,
+      "href": "mailto:${SITE.email}"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 26,
+      "href": "#main-content"
+    },
+    {
+      "file": "src/components/Header.astro",
+      "line": 53,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/home/CompanySnapshot.astro",
+      "line": 16,
+      "href": "/${locale}/profile/"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 70,
+      "href": "/${locale}/projects/"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 82,
+      "href": "/${locale}/projects/"
+    },
+    {
+      "file": "src/components/home/HomeFinalCta.astro",
+      "line": 17,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 59,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 62,
+      "href": "/${locale}/services/"
+    },
+    {
+      "file": "src/components/home/HomeInsights.astro",
+      "line": 20,
+      "href": "/${locale}/blog/"
+    },
+    {
+      "file": "src/components/home/PermitProcess.astro",
+      "line": 37,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 23,
+      "href": "/${locale}/services/"
+    },
+    {
+      "file": "src/components/home/ServiceCarousel.astro",
+      "line": 62,
+      "href": "/${locale}/services/"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 42,
+      "href": "/${locale}/profile/#team"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 55,
+      "href": "/${locale}/contact/"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 56,
+      "href": "mailto:${SITE.email}"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 33,
+      "href": "/${locale}/profile/${member.slug}/"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 64,
+      "href": "#team"
+    },
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "line": 48,
+      "href": "/favicon.svg"
+    }
+  ],
+  "assets": [
+    {
+      "file": "public/assets/gp-logo-brand.png",
+      "size": 154964,
+      "extension": ".png",
+      "width": 600,
+      "height": 413,
+      "mime": "image/png",
+      "imports": []
+    },
+    {
+      "file": "public/assets/gp-logo-home.png",
+      "size": 226343,
+      "extension": ".png",
+      "width": 1784,
+      "height": 881,
+      "mime": "image/png",
+      "imports": []
+    },
+    {
+      "file": "public/assets/gp-logo.png",
+      "size": 199703,
+      "extension": ".png",
+      "width": 826,
+      "height": 565,
+      "mime": "image/png",
+      "imports": []
+    },
+    {
+      "file": "public/favicon.svg",
+      "size": 270,
+      "extension": ".svg",
+      "width": 64.0,
+      "height": 64.0,
+      "mime": "image/svg+xml",
+      "imports": []
+    },
+    {
+      "file": "public/og-default.svg",
+      "size": 584,
+      "extension": ".svg",
+      "width": 1200.0,
+      "height": 630.0,
+      "mime": "image/svg+xml",
+      "imports": []
+    },
+    {
+      "file": "src/assets/company-carousel-01.webp",
+      "size": 66050,
+      "extension": ".webp",
+      "width": 1600,
+      "height": 965,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/CompanyGallery.astro",
+          "line": 3,
+          "target": "../assets/company-carousel-01.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/company-carousel-02.webp",
+      "size": 69992,
+      "extension": ".webp",
+      "width": 1596,
+      "height": 985,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/CompanyGallery.astro",
+          "line": 4,
+          "target": "../assets/company-carousel-02.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/company-carousel-03.webp",
+      "size": 80504,
+      "extension": ".webp",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/CompanyGallery.astro",
+          "line": 5,
+          "target": "../assets/company-carousel-03.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/company-carousel-04.webp",
+      "size": 91380,
+      "extension": ".webp",
+      "width": 1537,
+      "height": 1023,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/CompanyGallery.astro",
+          "line": 6,
+          "target": "../assets/company-carousel-04.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/company-carousel-05.webp",
+      "size": 43282,
+      "extension": ".webp",
+      "width": 1537,
+      "height": 1023,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/CompanyGallery.astro",
+          "line": 7,
+          "target": "../assets/company-carousel-05.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/experience-business-licensing.png",
+      "size": 1763304,
+      "extension": ".png",
+      "width": 1586,
+      "height": 992,
+      "mime": "image/png",
+      "imports": [
+        {
+          "file": "src/components/home/ExperienceShowcase.astro",
+          "line": 3,
+          "target": "../../assets/experience-business-licensing.png"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/experience-compliance-review.png",
+      "size": 1824824,
+      "extension": ".png",
+      "width": 1448,
+      "height": 1086,
+      "mime": "image/png",
+      "imports": [
+        {
+          "file": "src/components/home/ExperienceShowcase.astro",
+          "line": 4,
+          "target": "../../assets/experience-compliance-review.png"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/experience-investment-project.png",
+      "size": 2038761,
+      "extension": ".png",
+      "width": 1448,
+      "height": 1086,
+      "mime": "image/png",
+      "imports": [
+        {
+          "file": "src/components/home/ExperienceShowcase.astro",
+          "line": 5,
+          "target": "../../assets/experience-investment-project.png"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/home-licensing-hero.webp",
+      "size": 50364,
+      "extension": ".webp",
+      "width": 1536,
+      "height": 1024,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/home/HomeHero.astro",
+          "line": 3,
+          "target": "../../assets/home-licensing-hero.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/profile-company-hero-centered.webp",
+      "size": 90464,
+      "extension": ".webp",
+      "width": 1672,
+      "height": 941,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/ProfilePage.astro",
+          "line": 3,
+          "target": "../assets/profile-company-hero-centered.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/team-kelvin-anata-lian.webp",
+      "size": 43854,
+      "extension": ".webp",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/PersonProfilePage.astro",
+          "line": 3,
+          "target": "../assets/team-kelvin-anata-lian.webp"
+        },
+        {
+          "file": "src/components/profile/TeamCarousel.astro",
+          "line": 3,
+          "target": "../../assets/team-kelvin-anata-lian.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/team-maria-indah-putri.webp",
+      "size": 42560,
+      "extension": ".webp",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/PersonProfilePage.astro",
+          "line": 4,
+          "target": "../assets/team-maria-indah-putri.webp"
+        },
+        {
+          "file": "src/components/profile/TeamCarousel.astro",
+          "line": 4,
+          "target": "../../assets/team-maria-indah-putri.webp"
+        }
+      ]
+    },
+    {
+      "file": "src/assets/team-michael-alvaro.webp",
+      "size": 45434,
+      "extension": ".webp",
+      "width": 1024,
+      "height": 1536,
+      "mime": "image/webp",
+      "imports": [
+        {
+          "file": "src/components/PersonProfilePage.astro",
+          "line": 5,
+          "target": "../assets/team-michael-alvaro.webp"
+        },
+        {
+          "file": "src/components/profile/TeamCarousel.astro",
+          "line": 5,
+          "target": "../../assets/team-michael-alvaro.webp"
+        }
+      ]
+    }
+  ],
+  "assetImports": [
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 3,
+      "target": "../assets/company-carousel-01.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 4,
+      "target": "../assets/company-carousel-02.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 5,
+      "target": "../assets/company-carousel-03.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 6,
+      "target": "../assets/company-carousel-04.webp"
+    },
+    {
+      "file": "src/components/CompanyGallery.astro",
+      "line": 7,
+      "target": "../assets/company-carousel-05.webp"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 3,
+      "target": "../../assets/experience-business-licensing.png"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 4,
+      "target": "../../assets/experience-compliance-review.png"
+    },
+    {
+      "file": "src/components/home/ExperienceShowcase.astro",
+      "line": 5,
+      "target": "../../assets/experience-investment-project.png"
+    },
+    {
+      "file": "src/components/home/HomeHero.astro",
+      "line": 3,
+      "target": "../../assets/home-licensing-hero.webp"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 3,
+      "target": "../assets/team-kelvin-anata-lian.webp"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 4,
+      "target": "../assets/team-maria-indah-putri.webp"
+    },
+    {
+      "file": "src/components/PersonProfilePage.astro",
+      "line": 5,
+      "target": "../assets/team-michael-alvaro.webp"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 3,
+      "target": "../../assets/team-kelvin-anata-lian.webp"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 4,
+      "target": "../../assets/team-maria-indah-putri.webp"
+    },
+    {
+      "file": "src/components/profile/TeamCarousel.astro",
+      "line": 5,
+      "target": "../../assets/team-michael-alvaro.webp"
+    },
+    {
+      "file": "src/components/ProfilePage.astro",
+      "line": 3,
+      "target": "../assets/profile-company-hero-centered.webp"
+    }
+  ],
+  "flagsByFile": {
+    ".env.example": [
+      {
+        "file": ".env.example",
+        "line": 2,
+        "text": "RESEND_API_KEY=re_replace_with_resend_api_key"
+      }
+    ],
+    "docs/ACCESSIBILITY_GUIDELINES.md": [
+      {
+        "file": "docs/ACCESSIBILITY_GUIDELINES.md",
+        "line": 13,
+        "text": "- Team/project placeholder images are text surfaces until real assets receive descriptive alt text."
+      }
+    ],
+    "docs/ARCHITECTURE.md": [
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "line": 5,
+        "text": "Astro prerenders all pages and feeds. `src/pages/api/contact.ts` declares `prerender = false`, so the Vercel adapter emits only that route as a function. This preserves static page performance while allowing server-side validation, rate limiting, and secure email delivery."
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "line": 24,
+        "text": "|   |-- site.ts              identity, navigation, contact, shared placeholders"
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "line": 25,
+        "text": "|   `-- home.ts              Home services, dummy client marks, and statistics"
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "line": 26,
+        "text": "|-- layouts/                 metadata, schema, shell, and global behaviour"
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "line": 30,
+        "text": "`-- content.config.ts        collection schema"
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "line": 39,
+        "text": "- `BaseLayout.astro` owns metadata, schema, header, footer, the optional desktop contact dock, and global reveal behaviour."
+      },
+      {
+        "file": "docs/ARCHITECTURE.md",
+        "line": 49,
+        "text": "- Add a CMS only if editorial workflow requires it; do not change routing or the content schema without migration notes."
+      }
+    ],
+    "docs/COMPONENT_GUIDELINES.md": [
+      {
+        "file": "docs/COMPONENT_GUIDELINES.md",
+        "line": 13,
+        "text": "- Use the transparent `public/assets/gp-logo-brand.png` master mark in Header, Footer, schema, and branded visuals. Keep the asset background-free; use only a restrained image drop shadow where contrast support is required."
+      },
+      {
+        "file": "docs/COMPONENT_GUIDELINES.md",
+        "line": 18,
+        "text": "- Team member links point to the existing bilingual `/profile/[slug]/` routes. Placeholder person pages remain `noindex,follow` until identity, photograph, and credentials are verified."
+      },
+      {
+        "file": "docs/COMPONENT_GUIDELINES.md",
+        "line": 19,
+        "text": "- Placeholder identities, credentials, contacts, statistics, clients, prices, video, and projects must remain visibly marked until verified."
+      },
+      {
+        "file": "docs/COMPONENT_GUIDELINES.md",
+        "line": 20,
+        "text": "- Do not emit Person schema for placeholder team members."
+      }
+    ],
+    "docs/CONTENT_GUIDELINES.md": [
+      {
+        "file": "docs/CONTENT_GUIDELINES.md",
+        "line": 11,
+        "text": "## Placeholders"
+      },
+      {
+        "file": "docs/CONTENT_GUIDELINES.md",
+        "line": 13,
+        "text": "Use `[PLACEHOLDER — DESCRIPTION]`. Replace centrally where possible. Before removing a marker, record the source and approver for legal name, registration, professionals, project outcomes, testimonial, or logo."
+      }
+    ],
+    "docs/DEPLOYMENT.md": [
+      {
+        "file": "docs/DEPLOYMENT.md",
+        "line": 9,
+        "text": "5. Verify the Resend sender domain and recipient."
+      },
+      {
+        "file": "docs/DEPLOYMENT.md",
+        "line": 20,
+        "text": "- Sitemap, robots, RSS, canonical URLs, and social previews use the final domain."
+      }
+    ],
+    "docs/DESIGN_SYSTEM.md": [
+      {
+        "file": "docs/DESIGN_SYSTEM.md",
+        "line": 13,
+        "text": "The approved transparent red-black-gold mark is stored at `public/assets/gp-logo-brand.png` and is used across Header, Footer, branded visuals, and organization schema. The mark is rendered without a background plate so its transparent edge remains visible. A restrained image-only drop shadow may be used on dark surfaces; never add a white or off-white rectangle behind the logo."
+      },
+      {
+        "file": "docs/DESIGN_SYSTEM.md",
+        "line": 15,
+        "text": "The Home hero is stored at `src/assets/home-licensing-hero.webp`. The Home experience grid uses `experience-business-licensing.png`, `experience-compliance-review.png`, and `experience-investment-project.png` as replaceable, context-specific placeholders. Profile uses `profile-company-hero-centered.webp` as a generated, replaceable red-black team banner with a centered focal crop. The team directory uses three generated, replaceable portrait assets: `team-kelvin-anata-lian.webp`, `team-maria-ind"
+      }
+    ],
+    "docs/DEVELOPMENT_WORKFLOW.md": [
+      {
+        "file": "docs/DEVELOPMENT_WORKFLOW.md",
+        "line": 8,
+        "text": "6. Preview and manually test mobile, tablet, desktop, keyboard, reduced motion, and form states."
+      }
+    ],
+    "docs/I18N_GUIDELINES.md": [
+      {
+        "file": "docs/I18N_GUIDELINES.md",
+        "line": 21,
+        "text": "Profile ID and EN copy may be phrased naturally for each language, but role, expertise, placeholder status, and service meaning must remain equivalent."
+      }
+    ],
+    "docs/PAGE_SPECIFICATIONS.md": [
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 11,
+        "text": "3. Static client register immediately after the hero. Six visibly labelled dummy marks test the composition; real identities require publication consent."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 12,
+        "text": "4. Complete company positioning statement including clearly marked founding-year and record placeholders, a Profile CTA aligned with the section label, a compact five-image gallery, and four clearly unverified statistics."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 15,
+        "text": "7. Art-directed company-video placeholder that does not expose a non-functional play control. At desktop width the section is capped near one viewport."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 16,
+        "text": "8. Confidentiality-safe Our Experiences editorial image grid with one featured and two supporting case-study cards, concise metadata, clearly marked year/image placeholders, and a link to the complete page."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 17,
+        "text": "9. Editorial preview of the three latest published Markdown articles."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 20,
+        "text": "Home uses the transparent `gp-logo-brand.png` mark in its header, company-film placeholder, schema, and footer."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 28,
+        "text": "1. Centered red-black editorial team banner with a concise team-and-licensing promise, one anchor CTA, and a clearly labelled generated placeholder visual."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 29,
+        "text": "2. A visible company label, the two-line heading \"Kami Hadir Membantu / Bisnis Anda\", an enlarged version of the accessible five-image gallery used on Home aligned to the company-description column, two complete company paragraphs, and a registry for legal name, founding year, registration, and address placeholders."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 30,
+        "text": "3. A compact three-member directory for Kelvin Anata Lian, Maria Indah Putri, and Michael Alvaro, using generated 5:6 concept portraits, name, position, expertise, and bottom-aligned CTAs to each bilingual person route. The full directory fits within a standard desktop viewport; each person detail page exposes email, domicile, and phone placeholders in the opening viewport."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 33,
+        "text": "Profile content lives in `src/data/profile.ts`. The three supplied member names are present, while generated concept portraits, personal contacts, credentials, founding year, registration, and office address remain clearly replaceable until verified. Person detail pages exist at `/id/profile/[slug]/` and `/en/profile/[slug]/`; they stay `noindex,follow` and do not emit Person schema until identities are verified."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 36,
+        "text": "Four initial service categories with an indicative-scope placeholder. Final deliverables, exclusions, timelines, and authority boundaries require business approval. The Home service rail may present the broader centralized list while the full page awaits its dedicated redesign."
+      },
+      {
+        "file": "docs/PAGE_SPECIFICATIONS.md",
+        "line": 48,
+        "text": "Direct WhatsApp/email, office placeholder, urgency warning, accessible form, consent, status feedback, and server delivery. It remains accessible through consultation CTAs even though Contact is not a navbar item."
+      }
+    ],
+    "docs/PROJECT_CONTEXT.md": [
+      {
+        "file": "docs/PROJECT_CONTEXT.md",
+        "line": 19,
+        "text": "Legal name, domain, address, registration, final services, professional roster, official photography, project evidence, testimonials, client logos, privacy policy, and terms remain structured placeholders. `src/data/site.ts` is the central source for business identity, navigation, contact details, service categories, and experience placeholders."
+      }
+    ],
+    "docs/REQUIREMENTS.md": [
+      {
+        "file": "docs/REQUIREMENTS.md",
+        "line": 8,
+        "text": "- Markdown blog with requested frontmatter, category filtering, tags, related posts, translations, SEO, structured data, RSS, and draft exclusion."
+      },
+      {
+        "file": "docs/REQUIREMENTS.md",
+        "line": 15,
+        "text": "- Canonical, hreflang, metadata, Open Graph, sitemap, robots, LegalService/Organization schema, and Article schema."
+      },
+      {
+        "file": "docs/REQUIREMENTS.md",
+        "line": 20,
+        "text": "No fabricated claims, results, team members, testimonials, registration numbers, or client relationships. Placeholders must remain visibly labelled until approved information is supplied."
+      }
+    ],
+    "docs/SEO_GUIDELINES.md": [
+      {
+        "file": "docs/SEO_GUIDELINES.md",
+        "line": 5,
+        "text": "`BaseLayout` supplies unique title/description, canonical, hreflang, Open Graph, Twitter card, and Organization/LegalService JSON-LD. `x-default` resolves to the Indonesian equivalent of the current page. The transparent red-black-gold master logo is used by all routes and organization schema. Home, Profile, and placeholder person routes use the red theme color and immersive header configuration."
+      },
+      {
+        "file": "docs/SEO_GUIDELINES.md",
+        "line": 7,
+        "text": "Profile adds `ProfilePage` and `BreadcrumbList` structured data. Placeholder person routes emit BreadcrumbList only and remain `noindex,follow`; Person schema must not be emitted until names, roles, credentials, photographs, and professional identities are verified. Blog pages add Article JSON-LD."
+      },
+      {
+        "file": "docs/SEO_GUIDELINES.md",
+        "line": 23,
+        "text": "Replace `PUBLIC_SITE_URL`; confirm the production domain in metadata and search tools; provide a raster 1200x630 social image if platform SVG support is insufficient; verify schema with a validator; ensure placeholders are not indexed as final claims; review sitemap and redirect behaviour."
+      },
+      {
+        "file": "docs/SEO_GUIDELINES.md",
+        "line": 25,
+        "text": "Replace Profile member placeholders before removing `noindex` from individual routes or adding Person schema. Verify that official photographs have consent, descriptive alt text, and appropriate Astro image widths."
+      }
+    ],
+    "docs/SERVERLESS_CONTACT_FORM.md": [
+      {
+        "file": "docs/SERVERLESS_CONTACT_FORM.md",
+        "line": 5,
+        "text": "`ContactForm.astro` submits `FormData` to `POST /api/contact`. The Vercel function checks same-origin requests and content type, applies a rate limit, parses and normalises fields, silently accepts a filled honeypot, validates all required data, escapes email HTML, and calls the Resend REST API."
+      },
+      {
+        "file": "docs/SERVERLESS_CONTACT_FORM.md",
+        "line": 9,
+        "text": "- `RESEND_API_KEY`: server-only Resend key."
+      },
+      {
+        "file": "docs/SERVERLESS_CONTACT_FORM.md",
+        "line": 11,
+        "text": "- `CONTACT_FROM_EMAIL`: sender on a Resend-verified domain."
+      },
+      {
+        "file": "docs/SERVERLESS_CONTACT_FORM.md",
+        "line": 19,
+        "text": "No submission is stored by the site. Resend/email and Vercel logs remain external processors and must be reflected in the approved privacy notice. Never log form contents. Rotate exposed secrets. Do not accept file uploads. The UI warns users not to send sensitive documents."
+      }
+    ],
+    "package-lock.json": [
+      {
+        "file": "package-lock.json",
+        "line": 2818,
+        "text": "\"json-schema-traverse\": \"^0.4.1\","
+      },
+      {
+        "file": "package-lock.json",
+        "line": 4140,
+        "text": "\"node_modules/json-schema-traverse\": {"
+      },
+      {
+        "file": "package-lock.json",
+        "line": 4142,
+        "text": "\"resolved\": \"https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz\","
+      },
+      {
+        "file": "package-lock.json",
+        "line": 6454,
+        "text": "\"json-schema-traverse\": \"^1.0.0\","
+      },
+      {
+        "file": "package-lock.json",
+        "line": 6487,
+        "text": "\"node_modules/yaml-language-server/node_modules/json-schema-traverse\": {"
+      },
+      {
+        "file": "package-lock.json",
+        "line": 6489,
+        "text": "\"resolved\": \"https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz\","
+      }
+    ],
+    "package.json": [
+      {
+        "file": "package.json",
+        "line": 14,
+        "text": "\"preview\": \"astro preview\","
+      }
+    ],
+    "README.md": [
+      {
+        "file": "README.md",
+        "line": 24,
+        "text": "npm run preview   # preview a built static site"
+      },
+      {
+        "file": "README.md",
+        "line": 25,
+        "text": "npm run validate  # route, link, placeholder, and documentation checks"
+      },
+      {
+        "file": "README.md",
+        "line": 31,
+        "text": "1. Replace structured placeholders through `src/data/site.ts` and approved content."
+      },
+      {
+        "file": "README.md",
+        "line": 33,
+        "text": "3. Configure Resend and, preferably, Upstash variables described in `.env.example`."
+      }
+    ],
+    "src/components/BlogPostPage.astro": [
+      {
+        "file": "src/components/BlogPostPage.astro",
+        "line": 15,
+        "text": "const articleSchema = {"
+      },
+      {
+        "file": "src/components/BlogPostPage.astro",
+        "line": 16,
+        "text": "'@context': 'https://schema.org',"
+      },
+      {
+        "file": "src/components/BlogPostPage.astro",
+        "line": 29,
+        "text": "<script slot=\"head\" is:inline type=\"application/ld+json\" set:html={JSON.stringify(articleSchema)} />"
+      }
+    ],
+    "src/components/ContactForm.astro": [
+      {
+        "file": "src/components/ContactForm.astro",
+        "line": 19,
+        "text": "<label class=\"field\"><span>{id ? 'Pesan' : 'Message'} *</span><textarea name=\"message\" rows=\"6\" required minlength=\"20\" maxlength=\"3000\" placeholder={id ? 'Jelaskan aktivitas usaha, kebutuhan, dan target waktu secara ringkas.' : 'Briefly describe your business activity, requirement, and target timing.'}></textarea></label>"
+      }
+    ],
+    "src/components/ContentPage.astro": [
+      {
+        "file": "src/components/ContentPage.astro",
+        "line": 14,
+        "text": "? { title: 'Pengalaman & Proyek | Galdino & Partner', description: 'Contoh pengalaman pendampingan legalitas usaha, kepatuhan regulasi, perizinan proyek, dan investasi.', eyebrow: 'Pengalaman', h1: 'Mandat yang disusun di sekitar kebutuhan klien.', lead: 'Kerahasiaan adalah prinsip utama. Contoh di bawah adalah struktur placeholder hingga detail yang layak publik telah disetujui.' }"
+      },
+      {
+        "file": "src/components/ContentPage.astro",
+        "line": 15,
+        "text": ": { title: 'Experience & Projects | Galdino & Partner', description: 'Representative experience in business legality, regulatory compliance, project licensing, and investment assistance.', eyebrow: 'Experience', h1: 'Engagements structured around client needs.', lead: 'Confidentiality is fundamental. The examples below remain structured placeholders until public-facing details are approved.' },"
+      },
+      {
+        "file": "src/components/ContentPage.astro",
+        "line": 32,
+        "text": "<p class=\"mt-2 text-sm text-muted\">[PLACEHOLDER: {id ? 'detail deliverable, batas layanan, estimasi, dan dokumen yang diperlukan.' : 'deliverables, scope boundaries, estimate, and required documents.'}]</p>"
+      },
+      {
+        "file": "src/components/ContentPage.astro",
+        "line": 65,
+        "text": "<p class=\"mt-5 border-l-2 border-gold pl-3 text-xs text-muted\">[PLACEHOLDER: {id ? 'hasil terverifikasi dan izin publikasi' : 'verified outcome and publication consent'}]</p>"
+      },
+      {
+        "file": "src/components/ContentPage.astro",
+        "line": 72,
+        "text": "<p class=\"mt-3 text-muted\">{id ? '[PLACEHOLDER: hanya ditampilkan setelah izin tertulis dan verifikasi substansi.]' : '[PLACEHOLDER: displayed only after written consent and content verification.]'}</p>"
+      }
+    ],
+    "src/components/Footer.astro": [
+      {
+        "file": "src/components/Footer.astro",
+        "line": 17,
+        "text": "<p class=\"footer-placeholder mt-7 max-w-full overflow-wrap-anywhere text-xs\">{SITE.legalName}</p>"
+      },
+      {
+        "file": "src/components/Footer.astro",
+        "line": 48,
+        "text": ".footer-placeholder { color: rgb(255 255 255 / .62); }"
+      }
+    ],
+    "src/components/home/ClientRegister.astro": [
+      {
+        "file": "src/components/home/ClientRegister.astro",
+        "line": 14,
+        "text": "<p>{id ? 'Logo masih berupa dummy. Identitas klien ditampilkan setelah izin publikasi.' : 'Logos are temporary. Client identities will appear after publication approval.'}</p>"
+      }
+    ],
+    "src/components/home/CompanySnapshot.astro": [
+      {
+        "file": "src/components/home/CompanySnapshot.astro",
+        "line": 30,
+        "text": "<p>Beroperasi sejak <mark>[PLACEHOLDER: TAHUN BERDIRI]</mark>, rekam jejak, cakupan proyek, dan pencapaian perusahaan akan ditampilkan setelah verifikasi. Visi kami adalah membuat proses perizinan lebih jelas, tertib, dan dapat ditelusuri; dengan ketelitian hukum, komunikasi progres, dan fokus pada penyelesaian kebutuhan izin sebagai pembeda utama.</p>"
+      },
+      {
+        "file": "src/components/home/CompanySnapshot.astro",
+        "line": 35,
+        "text": "<p>Operating since <mark>[PLACEHOLDER: YEAR ESTABLISHED]</mark>, the firm's track record, project coverage, and achievements will be published after verification. Our vision is to make licensing clearer, orderly, and traceable, with legal precision, progress communication, and a focus on resolving permit needs as our core differentiators.</p>"
+      }
+    ],
+    "src/components/home/CompanyVideo.astro": [
+      {
+        "file": "src/components/home/CompanyVideo.astro",
+        "line": 18,
+        "text": "<p>{id ? '[PLACEHOLDER VIDEO RESMI]' : '[OFFICIAL VIDEO PLACEHOLDER]'}</p>"
+      }
+    ],
+    "src/components/home/ExperienceShowcase.astro": [
+      {
+        "file": "src/components/home/ExperienceShowcase.astro",
+        "line": 107,
+        "text": "? '[PLACEHOLDER: gambar, tahun, dan detail proyek menunggu verifikasi serta persetujuan publikasi.]'"
+      },
+      {
+        "file": "src/components/home/ExperienceShowcase.astro",
+        "line": 108,
+        "text": ": '[PLACEHOLDER: images, years, and project details await verification and publication approval.]'}"
+      }
+    ],
+    "src/components/PersonProfilePage.astro": [
+      {
+        "file": "src/components/PersonProfilePage.astro",
+        "line": 23,
+        "text": "const breadcrumbSchema = {"
+      },
+      {
+        "file": "src/components/PersonProfilePage.astro",
+        "line": 24,
+        "text": "'@context': 'https://schema.org',"
+      },
+      {
+        "file": "src/components/PersonProfilePage.astro",
+        "line": 35,
+        "text": "<meta slot=\"head\" name=\"robots\" content=\"noindex,follow\" />"
+      },
+      {
+        "file": "src/components/PersonProfilePage.astro",
+        "line": 36,
+        "text": "<script slot=\"head\" is:inline type=\"application/ld+json\" set:html={JSON.stringify(breadcrumbSchema)} />"
+      }
+    ],
+    "src/components/ProfilePage.astro": [
+      {
+        "file": "src/components/ProfilePage.astro",
+        "line": 16,
+        "text": "const profileSchema = {"
+      },
+      {
+        "file": "src/components/ProfilePage.astro",
+        "line": 17,
+        "text": "'@context': 'https://schema.org',"
+      },
+      {
+        "file": "src/components/ProfilePage.astro",
+        "line": 43,
+        "text": "<script slot=\"head\" is:inline type=\"application/ld+json\" set:html={JSON.stringify(profileSchema)} />"
+      },
+      {
+        "file": "src/components/ProfilePage.astro",
+        "line": 57,
+        "text": "<figcaption>{content.hero.imagePlaceholder}</figcaption>"
+      }
+    ],
+    "src/content.config.ts": [
+      {
+        "file": "src/content.config.ts",
+        "line": 7,
+        "text": "schema: z.object({"
+      }
+    ],
+    "src/data/home.ts": [
+      {
+        "file": "src/data/home.ts",
+        "line": 12,
+        "text": "{ slug: 'pendirian-pt-cv', title: 'Pendirian PT & CV', description: 'Penentuan bentuk usaha, persiapan dokumen, dan koordinasi proses pendirian.', price: '[PLACEHOLDER HARGA]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 13,
+        "text": "{ slug: 'pendirian-pt-pma', title: 'Pendirian PT PMA', description: 'Pendampingan struktur investasi, dokumen korporasi, dan legalitas awal perusahaan.', price: '[PLACEHOLDER HARGA]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 14,
+        "text": "{ slug: 'nib-oss-rba', title: 'NIB & OSS-RBA', description: 'Pemetaan KBLI, tingkat risiko, dan pengurusan identitas usaha melalui OSS-RBA.', price: '[PLACEHOLDER HARGA]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 23,
+        "text": "{ slug: 'perubahan-perseroan', title: 'Perubahan Data Perseroan', description: 'Koordinasi perubahan anggaran dasar, data perseroan, dan pembaruan legalitas.', price: '[PLACEHOLDER HARGA]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 24,
+        "text": "{ slug: 'lkpm', title: 'LKPM & Pelaporan Berkala', description: 'Pendampingan penyiapan data dan penyampaian laporan kegiatan penanaman modal.', price: '[PLACEHOLDER HARGA]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 25,
+        "text": "{ slug: 'haki', title: 'HAKI & Perlindungan Merek', description: 'Pemeriksaan awal dan koordinasi pendaftaran merek serta hak kekayaan intelektual.', price: '[PLACEHOLDER HARGA]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 29,
+        "text": "{ slug: 'company-establishment', title: 'PT & CV Establishment', description: 'Entity selection, document preparation, and establishment process coordination.', price: '[PRICE PLACEHOLDER]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 30,
+        "text": "{ slug: 'foreign-investment-company', title: 'Foreign Investment Company', description: 'Investment structure, corporate documents, and initial business legality assistance.', price: '[PRICE PLACEHOLDER]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 31,
+        "text": "{ slug: 'business-identification', title: 'Business ID & OSS-RBA', description: 'Business classification, risk mapping, and registration through OSS-RBA.', price: '[PRICE PLACEHOLDER]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 40,
+        "text": "{ slug: 'corporate-changes', title: 'Corporate Data Changes', description: 'Corporate document changes and business legality updates.', price: '[PRICE PLACEHOLDER]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 41,
+        "text": "{ slug: 'investment-reporting', title: 'Investment Activity Reporting', description: 'Data preparation and investment activity report submission assistance.', price: '[PRICE PLACEHOLDER]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 42,
+        "text": "{ slug: 'intellectual-property', title: 'Trademark & IP Protection', description: 'Preliminary review and coordination of trademark and IP registration.', price: '[PRICE PLACEHOLDER]' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 58,
+        "text": "{ mark: 'AR', name: '[DUMMY] ARUNA', sector: 'Manufaktur', variant: 'block' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 59,
+        "text": "{ mark: 'N+', name: '[DUMMY] NUSA', sector: 'Teknologi', variant: 'round' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 60,
+        "text": "{ mark: 'PRM', name: '[DUMMY] PRIMA', sector: 'Perdagangan', variant: 'outline' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 61,
+        "text": "{ mark: 'VX', name: '[DUMMY] VERTEX', sector: 'Konstruksi', variant: 'split' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 62,
+        "text": "{ mark: 'LT', name: '[DUMMY] LINTAS', sector: 'Logistik', variant: 'serif' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 63,
+        "text": "{ mark: 'KR', name: '[DUMMY] KARYA', sector: 'Properti', variant: 'wide' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 66,
+        "text": "{ mark: 'AR', name: '[DUMMY] ARUNA', sector: 'Manufacturing', variant: 'block' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 67,
+        "text": "{ mark: 'N+', name: '[DUMMY] NUSA', sector: 'Technology', variant: 'round' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 68,
+        "text": "{ mark: 'PRM', name: '[DUMMY] PRIMA', sector: 'Trade', variant: 'outline' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 69,
+        "text": "{ mark: 'VX', name: '[DUMMY] VERTEX', sector: 'Construction', variant: 'split' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 70,
+        "text": "{ mark: 'LT', name: '[DUMMY] LINTAS', sector: 'Logistics', variant: 'serif' },"
+      },
+      {
+        "file": "src/data/home.ts",
+        "line": 71,
+        "text": "{ mark: 'KR', name: '[DUMMY] KARYA', sector: 'Property', variant: 'wide' },"
+      }
+    ],
+    "src/data/profile.ts": [
+      {
+        "file": "src/data/profile.ts",
+        "line": 29,
+        "text": "imagePlaceholder: string;"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 59,
+        "text": "imagePlaceholder: '[VISUAL KONSEP: GANTI DENGAN FOTO TIM RESMI]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 65,
+        "text": "'Beroperasi sejak [PLACEHOLDER: TAHUN BERDIRI], perusahaan membangun rekam jejak dalam kebutuhan legalitas dan perizinan bisnis yang akan dipublikasikan setelah verifikasi. Visi kami adalah membuat proses izin lebih jelas, tertib, dan dapat ditelusuri, dengan ketelitian hukum, komunikasi progres, dan fokus pada penyelesaian sebagai nilai pembeda.',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 71,
+        "text": "{ label: 'Beroperasi sejak', value: '[PLACEHOLDER: TAHUN BERDIRI]' },"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 87,
+        "text": "credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 88,
+        "text": "email: '[PLACEHOLDER: EMAIL PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 89,
+        "text": "phone: '[PLACEHOLDER: NOMOR TELEPON PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 90,
+        "text": "domicile: '[PLACEHOLDER: DOMISILI / KANTOR]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 100,
+        "text": "credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 101,
+        "text": "email: '[PLACEHOLDER: EMAIL PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 102,
+        "text": "phone: '[PLACEHOLDER: NOMOR TELEPON PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 103,
+        "text": "domicile: '[PLACEHOLDER: DOMISILI / KANTOR]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 113,
+        "text": "credentials: '[PLACEHOLDER: KREDENSIAL PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 114,
+        "text": "email: '[PLACEHOLDER: EMAIL PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 115,
+        "text": "phone: '[PLACEHOLDER: NOMOR TELEPON PROFESIONAL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 116,
+        "text": "domicile: '[PLACEHOLDER: DOMISILI / KANTOR]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 135,
+        "text": "imagePlaceholder: '[CONCEPT VISUAL: REPLACE WITH THE OFFICIAL TEAM PHOTO]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 141,
+        "text": "'Operating since [PLACEHOLDER: YEAR ESTABLISHED], the firm is building a track record in business legality and licensing that will be published after verification. Our vision is to make permits clearer, orderly, and traceable, with legal precision, progress communication, and a focus on resolution as our differentiating values.',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 147,
+        "text": "{ label: 'Operating since', value: '[PLACEHOLDER: YEAR ESTABLISHED]' },"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 163,
+        "text": "credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 164,
+        "text": "email: '[PLACEHOLDER: PROFESSIONAL EMAIL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 165,
+        "text": "phone: '[PLACEHOLDER: PROFESSIONAL PHONE NUMBER]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 166,
+        "text": "domicile: '[PLACEHOLDER: DOMICILE / OFFICE]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 176,
+        "text": "credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 177,
+        "text": "email: '[PLACEHOLDER: PROFESSIONAL EMAIL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 178,
+        "text": "phone: '[PLACEHOLDER: PROFESSIONAL PHONE NUMBER]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 179,
+        "text": "domicile: '[PLACEHOLDER: DOMICILE / OFFICE]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 189,
+        "text": "credentials: '[PLACEHOLDER: PROFESSIONAL CREDENTIALS]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 190,
+        "text": "email: '[PLACEHOLDER: PROFESSIONAL EMAIL]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 191,
+        "text": "phone: '[PLACEHOLDER: PROFESSIONAL PHONE NUMBER]',"
+      },
+      {
+        "file": "src/data/profile.ts",
+        "line": 192,
+        "text": "domicile: '[PLACEHOLDER: DOMICILE / OFFICE]',"
+      }
+    ],
+    "src/data/site.ts": [
+      {
+        "file": "src/data/site.ts",
+        "line": 4,
+        "text": "legalName: '[PLACEHOLDER — NAMA LEGAL PERUSAHAAN]',"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 8,
+        "text": "address: '[PLACEHOLDER — ALAMAT KANTOR RESMI]',"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 9,
+        "text": "registration: '[PLACEHOLDER — NOMOR REGISTRASI / LEGAL]',"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 13,
+        "text": "privacyStatus: '[PLACEHOLDER — KEBIJAKAN PRIVASI MENUNGGU REVIEW]',"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 14,
+        "text": "termsStatus: '[PLACEHOLDER — SYARAT & KETENTUAN MENUNGGU REVIEW]',"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 68,
+        "text": "{ type: 'Perizinan usaha', title: '[PLACEHOLDER — Pengurusan legalitas dan izin operasional perusahaan]', outcome: 'Ruang lingkup, industri, periode, dan hasil menunggu persetujuan publikasi.' },"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 69,
+        "text": "{ type: 'Legal advisory', title: '[PLACEHOLDER — Review kepatuhan regulasi untuk ekspansi bisnis]', outcome: 'Detail pengalaman akan ditambahkan setelah verifikasi kerahasiaan klien.' },"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 70,
+        "text": "{ type: 'Investasi', title: '[PLACEHOLDER — Pendampingan perizinan proyek investasi]', outcome: 'Nilai proyek dan identitas pihak terkait tidak ditampilkan sebelum disetujui.' },"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 73,
+        "text": "{ type: 'Business licensing', title: '[PLACEHOLDER — Corporate legality and operational licensing engagement]', outcome: 'Scope, industry, period, and outcome await publication approval.' },"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 74,
+        "text": "{ type: 'Legal advisory', title: '[PLACEHOLDER — Regulatory compliance review for business expansion]', outcome: 'Experience details will be added after client-confidentiality verification.' },"
+      },
+      {
+        "file": "src/data/site.ts",
+        "line": 75,
+        "text": "{ type: 'Investment', title: '[PLACEHOLDER — Investment project licensing assistance]', outcome: 'Project value and related party identities remain unpublished pending approval.' },"
+      }
+    ],
+    "src/layouts/BaseLayout.astro": [
+      {
+        "file": "src/layouts/BaseLayout.astro",
+        "line": 30,
+        "text": "'@context': 'https://schema.org',"
+      }
+    ],
+    "src/pages/api/contact.ts": [
+      {
+        "file": "src/pages/api/contact.ts",
+        "line": 4,
+        "text": "export const prerender = false;"
+      },
+      {
+        "file": "src/pages/api/contact.ts",
+        "line": 81,
+        "text": "const apiKey = import.meta.env.RESEND_API_KEY;"
+      },
+      {
+        "file": "src/pages/api/contact.ts",
+        "line": 90,
+        "text": "const response = await fetch('https://api.resend.com/emails', {"
+      }
+    ]
+  }
+}
