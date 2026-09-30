@@ -147,8 +147,8 @@ test('directory works without JavaScript and legacy environmental routes redirec
  await expect(page.getByRole('heading',{name:'Bidang usaha',exact:true})).toBeVisible();
  await page.locator('.category-services a[href="/id/services/lingkungan/amdal/"]').click();await expect(page.locator('h1')).toHaveText('Jasa AMDAL');await context.close();
  for(const [old,target] of [
- ['/id/profile/how-we-work/','/id/#process-title'],
- ['/en/profile/how-we-work/','/en/#process-title'],
+ ['/id/profile/how-we-work/','/id/#why-galdino-title'],
+ ['/en/profile/how-we-work/','/en/#why-galdino-title'],
  ['/id/services/lingkungan/dokumen-lingkungan/amdal/','/id/services/lingkungan/amdal/'],
  ['/id/services/lingkungan/dokumen-lingkungan/','/id/services/lingkungan/#dokumen-lingkungan'],
  ['/en/services/environmental-approvals/environmental-documents/environmental-impact-assessment/','/en/services/environmental-approvals/environmental-impact-assessment/']
@@ -163,13 +163,14 @@ test('single-image banners meet the navbar and industries form an equal three-co
  for(const path of paths.filter(p=>!['/id/','/id/profile/'].includes(p))){
  await page.goto(path);await expect(page.locator('.image-hero')).toHaveCount(1);await expect(page.locator('.image-hero img')).toHaveCount(1);
  expect((await page.locator('.image-hero').boundingBox())?.y).toBe(0);
- if(path.endsWith('/contact/')){await expect(page.locator('.site-header')).toHaveCount(0);}else{
  await expect(page.locator('.site-header')).toHaveClass(/site-header--immersive/);expect(await page.locator('.site-header').evaluate(el=>getComputedStyle(el).position)).toBe('fixed');
- }
  }
  await page.goto('/id/industries/');const boxes=await page.locator('.industry-tile').evaluateAll(els=>els.map(el=>{const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width}}));
  expect(boxes).toHaveLength(6);expect(boxes[0].y).toBe(boxes[1].y);expect(boxes[1].y).toBe(boxes[2].y);expect(boxes[3].y).toBe(boxes[4].y);expect(boxes[4].y).toBe(boxes[5].y);
  for(const b of boxes)expect(Math.abs(b.width-boxes[0].width)).toBeLessThan(1);
+ await expect(page.locator('.regulatory-section')).toHaveCSS('background-color','rgb(11, 11, 12)');
+ await expect(page.locator('.regulatory-section h2')).toHaveCSS('color','rgb(255, 255, 255)');
+ await expect(page.locator('.regulatory-section .permit-pathway--dark h3').first()).toHaveCSS('color','rgb(255, 255, 255)');
  await expect(page.locator('main')).not.toContainText('Sorotan industri');await expect(page.locator('main .related-cases')).toHaveCount(0);await expect(page.locator('main')).not.toContainText('Insights');
  await page.goto('/id/services/');for(const removed of ['Enam bidang, satu konteks usaha.','Konteks industri','Insights'])await expect(page.locator('main')).not.toContainText(removed);
 });
@@ -195,6 +196,9 @@ test('brand headings, image framing, navigation and featured sections stay consi
  await page.setViewportSize({width:375,height:1000});
  for(const route of ['projects/','contact/']){await page.goto('/id/'+route);await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.decode());expect(await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.currentSrc)).toContain('-mobile');}
  await page.setViewportSize({width:1440,height:1000});
+ await page.goto('/id/');await expect(page.locator('#why-galdino-title')).toHaveText('Kenapa Galdino & Partner');
+ await expect(page.locator('.why-section')).toHaveCSS('background-color','rgb(11, 11, 12)');
+ await expect(page.locator('.why-point')).toHaveCount(4);
  for(const route of ['services/','projects/']){
   await page.goto('/id/'+route);expect(await page.locator('.process-section').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgb(11, 11, 12)');
   expect(await page.locator('.process-section .home-kicker').evaluate(el=>getComputedStyle(el,'::before').content)).toBe('""');

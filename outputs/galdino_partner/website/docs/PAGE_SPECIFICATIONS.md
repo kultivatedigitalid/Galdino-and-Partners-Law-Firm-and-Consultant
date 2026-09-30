@@ -12,6 +12,6 @@ Our Experiences: compact gray featured panel plus equal three-column cards (two 
 
 Insight: 14 bilingual article pairs including the five requested new topics. Gray editorial selection. Search/category/tag filters, result counts and empty/reset state; article TOC, dates, reading time, references, notices, share links, related services/articles and reciprocal translations.
 
-Contact: no main navbar; required business inquiry fields, explicit privacy consent, no attachment or marketing field, free initial consultation, safe failure handling, success dialog and seven next steps.
+Contact: immersive main navbar joined to the hero; required business inquiry fields, explicit privacy consent, no attachment or marketing field, free initial consultation, safe failure handling, success dialog and seven next steps.
 
 Privacy/Terms: bilingual controller, purposes, processors, rights and retention. 404: status-preserving Node page that selects the requested locale.

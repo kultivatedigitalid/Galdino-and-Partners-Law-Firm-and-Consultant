@@ -15,13 +15,20 @@ const {locale}=Astro.props,id=locale==='id';
 <div class="editorial">
 <ImageHero locale={locale} title={id?'Berangkat dari dunia usaha Anda.':'Built around your business.'} description={id?'Lokasi, fasilitas, dan kegiatan membentuk kebutuhan izin yang berbeda. Kami mulai dari konteksnya.':'Location, facilities and activities shape different approval requirements. We start with that context.'} image={heroImages.industries} breadcrumbs={[{name:id?'Industri':'Industries'}]}/>
 <nav class="sector-index container-shell" aria-label={id?'Pilih sektor':'Choose a sector'}>{INDUSTRIES.map((i,n)=><a href={'#sector-'+i.id}><span>0{n+1}</span>{i.content[locale].short} ↓</a>)}</nav>
+<div class="container-shell"><section class="ed-section"><IndustryTiles locale={locale}/></section></div>
+<section class="regulatory-section" aria-labelledby="regulatory-title">
+<div class="container-shell"><p class="ed-kicker">{id?'Peta regulasi':'Regulatory landscape'}</p><h2 id="regulatory-title">{id?'Satu kegiatan. Kebutuhan yang saling terhubung.':'One activity. Connected requirements.'}</h2><PermitPathway locale={locale} landscape dark/><p class="ed-note">{id?'Urutan dan kebutuhan akhir mengikuti jenis usaha, skala, lokasi, serta status dokumen. Peta ini merupakan titik awal asesmen.':'The final sequence and requirements depend on activity, scale, location and existing records. This map is a starting point for assessment.'}</p></div>
+</section>
 <div class="container-shell">
-<section class="ed-section"><IndustryTiles locale={locale}/></section>
-<section class="ed-section"><p class="ed-kicker">{id?'Peta regulasi':'Regulatory landscape'}</p><h2>{id?'Satu kegiatan. Kebutuhan yang saling terhubung.':'One activity. Connected requirements.'}</h2><PermitPathway locale={locale} landscape/><p class="ed-note">{id?'Urutan dan kebutuhan akhir mengikuti jenis usaha, skala, lokasi, serta status dokumen. Peta ini merupakan titik awal asesmen.':'The final sequence and requirements depend on activity, scale, location and existing records. This map is a starting point for assessment.'}</p></section>
 <section class="ed-section"><p class="ed-kicker">{id?'Bidang layanan':'Practice areas'}</p><div class="ed-related">{SERVICE_CATEGORIES.map(c=><article><h3><a href={categoryUrl(c,locale)}>{c.content[locale].title}</a></h3><p>{c.content[locale].description}</p></article>)}</div></section>
 </div><HomeFinalCta locale={locale}/></div></BaseLayout>
 <style>
 .sector-index{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding-block:1rem;border-bottom:1px solid #bbb}
 .sector-index a{font-size:.78rem;text-decoration:none;min-height:2.75rem;display:flex;align-items:center;gap:.5rem}
 .sector-index a:hover{color:var(--brand-red)}.sector-index span{color:var(--brand-red);font-size:.65rem}
+.regulatory-section{position:relative;isolation:isolate;overflow:clip;padding-block:var(--brand-section-space);background:var(--brand-black);color:#fff}
+.regulatory-section::before{position:absolute;top:0;right:7%;width:22%;height:.3rem;background:var(--brand-red);content:''}
+.regulatory-section :global(.ed-kicker){color:#fff}
+.regulatory-section h2{max-width:19ch;margin:0;color:#fff;font-family:var(--font-display);font-size:var(--brand-type-section);font-weight:570;letter-spacing:-.035em;line-height:1.02;text-wrap:balance}
+.regulatory-section :global(.ed-note){margin:2.5rem 0 0;border:1px solid rgb(255 255 255 / .2);border-left:2px solid var(--brand-red);background:rgb(255 255 255 / .05);color:rgb(255 255 255 / .72)}
 </style>

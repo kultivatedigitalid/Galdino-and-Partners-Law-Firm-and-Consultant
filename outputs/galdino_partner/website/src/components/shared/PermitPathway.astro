@@ -1,8 +1,28 @@
 ---
 import type {Locale} from '../../data/site';
-interface Props{locale:Locale;landscape?:boolean;showNumbers?:boolean}
-const {locale,landscape=false,showNumbers=true}=Astro.props,id=locale==='id';
+interface Props{locale:Locale;landscape?:boolean;showNumbers?:boolean;dark?:boolean}
+const {locale,landscape=false,showNumbers=true,dark=false}=Astro.props,id=locale==='id';
 const steps=landscape?(id?[['01','Kegiatan','Aktivitas & klasifikasi'],['02','Lokasi','Ruang & akses'],['03','Lingkungan','Dampak & pengendalian'],['04','Bangunan','Fungsi & kelayakan'],['05','Operasional','Izin & pelaporan']]:[['01','Activity','Operations & classification'],['02','Location','Space & access'],['03','Environment','Impacts & controls'],['04','Building','Use & readiness'],['05','Operations','Approvals & reporting']]):(id?[['01','Asesmen','Konteks & data awal'],['02','Pemetaan','Kebutuhan & dependensi'],['03','Persiapan','Dokumen & pemilik tugas'],['04','Koordinasi','Pengajuan & perbaikan'],['05','Tindak lanjut','Arsip & kewajiban']]:[['01','Assess','Context & initial records'],['02','Map','Requirements & dependencies'],['03','Prepare','Documents & task owners'],['04','Coordinate','Submission & revisions'],['05','Follow up','Records & obligations']]);
 ---
-<ol class="permit-pathway" aria-label={landscape?(id?'Peta kebutuhan regulasi':'Regulatory landscape'):(id?'Alur pendampingan':'Engagement pathway')}>{steps.map(([n,title,detail])=><li>{showNumbers&&<span>{n}</span>}<h3>{title}</h3><p>{detail}</p></li>)}</ol>
-<style>.permit-pathway{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:2.5rem 0 0;border-top:1px solid #a8a5a0}.permit-pathway li{position:relative;padding:1.5rem 1.2rem 1rem 0}.permit-pathway li:before{position:absolute;top:-4px;left:0;width:7px;height:7px;background:#c4142a;content:''}.permit-pathway span{font-size:.75rem;color:#9b1224}.permit-pathway h3{font-size:1.2rem;margin:1.5rem 0 .7rem}.permit-pathway p{font-size:.82rem;color:#56565b;margin:0}@media(max-width:800px){.permit-pathway{grid-template-columns:1fr;border-top:0}.permit-pathway li{border-left:1px solid #aaa;padding:0 0 1.5rem 1.5rem}.permit-pathway li:before{left:-4px;top:0}.permit-pathway h3{margin:.3rem 0}.permit-pathway li:last-child{padding-bottom:0}}</style>
+<ol class:list={['permit-pathway',dark&&'permit-pathway--dark']} aria-label={landscape?(id?'Peta kebutuhan regulasi':'Regulatory landscape'):(id?'Alur pendampingan':'Engagement pathway')}>{steps.map(([n,title,detail])=><li>{showNumbers&&<span>{n}</span>}<h3>{title}</h3><p>{detail}</p></li>)}</ol>
+<style>
+  .permit-pathway{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:2.5rem 0 0;border-top:1px solid #a8a5a0}
+  .permit-pathway li{position:relative;padding:1.5rem 1.2rem 1rem 0}
+  .permit-pathway li:before{position:absolute;top:-4px;left:0;width:7px;height:7px;background:#c4142a;content:''}
+  .permit-pathway span{font-size:.75rem;color:#9b1224}
+  .permit-pathway h3{font-size:1.2rem;margin:1.5rem 0 .7rem}
+  .permit-pathway p{font-size:.82rem;color:#56565b;margin:0}
+  .permit-pathway--dark{border-color:rgb(255 255 255 / .25)}
+  .permit-pathway--dark li:before{background:var(--brand-red-bright)}
+  .permit-pathway--dark span{color:var(--brand-red-bright)}
+  .permit-pathway--dark h3{color:#fff}
+  .permit-pathway--dark p{color:rgb(255 255 255 / .68)}
+  @media(max-width:800px){
+    .permit-pathway{grid-template-columns:1fr;border-top:0}
+    .permit-pathway li{border-left:1px solid #aaa;padding:0 0 1.5rem 1.5rem}
+    .permit-pathway li:before{left:-4px;top:0}
+    .permit-pathway h3{margin:.3rem 0}
+    .permit-pathway li:last-child{padding-bottom:0}
+    .permit-pathway--dark li{border-left-color:rgb(255 255 255 / .25)}
+  }
+</style>

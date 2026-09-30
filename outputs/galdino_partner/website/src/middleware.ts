@@ -3,7 +3,7 @@ import {SERVICES,serviceUrl} from './data/services';
 import {SERVICE_GROUPS,categoryById,categoryUrl,groupUrl} from './data/service-catalog';
 const legacyRoutes=new Map<string,string>();
 for(const locale of ['id','en'] as const){
- legacyRoutes.set('/'+locale+'/profile/how-we-work/','/'+locale+'/#process-title');
+ legacyRoutes.set('/'+locale+'/profile/how-we-work/','/'+locale+'/#why-galdino-title');
  for(const group of SERVICE_GROUPS){
   const oldGroup=categoryUrl(categoryById(group.category),locale)+group.slug[locale]+'/';
   legacyRoutes.set(oldGroup,groupUrl(group,locale));

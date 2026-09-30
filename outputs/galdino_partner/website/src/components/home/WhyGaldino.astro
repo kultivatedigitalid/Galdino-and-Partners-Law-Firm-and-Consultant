@@ -1,0 +1,115 @@
+---
+import { ABOUT } from '../../data/about';
+import type { Locale } from '../../data/site';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+const principles = ABOUT[locale].principles;
+---
+
+<section class="why-section home-section" aria-labelledby="why-galdino-title">
+  <div class="container-shell">
+    <div class="why-section__layout">
+      <header class="why-section__intro" data-home-reveal>
+        <p class="home-kicker home-kicker--light">{id ? 'Pendekatan kami' : 'Our approach'}</p>
+        <h2 id="why-galdino-title" class="home-heading home-heading--light">
+          {id ? 'Kenapa Galdino & Partner' : 'Why Galdino & Partner'}
+        </h2>
+        <p class="why-section__lead">
+          {id
+            ? 'Kami memahami kegiatan dan rencana operasional Anda, lalu menjadikan kebutuhan izin, dokumen, dan langkah berikutnya lebih jelas.'
+            : 'We understand your activities and operating plans, then make permit requirements, documents, and next steps clearer.'}
+        </p>
+        <a class="home-button home-button--red" href={`/${locale}/contact/`}>
+          {id ? 'Diskusikan kebutuhan Anda' : 'Discuss your requirements'} <ArrowIcon />
+        </a>
+      </header>
+
+      <div class="why-section__content">
+        <p class="why-section__statement" data-home-reveal>
+          {id
+            ? 'Pendampingan disusun berdasarkan konteks usaha—dengan tanggung jawab dan progres yang dapat ditelusuri.'
+            : 'Support is shaped around your business context—with responsibilities and progress you can follow.'}
+        </p>
+        <div class="why-section__principles">
+          {principles.map(([title, description], index) => (
+            <article class="why-point" data-home-reveal>
+              <span class="why-point__number">{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-section {
+    position: relative;
+    overflow: clip;
+    background: var(--brand-black);
+    color: #fff;
+  }
+  .why-section::before {
+    position: absolute;
+    top: 0;
+    right: 7%;
+    width: 22%;
+    height: .3rem;
+    background: var(--brand-red);
+    content: '';
+  }
+  .why-section__layout { display: grid; gap: clamp(2.75rem, 5vw, 5rem); }
+  .why-section__intro { display: flex; flex-direction: column; align-items: flex-start; }
+  .why-section__intro .home-kicker { margin-bottom: 1.25rem; }
+  .why-section__intro h2 { max-width: 11ch; margin: 0; }
+  .why-section__lead {
+    max-width: 31rem;
+    margin: 1.5rem 0 1.8rem;
+    color: rgb(255 255 255 / .78);
+    font-size: var(--brand-type-lead);
+    line-height: 1.62;
+    text-wrap: pretty;
+  }
+  .why-section__content { min-width: 0; }
+  .why-section__statement {
+    max-width: 43rem;
+    margin: 0 0 1.6rem;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2vw, 1.65rem);
+    font-weight: 540;
+    letter-spacing: -.02em;
+    line-height: 1.32;
+    text-wrap: balance;
+  }
+  .why-section__principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .why-point {
+    display: grid;
+    grid-template-columns: 2.2rem minmax(0, 1fr);
+    gap: .7rem;
+    padding: 1.2rem 1rem 1.2rem 0;
+    border-top: 1px solid rgb(255 255 255 / .2);
+  }
+  .why-point:nth-child(even) { padding-left: 1.2rem; border-left: 1px solid rgb(255 255 255 / .2); }
+  .why-point__number { color: var(--brand-red-bright); font-size: .72rem; font-weight: 820; letter-spacing: .05em; }
+  .why-point h3 { margin: 0; color: #fff; font-family: var(--font-display); font-size: clamp(1.05rem, 1.45vw, 1.28rem); font-weight: 610; letter-spacing: -.02em; line-height: 1.2; }
+  .why-point p { margin: .55rem 0 0; color: rgb(255 255 255 / .66); font-size: .84rem; line-height: 1.56; }
+  @media (min-width: 900px) {
+    .why-section__layout { grid-template-columns: minmax(17rem, .8fr) minmax(0, 1.2fr); align-items: start; }
+    .why-section__intro { position: sticky; top: 7rem; }
+    .why-point { min-height: 9rem; padding-top: 1.5rem; }
+    .why-point:nth-child(even) { padding-left: 1.5rem; }
+  }
+  @media (max-width: 600px) {
+    .why-section__principles { grid-template-columns: 1fr; }
+    .why-point:nth-child(even) { padding-left: 0; border-left: 0; }
+    .why-point { padding-block: 1.1rem; }
+  }
+</style>

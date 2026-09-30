@@ -4,7 +4,7 @@ Updated 30 September 2026. This is the approved replacement structure: 38 servic
 
 ## Navigation and hierarchy
 
-Header: Home → Services → Industries → Our Experiences → Insights → About Us + Consultation CTA. Contact has no main navbar; How We Work is a section of Home. The service mega menu links directly to six hubs and 38 service pages. About Us also links to four people. Footer repeats the main routes and provides Privacy, Terms, cookie preferences and contact channels.
+Header: Home → Services → Industries → Our Experiences → Insights → About Us + Consultation CTA. Contact uses the main immersive navbar; Home has a Why Galdino & Partner section. The service mega menu links directly to six hubs and 38 service pages. About Us also links to four people. Footer repeats the main routes and provides Privacy, Terms, cookie preferences and contact channels.
 
 ```mermaid
 flowchart TD
@@ -22,7 +22,7 @@ flowchart TD
  Industries --> Sectors[6 industry pages]
  Cases --> CaseDetails[6 case studies]
  Insights --> Articles[14 articles per language]
- Home --> Process[How to begin section]
+ Home --> Why[Why Galdino & Partner]
  About --> People[4 people]
 ```
 

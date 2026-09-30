@@ -12,7 +12,7 @@ Astro 7 with TypeScript, Tailwind 4, Markdown content collections and `@astrojs/
 - `src/content/blog/{id,en}`: paired Markdown articles with sources and service identifiers.
 - `src/data/launch.ts`: explicit indexing gate.
 
-The existing hub URL names (`services`, `projects`, `blog`, `profile`, `contact`) are retained to preserve existing links. Navigation uses Our Experiences and About Us in both languages. Contact is reached through the Consultation CTA and has no navbar; How We Work is now a section on Home. Service URL paths follow category → service. The four environmental groups are anchored sections, not separate pages. src/middleware.ts redirects all 26 former environmental URLs plus two removed How We Work pages to their category anchors or shortened service paths using HTTP 301. Each route has a reciprocal language equivalent.
+The existing hub URL names (`services`, `projects`, `blog`, `profile`, `contact`) are retained to preserve existing links. Navigation uses Our Experiences and About Us in both languages. Contact uses the main immersive navbar above its hero. Home presents the firm’s reasons to choose Galdino & Partner; Services and Our Experiences retain their process sections. Service URL paths follow category → service. The four environmental groups are anchored sections, not separate pages. src/middleware.ts redirects all 26 former environmental URLs plus two removed How We Work pages to their category anchors or the updated Home section using HTTP 301. Each route has a reciprocal language equivalent.
 
 ## Interface
 
