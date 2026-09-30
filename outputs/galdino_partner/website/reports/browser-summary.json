@@ -1,0 +1,141 @@
+{
+  "date": "2026-09-30T02:46:41.210Z",
+  "stats": {
+    "startTime": "2026-09-30T02:42:55.591Z",
+    "duration": 111579.933,
+    "expected": 32,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "responsive 320",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 375",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 430",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 768",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 900",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 1024",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 1280",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 1440",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 1920",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/profile/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/profile/hans-galdino/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/projects/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/industries/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/services/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/services/lingkungan/dokumen-lingkungan/amdal/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/industries/developer-properti/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/projects/aruna-pangan/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/blog/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/blog/apa-itu-pbg/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/contact/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /en/contact/",
+      "status": "passed"
+    },
+    {
+      "title": "nested navigation, language pair and mobile menu",
+      "status": "passed"
+    },
+    {
+      "title": "service and insight searches support multiple terms and reset",
+      "status": "passed"
+    },
+    {
+      "title": "cookie consent persists, preferences keyboard and withdrawal",
+      "status": "passed"
+    },
+    {
+      "title": "form prefill, validation, local SMTP success, focus and cooldown",
+      "status": "passed"
+    },
+    {
+      "title": "form failure preserves values and permits retry",
+      "status": "passed"
+    },
+    {
+      "title": "404 locale and indexing block",
+      "status": "passed"
+    },
+    {
+      "title": "analytics loads only after consent and excludes form/query data",
+      "status": "passed"
+    },
+    {
+      "title": "service intent, scenario selection and category navigation",
+      "status": "passed"
+    },
+    {
+      "title": "case filters combine and reset without losing case links",
+      "status": "passed"
+    },
+    {
+      "title": "logo keeps its intrinsic aspect ratio and gallery keyboard works",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+---
+import {Image} from 'astro:assets';
+import discussion from '../../assets/company-carousel-01.webp';
+import review from '../../assets/experience-compliance-review.png';
+import site from '../../assets/experience-investment-project.png';
+import meeting from '../../assets/company-carousel-04.webp';
+import {ABOUT} from '../../data/about';
+import type {Locale} from '../../data/site';
+interface Props{locale:Locale}const {locale}=Astro.props,id=locale==='id',images=[discussion,review,site,meeting];
+---
+<section class="inside-work editorial"><div class="container-shell"><p class="ed-kicker">{id?'Di balik pekerjaan':'Inside the work'}</p><h2>{id?'Mendengar. Memeriksa. Menghubungkan.':'Listen. Review. Connect.'}</h2><div class="work-strip">{images.map((image,i)=><figure><Image src={image} alt={ABOUT[locale].captions[i]} widths={[400,700]} sizes="(min-width:800px) 25vw, 50vw" loading="lazy" quality={76}/><figcaption><span>0{i+1}</span>{ABOUT[locale].captions[i]}</figcaption></figure>)}</div></div></section>
+<style>.inside-work{padding:4rem 0;background:#e8e5e0}.work-strip{display:grid;grid-template-columns:1fr 1.3fr 1.3fr 1fr;gap:1rem;margin-top:2.5rem}.work-strip figure{margin:0;min-width:0}.work-strip :global(img){width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1)}.work-strip figure:nth-child(even){padding-top:2.5rem}.work-strip figcaption{font-size:.75rem;display:flex;gap:.6rem;padding:1rem 0}.work-strip figcaption span{color:#961124}@media(max-width:800px){.work-strip{grid-template-columns:1fr 1fr;gap:.7rem}.work-strip figure:nth-child(even){padding-top:1.5rem}}</style>

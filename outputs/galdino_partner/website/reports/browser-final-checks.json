@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-30T02:27:15.200Z",
+  "stats": {
+    "startTime": "2026-09-30T02:23:17.172Z",
+    "duration": 58790.805,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "title": "responsive 375",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 1440",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/industries/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/services/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/services/lingkungan/dokumen-lingkungan/amdal/",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/industries/developer-properti/",
+      "status": "passed"
+    },
+    {
+      "title": "service and insight searches support multiple terms and reset",
+      "status": "passed"
+    },
+    {
+      "title": "service intent, scenario selection and category navigation",
+      "status": "passed"
+    },
+    {
+      "title": "logo keeps its intrinsic aspect ratio and gallery keyboard works",
+      "status": "passed"
+    }
+  ]
+}

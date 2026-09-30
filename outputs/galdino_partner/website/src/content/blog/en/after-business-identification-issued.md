@@ -2,12 +2,18 @@
 title: "After Your Business Identification Number: Obligations Often Missed"
 description: "A business number is not the end of compliance. Track certifications, sector licences, reports, validity periods, and corporate data changes."
 publishDate: 2026-05-30
-author: "Galdino & Partner Editorial Team"
+author: "Galdino Wirawan"
 category: "Compliance"
 tags: ["NIB", "Compliance", "OSS-RBA"]
-featuredImage: "/og-default.svg"
+featuredImage: "/og-default.png"
 locale: "en"
 translationKey: "after-nib-issued"
+services: ["kkpr","pbg-imb","ukl-upl"]
+sources:
+  - title: "OSS — Perizinan Berusaha Berbasis Risiko"
+    url: "https://oss.go.id/"
+  - title: "PP Nomor 28 Tahun 2025"
+    url: "https://peraturan.bpk.go.id/Details/319773/pp-no-28-tahun-2025"
 draft: false
 ---
 

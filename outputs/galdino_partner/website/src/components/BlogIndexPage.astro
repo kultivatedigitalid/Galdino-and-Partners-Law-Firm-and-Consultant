@@ -1,41 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from './PageHero.astro';
-import ArticleCard from './ArticleCard.astro';
-import { getPublishedPosts } from '../utils/blog';
-import type { Locale } from '../data/site';
-interface Props { locale: Locale; }
-const { locale } = Astro.props;
-const id = locale === 'id';
-const posts = await getPublishedPosts(locale);
-const categories = [...new Set(posts.map((post) => post.data.category))];
-const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+import BaseLayout from '../layouts/BaseLayout.astro';import Breadcrumbs from './shared/Breadcrumbs.astro';import {getPublishedPosts,postUrl} from '../utils/blog';import type {Locale} from '../data/site';
+interface Props{locale:Locale}const {locale}=Astro.props,id=locale==='id';const posts=await getPublishedPosts(locale),featured=posts[0];const categories=[...new Set(posts.map(p=>p.data.category))],tags=[...new Set(posts.flatMap(p=>p.data.tags))];const date=(d:Date)=>new Intl.DateTimeFormat(id?'id-ID':'en-GB',{dateStyle:'medium'}).format(d);
 ---
-<BaseLayout locale={locale} title={id ? 'Insight Hukum & Perizinan | Galdino & Partner' : 'Legal & Licensing Insights | Galdino & Partner'} description={id ? 'Artikel praktis mengenai perizinan usaha, OSS-RBA, legalitas perusahaan, kepatuhan, dan perkembangan regulasi.' : 'Practical articles on business licensing, OSS-RBA, corporate legality, compliance, and regulatory developments.'}>
-  <PageHero eyebrow={id ? 'Pusat insight' : 'Insight centre'} title={id ? 'Memahami regulasi sebelum mengambil langkah.' : 'Understand regulation before taking action.'} lead={id ? 'Panduan praktis dan analisis umum untuk membantu pemilik bisnis serta tim legal menyiapkan keputusan yang lebih baik.' : 'Practical guidance and general analysis to help business owners and legal teams prepare better decisions.'} />
-  <section class="section-space"><div class="container-shell">
-    <div class="flex flex-wrap gap-2" aria-label={id ? 'Filter kategori artikel' : 'Article category filters'}>
-      <button class="filter active" type="button" data-filter="all">{id ? 'Semua' : 'All'}</button>
-      {categories.map((category) => <button class="filter" type="button" data-filter={category}>{category}</button>)}
-    </div>
-    <div id="article-list" class="mt-10">
-      {posts.map((post) => <div data-category={post.data.category}><ArticleCard post={post} /></div>)}
-    </div>
-    <div class="mt-14 border-t border-line pt-8"><h2 class="text-xs font-bold uppercase tracking-[.16em] text-muted">Tags</h2><div class="mt-4 flex flex-wrap gap-2">{tags.map((tag) => <span class="rounded-full border border-line px-3 py-1 text-xs text-muted">#{tag}</span>)}</div></div>
-  </div></section>
-</BaseLayout>
-<style>
-  .filter { border: 1px solid var(--color-line); border-radius: 999px; padding: .55rem .9rem; color: var(--color-muted); font-size: .78rem; font-weight: 700; }
-  .filter:hover, .filter.active { border-color: var(--color-forest); background: var(--color-forest); color: white; }
-</style>
+<BaseLayout locale={locale} title={id?'Insight Perizinan & Kepatuhan | Galdino & Partner':'Licensing & Compliance Insights | Galdino & Partner'} description={id?'Panduan praktis seputar bangunan, tata ruang, lingkungan, dan kepatuhan usaha. Temukan artikel berdasarkan topik dan kebutuhan Anda.':'Practical guidance on buildings, spatial planning, environment and business compliance. Explore articles by topic and requirement.'}><div class="editorial"><header class="ed-hero"><div class="container-shell"><Breadcrumbs locale={locale} items={[{name:'Insight'}]}/><p class="ed-kicker">{id?'Perspektif & panduan':'Perspectives & guidance'}</p><h1>{id?'Pahami konteks. Tentukan langkah.':'Understand the context. Choose your next step.'}</h1><p class="ed-lead">{id?'Catatan praktis untuk pemilik bisnis, pengelola fasilitas, dan tim legal yang ingin mengambil keputusan dengan lebih siap.':'Practical notes for business owners, facility managers and legal teams preparing informed decisions.'}</p></div></header>
+<div class="container-shell">{featured&&<section class="ed-section featured-insight"><div><p class="ed-kicker">{id?'Pilihan editorial':'Editorial selection'}</p><p class="ed-label">{featured.data.category}</p></div><div><h2><a href={postUrl(featured)}>{featured.data.title}</a></h2><p class="ed-lead">{featured.data.description}</p><a class="ed-link" href={postUrl(featured)}>{id?'Baca artikel':'Read article'} ↗</a></div></section>}
+<section class="ed-section"><h2>{id?'Artikel terbaru.':'Latest articles.'}</h2><div class="insight-filters"><div class="ed-search"><label for="insight-search">{id?'Cari artikel':'Search articles'}</label><input id="insight-search" type="search" placeholder={id?'Topik atau kata kunci':'Topic or keyword'} aria-controls="insight-list"/></div><div class="ed-search"><label for="insight-category">{id?'Kategori':'Category'}</label><select id="insight-category"><option value="">{id?'Semua kategori':'All categories'}</option>{categories.map(c=><option value={c}>{c}</option>)}</select></div><div class="ed-search"><label for="insight-tag">Tag</label><select id="insight-tag"><option value="">{id?'Semua tag':'All tags'}</option>{tags.map(t=><option value={t}>{t}</option>)}</select></div></div>
+<p id="insight-count" class="ed-results" role="status" aria-live="polite">{posts.length} {id?'artikel':'articles'}</p><div id="insight-list">{posts.map(p=><article class="insight-row" data-insight data-search={[p.data.title,p.data.description,...p.data.tags,p.data.category].join(' ')} data-category={p.data.category} data-tags={JSON.stringify(p.data.tags)}><div><p class="ed-label">{p.data.category}</p><time datetime={p.data.publishDate.toISOString()}>{date(p.data.publishDate)}</time></div><div><h3><a href={postUrl(p)}>{p.data.title}</a></h3><p>{p.data.description}</p><ul class="ed-tags">{p.data.tags.map(t=><li>{t}</li>)}</ul></div><a class="ed-link" href={postUrl(p)} aria-label={(id?'Baca ':'Read ')+p.data.title}>↗</a></article>)}</div><div id="insight-empty" class="ed-empty" hidden><h3>{id?'Belum menemukan artikel yang sesuai.':'No matching articles.'}</h3><p>{id?'Coba kata lain atau hapus filter.':'Try another term or clear the filters.'}</p><button type="button" class="ed-button secondary" id="insight-reset">{id?'Reset pencarian':'Reset search'}</button></div></section></div></div></BaseLayout>
+<style>.featured-insight{display:grid;grid-template-columns:1fr 2fr;gap:3rem}.insight-filters{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}.insight-row{display:grid;grid-template-columns:11rem minmax(0,1fr) 3rem;gap:2rem;padding:2rem 0;border-top:1px solid #c9c8c5}.insight-row p,.insight-row time{font-size:.88rem;color:#56565b}.insight-row h3{font-size:clamp(1.4rem,2.6vw,2rem)}.insight-row .ed-tags{margin-top:1rem}@media(max-width:800px){.featured-insight,.insight-filters{grid-template-columns:1fr}.insight-row{grid-template-columns:minmax(0,1fr) 2.75rem;gap:1rem}.insight-row>div:first-child{grid-column:1/-1}}</style>
 <script>
-  const filters = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
-  const articles = document.querySelectorAll<HTMLElement>('[data-category]');
-  filters.forEach((button) => button.addEventListener('click', () => {
-    filters.forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    articles.forEach((article) => {
-      article.hidden = button.dataset.filter !== 'all' && article.dataset.category !== button.dataset.filter;
-    });
-  }));
+const search=document.querySelector<HTMLInputElement>('#insight-search'),category=document.querySelector<HTMLSelectElement>('#insight-category'),tag=document.querySelector<HTMLSelectElement>('#insight-tag'),rows=[...document.querySelectorAll<HTMLElement>('[data-insight]')];
+const norm=(s:string)=>s.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const update=()=>{const terms=norm(search?.value||'').trim().split(/\s+/).filter(Boolean);let n=0;rows.forEach(r=>{const tags=JSON.parse(r.dataset.tags||'[]') as string[];r.hidden=!terms.every(t=>norm(r.dataset.search||'').includes(t))||!!category?.value&&r.dataset.category!==category.value||!!tag?.value&&!tags.includes(tag.value);if(!r.hidden)n++;});const count=document.querySelector('#insight-count'),empty=document.querySelector<HTMLElement>('#insight-empty');if(count)count.textContent=n+' / '+rows.length+' '+(document.documentElement.lang==='id'?'artikel':'articles');if(empty)empty.hidden=n!==0;};
+search?.addEventListener('input',update);category?.addEventListener('change',update);tag?.addEventListener('change',update);document.querySelector('#insight-reset')?.addEventListener('click',()=>{if(search)search.value='';if(category)category.value='';if(tag)tag.value='';update();search?.focus();});
 </script>

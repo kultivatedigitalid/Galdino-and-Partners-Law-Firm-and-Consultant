@@ -1,0 +1,13 @@
+---
+import {Image} from 'astro:assets';
+import {INDUSTRIES,industryUrl} from '../../data/industries';
+import {industryImages} from '../../data/industry-images';
+import type {Locale} from '../../data/site';
+interface Props{locale:Locale;limit?:number;atlas?:boolean}
+const {locale,limit=6,atlas=false}=Astro.props,id=locale==='id';
+---
+<div class:list={['industry-tiles',{atlas}]}>{INDUSTRIES.slice(0,limit).map((industry,n)=><article id={'sector-'+industry.id} class="industry-tile">
+<a class="tile-image" href={industryUrl(industry,locale)} tabindex="-1" aria-hidden="true"><Image src={industryImages[industry.id]} alt="" widths={[480,800,1200]} sizes={atlas?'(min-width:800px) 55vw, 100vw':'(min-width:800px) 30vw, 100vw'} loading="lazy" quality={76}/><span>0{n+1}</span></a>
+<div class="tile-copy"><h2><a href={industryUrl(industry,locale)}>{industry.content[locale].short}</a></h2><p>{industry.content[locale].description}</p><ul>{industry.content[locale].issues.slice(0,2).map(x=><li>{x}</li>)}</ul><a class="ed-link" href={industryUrl(industry,locale)}>{id?'Jelajahi industri':'Explore industry'} ↗</a></div>
+</article>)}</div>
+<style>.industry-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3rem 1.5rem}.industry-tile{min-width:0;scroll-margin-top:7rem}.tile-image{display:block;position:relative;overflow:hidden;background:#dedbd6;aspect-ratio:4/3}.tile-image :global(img){width:100%;height:100%;object-fit:cover;filter:saturate(.5);transition:transform 350ms}.tile-image span{position:absolute;left:0;bottom:0;padding:.5rem 1rem;background:#951022;color:white;font-size:.8rem}.tile-copy{padding-top:1.5rem}.tile-copy h2{font-size:clamp(1.6rem,2.2vw,2.4rem)}.tile-copy h2 a{text-decoration:none}.tile-copy p,.tile-copy ul{font-size:.85rem;color:#56565b}.tile-copy ul{padding-left:1rem;margin:1rem 0}.atlas .industry-tile:first-child{grid-column:1/-1;display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:center}.atlas .industry-tile:nth-child(2),.atlas .industry-tile:nth-child(3){grid-column:span 3}.atlas{grid-template-columns:repeat(6,minmax(0,1fr))}.atlas .industry-tile{grid-column:span 2}.atlas .industry-tile:first-child .tile-copy{padding-top:0}.atlas .industry-tile:first-child h2{font-size:clamp(2rem,4vw,4rem)}@media(hover:hover){.industry-tile:hover .tile-image :global(img){transform:scale(1.025)}}@media(max-width:800px){.industry-tiles,.atlas{grid-template-columns:1fr}.atlas .industry-tile,.atlas .industry-tile:nth-child(2),.atlas .industry-tile:nth-child(3){grid-column:auto}.atlas .industry-tile:first-child{display:block}.atlas .industry-tile:first-child .tile-copy{padding-top:1.5rem}}@media(prefers-reduced-motion:reduce){.tile-image :global(img){transition:none}}</style>

@@ -2,12 +2,18 @@
 title: "Checklist Legalitas Sebelum Bisnis Membuka Cabang atau Aktivitas Baru"
 description: "Checklist untuk meninjau akta, KBLI, lokasi, kontrak, perizinan, tenaga kerja, dan kewajiban lanjutan sebelum ekspansi bisnis."
 publishDate: 2026-06-24
-author: "Tim Editorial Galdino & Partner"
+author: "Galdino Wirawan"
 category: "Kepatuhan"
 tags: ["Ekspansi", "Legalitas", "Compliance"]
-featuredImage: "/og-default.svg"
+featuredImage: "/og-default.png"
 locale: "id"
 translationKey: "expansion-legality-checklist"
+services: ["kkpr","pbg-imb","ukl-upl"]
+sources:
+  - title: "OSS — Perizinan Berusaha Berbasis Risiko"
+    url: "https://oss.go.id/"
+  - title: "PP Nomor 28 Tahun 2025"
+    url: "https://peraturan.bpk.go.id/Details/319773/pp-no-28-tahun-2025"
 draft: false
 ---
 

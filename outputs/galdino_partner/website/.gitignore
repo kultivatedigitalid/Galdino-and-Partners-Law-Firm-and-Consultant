@@ -6,3 +6,11 @@ dist/
 .env.*
 !.env.example
 *.log
+
+reports/*.pid
+reports/lighthouse-*.json
+reports/lighthouse-*.html
+test-results/
+playwright-report/
+reports/browser-results.json
+reports/lighthouse-profile/

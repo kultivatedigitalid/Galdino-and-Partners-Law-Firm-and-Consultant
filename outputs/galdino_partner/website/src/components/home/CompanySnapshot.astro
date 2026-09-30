@@ -27,24 +27,24 @@ const id = locale === 'id';
           {id ? (
             <>
               <p><strong>{SITE.displayName}</strong>—{SITE.legalName}—adalah firma hukum dan konsultan perizinan yang mendampingi bisnis mengurus legalitas, izin usaha, serta kepatuhan regulasi. Pendampingan dimulai dari pemetaan aktivitas, klasifikasi usaha, dan kebutuhan dokumen hingga koordinasi proses izin.</p>
-              <p>Beroperasi sejak <mark>[PLACEHOLDER: TAHUN BERDIRI]</mark>, rekam jejak, cakupan proyek, dan pencapaian perusahaan akan ditampilkan setelah verifikasi. Visi kami adalah membuat proses perizinan lebih jelas, tertib, dan dapat ditelusuri; dengan ketelitian hukum, komunikasi progres, dan fokus pada penyelesaian kebutuhan izin sebagai pembeda utama.</p>
+              <p>Beroperasi sejak <mark>2015</mark>, kami mendampingi bisnis dalam menata legalitas, dokumen, dan jalur operasional. Visi kami adalah membuat proses perizinan lebih jelas, tertib, dan dapat ditelusuri; dengan ketelitian hukum, komunikasi progres, dan fokus pada penyelesaian kebutuhan izin sebagai pembeda utama.</p>
             </>
           ) : (
             <>
               <p><strong>{SITE.displayName}</strong>—{SITE.legalName}—is a law firm and licensing consultancy supporting businesses with corporate legality, business permits, and regulatory compliance. The engagement begins with activity mapping, business classification, and document requirements, then continues through permit-process coordination.</p>
-              <p>Operating since <mark>[PLACEHOLDER: YEAR ESTABLISHED]</mark>, the firm's track record, project coverage, and achievements will be published after verification. Our vision is to make licensing clearer, orderly, and traceable, with legal precision, progress communication, and a focus on resolving permit needs as our core differentiators.</p>
+              <p>Operating since <mark>2015</mark>, we help businesses organise corporate documents, licensing, and operating requirements. Our vision is to make licensing clearer, orderly, and traceable, with legal precision, progress communication, and a focus on resolving permit needs as our core differentiators.</p>
             </>
           )}
         </div>
       </div>
     </div>
   </div>
-  <div class="container-shell company-stats" aria-label={id ? 'Statistik perusahaan - data menunggu verifikasi' : 'Company statistics - data pending verification'}>
+  <div class="container-shell company-stats" aria-label={id ? 'Statistik perusahaan' : 'Company statistics'}>
     {HOME_STATS[locale].map((stat) => (
       <div class="company-stat" data-home-reveal>
         <strong>{stat.value}</strong>
         <span>{stat.label}</span>
-        <small>{id ? 'Menunggu verifikasi' : 'Pending verification'}</small>
+        <small>{id ? 'Galdino & Partner' : 'Galdino & Partner'}</small>
       </div>
     ))}
   </div>

@@ -1,0 +1,6 @@
+---
+import Page from '../../../components/IndustryDetailPage.astro';import {INDUSTRIES,type Industry} from '../../../data/industries';
+export function getStaticPaths(){return INDUSTRIES.map(industry=>({params:{slug:industry.slug.en},props:{industry}}));}
+interface Props{industry:Industry}const {industry}=Astro.props;
+---
+<Page locale="en" industry={industry}/>

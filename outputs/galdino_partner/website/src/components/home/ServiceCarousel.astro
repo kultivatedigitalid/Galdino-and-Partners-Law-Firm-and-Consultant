@@ -59,7 +59,7 @@ const carouselId = `home-services-${locale}`;
                 <small>{id ? 'Estimasi biaya' : 'Cost estimate'}</small>
                 <strong>{service.price}</strong>
               </div>
-              <a href={`/${locale}/services/`} aria-label={`${id ? 'Lihat detail' : 'View details'}: ${service.title}`}>
+              <a href={`/${locale}/services/${service.slug}/`} aria-label={`${id ? 'Lihat detail' : 'View details'}: ${service.title}`}>
                 {id ? 'Detail' : 'Details'} <ArrowIcon direction="up-right" />
               </a>
             </div>
@@ -140,8 +140,10 @@ const carouselId = `home-services-${locale}`;
     };
     const update = () => {
       const index = activeIndex();
-      previous.disabled = track.scrollLeft <= 2;
-      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      const atStart = track.scrollLeft <= 2;
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+      previous.disabled = atStart;
+      next.disabled = atEnd;
       if (status) status.textContent = `${index + 1} / ${cards.length}`;
     };
     const move = (direction: number) => {
@@ -162,6 +164,5 @@ const carouselId = `home-services-${locale}`;
     });
     track.addEventListener('scroll', update, { passive: true });
     new ResizeObserver(update).observe(track);
-    update();
   });
 </script>

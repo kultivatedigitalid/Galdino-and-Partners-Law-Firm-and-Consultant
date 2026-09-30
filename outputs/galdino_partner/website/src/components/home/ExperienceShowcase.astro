@@ -3,63 +3,14 @@ import { Image } from 'astro:assets';
 import licensingImage from '../../assets/experience-business-licensing.png';
 import complianceImage from '../../assets/experience-compliance-review.png';
 import investmentImage from '../../assets/experience-investment-project.png';
+import {EXPERIENCES,experienceUrl} from '../../data/experiences';
 import type { Locale } from '../../data/site';
 import ArrowIcon from '../icons/ArrowIcon.astro';
 
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const id = locale === 'id';
-const items = id ? [
-  {
-    image: licensingImage,
-    type: 'Perizinan usaha',
-    year: '[TAHUN]',
-    title: 'Legalitas dan izin operasional perusahaan',
-    description: 'Pemetaan kebutuhan hingga kesiapan izin operasional.',
-    alt: 'Konsultan perizinan dan pelaku usaha menelaah matriks izin serta rencana operasional',
-  },
-  {
-    image: complianceImage,
-    type: 'Legal advisory',
-    year: '[TAHUN]',
-    title: 'Review kepatuhan untuk ekspansi bisnis',
-    description: 'Kewajiban regulasi dinilai sebelum aktivitas baru berjalan.',
-    alt: 'Tim legal dan bisnis menelaah rencana lokasi serta kewajiban regulasi',
-  },
-  {
-    image: investmentImage,
-    type: 'Investasi',
-    year: '[TAHUN]',
-    title: 'Perizinan proyek investasi',
-    description: 'Koordinasi izin, dokumen, dan dependensi proyek.',
-    alt: 'Konsultan dan perwakilan proyek menelaah peta perizinan di lokasi pengembangan industri',
-  },
-] : [
-  {
-    image: licensingImage,
-    type: 'Business licensing',
-    year: '[YEAR]',
-    title: 'Corporate legality and operational licensing',
-    description: 'Requirement mapping through operational permit readiness.',
-    alt: 'A licensing consultant and business representative reviewing a permit matrix and operational plan',
-  },
-  {
-    image: complianceImage,
-    type: 'Legal advisory',
-    year: '[YEAR]',
-    title: 'Compliance review for business expansion',
-    description: 'Regulatory obligations assessed before new activity begins.',
-    alt: 'Legal and business professionals reviewing a location plan and regulatory obligations',
-  },
-  {
-    image: investmentImage,
-    type: 'Investment',
-    year: '[YEAR]',
-    title: 'Investment project licensing',
-    description: 'Permit, document, and project dependency coordination.',
-    alt: 'A consultant and project representative reviewing licensing plans at an industrial development site',
-  },
-];
+const items = EXPERIENCES.slice(0,3).map((e,index)=>({image:[licensingImage,complianceImage,investmentImage][index],type:e.content[locale].industry,year:e.year,title:e.content[locale].title,description:e.company,alt:e.content[locale].title,url:experienceUrl(e,locale)}));
 ---
 
 <section class="experience-section home-section" aria-labelledby="experience-title">
@@ -76,10 +27,10 @@ const items = id ? [
       </h2>
     </header>
 
-    <div class="experience-grid" aria-label={id ? 'Pilihan pengalaman' : 'Selected experience'}>
+    <div class="experience-grid">
       {items.map((item, index) => (
         <article class:list={['experience-card', index === 0 && 'experience-card--featured']} data-home-reveal>
-          <a href={`/${locale}/projects/`} aria-label={`${item.title}. ${id ? 'Lihat pengalaman' : 'View experience'}`}>
+          <a href={item.url}>
             <figure class="experience-card__visual">
               <Image
                 src={item.image}
@@ -104,8 +55,8 @@ const items = id ? [
 
     <p class="experience-section__note">
       {id
-        ? '[PLACEHOLDER: gambar, tahun, dan detail proyek menunggu verifikasi serta persetujuan publikasi.]'
-        : '[PLACEHOLDER: images, years, and project details await verification and publication approval.]'}
+        ? 'Pendekatan disesuaikan dengan kegiatan, lokasi, dan kebutuhan setiap bisnis.'
+        : 'Our approach adapts to the activities, location, and needs of each business.'}
     </p>
   </div>
 </section>

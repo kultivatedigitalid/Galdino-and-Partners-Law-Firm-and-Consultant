@@ -1,21 +1,9 @@
-# Content Guidelines
+# Content governance
 
-## Voice
+The user authorised realistic provisional content for a polished, non-indexed prototype. Track every unverified field internally; public pages must not expose placeholder tokens or pending-approval notes. Do not interpret provisional permission as approval to publish factual claims to an indexed production site.
 
-Calm, precise, practical, and commercially aware. Explain regulations in plain language without minimising legal nuance. Use “we help”, “map”, “review”, and “guide”; avoid “guarantee”, “fastest”, “100% approved”, and unsupported superlatives.
+Prices are estimates for an explicitly limited professional scope, with taxes, authority charges, technical work, tests and independent audits itemised separately. Never present a consultancy as the authority issuing permits, certifications or accreditation. Avoid approval guarantees or universal regulatory timelines.
 
-## Conversion copy
+Case studies, company marks, personnel narratives, statistics, author identity and generated portraits need business-owner approval. Keep biography contact links on the company mailbox. Do not invent degrees, licence numbers, partner accreditations or personal mailboxes.
 
-State the activity, problem, and next step. CTAs should describe an action: “Jadwalkan Konsultasi”, “Lihat Layanan”, or “Diskusikan kebutuhan”. Trust comes from process transparency and verified credentials, not inflated metrics.
-
-## Placeholders
-
-Use `[PLACEHOLDER — DESCRIPTION]`. Replace centrally where possible. Before removing a marker, record the source and approver for legal name, registration, professionals, project outcomes, testimonial, or logo.
-
-## Blog
-
-Each post answers one search intent, uses one descriptive H1 from frontmatter, and structures the body with H2/H3. Add a concise introduction, actionable explanation, limitations, and general-information disclaimer. Update `updatedDate` after substantive review. Pair translations with identical `translationKey`; translation should be natural, not literal.
-
-## Review
-
-Every legal article requires subject-matter review, current-law verification, and a recorded review date before production publication.
+Each article requires a paired translationKey, publish/update dates, named author, service IDs and primary legal/technical sources. English is an adaptation of the same substance. Actual dates and claims must be reviewed before launch. See the provisional register and launch checklist.

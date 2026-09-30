@@ -1,24 +1,11 @@
-# Requirements
+# Current requirements
 
-## Functional
+Latest user direction supersedes the earlier 15-service catalogue: exactly 38 services in six categories; four environmental subcategories; six industries (property, manufacturing, warehouses, retail, healthcare, hotels). Remove earlier services that do not fit. Preserve approved Home/About compositions.
 
-- Locales: `/id/` and `/en/`; `/` redirects to `/id/`.
-- Dedicated navbar pages: profile, services, projects, blog, and contact.
-- Homepage sections: header, legal-specific hero, value, services, reasons, process, industries, experience, insights, FAQ, consultation CTA, footer.
-- Markdown blog with requested frontmatter, category filtering, tags, related posts, translations, SEO, structured data, RSS, and draft exclusion.
-- Contact by WhatsApp, email, and `/api/contact`.
-- Form fields: name, email, WhatsApp, organisation, service, message, data consent, plus hidden honeypot.
+Primary navigation: Home, Layanan, Industri, Studi Kasus, Insight, Tentang Kami, Kontak. How We Work is a child of About. Retain ID/EN equivalents and existing hub URL names; nested service routes follow the supplied hierarchy.
 
-## Non-functional
+New prices are research-derived provisional estimates. Indexing remains disabled. Retain provisional facts in an internal field-level register without visible placeholder markers.
 
-- Semantic HTML, keyboard access, visible focus, reduced-motion support, responsive layouts, lightweight assets, minimal dependencies.
-- Canonical, hreflang, metadata, Open Graph, sitemap, robots, LegalService/Organization schema, and Article schema.
-- Server validation and sanitisation, same-origin check, rate limiting, secret-only environment variables, no caching of API responses.
+Each service has definition, rationale, audience, triggers, scope, deliverables, documents, process, timing, fee scope, cost factors, exclusions, six FAQs and relevant links. Industries connect to services, case studies and articles. Insights include search, category/tag filters, TOC, references, share controls and language equivalents.
 
-## Content integrity
-
-No fabricated claims, results, team members, testimonials, registration numbers, or client relationships. Placeholders must remain visibly labelled until approved information is supplied.
-
-## Definition of done
-
-`npm run qa` passes; all required pages build; internal route checks pass; both locales are complete; form validation and fallback channels work; documentation matches code; production variables and legal content are reviewed.
+Node SMTP form, privacy and terms, consent-gated analytics, accessible responsive UI, canonical/hreflang/schema/RSS/sitemap/404. Testing and deployment evidence must distinguish locally verified behaviour from missing external access.

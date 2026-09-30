@@ -7,6 +7,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CompanyGallery from './CompanyGallery.astro';
 import ArrowIcon from './icons/ArrowIcon.astro';
 import HomeFinalCta from './home/HomeFinalCta.astro';
+import FounderStory from './profile/FounderStory.astro';
+import InsideWork from './profile/InsideWork.astro';
+import RelatedCases from './shared/RelatedCases.astro';
 import TeamCarousel from './profile/TeamCarousel.astro';
 
 interface Props { locale: Locale; }
@@ -100,7 +103,11 @@ const profileSchema = {
       </div>
     </section>
 
+    <div class="container-shell" style="padding-block:1.5rem"><a class="ed-link" href={`/${locale}/profile/how-we-work/`}>{locale==='id'?'Pelajari cara kerja kami':'Explore how we work'} ↗</a></div>
+    <FounderStory locale={locale}/>
     <TeamCarousel locale={locale} />
+    <InsideWork locale={locale}/>
+    <div class="editorial"><div class="container-shell"><RelatedCases locale={locale}/></div></div>
     <HomeFinalCta locale={locale} />
   </div>
 

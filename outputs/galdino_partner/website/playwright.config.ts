@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./scripts/browser',webServer:{command:'node scripts/test-server.mjs',url:'http://localhost:4327/id/',reuseExistingServer:!process.env.CI,timeout:30000},timeout:120000,expect:{timeout:10000},workers:2,fullyParallel:true,reporter:[['list'],['json',{outputFile:'reports/browser-results.json'}]],use:{baseURL:'http://localhost:4327',channel:'msedge',headless:true,viewport:{width:1440,height:1000},reducedMotion:'reduce',trace:'retain-on-failure'},outputDir:'test-results'});

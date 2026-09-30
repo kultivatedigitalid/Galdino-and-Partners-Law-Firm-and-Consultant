@@ -1,0 +1,30 @@
+---
+import type {Locale} from '../../data/site';
+interface Props{locale:Locale;total:number}
+const {locale,total}=Astro.props,id=locale==='id';
+---
+<div class="ed-search"><label for="service-search">{id?'Izin atau kebutuhan apa yang Anda cari?':'What permit or requirement are you looking for?'}</label><div class="search-field"><input id="service-search" type="search" autocomplete="off" placeholder={id?'Contoh: bangun gudang, papan toko, ISO 9001':'Try: build a warehouse, signage, ISO 9001'} aria-controls="service-list" aria-describedby="service-count"/><span aria-hidden="true">↗</span></div></div>
+<p id="service-count" class="ed-results" role="status" aria-live="polite">{id?'Cari dari '+total+' layanan, atau pilih kategori di bawah.':'Search '+total+' services, or choose a category below.'}</p>
+<script>
+ import {track} from '../../scripts/analytics';
+ import {serviceScore} from '../../utils/service-search';
+ const input=document.querySelector<HTMLInputElement>('#service-search');
+ const cards=[...document.querySelectorAll<HTMLElement>('[data-service-search]')];
+ const list=document.querySelector('#service-list'),count=document.querySelector('#service-count'),empty=document.querySelector<HTMLElement>('#service-empty');
+ const id=document.documentElement.lang==='id';
+ let timer:ReturnType<typeof setTimeout>;
+ function search(){
+  const query=input?.value.trim()||'';
+  const results=cards.map(card=>({card,score:serviceScore({id:card.dataset.serviceId||'',title:card.dataset.serviceTitle||'',keywords:card.dataset.serviceSearch||''},query)})).sort((a,b)=>b.score-a.score);
+  let n=0;results.forEach(({card,score})=>{card.hidden=!query||score<=0;if(!card.hidden)n++;list?.append(card)});
+  if(count)count.textContent=query?(n+' '+(id?'rekomendasi layanan':'service recommendations')):(id?'Cari dari '+cards.length+' layanan, atau pilih kategori di bawah.':'Search '+cards.length+' services, or choose a category below.');
+  if(empty)empty.hidden=!query||n>0;
+  document.querySelectorAll<HTMLButtonElement>('[data-service-query]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.serviceQuery===query)));
+  clearTimeout(timer);if(query)timer=setTimeout(()=>track('service_search',{result_count:n}),600);
+ }
+ input?.addEventListener('input',search);
+ document.querySelector('[data-reset-service]')?.addEventListener('click',()=>{if(input){input.value='';search();input.focus();}});
+ document.querySelectorAll<HTMLButtonElement>('[data-service-query]').forEach(button=>button.addEventListener('click',()=>{if(input){input.value=button.dataset.serviceQuery||'';search();input.focus();input.scrollIntoView({block:'center',behavior:'instant'});}}));
+ search();
+</script>
+<style>.search-field{position:relative}.search-field input{font-size:clamp(1rem,2vw,1.45rem);padding:1.25rem 3.5rem 1.25rem 1.25rem;border-color:#171719}.search-field span{position:absolute;right:1.3rem;top:1.2rem;font-size:1.5rem;color:#9b1224}.ed-search label{font-size:1rem;margin-bottom:.4rem}</style>

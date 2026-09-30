@@ -2,12 +2,18 @@
 title: "A Legality Checklist Before Opening a Branch or New Business Activity"
 description: "A checklist covering corporate documents, classification, location, contracts, licences, employment, and continuing obligations before expansion."
 publishDate: 2026-06-24
-author: "Galdino & Partner Editorial Team"
+author: "Galdino Wirawan"
 category: "Compliance"
 tags: ["Expansion", "Legality", "Compliance"]
-featuredImage: "/og-default.svg"
+featuredImage: "/og-default.png"
 locale: "en"
 translationKey: "expansion-legality-checklist"
+services: ["kkpr","pbg-imb","ukl-upl"]
+sources:
+  - title: "OSS — Perizinan Berusaha Berbasis Risiko"
+    url: "https://oss.go.id/"
+  - title: "PP Nomor 28 Tahun 2025"
+    url: "https://peraturan.bpk.go.id/Details/319773/pp-no-28-tahun-2025"
 draft: false
 ---
 

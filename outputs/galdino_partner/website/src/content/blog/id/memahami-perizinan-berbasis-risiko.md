@@ -3,12 +3,18 @@ title: "Memahami Perizinan Berusaha Berbasis Risiko Sebelum Memulai Usaha"
 description: "Panduan awal untuk memahami hubungan KBLI, tingkat risiko, NIB, sertifikat standar, dan izin sektoral dalam perencanaan legalitas usaha."
 publishDate: 2026-07-10
 updatedDate: 2026-07-15
-author: "Tim Editorial Galdino & Partner"
+author: "Galdino Wirawan"
 category: "Perizinan Usaha"
 tags: ["OSS-RBA", "KBLI", "NIB"]
-featuredImage: "/og-default.svg"
+featuredImage: "/og-default.png"
 locale: "id"
 translationKey: "risk-based-licensing"
+services: ["kkpr","pbg-imb","ukl-upl"]
+sources:
+  - title: "OSS — Perizinan Berusaha Berbasis Risiko"
+    url: "https://oss.go.id/"
+  - title: "PP Nomor 28 Tahun 2025"
+    url: "https://peraturan.bpk.go.id/Details/319773/pp-no-28-tahun-2025"
 draft: false
 ---
 

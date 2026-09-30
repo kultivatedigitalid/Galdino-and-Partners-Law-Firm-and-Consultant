@@ -1,49 +1,29 @@
 # Architecture
 
-## Runtime model
+Astro 7 with TypeScript, Tailwind 4, Markdown content collections and `@astrojs/node` standalone output. Pages are prerendered; `/api/contact/` and the language-aware 404 run on Node. The Node server serves the built client and server output.
 
-Astro prerenders all pages and feeds. `src/pages/api/contact.ts` declares `prerender = false`, so the Vercel adapter emits only that route as a function. This preserves static page performance while allowing server-side validation, rate limiting, and secure email delivery.
+## Content boundaries
 
-No client UI framework is shipped. The mobile navigation, Home viewport reveal, scroll-preserving Home language switch, FAQ disclosure, carousel, and contact form use native elements and small scoped scripts.
+- `src/data/service-catalog.ts`: six categories and four environmental groups.
+- `src/data/service-records-*.ts`: 38 bilingual service-specific records.
+- `src/data/services.ts`: shared typed service model, relationships and URL helpers.
+- `src/data/service-prices.ts`: provisional professional-fee estimates.
+- `src/data/industries.ts`, `experiences.ts`, `people.ts`, `contact.ts`, `stats.ts`: central content.
+- `src/content/blog/{id,en}`: paired Markdown articles with sources and service identifiers.
+- `src/data/launch.ts`: explicit indexing gate.
 
-## Structure
+The existing hub URL names (`services`, `projects`, `blog`, `profile`, `contact`) are retained to preserve existing links. Public navigation uses the requested Indonesian names and equivalent English labels. Service URL paths follow category → optional environmental group → service. Each route has a reciprocal language equivalent.
 
-```text
-public/
-`-- assets/
-    `-- gp-logo-brand.png    transparent red-black-gold master logo
-src/
-|-- assets/                  Astro-optimized editorial imagery
-|-- components/
-|   |-- CompanyGallery.astro shared Home/Profile company image carousel
-|   |-- home/                Home section components and ServiceVisual
-|   |-- profile/             compact team directory
-|   `-- icons/               dependency-free semantic UI icons
-|-- content/blog/            Markdown grouped by id/ and en/
-|-- data/
-|   |-- site.ts              identity, navigation, contact, shared placeholders
-|   `-- home.ts              Home services, dummy client marks, and statistics
-|-- layouts/                 metadata, schema, shell, and global behaviour
-|-- pages/                   file-based routes, API, RSS, and robots
-|-- styles/                  Tailwind entry, design tokens, and contrast variants
-|-- utils/                   blog, i18n, and contact validation
-`-- content.config.ts        collection schema
-scripts/
-`-- validate-project.mjs     required routes and content checks
-```
+## Interface
 
-Routes use physical `id` and `en` folders. Shared page components prevent translated structures from drifting. Blog and person-detail routes use `getStaticPaths`; article pairs share `translationKey`, while person routes share the same verified slug across locales.
+Home and About retain their approved composition; Home's service rail now has six categories. New editorial pages use isolated `editorial.css`. Static content remains available without hydration. Client scripts implement search, the mobile menu, consent, sharing, carousels and the contact form.
 
-## Component boundaries
+## Runtime
 
-- `BaseLayout.astro` owns metadata, schema, header, footer, the optional desktop contact dock, and global reveal behaviour.
-- `Header.astro` owns brand navigation, route-wide scroll-preserving language switching, encoding-safe CTA icon, and keyboard-accessible mobile menu.
-- `HomePage.astro` owns the Mockup 1 section composition, locally scoped tokens/motion, and bilingual homepage copy.
-- `ArrowIcon.astro` replaces platform-dependent arrow glyphs in shared and Home controls.
-- `ServiceVisual.astro` renders lightweight service-category illustrations without a UI or graphics dependency.
-- `CompanyGallery.astro` owns the shared five-image Home/Profile gallery, autoplay pause rules, native dragging, keyboard navigation, status feedback, and reduced-motion fallback.
-- `ContactDock.astro` is a desktop and tablet WhatsApp shortcut and is hidden on mobile.
-- Content components receive data and render UI; business constants remain in `src/data/site.ts` and Home catalog data in `src/data/home.ts`.
-- Content prose remains in Markdown, not components.
-- Secrets are read only inside the server endpoint.
-- Add a CMS only if editorial workflow requires it; do not change routing or the content schema without migration notes.
+POST /api/contact/ validates and normalises the request, limits body size, applies bounded in-memory abuse protection and sends authenticated SMTP mail through Nodemailer. There is no submission database. Rate limits are per Node process; see CONTACT_FORM.md before scaling horizontally.
+
+Astro origin checking remains enabled. No SMTP credential or contact content is placed in client JavaScript. Analytics loads only after explicit consent and a valid configured GTM ID.
+
+## Verification
+
+`npm run qa` runs Astro diagnostics, API unit tests, a production build, and HTML validation. The validator checks every built page, internal links and anchors, reciprocal hreflang, route counts, source metadata, schemas and disabled indexing. Browser and external-host checks are recorded separately.

@@ -23,10 +23,10 @@ const [featured, ...supporting] = posts;
     {featured ? (
       <div class="insights-grid">
         <article class="insight-feature" data-home-reveal>
-          <a class="insight-feature__visual" href={postUrl(featured)} aria-label={featured.data.title}>
+          <a class="insight-feature__visual" href={postUrl(featured)}>
             <span>{featured.data.category}</span>
-            <strong aria-hidden="true">G&amp;P<br />INSIGHT</strong>
-            <small>01 / {String(posts.length).padStart(2, '0')}</small>
+            <strong>G&amp;P<br />INSIGHT</strong>
+            <small>01 / {String(posts.length).padStart(2, '0')}</small><span class="sr-only">{featured.data.title}</span>
           </a>
           <div class="insight-feature__copy">
             <p>{formatter.format(featured.data.publishDate)} / {featured.data.author}</p>

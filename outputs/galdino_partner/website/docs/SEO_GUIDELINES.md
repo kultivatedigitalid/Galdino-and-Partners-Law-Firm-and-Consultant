@@ -1,25 +1,11 @@
-# SEO Guidelines
+# SEO and indexing
 
-## Technical
+All current pages render noindex,nofollow. robots.txt disallows all crawling. LAUNCH.dataVerified remains false and PUBLIC_INDEXING_ENABLED defaults false; both must change after approvals, on the exact approved HTTPS host, before indexing is enabled.
 
-`BaseLayout` supplies unique title/description, canonical, hreflang, Open Graph, Twitter card, and Organization/LegalService JSON-LD. `x-default` resolves to the Indonesian equivalent of the current page. The transparent red-black-gold master logo is used by all routes and organization schema. Home, Profile, and placeholder person routes use the red theme color and immersive header configuration.
+Canonical URLs are locale-specific and omit query strings. hreflang uses id-ID, en and x-default to the Indonesian equivalent. Dynamic service, industry and article translations use explicit paired paths. Language switching preserves scroll position where possible.
 
-Profile adds `ProfilePage` and `BreadcrumbList` structured data. Placeholder person routes emit BreadcrumbList only and remain `noindex,follow`; Person schema must not be emitted until names, roles, credentials, photographs, and professional identities are verified. Blog pages add Article JSON-LD.
+Built output includes sitemap and ID/EN RSS. A custom Node 404 preserves HTTP 404 and selects language from the path. JSON-LD describes Organization/LegalService, WebSite/WebPage, Person, Service, Article and BreadcrumbList based on displayed content. No review/rating schema or FAQ rich-result claims.
 
-`@astrojs/sitemap` creates the sitemap; `robots.txt` references it; locale feeds expose RSS.
+Public offers with inferred/provisional prices deliberately omit structured Offer prices. Prices are not approved commercial quotations. Open Graph uses the existing approved-layout company image converted to PNG.
 
-Use one H1 per page. Section titles use H2; member names, service areas, and subtopics use H3 where nested. Internal links use descriptive Indonesian or English labels. Trailing slashes are canonical.
-
-## Topic model
-
-Primary themes: konsultan perizinan, law firm Indonesia, perizinan usaha, legalitas perusahaan, OSS-RBA, izin sektoral, kepatuhan regulasi, project and investment licensing. Do not force exact-match phrases into every section.
-
-Service pages target commercial intent; Profile and Projects support entity trust; blog articles answer informational intent and link naturally to Services and Contact. Profile should connect each verified team member to relevant licensing expertise without inventing experience or credentials.
-
-Every article needs a unique 80-170 character description, category, tags, author, dates, and image.
-
-## Before launch
-
-Replace `PUBLIC_SITE_URL`; confirm the production domain in metadata and search tools; provide a raster 1200x630 social image if platform SVG support is insufficient; verify schema with a validator; ensure placeholders are not indexed as final claims; review sitemap and redirect behaviour.
-
-Replace Profile member placeholders before removing `noindex` from individual routes or adding Person schema. Verify that official photographs have consent, descriptive alt text, and appropriate Astro image widths.
+Search Console ownership and real production metadata checks require domain access. Automated SEO tools penalise noindex; this is an intentional staging gate, not a reason to enable indexing prematurely.

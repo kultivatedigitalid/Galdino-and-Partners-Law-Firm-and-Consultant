@@ -1,0 +1,10 @@
+---
+import {Image} from 'astro:assets';
+import {EXPERIENCES,experienceUrl,type Experience} from '../../data/experiences';
+import {experienceImages} from '../../data/experience-images';
+import type {Locale} from '../../data/site';
+interface Props{locale:Locale;cases?:Experience[]}
+const {locale,cases=EXPERIENCES.slice(0,2)}=Astro.props;
+---
+<section class="ed-section"><p class="ed-kicker">{locale==='id'?'Studi kasus':'Case studies'}</p><h2>{locale==='id'?'Melihat pendekatan dalam konteks.':'Our approach in context.'}</h2><div class="related-cases">{cases.map(e=><article><a href={experienceUrl(e,locale)}><Image src={experienceImages[e.imageKey]} alt="" widths={[480,800]} sizes="(min-width:800px) 45vw, 100vw" loading="lazy" quality={76}/><p class="ed-label">{e.content[locale].industry} / {e.location}</p><h3>{e.content[locale].title}</h3></a><p>{e.company}</p></article>)}</div></section>
+<style>.related-cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem}.related-cases a{text-decoration:none}.related-cases :global(img){width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;filter:saturate(.5)}.related-cases .ed-label{margin:1.4rem 0 1rem}.related-cases h3{font-size:clamp(1.5rem,2.5vw,2.25rem)}.related-cases article>p{font-size:.85rem;color:#56565b}@media(max-width:800px){.related-cases{grid-template-columns:1fr}}</style>

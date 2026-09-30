@@ -1,37 +1,38 @@
-# Galdino & Partner Website
+# Galdino & Partner website
 
-Production-oriented bilingual website for a licensing consultant and law firm. Built with Astro 7, Tailwind CSS 4, Markdown Content Collections, and a Vercel-compatible contact endpoint.
+Bilingual Astro website for permitting and management-system advisory. The approved Home and About compositions are retained. Navigation now follows Home → Services → Industries → Case Studies → Insights → About Us → Contact.
 
-## Quick start
+- 38 service details, six category hubs and four environmental subcategory hubs per language.
+- Six industry pages, six provisional case studies, four professional profiles and How We Work.
+- 14 articles per language, searchable services and insights, privacy preferences and a Node SMTP contact endpoint.
+- Staging remains `noindex,nofollow`; all provisional data require approval before public indexing.
 
-Requirements: Node.js 22.12+ and npm.
+## Development
 
-```bash
-npm install
-cp .env.example .env
-npm run dev
+Use Node 22.12+ (local verification environment: Node 24.11.1).
+
+```sh
+npm ci
+npm run qa
+npm run dev -- --background
 ```
 
-Open `http://localhost:4321/id/` or `/en/`. The root redirects to Indonesian. Do not put real secrets in Git.
+Use `npm exec astro dev status`, `npm exec astro dev logs`, and `npm exec astro dev stop` to manage the background development server.
 
-## Commands
+## Production
 
-```bash
-npm run dev       # local development
-npm run check     # Astro and TypeScript diagnostics
-npm run lint      # project lint gate (Astro check)
-npm run build     # production build
-npm run preview   # preview a built static site
-npm run validate  # route, link, placeholder, and documentation checks
-npm run qa        # check + build + validate
+```sh
+npm ci
+npm run build
+npm start
 ```
 
-## Production setup
+Configure server secrets in Hostinger, never in Git. Read [deployment](docs/DEPLOYMENT.md), [site map](docs/SITE_MAP.md), [launch checklist](docs/LAUNCH_CHECKLIST.md), [pricing research](docs/PRICING_RESEARCH.md), and [provisional register](docs/PROVISIONAL_DATA_REGISTER.md).
 
-1. Replace structured placeholders through `src/data/site.ts` and approved content.
-2. Set `PUBLIC_SITE_URL` to the production origin.
-3. Configure Resend and, preferably, Upstash variables described in `.env.example`.
-4. Verify the sender domain, contact recipients, legal copy, service scope, team information, and publishable experience.
-5. Import the repository into Vercel and deploy. Astro uses `@astrojs/vercel`; only `/api/contact` runs server-side.
+The user confirmed that Hostinger access and the GTM ID are not yet available. Live SMTP delivery, host compatibility, production analytics and Search Console verification therefore remain external launch steps. A successful local test does not verify those services.
 
-The complete project contract is in [`docs/PROJECT_CONTEXT.md`](docs/PROJECT_CONTEXT.md). Start all future AI-agent work there, then read the topic-specific document.
+## Browser QA
+
+After npm run qa, run npm run test:browser. The Playwright configuration starts a loopback-only test server on port 4327 and uses installed Microsoft Edge. SMTP uses an in-memory stream sink; it sends no email. To measure performance separately, start node scripts/test-server.mjs, then run node scripts/lighthouse.mjs. Set CHROME_PATH if the browser executable differs. Do not run Lighthouse alongside other heavy tests.
+
+Run npm run docs:inventory after changing central content. Measured results and external limitations are recorded in [QA report](docs/QA_REPORT.md).

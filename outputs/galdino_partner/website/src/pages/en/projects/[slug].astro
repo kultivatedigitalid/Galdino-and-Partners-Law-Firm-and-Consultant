@@ -1,0 +1,7 @@
+---
+import ExperienceDetailPage from '../../../components/experiences/ExperienceDetailPage.astro';
+import {EXPERIENCES,type Experience} from '../../../data/experiences';
+export function getStaticPaths(){return EXPERIENCES.map(experience=>({params:{slug:experience.slug},props:{experience}}));}
+interface Props{experience:Experience}const {experience}=Astro.props;
+---
+<ExperienceDetailPage locale="en" experience={experience}/>

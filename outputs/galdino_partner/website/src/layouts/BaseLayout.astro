@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+import '../styles/editorial.css';
+import {SITE} from '../data/site';
+import {CONTACT} from '../data/contact';
+import {canIndex} from '../data/launch';
+import CookieConsent from '../components/legal/CookieConsent.astro';
 import '../styles/contrast.css';
 import '../styles/profile-polish.css';
 import Header from '../components/Header.astro';
@@ -15,7 +20,7 @@ interface Props {
   type?: 'website' | 'article';
   alternateUrl?: string;
 }
-const { locale, title, description, image = '/og-default.svg', type = 'website', alternateUrl } = Astro.props;
+const { locale, title, description, image = '/og-default.png', type = 'website', alternateUrl } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const other = locale === 'id' ? 'en' : 'id';
 const fallbackAlternate = new URL(Astro.url.pathname.replace(/^\/(id|en)/, `/${other}`), Astro.site);
@@ -23,8 +28,9 @@ const resolvedAlternate = new URL(alternateUrl || fallbackAlternate.toString(), 
 const alternateNavigationPath = new URL(resolvedAlternate).pathname;
 const defaultLocaleUrl = locale === 'id' ? canonical : resolvedAlternate;
 const ogImage = new URL(image, Astro.site);
-const pathname = Astro.url.pathname;
-const usesRedBrand = pathname === `/${locale}/` || pathname.startsWith(`/${locale}/profile/`);
+
+
+const indexable = canIndex(Astro.site) && Astro.response.status!==404;
 const organizationLogo = '/assets/gp-logo-brand.png';
 const organization = {
   '@context': 'https://schema.org',
@@ -32,8 +38,12 @@ const organization = {
   name: 'Galdino & Partner',
   url: Astro.site,
   logo: new URL(organizationLogo, Astro.site),
-  email: 'kultivatedigitalid@gmail.com',
-  telephone: '+62-821-2592-4637',
+  email: SITE.email,
+  telephone: SITE.whatsappDisplay,
+  legalName: SITE.legalName,
+  description: 'Legal & Licensing Consultant',
+  address: {'@type':'PostalAddress',streetAddress:SITE.address,addressLocality:'Tangerang Selatan',addressCountry:'ID'},
+  openingHours: CONTACT.hours,
   areaServed: 'Indonesia',
 };
 ---
@@ -44,11 +54,12 @@ const organization = {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content={usesRedBrand ? '#c4142a' : '#103638'} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#c4142a" />
+    <meta name="robots" content={indexable ? 'index,follow' : 'noindex,nofollow'} />
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang={locale} href={canonical} />
-    <link rel="alternate" hreflang={other} href={resolvedAlternate} />
+    <link rel="alternate" hreflang={locale === 'id' ? 'id-ID' : 'en'} href={canonical} />
+    <link rel="alternate" hreflang={other === 'id' ? 'id-ID' : 'en'} href={resolvedAlternate} />
     <link rel="alternate" hreflang="x-default" href={defaultLocaleUrl} />
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="Galdino & Partner" />
@@ -57,11 +68,13 @@ const organization = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImage}/>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <title>{title}</title>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(organization)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@graph':[{'@type':'WebSite',name:SITE.displayName,url:Astro.site},{'@type':'WebPage',name:title,description,url:canonical,inLanguage:locale}]})}/>
     <slot name="head" />
   </head>
   <body>
@@ -69,8 +82,10 @@ const organization = {
     <main id="main-content"><slot /></main>
     <Footer locale={locale} />
     <ContactDock locale={locale} />
+    <CookieConsent locale={locale} />
     <script>
-      document.documentElement.classList.add('motion-ready');
+      import '../scripts/dialogs';
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion-ready');
       const observer = 'IntersectionObserver' in window
         ? new IntersectionObserver((entries, instance) => {
             entries.forEach((entry) => {

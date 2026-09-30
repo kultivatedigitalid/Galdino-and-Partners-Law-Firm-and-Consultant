@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import hansImage from '../assets/team-hans-galdino.webp';
 import kelvinImage from '../assets/team-kelvin-anata-lian.webp';
 import mariaImage from '../assets/team-maria-indah-putri.webp';
 import michaelImage from '../assets/team-michael-alvaro.webp';
@@ -7,12 +8,15 @@ import type { ProfileMember } from '../data/profile';
 import { SITE, type Locale } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArrowIcon from './icons/ArrowIcon.astro';
+import RelatedInsights from './shared/RelatedInsights.astro';
+import {serviceById,serviceUrl} from '../data/services';
 import HomeFinalCta from './home/HomeFinalCta.astro';
 
 interface Props { locale: Locale; member: ProfileMember; alternateUrl: string; }
 const { locale, member, alternateUrl } = Astro.props;
 const id = locale === 'id';
 const imageByKey = {
+  hans: hansImage,
   kelvin: kelvinImage,
   maria: mariaImage,
   michael: michaelImage,
@@ -32,10 +36,10 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout locale={locale} title={title} description={description} alternateUrl={alternateUrl}>
-  <meta slot="head" name="robots" content="noindex,follow" />
+  <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Person',name:member.name,jobTitle:member.role,url:pageUrl,worksFor:{'@type':'Organization',name:SITE.displayName}})}/>
   <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <div class="person-page">
+  <div class="person-page editorial">
     <section class="person-hero" aria-labelledby="person-title">
       <div class="container-shell person-hero__grid">
         <div class="person-hero__copy">
@@ -52,8 +56,8 @@ const breadcrumbSchema = {
             {member.expertise.map((item) => <li>{item}</li>)}
           </ul>
           <div class="person-contact">
-            <a href={`/${locale}/contact/`}>{id ? 'Hubungi melalui firma' : 'Contact through the firm'}<ArrowIcon /></a>
-            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+            <a href={`/${locale}/contact/?person=${member.slug}`}>{id ? 'Hubungi melalui firma' : 'Contact through the firm'}<ArrowIcon /></a>
+            <a href={`mailto:${SITE.email}?subject=${encodeURIComponent('Consultation — '+member.name)}`}>{SITE.email}</a>
           </div>
         </div>
         <figure class="person-hero__visual">
@@ -66,7 +70,7 @@ const breadcrumbSchema = {
             fetchpriority="high"
             quality={82}
           />
-          <figcaption>{id ? 'Visual konsep - ganti dengan foto resmi' : 'Concept portrait - replace with official photo'}</figcaption>
+          <figcaption>{member.name}</figcaption>
         </figure>
       </div>
     </section>
@@ -79,7 +83,7 @@ const breadcrumbSchema = {
         </div>
         <div class="person-overview__body">
           <p class="person-summary">{member.summary}</p>
-          <p>{id ? 'Biografi, pendidikan, lisensi, keanggotaan profesional, serta pengalaman terpilih akan ditambahkan setelah data resmi diverifikasi dan disetujui untuk publikasi.' : 'Biography, education, admissions, professional memberships, and selected experience will be added after official information is verified and approved for publication.'}</p>
+          <p>{member.experience}</p>
           <dl>
             <div><dt>{id ? 'Jabatan' : 'Position'}</dt><dd>{member.role}</dd></div>
             <div><dt>{id ? 'Kredensial' : 'Credentials'}</dt><dd>{member.credentials}</dd></div>
@@ -89,7 +93,11 @@ const breadcrumbSchema = {
       </div>
     </section>
 
-    <HomeFinalCta locale={locale} />
+    <div class="container-shell">
+<section class="ed-section ed-columns"><div><h2>{id?'Pengalaman terpilih':'Representative matters'}</h2><ul class="ed-list">{member.matters.map(m=><li>{m}</li>)}</ul></div><div><h2>{id?'Cara bekerja':'Working approach'}</h2><p>{member.approach}</p><h3>{id?'Bahasa':'Languages'}</h3><p>{member.languages.join(' · ')}</p></div></section>
+<section class="ed-section"><h2>{id?'Layanan terkait':'Relevant services'}</h2><div class="ed-related">{member.services.map(s=>{const service=serviceById(s)!;return <article><h3><a href={serviceUrl(service,locale)}>{service.content[locale].title}</a></h3><p>{service.content[locale].description}</p></article>})}</div></section>
+<RelatedInsights locale={locale} services={member.services}/></div>
+<HomeFinalCta locale={locale}/>
   </div>
 </BaseLayout>
 

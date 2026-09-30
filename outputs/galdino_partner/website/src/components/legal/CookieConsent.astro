@@ -1,0 +1,45 @@
+---
+import type {Locale} from '../../data/site';interface Props{locale:Locale}const {locale}=Astro.props;const id=locale==='id';
+---
+<div class="cookie-banner" data-cookie-banner hidden data-gtm={import.meta.env.PUBLIC_GTM_ID||''} role="region" aria-label={id?'Pilihan cookie':'Cookie choices'}>
+<div><strong>{id?'Privasi, sesuai pilihan Anda.':'Privacy, on your terms.'}</strong><p>{id?'Penyimpanan yang diperlukan menjaga pilihan bahasa dan privasi. Analytics hanya aktif jika Anda menyetujuinya.':'Necessary storage remembers language and privacy choices. Analytics runs only if you agree.'} <a href={`/${locale}/privacy/`}>{id?'Kebijakan privasi':'Privacy policy'}</a></p></div>
+<div class="cookie-actions"><button type="button" data-consent-accept>{id?'Terima analytics':'Accept analytics'}</button><button type="button" data-consent-reject>{id?'Tolak opsional':'Reject optional'}</button><button type="button" data-cookie-preferences>{id?'Preferensi':'Preferences'}</button></div>
+</div>
+<dialog class="cookie-dialog" id="cookie-preferences" aria-labelledby="cookie-title">
+<form method="dialog"><button class="cookie-close" aria-label={id?'Tutup preferensi':'Close preferences'}>×</button></form>
+<h2 id="cookie-title">{id?'Preferensi cookie':'Cookie preferences'}</h2>
+<p>{id?'Anda dapat mengubah pilihan kapan saja melalui footer.':'You can change your choice any time from the footer.'}</p>
+<label><input type="checkbox" checked disabled/> {id?'Diperlukan (selalu aktif)':'Necessary (always active)'}</label>
+<p>{id?'Menyimpan pilihan privasi dan posisi halaman saat berganti bahasa.':'Stores privacy choices and page position when switching language.'}</p>
+<label><input id="analytics-choice" type="checkbox"/> Analytics</label>
+<p>{id?'Membantu memahami penggunaan situs melalui Google Analytics dan Tag Manager. Tidak mengirim isi formulir.':'Helps understand website use through Google Analytics and Tag Manager. Form contents are never sent.'}</p>
+<button type="button" class="ed-button" data-consent-save>{id?'Simpan pilihan':'Save preferences'}</button>
+</dialog>
+<style>
+.cookie-banner{position:fixed;inset:auto 1rem 1rem;z-index:80;max-width:72rem;margin:auto;padding:1.4rem;background:#fff;color:#171719;border:1px solid #b9b8b5;box-shadow:0 8px 32px #0002;display:grid;grid-template-columns:1.2fr 1fr;gap:1rem;align-items:center}.cookie-banner p{font-size:.8rem;margin:.45rem 0 0;max-width:65ch}.cookie-actions{display:flex;gap:.6rem;flex-wrap:wrap}.cookie-actions button{min-height:2.75rem;border:1px solid #777;padding:.55rem .8rem;background:white;font-size:.76rem;font-weight:700;cursor:pointer}.cookie-actions button:first-child{background:#bd1429;color:#fff;border-color:#bd1429}.cookie-dialog{position:fixed;inset:0;margin:auto;background:#fff;color:#171719;border:1px solid #aaa;padding:2rem;width:35rem;max-height:calc(100dvh - 2rem);overflow:auto}.cookie-dialog::backdrop{background:#0009}.cookie-dialog h2{font-size:1.8rem;line-height:1.2;margin-bottom:1rem}.cookie-dialog p{font-size:.85rem;margin:1rem 0}.cookie-dialog label{font-weight:700}.cookie-close{float:right;min-width:2.75rem;min-height:2.75rem;background:#eee;border:0;font-size:1.5rem;cursor:pointer}@media(max-width:760px){.cookie-banner{grid-template-columns:1fr;padding:1rem}.cookie-actions{gap:.4rem}.cookie-actions button{flex:1}}
+</style>
+<script>
+ import {setAnalyticsConsent} from '../../scripts/analytics';
+ const KEY='gp-consent-v1',AGE=180*86400000;
+ const banner=document.querySelector<HTMLElement>('[data-cookie-banner]')!;
+ const dialog=document.querySelector<HTMLDialogElement>('#cookie-preferences')!;
+ const choice=document.querySelector<HTMLInputElement>('#analytics-choice')!;
+ let current=false;
+ function restore(){try{const p=JSON.parse(localStorage.getItem(KEY)||'null');if(p?.version===1&&typeof p.analytics==='boolean'&&Date.now()-p.time<AGE){current=p.analytics;return true;}}catch{}return false;}
+ if(!restore())banner.hidden=false;
+ setAnalyticsConsent(current);
+ function save(analytics:boolean){
+ const was=current;current=analytics;
+ try{localStorage.setItem(KEY,JSON.stringify({version:1,analytics,time:Date.now()}));}catch{}
+ setAnalyticsConsent(analytics);banner.hidden=true;dialog.close();
+ if(was&&!analytics){
+  const domains=[location.hostname,...location.hostname.split('.').map((_,i,a)=>'.'+a.slice(i).join('.'))];
+  document.cookie.split(';').map(x=>x.split('=')[0].trim()).filter(x=>/^(_ga|_gid|_gat)/.test(x)).forEach(name=>{document.cookie=name+'=; Max-Age=0; Path=/';domains.forEach(domain=>document.cookie=name+'=; Max-Age=0; Path=/; Domain='+domain);});
+  location.reload();
+ }
+ }
+ document.querySelector('[data-consent-accept]')?.addEventListener('click',()=>save(true));
+ document.querySelector('[data-consent-reject]')?.addEventListener('click',()=>save(false));
+ document.querySelector('[data-consent-save]')?.addEventListener('click',()=>save(choice.checked));
+ document.querySelectorAll('[data-cookie-preferences]').forEach(b=>b.addEventListener('click',()=>{choice.checked=current;dialog.showModal();}));
+</script>

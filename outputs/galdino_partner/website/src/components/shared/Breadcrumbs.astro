@@ -1,0 +1,9 @@
+---
+import type {Locale} from '../../data/site';
+interface Props {locale:Locale;items:Array<{name:string;href?:string}>}
+const {locale,items}=Astro.props;
+const all=[{name:'Home',href:`/${locale}/`},...items];
+const schema={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:all.map((x,i)=>({'@type':'ListItem',position:i+1,name:x.name,item:new URL(x.href||Astro.url.pathname,Astro.site).href}))};
+---
+<nav class="ed-breadcrumb" aria-label="Breadcrumb">{all.map((x,i)=><><span aria-hidden="true">{i?' / ':''}</span>{x.href?<a href={x.href}>{x.name}</a>:<span aria-current="page">{x.name}</span>}</>)}</nav>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g,'\\u003c')}/>

@@ -1,0 +1,6 @@
+---
+import type {Locale} from '../../data/site';interface Props{locale:Locale}const {locale}=Astro.props;
+const steps=locale==='id'?['Inquiry diterima','Tim meninjau kebutuhan','Kontak melalui email atau WhatsApp','Konsultasi awal gratis','Pemetaan kebutuhan dan dokumen','Ruang lingkup dan estimasi biaya','Kesepakatan langkah berikutnya']:['Enquiry received','Team reviews the requirement','Contact by email or WhatsApp','Free initial consultation','Requirements and document mapping','Scope and estimated fees','Agree the next action'];
+---
+<section class="ed-section"><p class="ed-kicker">{locale==='id'?'Setelah Anda menghubungi kami':'After you get in touch'}</p><h2>{locale==='id'?'Langkah berikutnya.':'What happens next.'}</h2><ol class="next-steps">{steps.map((s,i)=><li><span>{String(i+1).padStart(2,'0')}</span><p>{s}</p></li>)}</ol></section>
+<style>.next-steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}.next-steps li{border-top:1px solid #b9b8b5;padding-top:1rem}.next-steps span{color:#a61227;font-size:.75rem;font-weight:800}.next-steps p{margin:.6rem 0;font-size:.9rem}@media(max-width:800px){.next-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}</style>

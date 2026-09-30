@@ -1,0 +1,597 @@
+[
+  {
+    "name": "home",
+    "path": "/id/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-09-30T02:41:04.615Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "first-contentful-paint": 2267.9218903879773,
+      "largest-contentful-paint": 2338.882835581966,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 26,
+      "speed-index": 2656.507433595739
+    },
+    "failedAudits": [
+      {
+        "id": "mainthread-work-breakdown",
+        "title": "Minimize main-thread work",
+        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "groupLabel",
+              "valueType": "text",
+              "label": "Category"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "granularity": 1,
+              "label": "Time Spent"
+            }
+          ],
+          "items": [
+            {
+              "group": "styleLayout",
+              "groupLabel": "Style & Layout",
+              "duration": 2603.5319999999997
+            },
+            {
+              "group": "other",
+              "groupLabel": "Other",
+              "duration": 589.9319999999992
+            },
+            {
+              "group": "paintCompositeRender",
+              "groupLabel": "Rendering",
+              "duration": 94.70800000000114
+            },
+            {
+              "group": "parseHTML",
+              "groupLabel": "Parse HTML & CSS",
+              "duration": 42.916000000000004
+            },
+            {
+              "group": "scriptEvaluation",
+              "groupLabel": "Script Evaluation",
+              "duration": 41.84799999999998
+            },
+            {
+              "group": "scriptParseCompile",
+              "groupLabel": "Script Parsing & Compilation",
+              "duration": 5.732
+            }
+          ],
+          "sortedBy": [
+            "duration"
+          ]
+        }
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "description": "Search engines are unable to include your pages in search results if they don't have permission to crawl them. [Learn more about crawler directives](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/).",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "source",
+              "valueType": "code",
+              "label": "Blocking Directive Source"
+            }
+          ],
+          "items": [
+            {
+              "source": {
+                "type": "node",
+                "lhId": "1-82-META",
+                "path": "1,HTML,0,HEAD,5,META",
+                "selector": "head > meta",
+                "boundingRect": {
+                  "top": 0,
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "width": 0,
+                  "height": 0
+                },
+                "snippet": "<meta name=\"robots\" content=\"noindex,nofollow\" />",
+                "nodeLabel": "head > meta"
+              }
+            },
+            {
+              "source": {
+                "type": "source-location",
+                "url": "http://localhost:4327/robots.txt",
+                "urlProvider": "network",
+                "line": 1,
+                "column": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "forced-reflow-insight",
+        "title": "Forced reflow",
+        "description": "A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about [forced reflows](https://developer.chrome.com/docs/performance/insights/forced-reflow) and possible mitigations.",
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "table",
+              "headings": [
+                {
+                  "key": "source",
+                  "valueType": "source-location",
+                  "label": "Source"
+                },
+                {
+                  "key": "reflowTime",
+                  "valueType": "ms",
+                  "granularity": 1,
+                  "label": "Total reflow time"
+                }
+              ],
+              "items": [
+                {
+                  "source": {
+                    "type": "text",
+                    "value": "[unattributed]"
+                  },
+                  "reflowTime": 117.924
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.",
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "6FCFBA6AA7B2B450CC64B10103110061": {
+                    "url": "http://localhost:4327/id/",
+                    "navStartToEndTime": 44,
+                    "transferSize": 63793,
+                    "isLongest": true,
+                    "children": {
+                      "1040.7": {
+                        "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
+                        "navStartToEndTime": 696,
+                        "transferSize": 1619,
+                        "isLongest": true,
+                        "children": {
+                          "1040.28": {
+                            "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
+                            "navStartToEndTime": 708,
+                            "transferSize": 1797,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "1040.3": {
+                        "url": "http://localhost:4327/_astro/HomePage.DlRvxbij.css",
+                        "navStartToEndTime": 61,
+                        "transferSize": 38004,
+                        "children": {}
+                      },
+                      "1040.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.DMJSXQhZ.css",
+                        "navStartToEndTime": 58,
+                        "transferSize": 37672,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 708
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "services",
+    "path": "/id/services/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-09-30T02:41:16.893Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "first-contentful-paint": 1978.7295741552612,
+      "largest-contentful-paint": 2336.4591483105223,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 15,
+      "speed-index": 2527.387966204881
+    },
+    "failedAudits": [
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "description": "Search engines are unable to include your pages in search results if they don't have permission to crawl them. [Learn more about crawler directives](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/).",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "source",
+              "valueType": "code",
+              "label": "Blocking Directive Source"
+            }
+          ],
+          "items": [
+            {
+              "source": {
+                "type": "node",
+                "lhId": "1-162-META",
+                "path": "1,HTML,0,HEAD,5,META",
+                "selector": "head > meta",
+                "boundingRect": {
+                  "top": 0,
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "width": 0,
+                  "height": 0
+                },
+                "snippet": "<meta name=\"robots\" content=\"noindex,nofollow\" />",
+                "nodeLabel": "head > meta"
+              }
+            },
+            {
+              "source": {
+                "type": "source-location",
+                "url": "http://localhost:4327/robots.txt",
+                "urlProvider": "network",
+                "line": 1,
+                "column": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/performance/insights/image-delivery)",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": ""
+            },
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL",
+              "subItemsHeading": {
+                "key": "reason",
+                "valueType": "text"
+              }
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Resource Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings",
+              "subItemsHeading": {
+                "key": "wastedBytes",
+                "valueType": "bytes"
+              }
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-0-IMG",
+                "path": "1,HTML,1,BODY,3,FOOTER,0,DIV,0,DIV,0,A,0,SPAN,0,IMG",
+                "selector": "div > a.footer-brand > span.footer-logo-frame > img.footer-logo",
+                "boundingRect": {
+                  "top": 7992,
+                  "bottom": 8043,
+                  "left": 10,
+                  "right": 84,
+                  "width": 74,
+                  "height": 51
+                },
+                "snippet": "<img class=\"footer-logo\" src=\"/assets/gp-logo-small.webp\" width=\"240\" height=\"165\" alt=\"\" loading=\"lazy\" data-astro-cid-jo6i4kqk=\"\">",
+                "nodeLabel": "div > a.footer-brand > span.footer-logo-frame > img.footer-logo"
+              },
+              "url": "http://localhost:4327/assets/gp-logo-small.webp",
+              "totalBytes": 25992,
+              "wastedBytes": 24092,
+              "subItems": {
+                "type": "subitems",
+                "items": [
+                  {
+                    "reason": "Increasing the image compression factor could improve this image's download size.",
+                    "wastedBytes": 19392
+                  },
+                  {
+                    "reason": "This image file is larger than it needs to be (240x165) for its displayed dimensions (129x89). Use responsive images to reduce the image download size.",
+                    "wastedBytes": 18508
+                  }
+                ]
+              }
+            }
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "wastedBytes": 24092
+          }
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.",
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "04E52CEC5CFD49132986EF308C52130D": {
+                    "url": "http://localhost:4327/id/services/",
+                    "navStartToEndTime": 52,
+                    "transferSize": 98172,
+                    "isLongest": true,
+                    "children": {
+                      "24600.7": {
+                        "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
+                        "navStartToEndTime": 462,
+                        "transferSize": 1619,
+                        "isLongest": true,
+                        "children": {
+                          "24600.33": {
+                            "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
+                            "navStartToEndTime": 470,
+                            "transferSize": 1797,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "24600.6": {
+                        "url": "http://localhost:4327/_astro/ServiceSearch.astro_astro_type_script_index_0_lang.Bmp2gzh3.js",
+                        "navStartToEndTime": 463,
+                        "transferSize": 3631,
+                        "children": {}
+                      },
+                      "24600.3": {
+                        "url": "http://localhost:4327/_astro/ServicesPage.D98L6x5b.css",
+                        "navStartToEndTime": 49,
+                        "transferSize": 5158,
+                        "children": {}
+                      },
+                      "24600.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.DMJSXQhZ.css",
+                        "navStartToEndTime": 48,
+                        "transferSize": 37672,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 470
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "contact",
+    "path": "/id/contact/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-09-30T02:41:28.586Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    },
+    "metrics": {
+      "first-contentful-paint": 1615.4789,
+      "largest-contentful-paint": 1639.9788999999998,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "speed-index": 3777.6721883413097
+    },
+    "failedAudits": [
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing",
+        "description": "Search engines are unable to include your pages in search results if they don't have permission to crawl them. [Learn more about crawler directives](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/).",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "source",
+              "valueType": "code",
+              "label": "Blocking Directive Source"
+            }
+          ],
+          "items": [
+            {
+              "source": {
+                "type": "node",
+                "lhId": "1-69-META",
+                "path": "1,HTML,0,HEAD,5,META",
+                "selector": "head > meta",
+                "boundingRect": {
+                  "top": 0,
+                  "bottom": 0,
+                  "left": 0,
+                  "right": 0,
+                  "width": 0,
+                  "height": 0
+                },
+                "snippet": "<meta name=\"robots\" content=\"noindex,nofollow\" />",
+                "nodeLabel": "head > meta"
+              }
+            },
+            {
+              "source": {
+                "type": "source-location",
+                "url": "http://localhost:4327/robots.txt",
+                "urlProvider": "network",
+                "line": 1,
+                "column": 0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.",
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "list-section",
+              "value": {
+                "type": "network-tree",
+                "chains": {
+                  "34893CC52324C475B8EE4A055E532E1A": {
+                    "url": "http://localhost:4327/id/contact/",
+                    "navStartToEndTime": 423,
+                    "transferSize": 27188,
+                    "isLongest": true,
+                    "children": {
+                      "14968.4": {
+                        "url": "http://localhost:4327/_astro/ContactForm.astro_astro_type_script_index_0_lang.CmEOVQqW.js",
+                        "navStartToEndTime": 430,
+                        "transferSize": 2058,
+                        "isLongest": true,
+                        "children": {
+                          "14968.12": {
+                            "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
+                            "navStartToEndTime": 444,
+                            "transferSize": 1797,
+                            "isLongest": true,
+                            "children": {}
+                          }
+                        }
+                      },
+                      "14968.5": {
+                        "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
+                        "navStartToEndTime": 431,
+                        "transferSize": 1619,
+                        "children": {}
+                      },
+                      "14968.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.DMJSXQhZ.css",
+                        "navStartToEndTime": 53,
+                        "transferSize": 37672,
+                        "children": {}
+                      }
+                    }
+                  }
+                },
+                "longestChain": {
+                  "duration": 444
+                }
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnected origins",
+              "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+              "value": {
+                "type": "text",
+                "value": "no origins were preconnected"
+              }
+            },
+            {
+              "type": "list-section",
+              "title": "Preconnect candidates",
+              "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+              "value": {
+                "type": "text",
+                "value": "No additional origins are good candidates for preconnecting"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

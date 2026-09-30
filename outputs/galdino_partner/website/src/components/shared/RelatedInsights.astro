@@ -1,0 +1,8 @@
+---
+import {getPublishedPosts,postUrl} from '../../utils/blog';
+import type {Locale} from '../../data/site';
+interface Props{locale:Locale;services:string[]}
+const {locale,services}=Astro.props;
+const posts=(await getPublishedPosts(locale)).filter(p=>p.data.services.some(s=>services.includes(s))).slice(0,3);
+---
+{posts.length>0&&<section class="ed-section"><p class="ed-kicker">Insights</p><h2>{locale==='id'?'Baca konteksnya.':'Understand the context.'}</h2><div class="ed-related">{posts.map(p=><article><p class="ed-label">{p.data.category}</p><h3><a href={postUrl(p)}>{p.data.title}</a></h3><p>{p.data.description}</p></article>)}</div></section>}

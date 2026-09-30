@@ -1,0 +1,28 @@
+---
+import {Image} from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './shared/Breadcrumbs.astro';
+import HomeFinalCta from './home/HomeFinalCta.astro';
+import IndustryTiles from './shared/IndustryTiles.astro';
+import PermitPathway from './shared/PermitPathway.astro';
+import RelatedCases from './shared/RelatedCases.astro';
+import RelatedInsights from './shared/RelatedInsights.astro';
+import {INDUSTRIES,industryUrl} from '../data/industries';
+import {industryImages} from '../data/industry-images';
+import {serviceById,serviceUrl} from '../data/services';
+import type {Locale} from '../data/site';
+interface Props{locale:Locale}
+const {locale}=Astro.props,id=locale==='id',manufacturing=INDUSTRIES.find(i=>i.id==='manufaktur')!,c=manufacturing.content[locale];
+---
+<BaseLayout locale={locale} title={id?'Industri yang Kami Dampingi | Galdino & Partner':'Industries We Support | Galdino & Partner'} description={id?'Pemetaan kebutuhan perizinan untuk properti, manufaktur, gudang, retail, fasilitas kesehatan, dan hotel. Mulai dari konteks operasional Anda.':'Licensing requirements for property, manufacturing, warehouses, retail, healthcare and hotels. Start with your operating context.'}>
+<div class="editorial">
+<header class="atlas-hero"><Image src={industryImages.manufaktur} alt={id?'Lini produksi di fasilitas manufaktur pangan':'Production line in a food manufacturing facility'} widths={[640,1200,1800]} sizes="100vw" loading="eager" fetchpriority="high" quality={78}/><div class="container-shell atlas-copy"><Breadcrumbs locale={locale} items={[{name:id?'Industri':'Industries'}]}/><p class="ed-kicker">{id?'Memahami kegiatan. Memetakan kebutuhan.':'Understand the activity. Map the requirements.'}</p><h1>{id?'Berangkat dari dunia usaha Anda.':'Built around your business.'}</h1><p class="ed-lead">{id?'Lokasi, fasilitas, dan kegiatan membentuk kebutuhan izin yang berbeda. Kami mulai dari konteksnya.':'Location, facilities and activities shape different approval requirements. We start with that context.'}</p></div></header>
+<nav class="sector-index container-shell" aria-label={id?'Pilih sektor':'Choose a sector'}>{INDUSTRIES.map((i,n)=><a href={'#sector-'+i.id}><span>0{n+1}</span>{i.content[locale].short} ↓</a>)}</nav>
+<div class="container-shell">
+<section class="ed-section"><p class="ed-kicker">{id?'Enam industri':'Six industries'}</p><IndustryTiles locale={locale} atlas/></section>
+<section class="ed-section"><p class="ed-kicker">{id?'Peta regulasi':'Regulatory landscape'}</p><h2>{id?'Satu kegiatan. Kebutuhan yang saling terhubung.':'One activity. Connected requirements.'}</h2><PermitPathway locale={locale} landscape/><p class="ed-note">{id?'Urutan dan kebutuhan akhir mengikuti jenis usaha, skala, lokasi, serta status dokumen. Peta ini merupakan titik awal asesmen.':'The final sequence and requirements depend on activity, scale, location and existing records. This map is a starting point for assessment.'}</p></section>
+<section class="ed-section manufacturing-preview"><figure class="ed-figure"><Image src={industryImages.manufaktur} alt={id?'Fasilitas produksi dan jaringan pengolahan':'Production facility and processing infrastructure'} widths={[480,800,1200]} sizes="(min-width:800px) 50vw, 100vw" loading="lazy" quality={77}/></figure><div><p class="ed-kicker">{id?'Sorotan industri':'Industry focus'}</p><h2>{id?'Kapasitas bertambah. Kebutuhan ikut berubah.':'Growing capacity. Changing requirements.'}</h2><p>{c.description}</p><ul class="ed-list">{c.issues.map(x=><li>{x}</li>)}</ul><a class="ed-link" href={industryUrl(manufacturing,locale)}>{id?'Jelajahi manufaktur':'Explore manufacturing'} ↗</a></div></section>
+<section class="ed-section"><p class="ed-kicker">{id?'Layanan terkait':'Related services'}</p><div class="ed-related">{manufacturing.services.slice(0,3).map(key=>{const s=serviceById(key)!;return <article><h3><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></h3><p>{s.content[locale].description}</p></article>})}</div></section>
+<RelatedCases locale={locale}/><RelatedInsights locale={locale} services={manufacturing.services}/>
+</div><HomeFinalCta locale={locale}/></div></BaseLayout>
+<style>.atlas-hero{position:relative;background:#0b0b0c;color:white;min-height:38rem;display:grid;align-items:end;isolation:isolate}.atlas-hero> :global(img){position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;filter:saturate(.3)}.atlas-hero:after{position:absolute;inset:0;z-index:1;content:'';background:linear-gradient(90deg,#0b0b0cee,#0b0b0c77 60%,#0b0b0c33)}.atlas-copy{position:relative;z-index:2;padding-block:3rem 4rem}.atlas-copy h1{max-width:15ch}.atlas-copy .ed-lead{color:#e0dedb;max-width:46ch}.atlas-copy .ed-kicker{color:#eab2ba}.atlas-copy :global(.ed-breadcrumb){color:#ddd}.sector-index{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding-block:1.5rem;border-bottom:1px solid #bbb}.sector-index a{font-size:.78rem;text-decoration:none;min-height:2.75rem;display:flex;align-items:center;gap:.5rem}.sector-index span{color:#a11225;font-size:.65rem}.manufacturing-preview{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}.manufacturing-preview :global(img){min-height:28rem}.manufacturing-preview li{font-size:.9rem}@media(max-width:800px){.atlas-hero{min-height:36rem}.atlas-copy h1{font-size:clamp(2.5rem,10vw,4rem)}.manufacturing-preview{grid-template-columns:1fr;gap:2rem}.manufacturing-preview :global(img){min-height:0}}</style>

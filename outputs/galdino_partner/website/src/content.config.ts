@@ -16,6 +16,8 @@ const blog = defineCollection({
     locale: z.enum(['id', 'en']),
     translationKey: z.string(),
     draft: z.boolean().default(false),
+    services: z.array(z.string()).min(1),
+    sources: z.array(z.object({title:z.string(),url:z.url()})).min(1),
   }),
 });
 

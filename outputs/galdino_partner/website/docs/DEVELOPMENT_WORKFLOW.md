@@ -1,21 +1,9 @@
-# Development Workflow
+# Workflow
 
-1. Read `PROJECT_CONTEXT.md`, then the relevant specification.
-2. Create a focused branch using the `codex/` prefix when Git workflow is requested.
-3. Update the central data source or Markdown content before duplicating copy in components.
-4. Implement both locales in the same change.
-5. Run `npm run check`, `npm run build`, and `npm run validate`; `npm run qa` combines them.
-6. Preview and manually test mobile, tablet, desktop, keyboard, reduced motion, and form states.
-7. Update the applicable documentation whenever behaviour, routes, variables, tokens, or content format changes.
+Base main → implementation branch → local QA → validated commit → main. The user explicitly authorised committing and pushing the completed change to main. Never force-push to replace remote work; fetch and integrate any upstream changes first.
 
-## Code conventions
+Run npm ci and npm run qa. Review rendered pages and functional browser flows. Record checks in reports/validation.json and QA_REPORT.md. Local mail stream tests are not evidence of SMTP delivery.
 
-Two-space indentation, semicolons in TypeScript, single quotes in scripts, PascalCase components, camelCase utilities, UPPER_CASE constants, and kebab-case URLs/content filenames. Prefer named functions for shared logic and narrow prop interfaces. Remove unused dependencies and components in the same change.
+Use central data and URL helpers; validate references whenever a service changes. Keep paired Markdown articles and source links. Preserve approved Home/About layout. Document provisional changes and block indexing until approval.
 
-## Content workflow
-
-Create paired Markdown files, validate frontmatter, set `draft: true` during review, obtain legal/editorial approval, then publish. Never alter `publishDate` merely for freshness; use `updatedDate` for substantive changes.
-
-## Release record
-
-Record the commit, reviewer, content approvals, environment changes, QA result, and rollback deployment. Any temporary exception must include an owner and expiry date.
+No secrets, populated .env, node_modules, dist or local logs belong in Git. All generated source artifacts, content, test scripts and release documentation do.

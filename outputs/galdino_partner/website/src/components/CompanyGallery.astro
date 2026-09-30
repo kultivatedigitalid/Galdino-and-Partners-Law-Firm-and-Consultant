@@ -107,7 +107,7 @@ const slides = id ? [
       const nextIndex = (requestedIndex + slides.length) % slides.length;
       updateState(nextIndex, announce);
       viewport.scrollTo({
-        left: slides[nextIndex]?.offsetLeft ?? viewport.clientWidth * nextIndex,
+        left: (slides[nextIndex]?.offsetLeft ?? 0) - (slides[0]?.offsetLeft ?? 0),
         behavior: instant || reducedMotion ? 'auto' : 'smooth',
       });
     };
@@ -117,9 +117,10 @@ const slides = id ? [
       timer = undefined;
     };
 
+    let inView = false;
     const start = () => {
       stop();
-      if (!reducedMotion) timer = window.setInterval(() => setSlide(activeIndex + 1, false), 6000);
+      if (inView && !document.hidden && !reducedMotion && !carousel.matches(':hover, :focus-within')) timer = window.setInterval(() => setSlide(activeIndex + 1, false), 6000);
     };
 
     const scheduleRestart = () => {
@@ -192,7 +193,8 @@ const slides = id ? [
     });
 
     new ResizeObserver(() => setSlide(activeIndex, false, true)).observe(viewport);
-    start();
+    new IntersectionObserver(entries => { inView = entries[0]?.isIntersecting ?? false; start(); }).observe(carousel);
+    document.addEventListener('visibilitychange',start);
   });
 </script>
 

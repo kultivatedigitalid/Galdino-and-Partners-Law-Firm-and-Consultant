@@ -1,0 +1,6 @@
+---
+import NotFoundPage from '../components/NotFoundPage.astro';
+export const prerender = false;
+const locale=Astro.url.pathname.startsWith('/en/')?'en':'id';Astro.response.status=404;
+---
+<NotFoundPage locale={locale}/>

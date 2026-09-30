@@ -12,16 +12,16 @@ const id = locale === 'id';
         <img src="/assets/gp-logo-brand.png" width="600" height="413" alt="" loading="lazy" />
       </div>
       <div class="video-section__status">
-        <span>FILM / 01</span>
-        <strong>{id ? 'Video perusahaan sedang dipersiapkan' : 'Company film is being prepared'}</strong>
+        <span>G&P / 01</span>
+        <strong>{id ? 'Ketelitian dalam setiap langkah' : 'Precision at every step'}</strong>
       </div>
-      <p>{id ? '[PLACEHOLDER VIDEO RESMI]' : '[OFFICIAL VIDEO PLACEHOLDER]'}</p>
+      <p>{id ? 'LEGAL & LICENSING CONSULTANT' : 'LEGAL & LICENSING CONSULTANT'}</p>
     </div>
     <div class="video-section__copy" data-home-reveal>
       <p class="home-kicker">{id ? 'Cara kami bekerja' : 'How we work'}</p>
       <h2 id="video-title" class="home-heading">{id ? 'Kebutuhan izin menjadi rencana kerja.' : 'Turning permit needs into a work plan.'}</h2>
-      <p>{id ? 'Video ini akan memperlihatkan pemetaan kebutuhan, koordinasi dokumen, pelaporan progres, dan tindak lanjut setelah izin terbit.' : 'The video will show requirement mapping, document coordination, progress reporting, and post-issuance follow-up.'}</p>
-      <small>{id ? 'Tidak ada media yang diputar sebelum aset final tersedia.' : 'No media is played until the final asset is available.'}</small>
+      <p>{id ? 'Pendekatan kami menghubungkan pemetaan kebutuhan, koordinasi dokumen, pelaporan progres, dan tindak lanjut setelah izin terbit.' : 'Our approach connects requirement mapping, document coordination, progress reporting, and post-issuance follow-up.'}</p>
+      <small>{id ? 'Satu rencana kerja, pemilik dokumen yang jelas, dan tindak lanjut yang tercatat.' : 'One work plan, clear document ownership, and recorded follow-up.'}</small>
     </div>
   </div>
 </section>
@@ -33,7 +33,7 @@ const id = locale === 'id';
   .video-section__poster::before { position: absolute; inset: -35% auto auto 43%; z-index: -1; width: 70%; aspect-ratio: 1; border: 1px solid rgb(255 255 255 / .16); border-radius: 50%; content: ''; }
   .video-section__poster::after { position: absolute; right: 0; bottom: 0; z-index: -1; width: 42%; height: 55%; background: var(--home-red); clip-path: polygon(100% 0, 100% 100%, 0 100%); content: ''; }
   .video-section__monogram { position: relative; width: clamp(10rem, 24vw, 18rem); aspect-ratio: 1.5; overflow: hidden; opacity: .96; }
-  .video-section__monogram img { position: absolute; top: 50%; left: 50%; width: 248%; height: auto; max-width: none; transform: translate(-50%, -50%); }
+  .video-section__monogram img { display: block; width: 100%; height: auto; object-fit: contain; }
   .video-section__status { max-width: 26rem; display: grid; gap: .5rem; }
   .video-section__status span, .video-section__poster > p { margin: 0; font-size: .61rem; font-weight: 820; letter-spacing: .14em; text-transform: uppercase; }
   .video-section__status strong { font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.8rem); font-weight: 560; letter-spacing: -.03em; line-height: 1; }

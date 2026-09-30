@@ -1,60 +1,54 @@
 ---
-import { SERVICE_OPTIONS, type Locale } from '../data/site';
-interface Props { locale: Locale; }
-const { locale } = Astro.props;
-const id = locale === 'id';
+import {SERVICES} from '../data/services';import type {Locale} from '../data/site';import ContactSuccessModal from './contact/ContactSuccessModal.astro';
+interface Props{locale:Locale}const {locale}=Astro.props;const id=locale==='id';
 ---
-<form id="contact-form" class="surface grid gap-5 p-6 md:p-8" action="/api/contact" method="post" novalidate>
-  <input type="hidden" name="locale" value={locale} />
-  <div class="absolute -left-[9999px]" aria-hidden="true">
-    <label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off" />
-  </div>
-  <div class="grid gap-5 md:grid-cols-2">
-    <label class="field"><span>{id ? 'Nama' : 'Name'} *</span><input name="name" autocomplete="name" required minlength="2" maxlength="100" /></label>
-    <label class="field"><span>Email *</span><input name="email" type="email" autocomplete="email" required maxlength="160" /></label>
-    <label class="field"><span>{id ? 'Nomor WhatsApp' : 'WhatsApp number'} *</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required minlength="8" maxlength="24" /></label>
-    <label class="field"><span>{id ? 'Perusahaan / organisasi' : 'Company / organisation'} *</span><input name="company" autocomplete="organization" required minlength="2" maxlength="140" /></label>
-  </div>
-  <label class="field"><span>{id ? 'Jenis layanan' : 'Service type'} *</span><select name="service" required><option value="">{id ? 'Pilih kebutuhan' : 'Select a requirement'}</option>{SERVICE_OPTIONS[locale].map((option) => <option value={option}>{option}</option>)}</select></label>
-  <label class="field"><span>{id ? 'Pesan' : 'Message'} *</span><textarea name="message" rows="6" required minlength="20" maxlength="3000" placeholder={id ? 'Jelaskan aktivitas usaha, kebutuhan, dan target waktu secara ringkas.' : 'Briefly describe your business activity, requirement, and target timing.'}></textarea></label>
-  <label class="flex items-start gap-3 text-sm text-muted"><input class="mt-1 size-4 accent-forest" name="consent" type="checkbox" value="true" required /><span>{id ? 'Saya menyetujui pemrosesan data ini untuk menanggapi permintaan konsultasi. *' : 'I consent to this data being processed to respond to my consultation request. *'}</span></label>
-  <div id="form-status" class="hidden rounded-lg p-4 text-sm" role="status" aria-live="polite"></div>
-  <button class="button-primary w-fit disabled:cursor-wait disabled:opacity-60" type="submit"><span class="button-label">{id ? 'Kirim permintaan' : 'Send enquiry'}</span><span aria-hidden="true">→</span></button>
-  <p class="text-xs text-muted">{id ? 'Jangan kirim dokumen sensitif melalui formulir awal ini.' : 'Do not send sensitive documents through this initial form.'}</p>
+<form id="contact-form" action="/api/contact/" method="post" novalidate>
+<input type="hidden" name="locale" value={locale}/><div class="honey" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"/></label></div>
+<div class="form-grid">
+<label class="field"><span>{id?'Nama':'Name'} *</span><input name="name" autocomplete="name" required minlength="2" maxlength="100"/></label>
+<label class="field"><span>{id?'Perusahaan':'Company'} *</span><input name="company" autocomplete="organization" required minlength="2" maxlength="140"/></label>
+<label class="field"><span>Email *</span><input name="email" type="email" autocomplete="email" required maxlength="160"/></label>
+<label class="field"><span>{id?'Telepon / WhatsApp':'Phone / WhatsApp'} *</span><input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" required minlength="8" maxlength="24"/></label>
+<label class="field"><span>{id?'Jenis layanan':'Service'} *</span><select name="service" required><option value="">{id?'Pilih kebutuhan':'Select a requirement'}</option>{SERVICES.map(s=><option value={s.id}>{s.content[locale].title}</option>)}<option value="other">{id?'Kebutuhan lain':'Other requirement'}</option></select></label>
+<label class="field"><span>{id?'Lokasi usaha':'Business location'} *</span><input name="location" required minlength="2" maxlength="160" autocomplete="off"/></label>
+</div>
+<label class="field"><span>{id?'Penjelasan singkat':'Brief description'} *</span><textarea name="message" rows="5" required minlength="20" maxlength="3000" placeholder={id?'Ceritakan kegiatan, kebutuhan, dan target waktu Anda.':'Tell us about your activity, requirement and intended timing.'}></textarea></label>
+<label class="privacy-check"><input name="consent" type="checkbox" value="true" required/><span>{id?'Saya telah membaca':'I have read the'} <a href={`/${locale}/privacy/`}>{id?'Kebijakan Privasi':'Privacy Policy'}</a> {id?'dan menyetujui pemrosesan data untuk menanggapi permintaan ini.':'and agree to processing my information to respond to this request.'} *</span></label>
+<div id="form-status" tabindex="-1" role="status" aria-live="polite" hidden></div>
+<button class="ed-button" type="submit"><span data-submit-label>{id?'Kirim permintaan':'Send request'}</span> ↗</button>
+<p class="form-note">{id?'Konsultasi awal gratis. Jangan sertakan dokumen identitas atau informasi rahasia dalam pesan awal.':'The first consultation is free. Please leave identity documents and confidential information out of the initial message.'}</p>
+<noscript><p>{id?'Aktifkan JavaScript untuk mengirim formulir, atau hubungi kami melalui email/WhatsApp.':'Enable JavaScript to send the form, or use email/WhatsApp.'}</p></noscript>
 </form>
+<ContactSuccessModal locale={locale}/>
 <style>
-  .field { display: grid; gap: .45rem; color: var(--color-ink); font-size: .82rem; font-weight: 650; }
-  .field input, .field select, .field textarea { width: 100%; border: 1px solid var(--color-line); border-radius: .65rem; background: white; padding: .8rem .9rem; color: var(--color-ink); font-weight: 400; }
-  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--color-gold); outline: 2px solid rgb(176 131 64 / .2); }
-  .field [aria-invalid="true"] { border-color: #9f2f2f; }
+#contact-form{background:#fff;padding:clamp(1.2rem,3vw,2.5rem);border-top:3px solid #bd1429}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}.field{display:grid;gap:.5rem;margin-bottom:1.2rem;font-weight:700;font-size:.8rem}.field input,.field select,.field textarea{width:100%;min-width:0;min-height:3rem;padding:.85rem;border:1px solid #b9b8b5;border-radius:0;background:white;font-weight:400;color:#171719}.field [aria-invalid=true]{border-color:#bd1429;outline:1px solid #bd1429}.privacy-check{display:flex;gap:.8rem;font-size:.83rem;align-items:flex-start;margin:1rem 0 1.5rem}.privacy-check input{width:1.1rem;height:1.1rem;flex-shrink:0;margin-top:.3rem;accent-color:#bd1429}.honey{position:absolute;left:-9999px}.form-note{font-size:.75rem;color:#56565b;margin-top:1rem}#form-status{padding:1rem;border-left:3px solid #bd1429;background:#fff1f2;font-size:.85rem;margin-bottom:1rem}button:disabled{opacity:.6;cursor:wait}@media(max-width:560px){.form-grid{grid-template-columns:1fr;gap:0}}
 </style>
 <script>
-  const form = document.querySelector<HTMLFormElement>('#contact-form');
-  const status = document.querySelector<HTMLElement>('#form-status');
-  form?.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
-    const label = button?.querySelector<HTMLElement>('.button-label');
-    const locale = new FormData(form).get('locale') === 'en' ? 'en' : 'id';
-    if (button) button.disabled = true;
-    if (label) label.textContent = locale === 'id' ? 'Mengirim…' : 'Sending…';
-    if (status) { status.className = 'hidden'; status.textContent = ''; }
-    try {
-      const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.message || 'Request failed');
-      if (status) { status.className = 'rounded-lg bg-sage p-4 text-sm text-forest'; status.textContent = data.message; }
-      form.reset();
-      status?.focus();
-    } catch (error) {
-      if (status) { status.className = 'rounded-lg bg-red-50 p-4 text-sm text-red-800'; status.textContent = error instanceof Error ? error.message : (locale === 'id' ? 'Terjadi kesalahan.' : 'Something went wrong.'); }
-    } finally {
-      if (button) button.disabled = false;
-      if (label) label.textContent = locale === 'id' ? 'Kirim permintaan' : 'Send enquiry';
-    }
-  });
+import {track} from '../scripts/analytics';
+const form=document.querySelector<HTMLFormElement>('#contact-form')!;
+const status=document.querySelector<HTMLElement>('#form-status')!;
+const button=form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+const label=form.querySelector<HTMLElement>('[data-submit-label]')!;
+const modal=document.querySelector<HTMLDialogElement>('#contact-success')!;
+const id=document.documentElement.lang==='id';const defaultLabel=label.textContent||'';
+const requested=new URLSearchParams(location.search).get('service');
+const select=form.querySelector<HTMLSelectElement>('[name=service]')!;
+if(requested&&[...select.options].some(o=>o.value===requested))select.value=requested;
+let started=false,sending=false,lastSuccess=0;
+form.addEventListener('focusin',()=>{if(!started){track('contact_form_start');started=true;}});
+modal.addEventListener('close',()=>button.focus());
+form.addEventListener('submit',async event=>{
+ event.preventDefault();if(sending)return;
+ form.querySelectorAll('[aria-invalid]').forEach(f=>f.removeAttribute('aria-invalid'));
+ if(!form.checkValidity()){form.reportValidity();return;}
+ if(Date.now()-lastSuccess<30000){status.hidden=false;status.textContent=id?'Permintaan sudah terkirim. Tunggu sebentar sebelum mengirim lagi.':'Your request was sent. Please wait before sending again.';status.focus();return;}
+ sending=true;button.disabled=true;form.setAttribute('aria-busy','true');label.textContent=id?'Mengirim…':'Sending…';status.hidden=true;track('contact_form_submit');
+ try{
+ const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+ const data=await response.json();
+ if(!response.ok){for(const field of data.fields||[]){const control=form.elements.namedItem(field);if(control instanceof HTMLElement)control.setAttribute('aria-invalid','true');}throw new Error(data.message);}
+ form.reset();started=false;lastSuccess=Date.now();track('contact_form_success');modal.showModal();
+ }catch(e){status.hidden=false;status.textContent=e instanceof Error&&e.message?e.message:(id?'Pesan belum terkirim. Silakan gunakan email atau WhatsApp.':'Your message was not sent. Please use email or WhatsApp.');status.focus();}
+ finally{sending=false;button.disabled=false;form.removeAttribute('aria-busy');label.textContent=defaultLabel;}
+});
 </script>
