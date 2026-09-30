@@ -295,4 +295,4 @@ export const SERVICE_GROUPS:ServiceGroup[]=[
 ];
 export const categoryById=(id:string)=>SERVICE_CATEGORIES.find(c=>c.id===id)!;
 export const categoryUrl=(c:ServiceCategory,l:Locale)=>`/${l}/services/${c.slug[l]}/`;
-export const groupUrl=(g:ServiceGroup,l:Locale)=>categoryUrl(categoryById(g.category),l)+g.slug[l]+'/';
+export const groupUrl=(g:ServiceGroup,l:Locale)=>categoryUrl(categoryById(g.category),l)+'#'+g.slug[l];

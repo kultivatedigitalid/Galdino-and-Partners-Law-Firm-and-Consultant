@@ -1,28 +1,28 @@
 # Website architecture
 
-Updated 29 September 2026. This is the approved replacement structure: 38 services, six categories, four environmental groups, six industries. Old PT/CV/PMA/NIB/LKPM/HAKI service offers are absent; informational articles may discuss those concepts without offering them as services.
+Updated 30 September 2026. This is the approved replacement structure: 38 services, six categories, four environmental groups, six industries. Old PT/CV/PMA/NIB/LKPM/HAKI service offers are absent; informational articles may discuss those concepts without offering them as services.
 
 ## Navigation and hierarchy
 
-Header: Home → Services → Industries → Case Studies → Insights → About Us → Contact. About Us links to How We Work and four people. Footer repeats the main routes and provides Privacy, Terms, cookie preferences and contact channels.
+Header: Home → Services → Industries → Our Experiences → Insights → About Us + Consultation CTA. Contact has no main navbar; How We Work is a section of Home. The service mega menu links directly to six hubs and 38 service pages. About Us also links to four people. Footer repeats the main routes and provides Privacy, Terms, cookie preferences and contact channels.
 
 ```mermaid
 flowchart TD
  Website --> Home
  Website --> Services
  Website --> Industries
- Website --> Cases[Case Studies]
+ Website --> Cases[Our Experiences]
  Website --> Insights
  Website --> About[About Us]
  Website --> Contact
  Services --> Categories[6 categories]
  Categories --> Details[38 service pages]
- Categories --> Environment[4 environmental groups]
+ Categories --> Environment[4 environmental sections]
  Environment --> Details
  Industries --> Sectors[6 industry pages]
  Cases --> CaseDetails[6 case studies]
  Insights --> Articles[14 articles per language]
- About --> Process[How We Work]
+ Home --> Process[How to begin section]
  About --> People[4 people]
 ```
 
@@ -35,10 +35,9 @@ Existing top-level route segments are retained for stable links; nested service 
 | Home | /id/ | /en/ |
 | Layanan | /id/services/ | /en/services/ |
 | Industri | /id/industries/ | /en/industries/ |
-| Studi Kasus | /id/projects/ | /en/projects/ |
+| Our Experiences | /id/projects/ | /en/projects/ |
 | Insight | /id/blog/ | /en/blog/ |
-| Tentang Kami | /id/profile/ | /en/profile/ |
-| Cara Kerja | /id/profile/how-we-work/ | /en/profile/how-we-work/ |
+| About Us | /id/profile/ | /en/profile/ |
 | Kontak | /id/contact/ | /en/contact/ |
 | Privasi | /id/privacy/ | /en/privacy/ |
 | Ketentuan | /id/terms/ | /en/terms/ |
@@ -60,19 +59,19 @@ Existing top-level route segments are retained for stable links; nested service 
 | ↳ Jasa SLO Kelistrikan | /id/services/bangunan-konstruksi/slo-kelistrikan/ | /en/services/buildings-construction/electrical-operation-certificate/ |
 | ↳ Jasa SBU Konstruksi - SBUJK | /id/services/bangunan-konstruksi/sbu-konstruksi/ | /en/services/buildings-construction/construction-business-certificate/ |
 | **Perizinan Lingkungan** | /id/services/lingkungan/ | /en/services/environmental-approvals/ |
-| ↳ Dokumen Lingkungan | /id/services/lingkungan/dokumen-lingkungan/ | /en/services/environmental-approvals/environmental-documents/ |
-| ↳ Persetujuan Teknis Lingkungan | /id/services/lingkungan/persetujuan-teknis/ | /en/services/environmental-approvals/technical-approvals/ |
-| ↳ Pelaporan & Compliance Lingkungan | /id/services/lingkungan/pelaporan-compliance/ | /en/services/environmental-approvals/reporting-compliance/ |
-| ↳ Penyelesaian Dokumen Lingkungan | /id/services/lingkungan/penyelesaian-dokumen/ | /en/services/environmental-approvals/compliance-resolution/ |
-| ↳ ↳ Jasa SPPL | /id/services/lingkungan/dokumen-lingkungan/sppl/ | /en/services/environmental-approvals/environmental-documents/environmental-undertaking/ |
-| ↳ ↳ Jasa UKL-UPL | /id/services/lingkungan/dokumen-lingkungan/ukl-upl/ | /en/services/environmental-approvals/environmental-documents/environmental-management-monitoring/ |
-| ↳ ↳ Jasa AMDAL | /id/services/lingkungan/dokumen-lingkungan/amdal/ | /en/services/environmental-approvals/environmental-documents/environmental-impact-assessment/ |
-| ↳ ↳ Jasa PERTEK Air Limbah - IPLC | /id/services/lingkungan/persetujuan-teknis/pertek-air-limbah/ | /en/services/environmental-approvals/technical-approvals/wastewater-technical-approval/ |
-| ↳ ↳ Jasa PERTEK Emisi | /id/services/lingkungan/persetujuan-teknis/pertek-emisi/ | /en/services/environmental-approvals/technical-approvals/emission-technical-approval/ |
-| ↳ ↳ Jasa SLO Lingkungan | /id/services/lingkungan/persetujuan-teknis/slo-lingkungan/ | /en/services/environmental-approvals/technical-approvals/environmental-operation-clearance/ |
-| ↳ ↳ Jasa RKL-RPL | /id/services/lingkungan/pelaporan-compliance/rkl-rpl/ | /en/services/environmental-approvals/reporting-compliance/environmental-monitoring-reports/ |
-| ↳ ↳ Jasa DELH | /id/services/lingkungan/penyelesaian-dokumen/delh/ | /en/services/environmental-approvals/compliance-resolution/environmental-evaluation-document/ |
-| ↳ ↳ Jasa DPLH | /id/services/lingkungan/penyelesaian-dokumen/dplh/ | /en/services/environmental-approvals/compliance-resolution/environmental-management-document/ |
+| ↳ Dokumen Lingkungan | /id/services/lingkungan/#dokumen-lingkungan | /en/services/environmental-approvals/#environmental-documents |
+| ↳ Persetujuan Teknis Lingkungan | /id/services/lingkungan/#persetujuan-teknis | /en/services/environmental-approvals/#technical-approvals |
+| ↳ Pelaporan & Compliance Lingkungan | /id/services/lingkungan/#pelaporan-compliance | /en/services/environmental-approvals/#reporting-compliance |
+| ↳ Penyelesaian Dokumen Lingkungan | /id/services/lingkungan/#penyelesaian-dokumen | /en/services/environmental-approvals/#compliance-resolution |
+| ↳ Jasa SPPL | /id/services/lingkungan/sppl/ | /en/services/environmental-approvals/environmental-undertaking/ |
+| ↳ Jasa UKL-UPL | /id/services/lingkungan/ukl-upl/ | /en/services/environmental-approvals/environmental-management-monitoring/ |
+| ↳ Jasa AMDAL | /id/services/lingkungan/amdal/ | /en/services/environmental-approvals/environmental-impact-assessment/ |
+| ↳ Jasa PERTEK Air Limbah - IPLC | /id/services/lingkungan/pertek-air-limbah/ | /en/services/environmental-approvals/wastewater-technical-approval/ |
+| ↳ Jasa PERTEK Emisi | /id/services/lingkungan/pertek-emisi/ | /en/services/environmental-approvals/emission-technical-approval/ |
+| ↳ Jasa SLO Lingkungan | /id/services/lingkungan/slo-lingkungan/ | /en/services/environmental-approvals/environmental-operation-clearance/ |
+| ↳ Jasa RKL-RPL | /id/services/lingkungan/rkl-rpl/ | /en/services/environmental-approvals/environmental-monitoring-reports/ |
+| ↳ Jasa DELH | /id/services/lingkungan/delh/ | /en/services/environmental-approvals/environmental-evaluation-document/ |
+| ↳ Jasa DPLH | /id/services/lingkungan/dplh/ | /en/services/environmental-approvals/environmental-management-document/ |
 | **Lalu Lintas & Akses Jalan** | /id/services/lalu-lintas-akses/ | /en/services/traffic-road-access/ |
 | ↳ Jasa Andalalin | /id/services/lalu-lintas-akses/andalalin/ | /en/services/traffic-road-access/traffic-impact-analysis/ |
 | ↳ Jasa MRLL | /id/services/lalu-lintas-akses/mrll/ | /en/services/traffic-road-access/traffic-management-engineering/ |
@@ -96,12 +95,12 @@ Existing top-level route segments are retained for stable links; nested service 
 | Perizinan untuk Retail & Multi-Outlet | /id/industries/retail-multi-outlet/ | /en/industries/retail-multi-outlet/ |
 | Perizinan untuk Klinik / Rumah Sakit | /id/industries/fasilitas-kesehatan/ | /en/industries/healthcare/ |
 | Perizinan untuk Hotel | /id/industries/hotel/ | /en/industries/hotels/ |
-| Studi Kasus UKL-UPL: menyiapkan ekspansi fasilitas pangan. | /id/projects/aruna-pangan/ | /en/projects/aruna-pangan/ |
+| UKL-UPL: menyiapkan ekspansi fasilitas pangan. | /id/projects/aruna-pangan/ | /en/projects/aruna-pangan/ |
 | Kesiapan sistem keamanan informasi untuk tim teknologi. | /id/projects/nusa-teknologi/ | /en/projects/nusa-teknologi/ |
-| Studi Kasus Pajak Reklame: menyatukan data lintas outlet. | /id/projects/prima-distribusi/ | /en/projects/prima-distribusi/ |
+| Pajak Reklame: menyatukan data lintas outlet. | /id/projects/prima-distribusi/ | /en/projects/prima-distribusi/ |
 | Merapikan bukti kesiapan badan usaha konstruksi. | /id/projects/vertex-konstruksi/ | /en/projects/vertex-konstruksi/ |
 | Kesiapan dokumen kelaikan dan akses fasilitas gudang. | /id/projects/lintas-logistik/ | /en/projects/lintas-logistik/ |
-| Studi Kasus PBG: menyelaraskan rencana bangunan dan dokumen tapak. | /id/projects/karya-properti/ | /en/projects/karya-properti/ |
+| PBG: menyelaraskan rencana bangunan dan dokumen tapak. | /id/projects/karya-properti/ | /en/projects/karya-properti/ |
 | Hans Galdino | /id/profile/hans-galdino/ | /en/profile/hans-galdino/ |
 | Kelvin Anata Lian | /id/profile/kelvin-anata-lian/ | /en/profile/kelvin-anata-lian/ |
 | Maria Indah Putri | /id/profile/maria-indah-putri/ | /en/profile/maria-indah-putri/ |
@@ -124,12 +123,12 @@ Existing top-level route segments are retained for stable links; nested service 
 ## Internal linking plan
 
 - Home links to all six service categories, selected cases, About and Contact.
-- Services links to six categories and every leaf through the searchable directory.
-- Environmental category links through four groups; each group links to its service leaves.
-- Service detail links to parent category/group, three related services, assigned people, relevant articles and a preselected contact form.
+- Services links to six categories and every leaf through six visible HTML sections, with search temporarily hidden.
+- The environmental hub contains four anchored sections; services use category/leaf URLs without an intermediate group segment.
+- Service detail links to parent category, three related services, assigned people, matching case studies, relevant articles and a preselected contact form.
 - Each industry links to relevant services and case studies. Cases link back to services and relevant insights.
 - Insights link to supported service details and related articles. People link to their assigned services and insights.
-- Breadcrumbs expose the complete hierarchy, including environmental subgroups. The language switch preserves the corresponding entity.
+- Breadcrumbs expose Home, Services, category and service. The language switch preserves the corresponding entity.
 - XML sitemap and per-language RSS cover public content routes. API, assets and 404 are not editorial pages. The noindex gate remains active.
 
-No service redirects are necessary from the approved base: the previous catalogue had no published service detail routes. Unsupported removed service URLs return a helpful 404 rather than redirecting to an unrelated offer.
+Middleware redirects the removed How We Work pages to the process section on Home and the former environmental group pages to hub anchors and the former nested service URLs to their shorter equivalents (301). Unsupported removed service URLs return a helpful 404 rather than redirecting to an unrelated offer.

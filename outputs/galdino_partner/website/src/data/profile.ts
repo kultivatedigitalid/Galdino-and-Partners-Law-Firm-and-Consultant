@@ -40,7 +40,7 @@ export const PROFILE_CONTENT: Record<Locale, ProfileContent> = {
       description: 'Kenali tim, pendekatan, dan keahlian Galdino & Partner dalam pengurusan perizinan usaha, legalitas, OSS-RBA, serta kepatuhan bisnis.',
     },
     hero: {
-      context: 'Tentang Kami',
+      context: 'About Us',
       title: 'Tim hukum di belakang perizinan Anda.',
       lead: 'Kami memetakan regulasi, menyiapkan dokumen, dan mengawal proses izin sesuai kebutuhan bisnis Anda.',
       cta: 'Kenali tim kami',

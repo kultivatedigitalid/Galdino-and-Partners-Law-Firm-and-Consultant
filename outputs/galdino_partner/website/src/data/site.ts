@@ -14,8 +14,8 @@ export const SITE = {
 } as const;
 
 export const NAV = {
- id:[{href:'/id/',label:'Home'},{href:'/id/services/',label:'Layanan'},{href:'/id/industries/',label:'Industri'},{href:'/id/projects/',label:'Studi Kasus'},{href:'/id/blog/',label:'Insight'},{href:'/id/profile/',label:'Tentang Kami'}],
- en:[{href:'/en/',label:'Home'},{href:'/en/services/',label:'Services'},{href:'/en/industries/',label:'Industries'},{href:'/en/projects/',label:'Case Studies'},{href:'/en/blog/',label:'Insights'},{href:'/en/profile/',label:'About Us'}]
+ id:[{href:'/id/',label:'Home'},{href:'/id/services/',label:'Layanan'},{href:'/id/industries/',label:'Industri'},{href:'/id/projects/',label:'Our Experiences'},{href:'/id/blog/',label:'Insight'},{href:'/id/profile/',label:'About Us'}],
+ en:[{href:'/en/',label:'Home'},{href:'/en/services/',label:'Services'},{href:'/en/industries/',label:'Industries'},{href:'/en/projects/',label:'Our Experiences'},{href:'/en/blog/',label:'Insights'},{href:'/en/profile/',label:'About Us'}]
 } as const;
 
 export const COPY = {

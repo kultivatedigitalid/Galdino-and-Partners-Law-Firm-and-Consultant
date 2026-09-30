@@ -206,7 +206,7 @@ const slides = id ? [
   .company-gallery__viewport.is-dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
   .company-gallery__track { display: flex; width: 100%; height: 100%; }
   .company-gallery__slide { position: relative; flex: 0 0 100%; width: 100%; height: 100%; margin: 0; scroll-snap-align: start; scroll-snap-stop: always; }
-  .company-gallery__slide :global(img) { width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) contrast(1.05); pointer-events: none; user-select: none; }
+  .company-gallery__slide :global(img) { width: 100%; height: 100%; object-fit: contain; filter: saturate(.78) contrast(1.05); pointer-events: none; user-select: none; }
   .company-gallery__controls { display: flex; justify-content: center; padding-top: .45rem; }
   .company-gallery__dots { display: flex; align-items: center; justify-content: center; }
   .company-gallery__dot { width: 2.75rem; height: 2.75rem; border: 0; background: transparent; cursor: pointer; padding: 0; }

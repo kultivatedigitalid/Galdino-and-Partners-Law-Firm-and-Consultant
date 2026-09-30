@@ -1,11 +1,16 @@
 ---
+import {serviceActivityImage} from '../../data/service-images';
 import {Image} from 'astro:assets';
 import {categoryImages} from '../../data/industry-images';
-import BaseLayout from '../../layouts/BaseLayout.astro';import Breadcrumbs from '../shared/Breadcrumbs.astro';import RelatedInsights from '../shared/RelatedInsights.astro';import HomeFinalCta from '../home/HomeFinalCta.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';import ImageHero from '../shared/ImageHero.astro';import RelatedInsights from '../shared/RelatedInsights.astro';import HomeFinalCta from '../home/HomeFinalCta.astro';
+import RelatedCases from '../shared/RelatedCases.astro';
+import {EXPERIENCES} from '../../data/experiences';
 import {SERVICES,serviceUrl,priceLabel,serviceBreadcrumbs,type Service} from '../../data/services';import {PEOPLE} from '../../data/people';import type {Locale} from '../../data/site';
 interface Props{locale:Locale;service:Service}const {locale,service:s}=Astro.props;const id=locale==='id',c=s.content[locale];const other=id?'en':'id';
 const experts=PEOPLE[locale].filter(p=>p.services.includes(s.id));
 const related=SERVICES.filter(x=>s.related.includes(x.id));
+const categoryServices=SERVICES.filter(x=>x.category===s.category).map(x=>x.id);
+const cases=EXPERIENCES.filter(e=>e.services.some(key=>categoryServices.includes(key))).sort((a,b)=>Number(b.services.includes(s.id))-Number(a.services.includes(s.id))).slice(0,2);
 const faq=id?[
  ['Apakah konsultasi awal berbayar?','Konsultasi awal gratis. Kami membahas kegiatan, lokasi, dan tujuan Anda sebelum menetapkan ruang lingkup tertulis.'],
  ['Dokumen mana yang perlu disiapkan lebih dahulu?',c.documents.slice(0,3).join(', ')+'. Kirim ringkasan kebutuhan terlebih dahulu; dokumen sensitif diminta melalui kanal yang disepakati.'],
@@ -23,10 +28,10 @@ const faq=id?[
 ];
 const schema={'@context':'https://schema.org','@type':'Service',name:c.title,description:c.description,serviceType:c.title,areaServed:{'@type':'Country',name:'Indonesia'},provider:{'@type':'Organization',name:'Galdino & Partner',url:Astro.site}};
 ---
-<BaseLayout locale={locale} title={`${c.title} — ${priceLabel(s,locale)} | Galdino & Partner`} description={c.description+' '+(id?'Pelajari dokumen, proses, biaya jasa, dan langkah konsultasi awal gratis.':'Explore documents, process, professional fees and a free initial consultation.')} alternateUrl={serviceUrl(s,other)}>
+<BaseLayout immersive locale={locale} title={`${c.title} — ${priceLabel(s,locale)} | Galdino & Partner`} description={c.description+' '+(id?'Pelajari dokumen, proses, biaya jasa, dan langkah konsultasi awal gratis.':'Explore documents, process, professional fees and a free initial consultation.')} alternateUrl={serviceUrl(s,other)}>
 <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>
 <div class="editorial" data-page-event="service_view" data-entity={s.id}>
-<header class="ed-hero"><div class="container-shell"><Breadcrumbs locale={locale} items={serviceBreadcrumbs(s,locale)}/><div class="ed-split"><div><p class="ed-kicker">Service / {s.number}</p><h1>{c.title}</h1><p class="ed-lead">{c.description}</p></div><aside class="ed-aside"><p class="ed-label">{id?'Estimasi biaya jasa':'Estimated professional fee'}</p><p class="ed-price">{priceLabel(s,locale)}</p><p>{c.priceScope}</p><a class="ed-button" href={`/${locale}/contact/?service=${s.id}`}>{id?'Jadwalkan Konsultasi':'Schedule a Consultation'} ↗</a><p>{id?'Konsultasi awal gratis.':'Free initial consultation.'}</p></aside></div><figure class="detail-visual"><Image src={categoryImages[s.category]} alt={c.title} widths={[640,1000,1440]} sizes="100vw" loading="eager" quality={78}/></figure></div></header>
+<ImageHero locale={locale} title={c.title} description={c.description} image={serviceActivityImage(s).image} breadcrumbs={serviceBreadcrumbs(s,locale)}/><div class="container-shell"><section class="ed-section service-estimate"><aside class="ed-aside"><p class="ed-label">{id?'Estimasi biaya jasa':'Estimated professional fee'}</p><p class="ed-price">{priceLabel(s,locale)}</p><p>{c.priceScope}</p><a class="ed-button" href={`/${locale}/contact/?service=${s.id}`}>{id?'Jadwalkan Konsultasi':'Schedule a Consultation'} ↗</a><p>{id?'Konsultasi awal gratis.':'Free initial consultation.'}</p></aside></section></div>
 <div class="container-shell">
 <section class="ed-section ed-split"><div><p class="ed-kicker">{id?'Pahami kebutuhannya':'Understand the requirement'}</p><h2>{id?'Apa itu layanan ini?':'What does this service involve?'}</h2><p class="ed-lead">{c.definition}</p></div><div><h3>{id?'Mengapa dibutuhkan?':'Why does it matter?'}</h3><p>{c.why}</p></div></section>
 <section class="ed-section ed-columns"><div><h2>{id?'Siapa yang membutuhkan?':'Who typically needs it?'}</h2><ul class="ed-list">{c.audience.map(x=><li>{x}</li>)}</ul></div><div><h2>{id?'Kapan mulai disiapkan?':'When should you prepare?'}</h2><ul class="ed-list">{c.triggers.map(x=><li>{x}</li>)}</ul></div></section>
@@ -37,7 +42,7 @@ const schema={'@context':'https://schema.org','@type':'Service',name:c.title,des
 <p class="ed-note">{id?'Biaya jasa profesional berbeda dari PNBP, notaris, laboratorium, konsultan teknis, retribusi, pajak, dan biaya pihak ketiga. Semua komponen tersebut dirinci terpisah; tidak ada biaya tambahan yang dijalankan tanpa kesepakatan.':'Professional fees are separate from government fees, notary, laboratory, technical consultants, levies, taxes and third-party costs. These are itemised separately; additional paid work requires agreement.'}</p>
 <section class="ed-section"><p class="ed-kicker">FAQ</p><h2>{id?'Sebelum Anda memulai.':'Before you begin.'}</h2>{faq.map(([q,a])=><details class="ed-details"><summary>{q}</summary><p>{a}</p></details>)}</section>
 <section class="ed-section"><h2>{id?'Kebutuhan yang berkaitan.':'Connected requirements.'}</h2><div class="ed-related">{related.map(r=><article><h3><a data-event="service_related_click" data-entity={r.id} href={serviceUrl(r,locale)}>{r.content[locale].title}</a></h3><p>{r.content[locale].description}</p></article>)}</div></section>
-<RelatedInsights locale={locale} services={[s.id]}/>
+{cases.length>0&&<RelatedCases locale={locale} cases={cases}/>}<RelatedInsights locale={locale} services={[s.id]}/>
 <section class="ed-section"><h2>{id?'Tim terkait':'Related team'}</h2><div class="ed-related">{(experts.length?experts:PEOPLE[locale].slice(0,1)).map(p=><article><h3><a href={`/${locale}/profile/${p.slug}/`}>{p.name}</a></h3><p>{p.role}</p></article>)}</div></section>
 </div><HomeFinalCta locale={locale}/></div></BaseLayout>
-<style>.process-list{list-style:none;counter-reset:step;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.4rem;padding:0;margin-top:2rem;border-top:1px solid #b8b3ae}.process-list li{counter-increment:step;padding-top:1.3rem}.process-list li:before{content:counter(step,decimal-leading-zero);display:block;margin-bottom:1.5rem;color:#9b1224;font-size:1.7rem}.process-list h3{font-size:1.1rem}.process-list li::marker{color:#a61227;font-size:.85rem;font-weight:800}.process-list p{font-size:.82rem;color:#56565b}@media(max-width:800px){.process-list{grid-template-columns:1fr}}</style>
+<style>.service-estimate .ed-aside{max-width:55rem}.service-estimate .ed-price{color:var(--brand-red)}.process-list{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.4rem;padding:0;margin-top:2rem;border-top:1px solid #b8b3ae}.process-list li{padding-top:1.3rem}.process-list h3{font-size:1.1rem}.process-list li::marker{color:#a61227;font-size:.85rem;font-weight:800}.process-list p{font-size:.82rem;color:#56565b}@media(max-width:800px){.process-list{grid-template-columns:1fr}}</style>

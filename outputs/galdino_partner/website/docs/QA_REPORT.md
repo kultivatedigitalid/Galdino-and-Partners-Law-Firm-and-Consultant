@@ -1,41 +1,35 @@
 # QA report
 
-Verified 30 September 2026 on Windows, Node 24.11.1, Microsoft Edge 154 and the local production build at http://localhost:4327. These are measured local results, not a production-host guarantee.
+Verified 30 September 2026 on Windows, Node 24.11.1, Microsoft Edge and the local production build at http://localhost:4327. Results describe this local environment and do not guarantee production hosting.
 
-## Functional and source validation
+## Validation
 
-- npm ci completed; installed-dependency audit reported zero vulnerabilities at installation.
-- npm run check: 123 files, zero errors, warnings or hints.
-- npm test: 19 tests passed (15 contact validation/security/rate-limit cases and four search-relevance cases).
-- npm run build: completed successfully using the standalone Node adapter.
-- npm run validate: 177 pages; 38 service details, six categories, four environmental groups, six industries and 14 articles per language. Zero reported validation errors. Internal links, form action, reciprocal language pairs, metadata, structured data, image alternatives, RSS/sitemap and the indexing block were checked.
-- npm run test:browser: all 32 tests passed, zero failures or flaky tests. The final run includes both image decoding before screenshot capture and the Home carousel follow-up.
-- Responsive coverage: 18 representative routes at 320, 375, 430, 768, 900, 1024, 1280, 1440 and 1920 pixels (162 route/viewport checks), with no detected horizontal overflow or uncaught page errors.
-- Axe: 13 representative pages passed the WCAG 2 A/AA and 2.1 A/AA rules tested. This is automated coverage, not a complete accessibility certification.
-- Interaction checks: mobile menu/ESC; reciprocal translation; partial/intent/industry/KBLI-context search; ISO number discrimination; category navigation; case filters and reset; insight filters; consent persistence, withdrawal and keyboard dialog handling; proportional logo; gallery and Home carousel keyboard navigation; HTTP 404 and noindex.
-- Contact checks: service prefill, native validation, successful local stream transport, focus containment and restoration, cooldown, failed-submission value preservation. The stream transport sends no real email.
-- Analytics checks: a stub GTM script is loaded only after consent; query strings and form values are excluded from the captured event payloads.
+- npm run check: 125 files, 0 errors, 0 warnings, 0 hints.
+- npm test: 20 tests passed (15 contact/API tests and 5 search ranking tests).
+- npm run build: production build completed.
+- npm run validate: 167 pages, 38 services, 6 categories, 4 environmental groups, 6 industries, 14 articles per language; 0 validation errors. Checks include internal links, locale alternates, metadata, schemas, forms, images, sitemap/RSS and the noindex gate.
+- Production preview smoke test: Indonesian and English Services, Industries, Contact and Insight index routes all returned HTTP 200; URLs without the trailing slash redirected to the canonical slash URL.
+- npm run test:browser: 37 passed, 0 failed, 0 flaky. Responsive checks covered 17 representative routes at widths 320, 375, 430, 768, 900, 1024, 1280, 1440 and 1920 pixels (153 route/viewport checks), without horizontal overflow or uncaught page errors.
+- Axe scanned 13 representative pages and reported no WCAG 2 A/AA or 2.1 A/AA violations.
+- Browser checks cover mobile navigation and mega menu, bilingual navigation, the hidden Services search, service links and images, experience filters, contact form states, consent, analytics gating, noindex, redirects, and selected desktop/mobile hero assets.
+- Contact form tests use a local in-memory SMTP sink and do not send real email.
 
-Evidence: reports/validation.json, reports/browser-summary.json, reports/browser-final-checks.json and reports/screenshots/. Source QA commands are documented in README.md.
+Latest browser details are in reports/browser-summary.json; validated route totals are in reports/validation.json. Current 375px/1440px screenshots are in reports/screenshots/.
 
-## Lighthouse — final mobile simulation
+## Lighthouse
 
-Lighthouse 13.5.0, default mobile simulation, consent banner present. Scores can vary with machine load. The table records the final run after the initial carousel layout reads were consolidated and the immediate pre-layout update removed.
+Lighthouse 13.5.0, default mobile simulation, consent banner present. These scores are a single local run and can vary with system load.
 
 | Page | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| home | 95 | 100 | 100 | 69 | 2.34 s | 0 | 26 ms |
-| services | 96 | 100 | 100 | 69 | 2.34 s | 0 | 15 ms |
-| contact | 98 | 100 | 100 | 66 | 1.64 s | 0 | 0 ms |
+| Home | 87 | 100 | 100 | 69 | 3.18 s | 0 | 56.5 ms |
+| Services | 80 | 100 | 100 | 69 | 2.64 s | 0 | 623 ms |
+| Contact | 69 | 100 | 100 | 69 | 2.15 s | 0 | 3,283 ms |
 
-Performance, accessibility and best-practice targets are met on these three measured pages. The SEO score is intentionally below the indexing target because robots.txt blocks crawling and robots metadata is noindex,nofollow. Indexing was not enabled to improve a score. Non-blocking Lighthouse diagnostics remain in reports/performance.json, including image delivery and dependency-chain opportunities.
+Home, Services and Contact measured below the project's 90-point performance target in this run. Performance varies with local machine load; inspect the full diagnostics in reports/performance.json before comparing runs. SEO is 69 by design because crawling remains blocked and pages use noindex,nofollow. Do not enable indexing to change that score.
 
-## Visual review
+## Visual review and launch
 
-Reviewed desktop and mobile screenshots of Services, Industries, Case Studies and Profile. Search follows the Services banner; category pages retain full service lists. Each industry has contextual imagery; case details use distinct supporting imagery and a pathway; Profile retains its approved hero and adds founder/story/work imagery. Logo sizing preserves its intrinsic ratio, including the formerly enlarged Home monogram. Screenshots wait for image decoding so asynchronous image paint is not mistaken for a missing asset. Generated imagery and provisional company claims are documented in VISUAL_REVISION.md and PROVISIONAL_DATA_REGISTER.md.
+Home and About Us use their original hero layouts. Services, Industries, Our Experiences, Insight and Contact have separate new wide hero photographs. Contact and Our Experiences switch to purpose-composed portrait images on narrow screens. All images are centered; service, industry and case cards preserve full images with object-fit: contain. Navigation contains no Contact or How We Work item; Contact remains available from Consultation and has no navbar. The old How We Work URLs redirect to Home's process section.
 
-## External work not verified
-
-Hostinger access and a GTM ID are unavailable, as confirmed by the user. Deployment on the actual host, real SMTP receipt, production analytics, DNS/HTTPS ownership and Search Console verification remain external launch gates. Provisional claims, prices, identities, case studies and generated photos require the owner’s release approval before indexing.
-
-Additional file cleanup is pending explicit owner confirmation; see CLEANUP_REVIEW.md. No broad deletion of project archives was performed.
+Hostinger access and a GTM ID are not yet available, as confirmed by the user. Production hosting, real SMTP receipt, live analytics and Search Console checks remain unverified. Prices and content remain provisional; indexing stays disabled. Broader unused-file cleanup is listed in docs/CLEANUP_REVIEW.md and was not included in deleting the specifically requested How We Work page.

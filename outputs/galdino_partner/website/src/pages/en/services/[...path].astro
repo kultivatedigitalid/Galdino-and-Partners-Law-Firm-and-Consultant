@@ -1,7 +1,7 @@
 ---
 import ServiceDetailPage from '../../../components/services/ServiceDetailPage.astro';import ServiceHubPage from '../../../components/services/ServiceHubPage.astro';
-import {SERVICES,type Service} from '../../../data/services';import {SERVICE_CATEGORIES,SERVICE_GROUPS,categoryById,type ServiceCategory,type ServiceGroup} from '../../../data/service-catalog';
-export function getStaticPaths(){return [...SERVICE_CATEGORIES.map(category=>({params:{path:category.slug.en},props:{category}})),...SERVICE_GROUPS.map(group=>({params:{path:categoryById(group.category).slug.en+'/'+group.slug.en},props:{category:categoryById(group.category),group}})),...SERVICES.map(service=>({params:{path:service.slug.en},props:{service}}))];}
-interface Props{service?:Service;category?:ServiceCategory;group?:ServiceGroup}const {service,category,group}=Astro.props;
+import {SERVICES,type Service} from '../../../data/services';import {SERVICE_CATEGORIES,type ServiceCategory} from '../../../data/service-catalog';
+export function getStaticPaths(){return [...SERVICE_CATEGORIES.map(category=>({params:{path:category.slug.en},props:{category}})),...SERVICES.map(service=>({params:{path:service.slug.en},props:{service}}))];}
+interface Props{service?:Service;category?:ServiceCategory}const {service,category}=Astro.props;
 ---
-{service?<ServiceDetailPage locale="en" service={service}/>:category&&<ServiceHubPage locale="en" category={category} group={group}/>}
+{service?<ServiceDetailPage locale="en" service={service}/>:category&&<ServiceHubPage locale="en" category={category}/>}

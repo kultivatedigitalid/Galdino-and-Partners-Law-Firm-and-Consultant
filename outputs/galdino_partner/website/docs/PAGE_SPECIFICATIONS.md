@@ -1,17 +1,17 @@
 # Page specifications
 
-See SITE_MAP.md for every URL.
+See SITE_MAP.md for every URL and REVISION_2026-09-30.md for the current PDF/message revision decisions.
 
-Home and About: approved composition retained, completed central data, four people including Hans, service rail linked to six categories, working case/article destinations, How We Work link.
+Home and About: approved composition retained, completed central data, four people including Hans, service rail linked to six categories, working case/article destinations, link to the process section on Home.
 
-Services: six category hubs and a normalised search of 38 services. Environmental hub has four subcategory destinations. Detail pages include all specified scope/document/process/fee/FAQ sections and connected content.
+Services: six visible category sections with links to all 38 services with service search temporarily hidden and numbering removed. Six dedicated hubs include audience, triggers, preparation, process, FAQ and available related content. The environmental hub has four anchored groups, with short category/service URLs. Detail pages include all specified scope/document/process/fee/FAQ sections and connected content.
 
-Industries: six sector pages with operating issues, preparation documents, relevant services, related cases and insights.
+Industries: equal three-column index (two on tablet, one on mobile), without industry focus, case studies or insights sections. Six sector pages with operating issues, preparation documents, relevant services, related cases and insights.
 
-Case studies: featured + two supporting stories + three editorial rows. Detail pages cover challenge, approach, deliverables, timing, outcome and related services. All case narratives remain provisional.
+Our Experiences: compact gray featured panel plus equal three-column cards (two on tablet, one on mobile). Detail pages cover challenge, approach, deliverables, timing, outcome and related services. All case narratives remain provisional.
 
-Insight: 14 bilingual article pairs including the five requested new topics. Search/category/tag filters, result counts and empty/reset state; article TOC, dates, reading time, references, notices, share links, related services/articles and reciprocal translations.
+Insight: 14 bilingual article pairs including the five requested new topics. Gray editorial selection. Search/category/tag filters, result counts and empty/reset state; article TOC, dates, reading time, references, notices, share links, related services/articles and reciprocal translations.
 
-Contact: required business inquiry fields, explicit privacy consent, no attachment or marketing field, free initial consultation, safe failure handling, success dialog and seven next steps.
+Contact: no main navbar; required business inquiry fields, explicit privacy consent, no attachment or marketing field, free initial consultation, safe failure handling, success dialog and seven next steps.
 
 Privacy/Terms: bilingual controller, purposes, processors, rights and retention. 404: status-preserving Node page that selects the requested locale.

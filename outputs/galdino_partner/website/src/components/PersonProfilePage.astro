@@ -1,4 +1,6 @@
 ---
+import ImageHero from './shared/ImageHero.astro';
+import heroImage from '../assets/profile-company-hero-centered.webp';
 import { Image } from 'astro:assets';
 import hansImage from '../assets/team-hans-galdino.webp';
 import kelvinImage from '../assets/team-kelvin-anata-lian.webp';
@@ -35,17 +37,18 @@ const breadcrumbSchema = {
 };
 ---
 
-<BaseLayout locale={locale} title={title} description={description} alternateUrl={alternateUrl}>
+<BaseLayout immersive locale={locale} title={title} description={description} alternateUrl={alternateUrl}>
   <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Person',name:member.name,jobTitle:member.role,url:pageUrl,worksFor:{'@type':'Organization',name:SITE.displayName}})}/>
   <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <div class="person-page editorial">
+    <ImageHero locale={locale} title={member.name} description={member.role} image={heroImage} breadcrumbs={[{name:id?'About Us':'About Us',href:'/'+locale+'/profile/'},{name:member.name}]}/>
     <section class="person-hero" aria-labelledby="person-title">
       <div class="container-shell person-hero__grid">
         <div class="person-hero__copy">
           <a class="person-back" href={`/${locale}/profile/#team`}><ArrowIcon direction="left" />{id ? 'Kembali ke tim' : 'Back to team'}</a>
           <p class="person-label">{id ? 'Profil profesional' : 'Professional profile'}</p>
-          <h1 id="person-title">{member.name}</h1>
+          <h2 id="person-title">{id?'Profil profesional':'Professional profile'}</h2>
           <p class="person-role">{member.role}</p>
           <dl class="person-quickfacts" aria-label={id ? 'Kontak profesional' : 'Professional contact'}>
             <div><dt>Email</dt><dd>{member.email}</dd></div>
@@ -106,10 +109,10 @@ const breadcrumbSchema = {
   body:has(.person-page) .contact-dock__link { background: linear-gradient(120deg, #710d1b 0%, #9c1021 48%, #c4142a 100%); background-position: 0 50%; background-size: 180% 100%; box-shadow: 0 12px 34px rgb(38 3 8 / .24); opacity: 1; transition: background-position 260ms var(--brand-ease), box-shadow 200ms var(--brand-ease), transform 170ms var(--brand-ease); }
   body:has(.person-page) .contact-dock__pulse { background: #fff; box-shadow: 0 0 0 4px rgb(255 255 255 / .16); }
   .person-hero { background: #fff; }
-  .person-hero__grid { min-height: clamp(40rem, 100svh, 50rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(25rem, .88fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; padding-top: clamp(7.5rem, 11vw, 9rem); padding-bottom: clamp(3rem, 6vw, 5rem); }
+  .person-hero__grid { min-height: clamp(40rem, 100svh, 50rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(25rem, .88fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; padding-top: 3rem; padding-bottom: clamp(3rem, 6vw, 5rem); }
   .person-back { width: fit-content; min-height: 2.75rem; display: inline-flex; align-items: center; gap: .5rem; color: var(--brand-muted); font-size: .7rem; font-weight: 780; text-decoration: none; }
   .person-label { width: fit-content; margin: 1.2rem 0 0; border-bottom: 2px solid var(--brand-red); padding-bottom: .3rem; color: var(--brand-black); font-size: .68rem; font-weight: 820; letter-spacing: .05em; text-transform: uppercase; }
-  .person-hero h1 { max-width: 14ch; margin: 1.15rem 0 0; font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 570; letter-spacing: -.04em; line-height: .95; overflow-wrap: anywhere; text-wrap: balance; }
+  .person-hero h2 { max-width: 14ch; margin: 1.15rem 0 0; font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 570; letter-spacing: -.04em; line-height: .95; overflow-wrap: anywhere; text-wrap: balance; }
   .person-role { margin: 1rem 0 0; color: var(--brand-red-deep); font-size: .88rem; font-weight: 820; }
   .person-quickfacts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1.25rem 0 0; border-block: 1px solid var(--brand-line-strong); }
   .person-quickfacts > div { min-width: 0; padding: .8rem .7rem .8rem 0; }
@@ -121,7 +124,7 @@ const breadcrumbSchema = {
   .person-contact { display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--brand-line-strong); }
   .person-contact a { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .5rem; color: var(--brand-black); font-size: .72rem; font-weight: 800; text-underline-offset: .25rem; }
   .person-hero__visual { position: relative; min-height: clamp(30rem, 62vh, 41rem); margin: 0; overflow: hidden; background: var(--brand-black); }
-  .person-hero__visual :where(img) { width: 100%; height: 100%; object-fit: cover; object-position: center 24%; filter: saturate(.84) contrast(1.04) brightness(.95); }
+  .person-hero__visual :where(img) { width: 100%; height: 100%; object-fit: contain; object-position: center; filter: saturate(.84) contrast(1.04) brightness(.95); }
   .person-hero__visual::after { position: absolute; right: 0; bottom: 0; left: 0; height: .35rem; background: var(--brand-red); content: ''; }
   .person-hero__visual figcaption { position: absolute; right: 1rem; bottom: 1rem; left: 1rem; background: rgb(11 11 12 / .68); padding: .4rem .5rem; color: rgb(255 255 255 / .84); font-size: .58rem; font-weight: 760; letter-spacing: .06em; }
   .person-overview { background: var(--brand-surface-soft); padding-block: var(--brand-section-space); }
@@ -142,13 +145,13 @@ const breadcrumbSchema = {
     .person-contact a:hover :where(.arrow-icon) { transform: translateX(3px); }
   }
   @media (max-width: 840px) {
-    .person-hero__grid { min-height: 0; grid-template-columns: 1fr; padding-top: 7rem; }
+    .person-hero__grid { min-height: 0; grid-template-columns: 1fr; padding-top: 3rem; }
     .person-hero__visual { min-height: 0; aspect-ratio: 16 / 11; }
     .person-overview__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   }
   @media (max-width: 560px) {
-    .person-hero__grid { padding-top: 6.2rem; }
-    .person-hero h1 { font-size: clamp(2.55rem, 11vw, 3.5rem); }
+    .person-hero__grid { padding-top: 3rem; }
+    .person-hero h2 { font-size: clamp(2.55rem, 11vw, 3.5rem); }
     .person-hero__visual { aspect-ratio: 4 / 3; }
     .person-quickfacts { grid-template-columns: 1fr; }
     .person-quickfacts > div + div { border-top: 1px solid var(--brand-line-strong); border-left: 0; padding-left: 0; }

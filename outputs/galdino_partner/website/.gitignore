@@ -14,3 +14,6 @@ test-results/
 playwright-report/
 reports/browser-results.json
 reports/lighthouse-profile/
+
+# Local rendering of the supplied revision document
+reports/pdf-revision/

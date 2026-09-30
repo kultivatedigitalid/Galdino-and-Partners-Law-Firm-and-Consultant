@@ -1,8 +1,8 @@
 ---
 import type { Locale } from '../../data/site';
 import ArrowIcon from '../icons/ArrowIcon.astro';
-interface Props { locale: Locale; }
-const { locale } = Astro.props;
+interface Props { locale: Locale; kicker?: string; title?: string; showNumbers?: boolean; }
+const { locale, kicker, title, showNumbers = true } = Astro.props;
 const id = locale === 'id';
 const steps = id ? [
   ['01', 'Ceritakan izin yang dibutuhkan', 'Sampaikan aktivitas, lokasi, skala, dan target waktu.'],
@@ -20,13 +20,13 @@ const steps = id ? [
 <section class="process-section home-section" aria-labelledby="process-title">
   <div class="container-shell">
     <header class="process-section__header" data-home-reveal>
-      <p class="home-kicker home-kicker--light">{id ? 'Cara memulai' : 'How to begin'}</p>
-      <h2 id="process-title" class="home-heading home-heading--light">{id ? 'Proses yang terlihat. Tanggung jawab yang jelas.' : 'A visible process. Clear responsibility.'}</h2>
+      <p class="home-kicker home-kicker--light">{kicker || (id ? 'Cara memulai' : 'How to begin')}</p>
+      <h2 id="process-title" class="home-heading home-heading--light">{title || (id ? 'Proses yang terlihat. Tanggung jawab yang jelas.' : 'A visible process. Clear responsibility.')}</h2>
     </header>
-    <ol class="process-rail">
+    <ol class:list={["process-rail", !showNumbers && "process-rail--unnumbered"]}>
       {steps.map(([number, title, description]) => (
         <li data-home-reveal>
-          <span class="process-rail__number">{number}</span>
+          {showNumbers && <span class="process-rail__number">{number}</span>}
           <div>
             <h3>{title}</h3>
             <p>{description}</p>
@@ -41,17 +41,20 @@ const steps = id ? [
 </section>
 
 <style>
-  .process-section { position: relative; overflow: clip; background: var(--home-black); color: #fff; }
-  .process-section::before { position: absolute; top: 0; right: 7%; width: 22%; height: .3rem; background: var(--home-red); content: ''; }
+  .process-section { padding-block: var(--brand-section-space); position: relative; overflow: clip; background: var(--brand-black); color: #fff; }
+  .process-section::before { position: absolute; top: 0; right: 7%; width: 22%; height: .3rem; background: var(--brand-red); content: ''; }
   .process-section__header { display: block; }
-  .process-section__header h2 { max-width: 15ch; }
+  .process-section__header h2 { max-width: 18ch; margin: 0; color: #fff; font-family: var(--font-display); font-size: var(--brand-type-section); font-weight: 570; letter-spacing: -.035em; line-height: 1.02; }
+  .process-section .home-kicker { display: flex; align-items: center; gap: .7rem; margin: 0 0 1.25rem; color: #fff; font-size: .7rem; font-weight: 820; letter-spacing: .12em; text-transform: uppercase; line-height: 1.35; }
+  .process-section .home-kicker::before { content: ""; width: 1.65rem; height: 2px; background: var(--brand-red-bright); }
+  .process-rail.process-rail--unnumbered li { grid-template-columns: 1fr; }
   .process-rail { display: grid; margin: clamp(2.75rem, 4.5vw, 4rem) 0 0; padding: 0; border-top: 1px solid rgb(255 255 255 / .2); list-style: none; }
   .process-rail li { display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem; padding-block: 1.5rem; border-bottom: 1px solid rgb(255 255 255 / .2); }
-  .process-rail__number { color: var(--home-red-bright); font-family: var(--font-display); font-size: 1rem; font-weight: 760; letter-spacing: .04em; }
-  .process-rail h3 { max-width: 16ch; margin: 0; font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; letter-spacing: -.025em; line-height: 1.05; }
-  .process-rail p { max-width: 25rem; margin: .75rem 0 0; color: rgb(255 255 255 / .58); font-size: .76rem; line-height: 1.55; }
-  .process-section__link { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .6rem; margin-top: 2rem; color: #fff; font-size: .78rem; font-weight: 780; text-decoration-color: var(--home-red); text-decoration-thickness: 2px; text-underline-offset: .35rem; }
-  .process-section__link :global(.arrow-icon) { transition: transform 170ms var(--home-ease); }
+  .process-rail__number { color: var(--brand-red-bright); font-family: var(--font-display); font-size: 1rem; font-weight: 760; letter-spacing: .04em; }
+  .process-rail h3 { max-width: 16ch; margin: 0; font-family: var(--font-display); font-size: var(--brand-type-card); font-weight: 600; letter-spacing: -.025em; line-height: 1.05; }
+  .process-rail p { max-width: 25rem; margin: .75rem 0 0; color: rgb(255 255 255 / .58); font-size: .9rem; line-height: 1.55; }
+  .process-section__link { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .6rem; margin-top: 2rem; color: #fff; font-size: .85rem; font-weight: 780; text-decoration-color: var(--brand-red); text-decoration-thickness: 2px; text-underline-offset: .35rem; }
+  .process-section__link :global(.arrow-icon) { transition: transform 170ms var(--brand-ease); }
   @media (hover: hover) and (pointer: fine) { .process-section__link:hover :global(.arrow-icon) { transform: translateX(3px); } }
   @media (min-width: 800px) {
     .process-rail { grid-template-columns: repeat(4, 1fr); }
@@ -59,5 +62,6 @@ const steps = id ? [
     .process-rail li:not(:first-child) { padding-left: 1.4rem; }
     .process-rail li:last-child { border-right: 0; }
     .process-rail h3 { margin-top: 1.8rem; }
+    .process-rail--unnumbered h3 { margin-top: 0; }
   }
 </style>

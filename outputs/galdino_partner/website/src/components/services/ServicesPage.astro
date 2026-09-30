@@ -1,45 +1,45 @@
 ---
 import {Image} from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../shared/Breadcrumbs.astro';
-import ServiceSearch from './ServiceSearch.astro';
-import ServiceDirectory from './ServiceDirectory.astro';
+import ImageHero from '../shared/ImageHero.astro';
 import HomeFinalCta from '../home/HomeFinalCta.astro';
-import PermitPathway from '../shared/PermitPathway.astro';
-import IndustryTiles from '../shared/IndustryTiles.astro';
-import RelatedInsights from '../shared/RelatedInsights.astro';
-import {SERVICES,priceLabel} from '../../data/services';
+import PermitProcess from '../home/PermitProcess.astro';
+import {SERVICES,serviceUrl} from '../../data/services';
 import {SERVICE_CATEGORIES,categoryUrl} from '../../data/service-catalog';
-import {categoryImages} from '../../data/industry-images';
-import {experienceImages} from '../../data/experience-images';
+import {categoryActivityImage} from '../../data/service-images';
+import {heroImages} from '../../data/hero-images';
 import type {Locale} from '../../data/site';
 interface Props{locale:Locale}
 const {locale}=Astro.props,id=locale==='id';
-const scenarios=id?[['Memulai di lokasi baru','lokasi lahan','investment'],['Menjalankan operasional','slf pelaporan','licensing'],['Mengembangkan usaha','bangun gudang','compliance']]:[['Starting at a new location','land location','investment'],['Managing operations','slf reporting','licensing'],['Expanding your business','build warehouse','compliance']];
-const quick=id?[['Membangun fasilitas','membangun fasilitas'],['Mengurus papan toko','papan toko'],['Mengelola air limbah','air limbah'],['Kewajiban pelaporan','pelaporan'],['Sistem mutu','mutu']]:[['Building a facility','building facility'],['Storefront signage','signage retail'],['Wastewater treatment','wastewater'],['Reporting duties','reporting'],['Quality systems','quality']];
 ---
-<BaseLayout locale={locale} title={id?'Layanan Perizinan & Sistem Manajemen | Galdino & Partner':'Permitting & Management System Services | Galdino & Partner'} description={id?'Temukan 38 layanan reklame, tata ruang, bangunan, lingkungan, lalu lintas, dan ISO melalui nama izin atau kebutuhan usaha Anda.':'Find 38 advertising, spatial, building, environmental, traffic and ISO services by permit name or business requirement.'}>
+<BaseLayout immersive locale={locale} title={id?'Layanan Perizinan & Sistem Manajemen | Galdino & Partner':'Permitting & Management System Services | Galdino & Partner'} description={id?'Temukan layanan reklame, tata ruang, bangunan, lingkungan, lalu lintas, dan ISO melalui nama izin atau kebutuhan usaha Anda.':'Find advertising, spatial, building, environmental, traffic and ISO services by permit name or business requirement.'}>
 <div class="editorial">
-<header class="catalogue-hero"><div class="container-shell">
-<Breadcrumbs locale={locale} items={[{name:id?'Layanan':'Services'}]}/>
-<div class="catalogue-intro"><div><p class="ed-kicker">{id?'6 bidang. 38 layanan.':'6 practice areas. 38 services.'}</p><h1>{id?'Izin tepat. Langkah terarah.':'Clear permits. Considered steps.'}</h1><p class="ed-lead">{id?'Hubungkan rencana usaha dengan dokumen, izin, dan sistem yang Anda perlukan.':'Connect your business plans to the documents, approvals and systems you need.'}</p><a class="search-cue" href="#find-service">{id?'Temukan layanan Anda':'Find your service'} ↓</a></div>
-<figure class="regulatory-art"><Image src={experienceImages.investment} alt={id?'Peninjauan rencana tapak dan dokumen pembangunan':'Reviewing site plans and development documents'} widths={[480,800,1200]} sizes="(min-width:800px) 45vw, 100vw" loading="eager" fetchpriority="high" quality={78}/><figcaption><span>01 / {id?'LOKASI':'LOCATION'}</span><span>02 / {id?'DOKUMEN':'DOCUMENTS'}</span><span>03 / {id?'TINDAK LANJUT':'FOLLOW-UP'}</span></figcaption></figure>
-</div></div></header>
+<ImageHero locale={locale} title={id?'Izin tepat. Langkah terarah.':'Clear permits. Considered steps.'} description={id?'Hubungkan rencana usaha dengan dokumen, izin, dan sistem yang Anda perlukan.':'Connect your business plans to the documents, approvals and systems you need.'} image={heroImages.services} breadcrumbs={[{name:id?'Layanan':'Services'}]}/>
 <div class="container-shell">
-<section class="service-finder ed-section" id="find-service" aria-label={id?'Pencarian layanan':'Service search'}>
-<ServiceSearch locale={locale} total={SERVICES.length}/>
-<div class="quick-needs">{quick.map(([label,query])=><button type="button" data-service-query={query} aria-pressed="false">{label} ↗</button>)}</div>
-<ServiceDirectory locale={locale} services={SERVICES} searchOnly/>
-<div class="ed-empty" id="service-empty" hidden><h2>{id?'Belum menemukan yang sesuai?':'No matching services yet?'}</h2><p>{id?'Coba istilah lain, pilih kategori, atau ceritakan kebutuhan Anda kepada tim.':'Try another term, choose a category, or discuss your requirement with our team.'}</p><button class="ed-button secondary" data-reset-service>{id?'Reset pencarian':'Reset search'}</button></div>
+<section class="ed-section" aria-labelledby="practice-areas"><h2 id="practice-areas">{id?'Bidang usaha':'Practice areas'}</h2>
+<div class="category-index">{SERVICE_CATEGORIES.map(category=>{
+ const c=category.content[locale],entries=SERVICES.filter(s=>s.category===category.id),visual=categoryActivityImage(category.id);
+ return <section class="category-block" id={'category-'+category.id}>
+  <div class="category-summary"><h3><a class="category-row" href={categoryUrl(category,locale)}>{c.title}</a></h3><p>{c.description}</p><Image src={visual.image} alt={visual.alt[locale]} widths={[400,700]} sizes="(min-width:801px) 30vw, 100vw" loading="lazy" quality={76}/></div>
+  <div><ul class="category-services">{entries.map(s=><li><a href={serviceUrl(s,locale)}>{s.content[locale].title}<span aria-hidden="true">↗</span></a></li>)}</ul>
+   <a class="ed-button" href={categoryUrl(category,locale)}>{id?'Lihat Semua Layanan '+c.title.replace(/^Perizinan /,''):'Explore All '+c.title} ↗</a>
+  </div>
+ </section>
+})}</div>
+<p class="ed-note">{id?'Estimasi jasa menyesuaikan lokasi, lingkup, dan kesiapan dokumen. Pajak, retribusi, pekerjaan teknis, pengujian, dan biaya pihak ketiga dihitung terpisah.':'Estimated fees depend on location, scope and document readiness. Taxes, levies, technical work, testing and third-party fees are quoted separately.'}</p>
 </section>
-<section class="ed-section"><div class="section-heading"><p class="ed-kicker">{id?'Bidang layanan':'Practice areas'}</p><h2>{id?'Enam bidang, satu konteks usaha.':'Six areas. One business context.'}</h2></div>
-<div class="category-index">{SERVICE_CATEGORIES.map(c=>{const entries=SERVICES.filter(s=>s.category===c.id);return <a class="category-row" href={categoryUrl(c,locale)}><span class="category-number">{c.number}</span><div><h3>{c.content[locale].title}</h3><p>{c.content[locale].description}</p><span class="category-meta">{entries.length} {id?'layanan':'services'} · {priceLabel({price:Math.min(...entries.map(s=>s.price))},locale)}</span></div><Image src={categoryImages[c.id]} alt="" width={220} height={150} loading="lazy" quality={72}/><span class="category-arrow" aria-hidden="true">↗</span></a>})}</div>
-<p class="ed-note">{id?'Estimasi jasa menyesuaikan lokasi, lingkup, dan kesiapan dokumen. Pajak, retribusi, pekerjaan teknis, pengujian, dan biaya pihak ketiga dihitung terpisah.':'Estimated fees depend on location, scope and document readiness. Taxes, levies, technical work, testing and third-party fees are quoted separately.'}</p></section>
-<section class="ed-section"><p class="ed-kicker">{id?'Mulai dari situasi Anda':'Start with your situation'}</p><h2>{id?'Tidak harus tahu nama izinnya.':'You do not need to know the permit name.'}</h2><div class="scenario-panels">{scenarios.map(([label,query,img],i)=><button type="button" data-service-query={query} aria-pressed="false"><Image src={experienceImages[img]} alt="" widths={[480,800]} sizes="(min-width:800px) 30vw, 100vw" loading="lazy" quality={75}/><span><small>0{i+1}</small><strong>{label}</strong><span aria-hidden="true">↗</span></span></button>)}</div></section>
-<section class="ed-section"><p class="ed-kicker">{id?'Cara kerja':'How we work'}</p><h2>{id?'Dari konteks menjadi rencana kerja.':'From context to a working plan.'}</h2><PermitPathway locale={locale}/><a class="ed-link" href={'/'+locale+'/profile/how-we-work/'}>{id?'Kenali proses kami':'Explore our process'} ↗</a></section>
-<section class="ed-section"><p class="ed-kicker">{id?'Konteks industri':'Industry context'}</p><h2>{id?'Lihat kebutuhan di sektor Anda.':'See requirements in your sector.'}</h2><IndustryTiles locale={locale} limit={3}/><a class="ed-link" href={'/'+locale+'/industries/'}>{id?'Semua industri':'All industries'} ↗</a></section>
-<RelatedInsights locale={locale} services={SERVICES.map(s=>s.id)}/>
-</div><HomeFinalCta locale={locale}/></div></BaseLayout>
+
+</div><PermitProcess locale={locale} kicker={id?"Cara kerja":"How we work"} title={id?"Dari konteks menjadi rencana kerja.":"From context to a working plan."} showNumbers={false}/><HomeFinalCta locale={locale}/></div></BaseLayout>
 <style>
-.catalogue-hero{background:#0b0b0c;color:white;padding:3rem 0 3.5rem}.catalogue-hero :global(.ed-breadcrumb){color:#d0cecc}.catalogue-hero .ed-kicker{color:#e7b0b7}.catalogue-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:center}.catalogue-intro h1{font-size:clamp(2.8rem,5.3vw,5.5rem);max-width:13ch}.catalogue-intro .ed-lead{color:#ceccca;max-width:38ch}.search-cue{display:inline-block;color:white;padding:1rem 0;text-underline-offset:.5rem}.regulatory-art{margin:0;position:relative;border-bottom:4px solid #c4142a}.regulatory-art :global(img){width:100%;height:100%;aspect-ratio:6/5;object-fit:cover;filter:saturate(.4)}.regulatory-art figcaption{position:absolute;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;gap:1rem;background:#520b18e8;padding:1.2rem;font-size:.6rem;letter-spacing:.07em}.service-finder{scroll-margin-top:7rem}.quick-needs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}.quick-needs button{border:1px solid #bbb7b2;padding:.6rem .8rem;font-size:.78rem;background:transparent;min-height:2.75rem;cursor:pointer}.quick-needs button[aria-pressed=true]{background:#171719;color:white;border-color:#171719}.section-heading{display:grid;grid-template-columns:1fr 2fr;gap:2rem}.category-row{display:grid;grid-template-columns:2rem minmax(0,1fr) 9rem 2rem;gap:1.5rem;align-items:center;padding:1.8rem 0;border-top:1px solid #bbb7b2;text-decoration:none}.category-row h3{font-size:clamp(1.4rem,2.5vw,2.4rem);margin:0 0 .5rem}.category-row p{font-size:.88rem;color:#56565b;margin:0 0 .8rem}.category-meta{font-size:.75rem;color:#8c1021}.category-number{align-self:start;color:#971125;font-size:.85rem}.category-row :global(img){width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;filter:saturate(.3)}.category-arrow{font-size:1.7rem;color:#a11225}.category-row:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}.scenario-panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}.scenario-panels button{border:0;background:#fff;padding:0;text-align:left;color:#171719;cursor:pointer}.scenario-panels :global(img){width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;filter:saturate(.45)}.scenario-panels button>span{padding:1.4rem;display:grid;grid-template-columns:1fr auto;gap:.8rem}.scenario-panels small{grid-column:1/-1;color:#9b1224}.scenario-panels strong{font-size:1.4rem;line-height:1.15;font-weight:600}.scenario-panels button[aria-pressed=true]{outline:2px solid #a11225}.scenario-panels button:hover strong{text-decoration:underline}@media(max-width:800px){.catalogue-intro,.section-heading,.scenario-panels{grid-template-columns:1fr}.catalogue-intro{gap:1.5rem}.catalogue-intro h1{max-width:14ch}.regulatory-art :global(img){aspect-ratio:16/9}.category-row{grid-template-columns:1.5rem minmax(0,1fr) 1rem;gap:.8rem}.category-row :global(img){display:none}.section-heading{gap:.4rem}.section-heading .ed-kicker{margin-bottom:.5rem}}
+.category-block{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(2rem,5vw,5rem);padding:3rem 0;border-top:2px solid var(--brand-red);scroll-margin-top:7rem}
+.category-summary h3{margin-top:0}.category-summary h3 a{text-decoration:none}
+.category-summary h3 a:hover{text-decoration:underline}
+.category-summary p{font-size:.9rem;color:#56565b}
+.category-summary :global(img){width:100%;height:auto;aspect-ratio:16/9;object-fit: contain;margin-top:1.5rem}
+.category-services{display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;list-style:none;margin:0 0 1.5rem;padding:0}
+.category-services a{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem;padding:.75rem 0;border-bottom:1px solid #d2cbc9;font-size:.9rem;text-decoration:none}
+.category-services a:hover{color:var(--brand-red);text-decoration:underline;text-underline-offset:.2em}
+.category-services span{color:var(--brand-red)}
+@media(max-width:800px){.category-block{grid-template-columns:1fr;gap:1.5rem}.category-summary :global(img){max-width:32rem}}
+@media(max-width:480px){.category-services{grid-template-columns:1fr}}
 </style>

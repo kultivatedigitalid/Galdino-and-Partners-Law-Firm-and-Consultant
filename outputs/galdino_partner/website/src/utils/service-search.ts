@@ -1,6 +1,7 @@
 /** Small, deterministic relevance score; no queries are sent to a server. */
 export const normalizeSearch=(value:string)=>value.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 const stopWords=new Set('saya kami ingin mau butuh untuk dan atau di ke yang apa jasa izin perizinan mengurus pengurusan i we need want for a the and to my business permit permits'.split(' '));
+const licensingWords=new Set('jasa izin perizinan mengurus pengurusan licensing permit permits'.split(' '));
 const intents=[
  {words:['bangun','membangun','construction','construct','building','renovasi','renovation'],ids:['pbg-imb','slf','kkpr','krk']},
  {words:['gudang','warehouse','logistik','logistics'],ids:['pbg-imb','slf','kkpr','andalalin','inrit']},
@@ -18,8 +19,10 @@ const intents=[
 ];
 export interface SearchEntry{id:string;title:string;keywords:string}
 export function serviceScore(entry:SearchEntry,query:string):number{
- const normalized=normalizeSearch(query),terms=normalized.split(' ').filter(t=>t.length>1&&!stopWords.has(t));
- if(!terms.length)return 0;
+ const normalized=normalizeSearch(query),tokens=normalized.split(' ').filter(t=>t.length>1);
+ const specific=tokens.filter(t=>!stopWords.has(t)&&!licensingWords.has(t));
+ if(!specific.length)return tokens.some(t=>licensingWords.has(t))&&!entry.id.includes('iso-')?3:0;
+ const terms=specific;
  const title=normalizeSearch(entry.title),keywords=normalizeSearch(entry.keywords),digits=terms.filter(t=>/^\d+$/.test(t));
  // Standards and numbered classifications should not recommend a different number.
  if((terms.includes('iso')||terms.includes('iec'))&&digits.some(t=>!keywords.split(' ').includes(t)))return 0;

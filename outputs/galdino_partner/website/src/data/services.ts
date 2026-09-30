@@ -1,6 +1,6 @@
 import type {Locale} from './site';
 import records1 from './service-records-1';import records2 from './service-records-2';import records3 from './service-records-3';
-import {categoryById,categoryUrl,SERVICE_GROUPS,groupUrl} from './service-catalog';
+import {categoryById,categoryUrl,SERVICE_GROUPS} from './service-catalog';
 import {SERVICE_PRICES} from './service-prices';
 export interface ServiceContent {title:string;description:string;definition:string;why:string;audience:string[];triggers:string[];documents:string[];scope:string[];deliverables:string[];timeline:string;priceScope:string;}
 export interface Service {id:string;number:string;category:string;group?:string;slug:Record<Locale,string>;price:number;provisional:boolean;keywords:string;related:string[];content:Record<Locale,ServiceContent>;}
@@ -9,7 +9,7 @@ const timeline:Record<string,[string,string]>={'reklame':['1–3 minggu','1–3 
 export const SERVICES:Service[]=records.map((r,i)=>{
  const category=categoryById(r[0]),group=SERVICE_GROUPS.find(g=>g.id===r[1]);
  const leaf={id:r[2],en:r[3]};
- const slug={id:category.slug.id+'/'+(group?group.slug.id+'/':'')+leaf.id,en:category.slug.en+'/'+(group?group.slug.en+'/':'')+leaf.en};
+ const slug={id:category.slug.id+'/'+leaf.id,en:category.slug.en+'/'+leaf.en};
  const content=Object.fromEntries((['id','en'] as const).map(l=>{
   const id=l==='id',c=category.content[l],focus=r[id?12:13];
   return [l,{title:r[id?4:5],description:r[id?6:7],definition:r[id?8:9],why:c.note,audience:c.audience,triggers:c.triggers,
@@ -27,6 +27,6 @@ export const serviceById=(id:string)=>SERVICES.find(s=>s.id===id);
 export const serviceUrl=(s:Service,l:Locale)=>`/${l}/services/${s.slug[l]}/`;
 export const priceLabel=(s:Pick<Service,'price'>,l:Locale)=>(l==='id'?'Estimasi mulai ':'Estimated from ')+new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(s.price);
 export const serviceBreadcrumbs=(s:Service,l:Locale)=>{
- const c=categoryById(s.category),g=SERVICE_GROUPS.find(x=>x.id===s.group);
- return [{name:l==='id'?'Layanan':'Services',href:`/${l}/services/`},{name:c.content[l].title,href:categoryUrl(c,l)},...(g?[{name:g.title[l],href:groupUrl(g,l)}]:[]),{name:s.content[l].title}];
+ const c=categoryById(s.category);
+ return [{name:l==='id'?'Layanan':'Services',href:`/${l}/services/`},{name:c.content[l].title,href:categoryUrl(c,l)},{name:s.content[l].title}];
 };

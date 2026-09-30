@@ -19,7 +19,7 @@ const year = new Date().getFullYear();
     <div>
       <h2 class="footer-heading">{locale === 'id' ? 'Navigasi' : 'Navigation'}</h2>
       <ul class="footer-links mt-5 grid gap-2.5 text-sm">
-        {NAV[locale].map((item) => <li><a href={item.href}>{item.label}</a></li>)}<li><a href={`/${locale}/profile/how-we-work/`}>{locale==='id'?'Cara Kerja':'How We Work'}</a></li><li><a href={`/${locale}/contact/`}>{locale==='id'?'Kontak':'Contact'}</a></li>
+        {NAV[locale].map((item) => <li><a href={item.href}>{item.label}</a></li>)}
       </ul>
     </div>
     <div>

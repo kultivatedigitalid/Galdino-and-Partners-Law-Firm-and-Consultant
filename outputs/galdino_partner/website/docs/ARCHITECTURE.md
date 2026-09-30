@@ -12,11 +12,11 @@ Astro 7 with TypeScript, Tailwind 4, Markdown content collections and `@astrojs/
 - `src/content/blog/{id,en}`: paired Markdown articles with sources and service identifiers.
 - `src/data/launch.ts`: explicit indexing gate.
 
-The existing hub URL names (`services`, `projects`, `blog`, `profile`, `contact`) are retained to preserve existing links. Public navigation uses the requested Indonesian names and equivalent English labels. Service URL paths follow category → optional environmental group → service. Each route has a reciprocal language equivalent.
+The existing hub URL names (`services`, `projects`, `blog`, `profile`, `contact`) are retained to preserve existing links. Navigation uses Our Experiences and About Us in both languages. Contact is reached through the Consultation CTA and has no navbar; How We Work is now a section on Home. Service URL paths follow category → service. The four environmental groups are anchored sections, not separate pages. src/middleware.ts redirects all 26 former environmental URLs plus two removed How We Work pages to their category anchors or shortened service paths using HTTP 301. Each route has a reciprocal language equivalent.
 
 ## Interface
 
-Home and About retain their approved composition; Home's service rail now has six categories. New editorial pages use isolated `editorial.css`. Static content remains available without hydration. Client scripts implement search, the mobile menu, consent, sharing, carousels and the contact form.
+Home and About restore their original banner composition; Home's service rail now has six categories. Editorial pages share ImageHero.astro, shared brand typography, centered full-bleed image banners, an immersive navbar (except Contact) and editorial.css. ServiceMegaMenu.astro exposes six category hubs and 38 direct service links. Service activity imagery is mapped in service-images.ts. Static content remains available without hydration. Service search is temporarily unmounted. Client scripts implement Insight search, the mobile menu, consent, sharing, carousels and the contact form.
 
 ## Runtime
 

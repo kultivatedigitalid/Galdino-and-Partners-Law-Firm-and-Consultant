@@ -14,7 +14,8 @@ for(const file of walk(out).filter(f=>f.endsWith('.html'))){const key='/'+relati
 assert(SERVICES.length===38,'Expected exactly 38 services');assert(SERVICE_CATEGORIES.length===6,'Expected six service categories');assert(SERVICE_GROUPS.length===4,'Expected four environmental groups');assert(INDUSTRIES.length===6,'Expected six industries');
 const ids=new Set(SERVICES.map(s=>s.id));assert(ids.size===38,'Duplicate service identifiers');
 for(const locale of locales){
- const expected=[...['','services/','industries/','projects/','blog/','profile/','profile/how-we-work/','contact/','privacy/','terms/'].map(p=>'/'+locale+'/'+p),...SERVICES.map(s=>serviceUrl(s,locale)),...SERVICE_CATEGORIES.map(c=>categoryUrl(c,locale)),...SERVICE_GROUPS.map(g=>groupUrl(g,locale)),...INDUSTRIES.map(i=>industryUrl(i,locale)),...EXPERIENCES.map(e=>experienceUrl(e,locale)),...PEOPLE[locale].map(p=>'/'+locale+'/profile/'+p.slug+'/')];
+ const expected=[...['','services/','industries/','projects/','blog/','profile/','contact/','privacy/','terms/'].map(p=>'/'+locale+'/'+p),...SERVICES.map(s=>serviceUrl(s,locale)),...SERVICE_CATEGORIES.map(c=>categoryUrl(c,locale)),...INDUSTRIES.map(i=>industryUrl(i,locale)),...EXPERIENCES.map(e=>experienceUrl(e,locale)),...PEOPLE[locale].map(p=>'/'+locale+'/profile/'+p.slug+'/')];
+ for(const g of SERVICE_GROUPS){const url=new URL(groupUrl(g,locale),'https://galdino.co.id'),page=pages.get(url.pathname);assert(page?.$('[id]').toArray().some(el=>page.$(el).attr('id')===url.hash.slice(1)),'Missing environmental section '+url);}
  for(const path of expected)assert(pages.has(path),'Missing route '+path);
  const posts=readdirSync(join(root,'src/content/blog',locale)).filter(f=>f.endsWith('.md'));assert(posts.length===14,'Expected 14 articles in '+locale);
  assert(PEOPLE[locale].length===4,'Expected four people in '+locale);

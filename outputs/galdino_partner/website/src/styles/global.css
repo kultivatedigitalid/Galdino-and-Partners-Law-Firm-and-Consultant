@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #122729;
-  --color-forest: #103638;
-  --color-forest-deep: #092a2c;
-  --color-teal: #0e8078;
-  --color-sage: #e1ebe5;
-  --color-paper: #f5f3ec;
-  --color-white: #fffefa;
+  --color-ink: #0b0b0c;
+  --color-forest: #c4142a;
+  --color-forest-deep: #710d1b;
+  --color-teal: #c4142a;
+  --color-sage: #ecebea;
+  --color-paper: #f4f3f1;
+  --color-white: #ffffff;
   --color-gold: #a66f30;
-  --color-line: #d5d8d0;
-  --color-muted: #526461;
+  --color-line: #deddda;
+  --color-muted: #515156;
   --font-display: "Aptos Display", "Segoe UI Variable Display", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --font-sans: Aptos, "Segoe UI Variable Text", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   --shadow-soft: 0 20px 54px rgb(9 42 44 / 0.1);
@@ -40,6 +40,7 @@
   --brand-line-strong: #b9b8b5;
   --brand-ease: cubic-bezier(.22, 1, .36, 1);
   --brand-section-space: clamp(4.5rem, 7vw, 7rem);
+  --brand-type-lead: clamp(.98rem, 1.2vw, 1.12rem);
   --brand-type-hero: clamp(3rem, 4.5vw, 4rem);
   --brand-type-section: clamp(2.25rem, 3.8vw, 3.5rem);
   --brand-type-card: clamp(1.45rem, 2.2vw, 2rem);
@@ -56,6 +57,7 @@ body {
   line-height: 1.65;
 }
 main, section, article, aside, div { min-width: 0; }
+img { object-position: center; }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; }
@@ -159,3 +161,6 @@ button, summary { -webkit-tap-highlight-color: transparent; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
   .motion-ready .reveal, .reveal { opacity: 1; transform: none; }
 }
+
+@media (max-width: 640px) { :root { --brand-type-hero: clamp(2.35rem, 10.5vw, 3.1rem); --brand-type-lead: .98rem; --brand-type-section: clamp(2.15rem, 10vw, 2.85rem); } }
+@media (max-width: 380px), (max-height: 650px) { :root { --brand-type-hero: clamp(2.15rem, 9.8vw, 2.65rem); } }

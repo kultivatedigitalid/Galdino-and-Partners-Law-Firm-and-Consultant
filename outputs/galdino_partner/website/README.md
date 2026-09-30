@@ -4,7 +4,8 @@ Bilingual Astro website for permitting and management-system advisory. The appro
 
 - 38 service details, six category hubs and four environmental subcategory hubs per language.
 - Six industry pages, six provisional case studies, four professional profiles and How We Work.
-- 14 articles per language, searchable services and insights, privacy preferences and a Node SMTP contact endpoint.
+- 14 articles per language, direct service mega menu and category directory, searchable services and insights, privacy preferences and a Node SMTP contact endpoint.
+- Current changes: [30 September revision](docs/REVISION_2026-09-30.md), including simplified environmental URLs and legacy 301 redirects.
 - Staging remains `noindex,nofollow`; all provisional data require approval before public indexing.
 
 ## Development

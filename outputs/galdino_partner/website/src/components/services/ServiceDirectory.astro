@@ -1,7 +1,30 @@
 ---
+import {Image} from 'astro:assets';
 import {INDUSTRIES} from '../../data/industries';
-import {serviceUrl,priceLabel,type Service} from '../../data/services';import type {Locale} from '../../data/site';
-interface Props{locale:Locale;services:Service[];searchOnly?:boolean}const {locale,services,searchOnly=false}=Astro.props;const id=locale==='id';
+import {serviceActivityImage} from '../../data/service-images';
+import {serviceUrl,priceLabel,type Service} from '../../data/services';
+import type {Locale} from '../../data/site';
+interface Props{locale:Locale;services:Service[];searchOnly?:boolean;listId?:string}
+const {locale,services,searchOnly=false,listId="service-list"}=Astro.props,id=locale==='id';
 ---
-<div id="service-list" class="services-directory">{services.map(s=><article class="service-entry" hidden={searchOnly} data-service-id={s.id} data-service-title={s.content[locale].title} data-service-search={s.keywords+' '+s.content[locale].description+' '+INDUSTRIES.filter(i=>i.services.includes(s.id)).map(i=>i.content[locale].title+' '+i.content[locale].issues.join(' ')).join(' ')}><span class="service-number">{s.number}</span><div><h2><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></h2><p>{s.content[locale].description}</p><div class="service-bottom"><strong>{priceLabel(s,locale)}</strong><a class="ed-link" href={serviceUrl(s,locale)}>{id?'Lihat layanan':'Explore service'} ↗</a></div></div></article>)}</div>
-<style>.services-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:3.5rem}.service-entry{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:1rem;padding:2.5rem 0;border-top:1px solid #b9b8b5}.service-number{font-size:.8rem;color:#a61227;font-variant-numeric:tabular-nums}.service-entry h2{font-size:clamp(1.4rem,2.2vw,2rem)}.service-entry h2 a{text-decoration:none}.service-entry p{font-size:.9rem;color:#56565b}.service-bottom{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;align-items:center;margin-top:1.5rem}.service-bottom strong{font-size:.9rem}@media(max-width:800px){.services-directory{grid-template-columns:1fr}.service-entry{padding:2rem 0}}</style>
+<div id={listId} class="services-directory">
+{services.map(s=>{const visual=serviceActivityImage(s);return (
+<article class="service-entry" hidden={searchOnly} data-service-id={s.id} data-service-title={s.content[locale].title} data-service-search={s.keywords+' '+s.content[locale].description+' '+INDUSTRIES.filter(i=>i.services.includes(s.id)).map(i=>i.content[locale].title+' '+i.content[locale].issues.join(' ')).join(' ')}>
+ <Image class="service-photo" src={visual.image} alt={visual.alt[locale]} widths={[480,800]} sizes="(min-width:801px) 45vw, 100vw" loading="lazy" quality={76}/>
+ <div class="service-copy">
+ <div><h3><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></h3><p>{s.content[locale].description}</p>
+ <div class="service-bottom"><strong>{priceLabel(s,locale)}</strong><a class="ed-link" href={serviceUrl(s,locale)}>{id?'Lihat layanan':'Explore service'} ↗</a></div></div></div>
+</article>)})}
+</div>
+<style>
+.services-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 2rem}
+.service-entry{padding-top:1.5rem;border-top:2px solid var(--brand-red)}
+.service-entry :global(.service-photo){width:100%;height:auto;aspect-ratio:16/9;object-fit: contain}
+.service-copy{padding-top:1.5rem}
+.service-entry h3{font-size:var(--brand-type-card)}
+.service-entry h3 a{text-decoration:none}.service-entry h3 a:hover{color:var(--brand-red);text-decoration:underline;text-underline-offset:.2em}
+.service-entry p{font-size:.9rem;color:#56565b}
+.service-bottom{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;align-items:center;margin-top:1.5rem}
+.service-bottom strong{font-size:.9rem}
+@media(max-width:800px){.services-directory{grid-template-columns:1fr}.service-copy{gap:.6rem}}
+</style>

@@ -1,0 +1,28 @@
+---
+import {SERVICE_CATEGORIES,categoryUrl} from '../../data/service-catalog';
+import {SERVICES,serviceUrl} from '../../data/services';
+import type {Locale} from '../../data/site';
+interface Props{locale:Locale}
+const {locale}=Astro.props,id=locale==='id';
+---
+<div class="service-mega" id="service-mega">
+ <div class="mega-heading"><a href={'/'+locale+'/services/'}>{id?'Semua layanan':'All services'} ↗</a><span>{id?'Pilih bidang atau langsung menuju jasa yang Anda butuhkan.':'Choose an area or go directly to the service you need.'}</span></div>
+ <div class="mega-grid">{SERVICE_CATEGORIES.map(category=><section>
+  <a class="mega-category" href={categoryUrl(category,locale)}>{category.content[locale].title}</a>
+  <ul>{SERVICES.filter(s=>s.category===category.id).map(s=><li><a href={serviceUrl(s,locale)}>{s.content[locale].title.replace(/^Jasa /,'')}</a></li>)}</ul>
+ </section>)}</div>
+</div>
+<style>
+.service-mega{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:min(calc(100% - 2.5rem),78rem);max-height:min(50svh,24rem);overflow-y:auto;overscroll-behavior:contain;padding:1rem 1.5rem;background:#fff;color:#171719;border-top:3px solid var(--brand-red);box-shadow:0 18px 36px #14050826;text-align:left}
+.mega-heading{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:1rem;border-bottom:1px solid #deddda}
+.mega-heading>a{font-size:.85rem;font-weight:750;color:#a11225;text-underline-offset:.2em;min-height:2.75rem;display:flex;align-items:center}
+.mega-heading>span{font-size:.75rem;color:#56565b}
+.mega-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1.25rem;padding-top:1rem}
+.mega-category{display:block;min-height:3rem;font-size:.85rem;line-height:1.4;color:#a11225;font-weight:750;text-decoration:none}
+.mega-grid ul{list-style:none;padding:0;margin:0}.mega-grid li+li{border-top:1px solid #eeebe8}
+.mega-grid li a{display:flex;align-items:center;min-height:2.75rem;padding:.55rem 0;font-size:.75rem;line-height:1.4;text-decoration:none}
+.mega-grid a:hover{text-decoration:underline;color:var(--brand-red);text-underline-offset:.2em}
+@media(max-width:1200px) and (min-width:1025px){.mega-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mega-category{min-height:2.75rem}}
+@media(max-width:1024px){.service-mega{position:static;transform:none;width:100%;max-height:45svh;overflow-y:auto;box-shadow:none;padding:1rem;background:#f4f3f1}.mega-grid{grid-template-columns:1fr 1fr;gap:1rem}.mega-category{min-height:2.75rem}.mega-heading>span{display:none}}
+@media(max-width:480px){.mega-grid{grid-template-columns:1fr}.mega-category{font-size:.95rem}.mega-grid li a{font-size:.85rem}}
+</style>

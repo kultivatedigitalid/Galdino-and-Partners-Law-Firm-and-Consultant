@@ -94,7 +94,7 @@ const seo = id ? {
     font-size: var(--brand-type-section);
     font-weight: 570;
     letter-spacing: -.035em;
-    line-height: .98;
+    line-height: 1.02;
     text-wrap: balance;
   }
   .home-redesign .home-heading--light { color: #fff; }
@@ -157,7 +157,7 @@ const seo = id ? {
   }
   @media (max-width: 640px) {
     .home-redesign .home-section { padding-block: 4.5rem; }
-    .home-redesign .home-heading { font-size: clamp(2.15rem, 10vw, 2.85rem); line-height: 1; }
+    .home-redesign .home-heading { font-size: var(--brand-type-section); line-height: 1.02; }
   }
   @media (prefers-reduced-motion: reduce) {
     .home-motion-ready .home-redesign [data-home-reveal] { opacity: 1; transform: none; transition-duration: .01ms; }

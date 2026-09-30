@@ -1,9 +1,9 @@
 {
-  "date": "2026-09-30T02:46:41.210Z",
+  "checkedAt": "2026-09-30T11:46:08.726Z",
   "stats": {
-    "startTime": "2026-09-30T02:42:55.591Z",
-    "duration": 111579.933,
-    "expected": 32,
+    "startTime": "2026-09-30T11:46:08.726Z",
+    "duration": 205361.092,
+    "expected": 37,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
@@ -11,131 +11,558 @@
   "tests": [
     {
       "title": "responsive 320",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 17234
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "responsive 375",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 27228
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "responsive 430",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 13052
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "responsive 768",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 13951
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "responsive 900",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 13425
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "responsive 1024",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 15497
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "responsive 1280",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 16481
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "responsive 1440",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 40851
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "responsive 1920",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 22465
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 11803
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/profile/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 6240
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/profile/hans-galdino/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 5043
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/projects/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 6091
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/industries/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 5462
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/services/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 5675
+            }
+          ]
+        }
+      ]
     },
     {
-      "title": "accessibility /id/services/lingkungan/dokumen-lingkungan/amdal/",
-      "status": "passed"
+      "title": "accessibility /id/services/lingkungan/amdal/",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 6123
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/industries/developer-properti/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 5228
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/projects/aruna-pangan/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 5324
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/blog/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 5229
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/blog/apa-itu-pbg/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 4475
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /id/contact/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 3725
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "accessibility /en/contact/",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 3677
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "nested navigation, language pair and mobile menu",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 3053
+            }
+          ]
+        }
+      ]
     },
     {
-      "title": "service and insight searches support multiple terms and reset",
-      "status": "passed"
+      "title": "insight search supports multiple terms and reset",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 2910
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "cookie consent persists, preferences keyboard and withdrawal",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 5482
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "form prefill, validation, local SMTP success, focus and cooldown",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 6687
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "form failure preserves values and permits retry",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 2983
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "404 locale and indexing block",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 2705
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "analytics loads only after consent and excludes form/query data",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 3168
+            }
+          ]
+        }
+      ]
     },
     {
-      "title": "service intent, scenario selection and category navigation",
-      "status": "passed"
+      "title": "services show direct category links with search hidden and no numbering",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 3369
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "case filters combine and reset without losing case links",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 3789
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "logo keeps its intrinsic aspect ratio and gallery keyboard works",
-      "status": "passed"
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 5048
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "service category photos are centered and contain the full image",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 2523
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "mega menu opens direct service links and supports keyboard and outside click",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 13112
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "directory works without JavaScript and legacy environmental routes redirect",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 4364
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "single-image banners meet the navbar and industries form an equal three-column grid",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 15113
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "brand headings, image framing, navigation and featured sections stay consistent",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 16298
+            }
+          ]
+        }
+      ]
     }
   ]
 }

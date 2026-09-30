@@ -1,17 +1,18 @@
 ---
 import { COPY, NAV, SITE, type Locale } from '../data/site';
 import { alternatePath } from '../utils/i18n';
+import ServiceMegaMenu from './services/ServiceMegaMenu.astro';
 import ArrowIcon from './icons/ArrowIcon.astro';
 
-interface Props { locale: Locale; alternateUrl?: string; }
-const { locale, alternateUrl } = Astro.props;
+interface Props { locale: Locale; immersive?: boolean; alternateUrl?: string; }
+const { locale, alternateUrl, immersive } = Astro.props;
 const pathname = Astro.url.pathname;
 const other = locale === 'id' ? 'en' : 'id';
 const languageHref = alternateUrl || alternatePath(pathname, locale);
 const localeRoot = `/${locale}/`;
 const isHome = pathname === localeRoot;
 const usesRedBrand = isHome || pathname.startsWith(`/${locale}/profile/`);
-const usesImmersiveHeader = usesRedBrand;
+const usesImmersiveHeader = immersive ?? usesRedBrand;
 const logoSrc = '/assets/gp-logo-small.webp';
 const isCurrent = (href: string) => href === localeRoot
   ? pathname === localeRoot
@@ -37,7 +38,9 @@ const isCurrent = (href: string) => href === localeRoot
     </button>
     <nav id="primary-nav" class="nav-panel" aria-label={locale === 'id' ? 'Navigasi utama' : 'Primary navigation'}>
       <div class="nav-inner">
-        {NAV[locale].map((item) => (
+        {NAV[locale].map((item) => item.href === '/'+locale+'/services/' ? (
+          <details class="services-nav"><summary class:list={['nav-link',isCurrent(item.href)&&'active']} aria-controls="service-mega">{item.label}<svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ServiceMegaMenu locale={locale}/></details>
+        ) : (
           <a class:list={['nav-link', isCurrent(item.href) && 'active']} href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
         ))}
         <a
@@ -50,13 +53,18 @@ const isCurrent = (href: string) => href === localeRoot
         >
           {other.toUpperCase()}
         </a>
-        <a class="nav-cta" href={`/${locale}/contact/`}>{locale==='id'?'Kontak':'Contact'}<ArrowIcon /></a>
+        <a class="nav-cta" href={`/${locale}/contact/`}>{locale==='id'?'Konsultasi':'Consultation'}<ArrowIcon /></a>
       </div>
     </nav>
   </div>
 </header>
+<div class="nav-backdrop" data-open="false" aria-hidden="true"></div>
 
 <style>
+  .services-nav:not([open]) > :global(.service-mega){display:none}
+  .services-nav summary{display:flex;align-items:center;gap:.35rem;list-style:none;cursor:pointer;min-height:2.75rem}.services-nav summary::-webkit-details-marker{display:none}.nav-chevron{flex:0 0 auto;transition:transform 160ms var(--brand-ease)}.services-nav[open] .nav-chevron{transform:rotate(180deg)}
+  .nav-backdrop{position:fixed;inset:0;z-index:39;background:rgb(11 11 12 / .25);backdrop-filter:blur(7px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity 160ms var(--brand-ease),visibility 160ms}
+  .nav-backdrop[data-open="true"]{opacity:1;visibility:visible;pointer-events:auto}
   .header-sentinel { position: absolute; top: 2rem; left: 0; width: 1px; height: 1px; pointer-events: none; }
   .site-header {
     position: sticky;
@@ -123,7 +131,7 @@ const isCurrent = (href: string) => href === localeRoot
     .brand-mark-frame { width: 3.2rem; height: 2.25rem; }
     .brand-name { display: inline; max-width: 10rem; overflow: hidden; text-overflow: ellipsis; }
     .menu-toggle { display: grid; flex: 0 0 auto; }
-    .nav-panel { position: absolute; top: calc(100% + 1px); right: 0; left: 0; z-index: var(--layer-menu); visibility: hidden; border-bottom: 1px solid #deddda; background: #fff; opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity 170ms cubic-bezier(.22, 1, .36, 1), transform 170ms cubic-bezier(.22, 1, .36, 1), visibility 170ms; }
+    .nav-panel { max-height:calc(100svh - 4.5rem);overflow-y:auto;overscroll-behavior:contain;position: absolute; top: calc(100% + 1px); right: 0; left: 0; z-index: var(--layer-menu); visibility: hidden; border-bottom: 1px solid #deddda; background: #fff; opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity 170ms cubic-bezier(.22, 1, .36, 1), transform 170ms cubic-bezier(.22, 1, .36, 1), visibility 170ms; }
     .nav-panel.open { visibility: visible; opacity: 1; transform: none; pointer-events: auto; }
     .nav-inner { width: min(100% - 1.25rem, 78rem); margin-inline: auto; display: grid; gap: 0; padding-block: .75rem 1.1rem; }
     .nav-link { min-height: 2.75rem; display: flex; align-items: center; border-bottom: 1px solid #deddda; padding: .8rem .15rem; font-size: .9rem; }
@@ -138,6 +146,8 @@ const isCurrent = (href: string) => href === localeRoot
     .menu-toggle[aria-expanded='true'] .menu-lines i:last-child { transform: translateY(-3px) rotate(-45deg); }
   }
   @media (prefers-reduced-motion: reduce) {
+    .nav-backdrop,
+    .nav-chevron,
     .site-header,
     .site-header--immersive::before,
     .site-header--immersive::after,
@@ -162,7 +172,27 @@ const isCurrent = (href: string) => href === localeRoot
 
   const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
   const nav = document.querySelector<HTMLElement>('.nav-panel');
+  const servicesNav=document.querySelector<HTMLDetailsElement>('.services-nav');
+  const servicesSummary=servicesNav?.querySelector<HTMLElement>('summary');
+  const servicePanel=servicesNav?.querySelector<HTMLElement>('.service-mega');
+  const backdrop=document.querySelector<HTMLElement>('.nav-backdrop');
+  let menuAnimation: Animation | undefined;
+  let servicesOpen=false;
+  const setServicesOpen=(open:boolean)=>{
+    if(!servicesNav || !servicePanel)return;
+    servicesOpen=open;
+    menuAnimation?.cancel();
+    if(open)servicesNav.open=true;
+    if(backdrop)backdrop.dataset.open=String(open);
+    const finish=()=>{servicesNav.open=open;};
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){finish();return;}
+    const frames=[{opacity:0,translate:'0 -6px'},{opacity:1,translate:'0 0'}];
+    menuAnimation=servicePanel.animate(open?frames:[...frames].reverse(),{duration:160,easing:'cubic-bezier(.22,1,.36,1)'});
+    menuAnimation.onfinish=finish;
+  };
+  servicesSummary?.addEventListener('click',event=>{event.preventDefault();setServicesOpen(!servicesOpen);});
   const closeMenu = () => {
+    setServicesOpen(false);
     toggle?.setAttribute('aria-expanded', 'false');
     nav?.classList.remove('open');
   };
@@ -173,11 +203,16 @@ const isCurrent = (href: string) => href === localeRoot
   });
   nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
   document.addEventListener('keydown', (event) => {
+    if(event.key==='Escape' && servicesOpen){setServicesOpen(false);servicesSummary?.focus();return;}
     if (event.key === 'Escape' && nav?.classList.contains('open')) {
       closeMenu();
       toggle?.focus();
     }
   });
+
+  document.addEventListener('click',event=>{if(servicesOpen && !servicesNav?.contains(event.target as Node))setServicesOpen(false);});
+  document.addEventListener('focusin',event=>{if(servicesOpen && !servicesNav?.contains(event.target as Node))setServicesOpen(false);});
+  matchMedia('(max-width:1024px)').addEventListener('change',closeMenu);
 
   const scrollKey = 'gp-language-scroll';
   const languageLink = document.querySelector<HTMLAnchorElement>('.language-link[data-preserve-scroll]');

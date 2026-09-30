@@ -17,7 +17,7 @@ export const EXPERIENCES:Experience[]=[
       "id": {
         "industry": "Manufaktur pangan",
         "stage": "Ekspansi produksi",
-        "title": "Studi Kasus UKL-UPL: menyiapkan ekspansi fasilitas pangan.",
+        "title": "UKL-UPL: menyiapkan ekspansi fasilitas pangan.",
         "challenge": "Penambahan lini produksi membutuhkan pembacaan ulang kegiatan, kapasitas, serta keterkaitan dokumen lingkungan dan bangunan. Data operasional tersebar di beberapa tim.",
         "approach": "Tim memulai dari diagram proses dan daftar produk, kemudian mencocokkannya dengan kegiatan terdaftar. Setiap persyaratan diberikan pemilik dokumen dan urutan tindak lanjut.",
         "deliverables": [
@@ -32,7 +32,7 @@ export const EXPERIENCES:Experience[]=[
       "en": {
         "industry": "Food manufacturing",
         "stage": "Production expansion",
-        "title": "UKL-UPL Case Study: preparing a food-facility expansion.",
+        "title": "UKL-UPL: preparing a food-facility expansion.",
         "challenge": "An additional production line required a fresh review of activities, capacity and environmental and building documents. Operating data were held by several teams.",
         "approach": "The team started with process diagrams and product lists, then mapped them to registered activities. Each requirement was assigned a document owner and next-step sequence.",
         "deliverables": [
@@ -106,7 +106,7 @@ export const EXPERIENCES:Experience[]=[
       "id": {
         "industry": "Retail dan distribusi",
         "stage": "Pengelolaan jaringan outlet",
-        "title": "Studi Kasus Pajak Reklame: menyatukan data lintas outlet.",
+        "title": "Pajak Reklame: menyatukan data lintas outlet.",
         "challenge": "Ukuran media, masa berlaku izin, dan arsip pajak beberapa outlet tidak tersimpan dalam format yang sama. Tim pusat kesulitan membandingkan data objek dengan kondisi lokasi.",
         "approach": "Foto dan ukuran reklame dicocokkan dengan dokumen setiap outlet. Tim memisahkan kewajiban pajak, izin pemasangan, serta kebutuhan pembaruan, lalu menetapkan penanggung jawab.",
         "deliverables": [
@@ -121,7 +121,7 @@ export const EXPERIENCES:Experience[]=[
       "en": {
         "industry": "Retail and distribution",
         "stage": "Outlet-network management",
-        "title": "Advertising Tax Case Study: consolidating outlet records.",
+        "title": "Advertising Tax: consolidating outlet records.",
         "challenge": "Media dimensions, permit expiry dates and tax records across outlets used inconsistent formats. The central team struggled to compare recorded objects with site conditions.",
         "approach": "Photographs and dimensions were reconciled with each outlet's records. Tax obligations, placement permits and renewal needs were separated and assigned to owners.",
         "deliverables": [
@@ -243,7 +243,7 @@ export const EXPERIENCES:Experience[]=[
       "id": {
         "industry": "Properti",
         "stage": "Perencanaan investasi",
-        "title": "Studi Kasus PBG: menyelaraskan rencana bangunan dan dokumen tapak.",
+        "title": "PBG: menyelaraskan rencana bangunan dan dokumen tapak.",
         "challenge": "Rencana pengembangan fasilitas membutuhkan koordinasi lokasi, lingkungan, dan bangunan. Keputusan investasi perlu membedakan pekerjaan yang dapat berjalan paralel dan yang bergantung pada persetujuan lain.",
         "approach": "Tim menghubungkan jadwal proyek dengan kebutuhan dokumen teknis, mencatat asumsi lokasi, dan menyusun urutan keputusan untuk dibahas bersama pengembang.",
         "deliverables": [
@@ -258,7 +258,7 @@ export const EXPERIENCES:Experience[]=[
       "en": {
         "industry": "Property",
         "stage": "Investment planning",
-        "title": "PBG Case Study: aligning building plans and site documents.",
+        "title": "PBG: aligning building plans and site documents.",
         "challenge": "A planned facility development required coordination of site, environmental and building requirements. Investment decisions needed to distinguish parallel work from approval-dependent tasks.",
         "approach": "The team connected the project schedule to technical document needs, recorded site assumptions and sequenced decisions for discussion with the developer.",
         "deliverables": [
