@@ -1,0 +1,7 @@
+---
+import {COPY,type Locale} from '../../data/site';
+interface Props{locale:Locale;title:string;intro:string;detail:string;href?:string}
+const {locale,title,intro,detail,href='/'+locale+'/contact/'}=Astro.props;
+---
+<section class="ed-section context-section"><div><h2>{title}</h2><p>{intro}</p></div><div class="context-section__detail"><p>{detail}</p><a class="ed-button" href={href}>{COPY[locale].consult} →</a></div></section>
+<style>.context-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:start}.context-section h2{max-width:20ch}.context-section p{font-size:1rem;line-height:1.65;color:var(--brand-muted);margin:0}.context-section__detail{padding-top:.3rem;display:flex;flex-direction:column;align-items:flex-end;gap:1.5rem}.context-section__detail p{align-self:stretch}@media(max-width:800px){.context-section{grid-template-columns:1fr}.context-section__detail{align-items:flex-start}}</style>

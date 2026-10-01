@@ -1,12 +1,12 @@
 ---
 import type {Locale} from '../../data/site';
-interface Props{locale:Locale;landscape?:boolean;showNumbers?:boolean;dark?:boolean}
-const {locale,landscape=false,showNumbers=true,dark=false}=Astro.props,id=locale==='id';
+interface Props{locale:Locale;landscape?:boolean;showNumbers?:boolean;dark?:boolean;customSteps?:{title:string;description:string}[]}
+const {locale,landscape=false,showNumbers=true,dark=false,customSteps}=Astro.props,id=locale==='id';
 const steps=landscape?(id?[['01','Kegiatan','Aktivitas & klasifikasi'],['02','Lokasi','Ruang & akses'],['03','Lingkungan','Dampak & pengendalian'],['04','Bangunan','Fungsi & kelayakan'],['05','Operasional','Izin & pelaporan']]:[['01','Activity','Operations & classification'],['02','Location','Space & access'],['03','Environment','Impacts & controls'],['04','Building','Use & readiness'],['05','Operations','Approvals & reporting']]):(id?[['01','Asesmen','Konteks & data awal'],['02','Pemetaan','Kebutuhan & dependensi'],['03','Persiapan','Dokumen & pemilik tugas'],['04','Koordinasi','Pengajuan & perbaikan'],['05','Tindak lanjut','Arsip & kewajiban']]:[['01','Assess','Context & initial records'],['02','Map','Requirements & dependencies'],['03','Prepare','Documents & task owners'],['04','Coordinate','Submission & revisions'],['05','Follow up','Records & obligations']]);
 ---
-<ol class:list={['permit-pathway',dark&&'permit-pathway--dark']} aria-label={landscape?(id?'Peta kebutuhan regulasi':'Regulatory landscape'):(id?'Alur pendampingan':'Engagement pathway')}>{steps.map(([n,title,detail])=><li>{showNumbers&&<span>{n}</span>}<h3>{title}</h3><p>{detail}</p></li>)}</ol>
+<ol style={`--step-count:${customSteps?.length||5}`} class:list={['permit-pathway',dark&&'permit-pathway--dark']} aria-label={landscape?(id?'Peta kebutuhan regulasi':'Regulatory landscape'):(id?'Alur pendampingan':'Engagement pathway')}>{(customSteps?customSteps.map((step,n)=>[String(n+1).padStart(2,'0'),step.title,step.description]):steps).map(([n,title,detail])=><li>{showNumbers&&<span>{n}</span>}<h3>{title}</h3><p>{detail}</p></li>)}</ol>
 <style>
-  .permit-pathway{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:0;margin:2.5rem 0 0;border-top:1px solid #a8a5a0}
+  .permit-pathway{display:grid;grid-template-columns:repeat(var(--step-count),minmax(0,1fr));list-style:none;padding:0;margin:2.5rem 0 0;border-top:1px solid #a8a5a0}
   .permit-pathway li{position:relative;padding:1.5rem 1.2rem 1rem 0}
   .permit-pathway li:before{position:absolute;top:-4px;left:0;width:7px;height:7px;background:#c4142a;content:''}
   .permit-pathway span{font-size:.75rem;color:#9b1224}
@@ -16,7 +16,7 @@ const steps=landscape?(id?[['01','Kegiatan','Aktivitas & klasifikasi'],['02','Lo
   .permit-pathway--dark li:before{background:var(--brand-red-bright)}
   .permit-pathway--dark span{color:var(--brand-red-bright)}
   .permit-pathway--dark h3{color:#fff}
-  .permit-pathway--dark p{color:rgb(255 255 255 / .68)}
+  .permit-pathway--dark p{color:rgb(255 255 255 / .78)}
   @media(max-width:800px){
     .permit-pathway{grid-template-columns:1fr;border-top:0}
     .permit-pathway li{border-left:1px solid #aaa;padding:0 0 1.5rem 1.5rem}

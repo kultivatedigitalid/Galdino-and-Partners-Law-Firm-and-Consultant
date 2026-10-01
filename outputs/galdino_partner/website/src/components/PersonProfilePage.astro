@@ -1,6 +1,6 @@
 ---
-import ImageHero from './shared/ImageHero.astro';
-import heroImage from '../assets/profile-company-hero-centered.webp';
+
+
 import { Image } from 'astro:assets';
 import hansImage from '../assets/team-hans-galdino.webp';
 import kelvinImage from '../assets/team-kelvin-anata-lian.webp';
@@ -10,8 +10,8 @@ import type { ProfileMember } from '../data/profile';
 import { SITE, type Locale } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArrowIcon from './icons/ArrowIcon.astro';
-import RelatedInsights from './shared/RelatedInsights.astro';
-import {serviceById,serviceUrl} from '../data/services';
+
+
 import HomeFinalCta from './home/HomeFinalCta.astro';
 
 interface Props { locale: Locale; member: ProfileMember; alternateUrl: string; }
@@ -37,18 +37,18 @@ const breadcrumbSchema = {
 };
 ---
 
-<BaseLayout immersive locale={locale} title={title} description={description} alternateUrl={alternateUrl}>
+<BaseLayout immersive={false} locale={locale} title={title} description={description} alternateUrl={alternateUrl}>
   <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@type':'Person',name:member.name,jobTitle:member.role,url:pageUrl,worksFor:{'@type':'Organization',name:SITE.displayName}})}/>
   <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <div class="person-page editorial">
-    <ImageHero locale={locale} title={member.name} description={member.role} image={heroImage} breadcrumbs={[{name:id?'About Us':'About Us',href:'/'+locale+'/profile/'},{name:member.name}]}/>
+
     <section class="person-hero" aria-labelledby="person-title">
       <div class="container-shell person-hero__grid">
         <div class="person-hero__copy">
           <a class="person-back" href={`/${locale}/profile/#team`}><ArrowIcon direction="left" />{id ? 'Kembali ke tim' : 'Back to team'}</a>
           <p class="person-label">{id ? 'Profil profesional' : 'Professional profile'}</p>
-          <h2 id="person-title">{id?'Profil profesional':'Professional profile'}</h2>
+          <h1 id="person-title">{member.name}</h1><p class="person-summary">{member.summary}</p>
           <p class="person-role">{member.role}</p>
           <dl class="person-quickfacts" aria-label={id ? 'Kontak profesional' : 'Professional contact'}>
             <div><dt>Email</dt><dd>{member.email}</dd></div>
@@ -98,8 +98,7 @@ const breadcrumbSchema = {
 
     <div class="container-shell">
 <section class="ed-section ed-columns"><div><h2>{id?'Pengalaman terpilih':'Representative matters'}</h2><ul class="ed-list">{member.matters.map(m=><li>{m}</li>)}</ul></div><div><h2>{id?'Cara bekerja':'Working approach'}</h2><p>{member.approach}</p><h3>{id?'Bahasa':'Languages'}</h3><p>{member.languages.join(' · ')}</p></div></section>
-<section class="ed-section"><h2>{id?'Layanan terkait':'Relevant services'}</h2><div class="ed-related">{member.services.map(s=>{const service=serviceById(s)!;return <article><h3><a href={serviceUrl(service,locale)}>{service.content[locale].title}</a></h3><p>{service.content[locale].description}</p></article>})}</div></section>
-<RelatedInsights locale={locale} services={member.services}/></div>
+</div>
 <HomeFinalCta locale={locale}/>
   </div>
 </BaseLayout>
@@ -112,7 +111,7 @@ const breadcrumbSchema = {
   .person-hero__grid { min-height: clamp(40rem, 100svh, 50rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(25rem, .88fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; padding-top: 3rem; padding-bottom: clamp(3rem, 6vw, 5rem); }
   .person-back { width: fit-content; min-height: 2.75rem; display: inline-flex; align-items: center; gap: .5rem; color: var(--brand-muted); font-size: .7rem; font-weight: 780; text-decoration: none; }
   .person-label { width: fit-content; margin: 1.2rem 0 0; border-bottom: 2px solid var(--brand-red); padding-bottom: .3rem; color: var(--brand-black); font-size: .68rem; font-weight: 820; letter-spacing: .05em; text-transform: uppercase; }
-  .person-hero h2 { max-width: 14ch; margin: 1.15rem 0 0; font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 570; letter-spacing: -.04em; line-height: .95; overflow-wrap: anywhere; text-wrap: balance; }
+  .person-hero h1 { max-width: 14ch; margin: 1.15rem 0 0; font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 5.2rem); font-weight: 570; letter-spacing: -.04em; line-height: .95; overflow-wrap: anywhere; text-wrap: balance; }
   .person-role { margin: 1rem 0 0; color: var(--brand-red-deep); font-size: .88rem; font-weight: 820; }
   .person-quickfacts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1.25rem 0 0; border-block: 1px solid var(--brand-line-strong); }
   .person-quickfacts > div { min-width: 0; padding: .8rem .7rem .8rem 0; }
@@ -151,7 +150,7 @@ const breadcrumbSchema = {
   }
   @media (max-width: 560px) {
     .person-hero__grid { padding-top: 3rem; }
-    .person-hero h2 { font-size: clamp(2.55rem, 11vw, 3.5rem); }
+    .person-hero h1 { font-size: clamp(2.55rem, 11vw, 3.5rem); }
     .person-hero__visual { aspect-ratio: 4 / 3; }
     .person-quickfacts { grid-template-columns: 1fr; }
     .person-quickfacts > div + div { border-top: 1px solid var(--brand-line-strong); border-left: 0; padding-left: 0; }
@@ -162,3 +161,4 @@ const breadcrumbSchema = {
     .person-contact a :where(.arrow-icon) { transition-duration: .01ms; }
   }
 </style>
+<style is:global>.person-hero__grid{padding-top:clamp(7rem,10vw,9rem);min-height:0;padding-bottom:4rem;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}.person-hero h1{font-size:var(--brand-type-hero);letter-spacing:-.035em;line-height:.98}.person-hero__copy>.person-summary{font-size:1rem;line-height:1.65;color:var(--brand-muted);margin-top:1.5rem}.person-hero__visual{min-height:0;aspect-ratio:4/5;max-height:33rem;width:100%;border-left:2px solid var(--brand-red);border-bottom:2px solid var(--brand-red);background:var(--brand-surface-soft)}.person-hero__visual :where(img){width:100%;height:100%;object-fit:cover;filter:none}.person-page .ed-columns h2{font-size:var(--brand-type-card)}.person-page .ed-columns h3{font-size:1.05rem;margin-top:1.5rem}.person-page .ed-columns :is(p,li){font-size:1rem;line-height:1.65}.person-overview h2{font-size:var(--brand-type-section)}@media(max-width:840px){.person-hero__grid{grid-template-columns:1fr;padding-top:7rem}.person-hero__visual{max-width:25rem;justify-self:center}.person-overview__grid{grid-template-columns:1fr}}</style>

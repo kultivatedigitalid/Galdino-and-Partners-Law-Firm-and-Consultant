@@ -20,9 +20,9 @@ const {locale}=Astro.props,id=locale==='id';
 <div class="category-index">{SERVICE_CATEGORIES.map(category=>{
  const c=category.content[locale],entries=SERVICES.filter(s=>s.category===category.id),visual=categoryActivityImage(category.id);
  return <section class="category-block" id={'category-'+category.id}>
-  <div class="category-summary"><h3><a class="category-row" href={categoryUrl(category,locale)}>{c.title}</a></h3><p>{c.description}</p><figure class="category-photo"><a href={categoryUrl(category,locale)} tabindex="-1" aria-hidden="true"><Image src={visual.image} alt={visual.alt[locale]} widths={[400,700]} sizes="(min-width:801px) 40vw, 100vw" loading="lazy" quality={76}/><span class="photo-number">{category.number}</span></a><figcaption>{visual.alt[locale]}</figcaption></figure></div>
+  <div class="category-summary"><h3><a class="category-row" href={categoryUrl(category,locale)}>{c.title}</a></h3><p>{c.description}</p><figure class="category-photo"><a href={categoryUrl(category,locale)} tabindex="-1" aria-hidden="true"><Image src={visual.image} alt={visual.alt[locale]} widths={[400,700]} sizes="(min-width:801px) 40vw, 100vw" loading="lazy" quality={76}/></a></figure></div>
   <div><ul class="category-services">{entries.map(s=><li><a href={serviceUrl(s,locale)}>{s.content[locale].title}<span aria-hidden="true">→</span></a></li>)}</ul>
-   <a class="category-all" href={categoryUrl(category,locale)}>{id?'Lihat Semua Layanan '+c.title.replace(/^Perizinan /,''):'Explore All '+c.title} →</a>
+   <a class="category-all reveal-link" data-label={(id?'Lihat Semua Layanan '+c.title.replace(/^Perizinan /,''):'Explore All '+c.title)+' →'} href={categoryUrl(category,locale)}>{id?'Lihat Semua Layanan '+c.title.replace(/^Perizinan /,''):'Explore All '+c.title} →</a>
   </div>
  </section>
 })}</div>
@@ -31,16 +31,16 @@ const {locale}=Astro.props,id=locale==='id';
 
 </div><PermitProcess locale={locale} kicker={id?"Cara kerja":"How we work"} title={id?"Dari konteks menjadi rencana kerja.":"From context to a working plan."} showNumbers={false}/><HomeFinalCta locale={locale}/></div></BaseLayout>
 <style>
-.category-block{display:grid;grid-template-columns:1.15fr 1.45fr;gap:clamp(2rem,5vw,5rem);padding:3rem 0;border-top:2px solid var(--brand-red);scroll-margin-top:7rem}
+.category-block{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(2rem,5vw,5rem);padding:3rem 0;border-top:2px solid var(--brand-red);scroll-margin-top:7rem}
 .category-summary h3{margin-top:0}.category-summary h3 a{text-decoration:none}
 .category-summary h3 a:hover{text-decoration:underline}
 .category-summary p{font-size:.9rem;color:#56565b}
-.category-summary :global(img){width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;transition:transform 240ms var(--brand-ease)}
+.category-summary :global(img){width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center;transition:transform 240ms var(--brand-ease)}
 .category-services{display:grid;grid-template-columns:1fr 1fr;gap:0 1.5rem;list-style:none;margin:0 0 1.5rem;padding:0}
 .category-services a{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem;padding:.75rem 0;border-bottom:1px solid #d2cbc9;font-size:.9rem;text-decoration:none}
 .category-services a{transition:background-color 180ms var(--brand-ease),padding 180ms var(--brand-ease)}.category-services a:hover,.category-services a:focus-visible{background:var(--brand-surface-soft);padding-inline:.7rem;color:var(--brand-black)}.category-services a:hover span{transform:translateX(3px)}.category-services span{transition:transform 180ms var(--brand-ease)}
 .category-services span{color:var(--brand-red)}
-.category-photo{margin:1.5rem 0 0}.category-photo>a{display:block;position:relative;overflow:hidden;border:1px solid var(--brand-black);border-left:2px solid var(--brand-red);border-bottom:2px solid var(--brand-gold)}.photo-number{position:absolute;left:0;bottom:0;background:var(--brand-red);color:#fff;padding:.45rem .75rem;font-size:.78rem;font-weight:800}.category-photo figcaption{margin-top:.6rem;color:var(--brand-muted);font-size:.72rem;line-height:1.45}.category-photo>a:hover img{transform:scale(1.025)}.category-all{display:inline-flex;align-items:center;gap:.6rem;min-height:2.75rem;color:var(--brand-black);font-size:.85rem;font-weight:750;text-underline-offset:.3em}
+.category-photo{margin:1.5rem 0 0}.category-photo>a{display:block;position:relative;overflow:hidden;border-left:2px solid var(--brand-red);border-bottom:2px solid var(--brand-red)}.category-photo>a:hover img{transform:scale(1.025)}.category-all{display:inline-flex;align-items:center;gap:.6rem;min-height:2.75rem;color:var(--brand-black);font-size:.85rem;font-weight:750;text-underline-offset:.3em}
 @media(max-width:800px){.category-block{grid-template-columns:1fr;gap:1.5rem}.category-summary :global(img){max-width:32rem}}
 @media(max-width:480px){.category-services{grid-template-columns:1fr}}
 </style>

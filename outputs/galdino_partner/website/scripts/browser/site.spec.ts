@@ -160,7 +160,7 @@ test('directory works without JavaScript and legacy environmental routes redirec
 });
 test('single-image banners meet the navbar and industries form an equal three-column grid',async({page})=>{
  await page.setViewportSize({width:1440,height:1000});await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
- for(const path of paths.filter(p=>!['/id/','/id/profile/'].includes(p))){
+ for(const path of ['/id/services/','/id/industries/','/id/projects/','/id/blog/']){
  await page.goto(path);await expect(page.locator('.image-hero')).toHaveCount(1);await expect(page.locator('.image-hero img')).toHaveCount(1);
  expect((await page.locator('.image-hero').boundingBox())?.y).toBe(0);
  await expect(page.locator('.site-header')).toHaveClass(/site-header--immersive/);expect(await page.locator('.site-header').evaluate(el=>getComputedStyle(el).position)).toBe('fixed');
@@ -194,7 +194,7 @@ test('brand headings, image framing, navigation and featured sections stay consi
  }
  expect(new Set(headings).size).toBe(1);
  await page.setViewportSize({width:375,height:1000});
- for(const route of ['projects/','contact/']){await page.goto('/id/'+route);await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.decode());expect(await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.currentSrc)).toContain('-mobile');}
+ for(const route of ['projects/']){await page.goto('/id/'+route);await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.decode());expect(await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.currentSrc)).toContain('-mobile');}
  await page.setViewportSize({width:1440,height:1000});
  await page.goto('/id/');await expect(page.locator('#why-galdino-title')).toHaveText('Kenapa Galdino & Partner');
  await expect(page.locator('.why-section')).toHaveCSS('background-color','rgb(11, 11, 12)');
@@ -218,9 +218,27 @@ test('main hero consultation paths and compact category directories',async({page
    await page.goto('/'+locale+'/'+route);await expect(page.locator('.image-hero__kicker')).toBeVisible();await expect(page.locator('.image-hero__cta')).toHaveAttribute('href','/'+locale+'/contact/');await expect(page.locator('.ed-breadcrumb')).toHaveCount(0);
   }
   for(const route of locale==='id'?['reklame','tata-ruang','bangunan-konstruksi','lingkungan','lalu-lintas-akses','iso']:['advertising-permits','spatial-planning','buildings-construction','environmental-approvals','traffic-road-access','iso-management-systems']){
-   await page.goto('/'+locale+'/services/'+route+'/');await expect(page.locator('.category-process__steps article')).toHaveCount(4);await expect(page.locator('.category-process')).toHaveCSS('background-color','rgb(11, 11, 12)');await expect(page.locator('.related-cases')).toHaveCount(0);
-   await page.setViewportSize({width:1440,height:1000});const boxes=await page.locator('.service-entry').evaluateAll(els=>els.map(el=>el.getBoundingClientRect().y));expect(new Set(boxes).size).toBe(1);
+   await page.goto('/'+locale+'/services/'+route+'/');await expect(page.locator('.category-process .permit-pathway li')).toHaveCount(4);await expect(page.locator('.category-process')).toHaveCSS('background-color','rgb(11, 11, 12)');await expect(page.locator('.related-cases')).toHaveCount(0);
+   await page.setViewportSize({width:1440,height:1000});const boxes=await page.locator('.service-entry').evaluateAll(els=>els.map(el=>el.getBoundingClientRect().y));expect(boxes[0]).toBe(boxes[1]);expect(new Set(boxes).size).toBe(Math.ceil(boxes.length/2));expect((await page.locator('#services-in-category').boundingBox())!.height).toBeLessThan(900);await expect(page.locator('.split-hero .ed-button')).toHaveAttribute('href','#services-in-category');
    const faq=page.locator('.ed-details').first();await faq.locator('summary').click();await expect(faq).toHaveAttribute('open','');await faq.locator('summary').click();await expect(faq).not.toHaveAttribute('open','');
   }
  }
+});
+
+test('split detail heroes, compact profiles and contact follow the revised structure',async({page},testInfo)=>{
+ await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
+ for(const locale of ['id','en']){
+  for(const route of locale==='id'?['services/reklame/','services/reklame/pajak-reklame/','industries/developer-properti/']:['services/advertising-permits/','services/advertising-permits/advertising-tax/','industries/property-developers/']){
+   await page.goto('/'+locale+'/'+route);await expect(page.locator('.split-hero img')).toBeVisible();await expect(page.locator('.context-section .ed-button')).toHaveAttribute('href',new RegExp('/'+locale+'/contact/'));const href=await page.locator('.split-hero .ed-button').getAttribute('href');await page.locator('.split-hero .ed-button').click();await expect(page.locator(href!)).toBeInViewport();
+   if(route.startsWith('industries/')){await expect(page.locator('.dark-map')).toHaveCSS('background-color','rgb(11, 11, 12)');await expect(page.locator('.related-cases,.related-insights')).toHaveCount(0);}
+  }
+  await page.goto('/'+locale+'/contact/');await expect(page.locator('.image-hero')).toHaveCount(0);await expect(page.locator('.site-header')).toBeVisible();await expect(page.locator('#contact-form')).toBeVisible();const copy=await page.locator('.contact-copy').boundingBox(),form=await page.locator('#contact-form').boundingBox();expect(copy!.x).toBeLessThan(form!.x);
+  await page.goto('/'+locale+'/profile/hans-galdino/');await expect(page.locator('h1')).toHaveText('Hans Galdino');await expect(page.locator('.image-hero')).toHaveCount(0);await expect(page.locator('.related-insights')).toHaveCount(0);
+  await page.goto('/'+locale+'/profile/');await expect(page.locator('.principles li')).toHaveCount(5);await expect(page.locator('.profile-company__registry,.related-cases')).toHaveCount(0);expect((await page.locator('.founder-note').boundingBox())!.height).toBeLessThan(900);await expect(page.locator('.work-collage figure')).toHaveCount(6);
+ }
+ for(const route of ['services/iso/','industries/developer-properti/','profile/hans-galdino/','blog/apa-itu-pbg/']){await page.goto('/id/'+route);await page.locator('img').evaluateAll(async(images:HTMLImageElement[])=>{images.forEach(img=>img.loading='eager');await Promise.all(images.map(img=>img.decode()));});await page.screenshot({path:testInfo.outputPath('id-'+route.replaceAll('/','-')+'1440.png'),fullPage:true,animations:'disabled'});}
+ await page.goto('/id/blog/apa-itu-pbg/');await expect(page.locator('.article-header h1')).toBeVisible();await expect(page.locator('main')).not.toContainText('menit baca');await expect(page.locator('.article-body .ed-toc')).toBeVisible();
+ await page.goto('/id/industries/');await expect(page.locator('.sector-index,.tile-image span')).toHaveCount(0);
+ await page.goto('/id/services/');await expect(page.locator('.photo-number,.category-photo figcaption')).toHaveCount(0);
+ await page.emulateMedia({reducedMotion:'no-preference'});const link=page.locator('.category-all').first();await link.hover();await expect(link).toHaveCSS('transform','matrix(1, 0, 0, 1, 0, -2)');
 });

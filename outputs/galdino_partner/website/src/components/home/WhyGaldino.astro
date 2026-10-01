@@ -6,7 +6,7 @@ import ArrowIcon from '../icons/ArrowIcon.astro';
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const id = locale === 'id';
-const principles = ABOUT[locale].principles;
+const principles = ABOUT[locale].principles.slice(0,4);
 ---
 
 <section class="why-section home-section" aria-labelledby="why-galdino-title">

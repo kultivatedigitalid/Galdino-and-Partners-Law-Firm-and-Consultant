@@ -1,28 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ImageHero from './shared/ImageHero.astro';
-import RelatedInsights from './shared/RelatedInsights.astro';
-import RelatedCases from './shared/RelatedCases.astro';
+import SplitHero from './shared/SplitHero.astro';
+import ContextSection from './shared/ContextSection.astro';
 import PermitPathway from './shared/PermitPathway.astro';
 import HomeFinalCta from './home/HomeFinalCta.astro';
 import {industryUrl,type Industry} from '../data/industries';
 import {industryImages} from '../data/industry-images';
 import {SERVICES,serviceUrl} from '../data/services';
-import {EXPERIENCES} from '../data/experiences';
+
 import {PEOPLE} from '../data/people';
 import type {Locale} from '../data/site';
 interface Props{locale:Locale;industry:Industry}
 const {locale,industry:i}=Astro.props,id=locale==='id',c=i.content[locale],services=SERVICES.filter(s=>i.services.includes(s.id));
-const cases=EXPERIENCES.filter(e=>e.slug===i.caseSlug||e.services.some(s=>i.services.includes(s))).slice(0,2);
 const person=PEOPLE[locale].find(p=>p.services.some(s=>i.services.includes(s)))||PEOPLE[locale][0];
 ---
 <BaseLayout immersive locale={locale} title={c.title+' | Galdino & Partner'} description={c.description} alternateUrl={industryUrl(i,id?'en':'id')}>
-<div class="editorial"><ImageHero locale={locale} title={c.title} description={c.description} image={industryImages[i.id]} breadcrumbs={[{name:id?'Industri':'Industries',href:'/'+locale+'/industries/'},{name:c.short}]}/>
+<div class="editorial"><SplitHero variant="industry" title={c.title} description={c.description} image={industryImages[i.id]} href="#industry-services" action={id?'Lihat layanan terkait':'View relevant services'}/>
 <div class="container-shell">
-<section class="ed-section"><p class="ed-kicker">{id?'Peta kebutuhan':'Requirement map'}</p><h2>{id?'Mulai dari hubungan antarkebutuhan.':'Start with the connections.'}</h2><PermitPathway locale={locale} landscape/></section>
-<section class="ed-section ed-columns"><div><p class="ed-kicker">01 / {id?'Pemicu kebutuhan':'Key triggers'}</p><h2>{id?'Periksa lebih awal.':'Review early.'}</h2><ul class="ed-list">{c.issues.map(x=><li>{x}</li>)}</ul></div><div><p class="ed-kicker">02 / {id?'Dokumen awal':'Initial records'}</p><h2>{id?'Siapkan konteksnya.':'Prepare the context.'}</h2><ul class="ed-list">{c.documents.map(x=><li>{x}</li>)}</ul></div></section>
-<section class="ed-section"><p class="ed-kicker">{id?'Layanan terkait':'Relevant services'}</p><h2>{id?'Hubungkan kebutuhan Anda.':'Connect your requirements.'}</h2><div class="ed-related">{services.map(s=><article><h3><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></h3><p>{s.content[locale].description}</p></article>)}</div><p class="ed-note">{id?'Daftar ini memulai asesmen; tidak semua layanan wajib untuk setiap usaha. Izin operasional sektoral dan persyaratan lain diperiksa sesuai kegiatan, skala, dan lokasi.':'This list starts the assessment; not every service is mandatory for every business. Sector operating approvals and other requirements are reviewed against activity, scale and location.'}</p></section>
-<section class="ed-section"><h2>{id?'Urutan kerja mengikuti dependensi.':'Sequence work around dependencies.'}</h2><PermitPathway locale={locale}/><a class="ed-link" href={'/'+locale+'/#why-galdino-title'}>{id?'Kenapa Galdino & Partner':'Why Galdino & Partner'} →</a></section>
-{cases.length>0&&<RelatedCases locale={locale} cases={cases}/>}<RelatedInsights locale={locale} services={i.services}/>
+<ContextSection locale={locale} title={id?'Cakupan industri dan kebutuhan izin.':'Industry scope and permit requirements.'} intro={c.description+' '+(id?'Kami meninjau ':'We review ')+c.issues.join('; ')+'.'} detail={(id?'Mulai dengan ':'Start with ')+c.documents.join(', ')+'. '+(id?'Layanan yang dipetakan meliputi ':'The mapped services include ')+services.map(s=>s.content[locale].title).join(', ')+'.'}/></div>
+<section class="dark-map"><div class="container-shell"><p class="ed-kicker">{id?'Peta kebutuhan':'Requirement map'}</p><h2>{id?'Prioritas Izin untuk Operasional Anda.':'Approval Priorities for Your Operations.'}</h2><p class="map-lead">{id?'Kami menghubungkan rencana usaha dengan persyaratan yang perlu disiapkan sebelum pengajuan. Asesmen menentukan izin yang relevan dan urutan pengerjaannya.':'We connect your business plans to the requirements to prepare before submission. The assessment identifies relevant approvals and their sequence.'}</p><PermitPathway locale={locale} landscape dark customSteps={[{title:id?'Konteks usaha':'Business context',description:c.issues.join('; ')+'.'},{title:id?'Data awal':'Initial records',description:c.documents.join(', ')+'.'},{title:id?'Kebutuhan izin':'Approval requirements',description:services.slice(0,3).map(s=>s.content[locale].title).join(', ')+'.'},{title:id?'Rencana pengajuan':'Submission plan',description:id?'Tentukan dokumen, tenaga teknis, dan persetujuan yang perlu selesai lebih dahulu.':'Identify the records, technical specialists and approvals that must be ready first.'}]}/></div></section><div class="container-shell">
+<section class="ed-section" id="industry-services"><p class="ed-kicker">{id?'Layanan terkait':'Relevant services'}</p><h2>{id?'Hubungkan kebutuhan Anda.':'Connect your requirements.'}</h2><div class="ed-related">{services.map(s=><article><h3><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></h3><p>{s.content[locale].description}</p></article>)}</div><p class="ed-note">{id?'Daftar ini memulai asesmen; tidak semua layanan wajib untuk setiap usaha. Izin operasional sektoral dan persyaratan lain diperiksa sesuai kegiatan, skala, dan lokasi.':'This list starts the assessment; not every service is mandatory for every business. Sector operating approvals and other requirements are reviewed against activity, scale and location.'}</p></section>
+
+
 <section class="ed-section ed-split"><div><p class="ed-kicker">{id?'Mulai percakapan':'Start a conversation'}</p><h2>{id?'Dari rencana usaha Anda.':'From your business plans.'}</h2><p>{id?'Sampaikan kegiatan, lokasi, dan tahapan proyek. Tim membantu menentukan dokumen awal serta prioritas pembahasan.':'Share your activities, location and project stage. Our team helps identify the initial records and discussion priorities.'}</p></div><aside class="ed-aside"><h3>{person.name}</h3><p>{person.role}</p><a class="ed-link" href={'/'+locale+'/profile/'+person.slug+'/'}>{id?'Kenali tim pendamping':'Meet your support team'} →</a></aside></section>
 </div><HomeFinalCta locale={locale}/></div></BaseLayout>

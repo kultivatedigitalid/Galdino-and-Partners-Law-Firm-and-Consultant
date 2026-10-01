@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ImageHero from '../shared/ImageHero.astro';
+import SplitHero from '../shared/SplitHero.astro';
+import ContextSection from '../shared/ContextSection.astro';
+import PermitPathway from '../shared/PermitPathway.astro';
 import HomeFinalCta from '../home/HomeFinalCta.astro';
 import {categoryProcess} from '../../data/category-process';
 import ServiceDirectory from './ServiceDirectory.astro';
@@ -11,8 +13,7 @@ import type {Locale} from '../../data/site';
 interface Props{locale:Locale;category:ServiceCategory}
 const {locale,category}=Astro.props,id=locale==='id',c=category.content[locale];
 const services=SERVICES.filter(s=>s.category===category.id);
-const process=categoryProcess(category.id,locale);
-const documents=[...new Set(services.flatMap(s=>s.content[locale].documents.slice(-2)))];
+const process=categoryProcess(category.id,locale).map((step,n)=>({...step,description:step.description+(n===0?' '+(id?'Siapkan: ':'Prepare: ')+services[0].content[locale].documents.slice(0,2).join(', ')+'.':'')}));
 const faq=id?[
  ['Layanan mana yang perlu dimulai lebih dahulu?',c.note],
  ['Apakah semua layanan di bidang ini wajib?', 'Tidak selalu. Kami meninjau kegiatan, skala, lokasi, dan dokumen yang sudah ada sebelum menentukan layanan serta urutan pekerjaan.'],
@@ -29,27 +30,12 @@ const faq=id?[
 ---
 <BaseLayout immersive locale={locale} title={(id?'Jasa ':'')+c.title+' | Galdino & Partner'} description={c.description} alternateUrl={categoryUrl(category,id?'en':'id')}>
 <div class="editorial">
-<ImageHero locale={locale} title={(id?'Jasa ':'')+c.title} description={c.description} image={categoryActivityImage(category.id).image} breadcrumbs={[{name:id?'Layanan':'Services',href:'/'+locale+'/services/'},{name:c.title}]}/>
+<SplitHero title={(id?'Jasa ':'')+c.title} description={c.description} image={categoryActivityImage(category.id).image} alt={categoryActivityImage(category.id).alt[locale]} href="#services-in-category" action={id?'Lihat layanan dalam bidang ini':'View services in this area'}/>
 <div class="container-shell">
-<section class="ed-section ed-split"><div><h2>{id?'Pendampingan sesuai kebutuhan usaha.':'Support for your business requirements.'}</h2><p class="ed-lead">{c.note}</p><p>{id?'Galdino & Partner membantu meninjau kebutuhan, menyiapkan dokumen, dan mengoordinasikan proses dalam ruang lingkup yang disepakati.':'Galdino & Partner reviews requirements, prepares records and coordinates the process within an agreed scope.'}</p><a class="ed-button" href={'/'+locale+'/contact/'}>{id?'Konsultasi awal gratis':'Free initial consultation'} →</a></div><aside><h3>{id?'Siapa yang membutuhkan?':'Who needs this support?'}</h3><ul class="ed-list">{c.audience.map(x=><li>{x}</li>)}</ul><h3>{id?'Situasi yang perlu ditinjau':'Situations to review'}</h3><ul class="ed-list">{c.triggers.map(x=><li>{x}</li>)}</ul></aside></section>
+<ContextSection locale={locale} title={id?'Pendampingan sesuai kebutuhan usaha.':'Support for your business requirements.'} intro={c.note} detail={(id?'Kami mendampingi ':'We support ')+c.audience.join(', ')+'. '+(id?'Asesmen meninjau ':'The assessment reviews ')+c.triggers.join('; ')+'.'}/>
 <section class="ed-section category-selection" id="services-in-category"><h2>{id?'Layanan dalam bidang ini.':'Services in this area.'}</h2><ServiceDirectory locale={locale} services={services} compact/></section>
 </div>
-<section class="category-process" aria-labelledby="category-process-title"><div class="container-shell category-process__layout">
-<header><p class="ed-kicker">{id?'Proses kerja':'Working process'}</p><h2 id="category-process-title">{id?'Pendampingan '+c.title.toLowerCase()+'.':c.title+' support.'}</h2><p>{c.note}</p><a class="ed-button" href={'/'+locale+'/contact/'}>{id?'Mulai asesmen kebutuhan izin':'Start a permit-needs assessment'} →</a></header>
-<div><div class="category-process__steps">{process.map((step,n)=><article><span>{String(n+1).padStart(2,'0')}</span><h3>{step.title}</h3><p>{step.description}</p></article>)}</div>
-<div class="category-process__records"><h3>{id?'Dokumen awal untuk asesmen':'Initial assessment records'}</h3><p>{id?'Ringkasan kegiatan, lokasi, skala, tahap proyek, dan dokumen yang sudah tersedia.':'Activity summary, location, scale, project stage and available records.'}</p><ul>{documents.map(x=><li>{x}</li>)}</ul></div>
-</div></div></section><div class="container-shell">
+<section class="category-process dark-map" aria-labelledby="category-process-title"><div class="container-shell"><p class="ed-kicker">{id?'Proses kerja':'Working process'}</p><h2 id="category-process-title">{id?'Dari asesmen hingga tindak lanjut.':'From assessment to follow-up.'}</h2><p class="map-lead">{c.note}</p><PermitPathway locale={locale} dark customSteps={process}/><div class="ed-actions"><a class="ed-button" href={'/'+locale+'/contact/'}>{id?'Mulai asesmen kebutuhan izin':'Start a permit-needs assessment'} →</a></div></div></section><div class="container-shell">
 <section class="ed-section"><p class="ed-kicker">FAQ</p><h2>{id?'Sebelum Anda memulai.':'Before you begin.'}</h2>{faq.map(([q,a])=><details class="ed-details"><summary>{q}</summary><p>{a}</p></details>)}</section>
 </div><HomeFinalCta locale={locale}/></div></BaseLayout>
-<style>
-.category-selection{padding-block:clamp(2.5rem,5vw,4rem)}
-.category-process{position:relative;background:var(--brand-black);color:#fff;padding-block:var(--brand-section-space)}
-.category-process::before{position:absolute;top:0;right:7%;width:22%;height:.3rem;background:var(--brand-red);content:''}
-.category-process__layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,5rem)}
-.category-process :global(.ed-kicker),.category-process h2,.category-process h3{color:#fff}
-.category-process h2{max-width:17ch}.category-process p,.category-process li{color:rgb(255 255 255 / .72);font-size:.9rem;line-height:1.6}
-.category-process__steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem 2rem}
-.category-process__steps article{border-top:1px solid rgb(255 255 255 / .2);padding-top:1rem}.category-process__steps span{color:var(--brand-red-bright);font-size:.75rem;font-weight:800}.category-process__steps h3{font-size:1.25rem;margin-top:.8rem}
-.category-process__records{border-top:1px solid rgb(255 255 255 / .2);margin-top:2rem;padding-top:1.5rem}.category-process__records h3{font-size:1.25rem}.category-process__records ul{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.5rem;padding-left:1rem}
-@media(max-width:850px){.category-process__layout{grid-template-columns:1fr}}@media(max-width:500px){.category-process__steps,.category-process__records ul{grid-template-columns:1fr}}
-</style>
+<style>.category-selection{padding-block:clamp(2rem,4vw,3rem)}</style>

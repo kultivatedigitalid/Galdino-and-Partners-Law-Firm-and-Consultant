@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-10-01T06:10:53.093Z",
+  "checkedAt": "2026-10-01T08:36:30.536Z",
   "stats": {
-    "startTime": "2026-10-01T06:10:53.093Z",
-    "duration": 154771.311,
-    "expected": 38,
+    "startTime": "2026-10-01T08:36:30.536Z",
+    "duration": 174854.041,
+    "expected": 39,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
@@ -18,7 +18,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 12850
+              "duration": 13865
             }
           ]
         }
@@ -33,7 +33,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 21508
+              "duration": 23715
             }
           ]
         }
@@ -48,7 +48,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 12959
+              "duration": 10717
             }
           ]
         }
@@ -63,7 +63,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 13132
+              "duration": 11781
             }
           ]
         }
@@ -78,7 +78,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 14235
+              "duration": 10835
             }
           ]
         }
@@ -93,7 +93,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 13550
+              "duration": 12181
             }
           ]
         }
@@ -108,7 +108,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 10478
+              "duration": 11319
             }
           ]
         }
@@ -123,7 +123,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 28677
+              "duration": 24183
             }
           ]
         }
@@ -138,7 +138,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 10371
+              "duration": 9906
             }
           ]
         }
@@ -153,7 +153,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 9146
+              "duration": 8552
             }
           ]
         }
@@ -168,7 +168,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 5303
+              "duration": 6922
             }
           ]
         }
@@ -183,7 +183,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 4204
+              "duration": 4893
             }
           ]
         }
@@ -198,7 +198,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 4685
+              "duration": 6423
             }
           ]
         }
@@ -213,7 +213,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3900
+              "duration": 4742
             }
           ]
         }
@@ -228,7 +228,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 4726
+              "duration": 5034
             }
           ]
         }
@@ -243,7 +243,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 4167
+              "duration": 6623
             }
           ]
         }
@@ -258,7 +258,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3963
+              "duration": 4781
             }
           ]
         }
@@ -273,7 +273,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3692
+              "duration": 4552
             }
           ]
         }
@@ -288,7 +288,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3993
+              "duration": 5412
             }
           ]
         }
@@ -303,7 +303,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3595
+              "duration": 5079
             }
           ]
         }
@@ -318,7 +318,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3215
+              "duration": 5453
             }
           ]
         }
@@ -333,7 +333,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3157
+              "duration": 5379
             }
           ]
         }
@@ -348,7 +348,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 2140
+              "duration": 3889
             }
           ]
         }
@@ -363,7 +363,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 2565
+              "duration": 4374
             }
           ]
         }
@@ -378,7 +378,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 4140
+              "duration": 5719
             }
           ]
         }
@@ -393,7 +393,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3987
+              "duration": 9571
             }
           ]
         }
@@ -408,7 +408,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 2861
+              "duration": 6537
             }
           ]
         }
@@ -423,7 +423,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 2035
+              "duration": 3234
             }
           ]
         }
@@ -438,7 +438,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 2171
+              "duration": 3104
             }
           ]
         }
@@ -453,7 +453,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 2684
+              "duration": 3062
             }
           ]
         }
@@ -468,7 +468,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 2487
+              "duration": 3094
             }
           ]
         }
@@ -483,7 +483,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3502
+              "duration": 4095
             }
           ]
         }
@@ -498,7 +498,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 1652
+              "duration": 2075
             }
           ]
         }
@@ -513,7 +513,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 9487
+              "duration": 10544
             }
           ]
         }
@@ -528,7 +528,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 3140
+              "duration": 3572
             }
           ]
         }
@@ -543,7 +543,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 13058
+              "duration": 6704
             }
           ]
         }
@@ -558,7 +558,7 @@
           "results": [
             {
               "status": "passed",
-              "duration": 17811
+              "duration": 15947
             }
           ]
         }
@@ -573,7 +573,22 @@
           "results": [
             {
               "status": "passed",
-              "duration": 16279
+              "duration": 17430
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "split detail heroes, compact profiles and contact follow the revised structure",
+      "ok": true,
+      "tests": [
+        {
+          "status": "expected",
+          "results": [
+            {
+              "status": "passed",
+              "duration": 13746
             }
           ]
         }
