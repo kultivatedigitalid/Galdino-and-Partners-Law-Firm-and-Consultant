@@ -1,0 +1,14 @@
+/* Accessible functional variants of the decorative gold token. */
+.text-gold {
+  color: #755018;
+}
+
+.bg-forest .text-gold,
+.bg-forest-deep .text-gold,
+[class*="bg-forest"] .text-gold {
+  color: #d9b878;
+}
+
+.bg-gold {
+  background-color: #c79b57;
+}
