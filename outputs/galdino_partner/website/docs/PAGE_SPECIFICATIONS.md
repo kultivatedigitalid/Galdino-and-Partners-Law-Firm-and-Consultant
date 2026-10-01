@@ -4,7 +4,7 @@ See SITE_MAP.md for every URL and REVISION_2026-09-30.md for the current PDF/mes
 
 Home and About: approved composition retained, completed central data, four people including Hans, service rail linked to six categories, working case/article destinations, link to the process section on Home.
 
-Services: six visible category sections with links to all 38 services with service search temporarily hidden and numbering removed. Six dedicated hubs include audience, triggers, preparation, process, FAQ and available related content. The environmental hub has four anchored groups, with short category/service URLs. Detail pages include all specified scope/document/process/fee/FAQ sections and connected content.
+Services: six visible category sections with links to all 38 services with service search temporarily hidden and editorial image numbering. Six dedicated hubs include audience, triggers, a compact single-row service directory, category-specific dark process sections with initial documents, and FAQ. Hubs omit related cases and insights. The environmental hub has four preserved group anchors, with short category/service URLs. Detail pages include all specified scope/document/process/fee/FAQ sections and connected content.
 
 Industries: equal three-column index (two on tablet, one on mobile), without industry focus, case studies or insights sections. Six sector pages with operating issues, preparation documents, relevant services, related cases and insights.
 

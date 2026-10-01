@@ -15,7 +15,7 @@ interface Props{locale:Locale}const {locale}=Astro.props;const id=locale==='id';
 <label class="field"><span>{id?'Penjelasan singkat':'Brief description'} *</span><textarea name="message" rows="5" required minlength="20" maxlength="3000" placeholder={id?'Ceritakan kegiatan, kebutuhan, dan target waktu Anda.':'Tell us about your activity, requirement and intended timing.'}></textarea></label>
 <label class="privacy-check"><input name="consent" type="checkbox" value="true" required/><span>{id?'Saya telah membaca':'I have read the'} <a href={`/${locale}/privacy/`}>{id?'Kebijakan Privasi':'Privacy Policy'}</a> {id?'dan menyetujui pemrosesan data untuk menanggapi permintaan ini.':'and agree to processing my information to respond to this request.'} *</span></label>
 <div id="form-status" tabindex="-1" role="status" aria-live="polite" hidden></div>
-<button class="ed-button" type="submit"><span data-submit-label>{id?'Kirim permintaan':'Send request'}</span> ↗</button>
+<button class="ed-button" type="submit"><span data-submit-label>{id?'Kirim permintaan':'Send request'}</span> →</button>
 <p class="form-note">{id?'Konsultasi awal gratis. Jangan sertakan dokumen identitas atau informasi rahasia dalam pesan awal.':'The first consultation is free. Please leave identity documents and confidential information out of the initial message.'}</p>
 <noscript><p>{id?'Aktifkan JavaScript untuk mengirim formulir, atau hubungi kami melalui email/WhatsApp.':'Enable JavaScript to send the form, or use email/WhatsApp.'}</p></noscript>
 </form>

@@ -29,7 +29,7 @@ for(const path of ['/id/','/id/profile/','/id/profile/hans-galdino/','/id/projec
 test('nested navigation, language pair and mobile menu',async({page})=>{
  await page.setViewportSize({width:375,height:900});await page.goto('/id/services/lingkungan/amdal/');
  await page.locator('[data-consent-reject]').click();
- await expect(page.locator('.ed-breadcrumb')).toContainText('Perizinan Lingkungan');
+ await expect(page.locator('.ed-breadcrumb')).toHaveCount(0);
  await page.locator('.menu-toggle').click();await expect(page.locator('.menu-toggle')).toHaveAttribute('aria-expanded','true');
  await page.getByRole('link',{name:'Switch to English'}).click();
  await expect(page).toHaveURL(/\/en\/services\/environmental-approvals\/environmental-impact-assessment\/$/);
@@ -119,10 +119,10 @@ test('logo keeps its intrinsic aspect ratio and gallery keyboard works',async({p
  await page.goto('/id/');await page.locator('[data-service-carousel] [data-carousel-track]').scrollIntoViewIfNeeded();await page.locator('[data-service-carousel] [data-carousel-next]').click();await expect(page.locator('[data-service-carousel] [data-carousel-status]')).toHaveText('2 / 6');await page.locator('[data-service-carousel] [data-carousel-track]').focus();await page.keyboard.press('ArrowLeft');await expect(page.locator('[data-service-carousel] [data-carousel-status]')).toHaveText('1 / 6');
 });
 
-test('service category photos are centered and contain the full image',async({page})=>{
+test('service category photos have centered editorial crops',async({page})=>{
  await page.goto('/id/services/reklame/');await page.locator('[data-consent-reject]').click();
  const images=page.locator('.service-photo');await expect(images).toHaveCount(6);
- await images.evaluateAll(async(images:HTMLImageElement[])=>{for(const img of images){img.loading='eager';await img.decode();if(!img.naturalWidth||!img.alt)throw Error('Missing activity photo');if(getComputedStyle(img).objectFit!=='contain'||getComputedStyle(img).objectPosition!=='50% 50%')throw Error('Photo is not fully centered');}});
+ await images.evaluateAll(async(images:HTMLImageElement[])=>{for(const img of images){img.loading='eager';await img.decode();if(!img.naturalWidth||!img.alt)throw Error('Missing activity photo');if(getComputedStyle(img).objectFit!=='cover'||getComputedStyle(img).objectPosition!=='50% 50%')throw Error('Photo is not fully centered');}});
 });
 test('mega menu opens direct service links and supports keyboard and outside click',async({page},testInfo)=>{
  await page.emulateMedia({reducedMotion:'no-preference'});
@@ -189,7 +189,7 @@ test('brand headings, image framing, navigation and featured sections stay consi
   await expect(page.locator('.nav-link[href="/'+locale+'/profile/"]')).toHaveText('About Us');
   await expect(page.locator('.nav-link[href="/'+locale+'/contact/"]')).toHaveCount(0);
   await expect(page.locator('a[href*="profile/how-we-work"]')).toHaveCount(0);
-  const badImages=await page.locator('main img:not(.home-hero img):not(.profile-hero img):not(.image-hero img)').evaluateAll(images=>images.filter(img=>{const c=getComputedStyle(img);return c.objectFit==='cover'||c.objectPosition!=='50% 50%'}).length);expect(badImages).toBe(0);
+  const badImages=await page.locator('main img:not(.home-hero img):not(.profile-hero img):not(.image-hero img)').evaluateAll(images=>images.filter(img=>{const c=getComputedStyle(img);return c.objectPosition!=='50% 50%'}).length);expect(badImages).toBe(0);
  }
  }
  expect(new Set(headings).size).toBe(1);
@@ -210,4 +210,17 @@ test('brand headings, image framing, navigation and featured sections stay consi
  expect(await page.locator('.case-entry.featured').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgb(236, 235, 234)');
  await page.goto('/id/blog/');expect(await page.locator('.featured-insight').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgb(236, 235, 234)');
  await page.emulateMedia({reducedMotion:'reduce'});await page.locator('.services-nav summary').click();await expect(page.locator('.service-mega')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('.service-mega')).not.toBeVisible();
+});
+
+test('main hero consultation paths and compact category directories',async({page})=>{
+ for(const locale of ['id','en']){
+  for(const route of ['services/','industries/','projects/','blog/']){
+   await page.goto('/'+locale+'/'+route);await expect(page.locator('.image-hero__kicker')).toBeVisible();await expect(page.locator('.image-hero__cta')).toHaveAttribute('href','/'+locale+'/contact/');await expect(page.locator('.ed-breadcrumb')).toHaveCount(0);
+  }
+  for(const route of locale==='id'?['reklame','tata-ruang','bangunan-konstruksi','lingkungan','lalu-lintas-akses','iso']:['advertising-permits','spatial-planning','buildings-construction','environmental-approvals','traffic-road-access','iso-management-systems']){
+   await page.goto('/'+locale+'/services/'+route+'/');await expect(page.locator('.category-process__steps article')).toHaveCount(4);await expect(page.locator('.category-process')).toHaveCSS('background-color','rgb(11, 11, 12)');await expect(page.locator('.related-cases')).toHaveCount(0);
+   await page.setViewportSize({width:1440,height:1000});const boxes=await page.locator('.service-entry').evaluateAll(els=>els.map(el=>el.getBoundingClientRect().y));expect(new Set(boxes).size).toBe(1);
+   const faq=page.locator('.ed-details').first();await faq.locator('summary').click();await expect(faq).toHaveAttribute('open','');await faq.locator('summary').click();await expect(faq).not.toHaveAttribute('open','');
+  }
+ }
 });

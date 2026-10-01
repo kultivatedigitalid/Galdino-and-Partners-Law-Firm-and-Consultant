@@ -3,7 +3,7 @@ import type {Locale} from '../../data/site';
 interface Props{locale:Locale;total:number}
 const {locale,total}=Astro.props,id=locale==='id';
 ---
-<div class="ed-search"><label for="service-search">{id?'Izin atau kebutuhan apa yang Anda cari?':'What permit or requirement are you looking for?'}</label><div class="search-field"><input id="service-search" type="search" autocomplete="off" placeholder={id?'Contoh: bangun gudang, papan toko, ISO 9001':'Try: build a warehouse, signage, ISO 9001'} aria-controls="service-list" aria-describedby="service-count"/><span aria-hidden="true">↗</span></div></div>
+<div class="ed-search"><label for="service-search">{id?'Izin atau kebutuhan apa yang Anda cari?':'What permit or requirement are you looking for?'}</label><div class="search-field"><input id="service-search" type="search" autocomplete="off" placeholder={id?'Contoh: bangun gudang, papan toko, ISO 9001':'Try: build a warehouse, signage, ISO 9001'} aria-controls="service-list" aria-describedby="service-count"/><span aria-hidden="true">→</span></div></div>
 <p id="service-count" class="ed-results" role="status" aria-live="polite">{id?'Cari dari '+total+' layanan, atau pilih kategori di bawah.':'Search '+total+' services, or choose a category below.'}</p>
 <script>
  import {track} from '../../scripts/analytics';

@@ -41,7 +41,7 @@ const [featured, ...supporting] = posts;
               <span>0{index + 2}</span>
               <p>{post.data.category} / {formatter.format(post.data.publishDate)}</p>
               <h3><a href={postUrl(post)}>{post.data.title}</a></h3>
-              <a href={postUrl(post)} aria-label={`${id ? 'Baca artikel' : 'Read article'}: ${post.data.title}`}><ArrowIcon direction="up-right" /></a>
+              <a href={postUrl(post)} aria-label={`${id ? 'Baca artikel' : 'Read article'}: ${post.data.title}`}><ArrowIcon direction="right" /></a>
             </article>
           ))}
         </div>
@@ -89,7 +89,7 @@ const [featured, ...supporting] = posts;
     .insight-supporting article:hover,
     .insight-supporting article:focus-within { background: rgb(196 20 42 / 0.035); transform: translateX(4px); }
     .insight-supporting article:hover > a,
-    .insight-supporting article:focus-within > a { color: var(--home-red-deep); transform: translate(3px, -3px); }
+    .insight-supporting article:focus-within > a { color: var(--home-red-deep); transform: translateX(3px); }
   }
   @media (prefers-reduced-motion: reduce) {
     .insight-feature,

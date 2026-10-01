@@ -34,7 +34,7 @@ const steps = id ? [
         </li>
       ))}
     </ol>
-    <a class="process-section__link" href={`/${locale}/contact/`}>
+    <a class="process-section__link ed-button" href={`/${locale}/contact/`}>
       {id ? 'Mulai asesmen kebutuhan izin' : 'Start a permit-needs assessment'} <ArrowIcon />
     </a>
   </div>
@@ -53,7 +53,7 @@ const steps = id ? [
   .process-rail__number { color: var(--brand-red-bright); font-family: var(--font-display); font-size: 1rem; font-weight: 760; letter-spacing: .04em; }
   .process-rail h3 { max-width: 16ch; margin: 0; font-family: var(--font-display); font-size: var(--brand-type-card); font-weight: 600; letter-spacing: -.025em; line-height: 1.05; }
   .process-rail p { max-width: 25rem; margin: .75rem 0 0; color: rgb(255 255 255 / .58); font-size: .9rem; line-height: 1.55; }
-  .process-section__link { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .6rem; margin-top: 2rem; color: #fff; font-size: .85rem; font-weight: 780; text-decoration-color: var(--brand-red); text-decoration-thickness: 2px; text-underline-offset: .35rem; }
+  .process-section__link { min-height: 2.75rem; display: inline-flex; align-items: center; gap: .6rem; margin-top: 2rem; color: #fff; font-size: .85rem; font-weight: 780; text-decoration:none; text-decoration-color: var(--brand-red); text-decoration-thickness: 2px; text-underline-offset: .35rem; }
   .process-section__link :global(.arrow-icon) { transition: transform 170ms var(--brand-ease); }
   @media (hover: hover) and (pointer: fine) { .process-section__link:hover :global(.arrow-icon) { transform: translateX(3px); } }
   @media (min-width: 800px) {

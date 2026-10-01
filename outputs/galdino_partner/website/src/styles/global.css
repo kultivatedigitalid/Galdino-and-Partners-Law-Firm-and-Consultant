@@ -164,3 +164,10 @@ button, summary { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 640px) { :root { --brand-type-hero: clamp(2.35rem, 10.5vw, 3.1rem); --brand-type-lead: .98rem; --brand-type-section: clamp(2.15rem, 10vw, 2.85rem); } }
 @media (max-width: 380px), (max-height: 650px) { :root { --brand-type-hero: clamp(2.15rem, 9.8vw, 2.65rem); } }
+
+/* A shared, restrained interaction language with keyboard and reduced-motion support. */
+a,button,summary{transition:color 180ms var(--brand-ease),background-color 180ms var(--brand-ease),border-color 180ms var(--brand-ease)}
+a .arrow-icon{transition:transform 180ms var(--brand-ease)}a:hover .arrow-icon,a:focus-visible .arrow-icon{transform:translateX(3px)}button:active{transform:translateY(1px)}
+.ed-details summary{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;list-style:none}.ed-details summary::-webkit-details-marker{display:none}.ed-details summary::after{content:'+';font-size:1.5rem;font-weight:400;transition:transform 180ms var(--brand-ease)}.ed-details[open] summary::after{transform:rotate(45deg)}.ed-details summary:hover{color:var(--brand-red)}
+@supports(interpolate-size:allow-keywords){.ed-details{interpolate-size:allow-keywords}.ed-details::details-content{height:0;overflow:clip;opacity:0;transition:height 180ms var(--brand-ease),opacity 180ms var(--brand-ease),content-visibility 180ms allow-discrete}.ed-details[open]::details-content{height:auto;opacity:1}}
+@media(prefers-reduced-motion:reduce){a,button,summary,a .arrow-icon,.ed-details::details-content{transition:none!important}.ed-details summary::after{transition:none}a:hover .arrow-icon{transform:none}}

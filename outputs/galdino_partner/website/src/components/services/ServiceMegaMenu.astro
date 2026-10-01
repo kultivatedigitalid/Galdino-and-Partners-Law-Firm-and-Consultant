@@ -6,7 +6,7 @@ interface Props{locale:Locale}
 const {locale}=Astro.props,id=locale==='id';
 ---
 <div class="service-mega" id="service-mega">
- <div class="mega-heading"><a href={'/'+locale+'/services/'}>{id?'Semua layanan':'All services'} ↗</a><span>{id?'Pilih bidang atau langsung menuju jasa yang Anda butuhkan.':'Choose an area or go directly to the service you need.'}</span></div>
+ <div class="mega-heading"><a href={'/'+locale+'/services/'}>{id?'Semua layanan':'All services'} →</a><span>{id?'Pilih bidang atau langsung menuju jasa yang Anda butuhkan.':'Choose an area or go directly to the service you need.'}</span></div>
  <div class="mega-grid">{SERVICE_CATEGORIES.map(category=><section>
   <a class="mega-category" href={categoryUrl(category,locale)}>{category.content[locale].title}</a>
   <ul>{SERVICES.filter(s=>s.category===category.id).map(s=><li><a href={serviceUrl(s,locale)}>{s.content[locale].title.replace(/^Jasa /,'')}</a></li>)}</ul>

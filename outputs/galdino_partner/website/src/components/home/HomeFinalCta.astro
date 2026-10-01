@@ -15,7 +15,7 @@ const id = locale === 'id';
     </div>
     <div class="final-cta__actions" data-home-reveal data-profile-reveal>
       <a class="final-cta__button" href={`/${locale}/contact/`}>{COPY[locale].consult}<ArrowIcon /></a>
-      <a class="final-cta__whatsapp" href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp {SITE.whatsappDisplay}<ArrowIcon direction="up-right" /></a>
+      <a class="final-cta__whatsapp" href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp {SITE.whatsappDisplay}<ArrowIcon direction="right" /></a>
     </div>
   </div>
 </section>
@@ -40,7 +40,7 @@ const id = locale === 'id';
   @media (hover: hover) and (pointer: fine) {
     .final-cta__button:hover { background: var(--brand-black); color: #fff; transform: translateY(-2px); }
     .final-cta__button:hover :global(.arrow-icon) { transform: translateX(3px); }
-    .final-cta__whatsapp:hover :global(.arrow-icon) { transform: translate(2px, -2px); }
+    .final-cta__whatsapp:hover :global(.arrow-icon) { transform: translateX(3px); }
   }
   @media (prefers-reduced-motion: reduce) {
     .final-cta__button, .final-cta__button :global(.arrow-icon), .final-cta__whatsapp :global(.arrow-icon) { transition-duration: .01ms; }
