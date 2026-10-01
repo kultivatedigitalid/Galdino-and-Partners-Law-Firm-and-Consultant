@@ -19,10 +19,10 @@ const isCurrent = (href: string) => href === localeRoot
   : pathname === href || pathname.startsWith(href);
 ---
 
-{usesImmersiveHeader && <span class="header-sentinel" data-header-sentinel aria-hidden="true"></span>}
+<span class="header-sentinel" data-header-sentinel aria-hidden="true"></span>
 <header
   class:list={['site-header', usesImmersiveHeader && 'site-header--immersive', isHome && !usesImmersiveHeader && 'site-header--home']}
-  data-scrolled={usesImmersiveHeader ? 'false' : undefined}
+  data-scrolled="false"
 >
   <a class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-white focus:p-3" href="#main-content">{COPY[locale].skip}</a>
   <div class="container-shell header-inner">
@@ -75,27 +75,13 @@ const isCurrent = (href: string) => href === localeRoot
     top: 0;
     z-index: var(--layer-header);
     isolation: isolate;
-    border-bottom: 1px solid rgb(11 11 12 / .14);
-    background: var(--brand-paper);
-    backdrop-filter: blur(14px);
-    transition: border-color 210ms cubic-bezier(.22, 1, .36, 1), backdrop-filter 210ms cubic-bezier(.22, 1, .36, 1);
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    transition: background-color 210ms cubic-bezier(.22, 1, .36, 1), border-color 210ms cubic-bezier(.22, 1, .36, 1);
   }
-  .site-header--home { position: fixed; right: 0; left: 0; border-bottom-color: transparent; background: var(--brand-surface-soft); backdrop-filter: none; }
-  .site-header--immersive { position: fixed; right: 0; left: 0; border-bottom-color: transparent; background: transparent; backdrop-filter: blur(0); }
-  .site-header--immersive::before,
-  .site-header--immersive::after {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    content: '';
-    pointer-events: none;
-    transition: opacity 210ms cubic-bezier(.22, 1, .36, 1);
-  }
-  .site-header--immersive::before { background: linear-gradient(180deg, rgb(8 8 9 / .88) 0%, rgb(8 8 9 / .62) 58%, rgb(8 8 9 / .08) 100%); opacity: 1; }
-  .site-header--immersive::after { background: var(--brand-paper); box-shadow: 0 8px 28px rgb(11 11 12 / .08); opacity: 0; }
-  .site-header--immersive[data-scrolled='true'] { border-bottom-color: rgb(11 11 12 / .14); backdrop-filter: blur(14px); }
-  .site-header--immersive[data-scrolled='true']::before { opacity: 0; }
-  .site-header--immersive[data-scrolled='true']::after { opacity: 1; }
+  .site-header--home { position: fixed; right: 0; left: 0; }
+  .site-header--immersive { position: fixed; right: 0; left: 0; }
+  .site-header[data-scrolled='true'] { background: #fff; border-bottom-color: rgb(11 11 12 / .14); }
   .header-inner { display: grid; grid-template-columns: 14rem minmax(0,1fr); min-height: var(--site-header-height); align-items: center; gap: 1.5rem; }
   .brand { display: inline-flex; min-height: 2.75rem; flex: 0 0 auto; align-items: center; gap: .65rem; color: #0b0b0c; text-decoration: none; transition: color 210ms cubic-bezier(.22, 1, .36, 1); }
   .brand-mark-frame { width: 3.6rem; height: 2.55rem; display: grid; flex: 0 0 auto; place-items: center; }
@@ -153,8 +139,6 @@ const isCurrent = (href: string) => href === localeRoot
     .nav-backdrop,
     .nav-chevron,
     .site-header,
-    .site-header--immersive::before,
-    .site-header--immersive::after,
     .brand,
     .nav-link::after,
     .nav-cta,
@@ -165,11 +149,11 @@ const isCurrent = (href: string) => href === localeRoot
 </style>
 
 <script>
-  const immersiveHeader = document.querySelector<HTMLElement>('.site-header--immersive');
+  const scrollHeader = document.querySelector<HTMLElement>('.site-header');
   const headerSentinel = document.querySelector<HTMLElement>('[data-header-sentinel]');
-  if (immersiveHeader && headerSentinel && 'IntersectionObserver' in window) {
+  if (scrollHeader && headerSentinel && 'IntersectionObserver' in window) {
     const headerObserver = new IntersectionObserver(([entry]) => {
-      immersiveHeader.dataset.scrolled = String(!entry.isIntersecting);
+      scrollHeader.dataset.scrolled = String(!entry.isIntersecting);
     }, { threshold: 0 });
     headerObserver.observe(headerSentinel);
   }

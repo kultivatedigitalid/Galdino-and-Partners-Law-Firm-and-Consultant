@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-01T19:19:52.451Z",
+  "localDate": "2026-10-02",
+  "timezone": "Asia/Jakarta",
+  "scope": "Supplied architectural Home hero and shared transparent-to-white navbar",
+  "passed": 10,
+  "failed": 0,
+  "checks": {
+    "responsiveWidths": [
+      320,
+      375,
+      430,
+      768,
+      1024,
+      1440
+    ],
+    "routesPerWidth": 17,
+    "locales": [
+      "id",
+      "en"
+    ],
+    "headline": "two deliberate lines",
+    "assets": [
+      "home-architecture-supplied.webp",
+      "home-consultation-supplied-cutout.webp"
+    ],
+    "header": "transparent at top, solid white after scrolling",
+    "accessibility": "Home axe WCAG 2/2.1 A/AA"
+  },
+  "tests": [
+    {
+      "status": "passed",
+      "title": "responsive 320 (18.3s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 375 (22.3s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 430 (10.1s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 768 (10.0s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 1024 (9.4s)"
+    },
+    {
+      "status": "passed",
+      "title": "accessibility /id/ (6.3s)"
+    },
+    {
+      "status": "passed",
+      "title": "nested navigation, language pair and mobile menu (2.7s)"
+    },
+    {
+      "status": "passed",
+      "title": "mega menu opens direct service links and supports keyboard and outside click (9.5s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 1440 (24.4s)"
+    },
+    {
+      "status": "passed",
+      "title": "brand headings, image framing, navigation and featured sections stay consistent (18.4s)"
+    }
+  ],
+  "finalVisualVerification": {
+    "passed": 1,
+    "failed": 0,
+    "change": "Flexible desktop viewport, lower mobile architecture and added header screenshots",
+    "headers": [
+      "six main routes and Contact, in both languages"
+    ]
+  },
+  "finalImagePriorityVerification": {
+    "locales": [
+      "id",
+      "en"
+    ],
+    "status": 200,
+    "architectureFetchPriority": "high",
+    "build": "passed",
+    "validation": "167 pages passed",
+    "note": "Nonvisual priority attribute was added after the final screenshot review"
+  },
+  "lighthouse": {
+    "home": {
+      "performance": 93,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "services": {
+      "performance": 95,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "contact": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 66
+    }
+  }
+}

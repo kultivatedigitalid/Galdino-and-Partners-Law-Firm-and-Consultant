@@ -3,83 +3,22 @@
     "name": "home",
     "path": "/id/",
     "device": "Lighthouse default mobile simulation",
-    "date": "2026-10-01T18:28:13.259Z",
+    "date": "2026-10-01T19:26:26.959Z",
     "version": "13.5.0",
     "scores": {
-      "performance": 83,
+      "performance": 93,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 69
     },
     "metrics": {
-      "first-contentful-paint": 3313.7272000000003,
-      "largest-contentful-paint": 3370.7272000000007,
+      "first-contentful-paint": 2592.1693,
+      "largest-contentful-paint": 2650.1693,
       "cumulative-layout-shift": 0,
-      "total-blocking-time": 60.99999999999977,
-      "speed-index": 4654.757555778471
+      "total-blocking-time": 17,
+      "speed-index": 2592.1693
     },
     "failedAudits": [
-      {
-        "id": "max-potential-fid",
-        "title": "Max Potential First Input Delay",
-        "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
-      },
-      {
-        "id": "mainthread-work-breakdown",
-        "title": "Minimize main-thread work",
-        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)",
-        "details": {
-          "type": "table",
-          "headings": [
-            {
-              "key": "groupLabel",
-              "valueType": "text",
-              "label": "Category"
-            },
-            {
-              "key": "duration",
-              "valueType": "ms",
-              "granularity": 1,
-              "label": "Time Spent"
-            }
-          ],
-          "items": [
-            {
-              "group": "styleLayout",
-              "groupLabel": "Style & Layout",
-              "duration": 4583.5
-            },
-            {
-              "group": "other",
-              "groupLabel": "Other",
-              "duration": 578.8200000000002
-            },
-            {
-              "group": "paintCompositeRender",
-              "groupLabel": "Rendering",
-              "duration": 95.2999999999993
-            },
-            {
-              "group": "parseHTML",
-              "groupLabel": "Parse HTML & CSS",
-              "duration": 67.244
-            },
-            {
-              "group": "scriptEvaluation",
-              "groupLabel": "Script Evaluation",
-              "duration": 62.895999999999994
-            },
-            {
-              "group": "scriptParseCompile",
-              "groupLabel": "Script Parsing & Compilation",
-              "duration": 10.135999999999997
-            }
-          ],
-          "sortedBy": [
-            "duration"
-          ]
-        }
-      },
       {
         "id": "is-crawlable",
         "title": "Page is blocked from indexing",
@@ -97,7 +36,7 @@
             {
               "source": {
                 "type": "node",
-                "lhId": "1-123-META",
+                "lhId": "1-124-META",
                 "path": "1,HTML,0,HEAD,5,META",
                 "selector": "head > meta",
                 "boundingRect": {
@@ -136,44 +75,44 @@
               "value": {
                 "type": "network-tree",
                 "chains": {
-                  "812C65DDCE081B8EBD732570881FBD62": {
+                  "3B987F54BC5DD489AB37C57BC2C83BD5": {
                     "url": "http://localhost:4327/id/",
-                    "navStartToEndTime": 90,
-                    "transferSize": 67875,
+                    "navStartToEndTime": 79,
+                    "transferSize": 69091,
                     "isLongest": true,
                     "children": {
-                      "31648.7": {
+                      "32484.8": {
                         "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
-                        "navStartToEndTime": 1253,
+                        "navStartToEndTime": 886,
                         "transferSize": 1619,
                         "isLongest": true,
                         "children": {
-                          "31648.28": {
+                          "32484.32": {
                             "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
-                            "navStartToEndTime": 1571,
+                            "navStartToEndTime": 927,
                             "transferSize": 1797,
                             "isLongest": true,
                             "children": {}
                           }
                         }
                       },
-                      "31648.3": {
-                        "url": "http://localhost:4327/_astro/HomePage.DLhz0JYs.css",
-                        "navStartToEndTime": 116,
-                        "transferSize": 32374,
+                      "32484.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.Bcfej-Hx.css",
+                        "navStartToEndTime": 97,
+                        "transferSize": 43548,
                         "children": {}
                       },
-                      "31648.2": {
-                        "url": "http://localhost:4327/_astro/BaseLayout.CTgg49_H.css",
-                        "navStartToEndTime": 114,
-                        "transferSize": 45656,
+                      "32484.3": {
+                        "url": "http://localhost:4327/_astro/HomePage.kUGqhf2l.css",
+                        "navStartToEndTime": 94,
+                        "transferSize": 34006,
                         "children": {}
                       }
                     }
                   }
                 },
                 "longestChain": {
-                  "duration": 1571
+                  "duration": 927
                 }
               }
             },
@@ -204,78 +143,22 @@
     "name": "services",
     "path": "/id/services/",
     "device": "Lighthouse default mobile simulation",
-    "date": "2026-10-01T18:19:11.975Z",
+    "date": "2026-10-01T19:19:43.406Z",
     "version": "13.5.0",
     "scores": {
-      "performance": 94,
+      "performance": 95,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 69
     },
     "metrics": {
-      "first-contentful-paint": 2509.5995420128675,
-      "largest-contentful-paint": 2550.399313019301,
+      "first-contentful-paint": 2064.5410245788667,
+      "largest-contentful-paint": 2326.8115368683,
       "cumulative-layout-shift": 0,
-      "total-blocking-time": 25,
-      "speed-index": 2534.4858408568634
+      "total-blocking-time": 0,
+      "speed-index": 3994.488588950908
     },
     "failedAudits": [
-      {
-        "id": "mainthread-work-breakdown",
-        "title": "Minimize main-thread work",
-        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)",
-        "details": {
-          "type": "table",
-          "headings": [
-            {
-              "key": "groupLabel",
-              "valueType": "text",
-              "label": "Category"
-            },
-            {
-              "key": "duration",
-              "valueType": "ms",
-              "granularity": 1,
-              "label": "Time Spent"
-            }
-          ],
-          "items": [
-            {
-              "group": "styleLayout",
-              "groupLabel": "Style & Layout",
-              "duration": 2931.9920000000006
-            },
-            {
-              "group": "other",
-              "groupLabel": "Other",
-              "duration": 472.22
-            },
-            {
-              "group": "scriptEvaluation",
-              "groupLabel": "Script Evaluation",
-              "duration": 86.03599999999999
-            },
-            {
-              "group": "paintCompositeRender",
-              "groupLabel": "Rendering",
-              "duration": 61.15199999999998
-            },
-            {
-              "group": "parseHTML",
-              "groupLabel": "Parse HTML & CSS",
-              "duration": 56.504
-            },
-            {
-              "group": "scriptParseCompile",
-              "groupLabel": "Script Parsing & Compilation",
-              "duration": 5.688
-            }
-          ],
-          "sortedBy": [
-            "duration"
-          ]
-        }
-      },
       {
         "id": "is-crawlable",
         "title": "Page is blocked from indexing",
@@ -293,7 +176,7 @@
             {
               "source": {
                 "type": "node",
-                "lhId": "1-154-META",
+                "lhId": "1-153-META",
                 "path": "1,HTML,0,HEAD,5,META",
                 "selector": "head > meta",
                 "boundingRect": {
@@ -332,38 +215,38 @@
               "value": {
                 "type": "network-tree",
                 "chains": {
-                  "15D12F17ED954C7E89D3CB3E9E647BC4": {
+                  "234B0C651507790713627A64C3028F05": {
                     "url": "http://localhost:4327/id/services/",
-                    "navStartToEndTime": 84,
-                    "transferSize": 51299,
+                    "navStartToEndTime": 154,
+                    "transferSize": 51288,
                     "isLongest": true,
                     "children": {
-                      "30568.5": {
+                      "11504.5": {
                         "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
-                        "navStartToEndTime": 1039,
+                        "navStartToEndTime": 682,
                         "transferSize": 1619,
                         "isLongest": true,
                         "children": {
-                          "30568.24": {
+                          "11504.24": {
                             "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
-                            "navStartToEndTime": 1102,
+                            "navStartToEndTime": 704,
                             "transferSize": 1797,
                             "isLongest": true,
                             "children": {}
                           }
                         }
                       },
-                      "30568.2": {
-                        "url": "http://localhost:4327/_astro/BaseLayout.ODDWrxZ5.css",
-                        "navStartToEndTime": 306,
-                        "transferSize": 45656,
+                      "11504.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.Bcfej-Hx.css",
+                        "navStartToEndTime": 149,
+                        "transferSize": 43548,
                         "children": {}
                       }
                     }
                   }
                 },
                 "longestChain": {
-                  "duration": 1102
+                  "duration": 704
                 }
               }
             },
@@ -394,78 +277,22 @@
     "name": "contact",
     "path": "/id/contact/",
     "device": "Lighthouse default mobile simulation",
-    "date": "2026-10-01T18:19:30.170Z",
+    "date": "2026-10-01T19:19:56.620Z",
     "version": "13.5.0",
     "scores": {
-      "performance": 96,
+      "performance": 99,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 66
     },
     "metrics": {
-      "first-contentful-paint": 2242.7411,
-      "largest-contentful-paint": 2272.2411,
+      "first-contentful-paint": 1684.8791999999999,
+      "largest-contentful-paint": 1696.8791999999999,
       "cumulative-layout-shift": 0,
-      "total-blocking-time": 27,
-      "speed-index": 2821.1089003130965
+      "total-blocking-time": 10,
+      "speed-index": 2642.07671022254
     },
     "failedAudits": [
-      {
-        "id": "mainthread-work-breakdown",
-        "title": "Minimize main-thread work",
-        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)",
-        "details": {
-          "type": "table",
-          "headings": [
-            {
-              "key": "groupLabel",
-              "valueType": "text",
-              "label": "Category"
-            },
-            {
-              "key": "duration",
-              "valueType": "ms",
-              "granularity": 1,
-              "label": "Time Spent"
-            }
-          ],
-          "items": [
-            {
-              "group": "styleLayout",
-              "groupLabel": "Style & Layout",
-              "duration": 2629.5
-            },
-            {
-              "group": "other",
-              "groupLabel": "Other",
-              "duration": 509.8000000000002
-            },
-            {
-              "group": "parseHTML",
-              "groupLabel": "Parse HTML & CSS",
-              "duration": 85.25200000000001
-            },
-            {
-              "group": "scriptEvaluation",
-              "groupLabel": "Script Evaluation",
-              "duration": 67.42000000000002
-            },
-            {
-              "group": "paintCompositeRender",
-              "groupLabel": "Rendering",
-              "duration": 36.53999999999999
-            },
-            {
-              "group": "scriptParseCompile",
-              "groupLabel": "Script Parsing & Compilation",
-              "duration": 7.727999999999999
-            }
-          ],
-          "sortedBy": [
-            "duration"
-          ]
-        }
-      },
       {
         "id": "is-crawlable",
         "title": "Page is blocked from indexing",
@@ -522,50 +349,49 @@
               "value": {
                 "type": "network-tree",
                 "chains": {
-                  "D04E3B6D4863848BA9DDD6D59F9B7EAB": {
+                  "4B94AAE611CFF7129DC249C576DED815": {
                     "url": "http://localhost:4327/id/contact/",
-                    "navStartToEndTime": 81,
-                    "transferSize": 31116,
+                    "navStartToEndTime": 178,
+                    "transferSize": 31228,
                     "isLongest": true,
                     "children": {
-                      "27572.5": {
+                      "20032.5": {
                         "url": "http://localhost:4327/_astro/ContactForm.astro_astro_type_script_index_0_lang.CmEOVQqW.js",
-                        "navStartToEndTime": 131,
+                        "navStartToEndTime": 609,
                         "transferSize": 2058,
                         "isLongest": true,
+                        "children": {}
+                      },
+                      "20032.6": {
+                        "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
+                        "navStartToEndTime": 190,
+                        "transferSize": 1619,
                         "children": {
-                          "27572.13": {
+                          "20032.13": {
                             "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
-                            "navStartToEndTime": 791,
+                            "navStartToEndTime": 199,
                             "transferSize": 1797,
-                            "isLongest": true,
                             "children": {}
                           }
                         }
                       },
-                      "27572.6": {
-                        "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
-                        "navStartToEndTime": 786,
-                        "transferSize": 1619,
-                        "children": {}
-                      },
-                      "27572.3": {
+                      "20032.3": {
                         "url": "http://localhost:4327/_astro/ContactPage.DNAo5b8u.css",
-                        "navStartToEndTime": 121,
+                        "navStartToEndTime": 195,
                         "transferSize": 4767,
                         "children": {}
                       },
-                      "27572.2": {
-                        "url": "http://localhost:4327/_astro/BaseLayout.ODDWrxZ5.css",
-                        "navStartToEndTime": 120,
-                        "transferSize": 45656,
+                      "20032.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.Bcfej-Hx.css",
+                        "navStartToEndTime": 175,
+                        "transferSize": 43548,
                         "children": {}
                       }
                     }
                   }
                 },
                 "longestChain": {
-                  "duration": 791
+                  "duration": 609
                 }
               }
             },

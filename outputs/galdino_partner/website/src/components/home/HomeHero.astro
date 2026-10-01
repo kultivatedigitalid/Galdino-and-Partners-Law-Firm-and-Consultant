@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import consultation from '../../assets/home-licensing-trio-cutout.webp';
+import architecture from '../../assets/home-architecture-supplied.webp';
+import consultation from '../../assets/home-consultation-supplied-cutout.webp';
 import ArrowIcon from '../icons/ArrowIcon.astro';
 import { COPY, type Locale } from '../../data/site';
 interface Props { locale: Locale }
@@ -9,14 +10,17 @@ const id = locale === 'id';
 const text = id ? {
  titleStart: 'Pengurusan Izin', titleEnd: 'untuk Bisnis Anda',
  lead: 'Kami petakan persyaratan, siapkan dokumen, dan kawal proses izin hingga tindak lanjut.',
- visual: 'Dua konsultan dan satu peserta konsultasi menelaah dokumen perizinan bersama.'
+ visual: 'Dua konsultan dan satu peserta konsultasi menelaah dokumen perizinan bersama.',
+ note: 'Dari persyaratan ke pertumbuhan bisnis'
 } : {
  titleStart: 'Business Permit Support', titleEnd: 'for Your Company',
  lead: 'We map requirements, prepare documents, and guide the permit process through follow-up.',
- visual: 'Two consultants and a consultation participant reviewing permit documents together.'
+ visual: 'Two consultants and a consultation participant reviewing permit documents together.',
+ note: 'From requirements to business growth'
 };
 ---
 <section class="home-hero" lang={locale} aria-labelledby="home-hero-title">
+ <Image class="home-hero__backdrop" src={architecture} alt="" aria-hidden="true" widths={[400,800,1200,1600,1784]} sizes="100vw" loading="eager" fetchpriority="high" format="webp" quality={85}/>
  <div class="container-shell home-hero__inner">
   <div class="home-hero__copy">
    <h1 id="home-hero-title"><span class="home-hero__highlight">{text.titleStart}</span>{' '}<span class="home-hero__title-end">{text.titleEnd}</span></h1>
@@ -24,31 +28,42 @@ const text = id ? {
    <div class="home-hero__actions"><a class="home-button home-button--red" href={'/' + locale + '/contact/'}>{COPY[locale].consult}<ArrowIcon/></a></div>
   </div>
  </div>
+ <div class="home-hero__annotation home-hero__annotation--left" aria-hidden="true"><span class="home-hero__index">01</span><span>Legal precision<br/>for a cleaner<br/>tomorrow</span></div>
+ <div class="home-hero__annotation home-hero__annotation--right" aria-hidden="true"><span>{text.note}</span></div>
  <figure class="home-hero__visual">
-  <Image class="home-hero__image" src={consultation} alt={text.visual} widths={[400,640,800,960,1280,1536]} sizes="(max-width:640px) calc(100vw - 24px), (max-height:900px) 103vh, 74rem" loading="eager" fetchpriority="high" format="webp" quality={85}/>
+  <Image class="home-hero__image" src={consultation} alt={text.visual} widths={[400,640,800,960,1280,1600]} sizes="(max-width:640px) calc(100vw - 24px), (max-height:900px) 117vh, 76rem" loading="eager" fetchpriority="high" format="webp" quality={85}/>
  </figure>
 </section>
 <style>
-.home-hero{display:flex;flex-direction:column;min-height:100svh;overflow:clip;border-bottom:.75rem solid var(--brand-red);background:var(--brand-surface-soft);color:var(--brand-black)}
-.home-hero__inner{padding-top:calc(var(--site-header-height) + clamp(2.5rem,4.5svh,4rem));padding-bottom:1.5rem}
-.home-hero__copy{width:100%;max-width:78rem;margin-inline:auto;text-align:center}
+.home-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;height:100svh;min-height:40rem;overflow:clip;background:var(--brand-paper);color:var(--brand-black)}
+.home-hero :global(.home-hero__backdrop){position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;object-position:center bottom;pointer-events:none}
+.home-hero::before,.home-hero::after{position:absolute;top:var(--site-header-height);bottom:0;z-index:0;width:1px;background:rgb(11 11 12 / .08);content:'';pointer-events:none}
+.home-hero::before{left:19.6%}.home-hero::after{right:19.6%}
+.home-hero__inner{flex-shrink:0;position:relative;z-index:2;padding-top:calc(var(--site-header-height) + clamp(2.5rem,4.5svh,4rem));padding-bottom:1.5rem}
+.home-hero__copy{width:100%;max-width:65rem;margin-inline:auto;text-align:center}
 .home-hero h1{margin:0 auto;font-family:var(--font-display);font-size:var(--brand-type-hero);font-weight:570;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
 .home-hero__highlight{display:inline-block;max-width:100%;padding:.12em .24em .17em;background:var(--brand-red);color:var(--brand-white)}
-.home-hero__title-end{display:inline}
+.home-hero__title-end{display:block;margin-top:.2em}
 .home-hero__lead{max-width:43rem;margin:1.5rem auto 0;color:var(--brand-muted);font-size:clamp(.92rem,1.5vw,1.08rem);line-height:1.52;text-wrap:pretty}
 .home-hero__actions{display:flex;justify-content:center;margin-top:1.5rem}
-.home-hero__visual{width:min(100% - 1.5rem,74rem);height:clamp(20rem,58svh,40rem);overflow:hidden;margin:auto auto 0}
-.home-hero :global(.home-hero__image){width:100%;height:100%;object-fit:contain;object-position:center bottom;transform:translateY(1.5rem)}
-@media(min-width:1025px){
- .home-hero h1{white-space:nowrap}
-}
+.home-hero__annotation{position:absolute;top:29svh;z-index:1;display:grid;gap:1.2rem;width:8rem;color:var(--brand-muted);font-size:.65rem;line-height:1.75;letter-spacing:.22em;text-transform:uppercase}
+.home-hero__annotation--left{left:clamp(1.25rem,4vw,4.5rem)}
+.home-hero__annotation--right{right:clamp(1.25rem,4vw,4.5rem)}
+.home-hero__index{display:flex;align-items:center;gap:1.2rem;font-size:.9rem;font-weight:650;letter-spacing:.12em}
+.home-hero__index::after,.home-hero__annotation--right::before{height:1px;background:rgb(11 11 12 / .3);content:''}
+.home-hero__index::after{flex:1}.home-hero__annotation--right::before{width:2rem}
+.home-hero__visual{position:relative;z-index:1;width:min(100% - 1.5rem,76rem);height:clamp(20rem,58svh,40rem);min-height:0;overflow:hidden;margin:auto auto 0}
+.home-hero :global(.home-hero__image){width:100%;height:100%;object-fit:contain;object-position:center bottom}
+@media(max-width:1200px){.home-hero__annotation{display:none}}
+@media(max-width:1024px){.home-hero::before,.home-hero::after{display:none}}
 @media(max-width:640px){
- .home-hero{min-height:0}
+ .home-hero{height:auto;min-height:0}
  .home-hero__inner{padding-top:calc(var(--site-header-height) + 2.5rem)}
  .home-hero h1{max-width:20ch}
  .home-hero:lang(en) .home-hero__highlight{font-size:.78em;white-space:nowrap}
  .home-hero__lead{font-size:var(--brand-type-lead);margin-top:1.25rem}
- .home-hero__visual{height:auto;aspect-ratio:16/8.6;margin-top:.75rem}
- .home-hero :global(.home-hero__image){height:auto;transform:translateY(.5rem)}
+ .home-hero__visual{height:auto;aspect-ratio:1784/882;margin-top:.75rem}
+ .home-hero :global(.home-hero__image){height:auto}
+ .home-hero :global(.home-hero__backdrop){inset:auto 0 0;height:60%;object-position:20% bottom;mask-image:linear-gradient(transparent,#000 20%)}
 }
 </style>
