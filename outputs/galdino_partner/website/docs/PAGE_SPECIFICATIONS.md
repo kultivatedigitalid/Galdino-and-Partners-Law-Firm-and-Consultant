@@ -2,9 +2,9 @@
 
 See SITE_MAP.md for every URL and REVISION_2026-10-01-RESTORATION.md for the latest message revision decisions.
 
-Home and About: approved composition retained, completed central data, four people including Hans, service rail linked to six categories, working case/article destinations, link to the process section on Home.
+Home and About: approved main hero compositions retained, four people including Hans, service rail linked to six categories and working case/article destinations. About Us omits the company identity register, has a compact founder note and a six-photo monochrome montage. Individual profiles start closer to the navbar.
 
-Services: six visible category sections with links to all 38 services with service search temporarily hidden and small photographs with red left/bottom accents and no numbering or captions. Six dedicated hubs include a combined context section, a complete two-column service directory with descriptions and provisional fee estimates, category-specific dark process maps with initial-document guidance, and FAQ. Hubs omit related cases and insights. The environmental hub has four preserved group anchors, with short category/service URLs. Detail pages include all specified scope/document/process/fee/FAQ sections and connected content.
+Services: six visible category sections with links to all 38 services with service search temporarily hidden and small photographs with red left/bottom accents and no numbering or captions. Six dedicated hubs include a combined context section, a complete two-column service directory with descriptions and provisional fee estimates, category-specific dark process maps with initial-document guidance, and FAQ. Hubs omit related cases and insights. The environmental hub has four preserved group anchors, with short category/service URLs. Detail pages place timing and fee estimates with their exclusions after the context explanation, then show scope/deliverables, documents, process, FAQ and connected content.
 
 Industries: equal three-column index (two on tablet, one on mobile), without industry focus, case studies or insights sections. Six sector pages with split heroes, combined context and preparation records, a black requirement map, and relevant services. Related cases, insights and the duplicate work sequence are removed.
 

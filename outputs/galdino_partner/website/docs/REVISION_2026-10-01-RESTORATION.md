@@ -38,3 +38,13 @@ Each source was edited separately with this same prompt:
 > Use case: precise-object-edit. Edit target: attached finished website hero mockup. Produce ONLY its clean photographic background as a wide 16:9 image. Remove all overlaid website text, headlines, logos, navigation, buttons, lines, and UI panels, reconstructing the underlying photographic scene naturally. Preserve the original people, faces, poses, office or architectural setting, camera framing, warm sunset light, and photographic composition as closely as possible. Keep the entire scene edge to edge without borders or letterboxing. Preserve the darker left negative space for live HTML text, but do not add darkness across the people on the right. No text, typography, branding, watermark or UI anywhere.
 
 The supplied mockups are visual edit targets. Their baked-in text, alternative typefaces and arrow designs were not treated as independent implementation instructions. The user’s confirmed written request controls the implementation.
+
+## Further refinement — estimates, photography and About Us
+
+The next user revision moves the estimated timing and price directly after each specific service’s context explanation and before scope/deliverables. Both labels use the same red dash treatment as Scope and Deliverables. The professional-fee exclusions note now belongs to that same estimate section. Ordinary unordered content lists display dot bullets; ordered sequences, navigation and tags retain their own presentation.
+
+Fixed photographic frames now use centered cover fitting in experience cards, related cases, supporting editorial figures, the company gallery and team photographs. Logo and monogram assets retain their intrinsic proportions.
+
+The company identity register is removed from About Us. Individual profile introductions sit closer to the navbar. The founder note has a smaller centered portrait and reduced section spacing, fitting the tested desktop and 375px mobile viewport. The four working principles remain, with their desktop list starting slightly lower.
+
+Inside the Work uses six existing photographs in a joined, asymmetric monochrome grid. The supplied “Monochrome Urban Worklife Montage.png” is a composition reference: fewer photographs, larger areas and no repeated layered fragments. This is a responsive CSS composition; the reference raster itself is not used as a single website image.

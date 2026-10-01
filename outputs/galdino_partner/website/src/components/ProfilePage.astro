@@ -89,17 +89,6 @@ const profileSchema = {
           </div>
         </div>
 
-        <div class="profile-company__registry" data-profile-reveal>
-          <h3>{content.company.factsTitle}</h3>
-          <dl>
-            {content.company.facts.map((fact) => (
-              <div>
-                <dt>{fact.label}</dt>
-                <dd>{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
       </div>
     </section>
 
@@ -216,14 +205,6 @@ const profileSchema = {
   .profile-company__content { min-width: 0; display: grid; align-content: start; gap: clamp(1.35rem, 2.4vw, 2rem); padding-block: .1rem; }
   .profile-company__copy { max-width: 44rem; display: grid; gap: 1rem; }
   .profile-company__copy p { margin: 0; color: #353538; font-size: clamp(.94rem, 1.15vw, 1.04rem); line-height: 1.68; text-wrap: pretty; }
-  .profile-company__registry { margin-top: clamp(3.5rem, 6vw, 5.5rem); }
-  .profile-company__registry h3 { margin: 0 0 1rem; font-size: .76rem; font-weight: 820; }
-  .profile-company__registry dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--profile-line-strong); }
-  .profile-company__registry dl > div { min-height: 7.5rem; padding: 1.2rem 1.2rem 1.2rem 0; border-bottom: 1px solid var(--profile-line-strong); }
-  .profile-company__registry dl > div:nth-child(odd) { border-right: 1px solid var(--profile-line-strong); }
-  .profile-company__registry dl > div:nth-child(even) { padding-left: 1.2rem; }
-  .profile-company__registry dt { color: var(--profile-muted); font-size: .66rem; font-weight: 760; }
-  .profile-company__registry dd { margin: 1.2rem 0 0; color: var(--profile-black); font-size: clamp(.82rem, 1.15vw, 1rem); font-weight: 720; line-height: 1.45; overflow-wrap: anywhere; }
   @media (hover: hover) and (pointer: fine) {
     .profile-redesign .profile-button--red:hover { background: #a30f22; transform: translateY(-2px); }
     .profile-redesign .profile-button:hover :where(.arrow-icon) { transform: translateX(3px); }
@@ -251,9 +232,6 @@ const profileSchema = {
     .profile-hero__visual { aspect-ratio: 16 / 9; }
     .profile-hero__visual :where(img) { width: 100%; height: 100%; object-position: center; }
     .profile-hero__visual figcaption { right: .7rem; bottom: .7rem; left: .7rem; }
-    .profile-company__registry dl { grid-template-columns: 1fr; }
-    .profile-company__registry dl > div { min-height: 7rem; padding-inline: 0; border-right: 0 !important; }
-    .profile-company__registry dl > div:nth-child(even) { padding-left: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
     .profile-motion-ready .profile-redesign [data-profile-reveal] { opacity: 1; transform: none; transition-duration: .01ms; transition-delay: 0ms; }

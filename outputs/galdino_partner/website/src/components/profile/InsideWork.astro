@@ -4,9 +4,39 @@ import discussion from '../../assets/company-carousel-01.webp';
 import review from '../../assets/experience-compliance-review.png';
 import site from '../../assets/experience-investment-project.png';
 import meeting from '../../assets/company-carousel-04.webp';
-import {ABOUT} from '../../data/about';
+import office from '../../assets/company-carousel-02.webp';
+import team from '../../assets/hero-about-user-v2.webp';
 import type {Locale} from '../../data/site';
-interface Props{locale:Locale}const {locale}=Astro.props,id=locale==='id',images=[discussion,review,site,meeting];
+interface Props{locale:Locale}
+const {locale}=Astro.props,id=locale==='id';
+const images=[
+ {image:discussion,alt:id?'Diskusi kebutuhan izin':'Discussing permit requirements'},
+ {image:site,alt:id?'Konteks proyek lapangan':'Project site context'},
+ {image:office,alt:id?'Menyiapkan dokumen di kantor':'Preparing records at the office'},
+ {image:review,alt:id?'Meninjau dokumen kepatuhan':'Reviewing compliance records'},
+ {image:meeting,alt:id?'Koordinasi tim pendamping':'Support team coordination'},
+ {image:team,alt:id?'Tim hukum dan perizinan':'Legal and licensing team'}
+];
 ---
-<section class="inside-work editorial"><div class="container-shell"><p class="ed-kicker">{id?'Di balik pekerjaan':'Inside the work'}</p><h2>{id?'Mendengar. Memeriksa. Menghubungkan.':'Listen. Review. Connect.'}</h2><div class="work-strip">{images.map((image,i)=><figure><Image src={image} alt={ABOUT[locale].captions[i]} widths={[400,700]} sizes="(min-width:800px) 25vw, 50vw" loading="lazy" quality={76}/><figcaption><span>0{i+1}</span>{ABOUT[locale].captions[i]}</figcaption></figure>)}</div></div></section>
-<style>.inside-work{padding:4rem 0;background:#e8e5e0}.work-strip{display:grid;grid-template-columns:1fr 1.3fr 1.3fr 1fr;gap:1rem;margin-top:2.5rem}.work-strip figure{margin:0;min-width:0}.work-strip :global(img){width:100%;height:auto;aspect-ratio:3/4;object-fit: contain;filter:grayscale(1)}.work-strip figure:nth-child(even){padding-top:2.5rem}.work-strip figcaption{font-size:.75rem;display:flex;gap:.6rem;padding:1rem 0}.work-strip figcaption span{color:#961124}@media(max-width:800px){.work-strip{grid-template-columns:1fr 1fr;gap:.7rem}.work-strip figure:nth-child(even){padding-top:1.5rem}}</style>
+<section class="inside-work editorial"><div class="container-shell"><p class="ed-kicker">{id?'Di balik pekerjaan':'Inside the work'}</p><h2>{id?'Mendengar. Memeriksa. Menghubungkan.':'Listen. Review. Connect.'}</h2><div class="work-collage">{images.map(item=><figure><Image src={item.image} alt={item.alt} widths={[400,800,1200]} sizes="(min-width:801px) 45vw,60vw" loading="lazy" quality={78}/></figure>)}</div></div></section>
+<style>
+.inside-work{padding:var(--brand-section-space) 0;background:var(--brand-surface-soft)}
+.work-collage{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,clamp(8rem,12vw,11rem));gap:3px;margin-top:2.5rem}
+.work-collage figure{margin:0;min-width:0;overflow:hidden}
+.work-collage figure:nth-child(1){grid-area:1/1/3/6}
+.work-collage figure:nth-child(2){grid-area:1/6/2/10}
+.work-collage figure:nth-child(3){grid-area:1/10/2/13}
+.work-collage figure:nth-child(4){grid-area:2/6/3/13}
+.work-collage figure:nth-child(5){grid-area:3/1/4/5}
+.work-collage figure:nth-child(6){grid-area:3/5/4/13}
+.work-collage :global(img){display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1)}
+@media(max-width:800px){
+ .work-collage{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,clamp(6rem,20vw,9rem));gap:2px}
+ .work-collage figure:nth-child(1){grid-area:1/1/3/3}
+ .work-collage figure:nth-child(2){grid-area:1/3/2/5}
+ .work-collage figure:nth-child(3){grid-area:2/3/3/5}
+ .work-collage figure:nth-child(4){grid-area:3/1/4/5}
+ .work-collage figure:nth-child(5){grid-area:4/1/5/3}
+ .work-collage figure:nth-child(6){grid-area:4/3/5/5}
+}
+</style>
