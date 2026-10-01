@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import consultation from '../../assets/home-licensing-duo-cutout.webp';
+import consultation from '../../assets/home-licensing-trio-cutout.webp';
 import ArrowIcon from '../icons/ArrowIcon.astro';
 import { COPY, type Locale } from '../../data/site';
 interface Props { locale: Locale }
@@ -9,11 +9,11 @@ const id = locale === 'id';
 const text = id ? {
  titleStart: 'Pengurusan Izin', titleEnd: 'untuk Bisnis Anda',
  lead: 'Kami petakan persyaratan, siapkan dokumen, dan kawal proses izin hingga tindak lanjut.',
- visual: 'Dua konsultan menelaah dan menyiapkan dokumen perizinan.'
+ visual: 'Dua konsultan dan satu peserta konsultasi menelaah dokumen perizinan bersama.'
 } : {
  titleStart: 'Business Permit Support', titleEnd: 'for Your Company',
  lead: 'We map requirements, prepare documents, and guide the permit process through follow-up.',
- visual: 'Two consultants reviewing and preparing permit documents.'
+ visual: 'Two consultants and a consultation participant reviewing permit documents together.'
 };
 ---
 <section class="home-hero" lang={locale} aria-labelledby="home-hero-title">
@@ -25,27 +25,30 @@ const text = id ? {
   </div>
  </div>
  <figure class="home-hero__visual">
-  <Image class="home-hero__image" src={consultation} alt={text.visual} widths={[400,640,960,1280]} sizes="(max-width:640px) calc(100vw - 24px), (max-height:900px) 78vh, 54rem" loading="eager" fetchpriority="high" format="webp" quality={85}/>
+  <Image class="home-hero__image" src={consultation} alt={text.visual} widths={[400,640,800,960,1280,1536]} sizes="(max-width:640px) calc(100vw - 24px), (max-height:900px) 103vh, 74rem" loading="eager" fetchpriority="high" format="webp" quality={85}/>
  </figure>
 </section>
 <style>
-.home-hero{display:flex;flex-direction:column;min-height:100svh;overflow:clip;border-bottom:.75rem solid var(--brand-red);background:var(--brand-paper);color:var(--brand-black)}
+.home-hero{display:flex;flex-direction:column;min-height:100svh;overflow:clip;border-bottom:.75rem solid var(--brand-red);background:var(--brand-surface-soft);color:var(--brand-black)}
 .home-hero__inner{padding-top:calc(var(--site-header-height) + clamp(2.5rem,4.5svh,4rem));padding-bottom:1.5rem}
-.home-hero__copy{width:100%;max-width:65rem;margin-inline:auto;text-align:center}
-.home-hero h1{max-width:30ch;margin:0 auto;font-family:var(--font-display);font-size:var(--brand-type-hero);font-weight:570;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+.home-hero__copy{width:100%;max-width:78rem;margin-inline:auto;text-align:center}
+.home-hero h1{margin:0 auto;font-family:var(--font-display);font-size:var(--brand-type-hero);font-weight:570;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
 .home-hero__highlight{display:inline-block;max-width:100%;padding:.12em .24em .17em;background:var(--brand-red);color:var(--brand-white)}
-.home-hero__title-end{display:block;margin-top:.23em}
+.home-hero__title-end{display:inline}
 .home-hero__lead{max-width:43rem;margin:1.5rem auto 0;color:var(--brand-muted);font-size:clamp(.92rem,1.5vw,1.08rem);line-height:1.52;text-wrap:pretty}
 .home-hero__actions{display:flex;justify-content:center;margin-top:1.5rem}
-.home-hero__visual{width:min(100% - 1.5rem,62rem);height:clamp(20rem,52svh,36rem);margin:auto auto 0}
-.home-hero :global(.home-hero__image){width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.home-hero__visual{width:min(100% - 1.5rem,74rem);height:clamp(20rem,58svh,40rem);overflow:hidden;margin:auto auto 0}
+.home-hero :global(.home-hero__image){width:100%;height:100%;object-fit:contain;object-position:center bottom;transform:translateY(1.5rem)}
+@media(min-width:1025px){
+ .home-hero h1{white-space:nowrap}
+}
 @media(max-width:640px){
  .home-hero{min-height:0}
  .home-hero__inner{padding-top:calc(var(--site-header-height) + 2.5rem)}
  .home-hero h1{max-width:20ch}
  .home-hero:lang(en) .home-hero__highlight{font-size:.78em;white-space:nowrap}
  .home-hero__lead{font-size:var(--brand-type-lead);margin-top:1.25rem}
- .home-hero__visual{height:auto;aspect-ratio:3/2;margin-top:.75rem}
- .home-hero :global(.home-hero__image){height:auto}
+ .home-hero__visual{height:auto;aspect-ratio:16/8.6;margin-top:.75rem}
+ .home-hero :global(.home-hero__image){height:auto;transform:translateY(.5rem)}
 }
 </style>

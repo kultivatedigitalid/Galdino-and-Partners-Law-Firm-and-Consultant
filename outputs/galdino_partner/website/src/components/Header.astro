@@ -80,7 +80,7 @@ const isCurrent = (href: string) => href === localeRoot
     backdrop-filter: blur(14px);
     transition: border-color 210ms cubic-bezier(.22, 1, .36, 1), backdrop-filter 210ms cubic-bezier(.22, 1, .36, 1);
   }
-  .site-header--home { position: fixed; right: 0; left: 0; border-bottom-color: transparent; backdrop-filter: none; }
+  .site-header--home { position: fixed; right: 0; left: 0; border-bottom-color: transparent; background: var(--brand-surface-soft); backdrop-filter: none; }
   .site-header--immersive { position: fixed; right: 0; left: 0; border-bottom-color: transparent; background: transparent; backdrop-filter: blur(0); }
   .site-header--immersive::before,
   .site-header--immersive::after {

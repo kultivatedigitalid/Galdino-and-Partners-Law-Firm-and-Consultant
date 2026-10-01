@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-01T18:16:16.592Z",
+  "localDate": "2026-10-02",
+  "timezone": "Asia/Jakarta",
+  "scope": "Home consultation trio, heading, shared background and navigation regression review",
+  "passed": 10,
+  "failed": 0,
+  "checks": {
+    "responsiveWidths": [
+      320,
+      375,
+      430,
+      768,
+      1024,
+      1440
+    ],
+    "routesPerWidth": 17,
+    "locales": [
+      "id",
+      "en"
+    ],
+    "desktopHeadline": "one line",
+    "mobileHeadline": "two lines",
+    "background": "#ecebea",
+    "divider": "12px brand red, lower table cropped at rule",
+    "accessibility": "Home WCAG 2/2.1 A/AA axe scan"
+  },
+  "tests": [
+    {
+      "status": "passed",
+      "title": "responsive 320 (36.5s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 375 (50.0s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 430 (23.1s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 768 (21.5s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 1024 (22.2s)"
+    },
+    {
+      "status": "passed",
+      "title": "accessibility /id/ (21.6s)"
+    },
+    {
+      "status": "passed",
+      "title": "nested navigation, language pair and mobile menu (5.9s)"
+    },
+    {
+      "status": "passed",
+      "title": "responsive 1440 (43.1s)"
+    },
+    {
+      "status": "passed",
+      "title": "mega menu opens direct service links and supports keyboard and outside click (19.5s)"
+    },
+    {
+      "status": "passed",
+      "title": "brand headings, image framing, navigation and featured sections stay consistent (32.2s)"
+    }
+  ],
+  "finalResponsiveImageVerification": {
+    "date": "2026-10-01T18:28:45.248Z",
+    "passed": 1,
+    "failed": 0,
+    "test": "brand headings, image framing, navigation and featured sections stay consistent",
+    "change": "Added the 800px responsive image variant after the initial 10-test review"
+  }
+}
