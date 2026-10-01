@@ -38,11 +38,14 @@ const isCurrent = (href: string) => href === localeRoot
     </button>
     <nav id="primary-nav" class="nav-panel" aria-label={locale === 'id' ? 'Navigasi utama' : 'Primary navigation'}>
       <div class="nav-inner">
+        <div class="nav-menu">
         {NAV[locale].map((item) => item.href === '/'+locale+'/services/' ? (
           <details class="services-nav"><summary class:list={['nav-link',isCurrent(item.href)&&'active']} aria-controls="service-mega">{item.label}<svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ServiceMegaMenu locale={locale}/></details>
         ) : (
           <a class:list={['nav-link', isCurrent(item.href) && 'active']} href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
         ))}
+        </div>
+        <div class="nav-actions">
         <a
           class="language-link"
           href={languageHref}
@@ -54,6 +57,7 @@ const isCurrent = (href: string) => href === localeRoot
           {other.toUpperCase()}
         </a>
         <a class="nav-cta" href={`/${locale}/contact/`}>{locale==='id'?'Konsultasi':'Consultation'}<ArrowIcon /></a>
+        </div>
       </div>
     </nav>
   </div>
@@ -72,7 +76,7 @@ const isCurrent = (href: string) => href === localeRoot
     z-index: var(--layer-header);
     isolation: isolate;
     border-bottom: 1px solid rgb(11 11 12 / .14);
-    background: rgb(255 255 255 / .96);
+    background: var(--brand-paper);
     backdrop-filter: blur(14px);
     transition: border-color 210ms cubic-bezier(.22, 1, .36, 1), backdrop-filter 210ms cubic-bezier(.22, 1, .36, 1);
   }
@@ -87,17 +91,19 @@ const isCurrent = (href: string) => href === localeRoot
     transition: opacity 210ms cubic-bezier(.22, 1, .36, 1);
   }
   .site-header--immersive::before { background: linear-gradient(180deg, rgb(8 8 9 / .88) 0%, rgb(8 8 9 / .62) 58%, rgb(8 8 9 / .08) 100%); opacity: 1; }
-  .site-header--immersive::after { background: rgb(255 255 255 / .96); box-shadow: 0 8px 28px rgb(11 11 12 / .08); opacity: 0; }
+  .site-header--immersive::after { background: var(--brand-paper); box-shadow: 0 8px 28px rgb(11 11 12 / .08); opacity: 0; }
   .site-header--immersive[data-scrolled='true'] { border-bottom-color: rgb(11 11 12 / .14); backdrop-filter: blur(14px); }
   .site-header--immersive[data-scrolled='true']::before { opacity: 0; }
   .site-header--immersive[data-scrolled='true']::after { opacity: 1; }
-  .header-inner { display: flex; min-height: 5rem; align-items: center; justify-content: space-between; gap: 1.25rem; }
+  .header-inner { display: grid; grid-template-columns: 14rem minmax(0,1fr); min-height: var(--site-header-height); align-items: center; gap: 1.5rem; }
   .brand { display: inline-flex; min-height: 2.75rem; flex: 0 0 auto; align-items: center; gap: .65rem; color: #0b0b0c; text-decoration: none; transition: color 210ms cubic-bezier(.22, 1, .36, 1); }
   .brand-mark-frame { width: 3.6rem; height: 2.55rem; display: grid; flex: 0 0 auto; place-items: center; }
   .brand-mark { width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 1px 1px rgb(255 255 255 / .28)); }
   .site-header--immersive:not([data-scrolled='true']) .brand-mark { filter: drop-shadow(0 1px 1px rgb(255 255 255 / .45)) drop-shadow(0 3px 7px rgb(0 0 0 / .28)); }
   .brand-name { font-family: var(--font-display); font-size: 1.03rem; font-weight: 690; letter-spacing: -.025em; white-space: nowrap; }
-  .nav-inner { display: flex; align-items: center; gap: clamp(.72rem, 1.35vw, 1.25rem); }
+  .nav-inner { display: grid; grid-template-columns: minmax(0,1fr) 14rem; align-items: center; gap: 1.5rem; }
+  .nav-menu { display: flex; align-items: center; justify-content: center; gap: clamp(.65rem,1.2vw,1.1rem); }
+  .nav-actions { display: flex; align-items: center; justify-content: flex-end; gap: .75rem; }
   .nav-link { position: relative; padding: .75rem 0; color: #66666a; font-size: .78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
   .nav-link::after { position: absolute; right: 0; bottom: .42rem; left: 0; height: 2px; background: #c4142a; content: ''; transform: scaleX(0); transform-origin: right; transition: transform 180ms cubic-bezier(.22, 1, .36, 1); }
   .nav-link.active { color: #0b0b0c; }
@@ -122,18 +128,15 @@ const isCurrent = (href: string) => href === localeRoot
     .nav-cta:hover { background: #0b0b0c; transform: translateY(-2px); }
     .nav-cta:hover :global(.arrow-icon) { transform: translateX(3px); }
   }
-  @media (max-width: 1090px) {
-    .brand-name { display: none; }
-    .nav-inner { gap: .8rem; }
-  }
   @media (max-width: 1024px) {
-    .header-inner { min-height: 4.5rem; }
+    .header-inner { display: flex; min-height: var(--site-header-height); justify-content: space-between; }
     .brand-mark-frame { width: 3.2rem; height: 2.25rem; }
     .brand-name { display: inline; max-width: 10rem; overflow: hidden; text-overflow: ellipsis; }
     .menu-toggle { display: grid; flex: 0 0 auto; }
     .nav-panel { max-height:calc(100svh - 4.5rem);overflow-y:auto;overscroll-behavior:contain;position: absolute; top: calc(100% + 1px); right: 0; left: 0; z-index: var(--layer-menu); visibility: hidden; border-bottom: 1px solid #deddda; background: #fff; opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity 170ms cubic-bezier(.22, 1, .36, 1), transform 170ms cubic-bezier(.22, 1, .36, 1), visibility 170ms; }
     .nav-panel.open { visibility: visible; opacity: 1; transform: none; pointer-events: auto; }
-    .nav-inner { width: min(100% - 1.25rem, 78rem); margin-inline: auto; display: grid; gap: 0; padding-block: .75rem 1.1rem; }
+    .nav-inner { width: min(100% - 1.25rem, 78rem); margin-inline: auto; display: grid; grid-template-columns: 1fr; gap: 0; padding-block: .75rem 1.1rem; }
+    .nav-menu, .nav-actions { display: grid; gap: 0; justify-content: stretch; }
     .nav-link { min-height: 2.75rem; display: flex; align-items: center; border-bottom: 1px solid #deddda; padding: .8rem .15rem; font-size: .9rem; }
     .nav-link::after { display: none; }
     .nav-link.active { border-bottom-color: #c4142a; color: #c4142a; }

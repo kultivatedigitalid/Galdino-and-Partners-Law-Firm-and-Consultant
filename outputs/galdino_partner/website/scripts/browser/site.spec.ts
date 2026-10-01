@@ -175,14 +175,17 @@ test('single-image banners meet the navbar and industries form an equal three-co
  await page.goto('/id/services/');for(const removed of ['Enam bidang, satu konteks usaha.','Konteks industri','Insights'])await expect(page.locator('main')).not.toContainText(removed);
 });
 
-test('brand headings, image framing, navigation and featured sections stay consistent',async({page})=>{
+test('brand headings, image framing, navigation and featured sections stay consistent',async({page},testInfo)=>{
  await page.setViewportSize({width:1440,height:1000});await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
  const headings:string[]=[];
  for(const locale of ['id','en']){
  for(const route of ['', 'profile/', 'services/', 'industries/', 'projects/', 'blog/']){
   await page.goto('/'+locale+'/'+route);
-  const hero=page.locator('.home-hero,.profile-hero,.image-hero');expect((await hero.boundingBox())!.height).toBeGreaterThanOrEqual(route==='profile/'?815:999);
-  const heroImg=hero.locator('img').first();expect(await heroImg.evaluate(el=>getComputedStyle(el).objectFit)).toBe('cover');const unfilled=await page.locator('.case-photo img,.related-cases img,.ed-figure img,.company-gallery__slide img,.work-collage img').evaluateAll(images=>images.filter(img=>getComputedStyle(img).objectFit!=='cover').length);expect(unfilled).toBe(0);
+  const hero=page.locator('.home-hero,.profile-hero,.image-hero');expect((await hero.boundingBox())!.height).toBeGreaterThanOrEqual(route===''?903:route==='profile/'?815:999);
+  const heroImg=hero.locator('img').first();expect(await heroImg.evaluate(el=>getComputedStyle(el).objectFit)).toBe(route===''?'contain':'cover');const unfilled=await page.locator('.case-photo img,.related-cases img,.ed-figure img,.company-gallery__slide img,.work-collage img').evaluateAll(images=>images.filter(img=>getComputedStyle(img).objectFit!=='cover').length);expect(unfilled).toBe(0);
+  const menu=await page.locator('.nav-menu').boundingBox();expect(Math.abs(menu!.x+menu!.width/2-720)).toBeLessThan(2);await expect(page.locator('.nav-cta')).toHaveCSS('border-top-left-radius','4px');
+  if(route===''){await expect(hero).toHaveCSS('background-color','rgb(244, 243, 241)');await expect(page.locator('.home-hero__copy')).toHaveCSS('text-align','center');await expect(page.locator('.home-hero__actions a')).toHaveCount(1);await expect(page.locator('.home-hero__actions a')).toHaveAttribute('href','/'+locale+'/contact/');await expect(page.locator('.home-hero__portrait')).toHaveCount(4);await expect(page.locator('.client-register')).toHaveCount(0);await expect(page.locator('.site-header')).not.toHaveClass(/site-header--immersive/);}
+  if(route===''){await hero.locator('img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));await page.screenshot({path:testInfo.outputPath(locale+'-home-hero-1440.png'),animations:'disabled'});}
   if(!['','profile/'].includes(route)){await expect(heroImg).toHaveAttribute('src',/hero-/);expect(await heroImg.evaluate(el=>getComputedStyle(el).objectPosition)).toBe('50% 50%');}
   headings.push(await page.locator('h1').evaluate(el=>{const c=getComputedStyle(el);return [c.fontFamily,c.fontSize,c.fontWeight,c.letterSpacing,c.lineHeight].join('|')}));
   await expect(page.locator('.nav-link[href="/'+locale+'/projects/"]')).toHaveText('Our Experiences');
@@ -193,6 +196,8 @@ test('brand headings, image framing, navigation and featured sections stay consi
  }
  }
  expect(new Set(headings).size).toBe(1);
+ await page.setViewportSize({width:375,height:900});
+ for(const locale of ['id','en']){await page.goto('/'+locale+'/');await page.locator('.home-hero img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));await page.screenshot({path:testInfo.outputPath(locale+'-home-hero-375.png'),animations:'disabled'});}
  await page.setViewportSize({width:375,height:1000});
  for(const route of ['projects/']){await page.goto('/id/'+route);await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.decode());expect(await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.currentSrc)).toContain('hero-experiences-user-v2');}
  await page.setViewportSize({width:1440,height:1000});

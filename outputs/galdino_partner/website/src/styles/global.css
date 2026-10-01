@@ -26,6 +26,8 @@
   --layer-header: 40;
   --layer-menu: 50;
   --layer-dock: 35;
+  --site-header-height: 6rem;
+  --brand-cta-radius: .25rem;
   --brand-black: #0b0b0c;
   --brand-white: #fff;
   --brand-paper: #f4f3f1;
@@ -176,3 +178,7 @@ a .arrow-icon{transition:transform 180ms var(--brand-ease)}a:hover .arrow-icon,a
 .dark-map{position:relative;padding-block:var(--brand-section-space);background:var(--brand-black);color:#fff}.dark-map h2{color:#fff;max-width:25ch}.dark-map .ed-kicker{color:#fff}.dark-map .map-lead{max-width:65ch;color:rgb(255 255 255 / .78);line-height:1.65}.ed-related{gap:2.5rem 2rem}.ed-related article{padding-bottom:1.25rem}.ed-note{margin-top:2rem}
 .insight-filters :is(input,select):focus-visible{outline:1px solid var(--brand-red);outline-offset:3px;box-shadow:none}
 @media(prefers-reduced-motion:reduce){.reveal-link,.reveal-link::after{transition:none}.reveal-link:hover,.reveal-link:focus-visible{transform:none}}
+
+/* One modest corner radius for every primary call to action. */
+:is(.ed-button,.home-button,.profile-button,.nav-cta,.final-cta__button,.button-primary,.button-secondary,.button-light,.contact-dock__link),.person-contact a:first-child,.cookie-actions button{border-radius:var(--brand-cta-radius)}
+@media(max-width:1024px){:root{--site-header-height:4.5rem}}
