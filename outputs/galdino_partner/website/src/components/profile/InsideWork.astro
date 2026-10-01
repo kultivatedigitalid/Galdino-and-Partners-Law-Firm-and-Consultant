@@ -1,42 +1,72 @@
 ---
 import {Image} from 'astro:assets';
-import discussion from '../../assets/company-carousel-01.webp';
-import review from '../../assets/experience-compliance-review.png';
-import site from '../../assets/experience-investment-project.png';
-import meeting from '../../assets/company-carousel-04.webp';
-import office from '../../assets/company-carousel-02.webp';
-import team from '../../assets/hero-about-user-v2.webp';
+import urban from '../../assets/hero-industries-user-v2.webp';
+import consultation from '../../assets/experience-business-licensing.png';
+import site from '../../assets/service-building.webp';
+import writing from '../../assets/company-carousel-01.webp';
+import meeting from '../../assets/experience-compliance-review.png';
+import outlook from '../../assets/hero-experiences-user-v2.webp';
+import architecture from '../../assets/industry-hotel.webp';
+import agreement from '../../assets/company-carousel-02.webp';
 import type {Locale} from '../../data/site';
 interface Props{locale:Locale}
 const {locale}=Astro.props,id=locale==='id';
 const images=[
- {image:discussion,alt:id?'Diskusi kebutuhan izin':'Discussing permit requirements'},
- {image:site,alt:id?'Konteks proyek lapangan':'Project site context'},
- {image:office,alt:id?'Menyiapkan dokumen di kantor':'Preparing records at the office'},
- {image:review,alt:id?'Meninjau dokumen kepatuhan':'Reviewing compliance records'},
- {image:meeting,alt:id?'Koordinasi tim pendamping':'Support team coordination'},
- {image:team,alt:id?'Tim hukum dan perizinan':'Legal and licensing team'}
+ {role:'urban',image:urban,alt:id?'Meninjau kawasan dan kegiatan bisnis':'Reviewing business activity and its surroundings'},
+ {role:'consultation',image:consultation,alt:id?'Membaca kebutuhan dan dokumen bersama':'Reviewing requirements and records together'},
+ {role:'site',image:site,alt:id?'Memeriksa rencana bangunan di lapangan':'Reviewing building plans on site'},
+ {role:'writing',image:writing,alt:id?'Menyiapkan catatan dan dokumen hukum':'Preparing legal records and documents'},
+ {role:'meeting',image:meeting,alt:id?'Diskusi tim mengenai dokumen kepatuhan':'Team discussion of compliance records'},
+ {role:'outlook',image:outlook,alt:id?'Menghubungkan konteks proyek dengan kebutuhan izin':'Connecting project context with permit requirements'},
+ {role:'architecture',image:architecture,alt:id?'Konteks arsitektur dan fasilitas usaha':'Business architecture and facility context'},
+ {role:'agreement',image:agreement,alt:id?'Menyepakati langkah pendampingan':'Agreeing on the next support steps'}
 ];
 ---
-<section class="inside-work editorial"><div class="container-shell"><p class="ed-kicker">{id?'Di balik pekerjaan':'Inside the work'}</p><h2>{id?'Mendengar. Memeriksa. Menghubungkan.':'Listen. Review. Connect.'}</h2><div class="work-collage">{images.map(item=><figure><Image src={item.image} alt={item.alt} widths={[400,800,1200]} sizes="(min-width:801px) 45vw,60vw" loading="lazy" quality={78}/></figure>)}</div></div></section>
+<section class="inside-work editorial" aria-labelledby="inside-work-title">
+ <div class="container-shell">
+  <p class="ed-kicker">{id?'Di balik pekerjaan':'Inside the work'}</p>
+  <h2 id="inside-work-title">{id?'Mendengar. Memeriksa. Menghubungkan.':'Listen. Review. Connect.'}</h2>
+ </div>
+ <div class="work-collage">
+  {images.map(item=><figure class={`work-photo work-photo--${item.role}`}><Image src={item.image} alt={item.alt} widths={[320,640,1000]} sizes="(max-width:600px) 76vw,35vw" loading="lazy" quality={78}/></figure>)}
+  <span class="work-accent work-accent--urban" aria-hidden="true"></span>
+  <span class="work-accent work-accent--site" aria-hidden="true"></span>
+  <span class="work-accent work-accent--outlook" aria-hidden="true"></span>
+  <span class="work-accent work-accent--agreement" aria-hidden="true"></span>
+ </div>
+</section>
 <style>
-.inside-work{padding:var(--brand-section-space) 0;background:var(--brand-surface-soft)}
-.work-collage{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,clamp(8rem,12vw,11rem));gap:3px;margin-top:2.5rem}
-.work-collage figure{margin:0;min-width:0;overflow:hidden}
-.work-collage figure:nth-child(1){grid-area:1/1/3/6}
-.work-collage figure:nth-child(2){grid-area:1/6/2/10}
-.work-collage figure:nth-child(3){grid-area:1/10/2/13}
-.work-collage figure:nth-child(4){grid-area:2/6/3/13}
-.work-collage figure:nth-child(5){grid-area:3/1/4/5}
-.work-collage figure:nth-child(6){grid-area:3/5/4/13}
-.work-collage :global(img){display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1)}
-@media(max-width:800px){
- .work-collage{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,clamp(6rem,20vw,9rem));gap:2px}
- .work-collage figure:nth-child(1){grid-area:1/1/3/3}
- .work-collage figure:nth-child(2){grid-area:1/3/2/5}
- .work-collage figure:nth-child(3){grid-area:2/3/3/5}
- .work-collage figure:nth-child(4){grid-area:3/1/4/5}
- .work-collage figure:nth-child(5){grid-area:4/1/5/3}
- .work-collage figure:nth-child(6){grid-area:4/3/5/5}
+.inside-work{padding:var(--brand-section-space) 0 0;background:var(--brand-black);color:var(--brand-white)}
+.inside-work h2,.inside-work .ed-kicker{color:inherit}
+.work-collage{position:relative;isolation:isolate;width:100%;max-width:100rem;aspect-ratio:16/9;margin:2.5rem auto 0;overflow:hidden}
+.work-photo{position:absolute;z-index:1;margin:0;overflow:hidden}
+.work-photo :global(img){display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(1)}
+.work-photo--urban{left:0;top:6%;width:35.7%;height:44.8%}
+.work-photo--consultation{left:45.2%;top:14.5%;width:34.6%;height:56%;z-index:2}
+.work-photo--site{left:70.4%;top:4.7%;width:26.1%;height:29.2%}
+.work-photo--writing{left:26.9%;top:42.1%;width:16.2%;height:23.1%;z-index:3}
+.work-photo--meeting{left:79.8%;top:41.6%;width:20.2%;height:23.6%}
+.work-photo--outlook{left:8.3%;top:59.9%;width:26.8%;height:35.1%;z-index:2}
+.work-photo--architecture{left:52.6%;top:76.9%;width:23.7%;height:23.1%}
+.work-photo--agreement{left:67.8%;top:70.2%;width:20.2%;height:21.4%;z-index:3}
+.work-accent{position:absolute;z-index:4;background:var(--brand-red);opacity:.65;pointer-events:none}
+.work-accent--urban{left:31.9%;top:28.8%;width:3.8%;height:13.3%}
+.work-accent--site{left:95.2%;top:11.2%;width:2.8%;height:22.7%}
+.work-accent--outlook{left:8.3%;top:65.1%;width:1.9%;height:22.6%}
+.work-accent--agreement{left:88%;top:65%;width:4.4%;height:26.7%}
+@media(max-width:600px){
+ .work-collage{aspect-ratio:3/5;margin-top:2rem}
+ .work-photo--urban{left:0;top:2%;width:64%;height:22%}
+ .work-photo--consultation{left:20%;top:24%;width:76%;height:30%}
+ .work-photo--site{left:60%;top:10%;width:40%;height:16%}
+ .work-photo--writing{left:2%;top:29%;width:29%;height:14%}
+ .work-photo--meeting{left:52%;top:57%;width:48%;height:17%}
+ .work-photo--outlook{left:0;top:48%;width:43%;height:26%}
+ .work-photo--architecture{left:3%;top:80%;width:47%;height:18%}
+ .work-photo--agreement{left:48%;top:75%;width:45%;height:19%}
+ .work-accent--urban{left:58%;top:18%;width:5%;height:12%}
+ .work-accent--site{left:96%;top:12%;width:4%;height:15%}
+ .work-accent--outlook{left:3%;top:57%;width:3%;height:18%}
+ .work-accent--agreement{left:90%;top:78%;width:6%;height:16%}
 }
 </style>

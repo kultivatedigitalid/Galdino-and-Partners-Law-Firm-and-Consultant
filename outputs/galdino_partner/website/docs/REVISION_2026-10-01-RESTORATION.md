@@ -48,3 +48,11 @@ Fixed photographic frames now use centered cover fitting in experience cards, re
 The company identity register is removed from About Us. Individual profile introductions sit closer to the navbar. The founder note has a smaller centered portrait and reduced section spacing, fitting the tested desktop and 375px mobile viewport. The four working principles remain, with their desktop list starting slightly lower.
 
 Inside the Work uses six existing photographs in a joined, asymmetric monochrome grid. The supplied “Monochrome Urban Worklife Montage.png” is a composition reference: fewer photographs, larger areas and no repeated layered fragments. This is a responsive CSS composition; the reference raster itself is not used as a single website image.
+
+## Layered collage — confirmed composition
+
+The user replaced the joined grid direction with the visual reference “Monochrome Corporate Architecture Collage.png” and confirmed two choices: use existing website photography and adapt the arrangement for mobile.
+
+Inside the Work is now a native HTML/CSS composition of eight individually rendered photographs, on the existing brand-black background with four translucent brand-red rectangles. The dominant consultation photograph sits among offset urban, site, document, meeting and architectural photographs. Overlaps and open black space follow the supplied reference rather than a tiled strip. The reference image itself is not embedded or copied into the website.
+
+The wide composition uses proportional positions, while screens at 600px and below use a taller composition with reordered positions and larger individual photographs. Photos remain centered and use cover fitting; decorative red elements are hidden from assistive technology. The component adds no client-side JavaScript or generated image assets. Desktop and mobile section screenshots are captured for both languages.
