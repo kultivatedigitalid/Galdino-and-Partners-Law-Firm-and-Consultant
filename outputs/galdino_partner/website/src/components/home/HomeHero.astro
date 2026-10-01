@@ -1,65 +1,51 @@
 ---
-import {Image} from 'astro:assets';
-import hans from '../../assets/team-hans-galdino-cutout.webp';
-import kelvin from '../../assets/team-kelvin-anata-lian-cutout.webp';
-import maria from '../../assets/team-maria-indah-putri-cutout.webp';
-import michael from '../../assets/team-michael-alvaro-cutout.webp';
+import { Image } from 'astro:assets';
+import consultation from '../../assets/home-licensing-duo-cutout.webp';
 import ArrowIcon from '../icons/ArrowIcon.astro';
-import {COPY,type Locale} from '../../data/site';
-interface Props{locale:Locale}
-const {locale}=Astro.props,id=locale==='id';
-const text=id?{
- titleStart:'Pengurusan Izin',titleEnd:'untuk Bisnis Anda',
- lead:'Kami petakan persyaratan, siapkan dokumen, dan kawal proses izin hingga tindak lanjut.'
-}:{
- titleStart:'Business Permit Support',titleEnd:'for Your Company',
- lead:'We map requirements, prepare documents, and guide the permit process through follow-up.'
+import { COPY, type Locale } from '../../data/site';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const id = locale === 'id';
+const text = id ? {
+ titleStart: 'Pengurusan Izin', titleEnd: 'untuk Bisnis Anda',
+ lead: 'Kami petakan persyaratan, siapkan dokumen, dan kawal proses izin hingga tindak lanjut.',
+ visual: 'Dua konsultan menelaah dan menyiapkan dokumen perizinan.'
+} : {
+ titleStart: 'Business Permit Support', titleEnd: 'for Your Company',
+ lead: 'We map requirements, prepare documents, and guide the permit process through follow-up.',
+ visual: 'Two consultants reviewing and preparing permit documents.'
 };
-const portraits=[
- {image:hans,name:'Hans Galdino'},
- {image:kelvin,name:'Kelvin Anata Lian'},
- {image:maria,name:'Maria Indah Putri'},
- {image:michael,name:'Michael Alvaro'}
-];
 ---
-<section class="home-hero" aria-labelledby="home-hero-title">
+<section class="home-hero" lang={locale} aria-labelledby="home-hero-title">
  <div class="container-shell home-hero__inner">
   <div class="home-hero__copy">
-   <h1 id="home-hero-title"><span>{text.titleStart}</span>{' '}{text.titleEnd}</h1>
+   <h1 id="home-hero-title"><span class="home-hero__highlight">{text.titleStart}</span>{' '}<span class="home-hero__title-end">{text.titleEnd}</span></h1>
    <p class="home-hero__lead">{text.lead}</p>
-   <div class="home-hero__actions"><a class="home-button home-button--red" href={`/${locale}/contact/`}>{COPY[locale].consult}<ArrowIcon/></a></div>
+   <div class="home-hero__actions"><a class="home-button home-button--red" href={'/' + locale + '/contact/'}>{COPY[locale].consult}<ArrowIcon/></a></div>
   </div>
  </div>
- <div class="home-hero__team" aria-label={id?'Tim Galdino & Partner':'Galdino & Partner team'}>
-  {portraits.map((portrait,i)=><figure class="home-hero__person"><Image class="home-hero__portrait" src={portrait.image} alt={portrait.name} widths={[400,640,900]} sizes="(max-width:640px) 65vw,40vw" loading="eager" fetchpriority={i===0?'high':'auto'} format="webp" quality={85}/></figure>)}
- </div>
+ <figure class="home-hero__visual">
+  <Image class="home-hero__image" src={consultation} alt={text.visual} widths={[400,640,960,1280]} sizes="(max-width:640px) calc(100vw - 24px), (max-height:900px) 78vh, 54rem" loading="eager" fetchpriority="high" format="webp" quality={85}/>
+ </figure>
 </section>
 <style>
-.home-hero{display:flex;flex-direction:column;min-height:calc(100svh - var(--site-header-height));background:var(--brand-paper);color:var(--brand-black);overflow:clip}
-.home-hero__inner{padding-top:clamp(3rem,6.5svh,5rem);padding-bottom:2rem}
+.home-hero{display:flex;flex-direction:column;min-height:100svh;overflow:clip;border-bottom:.75rem solid var(--brand-red);background:var(--brand-paper);color:var(--brand-black)}
+.home-hero__inner{padding-top:calc(var(--site-header-height) + clamp(2.5rem,4.5svh,4rem));padding-bottom:1.5rem}
 .home-hero__copy{width:100%;max-width:65rem;margin-inline:auto;text-align:center}
 .home-hero h1{max-width:30ch;margin:0 auto;font-family:var(--font-display);font-size:var(--brand-type-hero);font-weight:570;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
-.home-hero h1 span{color:var(--brand-red)}
+.home-hero__highlight{display:inline-block;max-width:100%;padding:.12em .24em .17em;background:var(--brand-red);color:var(--brand-white)}
+.home-hero__title-end{display:block;margin-top:.23em}
 .home-hero__lead{max-width:43rem;margin:1.5rem auto 0;color:var(--brand-muted);font-size:clamp(.92rem,1.5vw,1.08rem);line-height:1.52;text-wrap:pretty}
-.home-hero__actions{display:flex;justify-content:center;margin-top:1.75rem}
-.home-hero__team{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:min(100% - 2rem,78rem);height:clamp(22rem,57svh,37rem);margin: auto auto 0;overflow:clip}
-.home-hero__person{position:relative;min-width:0;margin:0}
-.home-hero :global(.home-hero__portrait){position:absolute;top:0;left:50%;height:clamp(30rem,72svh,47rem);width:auto;max-width:none;object-fit:contain;object-position:center;translate:-50% 0;filter:grayscale(1)}
-.home-hero__person:nth-child(2) :global(img){top:1.5rem}
-.home-hero__person:nth-child(3) :global(img){top:2.5rem}
-.home-hero__person:nth-child(4) :global(img){top:.75rem}
+.home-hero__actions{display:flex;justify-content:center;margin-top:1.5rem}
+.home-hero__visual{width:min(100% - 1.5rem,62rem);height:clamp(20rem,52svh,36rem);margin:auto auto 0}
+.home-hero :global(.home-hero__image){width:100%;height:100%;object-fit:contain;object-position:center bottom}
 @media(max-width:640px){
  .home-hero{min-height:0}
- .home-hero__inner{padding-top:2.75rem;padding-bottom:2rem}
+ .home-hero__inner{padding-top:calc(var(--site-header-height) + 2.5rem)}
  .home-hero h1{max-width:20ch}
- .home-hero__lead{max-width:35rem;font-size:var(--brand-type-lead);margin-top:1.25rem}
- .home-hero__actions{margin-top:1.5rem}
- .home-hero__team{width:100%;height:clamp(15rem,74vw,23rem);margin-top:1rem}
- .home-hero :global(.home-hero__portrait){height:clamp(18rem,90vw,30rem)}
- .home-hero__person:first-child :global(img){left:calc(50% + .65rem)}
- .home-hero__person:last-child :global(img){left:calc(50% - .65rem)}
- .home-hero__person:nth-child(2) :global(img){top:.75rem}
- .home-hero__person:nth-child(3) :global(img){top:1.25rem}
- .home-hero__person:nth-child(4) :global(img){top:.35rem}
+ .home-hero:lang(en) .home-hero__highlight{font-size:.78em;white-space:nowrap}
+ .home-hero__lead{font-size:var(--brand-type-lead);margin-top:1.25rem}
+ .home-hero__visual{height:auto;aspect-ratio:3/2;margin-top:.75rem}
+ .home-hero :global(.home-hero__image){height:auto}
 }
 </style>

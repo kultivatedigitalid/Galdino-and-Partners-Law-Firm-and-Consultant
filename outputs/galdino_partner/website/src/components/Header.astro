@@ -21,7 +21,7 @@ const isCurrent = (href: string) => href === localeRoot
 
 {usesImmersiveHeader && <span class="header-sentinel" data-header-sentinel aria-hidden="true"></span>}
 <header
-  class:list={['site-header', usesImmersiveHeader && 'site-header--immersive']}
+  class:list={['site-header', usesImmersiveHeader && 'site-header--immersive', isHome && !usesImmersiveHeader && 'site-header--home']}
   data-scrolled={usesImmersiveHeader ? 'false' : undefined}
 >
   <a class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-white focus:p-3" href="#main-content">{COPY[locale].skip}</a>
@@ -80,6 +80,7 @@ const isCurrent = (href: string) => href === localeRoot
     backdrop-filter: blur(14px);
     transition: border-color 210ms cubic-bezier(.22, 1, .36, 1), backdrop-filter 210ms cubic-bezier(.22, 1, .36, 1);
   }
+  .site-header--home { position: fixed; right: 0; left: 0; border-bottom-color: transparent; backdrop-filter: none; }
   .site-header--immersive { position: fixed; right: 0; left: 0; border-bottom-color: transparent; background: transparent; backdrop-filter: blur(0); }
   .site-header--immersive::before,
   .site-header--immersive::after {

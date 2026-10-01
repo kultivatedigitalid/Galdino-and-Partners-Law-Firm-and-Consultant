@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-10-01T17:42:22.652Z",
+  "scope": "Home hero and shared navigation regression",
+  "passed": 10,
+  "failed": 0,
+  "responsiveWidths": [
+    320,
+    375,
+    430,
+    768,
+    1024,
+    1440
+  ],
+  "representativeRoutes": 17,
+  "accessibilityRoutes": [
+    "/id/"
+  ],
+  "tests": [
+    {
+      "title": "responsive 320",
+      "duration": "34.7s",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 375",
+      "duration": "54.5s",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 430",
+      "duration": "28.9s",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 768",
+      "duration": "27.1s",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 1024",
+      "duration": "26.7s",
+      "status": "passed"
+    },
+    {
+      "title": "accessibility /id/",
+      "duration": "18.4s",
+      "status": "passed"
+    },
+    {
+      "title": "nested navigation, language pair and mobile menu",
+      "duration": "5.8s",
+      "status": "passed"
+    },
+    {
+      "title": "responsive 1440",
+      "duration": "45.4s",
+      "status": "passed"
+    },
+    {
+      "title": "mega menu opens direct service links and supports keyboard and outside click",
+      "duration": "21.1s",
+      "status": "passed"
+    },
+    {
+      "title": "brand headings, image framing, navigation and featured sections stay consistent",
+      "duration": "35.7s",
+      "status": "passed"
+    }
+  ]
+}

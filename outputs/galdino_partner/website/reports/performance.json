@@ -3,20 +3,20 @@
     "name": "home",
     "path": "/id/",
     "device": "Lighthouse default mobile simulation",
-    "date": "2026-09-30T11:50:58.586Z",
+    "date": "2026-10-01T17:41:58.940Z",
     "version": "13.5.0",
     "scores": {
-      "performance": 87,
+      "performance": 74,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 69
     },
     "metrics": {
-      "first-contentful-paint": 3133.6609258574335,
-      "largest-contentful-paint": 3183.1609258574335,
+      "first-contentful-paint": 3825.6935,
+      "largest-contentful-paint": 3907.1935,
       "cumulative-layout-shift": 0,
-      "total-blocking-time": 56.5,
-      "speed-index": 3338.5653062777546
+      "total-blocking-time": 263.49999999999955,
+      "speed-index": 4120.075074255945
     },
     "failedAudits": [
       {
@@ -47,32 +47,32 @@
             {
               "group": "styleLayout",
               "groupLabel": "Style & Layout",
-              "duration": 4199.524000000001
+              "duration": 5540.756
             },
             {
               "group": "other",
               "groupLabel": "Other",
-              "duration": 795.5239999999992
+              "duration": 1103.5439999999999
             },
             {
               "group": "paintCompositeRender",
               "groupLabel": "Rendering",
-              "duration": 155.42000000000073
+              "duration": 143.66800000000052
             },
             {
               "group": "scriptEvaluation",
               "groupLabel": "Script Evaluation",
-              "duration": 110.28400000000009
+              "duration": 116.48400000000002
             },
             {
               "group": "parseHTML",
               "groupLabel": "Parse HTML & CSS",
-              "duration": 92.51599999999999
+              "duration": 81.06
             },
             {
               "group": "scriptParseCompile",
               "groupLabel": "Script Parsing & Compilation",
-              "duration": 8.863999999999999
+              "duration": 10.98
             }
           ],
           "sortedBy": [
@@ -97,7 +97,7 @@
             {
               "source": {
                 "type": "node",
-                "lhId": "1-124-META",
+                "lhId": "1-123-META",
                 "path": "1,HTML,0,HEAD,5,META",
                 "selector": "head > meta",
                 "boundingRect": {
@@ -136,44 +136,44 @@
               "value": {
                 "type": "network-tree",
                 "chains": {
-                  "10E2769A35720047A32CFCB33B8F1279": {
+                  "4C6042CD6CE68DD3FCC27F957E7D0A32": {
                     "url": "http://localhost:4327/id/",
-                    "navStartToEndTime": 61,
-                    "transferSize": 74181,
+                    "navStartToEndTime": 133,
+                    "transferSize": 67721,
                     "isLongest": true,
                     "children": {
-                      "11716.7": {
+                      "19304.7": {
                         "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
-                        "navStartToEndTime": 1145,
+                        "navStartToEndTime": 1650,
                         "transferSize": 1619,
                         "isLongest": true,
                         "children": {
-                          "11716.28": {
+                          "19304.28": {
                             "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
-                            "navStartToEndTime": 1196,
+                            "navStartToEndTime": 1804,
                             "transferSize": 1797,
                             "isLongest": true,
                             "children": {}
                           }
                         }
                       },
-                      "11716.3": {
-                        "url": "http://localhost:4327/_astro/HomePage.8E8JRs9a.css",
-                        "navStartToEndTime": 91,
-                        "transferSize": 35669,
+                      "19304.3": {
+                        "url": "http://localhost:4327/_astro/HomePage.BSeNKymc.css",
+                        "navStartToEndTime": 298,
+                        "transferSize": 32215,
                         "children": {}
                       },
-                      "11716.2": {
-                        "url": "http://localhost:4327/_astro/_astro_assets.BEkBjtDF.css",
-                        "navStartToEndTime": 89,
-                        "transferSize": 41950,
+                      "19304.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.XO5FWEnE.css",
+                        "navStartToEndTime": 284,
+                        "transferSize": 45320,
                         "children": {}
                       }
                     }
                   }
                 },
                 "longestChain": {
-                  "duration": 1196
+                  "duration": 1804
                 }
               }
             },
@@ -204,78 +204,22 @@
     "name": "services",
     "path": "/id/services/",
     "device": "Lighthouse default mobile simulation",
-    "date": "2026-09-30T11:51:17.253Z",
+    "date": "2026-10-01T17:42:19.407Z",
     "version": "13.5.0",
     "scores": {
-      "performance": 80,
+      "performance": 91,
       "accessibility": 100,
       "best-practices": 100,
       "seo": 69
     },
     "metrics": {
-      "first-contentful-paint": 1670.7323000000001,
-      "largest-contentful-paint": 2640.4646000000002,
+      "first-contentful-paint": 2745.4316,
+      "largest-contentful-paint": 2745.4316,
       "cumulative-layout-shift": 0,
-      "total-blocking-time": 623.0000000000001,
-      "speed-index": 2627.6352826086077
+      "total-blocking-time": 17.5,
+      "speed-index": 2745.4316
     },
     "failedAudits": [
-      {
-        "id": "mainthread-work-breakdown",
-        "title": "Minimize main-thread work",
-        "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)",
-        "details": {
-          "type": "table",
-          "headings": [
-            {
-              "key": "groupLabel",
-              "valueType": "text",
-              "label": "Category"
-            },
-            {
-              "key": "duration",
-              "valueType": "ms",
-              "granularity": 1,
-              "label": "Time Spent"
-            }
-          ],
-          "items": [
-            {
-              "group": "styleLayout",
-              "groupLabel": "Style & Layout",
-              "duration": 2002.54
-            },
-            {
-              "group": "other",
-              "groupLabel": "Other",
-              "duration": 649.9839999999995
-            },
-            {
-              "group": "parseHTML",
-              "groupLabel": "Parse HTML & CSS",
-              "duration": 235.70399999999998
-            },
-            {
-              "group": "scriptEvaluation",
-              "groupLabel": "Script Evaluation",
-              "duration": 110.90800000000006
-            },
-            {
-              "group": "paintCompositeRender",
-              "groupLabel": "Rendering",
-              "duration": 91.32799999999997
-            },
-            {
-              "group": "scriptParseCompile",
-              "groupLabel": "Script Parsing & Compilation",
-              "duration": 13.6
-            }
-          ],
-          "sortedBy": [
-            "duration"
-          ]
-        }
-      },
       {
         "id": "is-crawlable",
         "title": "Page is blocked from indexing",
@@ -293,7 +237,7 @@
             {
               "source": {
                 "type": "node",
-                "lhId": "1-148-META",
+                "lhId": "1-154-META",
                 "path": "1,HTML,0,HEAD,5,META",
                 "selector": "head > meta",
                 "boundingRect": {
@@ -321,204 +265,6 @@
         }
       },
       {
-        "id": "image-delivery-insight",
-        "title": "Improve image delivery",
-        "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/performance/insights/image-delivery)",
-        "details": {
-          "type": "table",
-          "headings": [
-            {
-              "key": "node",
-              "valueType": "node",
-              "label": ""
-            },
-            {
-              "key": "url",
-              "valueType": "url",
-              "label": "URL",
-              "subItemsHeading": {
-                "key": "reason",
-                "valueType": "text"
-              }
-            },
-            {
-              "key": "totalBytes",
-              "valueType": "bytes",
-              "label": "Resource Size"
-            },
-            {
-              "key": "wastedBytes",
-              "valueType": "bytes",
-              "label": "Est Savings",
-              "subItemsHeading": {
-                "key": "wastedBytes",
-                "valueType": "bytes"
-              }
-            }
-          ],
-          "items": [
-            {
-              "node": {
-                "type": "node",
-                "lhId": "page-0-IMG",
-                "path": "1,HTML,1,BODY,4,MAIN,0,DIV,0,HEADER,0,PICTURE,0,IMG",
-                "selector": "div.editorial > header.image-hero > picture.image-hero__media > img",
-                "boundingRect": {
-                  "top": 0,
-                  "bottom": 823,
-                  "left": 0,
-                  "right": 412,
-                  "width": 412,
-                  "height": 823
-                },
-                "snippet": "<img src=\"http://localhost:4327/_astro/hero-services.DNUBguXO_Z1zGJmr.webp\" srcset=\"/_astro/hero-services.DNUBguXO_b7iyF.webp 640w, /_astro/hero-services.DNUB…\" alt=\"\" sizes=\"100vw\" loading=\"eager\" fetchpriority=\"high\" data-astro-cid-tmmx6r75=\"true\" decoding=\"async\" width=\"1672\" height=\"941\">",
-                "nodeLabel": "div.editorial > header.image-hero > picture.image-hero__media > img"
-              },
-              "url": "http://localhost:4327/_astro/hero-services.DNUBguXO_Z1zGJmr.webp",
-              "totalBytes": 71822,
-              "wastedBytes": 47507,
-              "subItems": {
-                "type": "subitems",
-                "items": [
-                  {
-                    "reason": "Increasing the image compression factor could improve this image's download size.",
-                    "wastedBytes": 47507
-                  }
-                ]
-              }
-            },
-            {
-              "node": {
-                "type": "node",
-                "lhId": "page-1-IMG",
-                "path": "1,HTML,1,BODY,5,FOOTER,0,DIV,0,DIV,0,A,0,SPAN,0,IMG",
-                "selector": "div > a.footer-brand > span.footer-logo-frame > img.footer-logo",
-                "boundingRect": {
-                  "top": 8299,
-                  "bottom": 8350,
-                  "left": 10,
-                  "right": 84,
-                  "width": 74,
-                  "height": 51
-                },
-                "snippet": "<img class=\"footer-logo\" src=\"/assets/gp-logo-small.webp\" width=\"240\" height=\"165\" alt=\"\" loading=\"lazy\" data-astro-cid-jo6i4kqk=\"\">",
-                "nodeLabel": "div > a.footer-brand > span.footer-logo-frame > img.footer-logo"
-              },
-              "url": "http://localhost:4327/assets/gp-logo-small.webp",
-              "totalBytes": 25992,
-              "wastedBytes": 24092,
-              "subItems": {
-                "type": "subitems",
-                "items": [
-                  {
-                    "reason": "Increasing the image compression factor could improve this image's download size.",
-                    "wastedBytes": 19392
-                  },
-                  {
-                    "reason": "This image file is larger than it needs to be (240x165) for its displayed dimensions (129x89). Use responsive images to reduce the image download size.",
-                    "wastedBytes": 18508
-                  }
-                ]
-              }
-            },
-            {
-              "node": {
-                "type": "node",
-                "lhId": "page-2-IMG",
-                "path": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,SECTION,1,DIV,1,SECTION,0,DIV,2,IMG",
-                "selector": "div.category-index > section#category-tata-ruang > div.category-summary > img",
-                "boundingRect": {
-                  "top": 2087,
-                  "bottom": 2307,
-                  "left": 10,
-                  "right": 402,
-                  "width": 392,
-                  "height": 221
-                },
-                "snippet": "<img src=\"http://localhost:4327/_astro/experience-investment-project.D63HZjzB_Z1x96S…\" srcset=\"/_astro/experience-investment-project.D63HZjzB_Z1xfHfH.webp 400w, /_astro/…\" alt=\"Tim proyek meninjau rencana tapak pembangunan\" sizes=\"(min-width:801px) 30vw, 100vw\" loading=\"lazy\" data-astro-cid-ushkmir6=\"true\" decoding=\"async\" width=\"1448\" height=\"1086\">",
-                "nodeLabel": "Tim proyek meninjau rencana tapak pembangunan"
-              },
-              "url": "http://localhost:4327/_astro/experience-investment-project.D63HZjzB_Z1x96S3.webp",
-              "totalBytes": 30482,
-              "wastedBytes": 14015,
-              "subItems": {
-                "type": "subitems",
-                "items": [
-                  {
-                    "reason": "This image file is larger than it needs to be (700x525) for its displayed dimensions (515x386). Use responsive images to reduce the image download size.",
-                    "wastedBytes": 14015
-                  }
-                ]
-              }
-            },
-            {
-              "node": {
-                "type": "node",
-                "lhId": "page-3-IMG",
-                "path": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,SECTION,1,DIV,3,SECTION,0,DIV,2,IMG",
-                "selector": "div.category-index > section#category-lingkungan > div.category-summary > img",
-                "boundingRect": {
-                  "top": 3649,
-                  "bottom": 3869,
-                  "left": 10,
-                  "right": 402,
-                  "width": 392,
-                  "height": 221
-                },
-                "snippet": "<img src=\"http://localhost:4327/_astro/service-environment.0deGFyNW_Z27QQLB.webp\" srcset=\"/_astro/service-environment.0deGFyNW_Z2nOJIq.webp 400w, /_astro/service-en…\" alt=\"Teknisi lingkungan mengambil sampel air di fasilitas pengolahan\" sizes=\"(min-width:801px) 30vw, 100vw\" loading=\"lazy\" data-astro-cid-ushkmir6=\"true\" decoding=\"async\" width=\"1536\" height=\"1024\">",
-                "nodeLabel": "Teknisi lingkungan mengambil sampel air di fasilitas pengolahan"
-              },
-              "url": "http://localhost:4327/_astro/service-environment.0deGFyNW_Z27QQLB.webp",
-              "totalBytes": 43552,
-              "wastedBytes": 13818,
-              "subItems": {
-                "type": "subitems",
-                "items": [
-                  {
-                    "reason": "This image file is larger than it needs to be (700x467) for its displayed dimensions (578x386). Use responsive images to reduce the image download size.",
-                    "wastedBytes": 13818
-                  }
-                ]
-              }
-            },
-            {
-              "node": {
-                "type": "node",
-                "lhId": "page-4-IMG",
-                "path": "1,HTML,1,BODY,4,MAIN,0,DIV,2,DIV,0,SECTION,1,DIV,0,SECTION,0,DIV,2,IMG",
-                "selector": "div.category-index > section#category-reklame > div.category-summary > img",
-                "boundingRect": {
-                  "top": 1178,
-                  "bottom": 1399,
-                  "left": 10,
-                  "right": 402,
-                  "width": 392,
-                  "height": 221
-                },
-                "snippet": "<img src=\"http://localhost:4327/_astro/service-signage.BI5a3tnt_ZsV18M.webp\" srcset=\"/_astro/service-signage.BI5a3tnt_Z21GFE9.webp 400w, /_astro/service-signag…\" alt=\"Teknisi meninjau ukuran dan lokasi pemasangan reklame toko\" sizes=\"(min-width:801px) 30vw, 100vw\" loading=\"lazy\" data-astro-cid-ushkmir6=\"true\" decoding=\"async\" width=\"1536\" height=\"1024\">",
-                "nodeLabel": "Teknisi meninjau ukuran dan lokasi pemasangan reklame toko"
-              },
-              "url": "http://localhost:4327/_astro/service-signage.BI5a3tnt_ZsV18M.webp",
-              "totalBytes": 38864,
-              "wastedBytes": 12331,
-              "subItems": {
-                "type": "subitems",
-                "items": [
-                  {
-                    "reason": "This image file is larger than it needs to be (700x467) for its displayed dimensions (578x386). Use responsive images to reduce the image download size.",
-                    "wastedBytes": 12331
-                  }
-                ]
-              }
-            }
-          ],
-          "debugData": {
-            "type": "debugdata",
-            "wastedBytes": 111763
-          }
-        }
-      },
-      {
         "id": "network-dependency-tree-insight",
         "title": "Network dependency tree",
         "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.",
@@ -530,38 +276,38 @@
               "value": {
                 "type": "network-tree",
                 "chains": {
-                  "3B11800B2C53E382BBF091E702C5955C": {
+                  "A29950FEF82461314A34647EE2C9AAE7": {
                     "url": "http://localhost:4327/id/services/",
-                    "navStartToEndTime": 137,
-                    "transferSize": 48721,
+                    "navStartToEndTime": 91,
+                    "transferSize": 51299,
                     "isLongest": true,
                     "children": {
-                      "32612.5": {
+                      "26532.5": {
                         "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
-                        "navStartToEndTime": 357,
+                        "navStartToEndTime": 960,
                         "transferSize": 1619,
                         "isLongest": true,
                         "children": {
-                          "32612.21": {
+                          "26532.24": {
                             "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
-                            "navStartToEndTime": 401,
+                            "navStartToEndTime": 1081,
                             "transferSize": 1797,
                             "isLongest": true,
                             "children": {}
                           }
                         }
                       },
-                      "32612.2": {
-                        "url": "http://localhost:4327/_astro/_astro_assets.BEkBjtDF.css",
-                        "navStartToEndTime": 129,
-                        "transferSize": 41950,
+                      "26532.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.XO5FWEnE.css",
+                        "navStartToEndTime": 147,
+                        "transferSize": 45320,
                         "children": {}
                       }
                     }
                   }
                 },
                 "longestChain": {
-                  "duration": 401
+                  "duration": 1081
                 }
               }
             },
@@ -592,20 +338,20 @@
     "name": "contact",
     "path": "/id/contact/",
     "device": "Lighthouse default mobile simulation",
-    "date": "2026-09-30T11:51:34.655Z",
+    "date": "2026-10-01T17:42:39.926Z",
     "version": "13.5.0",
     "scores": {
-      "performance": 69,
+      "performance": 95,
       "accessibility": 100,
       "best-practices": 100,
-      "seo": 69
+      "seo": 66
     },
     "metrics": {
-      "first-contentful-paint": 1543.3685500000001,
-      "largest-contentful-paint": 2146.7371000000003,
+      "first-contentful-paint": 2339.7780000000002,
+      "largest-contentful-paint": 2390.7780000000002,
       "cumulative-layout-shift": 0,
-      "total-blocking-time": 3283,
-      "speed-index": 2476.447702190986
+      "total-blocking-time": 84,
+      "speed-index": 2445.7123082668177
     },
     "failedAudits": [
       {
@@ -636,32 +382,32 @@
             {
               "group": "styleLayout",
               "groupLabel": "Style & Layout",
-              "duration": 4208.0160000000005
-            },
-            {
-              "group": "parseHTML",
-              "groupLabel": "Parse HTML & CSS",
-              "duration": 1431.3
+              "duration": 2640.4240000000004
             },
             {
               "group": "other",
               "groupLabel": "Other",
-              "duration": 1295.8079999999998
+              "duration": 581.4160000000002
             },
             {
-              "group": "paintCompositeRender",
-              "groupLabel": "Rendering",
-              "duration": 934.3319999999999
+              "group": "parseHTML",
+              "groupLabel": "Parse HTML & CSS",
+              "duration": 175.61600000000004
             },
             {
               "group": "scriptEvaluation",
               "groupLabel": "Script Evaluation",
-              "duration": 213.6320000000001
+              "duration": 99.09999999999995
+            },
+            {
+              "group": "paintCompositeRender",
+              "groupLabel": "Rendering",
+              "duration": 65.87200000000001
             },
             {
               "group": "scriptParseCompile",
               "groupLabel": "Script Parsing & Compilation",
-              "duration": 2.5040000000000004
+              "duration": 7.215999999999999
             }
           ],
           "sortedBy": [
@@ -686,7 +432,7 @@
             {
               "source": {
                 "type": "node",
-                "lhId": "1-59-META",
+                "lhId": "1-112-META",
                 "path": "1,HTML,0,HEAD,5,META",
                 "selector": "head > meta",
                 "boundingRect": {
@@ -714,114 +460,6 @@
         }
       },
       {
-        "id": "image-delivery-insight",
-        "title": "Improve image delivery",
-        "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/performance/insights/image-delivery)",
-        "details": {
-          "type": "table",
-          "headings": [
-            {
-              "key": "node",
-              "valueType": "node",
-              "label": ""
-            },
-            {
-              "key": "url",
-              "valueType": "url",
-              "label": "URL",
-              "subItemsHeading": {
-                "key": "reason",
-                "valueType": "text"
-              }
-            },
-            {
-              "key": "totalBytes",
-              "valueType": "bytes",
-              "label": "Resource Size"
-            },
-            {
-              "key": "wastedBytes",
-              "valueType": "bytes",
-              "label": "Est Savings",
-              "subItemsHeading": {
-                "key": "wastedBytes",
-                "valueType": "bytes"
-              }
-            }
-          ],
-          "items": [
-            {
-              "node": {
-                "type": "node",
-                "lhId": "page-0-IMG",
-                "path": "1,HTML,1,BODY,0,MAIN,0,DIV,0,HEADER,0,PICTURE,1,IMG",
-                "selector": "div.editorial > header.image-hero > picture.image-hero__media > img",
-                "boundingRect": {
-                  "top": 0,
-                  "bottom": 823,
-                  "left": 0,
-                  "right": 412,
-                  "width": 412,
-                  "height": 823
-                },
-                "snippet": "<img src=\"http://localhost:4327/_astro/hero-contact-mobile.DkrFjgNS.webp\" srcset=\"/_astro/hero-contact.CQpEFEf5_Z56cxy.webp 640w, /_astro/hero-contact.CQpEF…\" alt=\"\" sizes=\"100vw\" loading=\"eager\" fetchpriority=\"high\" data-astro-cid-tmmx6r75=\"true\" decoding=\"async\" width=\"1672\" height=\"941\">",
-                "nodeLabel": "div.editorial > header.image-hero > picture.image-hero__media > img"
-              },
-              "url": "http://localhost:4327/_astro/hero-contact-mobile.DkrFjgNS.webp",
-              "totalBytes": 185944,
-              "wastedBytes": 31231,
-              "subItems": {
-                "type": "subitems",
-                "items": [
-                  {
-                    "reason": "This image file is larger than it needs to be (838x1672) for its displayed dimensions (810x1440). Use responsive images to reduce the image download size.",
-                    "wastedBytes": 31231
-                  }
-                ]
-              }
-            },
-            {
-              "node": {
-                "type": "node",
-                "lhId": "page-1-IMG",
-                "path": "1,HTML,1,BODY,1,FOOTER,0,DIV,0,DIV,0,A,0,SPAN,0,IMG",
-                "selector": "div > a.footer-brand > span.footer-logo-frame > img.footer-logo",
-                "boundingRect": {
-                  "top": 3298,
-                  "bottom": 3348,
-                  "left": 10,
-                  "right": 84,
-                  "width": 74,
-                  "height": 51
-                },
-                "snippet": "<img class=\"footer-logo\" src=\"/assets/gp-logo-small.webp\" width=\"240\" height=\"165\" alt=\"\" loading=\"lazy\" data-astro-cid-jo6i4kqk=\"\">",
-                "nodeLabel": "div > a.footer-brand > span.footer-logo-frame > img.footer-logo"
-              },
-              "url": "http://localhost:4327/assets/gp-logo-small.webp",
-              "totalBytes": 25992,
-              "wastedBytes": 24092,
-              "subItems": {
-                "type": "subitems",
-                "items": [
-                  {
-                    "reason": "Increasing the image compression factor could improve this image's download size.",
-                    "wastedBytes": 19392
-                  },
-                  {
-                    "reason": "This image file is larger than it needs to be (240x165) for its displayed dimensions (129x89). Use responsive images to reduce the image download size.",
-                    "wastedBytes": 18508
-                  }
-                ]
-              }
-            }
-          ],
-          "debugData": {
-            "type": "debugdata",
-            "wastedBytes": 55323
-          }
-        }
-      },
-      {
         "id": "network-dependency-tree-insight",
         "title": "Network dependency tree",
         "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.",
@@ -833,44 +471,50 @@
               "value": {
                 "type": "network-tree",
                 "chains": {
-                  "072872C4231EC18D9F09D54794D09ABD": {
+                  "BFC0FD4FCC4F0403B7949D88BF876F76": {
                     "url": "http://localhost:4327/id/contact/",
-                    "navStartToEndTime": 97,
-                    "transferSize": 25139,
+                    "navStartToEndTime": 146,
+                    "transferSize": 31116,
                     "isLongest": true,
                     "children": {
-                      "32232.4": {
+                      "10280.5": {
                         "url": "http://localhost:4327/_astro/ContactForm.astro_astro_type_script_index_0_lang.CmEOVQqW.js",
-                        "navStartToEndTime": 398,
+                        "navStartToEndTime": 990,
                         "transferSize": 2058,
                         "isLongest": true,
                         "children": {
-                          "32232.12": {
+                          "10280.14": {
                             "url": "http://localhost:4327/_astro/analytics.9mIwTZ4P.js",
-                            "navStartToEndTime": 1809,
+                            "navStartToEndTime": 1014,
                             "transferSize": 1797,
                             "isLongest": true,
                             "children": {}
                           }
                         }
                       },
-                      "32232.5": {
+                      "10280.6": {
                         "url": "http://localhost:4327/_astro/CookieConsent.astro_astro_type_script_index_0_lang.Cq2OHCAM.js",
-                        "navStartToEndTime": 398,
+                        "navStartToEndTime": 991,
                         "transferSize": 1619,
                         "children": {}
                       },
-                      "32232.2": {
-                        "url": "http://localhost:4327/_astro/_astro_assets.BEkBjtDF.css",
-                        "navStartToEndTime": 121,
-                        "transferSize": 41950,
+                      "10280.3": {
+                        "url": "http://localhost:4327/_astro/ContactPage.DNAo5b8u.css",
+                        "navStartToEndTime": 331,
+                        "transferSize": 4767,
+                        "children": {}
+                      },
+                      "10280.2": {
+                        "url": "http://localhost:4327/_astro/BaseLayout.XO5FWEnE.css",
+                        "navStartToEndTime": 305,
+                        "transferSize": 45320,
                         "children": {}
                       }
                     }
                   }
                 },
                 "longestChain": {
-                  "duration": 1809
+                  "duration": 1014
                 }
               }
             },
