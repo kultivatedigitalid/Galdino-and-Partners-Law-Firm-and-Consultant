@@ -28,12 +28,12 @@ const faq=id?[
  ['Are approval and timing guaranteed?','Decisions remain with the responsible authority or independent body. Timing depends on complete records, inspections and correction requests.']
 ];
 ---
-<BaseLayout immersive locale={locale} title={(id?'Jasa ':'')+c.title+' | Galdino & Partner'} description={c.description} alternateUrl={categoryUrl(category,id?'en':'id')}>
+<BaseLayout immersive={false} locale={locale} title={(id?'Jasa ':'')+c.title+' | Galdino & Partner'} description={c.description} alternateUrl={categoryUrl(category,id?'en':'id')}>
 <div class="editorial">
 <SplitHero title={(id?'Jasa ':'')+c.title} description={c.description} image={categoryActivityImage(category.id).image} alt={categoryActivityImage(category.id).alt[locale]} href="#services-in-category" action={id?'Lihat layanan dalam bidang ini':'View services in this area'}/>
 <div class="container-shell">
 <ContextSection locale={locale} title={id?'Pendampingan sesuai kebutuhan usaha.':'Support for your business requirements.'} intro={c.note} detail={(id?'Kami mendampingi ':'We support ')+c.audience.join(', ')+'. '+(id?'Asesmen meninjau ':'The assessment reviews ')+c.triggers.join('; ')+'.'}/>
-<section class="ed-section category-selection" id="services-in-category"><h2>{id?'Layanan dalam bidang ini.':'Services in this area.'}</h2><ServiceDirectory locale={locale} services={services} compact/></section>
+<section class="ed-section category-selection" id="services-in-category"><h2>{id?'Layanan dalam bidang ini.':'Services in this area.'}</h2><ServiceDirectory locale={locale} services={services}/></section>
 </div>
 <section class="category-process dark-map" aria-labelledby="category-process-title"><div class="container-shell"><p class="ed-kicker">{id?'Proses kerja':'Working process'}</p><h2 id="category-process-title">{id?'Dari asesmen hingga tindak lanjut.':'From assessment to follow-up.'}</h2><p class="map-lead">{c.note}</p><PermitPathway locale={locale} dark customSteps={process}/><div class="ed-actions"><a class="ed-button" href={'/'+locale+'/contact/'}>{id?'Mulai asesmen kebutuhan izin':'Start a permit-needs assessment'} →</a></div></div></section><div class="container-shell">
 <section class="ed-section"><p class="ed-kicker">FAQ</p><h2>{id?'Sebelum Anda memulai.':'Before you begin.'}</h2>{faq.map(([q,a])=><details class="ed-details"><summary>{q}</summary><p>{a}</p></details>)}</section>

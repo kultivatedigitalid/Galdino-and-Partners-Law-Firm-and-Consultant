@@ -1,6 +1,31 @@
 ---
-import type {Locale} from '../../data/site';interface Props{locale:Locale}const {locale}=Astro.props;
-const steps=locale==='id'?['Inquiry diterima','Tim meninjau kebutuhan','Kontak melalui email atau WhatsApp','Konsultasi awal gratis','Pemetaan kebutuhan dan dokumen','Ruang lingkup dan estimasi biaya','Kesepakatan langkah berikutnya']:['Enquiry received','Team reviews the requirement','Contact by email or WhatsApp','Free initial consultation','Requirements and document mapping','Scope and estimated fees','Agree the next action'];
+import type {Locale} from '../../data/site';
+interface Props{locale:Locale}
+const {locale}=Astro.props,id=locale==='id';
+const steps=id?[
+ ['Inquiry diterima','Tim meninjau kegiatan, lokasi, dan kebutuhan yang Anda sampaikan.'],
+ ['Kami menghubungi Anda','Melalui email atau WhatsApp untuk menyepakati jadwal pembahasan.'],
+ ['Lengkapi konteks','Siapkan daftar dokumen yang tersedia dan pertanyaan utama Anda.'],
+ ['Konsultasi awal gratis','Bahas prioritas izin, kelengkapan data, dan urutan yang relevan.'],
+ ['Perjelas ruang lingkup','Kami menjelaskan pekerjaan, estimasi biaya, dan tanggung jawab masing-masing.'],
+ ['Sepakati langkah berikutnya','Pendampingan dimulai setelah ruang lingkup dan biaya disepakati.']
+]:[
+ ['Enquiry received','Our team reviews the activities, location and requirements you share.'],
+ ['We contact you','By email or WhatsApp to arrange a discussion.'],
+ ['Complete the context','Prepare a list of available records and your main questions.'],
+ ['Free initial consultation','Discuss approval priorities, information gaps and the relevant sequence.'],
+ ['Clarify the scope','We explain the work, estimated fees and each party’s responsibilities.'],
+ ['Agree the next step','Support begins once scope and fees have been agreed.']
+];
 ---
-<section class="ed-section"><p class="ed-kicker">{locale==='id'?'Setelah Anda menghubungi kami':'After you get in touch'}</p><h2>{locale==='id'?'Langkah berikutnya.':'What happens next.'}</h2><ol class="next-steps">{steps.map((s,i)=><li><span>{String(i+1).padStart(2,'0')}</span><p>{s}</p></li>)}</ol></section>
-<style>.next-steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}.next-steps li{border-top:1px solid #b9b8b5;padding-top:1rem}.next-steps span{color:#a61227;font-size:.75rem;font-weight:800}.next-steps p{margin:.6rem 0;font-size:.9rem}@media(max-width:800px){.next-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}</style>
+<section class="contact-next-steps" aria-labelledby="contact-next-title"><h2 id="contact-next-title">{id?'Apa yang Selanjutnya Terjadi?':'What Happens Next?'}</h2><ol>{steps.map(([title,description],i)=><li><span aria-hidden="true">{String(i+1).padStart(2,'0')}</span><div><h3>{title}</h3><p>{description}</p></div></li>)}</ol></section>
+<style>
+.contact-next-steps{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--brand-line-strong)}
+.contact-next-steps h2{font-size:var(--brand-type-card);line-height:1.2;margin:0 0 1.25rem}
+.contact-next-steps ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.contact-next-steps li{display:flex;gap:.65rem;align-items:start}
+.contact-next-steps span{color:var(--brand-red);font-size:.7rem;font-weight:750;padding-top:.15rem}
+.contact-next-steps h3{font-size:.9rem;letter-spacing:-.015em;line-height:1.35;margin:0 0 .4rem}
+.contact-next-steps p{color:var(--brand-muted);font-size:.8rem;line-height:1.55;margin:0}
+@media(max-width:420px){.contact-next-steps ol{grid-template-columns:1fr}}
+</style>

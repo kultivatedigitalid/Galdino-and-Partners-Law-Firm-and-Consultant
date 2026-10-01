@@ -28,7 +28,7 @@ const faq=id?[
 ];
 const schema={'@context':'https://schema.org','@type':'Service',name:c.title,description:c.description,serviceType:c.title,areaServed:{'@type':'Country',name:'Indonesia'},provider:{'@type':'Organization',name:'Galdino & Partner',url:Astro.site}};
 ---
-<BaseLayout immersive locale={locale} title={`${c.title} — ${priceLabel(s,locale)} | Galdino & Partner`} description={c.description+' '+(id?'Pelajari dokumen, proses, biaya jasa, dan langkah konsultasi awal gratis.':'Explore documents, process, professional fees and a free initial consultation.')} alternateUrl={serviceUrl(s,other)}>
+<BaseLayout immersive={false} locale={locale} title={`${c.title} — ${priceLabel(s,locale)} | Galdino & Partner`} description={c.description+' '+(id?'Pelajari dokumen, proses, biaya jasa, dan langkah konsultasi awal gratis.':'Explore documents, process, professional fees and a free initial consultation.')} alternateUrl={serviceUrl(s,other)}>
 <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(schema)}/>
 <div class="editorial" data-page-event="service_view" data-entity={s.id}>
 <SplitHero title={c.title} description={c.description} image={serviceActivityImage(s).image} alt={serviceActivityImage(s).alt[locale]} href="#service-scope" action={id?'Lihat cakupan pengurusan':'View the engagement scope'}/><div class="container-shell"><ContextSection locale={locale} title={id?'Pahami kebutuhan '+c.title.replace(/^Jasa /,'').toLowerCase()+'.':'Understand your '+c.title.toLowerCase()+' requirements.'} intro={c.definition} detail={c.why+' '+(id?'Pendampingan relevan untuk ':'Support is relevant for ')+c.audience.join(', ')+'. '+(id?'Mulai saat ':'Start when ')+c.triggers.join('; ')+'.'} href={`/${locale}/contact/?service=${s.id}`}/>

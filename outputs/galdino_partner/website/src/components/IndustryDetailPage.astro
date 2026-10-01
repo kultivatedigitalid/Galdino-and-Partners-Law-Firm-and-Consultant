@@ -8,13 +8,11 @@ import {industryUrl,type Industry} from '../data/industries';
 import {industryImages} from '../data/industry-images';
 import {SERVICES,serviceUrl} from '../data/services';
 
-import {PEOPLE} from '../data/people';
 import type {Locale} from '../data/site';
 interface Props{locale:Locale;industry:Industry}
 const {locale,industry:i}=Astro.props,id=locale==='id',c=i.content[locale],services=SERVICES.filter(s=>i.services.includes(s.id));
-const person=PEOPLE[locale].find(p=>p.services.some(s=>i.services.includes(s)))||PEOPLE[locale][0];
 ---
-<BaseLayout immersive locale={locale} title={c.title+' | Galdino & Partner'} description={c.description} alternateUrl={industryUrl(i,id?'en':'id')}>
+<BaseLayout immersive={false} locale={locale} title={c.title+' | Galdino & Partner'} description={c.description} alternateUrl={industryUrl(i,id?'en':'id')}>
 <div class="editorial"><SplitHero variant="industry" title={c.title} description={c.description} image={industryImages[i.id]} href="#industry-services" action={id?'Lihat layanan terkait':'View relevant services'}/>
 <div class="container-shell">
 <ContextSection locale={locale} title={id?'Cakupan industri dan kebutuhan izin.':'Industry scope and permit requirements.'} intro={c.description+' '+(id?'Kami meninjau ':'We review ')+c.issues.join('; ')+'.'} detail={(id?'Mulai dengan ':'Start with ')+c.documents.join(', ')+'. '+(id?'Layanan yang dipetakan meliputi ':'The mapped services include ')+services.map(s=>s.content[locale].title).join(', ')+'.'}/></div>
@@ -22,5 +20,5 @@ const person=PEOPLE[locale].find(p=>p.services.some(s=>i.services.includes(s)))|
 <section class="ed-section" id="industry-services"><p class="ed-kicker">{id?'Layanan terkait':'Relevant services'}</p><h2>{id?'Hubungkan kebutuhan Anda.':'Connect your requirements.'}</h2><div class="ed-related">{services.map(s=><article><h3><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></h3><p>{s.content[locale].description}</p></article>)}</div><p class="ed-note">{id?'Daftar ini memulai asesmen; tidak semua layanan wajib untuk setiap usaha. Izin operasional sektoral dan persyaratan lain diperiksa sesuai kegiatan, skala, dan lokasi.':'This list starts the assessment; not every service is mandatory for every business. Sector operating approvals and other requirements are reviewed against activity, scale and location.'}</p></section>
 
 
-<section class="ed-section ed-split"><div><p class="ed-kicker">{id?'Mulai percakapan':'Start a conversation'}</p><h2>{id?'Dari rencana usaha Anda.':'From your business plans.'}</h2><p>{id?'Sampaikan kegiatan, lokasi, dan tahapan proyek. Tim membantu menentukan dokumen awal serta prioritas pembahasan.':'Share your activities, location and project stage. Our team helps identify the initial records and discussion priorities.'}</p></div><aside class="ed-aside"><h3>{person.name}</h3><p>{person.role}</p><a class="ed-link" href={'/'+locale+'/profile/'+person.slug+'/'}>{id?'Kenali tim pendamping':'Meet your support team'} →</a></aside></section>
+
 </div><HomeFinalCta locale={locale}/></div></BaseLayout>

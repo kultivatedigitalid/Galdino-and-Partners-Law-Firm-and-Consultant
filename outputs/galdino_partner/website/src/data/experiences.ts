@@ -1,5 +1,5 @@
 import type {Locale} from './site';
-export interface Experience {slug:string;company:string;imageKey:string;location:string;year:string;provisional:boolean;services:string[];content:Record<Locale,{industry:string;stage:string;title:string;challenge:string;approach:string;deliverables:string[];duration:string;outcome:string}>;}
+export interface Experience {slug:string;company:string;imageKey:string;location:string;year:string;provisional:boolean;services:string[];content:Record<Locale,{industry:string;stage:string;title:string;challengeTitle:string;challenge:string;approachTitle:string;approach:string;deliverablesTitle:string;deliverables:string[];duration:string;outcome:string}>;}
 export const EXPERIENCES:Experience[]=[
   {
     "slug": "aruna-pangan",
@@ -27,7 +27,10 @@ export const EXPERIENCES:Experience[]=[
           "Jadwal tindak lanjut"
         ],
         "duration": "6 minggu",
-        "outcome": "Jalur perizinan diperjelas dan dokumen lintas tim terkonsolidasi untuk persiapan pengajuan."
+        "outcome": "Jalur perizinan diperjelas dan dokumen lintas tim terkonsolidasi untuk persiapan pengajuan.",
+        "challengeTitle": "Data Ekspansi Produksi Belum Terpadu.",
+        "approachTitle": "Mencocokkan Proses dan Data Produksi.",
+        "deliverablesTitle": "Matriks Izin dan Register Produksi."
       },
       "en": {
         "industry": "Food manufacturing",
@@ -42,7 +45,10 @@ export const EXPERIENCES:Experience[]=[
           "Follow-up schedule"
         ],
         "duration": "6 weeks",
-        "outcome": "The licensing pathway was clarified and cross-team documents consolidated for submission preparation."
+        "outcome": "The licensing pathway was clarified and cross-team documents consolidated for submission preparation.",
+        "challengeTitle": "Expansion Records Were Fragmented.",
+        "approachTitle": "Aligning Processes and Production Records.",
+        "deliverablesTitle": "Permit Matrix and Production Register."
       }
     }
   },
@@ -71,7 +77,10 @@ export const EXPERIENCES:Experience[]=[
           "Rencana audit internal"
         ],
         "duration": "3 minggu",
-        "outcome": "Tim memperoleh prioritas perbaikan dan daftar bukti yang perlu disiapkan sebelum proses audit independen."
+        "outcome": "Tim memperoleh prioritas perbaikan dan daftar bukti yang perlu disiapkan sebelum proses audit independen.",
+        "challengeTitle": "Dokumen Keamanan Informasi Tersebar.",
+        "approachTitle": "Memetakan Aset, Risiko, dan Kontrol.",
+        "deliverablesTitle": "Prioritas Perbaikan Sebelum Audit."
       },
       "en": {
         "industry": "Technology",
@@ -86,7 +95,10 @@ export const EXPERIENCES:Experience[]=[
           "Internal-audit plan"
         ],
         "duration": "3 weeks",
-        "outcome": "The team received improvement priorities and an evidence list to prepare before an independent audit."
+        "outcome": "The team received improvement priorities and an evidence list to prepare before an independent audit.",
+        "challengeTitle": "Information Security Records Were Scattered.",
+        "approachTitle": "Mapping Assets, Risks, and Controls.",
+        "deliverablesTitle": "Improvement Priorities Before the Audit."
       }
     }
   },
@@ -116,7 +128,10 @@ export const EXPERIENCES:Experience[]=[
           "Matriks tindak lanjut"
         ],
         "duration": "5 minggu",
-        "outcome": "Status setiap titik dapat ditelusuri dan prioritas pembaruan tersusun untuk koordinasi kantor pusat serta cabang."
+        "outcome": "Status setiap titik dapat ditelusuri dan prioritas pembaruan tersusun untuk koordinasi kantor pusat serta cabang.",
+        "challengeTitle": "Arsip Reklame Antar-Outlet Tidak Seragam.",
+        "approachTitle": "Mencocokkan Media dengan Arsip Outlet.",
+        "deliverablesTitle": "Inventaris Reklame dan Kalender Perpanjangan."
       },
       "en": {
         "industry": "Retail and distribution",
@@ -131,7 +146,10 @@ export const EXPERIENCES:Experience[]=[
           "Follow-up matrix"
         ],
         "duration": "5 weeks",
-        "outcome": "Each location's status became traceable, with renewal priorities established for coordination between head office and branches."
+        "outcome": "Each location's status became traceable, with renewal priorities established for coordination between head office and branches.",
+        "challengeTitle": "Outlet Advertising Records Were Inconsistent.",
+        "approachTitle": "Reconciling Advertising Media and Outlet Records.",
+        "deliverablesTitle": "Advertising Inventory and Renewal Calendar."
       }
     }
   },
@@ -161,7 +179,10 @@ export const EXPERIENCES:Experience[]=[
           "Arsip kelengkapan"
         ],
         "duration": "4 minggu",
-        "outcome": "Kesenjangan dokumen teridentifikasi dan paket administratif dipersiapkan untuk proses sertifikasi."
+        "outcome": "Kesenjangan dokumen teridentifikasi dan paket administratif dipersiapkan untuk proses sertifikasi.",
+        "challengeTitle": "Bukti Kapasitas Konstruksi Belum Selaras.",
+        "approachTitle": "Menyelaraskan Lingkup dan Kompetensi.",
+        "deliverablesTitle": "Register Kelengkapan Badan Usaha."
       },
       "en": {
         "industry": "Construction",
@@ -176,7 +197,10 @@ export const EXPERIENCES:Experience[]=[
           "Completeness archive"
         ],
         "duration": "4 weeks",
-        "outcome": "Document gaps were identified and an administrative pack prepared for certification."
+        "outcome": "Document gaps were identified and an administrative pack prepared for certification.",
+        "challengeTitle": "Construction Capability Evidence Needed Alignment.",
+        "approachTitle": "Aligning Scope and Competence.",
+        "deliverablesTitle": "Business Readiness Register."
       }
     }
   },
@@ -207,7 +231,10 @@ export const EXPERIENCES:Experience[]=[
           "Rencana penutupan kekurangan data"
         ],
         "duration": "3 minggu",
-        "outcome": "Kebutuhan dokumen serta pemeriksaan lanjutan terpetakan sebelum pengajuan dan keputusan penggunaan fasilitas."
+        "outcome": "Kebutuhan dokumen serta pemeriksaan lanjutan terpetakan sebelum pengajuan dan keputusan penggunaan fasilitas.",
+        "challengeTitle": "Arsip Gudang dan Akses Terpisah.",
+        "approachTitle": "Mengonsolidasikan Bangunan dan Sirkulasi Truk.",
+        "deliverablesTitle": "Kebutuhan Pemeriksaan dan Data Lanjutan."
       },
       "en": {
         "industry": "Warehousing and logistics",
@@ -222,7 +249,10 @@ export const EXPERIENCES:Experience[]=[
           "Information-gap closure plan"
         ],
         "duration": "3 weeks",
-        "outcome": "Document and inspection requirements were clarified before applications and decisions about facility use."
+        "outcome": "Document and inspection requirements were clarified before applications and decisions about facility use.",
+        "challengeTitle": "Warehouse and Access Records Were Separate.",
+        "approachTitle": "Consolidating Building and Truck-Access Records.",
+        "deliverablesTitle": "Inspection and Further Information Requirements."
       }
     }
   },
@@ -253,7 +283,10 @@ export const EXPERIENCES:Experience[]=[
           "Register isu terbuka"
         ],
         "duration": "5 minggu",
-        "outcome": "Kebutuhan kajian dan dependensi regulasi dipetakan sebelum ruang lingkup pengembangan ditetapkan."
+        "outcome": "Kebutuhan kajian dan dependensi regulasi dipetakan sebelum ruang lingkup pengembangan ditetapkan.",
+        "challengeTitle": "Prioritas Izin Proyek Belum Jelas.",
+        "approachTitle": "Menghubungkan Dokumen dengan Jadwal Proyek.",
+        "deliverablesTitle": "Roadmap Izin dan Matriks Dependensi."
       },
       "en": {
         "industry": "Property",
@@ -268,7 +301,10 @@ export const EXPERIENCES:Experience[]=[
           "Open issue register"
         ],
         "duration": "5 weeks",
-        "outcome": "Study requirements and regulatory dependencies were mapped before the development scope was fixed."
+        "outcome": "Study requirements and regulatory dependencies were mapped before the development scope was fixed.",
+        "challengeTitle": "Project Approval Priorities Needed Clarity.",
+        "approachTitle": "Connecting Documents to the Project Schedule.",
+        "deliverablesTitle": "Permit Roadmap and Dependency Matrix."
       }
     }
   }

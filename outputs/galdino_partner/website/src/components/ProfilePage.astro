@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import heroImage from '../assets/profile-company-hero-centered.webp';
+import heroImage from '../assets/hero-about-user-v2.webp';
 import { PROFILE_CONTENT } from '../data/profile';
 import type { Locale } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -9,7 +9,7 @@ import ArrowIcon from './icons/ArrowIcon.astro';
 import HomeFinalCta from './home/HomeFinalCta.astro';
 import FounderStory from './profile/FounderStory.astro';
 import InsideWork from './profile/InsideWork.astro';
-
+import RelatedCases from './shared/RelatedCases.astro';
 import TeamCarousel from './profile/TeamCarousel.astro';
 
 interface Props { locale: Locale; }
@@ -88,12 +88,26 @@ const profileSchema = {
             </div>
           </div>
         </div>
+
+        <div class="profile-company__registry" data-profile-reveal>
+          <h3>{content.company.factsTitle}</h3>
+          <dl>
+            {content.company.facts.map((fact) => (
+              <div>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
+
+    <div class="container-shell" style="padding-block:1.5rem"><a class="ed-link" href={`/${locale}/#why-galdino-title`}>{locale==='id'?'Kenapa Galdino & Partner':'Why Galdino & Partner'} →</a></div>
     <FounderStory locale={locale}/>
     <TeamCarousel locale={locale} />
     <InsideWork locale={locale}/>
-
+    <div class="editorial"><div class="container-shell"><RelatedCases locale={locale}/></div></div>
     <HomeFinalCta locale={locale} />
   </div>
 
@@ -183,7 +197,7 @@ const profileSchema = {
   body:has(.profile-redesign) .contact-dock__pulse { background: #fff; box-shadow: 0 0 0 4px rgb(255 255 255 / .16); }
 
   .profile-hero { position: relative; min-height: clamp(40rem, 100svh, 51rem); overflow: hidden; background: var(--profile-black); color: #fff; }
-  .profile-hero::after { position: absolute; inset: 0; background: linear-gradient(90deg,rgb(8 8 9 / .96),rgb(8 8 9 / .84) 36%,rgb(8 8 9 / .2) 64%,transparent 82%); content: ''; pointer-events: none; }
+  .profile-hero::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(11 11 12 / .94) 0%, rgb(41 4 10 / .84) 30%, rgb(55 6 14 / .34) 49%, transparent 68%), linear-gradient(180deg, rgb(11 11 12 / .28), transparent 28%, rgb(11 11 12 / .18)); content: ''; pointer-events: none; }
   .profile-hero__visual { position: absolute; inset: 0; margin: 0; }
   .profile-hero__visual :where(img) { width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: center; }
   .profile-hero__visual figcaption { position: absolute; right: 1.25rem; bottom: 1rem; z-index: 2; max-width: 24rem; background: rgb(11 11 12 / .72); padding: .35rem .5rem; color: rgb(255 255 255 / .82); font-size: .56rem; font-weight: 760; letter-spacing: .055em; }
@@ -232,7 +246,7 @@ const profileSchema = {
     .profile-redesign .profile-heading { font-size: clamp(2.15rem, 10vw, 2.85rem); }
     .profile-hero { padding-top: 5rem; }
     .profile-hero__inner { padding-top: 1.7rem; }
-    .profile-hero h1 { max-width: 13ch; font-size: var(--brand-type-hero); }
+    .profile-hero h1 { max-width: 13ch; font-size: clamp(2.65rem, 11vw, 3.25rem); }
     .profile-hero__lead { font-size: .94rem; }
     .profile-hero__visual { aspect-ratio: 16 / 9; }
     .profile-hero__visual :where(img) { width: 100%; height: 100%; object-position: center; }
@@ -246,5 +260,3 @@ const profileSchema = {
     .profile-redesign .profile-button, .profile-redesign .profile-button :where(.arrow-icon), body:has(.profile-redesign) .contact-dock__link { transition-duration: .01ms; }
   }
 </style>
-
-<style is:global>.profile-company.profile-section{padding-bottom:2rem}.profile-hero__lead{font-size:clamp(.92rem,1.5vw,1.08rem);line-height:1.52;color:rgb(255 255 255 / .78)}</style>
