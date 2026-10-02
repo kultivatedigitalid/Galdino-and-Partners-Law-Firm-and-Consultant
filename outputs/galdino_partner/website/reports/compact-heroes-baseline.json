@@ -1,0 +1,290 @@
+[
+  {
+    "route": "",
+    "width": 1366,
+    "height": 768,
+    "heroHeight": 768,
+    "title": {
+      "y": 136,
+      "bottom": 287,
+      "height": 151,
+      "width": 1040
+    },
+    "cta": {
+      "y": 361,
+      "bottom": 411,
+      "height": 50,
+      "width": 191
+    },
+    "figure": {
+      "y": 435,
+      "bottom": 768,
+      "height": 333,
+      "width": 1216
+    }
+  },
+  {
+    "route": "services/",
+    "width": 1366,
+    "height": 768,
+    "heroHeight": 768,
+    "title": {
+      "y": 162,
+      "bottom": 313,
+      "height": 151,
+      "width": 1040
+    },
+    "cta": {
+      "y": 413,
+      "bottom": 465,
+      "height": 51,
+      "width": 167
+    },
+    "figure": {
+      "y": 329,
+      "bottom": 768,
+      "height": 439,
+      "width": 1342
+    }
+  },
+  {
+    "route": "industries/",
+    "width": 1366,
+    "height": 768,
+    "heroHeight": 768,
+    "title": {
+      "y": 162,
+      "bottom": 313,
+      "height": 151,
+      "width": 1040
+    },
+    "cta": {
+      "y": 413,
+      "bottom": 465,
+      "height": 51,
+      "width": 196
+    },
+    "figure": {
+      "y": 489,
+      "bottom": 768,
+      "height": 279,
+      "width": 1342
+    }
+  },
+  {
+    "route": "projects/",
+    "width": 1366,
+    "height": 768,
+    "heroHeight": 768,
+    "title": {
+      "y": 162,
+      "bottom": 313,
+      "height": 151,
+      "width": 1040
+    },
+    "cta": {
+      "y": 413,
+      "bottom": 465,
+      "height": 51,
+      "width": 220
+    },
+    "figure": {
+      "y": 329,
+      "bottom": 768,
+      "height": 439,
+      "width": 1342
+    }
+  },
+  {
+    "route": "blog/",
+    "width": 1366,
+    "height": 768,
+    "heroHeight": 768,
+    "title": {
+      "y": 128,
+      "bottom": 279,
+      "height": 151,
+      "width": 1040
+    },
+    "cta": {
+      "y": 379,
+      "bottom": 430,
+      "height": 51,
+      "width": 175
+    },
+    "figure": {
+      "y": 422,
+      "bottom": 768,
+      "height": 346,
+      "width": 1342
+    }
+  },
+  {
+    "route": "profile/",
+    "width": 1366,
+    "height": 768,
+    "heroHeight": 768,
+    "title": {
+      "y": 128,
+      "bottom": 351,
+      "height": 223,
+      "width": 1040
+    },
+    "cta": {
+      "y": 452,
+      "bottom": 503,
+      "height": 51,
+      "width": 165
+    },
+    "figure": {
+      "y": 367,
+      "bottom": 768,
+      "height": 401,
+      "width": 1342
+    }
+  },
+  {
+    "route": "",
+    "width": 1280,
+    "height": 720,
+    "heroHeight": 720,
+    "title": {
+      "y": 136,
+      "bottom": 277,
+      "height": 141,
+      "width": 1040
+    },
+    "cta": {
+      "y": 351,
+      "bottom": 402,
+      "height": 50,
+      "width": 191
+    },
+    "figure": {
+      "y": 426,
+      "bottom": 720,
+      "height": 294,
+      "width": 1216
+    }
+  },
+  {
+    "route": "services/",
+    "width": 1280,
+    "height": 720,
+    "heroHeight": 768,
+    "title": {
+      "y": 162,
+      "bottom": 303,
+      "height": 141,
+      "width": 1040
+    },
+    "cta": {
+      "y": 404,
+      "bottom": 455,
+      "height": 51,
+      "width": 167
+    },
+    "figure": {
+      "y": 319,
+      "bottom": 768,
+      "height": 449,
+      "width": 1256
+    }
+  },
+  {
+    "route": "industries/",
+    "width": 1280,
+    "height": 720,
+    "heroHeight": 768,
+    "title": {
+      "y": 162,
+      "bottom": 303,
+      "height": 141,
+      "width": 1040
+    },
+    "cta": {
+      "y": 404,
+      "bottom": 455,
+      "height": 51,
+      "width": 196
+    },
+    "figure": {
+      "y": 479,
+      "bottom": 768,
+      "height": 289,
+      "width": 1256
+    }
+  },
+  {
+    "route": "projects/",
+    "width": 1280,
+    "height": 720,
+    "heroHeight": 768,
+    "title": {
+      "y": 162,
+      "bottom": 303,
+      "height": 141,
+      "width": 1040
+    },
+    "cta": {
+      "y": 404,
+      "bottom": 455,
+      "height": 51,
+      "width": 220
+    },
+    "figure": {
+      "y": 319,
+      "bottom": 768,
+      "height": 449,
+      "width": 1256
+    }
+  },
+  {
+    "route": "blog/",
+    "width": 1280,
+    "height": 720,
+    "heroHeight": 768,
+    "title": {
+      "y": 128,
+      "bottom": 269,
+      "height": 141,
+      "width": 1040
+    },
+    "cta": {
+      "y": 370,
+      "bottom": 421,
+      "height": 51,
+      "width": 175
+    },
+    "figure": {
+      "y": 413,
+      "bottom": 768,
+      "height": 355,
+      "width": 1256
+    }
+  },
+  {
+    "route": "profile/",
+    "width": 1280,
+    "height": 720,
+    "heroHeight": 768,
+    "title": {
+      "y": 128,
+      "bottom": 337,
+      "height": 209,
+      "width": 1040
+    },
+    "cta": {
+      "y": 438,
+      "bottom": 489,
+      "height": 51,
+      "width": 165
+    },
+    "figure": {
+      "y": 353,
+      "bottom": 768,
+      "height": 415,
+      "width": 1256
+    }
+  }
+]

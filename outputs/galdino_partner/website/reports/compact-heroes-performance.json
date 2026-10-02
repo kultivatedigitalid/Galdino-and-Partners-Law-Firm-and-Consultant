@@ -1,0 +1,74 @@
+[
+  {
+    "name": "services",
+    "path": "/id/services/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-10-02T09:59:48.079Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "first-contentful-paint": 1726.9025000000001,
+      "largest-contentful-paint": 2494.805,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "speed-index": 2572.415698766364
+    },
+    "failedAudits": [
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing"
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery"
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree"
+      }
+    ]
+  },
+  {
+    "name": "about",
+    "path": "/id/profile/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-10-02T09:59:58.528Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "first-contentful-paint": 1962.7155176590954,
+      "largest-contentful-paint": 2792.431035318191,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "speed-index": 2507.3098085357865
+    },
+    "failedAudits": [
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names."
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing"
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery"
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree"
+      }
+    ]
+  }
+]

@@ -311,9 +311,37 @@ test('supplied main hero compositions fit desktop and mobile in both languages',
    expect(boxes[1]!.y).toBeGreaterThan(boxes[0]!.y+boxes[0]!.height);expect(boxes[2]!.y).toBeGreaterThan(boxes[1]!.y+boxes[1]!.height);
    expect(boxes[3]!.y+boxes[3]!.height).toBeGreaterThan(boxes[2]!.y+boxes[2]!.height);
    expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
-   if(width===375){await expect(hero.locator('.layered-hero__annotation').first()).not.toBeVisible();expect(boxes[3]!.y).toBeGreaterThan(boxes[2]!.y+boxes[2]!.height);}
+   expect(boxes[3]!.y).toBeGreaterThan(boxes[2]!.y+boxes[2]!.height);
+   if(width===375){await expect(hero.locator('.layered-hero__annotation').first()).not.toBeVisible();}
+   else{expect((await hero.boundingBox())!.height).toBeLessThanOrEqual(1000);expect(boxes[3]!.y+boxes[3]!.height).toBeLessThanOrEqual(1001);}
    await page.screenshot({path:testInfo.outputPath(locale+'-'+route+'-hero-'+width+'.png'),animations:'disabled'});
    if(route==='profile'){await hero.locator('a').click();await expect(page.locator('#team')).toBeInViewport();}
   }
  }
 });
+
+for(const viewport of [{width:1366,height:600},{width:1280,height:720},{width:1366,height:768},{width:1440,height:800},{width:1536,height:864}]){
+ test('main heroes fit first laptop viewport '+viewport.width+'x'+viewport.height,async({page},testInfo)=>{
+  await page.setViewportSize(viewport);
+  await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
+  for(const locale of ['id','en'])for(const route of ['services','industries','projects','blog','profile']){
+   await page.goto('/'+locale+'/'+route+'/');await page.evaluate(()=>document.fonts.ready);
+   const hero=page.locator('.layered-hero');
+   await hero.locator('img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));
+   const [banner,heading,cta,photo,header]=await Promise.all([hero,hero.locator('h1'),hero.locator('a'),hero.locator('figure'),page.locator('.site-header')].map(el=>el.boundingBox()));
+   const context=locale+'/'+route+' at '+viewport.width+'x'+viewport.height;
+   expect(await page.evaluate(()=>scrollY),context+' starts at top').toBe(0);
+   expect(banner!.y,context+' banner starts at top').toBe(0);
+   expect(banner!.y+banner!.height,context+' whole banner fits').toBeLessThanOrEqual(viewport.height+1);
+   expect(heading!.y,context+' heading clears navbar').toBeGreaterThanOrEqual(header!.y+header!.height);
+   expect(photo!.y,context+' photo clears CTA').toBeGreaterThan(cta!.y+cta!.height);
+   expect(photo!.height,context+' photo remains visible').toBeGreaterThan(0);
+   expect(photo!.y+photo!.height,context+' whole photo fits').toBeLessThanOrEqual(viewport.height+1);
+   expect(photo!.x,context+' photo fits horizontally').toBeGreaterThanOrEqual(0);
+   expect(photo!.x+photo!.width,context+' photo fits horizontally').toBeLessThanOrEqual(viewport.width+1);
+   await expect(hero.locator('.layered-hero__image')).toHaveCSS('object-fit','contain');
+   expect(await hero.locator('.layered-hero__image').evaluate(img=>(img as HTMLImageElement).naturalWidth),context+' photo loaded').toBeGreaterThan(0);
+   await page.screenshot({path:testInfo.outputPath(locale+'-'+route+'-hero-'+viewport.width+'x'+viewport.height+'.png'),animations:'disabled'});
+  }
+ });
+}

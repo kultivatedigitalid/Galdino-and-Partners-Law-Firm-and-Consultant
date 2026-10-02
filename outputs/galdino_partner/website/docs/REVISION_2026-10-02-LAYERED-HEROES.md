@@ -20,6 +20,8 @@ All filenames begin with “ChatGPT Image Oct 2, 2026, ” and end in .png, supp
 
 LayeredHero.astro renders both images, live h1/lead/CTA and optional kicker from bilingual layered-heroes.ts. BaseLayout's overlayHeader option keeps the light heroes under the fixed navbar while immersive=false selects dark foreground text. Existing scroll-sentinel behavior changes the transparent initial navbar to white on scroll, and back again at the top. Detail and Contact navigation retain their prior behavior. Anchored CTA destinations account for the fixed header. Minimal CTA movement honors reduced motion.
 
+The subsequent user-approved sizing correction is in REVISION_2026-10-02-COMPACT-HEROES.md. It fits all five complete heroes into the first desktop viewport, follows Home's smaller photograph limits, retains current copy and allows natural mobile height. The verification below is the earlier full-suite baseline; the latest focused results are in reports/compact-heroes-review.json.
+
 ## Verification
 
 Results are recorded in docs/QA_REPORT.md, reports/browser-summary.json and reports/performance.json after the final production build. Astro check covers 131 files with zero errors, warnings or hints; 20 unit tests, the production build and 167-page validation pass. All 41 browser tests pass, including nine widths, 13 axe pages, both locales, proportional photo framing, live CTA destinations and transparent/white navbar states. Thirty-one current screenshots are saved. Four new main pages score 94–98 performance; About Us varies from 85 to 95 on identical-build local audits. All five score 100 accessibility and best practices. The observed About Us audit variation is retained in the performance report; no unrelated layout change was made to chase a score.

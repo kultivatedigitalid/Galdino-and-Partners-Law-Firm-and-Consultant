@@ -1,0 +1,361 @@
+{
+  "checkedAt": "2026-10-02T10:09:29.733Z",
+  "localDate": "2026-10-02",
+  "timezone": "Asia/Jakarta",
+  "scope": "Compact five main heroes, preserved copy/CTA, full first desktop viewport, natural-height mobile",
+  "passed": 22,
+  "failed": 0,
+  "flaky": 0,
+  "runs": [
+    {
+      "startTime": "2026-10-02T09:53:10.141Z",
+      "duration": 107129.38699999999,
+      "passed": 16
+    },
+    {
+      "startTime": "2026-10-02T09:56:46.757Z",
+      "duration": 17763.636,
+      "passed": 5
+    },
+    {
+      "startTime": "2026-10-02T10:08:37.082Z",
+      "duration": 12358.293000000001,
+      "passed": 1
+    }
+  ],
+  "checks": {
+    "desktopViewports": [
+      {
+        "width": 1366,
+        "height": 600
+      },
+      {
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "width": 1366,
+        "height": 768
+      },
+      {
+        "width": 1440,
+        "height": 800
+      },
+      {
+        "width": 1536,
+        "height": 864
+      },
+      {
+        "width": 1440,
+        "height": 1000
+      }
+    ],
+    "mobileViewport": {
+      "width": 375,
+      "height": 900
+    },
+    "locales": [
+      "id",
+      "en"
+    ],
+    "mainHeroRouteViewportChecks": 70,
+    "responsiveWidths": [
+      320,
+      375,
+      430,
+      768,
+      900,
+      1024,
+      1280,
+      1440,
+      1920
+    ],
+    "routesPerResponsiveWidth": 17,
+    "axePages": 5,
+    "desktop": "Whole hero and photograph fit at scrollY=0; heading clears fixed header; photograph clears CTA; proportional contain framing",
+    "mobile": "Complete photograph after copy; natural-height hero",
+    "header": "Transparent initial navbar and white scrolled navbar retained",
+    "unchanged": "Home, all copy/CTA text, destinations, shared heading scale, supplied source assets",
+    "shortDesktopBackdrop": "Final 1366x600 review: decorative background fades out behind text, photo remains complete"
+  },
+  "tests": [
+    {
+      "title": "responsive 320",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 12339
+        }
+      ]
+    },
+    {
+      "title": "responsive 375",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19407
+        }
+      ]
+    },
+    {
+      "title": "responsive 430",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8903
+        }
+      ]
+    },
+    {
+      "title": "responsive 768",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9181
+        }
+      ]
+    },
+    {
+      "title": "responsive 900",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8929
+        }
+      ]
+    },
+    {
+      "title": "responsive 1024",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9184
+        }
+      ]
+    },
+    {
+      "title": "responsive 1280",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10234
+        }
+      ]
+    },
+    {
+      "title": "responsive 1440",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 19852
+        }
+      ]
+    },
+    {
+      "title": "responsive 1920",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 8352
+        }
+      ]
+    },
+    {
+      "title": "layered banners meet the navbar and industries form an equal three-column grid",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3947
+        }
+      ]
+    },
+    {
+      "title": "brand headings, image framing, navigation and featured sections stay consistent",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 21723
+        }
+      ]
+    },
+    {
+      "title": "supplied main hero compositions fit desktop and mobile in both languages",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 23634
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1280x720",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10133
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1366x768",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10236
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1440x800",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10423
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1536x864",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 9517
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/profile/",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7157
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/projects/",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5359
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/industries/",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5251
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/services/",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4974
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/blog/",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3379
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1366x600",
+      "ok": true,
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7769
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    "en-blog-hero-1280x720.png",
+    "en-blog-hero-1366x768.png",
+    "en-blog-hero-1440.png",
+    "en-blog-hero-375.png",
+    "en-industries-hero-1280x720.png",
+    "en-industries-hero-1366x768.png",
+    "en-industries-hero-1440.png",
+    "en-industries-hero-375.png",
+    "en-profile-hero-1280x720.png",
+    "en-profile-hero-1366x600.png",
+    "en-profile-hero-1366x768.png",
+    "en-profile-hero-1440.png",
+    "en-profile-hero-375.png",
+    "en-projects-hero-1280x720.png",
+    "en-projects-hero-1366x768.png",
+    "en-projects-hero-1440.png",
+    "en-projects-hero-375.png",
+    "en-services-hero-1280x720.png",
+    "en-services-hero-1366x768.png",
+    "en-services-hero-1440.png",
+    "en-services-hero-375.png",
+    "id-blog-hero-1280x720.png",
+    "id-blog-hero-1366x768.png",
+    "id-blog-hero-1440.png",
+    "id-blog-hero-375.png",
+    "id-contact-navbar-scrolled-1440.png",
+    "id-industries-1440.png",
+    "id-industries-375.png",
+    "id-industries-hero-1280x720.png",
+    "id-industries-hero-1366x768.png",
+    "id-industries-hero-1440.png",
+    "id-industries-hero-375.png",
+    "id-profile-1440.png",
+    "id-profile-375.png",
+    "id-profile-hero-1280x720.png",
+    "id-profile-hero-1366x600.png",
+    "id-profile-hero-1366x768.png",
+    "id-profile-hero-1440.png",
+    "id-profile-hero-375.png",
+    "id-projects-1440.png",
+    "id-projects-375.png",
+    "id-projects-hero-1280x720.png",
+    "id-projects-hero-1366x768.png",
+    "id-projects-hero-1440.png",
+    "id-projects-hero-375.png",
+    "id-services-1440.png",
+    "id-services-375.png",
+    "id-services-hero-1280x720.png",
+    "id-services-hero-1366x768.png",
+    "id-services-hero-1440.png",
+    "id-services-hero-375.png",
+    "id-services-navbar-scrolled-1440.png",
+    "id-services-navbar-top-1440.png"
+  ],
+  "performanceReport": "compact-heroes-performance.json",
+  "baselineReport": "compact-heroes-baseline.json",
+  "earlierCompleteBrowserBaseline": "browser-summary.json"
+}
