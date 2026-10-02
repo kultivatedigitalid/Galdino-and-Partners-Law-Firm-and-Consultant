@@ -1,0 +1,25 @@
+{
+  "tool": "Built-in image_gen editing",
+  "date": "2026-10-02",
+  "edits": [
+    {
+      "output": "src/assets/hero-services-layered-cutout-v3.webp",
+      "reference": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 05_30_35 PM.png",
+      "transparentBackground": true,
+      "prompt": "Edit target: supplied Services hero mockup. Extract ONLY the four foreground business professionals seated at the desk and the foreground desktop papers/laptop, as a photorealistic monochrome transparent PNG cutout for a website. Preserve precisely the four people, their existing faces, expressions, hair, black formal clothing, positions, gestures, and all visible hands; keep their present activity reviewing a document together. Remove completely all navbar, logos, letters, captions, red rectangles, buttons, city skyline, architectural backdrop, rear desk/background and blurred foreground corner overlays. No text, no symbols, no background whatsoever: true alpha transparency around natural outlines. Recover unobscured natural sleeve/shoulder outlines where needed, while keeping the same four people and proportions. Frame the four-person group plus the useful front desk tightly in a wide approximately 2:1 landscape image; no large blank transparent band above their heads. Keep every face and hand fully visible and natural. Leave only a small transparent side margin beyond the outer sleeves so neither side is cut by a straight image edge. The lower desk can extend to the bottom canvas edge. This is a photographic cutout asset, not a rendered website, no UI or new layout."
+    },
+    {
+      "output": "src/assets/hero-services-layered-backdrop-v3.webp",
+      "reference": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 05_30_35 PM.png",
+      "transparentBackground": false,
+      "prompt": "Edit target: this supplied Services website mockup. Produce only its background artwork as a wide landscape image of the same approximately 2:1 proportions. Remove ALL user interface: entire navbar, every logo, all letters, title, labels, numbered annotations, buttons and fine printed words. Remove the entire group of four foreground people, their desk, laptop and foreground office objects; restore the architectural scene naturally behind their former positions. Preserve the existing light gray/off-white background, the architectural/city collage, dark facade at the lower left, translucent red architectural rectangle on the left, tall pale block and slim gray facade at the right, and subtle blueprint-paper motif at the lower right. Preserve large clean pale negative space in the upper center for live website copy. No people, no type, no branding, no UI, no arbitrary new red blocks. Retain the restrained monochrome/red composition from the provided reference, not a new invented scene. This is a background photography/design asset, not a website screenshot."
+    },
+    {
+      "output": "src/assets/hero-about-layered-cutout-v3.webp",
+      "reference": "C:/Users/Joshua/.codex/generated_images/01a0e792-9517-75e3-815d-bf814cc4d01b/exec-2ee0dc26-a07f-40c1-9cef-31080eb89c87.png",
+      "originalReference": "src/assets/hero-about-layered-cutout.webp",
+      "transparentBackground": true,
+      "prompt": "Edit target: this five-person photographic cutout. This is a precise edge repair, not a new photograph. The left man's sleeve and right man's suit still touch and are clipped by the vertical image boundaries. Expand the canvas horizontally and reconstruct those missing outer sleeve contours completely. CRITICAL: center the entire people-and-desk group inside only the middle 80 percent of the image, leaving at least 10 percent genuinely transparent empty space on BOTH left and right. No person's sleeve, shoulder, hair or hand may touch either left or right canvas boundary. The five people must be fully bounded by their natural suit contours, with transparency beyond those contours. Keep all five original faces, poses, hands, clothing, desk, laptop, papers and books unchanged. Preserve the monochrome photographic style. Wide roughly 2:1 landscape transparent PNG. Desk can meet the bottom edge, but people cannot touch the side edges. Remove unused top padding so the tallest head is only a small distance below the top, with no blank top band. No added people, no UI, no words, no skyline, no new background."
+    }
+  ]
+}

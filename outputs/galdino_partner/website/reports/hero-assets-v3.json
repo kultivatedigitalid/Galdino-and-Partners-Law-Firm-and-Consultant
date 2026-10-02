@@ -1,0 +1,41 @@
+[
+  {
+    "key": "services-backdrop",
+    "source": "C:/Users/Joshua/.codex/generated_images/01a0e792-9517-75e3-815d-bf814cc4d01b/exec-316e442d-8f0c-4b00-a48f-d28e4b4cbbc5.png",
+    "output": "src/assets/hero-services-layered-backdrop-v3.webp",
+    "width": 1782,
+    "height": 883,
+    "hasAlpha": false,
+    "opaqueTop": 0,
+    "photoTop": 0,
+    "bytes": 63388,
+    "sha256": "7877d59e26d77988116fa5fb6961a8e997d58e6267f23ddf63193c4734d0b782",
+    "method": "Built-in image_gen edit; WebP encoding only, no raster cropping or resizing"
+  },
+  {
+    "key": "services-cutout",
+    "source": "C:/Users/Joshua/.codex/generated_images/01a0e792-9517-75e3-815d-bf814cc4d01b/exec-a30d44f4-1c20-4b1e-a781-e9a77f1579c2.png",
+    "output": "src/assets/hero-services-layered-cutout-v3.webp",
+    "width": 1774,
+    "height": 887,
+    "hasAlpha": true,
+    "opaqueTop": 167,
+    "photoTop": 159,
+    "bytes": 170930,
+    "sha256": "a1a1504d6ef9c2de558bc49889706031b2e0f79248fa23d5d6936b3affe2595f",
+    "method": "Built-in image_gen edit; WebP encoding only, no raster cropping or resizing"
+  },
+  {
+    "key": "about-cutout",
+    "source": "C:/Users/Joshua/.codex/generated_images/01a0e792-9517-75e3-815d-bf814cc4d01b/exec-06d9a367-88dd-46fc-955f-1bcf9aa34a65.png",
+    "output": "src/assets/hero-about-layered-cutout-v3.webp",
+    "width": 1774,
+    "height": 887,
+    "hasAlpha": true,
+    "opaqueTop": 156,
+    "photoTop": 148,
+    "bytes": 172346,
+    "sha256": "59e7ce60e2e90714f6ece75d580fe4051666853bd75cff33be5560b002995a92",
+    "method": "Built-in image_gen edit; WebP encoding only, no raster cropping or resizing"
+  }
+]

@@ -8,12 +8,13 @@ const {locale,page}=Astro.props;
 const hero=layeredHeroes[page],text=hero.content[locale];
 const destination=hero.destination==='contact'?'/'+locale+'/contact/':hero.destination;
 const titleId=page+'-hero-title';
+const visiblePhotoHeight=hero.cutout.height-hero.photoTop;
+const photoStyle='--photo-scale:'+hero.cutout.height/visiblePhotoHeight+';--photo-aspect:'+hero.cutout.width+'/'+visiblePhotoHeight;
 ---
 <section class:list={['layered-hero','layered-hero--'+page]} lang={locale} aria-labelledby={titleId}>
  <Image class="layered-hero__backdrop" src={hero.backdrop} alt="" aria-hidden="true" widths={[400,800,1200,1600,1784]} sizes="100vw" loading="eager" fetchpriority="high" format="webp" quality={85}/>
  <div class="container-shell layered-hero__inner">
   <div class="layered-hero__copy">
-   {text.kicker&&<p class="layered-hero__kicker">{text.kicker}</p>}
    <h1 id={titleId}><span class="layered-hero__highlight">{text.titleStart}</span>{' '}{text.titleLines.map(line=><span class="layered-hero__title-line">{line}{' '}</span>)}</h1>
    <p class="layered-hero__lead">{text.lead}</p>
    <a class="ed-button layered-hero__cta" href={destination}>{text.cta}<ArrowIcon/></a>
@@ -21,18 +22,15 @@ const titleId=page+'-hero-title';
  </div>
  <div class="layered-hero__annotation layered-hero__annotation--left" aria-hidden="true"><span class="layered-hero__index">01</span><span>{text.left}</span></div>
  <div class="layered-hero__annotation layered-hero__annotation--right" aria-hidden="true"><span class="layered-hero__index">02</span><span>{text.right}</span></div>
- <figure class="layered-hero__visual">
+ <figure class="layered-hero__visual" style={photoStyle}>
   <Image class="layered-hero__image" src={hero.cutout} alt={text.alt} widths={[400,640,800,960,1280,1600,1784]} sizes="(max-width:640px) calc(100vw - 24px), (max-height:900px) 117vh, 76rem" loading="eager" fetchpriority="high" format="webp" quality={85}/>
  </figure>
 </section>
 <style>
 .layered-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;height:100svh;min-height:0;overflow:clip;background:var(--brand-paper);color:var(--brand-black)}
 .layered-hero :global(.layered-hero__backdrop){position:absolute;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;object-position:center bottom;pointer-events:none}
-.layered-hero__inner{flex-shrink:0;position:relative;z-index:2;padding-top:calc(var(--site-header-height) + clamp(2rem,3svh,3rem));padding-bottom:1.5rem}
+.layered-hero__inner{flex-shrink:0;position:relative;z-index:2;padding-top:calc(var(--site-header-height) + clamp(1.5rem,2.5svh,2.5rem));padding-bottom:.75rem}
 .layered-hero__copy{width:100%;max-width:65rem;margin-inline:auto;text-align:center}
-.layered-hero__kicker{display:flex;align-items:center;justify-content:center;gap:.8rem;margin:0 auto 1.2rem;color:var(--brand-black);font-size:.7rem;font-weight:820;letter-spacing:.12em;line-height:1.35;text-transform:uppercase}
-.layered-hero__kicker::before{content:'';width:1.8rem;height:2px;background:var(--brand-red)}
-.layered-hero--experiences .layered-hero__kicker::after{content:'';width:1.8rem;height:1px;background:var(--brand-red)}
 .layered-hero h1{max-width:none;margin:0 auto;font-family:var(--font-display);font-size:var(--brand-type-hero);font-weight:570;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
 .layered-hero__highlight{display:inline-block;max-width:100%;padding:.12em .24em .17em;background:var(--brand-red);color:var(--brand-white)}
 .layered-hero__title-line{display:block;margin-top:.2em}
@@ -45,10 +43,10 @@ const titleId=page+'-hero-title';
 .layered-hero__index{display:flex;align-items:center;gap:1.2rem;font-size:.9rem;font-weight:650;letter-spacing:.12em}
 .layered-hero__index::after{height:1px;flex:1;background:rgb(11 11 12 / .3);content:''}
 .layered-hero__visual{position:relative;z-index:1;width:min(100% - 1.5rem,76rem);height:clamp(20rem,58svh,40rem);min-height:0;overflow:hidden;margin:auto auto 0}
-.layered-hero :global(.layered-hero__image){width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:grayscale(1)}
+.layered-hero :global(.layered-hero__image){position:absolute;inset:auto 0 0;width:100%;height:calc(100% * var(--photo-scale));object-fit:contain;object-position:center bottom;filter:grayscale(1)}
+.layered-hero--about :global(.layered-hero__image){mask-image:linear-gradient(90deg,transparent,#000 2.5%,#000 97.5%,transparent)}
 @media(min-width:641px) and (max-height:800px){
- .layered-hero__inner{padding-top:calc(var(--site-header-height) + 1.5rem);padding-bottom:1rem}
- .layered-hero__kicker{margin-bottom:1rem}
+ .layered-hero__inner{padding-top:calc(var(--site-header-height) + 1.5rem);padding-bottom:.75rem}
  .layered-hero__lead,.layered-hero__cta{margin-top:1rem}
 }
 @media(min-width:641px) and (max-height:640px){
@@ -61,8 +59,7 @@ const titleId=page+'-hero-title';
  .layered-hero__inner{padding-top:calc(var(--site-header-height) + 2.5rem)}
  .layered-hero h1{max-width:20ch;font-size:clamp(2.1rem,9.5vw,3rem)}
  .layered-hero__lead{font-size:var(--brand-type-lead);margin-top:1.25rem}
- .layered-hero .layered-hero__visual{height:auto;aspect-ratio:1784/882;margin-top:.75rem}
- .layered-hero :global(.layered-hero__image){height:auto}
+ .layered-hero .layered-hero__visual{height:auto;aspect-ratio:var(--photo-aspect);margin-top:.75rem}
  .layered-hero :global(.layered-hero__backdrop){inset:auto 0 0;height:60%;object-position:50% bottom;mask-image:linear-gradient(transparent,#000 20%)}
 }
 @media(prefers-reduced-motion:reduce){.layered-hero__cta,.layered-hero__cta :global(.arrow-icon){transition:none}}

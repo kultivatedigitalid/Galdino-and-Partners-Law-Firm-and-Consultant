@@ -303,6 +303,12 @@ test('supplied main hero compositions fit desktop and mobile in both languages',
    await page.goto('/'+locale+'/'+route+'/');const hero=page.locator('.layered-hero');
    await hero.locator('img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));
    await expect(hero.locator('h1')).toBeVisible();await expect(hero.locator('a')).toHaveCount(1);
+   await expect(hero.locator('.layered-hero__kicker')).toHaveCount(0);
+   if(locale==='id'){
+    const titles:Record<string,string>={services:'Layanan Jasa yang Dibutuhkan Bisnis Anda',industries:'Cakupan Industri yang kami Dukung',projects:'Pengalaman Kami dalam Berbagai Kebutuhan',blog:'Informasi Relevan untuk Bisnis Anda'};
+    if(titles[route])await expect(hero.locator('h1')).toHaveText(titles[route]);
+    if(route==='projects')await expect(hero.locator('.layered-hero__lead')).toHaveText('Pengalaman yang membantu kami memahami kebutuhan bisnis Anda.');
+   }
    await expect(hero.locator('.layered-hero__highlight')).toHaveCSS('background-color','rgb(196, 20, 42)');await expect(hero.locator('.layered-hero__highlight')).toHaveCSS('color','rgb(255, 255, 255)');
    await expect(hero.locator('.layered-hero__backdrop')).toHaveAttribute('src',new RegExp('hero-'+key+'-layered-backdrop'));
    await expect(hero.locator('.layered-hero__image')).toHaveAttribute('src',new RegExp('hero-'+key+'-layered-cutout'));
@@ -312,6 +318,15 @@ test('supplied main hero compositions fit desktop and mobile in both languages',
    expect(boxes[3]!.y+boxes[3]!.height).toBeGreaterThan(boxes[2]!.y+boxes[2]!.height);
    expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
    expect(boxes[3]!.y).toBeGreaterThan(boxes[2]!.y+boxes[2]!.height);
+   const visibleTop=await hero.locator('.layered-hero__image').evaluate((image:HTMLImageElement)=>{
+    const canvas=document.createElement('canvas');canvas.width=image.naturalWidth;canvas.height=image.naturalHeight;
+    const context=canvas.getContext('2d')!;context.drawImage(image,0,0);
+    const pixels=context.getImageData(0,0,canvas.width,canvas.height).data;
+    let row=0;while(row<canvas.height){let found=false;for(let x=0;x<canvas.width;x++)if(pixels[(row*canvas.width+x)*4+3]>20){found=true;break;}if(found)break;row++;}
+    const box=image.getBoundingClientRect(),scale=Math.min(box.width/image.naturalWidth,box.height/image.naturalHeight);
+    return box.bottom-image.naturalHeight*scale+row*scale;
+   });
+   expect(visibleTop,'Only transparent top padding is outside the frame').toBeGreaterThanOrEqual(boxes[3]!.y-1);
    if(width===375){await expect(hero.locator('.layered-hero__annotation').first()).not.toBeVisible();}
    else{expect((await hero.boundingBox())!.height).toBeLessThanOrEqual(1000);expect(boxes[3]!.y+boxes[3]!.height).toBeLessThanOrEqual(1001);}
    await page.screenshot({path:testInfo.outputPath(locale+'-'+route+'-hero-'+width+'.png'),animations:'disabled'});
@@ -345,3 +360,47 @@ for(const viewport of [{width:1366,height:600},{width:1280,height:720},{width:13
   }
  });
 }
+
+test('home logo strip moves left, pauses, resumes and respects reduced motion',async({page},testInfo)=>{
+ await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
+ await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/id/');
+ const strip=page.locator('[data-client-marquee]'),track=strip.locator('.client-marquee__track');
+ expect(await page.locator('.home-hero').evaluate(el=>el.nextElementSibling?.matches('[data-client-marquee]'))).toBe(true);
+ await expect(strip).toHaveCSS('background-color','rgb(196, 20, 42)');
+ await expect(strip.locator('ul').first().locator('li')).toHaveCount(6);
+ await strip.scrollIntoViewIfNeeded();await page.mouse.move(0,0);
+ const initial=(await track.boundingBox())!.x;
+ await expect.poll(async()=>((await track.boundingBox())!.x)).toBeLessThan(initial-2);
+ const control=strip.locator('button');await expect(control).toHaveAccessibleName('Jeda pergerakan logo');
+ await strip.hover();await expect(track).toHaveCSS('animation-play-state','paused');
+ await page.mouse.move(0,0);await control.focus();await expect(track).toHaveCSS('animation-play-state','paused');
+ await control.evaluate(el=>(el as HTMLElement).blur());await expect(track).toHaveCSS('animation-play-state','running');
+ await control.click();await expect(control).toHaveAttribute('aria-pressed','true');await expect(control).toHaveAccessibleName('Lanjutkan pergerakan logo');
+ await expect(track).toHaveCSS('animation-play-state','paused');
+ expect((await new AxeBuilder({page}).include('[data-client-marquee]').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
+ await page.mouse.move(0,0);await control.evaluate(el=>(el as HTMLElement).blur());const stopped=(await track.boundingBox())!.x;
+ await page.waitForTimeout(350);expect(Math.abs((await track.boundingBox())!.x-stopped)).toBeLessThan(1);
+ await control.click();await expect(control).toHaveAttribute('aria-pressed','false');await expect(control).toHaveAccessibleName('Jeda pergerakan logo');
+ await page.mouse.move(0,0);await control.evaluate(el=>(el as HTMLElement).blur());
+ await expect.poll(async()=>((await track.boundingBox())!.x)).toBeLessThan(stopped-2);
+ await page.screenshot({path:testInfo.outputPath('id-home-logo-strip-1440.png'),animations:'disabled'});
+ await page.emulateMedia({reducedMotion:'reduce'});await expect(strip.locator('button')).not.toBeVisible();
+ await expect(strip.locator('ul').nth(1)).not.toBeVisible();for(const logo of await strip.locator('ul').first().locator('li').all())await expect(logo).toBeVisible();
+ await page.screenshot({path:testInfo.outputPath('id-home-logo-strip-1440-reduced-motion.png'),animations:'disabled'});
+ await page.goto('/en/');await expect(page.locator('[data-client-marquee]')).toHaveAttribute('aria-label','Brands in the portfolio');
+ await page.emulateMedia({reducedMotion:'no-preference'});await page.setViewportSize({width:375,height:900});await page.goto('/id/');
+ await strip.scrollIntoViewIfNeeded();await control.focus();await expect(track).toHaveCSS('animation-play-state','paused');
+ expect((await new AxeBuilder({page}).include('[data-client-marquee]').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);
+ await page.screenshot({path:testInfo.outputPath('id-home-logo-strip-375.png'),animations:'disabled'});
+});
+
+test('home logo strip shows all six wordmarks without JavaScript on mobile',async({browser},testInfo)=>{
+ const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:375,height:900}});
+ try{
+  const page=await context.newPage();await page.goto('http://localhost:4327/id/');const strip=page.locator('[data-client-marquee]');
+  await strip.scrollIntoViewIfNeeded();await expect(strip.locator('button')).not.toBeVisible();await expect(strip.locator('ul').nth(1)).not.toBeVisible();
+  const logos=strip.locator('ul').first().locator('li');await expect(logos).toHaveCount(6);for(const logo of await logos.all())await expect(logo).toBeVisible();
+  expect(await page.locator('html').evaluate(el=>el.scrollWidth)).toBeLessThanOrEqual(375);
+  await page.screenshot({path:testInfo.outputPath('id-home-logo-strip-375-no-js.png'),animations:'disabled'});
+ }finally{await context.close();}
+});

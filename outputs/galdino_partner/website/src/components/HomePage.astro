@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeHero from './home/HomeHero.astro';
+import ClientMarquee from './home/ClientMarquee.astro';
 import ServiceCarousel from './home/ServiceCarousel.astro';
 import WhyGaldino from './home/WhyGaldino.astro';
 import CompanySnapshot from './home/CompanySnapshot.astro';
@@ -27,6 +28,7 @@ const seo = id ? {
 <BaseLayout immersive={false} locale={locale} title={seo.title} description={seo.description}>
   <div class="home-redesign">
     <HomeHero locale={locale} />
+    <ClientMarquee locale={locale} />
     <CompanySnapshot locale={locale} />
     <ServiceCarousel locale={locale} />
     <WhyGaldino locale={locale} />

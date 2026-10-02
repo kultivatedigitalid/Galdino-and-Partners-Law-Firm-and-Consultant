@@ -1,0 +1,150 @@
+[
+  {
+    "name": "home",
+    "path": "/id/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-10-02T11:47:47.638Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 89,
+      "accessibility": 96,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "first-contentful-paint": 2968.476131563506,
+      "largest-contentful-paint": 2981.976131563505,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 51.999999999999545,
+      "speed-index": 3319.700865634856
+    },
+    "failedAudits": [
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay"
+      },
+      {
+        "id": "mainthread-work-breakdown",
+        "title": "Minimize main-thread work"
+      },
+      {
+        "id": "color-contrast",
+        "title": "Background and foreground colors do not have a sufficient contrast ratio."
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing"
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree"
+      }
+    ]
+  },
+  {
+    "name": "services",
+    "path": "/id/services/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-10-02T11:47:59.903Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 96,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "first-contentful-paint": 2030.2932535095651,
+      "largest-contentful-paint": 2497.5865070191303,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 0,
+      "speed-index": 2551.701643014004
+    },
+    "failedAudits": [
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing"
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery"
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree"
+      }
+    ]
+  },
+  {
+    "name": "about",
+    "path": "/id/profile/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-10-02T11:48:11.360Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 94,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "first-contentful-paint": 2300.9155092175233,
+      "largest-contentful-paint": 2642.8310184350457,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 36.99999999999977,
+      "speed-index": 2695.648894205936
+    },
+    "failedAudits": [
+      {
+        "id": "mainthread-work-breakdown",
+        "title": "Minimize main-thread work"
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names."
+      },
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing"
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery"
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree"
+      }
+    ]
+  },
+  {
+    "name": "home-final",
+    "path": "/id/",
+    "device": "Lighthouse default mobile simulation",
+    "date": "2026-10-02T11:55:41.168Z",
+    "version": "13.5.0",
+    "scores": {
+      "performance": 93,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 69
+    },
+    "metrics": {
+      "first-contentful-paint": 2544.3609345110835,
+      "largest-contentful-paint": 2571.3609345110826,
+      "cumulative-layout-shift": 0,
+      "total-blocking-time": 11,
+      "speed-index": 2942.2347454004303
+    },
+    "failedAudits": [
+      {
+        "id": "is-crawlable",
+        "title": "Page is blocked from indexing"
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree"
+      }
+    ]
+  }
+]

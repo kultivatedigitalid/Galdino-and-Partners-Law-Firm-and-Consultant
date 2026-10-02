@@ -1,0 +1,403 @@
+{
+  "date": "2026-10-02",
+  "scope": "Revised main hero copy, larger alpha-safe photographs, new four-person Services composition and Home red brand marquee",
+  "browser": "Microsoft Edge through Playwright on local production build",
+  "uniqueTests": 25,
+  "passed": 25,
+  "failed": 0,
+  "flaky": 0,
+  "runs": [
+    {
+      "scope": "25-test initial focused review",
+      "stats": {
+        "startTime": "2026-10-02T11:28:25.100Z",
+        "duration": 136444.099,
+        "expected": 24,
+        "skipped": 0,
+        "unexpected": 1,
+        "flaky": 0
+      }
+    },
+    {
+      "scope": "Final three-test follow-up after marquee interaction and contrast fixes",
+      "stats": {
+        "startTime": "2026-10-02T11:52:52.997Z",
+        "duration": 21785.417,
+        "expected": 3,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "note": "Results are combined by test title across runs. The earlier broad checks pass; the final run replaces the marquee and Home accessibility results. Initial interaction assertions were corrected to track changing button labels and avoid screenshot animation resets; hover/focus specificity and moving-track background contrast were also fixed.",
+  "responsive": {
+    "widths": [
+      320,
+      375,
+      430,
+      768,
+      900,
+      1024,
+      1280,
+      1440,
+      1920
+    ],
+    "routes": 17,
+    "routeViewportChecks": 153
+  },
+  "heroReview": {
+    "locales": [
+      "id",
+      "en"
+    ],
+    "mainPages": 5,
+    "desktopViewports": [
+      "1366x600",
+      "1280x720",
+      "1366x768",
+      "1440x800",
+      "1536x864",
+      "1440x1000"
+    ],
+    "mobileViewport": "375x900",
+    "routeViewportChecks": 70,
+    "visiblePhotoTop": "Decoded alpha rows confirm only transparent upper pixels lie outside the frame at desktop and mobile review sizes"
+  },
+  "accessibility": {
+    "mainPages": 6,
+    "wcagViolations": 0,
+    "animatedStripWidths": [
+      1440,
+      375
+    ],
+    "animatedStripViolations": 0
+  },
+  "checks": {
+    "astroFiles": 132,
+    "astroErrors": 0,
+    "unitTests": 20,
+    "validatedPages": 167,
+    "build": "passed"
+  },
+  "tests": [
+    {
+      "title": "responsive 320",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 10507,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "responsive 375",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 18445,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "responsive 430",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 11097,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "responsive 768",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 10872,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "responsive 900",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 10550,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "responsive 1024",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 10204,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "responsive 1280",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 9850,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "responsive 1440",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 19584,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "responsive 1920",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 9126,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 9291,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/profile/",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4222,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/projects/",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3963,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/industries/",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3325,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/services/",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3395,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "accessibility /id/blog/",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3468,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "layered banners meet the navbar and industries form an equal three-column grid",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 4014,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "brand headings, image framing, navigation and featured sections stay consistent",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 22894,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "supplied main hero compositions fit desktop and mobile in both languages",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 27175,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1366x600",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 9856,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1280x720",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 9807,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1366x768",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 10238,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1440x800",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 10512,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "main heroes fit first laptop viewport 1536x864",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 11305,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "home logo strip moves left, pauses, resumes and respects reduced motion",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 15523,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "home logo strip shows all six wordmarks without JavaScript on mobile",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 3969,
+          "retry": 0
+        }
+      ]
+    }
+  ],
+  "savedScreenshots": 64,
+  "screenshots": [
+    "reports/screenshots/id-services-hero-375.png",
+    "reports/screenshots/id-services-hero-1440.png",
+    "reports/screenshots/id-services-hero-1280x720.png",
+    "reports/screenshots/id-services-hero-1366x768.png",
+    "reports/screenshots/id-industries-hero-375.png",
+    "reports/screenshots/id-industries-hero-1440.png",
+    "reports/screenshots/id-industries-hero-1280x720.png",
+    "reports/screenshots/id-industries-hero-1366x768.png",
+    "reports/screenshots/id-projects-hero-375.png",
+    "reports/screenshots/id-projects-hero-1440.png",
+    "reports/screenshots/id-projects-hero-1280x720.png",
+    "reports/screenshots/id-projects-hero-1366x768.png",
+    "reports/screenshots/id-blog-hero-375.png",
+    "reports/screenshots/id-blog-hero-1440.png",
+    "reports/screenshots/id-blog-hero-1280x720.png",
+    "reports/screenshots/id-blog-hero-1366x768.png",
+    "reports/screenshots/id-profile-hero-375.png",
+    "reports/screenshots/id-profile-hero-1440.png",
+    "reports/screenshots/id-profile-hero-1280x720.png",
+    "reports/screenshots/id-profile-hero-1366x768.png",
+    "reports/screenshots/id-profile-hero-1366x600.png",
+    "reports/screenshots/id-home-hero-375.png",
+    "reports/screenshots/id-home-hero-1440.png",
+    "reports/screenshots/en-services-hero-375.png",
+    "reports/screenshots/en-services-hero-1440.png",
+    "reports/screenshots/en-services-hero-1280x720.png",
+    "reports/screenshots/en-services-hero-1366x768.png",
+    "reports/screenshots/en-industries-hero-375.png",
+    "reports/screenshots/en-industries-hero-1440.png",
+    "reports/screenshots/en-industries-hero-1280x720.png",
+    "reports/screenshots/en-industries-hero-1366x768.png",
+    "reports/screenshots/en-projects-hero-375.png",
+    "reports/screenshots/en-projects-hero-1440.png",
+    "reports/screenshots/en-projects-hero-1280x720.png",
+    "reports/screenshots/en-projects-hero-1366x768.png",
+    "reports/screenshots/en-blog-hero-375.png",
+    "reports/screenshots/en-blog-hero-1440.png",
+    "reports/screenshots/en-blog-hero-1280x720.png",
+    "reports/screenshots/en-blog-hero-1366x768.png",
+    "reports/screenshots/en-profile-hero-375.png",
+    "reports/screenshots/en-profile-hero-1440.png",
+    "reports/screenshots/en-profile-hero-1280x720.png",
+    "reports/screenshots/en-profile-hero-1366x768.png",
+    "reports/screenshots/en-profile-hero-1366x600.png",
+    "reports/screenshots/en-home-hero-375.png",
+    "reports/screenshots/en-home-hero-1440.png",
+    "reports/screenshots/id-375.png",
+    "reports/screenshots/id-1440.png",
+    "reports/screenshots/id-services-375.png",
+    "reports/screenshots/id-services-1440.png",
+    "reports/screenshots/id-industries-375.png",
+    "reports/screenshots/id-industries-1440.png",
+    "reports/screenshots/id-projects-375.png",
+    "reports/screenshots/id-projects-1440.png",
+    "reports/screenshots/id-profile-375.png",
+    "reports/screenshots/id-profile-1440.png",
+    "reports/screenshots/id-home-navbar-scrolled-1440.png",
+    "reports/screenshots/id-services-navbar-top-1440.png",
+    "reports/screenshots/id-services-navbar-scrolled-1440.png",
+    "reports/screenshots/id-contact-navbar-scrolled-1440.png",
+    "reports/screenshots/id-home-logo-strip-1440.png",
+    "reports/screenshots/id-home-logo-strip-1440-reduced-motion.png",
+    "reports/screenshots/id-home-logo-strip-375.png",
+    "reports/screenshots/id-home-logo-strip-375-no-js.png"
+  ],
+  "performanceReport": "reports/hero-v3-performance.json"
+}

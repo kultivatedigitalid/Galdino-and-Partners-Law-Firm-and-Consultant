@@ -1,0 +1,70 @@
+---
+import {HOME_CLIENTS} from '../../data/home';
+import type {Locale} from '../../data/site';
+interface Props {locale:Locale}
+const {locale}=Astro.props;
+const id=locale==='id';
+const pause=id?'Jeda pergerakan logo':'Pause logo movement';
+const resume=id?'Lanjutkan pergerakan logo':'Resume logo movement';
+---
+<section class="client-marquee" data-client-marquee aria-label={id?'Brand dalam portofolio':'Brands in the portfolio'}>
+ <div class="client-marquee__window">
+  <div class="client-marquee__track">
+   {[false,true].map(duplicate=><ul class="client-marquee__group" aria-hidden={duplicate?'true':undefined}>
+    {HOME_CLIENTS[locale].map(client=><li class="client-marquee__item">
+     <span class:list={['client-marquee__mark','client-marquee__mark--'+client.variant]} aria-hidden="true">{client.mark}</span>
+     <span class="client-marquee__name">{client.name.replace(/^PT /,'')}</span>
+    </li>)}
+   </ul>)}
+  </div>
+ </div>
+ <button class="client-marquee__pause" type="button" aria-label={pause} aria-pressed="false" data-pause-label={pause} data-resume-label={resume}>
+  <svg class="client-marquee__pause-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M4 3h3v10H4zm5 0h3v10H9z"/></svg>
+  <svg class="client-marquee__play-icon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="m5 3 8 5-8 5z"/></svg>
+ </button>
+</section>
+<script>
+ for(const strip of document.querySelectorAll<HTMLElement>('[data-client-marquee]')){
+  const button=strip.querySelector<HTMLButtonElement>('button')!;
+  const media=matchMedia('(prefers-reduced-motion: reduce)');
+  const sync=()=>strip.toggleAttribute('data-enhanced',!media.matches);
+  sync();media.addEventListener('change',sync);
+  if('IntersectionObserver' in window){new IntersectionObserver(entries=>strip.toggleAttribute('data-in-view',entries[0].isIntersecting)).observe(strip);}
+  else strip.setAttribute('data-in-view','');
+  button.addEventListener('click',()=>{
+   const paused=!strip.hasAttribute('data-paused');
+   strip.toggleAttribute('data-paused',paused);button.setAttribute('aria-pressed',String(paused));
+   button.setAttribute('aria-label',(paused?button.dataset.resumeLabel:button.dataset.pauseLabel)!);
+  });
+ }
+</script>
+<style>
+.client-marquee{position:relative;padding:1.15rem 3.75rem 1.15rem 1.25rem;background:var(--brand-red);color:var(--brand-white)}
+.client-marquee__window{overflow:clip}
+.client-marquee__track{background:var(--brand-red)}
+.client-marquee__group{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1.5rem;margin:0;padding:0;list-style:none}
+.client-marquee__group[aria-hidden=true]{display:none}
+.client-marquee__item{display:flex;align-items:center;gap:.65rem;min-height:2.4rem}
+.client-marquee__mark{display:grid;place-items:center;flex:0 0 2.5rem;min-height:2.25rem;font-family:var(--font-display);font-size:1.1rem;font-weight:800;line-height:1;letter-spacing:-.04em}
+.client-marquee__mark--block,.client-marquee__mark--outline{border:1px solid currentColor}
+.client-marquee__mark--round{border:1px solid currentColor;border-radius:50%}
+.client-marquee__mark--split{font-style:italic}
+.client-marquee__mark--serif{font-family:Georgia,serif}
+.client-marquee__mark--wide{border-bottom:1px solid currentColor}
+.client-marquee__name{font-size:.77rem;font-weight:700;line-height:1.2;letter-spacing:-.015em}
+.client-marquee__pause{position:absolute;right:.75rem;top:50%;display:none;place-items:center;width:2.5rem;height:2.5rem;transform:translateY(-50%);border:1px solid rgb(255 255 255 / .55);border-radius:var(--brand-cta-radius);background:transparent;color:inherit;cursor:pointer}
+.client-marquee__pause:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.client-marquee__play-icon,.client-marquee__pause[aria-pressed=true] .client-marquee__pause-icon{display:none}
+.client-marquee__pause[aria-pressed=true] .client-marquee__play-icon{display:block}
+.client-marquee[data-enhanced] .client-marquee__track{display:flex;width:max-content;animation:client-logo-slide 36s linear infinite;animation-play-state:paused}
+.client-marquee[data-enhanced] .client-marquee__group{display:flex;gap:3rem;padding-inline:1.5rem}
+.client-marquee[data-enhanced] .client-marquee__item{flex:0 0 12.5rem}
+.client-marquee[data-enhanced] .client-marquee__pause{display:grid}
+.client-marquee[data-enhanced][data-in-view]:not([data-paused]) .client-marquee__track{animation-play-state:running}
+.client-marquee[data-enhanced][data-in-view]:focus-within .client-marquee__track{animation-play-state:paused}
+@keyframes client-logo-slide{to{transform:translateX(-50%)}}
+@media(hover:hover) and (pointer:fine){.client-marquee[data-enhanced][data-in-view]:hover .client-marquee__track{animation-play-state:paused}}
+@media(max-width:1024px){.client-marquee__group{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.client-marquee__group{grid-template-columns:repeat(2,minmax(0,1fr))}.client-marquee__name{font-size:.72rem}.client-marquee{padding-left:.75rem}}
+@media(prefers-reduced-motion:reduce){.client-marquee__track{animation:none!important}}
+</style>
