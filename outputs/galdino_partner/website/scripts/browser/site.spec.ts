@@ -158,12 +158,12 @@ test('directory works without JavaScript and legacy environmental routes redirec
  expect(response.headers().location).toBe(expected.pathname+expected.search+expected.hash);expect((await request.get(response.headers().location)).status()).toBe(200);
  }
 });
-test('single-image banners meet the navbar and industries form an equal three-column grid',async({page})=>{
+test('layered banners meet the navbar and industries form an equal three-column grid',async({page})=>{
  await page.setViewportSize({width:1440,height:1000});await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
  for(const path of ['/id/services/','/id/industries/','/id/projects/','/id/blog/']){
- await page.goto(path);await expect(page.locator('.image-hero')).toHaveCount(1);await expect(page.locator('.image-hero img')).toHaveCount(1);
- expect((await page.locator('.image-hero').boundingBox())?.y).toBe(0);
- await expect(page.locator('.site-header')).toHaveClass(/site-header--immersive/);expect(await page.locator('.site-header').evaluate(el=>getComputedStyle(el).position)).toBe('fixed');
+ await page.goto(path);await expect(page.locator('.layered-hero')).toHaveCount(1);await expect(page.locator('.layered-hero img')).toHaveCount(2);
+ expect((await page.locator('.layered-hero').boundingBox())?.y).toBe(0);
+ await expect(page.locator('.site-header')).toHaveClass(/site-header--overlay/);await expect(page.locator('.site-header')).not.toHaveClass(/site-header--immersive/);expect(await page.locator('.site-header').evaluate(el=>getComputedStyle(el).position)).toBe('fixed');
  }
  await page.goto('/id/industries/');const boxes=await page.locator('.industry-tile').evaluateAll(els=>els.map(el=>{const r=el.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width}}));
  expect(boxes).toHaveLength(6);expect(boxes[0].y).toBe(boxes[1].y);expect(boxes[1].y).toBe(boxes[2].y);expect(boxes[3].y).toBe(boxes[4].y);expect(boxes[4].y).toBe(boxes[5].y);
@@ -181,8 +181,8 @@ test('brand headings, image framing, navigation and featured sections stay consi
  for(const locale of ['id','en']){
  for(const route of ['', 'profile/', 'services/', 'industries/', 'projects/', 'blog/']){
   await page.goto('/'+locale+'/'+route);
-  const hero=page.locator('.home-hero,.profile-hero,.image-hero');expect((await hero.boundingBox())!.height).toBeGreaterThanOrEqual(route==='profile/'?815:999);
-  const heroImg=route===''?hero.locator('.home-hero__image'):hero.locator('img').first();expect(await heroImg.evaluate(el=>getComputedStyle(el).objectFit)).toBe(route===''?'contain':'cover');const unfilled=await page.locator('.case-photo img,.related-cases img,.ed-figure img,.company-gallery__slide img,.work-collage img').evaluateAll(images=>images.filter(img=>getComputedStyle(img).objectFit!=='cover').length);expect(unfilled).toBe(0);
+  const hero=page.locator('.home-hero,.layered-hero');expect((await hero.boundingBox())!.height).toBeGreaterThanOrEqual(999);
+  const heroImg=route===''?hero.locator('.home-hero__image'):hero.locator('.layered-hero__image');expect(await heroImg.evaluate(el=>getComputedStyle(el).objectFit)).toBe('contain');const unfilled=await page.locator('.case-photo img,.related-cases img,.ed-figure img,.company-gallery__slide img,.work-collage img').evaluateAll(images=>images.filter(img=>getComputedStyle(img).objectFit!=='cover').length);expect(unfilled).toBe(0);
   const menu=await page.locator('.nav-menu').boundingBox();expect(Math.abs(menu!.x+menu!.width/2-720)).toBeLessThan(2);await expect(page.locator('.nav-cta')).toHaveCSS('border-top-left-radius','4px');
   if(route===''){
    await expect(hero).toHaveCSS('background-color','rgb(244, 243, 241)');
@@ -217,13 +217,13 @@ test('brand headings, image framing, navigation and featured sections stay consi
   await expect(header).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
   if(locale==='id'&&route==='services/')await page.screenshot({path:testInfo.outputPath('id-services-navbar-top-1440.png'),animations:'disabled'});
   if(route===''){await hero.locator('img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));await page.screenshot({path:testInfo.outputPath(locale+'-home-hero-1440.png'),animations:'disabled'});}
-  if(!['','profile/'].includes(route)){await expect(heroImg).toHaveAttribute('src',/hero-/);expect(await heroImg.evaluate(el=>getComputedStyle(el).objectPosition)).toBe('50% 50%');}
+  if(route!==''){await expect(heroImg).toHaveAttribute('src',/hero-.*-layered-cutout/);expect(await heroImg.evaluate(el=>getComputedStyle(el).objectPosition)).toBe('50% 100%');await expect(heroImg).toHaveCSS('filter','grayscale(1)');}
   headings.push(await page.locator('h1').evaluate(el=>{const c=getComputedStyle(el);return [c.fontFamily,c.fontSize,c.fontWeight,c.letterSpacing,c.lineHeight].join('|')}));
   await expect(page.locator('.nav-link[href="/'+locale+'/projects/"]')).toHaveText('Our Experiences');
   await expect(page.locator('.nav-link[href="/'+locale+'/profile/"]')).toHaveText('About Us');
   await expect(page.locator('.nav-link[href="/'+locale+'/contact/"]')).toHaveCount(0);
   await expect(page.locator('a[href*="profile/how-we-work"]')).toHaveCount(0);
-  const badImages=await page.locator('main img:not(.home-hero img):not(.profile-hero img):not(.image-hero img)').evaluateAll(images=>images.filter(img=>{const c=getComputedStyle(img);return c.objectPosition!=='50% 50%'}).length);expect(badImages).toBe(0);
+  const badImages=await page.locator('main img:not(.home-hero img):not(.layered-hero img):not(.image-hero img)').evaluateAll(images=>images.filter(img=>{const c=getComputedStyle(img);return c.objectPosition!=='50% 50%'}).length);expect(badImages).toBe(0);
  }
  }
  expect(new Set(headings).size).toBe(1);
@@ -231,7 +231,7 @@ test('brand headings, image framing, navigation and featured sections stay consi
  await page.setViewportSize({width:375,height:900});
  for(const locale of ['id','en']){await page.goto('/'+locale+'/');await page.locator('.home-hero img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));await page.screenshot({path:testInfo.outputPath(locale+'-home-hero-375.png'),animations:'disabled'});}
  await page.setViewportSize({width:375,height:1000});
- for(const route of ['projects/']){await page.goto('/id/'+route);await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.decode());expect(await page.locator('.image-hero img').evaluate((img:HTMLImageElement)=>img.currentSrc)).toContain('hero-experiences-user-v2');}
+ for(const route of ['projects/']){await page.goto('/id/'+route);await page.locator('.layered-hero__image').evaluate((img:HTMLImageElement)=>img.decode());expect(await page.locator('.layered-hero__image').evaluate((img:HTMLImageElement)=>img.currentSrc)).toContain('hero-experiences-layered-cutout');}
  await page.setViewportSize({width:1440,height:1000});
  await page.goto('/id/');await expect(page.locator('#why-galdino-title')).toHaveText('Kenapa Galdino & Partner');
  await expect(page.locator('.why-section')).toHaveCSS('background-color','rgb(11, 11, 12)');
@@ -252,7 +252,7 @@ test('brand headings, image framing, navigation and featured sections stay consi
 test('main hero consultation paths and complete category cards',async({page})=>{
  for(const locale of ['id','en']){
   for(const route of ['services/','industries/','projects/','blog/']){
-   await page.goto('/'+locale+'/'+route);await expect(page.locator('.image-hero__kicker')).toBeVisible();await expect(page.locator('.image-hero__cta')).toHaveAttribute('href','/'+locale+'/contact/');await expect(page.locator('.ed-breadcrumb')).toHaveCount(0);
+   await page.goto('/'+locale+'/'+route);const target=route==='projects/'?'#experiences':route==='blog/'?'#latest-insights':'/'+locale+'/contact/';await expect(page.locator('.layered-hero__cta')).toHaveAttribute('href',target);if(target.startsWith('#')){await page.locator('.layered-hero__cta').click();await expect(page.locator(target)).toBeInViewport();}await expect(page.locator('.ed-breadcrumb')).toHaveCount(0);
   }
   for(const route of locale==='id'?['reklame','tata-ruang','bangunan-konstruksi','lingkungan','lalu-lintas-akses','iso']:['advertising-permits','spatial-planning','buildings-construction','environmental-approvals','traffic-road-access','iso-management-systems']){
    await page.goto('/'+locale+'/services/'+route+'/');await expect(page.locator('.category-process .permit-pathway li')).toHaveCount(4);await expect(page.locator('.category-process')).toHaveCSS('background-color','rgb(11, 11, 12)');await expect(page.locator('.related-cases')).toHaveCount(0);
@@ -289,6 +289,31 @@ test('experience details describe the actual challenge without an insights segme
    await expect(page.getByRole('heading',{name:locale==='id'?'Lihat Kasus Lainnya':'View Other Cases',exact:true})).toBeVisible();
    await expect(page.locator('main')).not.toContainText(locale==='id'?'Membaca kebutuhan sebelum menentukan langkah.':'Understand the need before deciding the next step.');
    if(slug==='nusa-teknologi')await expect(page.getByRole('heading',{name:locale==='id'?'Dokumen Keamanan Informasi Tersebar.':'Information Security Records Were Scattered.',exact:true})).toBeVisible();
+  }
+ }
+});
+
+// The supplied cutouts remain independent from live copy and navigation.
+test('supplied main hero compositions fit desktop and mobile in both languages',async({page},testInfo)=>{
+ await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
+ const pages=[['services','services'],['industries','industries'],['projects','experiences'],['blog','insights'],['profile','about']];
+ for(const width of [1440,375]){
+  await page.setViewportSize({width,height:width===1440?1000:900});
+  for(const locale of ['id','en'])for(const [route,key] of pages){
+   await page.goto('/'+locale+'/'+route+'/');const hero=page.locator('.layered-hero');
+   await hero.locator('img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));
+   await expect(hero.locator('h1')).toBeVisible();await expect(hero.locator('a')).toHaveCount(1);
+   await expect(hero.locator('.layered-hero__highlight')).toHaveCSS('background-color','rgb(196, 20, 42)');await expect(hero.locator('.layered-hero__highlight')).toHaveCSS('color','rgb(255, 255, 255)');
+   await expect(hero.locator('.layered-hero__backdrop')).toHaveAttribute('src',new RegExp('hero-'+key+'-layered-backdrop'));
+   await expect(hero.locator('.layered-hero__image')).toHaveAttribute('src',new RegExp('hero-'+key+'-layered-cutout'));
+   await expect(page.locator('.brand')).toHaveCSS('color','rgb(11, 11, 12)');await expect(page.locator('.site-header')).toHaveCSS('position','fixed');
+   const boxes=await Promise.all(['h1','.layered-hero__lead','.layered-hero__cta','.layered-hero__visual'].map(selector=>hero.locator(selector).boundingBox()));
+   expect(boxes[1]!.y).toBeGreaterThan(boxes[0]!.y+boxes[0]!.height);expect(boxes[2]!.y).toBeGreaterThan(boxes[1]!.y+boxes[1]!.height);
+   expect(boxes[3]!.y+boxes[3]!.height).toBeGreaterThan(boxes[2]!.y+boxes[2]!.height);
+   expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
+   if(width===375){await expect(hero.locator('.layered-hero__annotation').first()).not.toBeVisible();expect(boxes[3]!.y).toBeGreaterThan(boxes[2]!.y+boxes[2]!.height);}
+   await page.screenshot({path:testInfo.outputPath(locale+'-'+route+'-hero-'+width+'.png'),animations:'disabled'});
+   if(route==='profile'){await hero.locator('a').click();await expect(page.locator('#team')).toBeInViewport();}
   }
  }
 });

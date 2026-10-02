@@ -1,22 +1,21 @@
 ---
 import {Image} from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ImageHero from '../shared/ImageHero.astro';
+import LayeredHero from '../shared/LayeredHero.astro';
 import HomeFinalCta from '../home/HomeFinalCta.astro';
 import PermitProcess from '../home/PermitProcess.astro';
 import {EXPERIENCES,experienceUrl} from '../../data/experiences';
 import {experienceImages} from '../../data/experience-images';
-import {heroImages} from '../../data/hero-images';
 import {SERVICE_CATEGORIES} from '../../data/service-catalog';
 import {serviceById,serviceUrl} from '../../data/services';
 import type {Locale} from '../../data/site';
 interface Props{locale:Locale}const {locale}=Astro.props,id=locale==='id';
 const industries=[...new Set(EXPERIENCES.map(e=>e.content[locale].industry))],stages=[...new Set(EXPERIENCES.map(e=>e.content[locale].stage))];
 ---
-<BaseLayout immersive locale={locale} title="Our Experiences | Galdino & Partner" description={id?'Telusuri konteks, pendekatan, dan hasil pendampingan perizinan lintas industri.':'Explore the context, approach and outcomes of licensing engagements across industries.'}>
+<BaseLayout immersive={false} overlayHeader locale={locale} title="Our Experiences | Galdino & Partner" description={id?'Telusuri konteks, pendekatan, dan hasil pendampingan perizinan lintas industri.':'Explore the context, approach and outcomes of licensing engagements across industries.'}>
 <div class="editorial evidence-journal">
-<ImageHero locale={locale} kicker="Our Experiences" consultation title={id?'Pendampingan untuk Kebutuhan Bisnis Anda':'Support for Your Business Needs'} description={id?'Konteks, proses, dan hasil kerja.':'Context, process and deliverables.'} image={heroImages.experiences} breadcrumbs={[{name:id?'Our Experiences':'Our Experiences'}]}/><div class="container-shell">
-<form class="case-filters" aria-label={id?'Filter Our Experiences':'Experience filters'}>
+<LayeredHero locale={locale} page="experiences"/><div class="container-shell">
+<form id="experiences" class="case-filters" aria-label={id?'Filter Our Experiences':'Experience filters'}>
 <label>{id?'Industri':'Industry'}<select id="case-industry"><option value="">{id?'Semua industri':'All industries'}</option>{industries.map(x=><option value={x}>{x}</option>)}</select></label>
 <label>{id?'Bidang layanan':'Practice area'}<select id="case-service"><option value="">{id?'Semua bidang':'All practice areas'}</option>{SERVICE_CATEGORIES.filter(cat=>EXPERIENCES.some(e=>e.services.some(s=>serviceById(s)?.category===cat.id))).map(cat=><option value={cat.id}>{cat.content[locale].title}</option>)}</select></label>
 <label>{id?'Kebutuhan bisnis':'Business requirement'}<select id="case-stage"><option value="">{id?'Semua kebutuhan':'All requirements'}</option>{stages.map(x=><option value={x}>{x}</option>)}</select></label>
@@ -37,7 +36,7 @@ const industries=[...new Set(EXPERIENCES.map(e=>e.content[locale].industry))],st
 </script>
 
 <style>
-.case-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:1rem;align-items:end;border-block:1px solid var(--brand-line-strong);padding:1.2rem 0;margin-top:var(--brand-section-space)}
+.case-filters{scroll-margin-top:calc(var(--site-header-height) + 1rem);display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:1rem;align-items:end;border-block:1px solid var(--brand-line-strong);padding:1.2rem 0;margin-top:var(--brand-section-space)}
 .case-filters label{display:grid;gap:.5rem;font-size:.75rem;font-weight:700}
 .case-filters select{width:100%;min-width:0;background:transparent;border:1px solid var(--brand-line-strong);padding:.7rem;min-height:2.75rem;border-radius:0;font-size:.85rem;color:var(--brand-black)}
 .case-filters button{min-height:2.75rem;padding:.7rem 1rem;border:0;background:var(--brand-red);color:white;font-size:.8rem;cursor:pointer}

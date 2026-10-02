@@ -1,20 +1,19 @@
 ---
 import {Image} from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ImageHero from '../shared/ImageHero.astro';
+import LayeredHero from '../shared/LayeredHero.astro';
 import HomeFinalCta from '../home/HomeFinalCta.astro';
 import PermitProcess from '../home/PermitProcess.astro';
 import {SERVICES,serviceUrl} from '../../data/services';
 import {SERVICE_CATEGORIES,categoryUrl} from '../../data/service-catalog';
 import {categoryActivityImage} from '../../data/service-images';
-import {heroImages} from '../../data/hero-images';
 import type {Locale} from '../../data/site';
 interface Props{locale:Locale}
 const {locale}=Astro.props,id=locale==='id';
 ---
-<BaseLayout immersive locale={locale} title={id?'Layanan Perizinan & Sistem Manajemen | Galdino & Partner':'Permitting & Management System Services | Galdino & Partner'} description={id?'Temukan layanan reklame, tata ruang, bangunan, lingkungan, lalu lintas, dan ISO melalui nama izin atau kebutuhan usaha Anda.':'Find advertising, spatial, building, environmental, traffic and ISO services by permit name or business requirement.'}>
+<BaseLayout immersive={false} overlayHeader locale={locale} title={id?'Layanan Perizinan & Sistem Manajemen | Galdino & Partner':'Permitting & Management System Services | Galdino & Partner'} description={id?'Temukan layanan reklame, tata ruang, bangunan, lingkungan, lalu lintas, dan ISO melalui nama izin atau kebutuhan usaha Anda.':'Find advertising, spatial, building, environmental, traffic and ISO services by permit name or business requirement.'}>
 <div class="editorial">
-<ImageHero locale={locale} kicker={id?'Layanan Kami':'Our Services'} consultation title={id?'Jasa Perizinan untuk Bisnis Anda':'Business Permits for Your Company'} description={id?'Hubungkan rencana usaha dengan dokumen, izin, dan sistem yang Anda perlukan.':'Connect your business plans to the documents, approvals and systems you need.'} image={heroImages.services} breadcrumbs={[{name:id?'Layanan':'Services'}]}/>
+<LayeredHero locale={locale} page="services"/>
 <div class="container-shell">
 <section class="ed-section" aria-labelledby="practice-areas"><h2 id="practice-areas">{id?'Bidang usaha':'Practice areas'}</h2>
 <div class="category-index">{SERVICE_CATEGORIES.map(category=>{

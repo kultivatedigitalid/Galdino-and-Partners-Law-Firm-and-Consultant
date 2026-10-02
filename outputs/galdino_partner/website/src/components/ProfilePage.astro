@@ -1,11 +1,9 @@
 ---
-import { Image } from 'astro:assets';
-import heroImage from '../assets/hero-about-user-v2.webp';
+import LayeredHero from './shared/LayeredHero.astro';
 import { PROFILE_CONTENT } from '../data/profile';
 import type { Locale } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CompanyGallery from './CompanyGallery.astro';
-import ArrowIcon from './icons/ArrowIcon.astro';
 import HomeFinalCta from './home/HomeFinalCta.astro';
 import FounderStory from './profile/FounderStory.astro';
 import InsideWork from './profile/InsideWork.astro';
@@ -42,34 +40,11 @@ const profileSchema = {
 };
 ---
 
-<BaseLayout locale={locale} title={content.seo.title} description={content.seo.description}>
+<BaseLayout immersive={false} overlayHeader locale={locale} title={content.seo.title} description={content.seo.description}>
   <script slot="head" is:inline type="application/ld+json" set:html={JSON.stringify(profileSchema)} />
 
   <div class="profile-redesign">
-    <section class="profile-hero" aria-labelledby="profile-hero-title">
-      <figure class="profile-hero__visual">
-        <Image
-          src={heroImage}
-          alt={content.hero.imageAlt}
-          widths={[800, 1200, 1672]}
-          sizes="100vw"
-          loading="eager"
-          fetchpriority="high"
-          quality={84}
-        />
-        <figcaption>{content.hero.imagePlaceholder}</figcaption>
-      </figure>
-      <div class="container-shell profile-hero__inner">
-        <div class="profile-hero__copy">
-          <p class="profile-context">{content.hero.context}</p>
-          <h1 id="profile-hero-title">{content.hero.title}</h1>
-          <p class="profile-hero__lead">{content.hero.lead}</p>
-          <a class="profile-button profile-button--red" href="#team">
-            {content.hero.cta}<ArrowIcon />
-          </a>
-        </div>
-      </div>
-    </section>
+    <LayeredHero locale={locale} page="about"/>
 
     <section class="profile-company profile-section" aria-labelledby="profile-company-title">
       <div class="container-shell">
@@ -185,18 +160,6 @@ const profileSchema = {
   body:has(.profile-redesign) .contact-dock__link { background: linear-gradient(120deg, #710d1b 0%, #9c1021 48%, #c4142a 100%); background-position: 0 50%; background-size: 180% 100%; box-shadow: 0 12px 34px rgb(38 3 8 / .24); opacity: 1; transition: background-position 260ms var(--profile-ease), box-shadow 200ms var(--profile-ease), transform 170ms var(--profile-ease); }
   body:has(.profile-redesign) .contact-dock__pulse { background: #fff; box-shadow: 0 0 0 4px rgb(255 255 255 / .16); }
 
-  .profile-hero { position: relative; min-height: clamp(40rem, 100svh, 51rem); overflow: hidden; background: var(--profile-black); color: #fff; }
-  .profile-hero::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(11 11 12 / .94) 0%, rgb(41 4 10 / .84) 30%, rgb(55 6 14 / .34) 49%, transparent 68%), linear-gradient(180deg, rgb(11 11 12 / .28), transparent 28%, rgb(11 11 12 / .18)); content: ''; pointer-events: none; }
-  .profile-hero__visual { position: absolute; inset: 0; margin: 0; }
-  .profile-hero__visual :where(img) { width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: center; }
-  .profile-hero__visual figcaption { position: absolute; right: 1.25rem; bottom: 1rem; z-index: 2; max-width: 24rem; background: rgb(11 11 12 / .72); padding: .35rem .5rem; color: rgb(255 255 255 / .82); font-size: .56rem; font-weight: 760; letter-spacing: .055em; }
-  .profile-hero__inner { position: relative; z-index: 2; min-height: inherit; display: flex; align-items: center; padding-top: 5.5rem; padding-bottom: 2.5rem; }
-  .profile-hero__copy { width: min(43vw, 35rem); }
-  .profile-hero .profile-context { border-bottom-color: var(--profile-red-bright); color: #fff; }
-  .profile-hero h1 { max-width: 12ch; margin: 1.25rem 0 0; color: #fff; font-family: var(--font-display); font-size: var(--brand-type-hero); font-weight: 570; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
-  .profile-hero__lead { max-width: 31rem; margin: 1.15rem 0 0; color: rgb(255 255 255 / .84); font-size: clamp(.98rem, 1.2vw, 1.12rem); line-height: 1.58; text-wrap: pretty; }
-  .profile-hero__copy > .profile-button { margin-top: 1.75rem; }
-
   .profile-company { background: var(--brand-surface-soft); }
   .profile-company__header { display: grid; gap: .9rem; padding-bottom: clamp(1.25rem, 2.2vw, 1.75rem); border-bottom: 1px solid var(--profile-line-strong); }
   .profile-company__header .profile-heading { max-width: 19ch; }
@@ -211,27 +174,12 @@ const profileSchema = {
     body:has(.profile-redesign) .contact-dock__link:hover { background-position: 100% 50%; box-shadow: 0 15px 42px rgb(38 3 8 / .32); transform: translateY(-2px); }
   }
   @media (max-width: 900px) {
-    .profile-hero { min-height: 0; padding-top: 6.5rem; }
-    .profile-hero::after { display: none; }
-    .profile-hero__inner { min-height: 0; padding-top: 2rem; padding-bottom: 2.5rem; }
-    .profile-hero__copy { width: min(100%, 42rem); }
-    .profile-hero__visual { position: relative; inset: auto; aspect-ratio: 16 / 9; order: 2; }
-    .profile-hero { display: flex; flex-direction: column; }
-    .profile-hero__inner { order: 1; }
-    .profile-hero__visual :where(img) { width: 100%; height: 100%; margin: 0; object-position: center; }
     .profile-company__statement { grid-template-columns: 1fr; gap: 2rem; }
     .profile-company__content { gap: 1.35rem; padding: 0; }
   }
   @media (max-width: 640px) {
     .profile-redesign .profile-section { padding-block: 4.5rem; }
     .profile-redesign .profile-heading { font-size: clamp(2.15rem, 10vw, 2.85rem); }
-    .profile-hero { padding-top: 5rem; }
-    .profile-hero__inner { padding-top: 1.7rem; }
-    .profile-hero h1 { max-width: 13ch; font-size: clamp(2.65rem, 11vw, 3.25rem); }
-    .profile-hero__lead { font-size: .94rem; }
-    .profile-hero__visual { aspect-ratio: 16 / 9; }
-    .profile-hero__visual :where(img) { width: 100%; height: 100%; object-position: center; }
-    .profile-hero__visual figcaption { right: .7rem; bottom: .7rem; left: .7rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     .profile-motion-ready .profile-redesign [data-profile-reveal] { opacity: 1; transform: none; transition-duration: .01ms; transition-delay: 0ms; }

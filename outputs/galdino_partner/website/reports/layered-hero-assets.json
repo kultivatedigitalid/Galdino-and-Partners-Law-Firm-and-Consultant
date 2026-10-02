@@ -1,0 +1,112 @@
+[
+  {
+    "page": "about",
+    "role": "backdrop",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_36 AM-1.png",
+    "target": "src/assets/hero-about-layered-backdrop.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": false,
+    "bytes": 69190,
+    "sha256": "376a216763ba73440b42a47ce86b1a532ac553085d8d583da2211857b76e6795"
+  },
+  {
+    "page": "about",
+    "role": "cutout",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_38 AM-2.png",
+    "target": "src/assets/hero-about-layered-cutout.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": true,
+    "bytes": 203386,
+    "sha256": "8410c2b9ab81e08e30615642bc89edeed1316ac2dba38707b7ff0c56afd3f36a"
+  },
+  {
+    "page": "insights",
+    "role": "backdrop",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_40 AM-3.png",
+    "target": "src/assets/hero-insights-layered-backdrop.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": false,
+    "bytes": 64106,
+    "sha256": "ae99087778e2dff4021a7d75104042193d7352c1dcafaa9427c9924284435ab8"
+  },
+  {
+    "page": "insights",
+    "role": "cutout",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_42 AM-4.png",
+    "target": "src/assets/hero-insights-layered-cutout.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": true,
+    "bytes": 177654,
+    "sha256": "bbb51eae95472cd3430e92e23deb9bb871f9034428dbbc7aba8b1762613787bd"
+  },
+  {
+    "page": "services",
+    "role": "backdrop",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_43 AM-5.png",
+    "target": "src/assets/hero-services-layered-backdrop.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": false,
+    "bytes": 101278,
+    "sha256": "64eaa51d75ff7dbbb9640d3d96a5bee19035d7003fb6b1c7929e1164e800982d"
+  },
+  {
+    "page": "services",
+    "role": "cutout",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_45 AM-6.png",
+    "target": "src/assets/hero-services-layered-cutout.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": true,
+    "bytes": 166986,
+    "sha256": "e477ff4f3f3359763c3d6174a1875c7bfa31fa5345623553703fb660c86e1e94"
+  },
+  {
+    "page": "industries",
+    "role": "backdrop",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_46 AM-7.png",
+    "target": "src/assets/hero-industries-layered-backdrop.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": false,
+    "bytes": 194408,
+    "sha256": "537c198fea99d33c10768e8a23db9396e0e9fae71156cc4883a9e30088c6f365"
+  },
+  {
+    "page": "industries",
+    "role": "cutout",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_48 AM-8.png",
+    "target": "src/assets/hero-industries-layered-cutout.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": true,
+    "bytes": 206352,
+    "sha256": "c6c18050925bd29e7bbfed89d127ef024db037f7750b20682822812ca46b4f50"
+  },
+  {
+    "page": "experiences",
+    "role": "backdrop",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_50 AM-9.png",
+    "target": "src/assets/hero-experiences-layered-backdrop.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": false,
+    "bytes": 189886,
+    "sha256": "9707f17ed925ce3d6de97364ca85edcbda94285b91928a31215ee4d2eb6755d2"
+  },
+  {
+    "page": "experiences",
+    "role": "cutout",
+    "source": "C:/Users/Joshua/Downloads/ChatGPT Image Oct 2, 2026, 11_54_52 AM-10.png",
+    "target": "src/assets/hero-experiences-layered-cutout.webp",
+    "width": 1784,
+    "height": 882,
+    "alpha": true,
+    "bytes": 196110,
+    "sha256": "7a40592b2817566c86254b9e4cbbf6a8739fc6e9af5dcc0f1de19329cb0cf622"
+  }
+]

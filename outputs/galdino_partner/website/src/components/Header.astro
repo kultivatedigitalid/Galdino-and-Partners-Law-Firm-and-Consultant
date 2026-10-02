@@ -4,8 +4,8 @@ import { alternatePath } from '../utils/i18n';
 import ServiceMegaMenu from './services/ServiceMegaMenu.astro';
 import ArrowIcon from './icons/ArrowIcon.astro';
 
-interface Props { locale: Locale; immersive?: boolean; alternateUrl?: string; }
-const { locale, alternateUrl, immersive } = Astro.props;
+interface Props { locale: Locale; immersive?: boolean; overlay?: boolean; alternateUrl?: string; }
+const { locale, alternateUrl, immersive, overlay } = Astro.props;
 const pathname = Astro.url.pathname;
 const other = locale === 'id' ? 'en' : 'id';
 const languageHref = alternateUrl || alternatePath(pathname, locale);
@@ -21,7 +21,7 @@ const isCurrent = (href: string) => href === localeRoot
 
 <span class="header-sentinel" data-header-sentinel aria-hidden="true"></span>
 <header
-  class:list={['site-header', usesImmersiveHeader && 'site-header--immersive', isHome && !usesImmersiveHeader && 'site-header--home']}
+  class:list={['site-header', usesImmersiveHeader && 'site-header--immersive', isHome && !usesImmersiveHeader && 'site-header--home', overlay && 'site-header--overlay']}
   data-scrolled="false"
 >
   <a class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:bg-white focus:p-3" href="#main-content">{COPY[locale].skip}</a>
@@ -79,7 +79,7 @@ const isCurrent = (href: string) => href === localeRoot
     background: transparent;
     transition: background-color 210ms cubic-bezier(.22, 1, .36, 1), border-color 210ms cubic-bezier(.22, 1, .36, 1);
   }
-  .site-header--home { position: fixed; right: 0; left: 0; }
+  .site-header--home,.site-header--overlay { position: fixed; right: 0; left: 0; }
   .site-header--immersive { position: fixed; right: 0; left: 0; }
   .site-header[data-scrolled='true'] { background: #fff; border-bottom-color: rgb(11 11 12 / .14); }
   .header-inner { display: grid; grid-template-columns: 14rem minmax(0,1fr); min-height: var(--site-header-height); align-items: center; gap: 1.5rem; }

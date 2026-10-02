@@ -1,18 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ImageHero from './shared/ImageHero.astro';
+import LayeredHero from './shared/LayeredHero.astro';
 import HomeFinalCta from './home/HomeFinalCta.astro';
 import IndustryTiles from './shared/IndustryTiles.astro';
 import PermitPathway from './shared/PermitPathway.astro';
-import {heroImages} from '../data/hero-images';
 import {SERVICE_CATEGORIES,categoryUrl} from '../data/service-catalog';
 import type {Locale} from '../data/site';
 interface Props{locale:Locale}
 const {locale}=Astro.props,id=locale==='id';
 ---
-<BaseLayout immersive locale={locale} title={id?'Industri yang Kami Dampingi | Galdino & Partner':'Industries We Support | Galdino & Partner'} description={id?'Pemetaan kebutuhan perizinan untuk properti, manufaktur, gudang, retail, fasilitas kesehatan, dan hotel. Mulai dari konteks operasional Anda.':'Licensing requirements for property, manufacturing, warehouses, retail, healthcare and hotels. Start with your operating context.'}>
+<BaseLayout immersive={false} overlayHeader locale={locale} title={id?'Industri yang Kami Dampingi | Galdino & Partner':'Industries We Support | Galdino & Partner'} description={id?'Pemetaan kebutuhan perizinan untuk properti, manufaktur, gudang, retail, fasilitas kesehatan, dan hotel. Mulai dari konteks operasional Anda.':'Licensing requirements for property, manufacturing, warehouses, retail, healthcare and hotels. Start with your operating context.'}>
 <div class="editorial">
-<ImageHero locale={locale} kicker={id?'Industri':'Industries'} consultation title={id?'Perizinan Sesuai Industri Anda':'Permits for Your Industry'} description={id?'Lokasi, fasilitas, dan kegiatan membentuk kebutuhan izin yang berbeda. Kami mulai dari konteksnya.':'Location, facilities and activities shape different approval requirements. We start with that context.'} image={heroImages.industries} breadcrumbs={[{name:id?'Industri':'Industries'}]}/>
+<LayeredHero locale={locale} page="industries"/>
 
 <div class="container-shell"><section class="ed-section"><IndustryTiles locale={locale}/></section></div>
 <section class="regulatory-section" aria-labelledby="regulatory-title">
