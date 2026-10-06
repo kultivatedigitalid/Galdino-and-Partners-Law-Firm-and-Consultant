@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from './PageHero.astro';
+import ContactForm from './ContactForm.astro';
+import { SITE, type Locale } from '../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+---
+<BaseLayout locale={locale} title={id ? 'Kontak & Konsultasi | Galdino & Partner' : 'Contact & Consultation | Galdino & Partner'} description={id ? 'Sampaikan kebutuhan perizinan, legalitas, atau kepatuhan bisnis Anda melalui formulir, WhatsApp, atau email.' : 'Share your licensing, legal, or compliance requirement by form, WhatsApp, or email.'}>
+  <PageHero eyebrow={id ? 'Kontak' : 'Contact'} title={id ? 'Mulai dengan konteks yang jelas.' : 'Start with clear context.'} lead={id ? 'Sampaikan aktivitas usaha, kebutuhan utama, dan target waktu. Kami akan meninjau informasi awal sebelum mengusulkan langkah berikutnya.' : 'Share your business activity, primary requirement, and target timing. We will review the initial information before proposing next steps.'} />
+  <section class="section-space"><div class="container-shell grid gap-10 lg:grid-cols-[.65fr_1.35fr]"><aside><p class="eyebrow">{id ? 'Saluran langsung' : 'Direct channels'}</p><div class="mt-6 grid gap-5"><div><p class="text-xs font-bold uppercase tracking-wider text-muted">WhatsApp</p><a class="mt-1 block font-display text-2xl text-forest" href={SITE.whatsappHref} rel="noopener noreferrer">{SITE.whatsappDisplay}</a></div><div><p class="text-xs font-bold uppercase tracking-wider text-muted">Email</p><a class="mt-1 block break-all font-display text-xl text-forest" href={`mailto:${SITE.email}`}>{SITE.email}</a></div><div><p class="text-xs font-bold uppercase tracking-wider text-muted">{id ? 'Alamat' : 'Address'}</p><p class="mt-1 text-sm text-muted">{SITE.address}</p></div></div><div class="mt-10 border-l-2 border-gold pl-4 text-sm text-muted">{id ? 'Formulir ini bukan kanal untuk keadaan darurat hukum atau tenggat pada hari yang sama.' : 'This form is not intended for legal emergencies or same-day deadlines.'}</div></aside><ContactForm locale={locale} /></div></section>
+</BaseLayout>

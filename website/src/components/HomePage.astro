@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RegulatoryMap from './RegulatoryMap.astro';
+import ArticleCard from './ArticleCard.astro';
+import { COPY, PROJECTS, SERVICES, type Locale } from '../data/site';
+import { getPublishedPosts } from '../utils/blog';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const id = locale === 'id';
+const posts = (await getPublishedPosts(locale)).slice(0, 3);
+const text = id ? {
+  title: 'Konsultan Perizinan & Law Firm untuk Bisnis | Galdino & Partner',
+  description: 'Pendampingan perizinan usaha, legalitas, kepatuhan regulasi, dan advisory hukum untuk bisnis di Indonesia.',
+  eyebrow: 'Legal • Licensing • Compliance',
+  h1: 'Legalitas yang jelas. Bisnis bergerak dengan yakin.',
+  lead: 'Kami membantu perusahaan menavigasi perizinan, struktur legal, dan kepatuhan regulasi—dengan langkah yang terukur, komunikasi yang lugas, dan fokus pada kebutuhan bisnis.',
+  trust: ['Pendekatan berbasis risiko', 'Ruang lingkup transparan', 'Pendampingan end-to-end'],
+} : {
+  title: 'Business Licensing Consultant & Law Firm | Galdino & Partner',
+  description: 'Business licensing, corporate legality, regulatory compliance, and legal advisory support for companies in Indonesia.',
+  eyebrow: 'Legal • Licensing • Compliance',
+  h1: 'Clear legal foundations. Confident business decisions.',
+  lead: 'We help companies navigate licensing, legal structure, and regulatory compliance through measured steps, clear communication, and a focus on business needs.',
+  trust: ['Risk-based approach', 'Transparent scope', 'End-to-end assistance'],
+};
+const reasons = id
+  ? [['Regulasi diterjemahkan menjadi langkah', 'Kami merangkum kewajiban hukum menjadi prioritas, dokumen, dan tindakan yang dapat dijalankan.'], ['Satu jalur komunikasi yang jelas', 'Status, kebutuhan tambahan, dan potensi hambatan disampaikan tanpa jargon yang tidak perlu.'], ['Kepatuhan dipandang sebagai siklus', 'Kami membantu melihat kebutuhan setelah izin terbit, bukan berhenti pada pengajuan.']]
+  : [['Regulation translated into action', 'We convert legal obligations into clear priorities, documents, and executable steps.'], ['One clear communication path', 'Status, additional requirements, and potential blockers are communicated without unnecessary jargon.'], ['Compliance as a continuous cycle', 'We consider ongoing obligations after a licence is issued, not only the application.']];
+const steps = id
+  ? [['01', 'Konsultasi awal', 'Memahami aktivitas usaha, target, struktur, dan kondisi saat ini.'], ['02', 'Pemetaan regulasi', 'Mengidentifikasi klasifikasi, risiko, izin, dokumen, dan dependensi.'], ['03', 'Pelaksanaan', 'Menyiapkan dan mengawal proses sesuai ruang lingkup yang disepakati.'], ['04', 'Pemeliharaan', 'Mencatat kewajiban lanjutan dan titik review kepatuhan.']]
+  : [['01', 'Initial consultation', 'Understanding activities, objectives, structure, and current conditions.'], ['02', 'Regulatory mapping', 'Identifying classifications, risks, licences, documents, and dependencies.'], ['03', 'Execution', 'Preparing and guiding the agreed process and scope.'], ['04', 'Maintenance', 'Recording ongoing obligations and compliance review points.']];
+const industries = id ? ['Teknologi & digital', 'Perdagangan & distribusi', 'Konstruksi & properti', 'Manufaktur', 'Jasa profesional', 'Investasi & proyek'] : ['Technology & digital', 'Trade & distribution', 'Construction & property', 'Manufacturing', 'Professional services', 'Investment & projects'];
+const faqs = id
+  ? [['Apakah semua kebutuhan dapat langsung diproses melalui OSS?', 'Tidak selalu. Jalur izin bergantung pada KBLI, tingkat risiko, lokasi, skala, dan ketentuan sektoral. Pemetaan awal diperlukan sebelum menentukan proses.'], ['Berapa lama proses perizinan?', 'Durasi berbeda untuk setiap ruang lingkup dan instansi. Estimasi baru diberikan setelah dokumen, klasifikasi, dan dependensi eksternal dipetakan.'], ['Apakah konsultasi awal bersifat mengikat?', 'Tidak. Konsultasi awal digunakan untuk memahami kebutuhan dan menyusun ruang lingkup pendampingan yang relevan.'], ['Apakah informasi perusahaan dijaga kerahasiaannya?', 'Data diproses hanya untuk menanggapi permintaan dan pelaksanaan layanan, dengan pengaturan lebih rinci dalam dokumen engagement.']]
+  : [['Can every requirement be processed directly through OSS?', 'Not always. The pathway depends on business classification, risk level, location, scale, and sector-specific rules. Initial mapping is required.'], ['How long does licensing take?', 'Timing varies by scope and authority. An estimate is provided after documents, classification, and external dependencies are mapped.'], ['Is the initial consultation binding?', 'No. It helps us understand the requirement and define a relevant engagement scope.'], ['Is company information kept confidential?', 'Data is processed only to respond to enquiries and deliver services, with detailed terms defined in engagement documents.']];
+---
+<BaseLayout locale={locale} title={text.title} description={text.description}>
+  <section class="overflow-hidden">
+    <div class="container-shell grid min-h-[calc(100vh-5rem)] items-center gap-12 py-16 lg:grid-cols-[1.12fr_.88fr] lg:py-20">
+      <div class="reveal">
+        <p class="eyebrow">{text.eyebrow}</p>
+        <h1 class="display mt-7 max-w-3xl">{text.h1}</h1>
+        <p class="mt-7 max-w-2xl text-base text-muted md:text-lg">{text.lead}</p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a class="button-primary" href={`/${locale}/contact/`}>{COPY[locale].consult} <span class="ml-2" aria-hidden="true">→</span></a>
+          <a class="button-secondary" href={`/${locale}/services/`}>{COPY[locale].servicesCta}</a>
+        </div>
+        <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-5 text-xs font-semibold text-muted">
+          {text.trust.map((item) => <li class="before:mr-2 before:text-gold before:content-['◆']">{item}</li>)}
+        </ul>
+      </div>
+      <div class="reveal lg:pl-8"><RegulatoryMap locale={locale} /></div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="container-shell grid gap-10 section-space lg:grid-cols-[.75fr_1.25fr]">
+      <div class="reveal"><p class="eyebrow">{id ? 'Nilai utama' : 'Core value'}</p><h2 class="heading mt-5">{id ? 'Dari kompleksitas regulasi menuju keputusan yang dapat dijalankan.' : 'From regulatory complexity to decisions your business can execute.'}</h2></div>
+      <div class="reveal grid content-start gap-5 border-l border-line pl-6 text-muted md:pl-10">
+        <p class="text-xl leading-relaxed text-ink">{id ? 'Bisnis tidak hanya membutuhkan dokumen. Bisnis membutuhkan kepastian tentang apa yang harus dilakukan, mengapa, dan dalam urutan apa.' : 'Businesses need more than documents. They need clarity on what to do, why it matters, and in what order.'}</p>
+        <p>{id ? 'Pendampingan dirancang untuk menghubungkan kepatuhan hukum dengan realitas operasional—tanpa menjanjikan hasil yang berada di luar kendali proses atau instansi.' : 'Our assistance connects legal compliance with operational reality—without promising outcomes beyond the control of processes or authorities.'}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell">
+      <div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div><p class="eyebrow">{id ? 'Layanan utama' : 'Core services'}</p><h2 class="heading mt-5 max-w-2xl">{id ? 'Dukungan legal di setiap titik penting bisnis.' : 'Legal support at every critical business point.'}</h2></div>
+        <a class="text-sm font-bold text-forest underline decoration-gold underline-offset-4" href={`/${locale}/services/`}>{id ? 'Jelajahi seluruh layanan' : 'Explore all services'} →</a>
+      </div>
+      <div class="mt-12 grid border-y border-line md:grid-cols-2">
+        {SERVICES[locale].map((service) => (
+          <article class="reveal border-b border-line p-7 last:border-b-0 md:odd:border-r md:[&:nth-last-child(-n+2)]:border-b-0">
+            <span class="text-xs font-bold text-gold">{service.number}</span>
+            <h3 class="mt-8 font-display text-3xl">{service.title}</h3>
+            <p class="mt-3 max-w-md text-sm text-muted">{service.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-forest text-white section-space">
+    <div class="container-shell">
+      <div class="reveal grid gap-8 lg:grid-cols-[.7fr_1.3fr]">
+        <div><p class="eyebrow !text-gold">{id ? 'Mengapa memilih kami' : 'Why work with us'}</p><h2 class="heading mt-5">{id ? 'Tenang dalam proses. Tegas pada substansi.' : 'Calm in process. Precise in substance.'}</h2></div>
+        <div class="grid gap-8 md:grid-cols-3">
+          {reasons.map(([title, body], i) => <article><span class="text-xs text-gold">0{i + 1}</span><h3 class="mt-4 font-display text-2xl">{title}</h3><p class="mt-3 text-sm text-white/65">{body}</p></article>)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white section-space">
+    <div class="container-shell">
+      <div class="reveal max-w-2xl"><p class="eyebrow">{id ? 'Cara kerja' : 'How we work'}</p><h2 class="heading mt-5">{id ? 'Satu proses yang terlihat dari awal.' : 'A process visible from the outset.'}</h2></div>
+      <ol class="mt-12 grid gap-0 md:grid-cols-4">
+        {steps.map(([num, title, body]) => <li class="reveal border-l border-line px-6 py-3"><span class="text-xs font-bold text-gold">{num}</span><h3 class="mt-6 font-display text-2xl">{title}</h3><p class="mt-3 text-sm text-muted">{body}</p></li>)}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+      <div class="reveal"><p class="eyebrow">{id ? 'Sektor yang dilayani' : 'Sectors served'}</p><h2 class="heading mt-5">{id ? 'Konteks industri membentuk jalur regulasi.' : 'Industry context shapes the regulatory pathway.'}</h2><p class="mt-5 text-muted">{id ? '[PLACEHOLDER — cakupan industri final akan dikonfirmasi sebelum launch.]' : '[PLACEHOLDER — final sector scope will be confirmed before launch.]'}</p></div>
+      <div class="reveal flex flex-wrap gap-3">{industries.map((item) => <span class="rounded-full border border-line bg-white px-5 py-3 text-sm">{item}</span>)}</div>
+    </div>
+  </section>
+
+  <section class="bg-white section-space">
+    <div class="container-shell">
+      <div class="reveal flex items-end justify-between gap-4"><div><p class="eyebrow">{id ? 'Pengalaman terpilih' : 'Selected experience'}</p><h2 class="heading mt-5">{id ? 'Contoh mandat yang relevan.' : 'Relevant engagement examples.'}</h2></div><a class="hidden text-sm font-bold md:block" href={`/${locale}/projects/`}>{id ? 'Lihat semua' : 'View all'} →</a></div>
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+        {PROJECTS[locale].map((project, i) => <article class="reveal surface p-7"><span class="text-xs font-bold uppercase tracking-wider text-gold">{project.type}</span><h3 class="mt-10 font-display text-2xl">{project.title}</h3><p class="mt-4 text-sm text-muted">{project.outcome}</p><span class="mt-8 block text-xs text-muted">0{i + 1} / 03</span></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell">
+      <div class="reveal"><p class="eyebrow">{id ? 'Insight regulasi' : 'Regulatory insights'}</p><h2 class="heading mt-5">{id ? 'Pengetahuan untuk keputusan yang lebih siap.' : 'Knowledge for better-prepared decisions.'}</h2></div>
+      <div class="mt-10">{posts.map((post) => <ArticleCard post={post} />)}</div>
+      <a class="button-secondary mt-8" href={`/${locale}/blog/`}>{id ? 'Baca semua insight' : 'Read all insights'}</a>
+    </div>
+  </section>
+
+  <section class="bg-white section-space">
+    <div class="container-shell grid gap-10 lg:grid-cols-[.65fr_1.35fr]">
+      <div class="reveal"><p class="eyebrow">FAQ</p><h2 class="heading mt-5">{id ? 'Pertanyaan sebelum memulai.' : 'Questions before you begin.'}</h2></div>
+      <div class="reveal divide-y divide-line border-y border-line">
+        {faqs.map(([question, answer], i) => <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold"><span>{question}</span><span class="text-gold transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p class="mt-4 max-w-2xl text-sm text-muted">{answer}</p></details>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gold text-forest-deep">
+    <div class="container-shell grid gap-8 py-16 md:grid-cols-[1fr_auto] md:items-center">
+      <div><p class="text-xs font-bold uppercase tracking-[.16em]">{id ? 'Mulai dari kebutuhan bisnis Anda' : 'Start with your business requirement'}</p><h2 class="mt-4 font-display text-4xl md:text-5xl">{id ? 'Mari petakan langkah legal berikutnya.' : 'Let’s map your next legal step.'}</h2></div>
+      <a class="button-primary !bg-forest-deep" href={`/${locale}/contact/`}>{COPY[locale].consult} →</a>
+    </div>
+  </section>
+</BaseLayout>

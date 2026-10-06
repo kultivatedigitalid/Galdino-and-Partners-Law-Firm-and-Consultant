@@ -1,0 +1,51 @@
+---
+import { COPY, NAV, SITE, type Locale } from '../data/site';
+import { alternatePath } from '../utils/i18n';
+
+interface Props { locale: Locale; alternateUrl?: string; }
+const { locale, alternateUrl } = Astro.props;
+const pathname = Astro.url.pathname;
+const other = locale === 'id' ? 'en' : 'id';
+const languageHref = alternateUrl || alternatePath(pathname, locale);
+---
+<header class="sticky top-0 z-50 border-b border-line/80 bg-paper/95 backdrop-blur">
+  <a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-white focus:p-3" href="#main-content">{COPY[locale].skip}</a>
+  <div class="container-shell flex min-h-20 items-center justify-between gap-4">
+    <a class="flex items-center gap-3 no-underline" href={`/${locale}/`}>
+      <span aria-hidden="true" class="grid size-10 place-items-center rounded-full bg-forest font-display text-sm text-white">{SITE.shortName}</span>
+      <span class="sr-only font-display text-xl sm:not-sr-only">{SITE.displayName}</span>
+      <span class="sr-only">{locale === 'id' ? 'Beranda' : 'Home'}</span>
+    </a>
+    <button class="menu-toggle grid size-11 place-items-center rounded-full border border-line md:hidden" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="sr-only">{locale === 'id' ? 'Buka menu' : 'Open menu'}</span>
+      <span aria-hidden="true">☰</span>
+    </button>
+    <nav id="primary-nav" class="nav-panel hidden md:block" aria-label="Primary navigation">
+      <div class="flex flex-col items-stretch gap-1 md:flex-row md:items-center md:gap-5">
+        {NAV[locale].map((item) => (
+          <a class:list={['nav-link', pathname.startsWith(item.href) && 'active']} href={item.href} aria-current={pathname.startsWith(item.href) ? 'page' : undefined}>{item.label}</a>
+        ))}
+        <a class="rounded-full border border-line px-3 py-2 text-xs font-bold uppercase tracking-wider no-underline hover:border-gold" href={languageHref} hreflang={other}>{other.toUpperCase()}</a>
+        <a class="button-primary md:ml-1" href={`/${locale}/contact/`}>{COPY[locale].consult}</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<style>
+  .nav-link { position: relative; padding: .75rem .15rem; color: var(--color-muted); font-size: .86rem; font-weight: 650; text-decoration: none; }
+  .nav-link::after { position: absolute; right: 0; bottom: .45rem; left: 0; height: 1px; background: var(--color-gold); content: ""; transform: scaleX(0); transform-origin: right; transition: transform 180ms ease; }
+  .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); transform-origin: left; }
+  .nav-link.active { color: var(--color-forest); }
+  @media (max-width: 767px) {
+    .nav-panel.open { position: absolute; top: 5rem; right: 0; left: 0; display: block; border-bottom: 1px solid var(--color-line); background: var(--color-paper); padding: 1rem; box-shadow: var(--shadow-soft); }
+  }
+</style>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.querySelector<HTMLElement>('.nav-panel');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    nav?.classList.toggle('open', !open);
+  });
+</script>
