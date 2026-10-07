@@ -2,7 +2,9 @@
 
 ## Handover verification on 7 October 2026
 
-All measurements below this notice predate the final uncommitted local revision accepted for handover. They are historical baselines, not proof of the final source. Current fresh-clone installation, QA, browser/dev checks and the exact tested commit are recorded in [HANDOVER.md](HANDOVER.md). Production SMTP/Hostinger/GTM/Search Console verification remains pending, and indexing is unchanged.
+Fresh-clone verification of source/lockfile commit `f8fbc5890fb4dba692564968b848a23bc1dfad39` passed: npm ci (0 vulnerabilities), Astro check (145 files; 0 errors/warnings/hints), 20 unit tests, Node standalone build, 167-page validation and all 48 browser tests (0 failed/flaky/skipped). Background development smoke checks passed on 14 ID/EN main pages, desktop/mobile navigation, service prefill and the local contact sink. No real email was sent. Exact evidence, subsequent documentation-commit verification and the pending screen recording are recorded in [HANDOVER.md](HANDOVER.md).
+
+All measurements below the Historical baseline heading predate the final local revision accepted for handover. They remain historical evidence and do not establish current Lighthouse scores or production readiness. Production SMTP/Hostinger/GTM/Search Console verification remains pending, and indexing is unchanged.
 
 ## Historical baseline
 

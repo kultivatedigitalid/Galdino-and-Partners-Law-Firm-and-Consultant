@@ -4,7 +4,7 @@ Tanggal pemeriksaan: 7 Oktober 2026 (Asia/Jakarta). Deadline: 8 Oktober 2026. Pi
 
 Repository: https://github.com/afinitasid/Galdino-Partner-Website. Struktur aplikasi tetap `outputs/galdino_partner/website`, branch `main`, riwayat Git dipertahankan tanpa transfer, force push atau rewrite. Pemeriksaan awal GitHub CLI membuktikan repository **PRIVATE**, kosong, dan izin akun terhubung `WRITE`.
 
-**Status: Pending.** Commit/push, fresh clone final dan rekaman akan dicatat setelah selesai diverifikasi. Dokumen ini mengikuti `HANDOVER PROJECT WEBSITE.docx`; tujuan akun afinitasid dan cakupan satu proyek mengikuti instruksi langsung pemilik. Project 2 pada template dokumen berada di luar lingkup permintaan ini.
+**Status: Pending karena screen recording belum tersedia.** Persiapan teknis, commit/push dan pengujian fresh clone sudah berhasil. Dokumen ini mengikuti `HANDOVER PROJECT WEBSITE.docx`; tujuan akun afinitasid dan cakupan satu proyek mengikuti instruksi langsung pemilik. Project 2 pada template dokumen berada di luar lingkup permintaan ini.
 
 ## Versi dan inventaris final
 
@@ -23,29 +23,39 @@ Koreksi handover terbatas pada kontras navbar ketika mega menu dibuka: backplate
 | Persyaratan | Status | Bukti |
 | --- | --- | --- |
 | Repository akun resmi dan PRIVATE | Completed | `gh repo view` menunjukkan afinitasid/Galdino-Partner-Website, PRIVATE |
-| Default branch main | Pending | Verifikasi sesudah push |
-| Seluruh source/aset final tersimpan dan ter-push | Pending | Commit final dan SHA akan dicatat |
+| Default branch main | Completed | Repository dan kedua checkout memakai main |
+| Seluruh source/aset final tersimpan dan ter-push | Completed | b2c87e5 menyimpan source/aset final; f8fbc58 memperbaiki lockfile |
 | Remote resmi | Completed | Origin diarahkan ke repository afinitasid |
 | History dipertahankan | Completed | Commit lama tetap menjadi ancestor; tanpa force/rewrite |
 | Audit credential file final dan history | Completed | 2.523 objek history; 2.631 pemindaian blob/anggota arsip history, 4.163 pemindaian total. Tidak ada temuan pola credential; 145 staged files juga diperiksa tanpa nilai secret ditampilkan |
 | README root/aplikasi, package, lock dan konfigurasi | Completed | Astro/npm, Node >=22.12.0; lokasi aplikasi dan semua perintah didokumentasikan |
 | .gitignore dan .env.example | Completed | Nilai contoh kosong; file private/dependency/build dikecualikan |
 | .env dan node_modules tidak terlacak | Completed | Nama file pada tree dan seluruh history diperiksa; hanya .env.example yang tersedia |
-| Commit lokal sama dengan origin/main | Pending | Fetch + pemeriksaan SHA |
-| Working tree clean | Pending | Pemeriksaan kedua checkout setelah pengujian |
-| Fresh clone repository tujuan | Pending | Folder baru, tanpa menyalin dependency/cache laptop lama |
-| npm ci pada fresh clone | Pending | Instalasi dari lockfile |
-| npm run qa pada fresh clone | Pending | Check, 20 unit tests, build, validasi 167 halaman |
-| Development server background dan smoke test | Pending | Homepage, navigasi, halaman utama, aset dan error |
-| Pengujian browser/form memakai sink lokal | Pending | Tidak mengirim email nyata |
+| Commit lokal sama dengan origin/main | Completed | Fetch dan pemeriksaan SHA kedua checkout |
+| Working tree clean | Completed | Source dan fresh clone clean sesudah pengujian; hasil otomatis/private env di-ignore |
+| Fresh clone repository tujuan | Completed | tmp/handover/fresh-clone; dependency dipasang sendiri dari npm ci |
+| npm ci pada fresh clone | Completed | 430 package dipasang, 431 diaudit; 0 vulnerabilities sesudah perbaikan lockfile |
+| npm run qa pada fresh clone | Completed | Astro check 145 file tanpa error/warning/hint, 20 unit tests, build, validasi 167 halaman |
+| Development server background dan smoke test | Completed | Astro dev background di loopback; 14 halaman utama ID/EN HTTP 200, aset, desktop/mobile dan pergantian bahasa berhasil |
+| Pengujian browser/form memakai sink lokal | Completed | 48 browser tests lulus, 0 gagal/flaky/skipped; prefill layanan dan form dev juga lulus tanpa email nyata |
 | Semua pending terdokumentasi | Completed | Daftar di bawah; bukti baru memperbarui status |
 | Screen recording urutan wajib | Pending | Tidak ada file rekaman yang sudah diverifikasi |
 
 ## Pengujian terbaru
 
-Pemeriksaan sebelum push pada source final: `npm run qa` berhasil, 0 error/warning/hint Astro, 20 unit tests lulus, build Node standalone dan validasi 167 halaman/38 layanan/6 kategori/4 grup lingkungan/6 industri berhasil. Hasil tersebut belum menggantikan fresh clone wajib. Suite browser sedang ditinjau terhadap desain final; hasil historis dalam QA_REPORT.md tidak dipakai sebagai kelulusan baru.
+Source dan lockfile yang diuji: **f8fbc5890fb4dba692564968b848a23bc1dfad39**. Commit sesudahnya melengkapi laporan saja; SHA handover paling baru diperoleh dengan `git rev-parse HEAD`, dan laporan lokal akhir mencatat SHA itu setelah pengujian ulang. Fresh clone berasal langsung dari repository tujuan, kemudian menerima perbaikan melalui `git pull --ff-only`; dependency tidak disalin dari checkout awal.
 
-Browser sebelum push: 40 dari 48 test awal lulus. Delapan kegagalan ditindaklanjuti, termasuk satu perbaikan kontras mega menu; sembilan test pada retest pertama dan dua test terakhir pada retest kedua lulus. Pengujian penuh tetap diwajibkan pada fresh clone. Audit credential memakai pencarian pola key/token/URL/password, isi teks arsip ZIP/OOXML dan pencocokan nilai secret environment privat bila tersedia; tidak ada populated private environment di aplikasi. Tidak ada credential terkonfirmasi yang memerlukan rotation. Pemeriksaan tersebut tidak menjamin deteksi format credential tidak dikenal atau secret dalam gambar; jangan mencetak credential untuk pemeriksaan manual lanjutan.
+Pada Windows, Node **24.11.1**, npm **11.6.2**, Astro **7.3.5** dari lockfile dan Microsoft Edge headless:
+
+- `npm ci`: berhasil. Instalasi pertama mengungkap dua dependency transitive berisiko tinggi. Lockfile kemudian diperbaiki (http-cache-semantics 4.3.0 dan source-map-js 1.2.2), di-commit, di-push, ditarik ke clone dan dipasang ulang. Instalasi ulang melaporkan **0 vulnerabilities**. Tidak ada perubahan versi dependency langsung. Rujukan temuan: [http-cache-semantics advisory](https://github.com/advisories/GHSA-ch52-4w7c-c8xp) dan [source-map-js advisory](https://github.com/advisories/GHSA-68fv-2mgg-jv7q); status 0 berasal dari audit lockfile aktual pada tanggal pengujian.
+- `npm run qa`: berhasil. Astro check 145 file, 0 error/warning/hint; 20 unit tests lulus; build Node standalone berhasil termasuk 716 varian gambar; validasi 167 halaman, 38 layanan, 6 kategori, 4 grup lingkungan, 6 industri dan konten bilingual lulus.
+- `npm run test:browser`: **48 lulus**, 0 gagal/flaky/skipped, sekitar 5,4 menit. Termasuk 17 route pada sembilan lebar (153 pemeriksaan), Axe pada 13 halaman, navigasi/menu/bahasa, pencarian/filter, aset hero, consent/analytics gating, redirect/404/noindex dan form sink lokal.
+- `npm run dev -- --background --host 127.0.0.1 --port 4331`: berhasil; status/logs background diperiksa. Smoke test 14 halaman utama ID/EN menghasilkan HTTP 200, gambar ter-decode, tidak ada overflow horizontal, uncaught JS atau response lokal >=400. Mega menu ke AMDAL, CTA/prefill, menu mobile, pergantian bahasa dan submit form sink lokal berhasil.
+- Form memakai environment privat yang di-ignore, `CONTACT_TEST_MODE=true`, origin loopback dan indexing disabled. Data pengujian fiktif; tidak ada SMTP nyata atau email keluar. Semua bukti produksi tetap pending.
+
+Bukti lokal berada di root `tmp/handover/`: `install-patched.log`, `qa-patched.log`, `browser-patched.log`, `dev-smoke.log`, `dev-smoke.json`, screenshot `dev-*-desktop.png`/`dev-home-mobile.png` serta `secret-audit.json`. Hasil browser JSON ada di `tmp/handover/fresh-clone/outputs/galdino_partner/website/reports/browser-results.json`. Folder bukti sengaja di-ignore, tidak mengubah source dan tidak menggantikan rekaman wajib. Salinan laporan final mencatat pemeriksaan ulang pada SHA handover terakhir.
+
+Audit credential memakai pencarian pola key/token/URL/password, isi teks arsip ZIP/OOXML dan pencocokan nilai secret environment privat bila tersedia; tidak ada populated private environment di aplikasi awal. Tidak ada credential terkonfirmasi yang memerlukan rotation. Pemeriksaan tersebut tidak menjamin deteksi format credential tidak dikenal atau secret dalam gambar; jangan mencetak credential untuk pemeriksaan manual lanjutan.
 
 OBS terpasang, tetapi koneksi kontrol desktop/browser pada sesi ini gagal dimulai dengan kesalahan sandbox Windows `apply deny-read ACLs`. Tidak ada rekaman layar aman yang dapat dioperasikan dan diverifikasi dari tool yang aktif. Urutan rekaman di bawah siap dijalankan; rekaman tetap Pending, bukan digantikan screenshot atau log.
 
@@ -82,4 +92,4 @@ Jangan buka `.env`, credential manager, token, password, SSH key atau host secre
 
 ## Hasil untuk penerima
 
-Project: Galdino & Partner. Repository: https://github.com/afinitasid/Galdino-Partner-Website. Status: **Pending**. Commit final yang diuji: menunggu verifikasi. Screen recording: **Pending**, belum ada file video terverifikasi. Semua hasil teknis baru dan lokasi bukti akan dicatat sebelum penyerahan.
+Project: Galdino & Partner. Repository: https://github.com/afinitasid/Galdino-Partner-Website (**PRIVATE**). Persiapan dan verifikasi teknis: **Completed**. Status handover keseluruhan: **Pending**. Source/lockfile fresh clone yang diuji: **f8fbc5890fb4dba692564968b848a23bc1dfad39**; laporan lokal akhir mencatat SHA commit dokumentasi handover terakhir dan hasil pemeriksaan ulangnya. Screen recording: **Pending**, belum ada file video terverifikasi; urutan lengkap tersedia di atas. Produksi dan approval konten tetap pending, indexing tetap disabled.
