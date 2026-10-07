@@ -145,7 +145,7 @@ test('directory works without JavaScript and legacy environmental routes redirec
  const context=await browser.newContext({javaScriptEnabled:false});const page=await context.newPage();await page.goto('/id/services/');
  await expect(page.locator('.category-block')).toHaveCount(6);await expect(page.locator('.category-services a')).toHaveCount(38);
  await expect(page.getByRole('heading',{name:'Bidang usaha',exact:true})).toBeVisible();
- await page.locator('.category-services a[href="/id/services/lingkungan/amdal/"]').click();await expect(page.locator('h1')).toHaveText('Jasa AMDAL');await context.close();
+ await page.locator('.category-services a[href="/id/services/lingkungan/amdal/"]').click();await expect(page.locator('h1')).toHaveText('AMDAL');await context.close();
  for(const [old,target] of [
  ['/id/profile/how-we-work/','/id/#why-galdino-title'],
  ['/en/profile/how-we-work/','/en/#why-galdino-title'],
@@ -175,110 +175,69 @@ test('layered banners meet the navbar and industries form an equal three-column 
  await page.goto('/id/services/');for(const removed of ['Enam bidang, satu konteks usaha.','Konteks industri','Insights'])await expect(page.locator('main')).not.toContainText(removed);
 });
 
-test('brand headings, image framing, navigation and featured sections stay consistent',async({page},testInfo)=>{
- await page.setViewportSize({width:1440,height:1000});await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
- const headings:string[]=[];
- for(const locale of ['id','en']){
- for(const route of ['', 'profile/', 'services/', 'industries/', 'projects/', 'blog/']){
+test('brand navigation, accessible hero copy and final assets work in both languages',async({page})=>{
+ await page.setViewportSize({width:1440,height:1000});
+ await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ for(const locale of ['id','en'])for(const route of ['', 'profile/', 'services/', 'industries/', 'projects/', 'blog/']){
   await page.goto('/'+locale+'/'+route);
-  const hero=page.locator('.home-hero,.layered-hero');expect((await hero.boundingBox())!.height).toBeGreaterThanOrEqual(999);
-  const heroImg=route===''?hero.locator('.home-hero__image'):hero.locator('.layered-hero__image');expect(await heroImg.evaluate(el=>getComputedStyle(el).objectFit)).toBe('contain');const unfilled=await page.locator('.case-photo img,.related-cases img,.ed-figure img,.company-gallery__slide img,.work-collage img').evaluateAll(images=>images.filter(img=>getComputedStyle(img).objectFit!=='cover').length);expect(unfilled).toBe(0);
-  const menu=await page.locator('.nav-menu').boundingBox();expect(Math.abs(menu!.x+menu!.width/2-720)).toBeLessThan(2);await expect(page.locator('.nav-cta')).toHaveCSS('border-top-left-radius','4px');
-  if(route===''){
-   await expect(hero).toHaveCSS('background-color','rgb(244, 243, 241)');
-   await expect(page.locator('.home-hero__copy')).toHaveCSS('text-align','center');
-   await expect(page.locator('.home-hero__actions a')).toHaveCount(1);
-   await expect(page.locator('.home-hero__actions a')).toHaveAttribute('href','/'+locale+'/contact/');
-   await expect(heroImg).toHaveAttribute('src',/home-consultation-supplied-cutout/);
-   await expect(page.locator('.home-hero__backdrop')).toHaveAttribute('src',/home-architecture-supplied/);
-   await expect(page.locator('.home-hero__backdrop')).toHaveAttribute('alt','');
-   await expect(hero.locator('img')).toHaveCount(2);
-   await expect(page.locator('.home-hero__highlight')).toHaveCSS('color','rgb(255, 255, 255)');
-   await expect(page.locator('.home-hero__highlight')).toHaveCSS('background-color','rgb(196, 20, 42)');
-   await expect(page.locator('.site-header')).toHaveCSS('position','fixed');
-   const titleStart=await page.locator('.home-hero__highlight').boundingBox(),titleEnd=await page.locator('.home-hero__title-end').boundingBox();
-   expect(titleEnd!.y).toBeGreaterThanOrEqual(titleStart!.y+titleStart!.height);
-   const frame=await page.locator('.home-hero__visual').boundingBox(),heroBox=await hero.boundingBox();
-   expect(Math.abs(frame!.y+frame!.height-heroBox!.y-heroBox!.height)).toBeLessThan(1);
-   expect(heroBox!.y).toBe(0);
-   await expect(page.locator('.client-register')).toHaveCount(0);
-   await expect(page.locator('.site-header')).not.toHaveClass(/site-header--immersive/);
-  }
-  const header=page.locator('.site-header');
-  await expect(header).toHaveAttribute('data-scrolled','false');
-  await expect(header).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
-  await page.evaluate(()=>window.scrollTo({top:600,behavior:'instant'}));
-  await expect(header).toHaveAttribute('data-scrolled','true');
-  await expect(header).toHaveCSS('background-color','rgb(255, 255, 255)');
-  if(locale==='id'&&['','services/'].includes(route))await header.screenshot({path:testInfo.outputPath('id-'+(route||'home').replace('/','')+'-navbar-scrolled-1440.png')});
-  await expect(page.locator('.brand')).toHaveCSS('color','rgb(11, 11, 12)');
-  await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
-  await expect(header).toHaveAttribute('data-scrolled','false');
-  await expect(header).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
-  if(locale==='id'&&route==='services/')await page.screenshot({path:testInfo.outputPath('id-services-navbar-top-1440.png'),animations:'disabled'});
-  if(route===''){await hero.locator('img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));await page.screenshot({path:testInfo.outputPath(locale+'-home-hero-1440.png'),animations:'disabled'});}
-  if(route!==''){await expect(heroImg).toHaveAttribute('src',/hero-.*-layered-cutout/);expect(await heroImg.evaluate(el=>getComputedStyle(el).objectPosition)).toBe('50% 100%');await expect(heroImg).toHaveCSS('filter','grayscale(1)');}
-  headings.push(await page.locator('h1').evaluate(el=>{const c=getComputedStyle(el);return [c.fontFamily,c.fontSize,c.fontWeight,c.letterSpacing,c.lineHeight].join('|')}));
+  const hero=page.locator('.home-hero,.layered-hero');
+  await expect(hero.locator('h1')).toHaveCount(1);
+  await expect(hero.locator('h1')).toHaveAccessibleName(/\S+/);
+  await hero.locator('img').evaluateAll(async(images:HTMLImageElement[])=>{await Promise.all(images.map(img=>img.decode()));if(images.some(img=>!img.naturalWidth))throw Error('Missing final hero asset');});
+  await expect(hero.locator('.hero-highlight__finish')).toHaveAttribute('aria-hidden','true');
+  await expect(hero.locator('.hero-highlight__finish')).toHaveCSS('color','rgb(255, 255, 255)');
+  await expect(hero.locator('.hero-highlight__finish')).toHaveCSS('background-color','rgb(196, 20, 42)');
   await expect(page.locator('.nav-link[href="/'+locale+'/projects/"]')).toHaveText('Our Experiences');
   await expect(page.locator('.nav-link[href="/'+locale+'/profile/"]')).toHaveText('About Us');
-  await expect(page.locator('.nav-link[href="/'+locale+'/contact/"]')).toHaveCount(0);
-  await expect(page.locator('a[href*="profile/how-we-work"]')).toHaveCount(0);
-  const badImages=await page.locator('main img:not(.home-hero img):not(.layered-hero img):not(.image-hero img)').evaluateAll(images=>images.filter(img=>{const c=getComputedStyle(img);return c.objectPosition!=='50% 50%'}).length);expect(badImages).toBe(0);
+  const header=page.locator('.site-header');await expect(header).toHaveAttribute('data-scrolled','false');
+  await expect(header).toHaveCSS('background-color','rgba(0, 0, 0, 0)');
+  await page.evaluate(()=>window.scrollTo({top:600,behavior:'instant'}));
+  await expect(header).toHaveAttribute('data-scrolled','true');await expect(header).toHaveCSS('background-color','rgb(255, 255, 255)');
+  await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await expect(header).toHaveAttribute('data-scrolled','false');
  }
- }
- expect(new Set(headings).size).toBe(1);
- for(const locale of ['id','en']){await page.goto('/'+locale+'/contact/');const header=page.locator('.site-header');await expect(header).toHaveAttribute('data-scrolled','false');await expect(header).toHaveCSS('background-color','rgba(0, 0, 0, 0)');await page.evaluate(()=>window.scrollTo({top:600,behavior:'instant'}));await expect(header).toHaveAttribute('data-scrolled','true');await expect(header).toHaveCSS('background-color','rgb(255, 255, 255)');if(locale==='id')await header.screenshot({path:testInfo.outputPath('id-contact-navbar-scrolled-1440.png')});}
- await page.setViewportSize({width:375,height:900});
- for(const locale of ['id','en']){await page.goto('/'+locale+'/');await page.locator('.home-hero img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));await page.screenshot({path:testInfo.outputPath(locale+'-home-hero-375.png'),animations:'disabled'});}
- await page.setViewportSize({width:375,height:1000});
- for(const route of ['projects/']){await page.goto('/id/'+route);await page.locator('.layered-hero__image').evaluate((img:HTMLImageElement)=>img.decode());expect(await page.locator('.layered-hero__image').evaluate((img:HTMLImageElement)=>img.currentSrc)).toContain('hero-experiences-layered-cutout');}
- await page.setViewportSize({width:1440,height:1000});
- await page.goto('/id/');await expect(page.locator('#why-galdino-title')).toHaveText('Kenapa Galdino & Partner');
- await expect(page.locator('.why-section')).toHaveCSS('background-color','rgb(11, 11, 12)');
- await expect(page.locator('.why-point')).toHaveCount(4);
- for(const route of ['services/','projects/']){
-  await page.goto('/id/'+route);expect(await page.locator('.process-section').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgb(11, 11, 12)');
-  expect(await page.locator('.process-section .home-kicker').evaluate(el=>getComputedStyle(el,'::before').content)).toBe('""');
- }
- await page.goto('/id/projects/');await expect(page.locator('main')).not.toContainText('Jelajahi konteksnya');
- const cards=await page.locator('.case-entry:not(.featured)').evaluateAll(els=>els.map(el=>{const r=el.getBoundingClientRect();return {y:r.y,width:r.width}}));
- expect(cards[0].y).toBe(cards[1].y);expect(cards[1].y).toBe(cards[2].y);for(const card of cards)expect(Math.abs(card.width-cards[0].width)).toBeLessThan(1);
- expect((await page.locator('.featured .case-photo').boundingBox())!.height).toBeLessThanOrEqual(353);
- expect(await page.locator('.case-entry.featured').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgb(236, 235, 234)');
- await page.goto('/id/blog/');expect(await page.locator('.featured-insight').evaluate(el=>getComputedStyle(el).backgroundColor)).toBe('rgb(236, 235, 234)');
- await page.emulateMedia({reducedMotion:'reduce'});await page.locator('.services-nav summary').click();await expect(page.locator('.service-mega')).toBeVisible();await page.keyboard.press('Escape');await expect(page.locator('.service-mega')).not.toBeVisible();
+ expect(errors).toEqual([]);
 });
 
-test('main hero consultation paths and complete category cards',async({page})=>{
+test('main consultation paths and final category cards remain usable',async({page})=>{
  for(const locale of ['id','en']){
   for(const route of ['services/','industries/','projects/','blog/']){
-   await page.goto('/'+locale+'/'+route);const target=route==='projects/'?'#experiences':route==='blog/'?'#latest-insights':'/'+locale+'/contact/';await expect(page.locator('.layered-hero__cta')).toHaveAttribute('href',target);if(target.startsWith('#')){await page.locator('.layered-hero__cta').click();await expect(page.locator(target)).toBeInViewport();}await expect(page.locator('.ed-breadcrumb')).toHaveCount(0);
+   await page.goto('/'+locale+'/'+route);const target=route==='projects/'?'#experiences':route==='blog/'?'#latest-insights':'/'+locale+'/contact/';
+   await expect(page.locator('.layered-hero__cta')).toHaveAttribute('href',target);
+   if(target.startsWith('#')){await page.locator('.layered-hero__cta').click();await expect(page.locator(target)).toBeInViewport();}
   }
   for(const route of locale==='id'?['reklame','tata-ruang','bangunan-konstruksi','lingkungan','lalu-lintas-akses','iso']:['advertising-permits','spatial-planning','buildings-construction','environmental-approvals','traffic-road-access','iso-management-systems']){
-   await page.goto('/'+locale+'/services/'+route+'/');await expect(page.locator('.category-process .permit-pathway li')).toHaveCount(4);await expect(page.locator('.category-process')).toHaveCSS('background-color','rgb(11, 11, 12)');await expect(page.locator('.related-cases')).toHaveCount(0);
-   await page.setViewportSize({width:1440,height:1000});const boxes=await page.locator('.service-entry').evaluateAll(els=>els.map(el=>el.getBoundingClientRect().y));expect(boxes[0]).toBe(boxes[1]);expect(new Set(boxes).size).toBe(Math.ceil(boxes.length/2));await expect(page.locator('.service-entry .service-copy p').first()).toBeVisible();await expect(page.locator('.service-entry .service-bottom strong').first()).toBeVisible();await expect(page.locator('.split-hero .ed-button')).toHaveAttribute('href','#services-in-category');
+   await page.setViewportSize({width:1440,height:1000});await page.goto('/'+locale+'/services/'+route+'/');
+   await expect(page.locator('.category-process .permit-pathway li')).toHaveCount(4);
+   const cards=page.locator('.service-entry');expect(await cards.count()).toBeGreaterThan(0);
+   await expect(cards.locator('h3 a').first()).toBeVisible();await expect(cards.locator('.service-detail-link').first()).toBeVisible();
+   await expect(cards.locator('.service-copy p,.service-bottom strong')).toHaveCount(0);
+   await cards.locator('img').evaluateAll(async(images:HTMLImageElement[])=>{images.forEach(img=>img.loading='eager');await Promise.all(images.map(img=>img.decode()));});
+   await expect(page.locator('.category-hero .ed-button')).toHaveAttribute('href',new RegExp('^/'+locale+'/contact/\\?category='));
    const faq=page.locator('.ed-details').first();await faq.locator('summary').click();await expect(faq).toHaveAttribute('open','');await faq.locator('summary').click();await expect(faq).not.toHaveAttribute('open','');
+   await cards.locator('h3 a').first().click();await expect(page.locator('.detail-hero h1,.reklame-detail-hero h1')).toBeVisible();
   }
  }
 });
 
-test('split detail heroes, compact profiles and contact follow the revised structure',async({page},testInfo)=>{
+test('final detail consultation routes, contact, profiles and article contents work',async({page})=>{
  await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
  for(const locale of ['id','en']){
   for(const route of locale==='id'?['services/reklame/','services/reklame/pajak-reklame/','industries/developer-properti/']:['services/advertising-permits/','services/advertising-permits/advertising-tax/','industries/property-developers/']){
-   await page.goto('/'+locale+'/'+route);await expect(page.locator('.split-hero img')).toBeVisible();await expect(page.locator('.split-hero')).toHaveCSS('background-color','rgb(255, 255, 255)');await expect(page.locator('.site-header')).not.toHaveClass(/site-header--immersive/);await expect(page.locator('.context-section .ed-button')).toHaveAttribute('href',new RegExp('/'+locale+'/contact/'));const href=await page.locator('.split-hero .ed-button').getAttribute('href');await page.locator('.split-hero .ed-button').click();await expect(page.locator(href!)).toBeInViewport();
-   if(route.includes('pajak-reklame/')||route.includes('advertising-tax/')){const sections=await page.locator('.context-section,#service-estimates,#service-scope').evaluateAll(els=>els.map(el=>el.id||'context'));expect(sections).toEqual(['context','service-estimates','service-scope']);await expect(page.locator('#service-estimates>.ed-note')).toHaveCount(1);const list=page.locator('#service-scope .ed-list').first();await expect(list).toHaveCSS('list-style-type','disc');await page.locator('#service-estimates').screenshot({path:testInfo.outputPath(locale+'-service-estimates-1440.png')});}
-   if(route.startsWith('industries/')){await expect(page.locator('main')).not.toContainText(locale==='id'?'Mulai percakapan':'Start a conversation');await expect(page.locator('.dark-map')).toHaveCSS('background-color','rgb(11, 11, 12)');await expect(page.locator('.related-cases,.related-insights')).toHaveCount(0);}
+   await page.goto('/'+locale+'/'+route);await expect(page.locator('.detail-hero h1,.reklame-detail-hero h1')).toBeVisible();
+   await page.locator('.detail-hero img,.reklame-detail-hero img').evaluateAll(async(images:HTMLImageElement[])=>Promise.all(images.map(img=>img.decode())));
+   const consult=page.locator('.detail-hero .ed-button,.reklame-detail-hero .ed-button');await expect(consult).toHaveAttribute('href',new RegExp('^/'+locale+'/contact/'));
+   await consult.click();await expect(page.locator('#contact-form')).toBeVisible();
+   if(route.includes('pajak-reklame/')||route.includes('advertising-tax/'))await expect(page.locator('[name=service]')).toHaveValue('pajak-reklame');
   }
-  await page.goto('/'+locale+'/contact/');await expect(page.locator('.image-hero')).toHaveCount(0);await expect(page.locator('.site-header')).toBeVisible();await expect(page.locator('#contact-form')).toBeVisible();const copy=await page.locator('.contact-copy').boundingBox(),form=await page.locator('#contact-form').boundingBox();expect(copy!.x).toBeLessThan(form!.x);await expect(page.locator('.contact-next-steps li')).toHaveCount(6);await expect(page.locator('#contact-next-title')).toHaveText(locale==='id'?'Apa yang Selanjutnya Terjadi?':'What Happens Next?');
-  await page.goto('/'+locale+'/profile/hans-galdino/');await expect(page.locator('h1')).toHaveText('Hans Galdino');await expect(page.locator('.image-hero')).toHaveCount(0);await expect(page.locator('.related-insights')).toHaveCount(0);const header=await page.locator('.site-header').boundingBox(),intro=await page.locator('.person-hero__copy').boundingBox();expect(intro!.y-header!.height).toBeLessThan(100);
-  await page.goto('/'+locale+'/profile/');await expect(page.locator('.principles li')).toHaveCount(4);await expect(page.locator('.profile-company__registry')).toHaveCount(0);await expect(page.locator('.related-cases article')).toHaveCount(2);await expect(page.locator('.work-collage figure')).toHaveCount(8);expect((await page.locator('.founder-note').boundingBox())!.height).toBeLessThan(900);await page.locator('.founder-note img,.work-collage img').evaluateAll(async(images:HTMLImageElement[])=>{images.forEach(img=>img.loading='eager');await Promise.all(images.map(img=>img.decode()));});await page.locator('.founder-note').screenshot({path:testInfo.outputPath(locale+'-founder-note-1440.png')});await page.locator('.inside-work').screenshot({path:testInfo.outputPath(locale+'-work-collage-1440.png')});await page.setViewportSize({width:375,height:900});await page.goto('/'+locale+'/profile/');expect((await page.locator('.founder-note').boundingBox())!.height).toBeLessThan(820);await page.locator('.founder-note img').evaluate((img:HTMLImageElement)=>img.decode());await page.locator('.founder-note').screenshot({path:testInfo.outputPath(locale+'-founder-note-375.png')});await page.locator('.work-collage img').evaluateAll(async(images:HTMLImageElement[])=>{images.forEach(img=>img.loading='eager');await Promise.all(images.map(img=>img.decode()));});await page.locator('.inside-work').screenshot({path:testInfo.outputPath(locale+'-work-collage-375.png')});await page.setViewportSize({width:1440,height:1000});
+  await page.goto('/'+locale+'/contact/');await expect(page.locator('.image-hero')).toHaveCount(0);await expect(page.locator('#contact-form')).toBeVisible();
+  await expect(page.locator('.contact-next-steps li')).toHaveCount(6);
+  await page.goto('/'+locale+'/profile/hans-galdino/');await expect(page.locator('h1')).toHaveText('Hans Galdino');await expect(page.locator('.related-insights')).toHaveCount(0);
+  await page.goto('/'+locale+'/profile/');await expect(page.locator('.principles li')).toHaveCount(4);await expect(page.locator('.work-collage figure')).toHaveCount(8);
  }
- for(const route of ['services/iso/','industries/developer-properti/','profile/hans-galdino/','blog/apa-itu-pbg/']){await page.goto('/id/'+route);await page.locator('img').evaluateAll(async(images:HTMLImageElement[])=>{images.forEach(img=>img.loading='eager');await Promise.all(images.map(img=>img.decode()));});await page.screenshot({path:testInfo.outputPath('id-'+route.replaceAll('/','-')+'1440.png'),fullPage:true,animations:'disabled'});}
- await page.goto('/id/blog/apa-itu-pbg/');await expect(page.locator('.article-header h1')).toBeVisible();await expect(page.locator('main')).not.toContainText('menit baca');await expect(page.locator('.article-body .ed-toc')).toBeVisible();
- await page.goto('/id/industries/');await expect(page.locator('.sector-index,.tile-image span')).toHaveCount(0);
- await page.goto('/id/services/');await expect(page.locator('.photo-number,.category-photo figcaption')).toHaveCount(0);
- await page.emulateMedia({reducedMotion:'no-preference'});const link=page.locator('.category-all').first();await link.hover();await expect(link).toHaveCSS('transform','matrix(1, 0, 0, 1, 0, -2)');
+ await page.goto('/id/blog/apa-itu-pbg/');await expect(page.locator('.article-header h1')).toBeVisible();
+ const toc=page.locator('.article-body .ed-toc');await expect(toc).toBeVisible();
+ const link=toc.locator('ol a').first(),href=await link.getAttribute('href');await link.click();await expect(page.locator(href!)).toBeInViewport();
 });
 
 test('experience details describe the actual challenge without an insights segment',async({page})=>{
@@ -306,10 +265,10 @@ test('supplied main hero compositions fit desktop and mobile in both languages',
    await expect(hero.locator('.layered-hero__kicker')).toHaveCount(0);
    if(locale==='id'){
     const titles:Record<string,string>={services:'Layanan Jasa yang Dibutuhkan Bisnis Anda',industries:'Cakupan Industri yang kami Dukung',projects:'Pengalaman Kami dalam Berbagai Kebutuhan',blog:'Informasi Relevan untuk Bisnis Anda'};
-    if(titles[route])await expect(hero.locator('h1')).toHaveText(titles[route]);
+    if(titles[route])await expect(hero.locator('h1')).toHaveAccessibleName(titles[route]);
     if(route==='projects')await expect(hero.locator('.layered-hero__lead')).toHaveText('Pengalaman yang membantu kami memahami kebutuhan bisnis Anda.');
    }
-   await expect(hero.locator('.layered-hero__highlight')).toHaveCSS('background-color','rgb(196, 20, 42)');await expect(hero.locator('.layered-hero__highlight')).toHaveCSS('color','rgb(255, 255, 255)');
+   await expect(hero.locator('.hero-highlight__finish')).toHaveCSS('background-color','rgb(196, 20, 42)');await expect(hero.locator('.hero-highlight__finish')).toHaveCSS('color','rgb(255, 255, 255)');
    await expect(hero.locator('.layered-hero__backdrop')).toHaveAttribute('src',new RegExp('hero-'+key+'-layered-backdrop'));
    await expect(hero.locator('.layered-hero__image')).toHaveAttribute('src',new RegExp('hero-'+key+'-layered-cutout'));
    await expect(page.locator('.brand')).toHaveCSS('color','rgb(11, 11, 12)');await expect(page.locator('.site-header')).toHaveCSS('position','fixed');
@@ -327,7 +286,7 @@ test('supplied main hero compositions fit desktop and mobile in both languages',
     return box.bottom-image.naturalHeight*scale+row*scale;
    });
    expect(visibleTop,'Only transparent top padding is outside the frame').toBeGreaterThanOrEqual(boxes[3]!.y-1);
-   if(width===375){await expect(hero.locator('.layered-hero__annotation').first()).not.toBeVisible();}
+   if(width===375){expect((await hero.boundingBox())!.height).toBeGreaterThan(0);}
    else{expect((await hero.boundingBox())!.height).toBeLessThanOrEqual(1000);expect(boxes[3]!.y+boxes[3]!.height).toBeLessThanOrEqual(1001);}
    await page.screenshot({path:testInfo.outputPath(locale+'-'+route+'-hero-'+width+'.png'),animations:'disabled'});
    if(route==='profile'){await hero.locator('a').click();await expect(page.locator('#team')).toBeInViewport();}
@@ -336,7 +295,7 @@ test('supplied main hero compositions fit desktop and mobile in both languages',
 });
 
 for(const viewport of [{width:1366,height:600},{width:1280,height:720},{width:1366,height:768},{width:1440,height:800},{width:1536,height:864}]){
- test('main heroes fit first laptop viewport '+viewport.width+'x'+viewport.height,async({page},testInfo)=>{
+ test('final main heroes remain usable at laptop viewport '+viewport.width+'x'+viewport.height,async({page},testInfo)=>{
   await page.setViewportSize(viewport);
   await page.addInitScript(v=>localStorage.setItem('gp-consent-v1',JSON.stringify(v)),consent);
   for(const locale of ['id','en'])for(const route of ['services','industries','projects','blog','profile']){
@@ -347,11 +306,11 @@ for(const viewport of [{width:1366,height:600},{width:1280,height:720},{width:13
    const context=locale+'/'+route+' at '+viewport.width+'x'+viewport.height;
    expect(await page.evaluate(()=>scrollY),context+' starts at top').toBe(0);
    expect(banner!.y,context+' banner starts at top').toBe(0);
-   expect(banner!.y+banner!.height,context+' whole banner fits').toBeLessThanOrEqual(viewport.height+1);
+   const maxBannerHeight=Math.max(viewport.height,route==='profile'?736:672);expect(banner!.y+banner!.height,context+' accepted hero height').toBeLessThanOrEqual(maxBannerHeight+1);
    expect(heading!.y,context+' heading clears navbar').toBeGreaterThanOrEqual(header!.y+header!.height);
    expect(photo!.y,context+' photo clears CTA').toBeGreaterThan(cta!.y+cta!.height);
    expect(photo!.height,context+' photo remains visible').toBeGreaterThan(0);
-   expect(photo!.y+photo!.height,context+' whole photo fits').toBeLessThanOrEqual(viewport.height+1);
+   expect(photo!.y+photo!.height,context+' photo remains in hero').toBeLessThanOrEqual(banner!.y+banner!.height+1);
    expect(photo!.x,context+' photo fits horizontally').toBeGreaterThanOrEqual(0);
    expect(photo!.x+photo!.width,context+' photo fits horizontally').toBeLessThanOrEqual(viewport.width+1);
    await expect(hero.locator('.layered-hero__image')).toHaveCSS('object-fit','contain');

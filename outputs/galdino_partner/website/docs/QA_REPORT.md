@@ -1,5 +1,11 @@
 # QA report
 
+## Handover verification on 7 October 2026
+
+All measurements below this notice predate the final uncommitted local revision accepted for handover. They are historical baselines, not proof of the final source. Current fresh-clone installation, QA, browser/dev checks and the exact tested commit are recorded in [HANDOVER.md](HANDOVER.md). Production SMTP/Hostinger/GTM/Search Console verification remains pending, and indexing is unchanged.
+
+## Historical baseline
+
 Hero copy, photography and the Home logo strip verified 2 October 2026 on Windows, Node 24.11.1, Microsoft Edge and the local production build at http://localhost:4327. The current review verifies 25 unique focused browser tests across the main run and targeted follow-up checks. The earlier 22-test compact-hero review and complete 41-test suite remain historical baselines. Results describe this local environment and do not guarantee production hosting.
 
 ## Validation

@@ -12,7 +12,7 @@ Official references:
 
 ## Application settings
 
-Repository: kultivatedigitalid/Galdino-and-Partners-Law-Firm-and-Consultant.
+Repository: [afinitasid/Galdino-Partner-Website](https://github.com/afinitasid/Galdino-Partner-Website), PRIVATE; default branch `main`.
 Application root: `outputs/galdino_partner/website`.
 Install: `npm ci`.
 Build: `npm run build`.
@@ -25,6 +25,8 @@ Set `PUBLIC_SITE_URL=https://galdino.co.id` at build time for final canonicals. 
 ## Environment
 
 Copy keys from .env.example into the host's environment settings. Do not commit a populated .env or print SMTP_PASSWORD in logs.
+
+The example file contains empty values only. [ENVIRONMENT.md](ENVIRONMENT.md) documents each variable, phase, fallback and safe local test configuration. Supply runtime settings through the host; `npm start` does not promise to load an Astro development `.env`.
 
 - PUBLIC_INDEXING_ENABLED=false throughout provisional review.
 - PUBLIC_GTM_ID: empty until the approved container is available.

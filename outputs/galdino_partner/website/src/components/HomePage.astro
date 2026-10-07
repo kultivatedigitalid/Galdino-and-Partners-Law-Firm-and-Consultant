@@ -5,6 +5,7 @@ import ClientMarquee from './home/ClientMarquee.astro';
 import ServiceCarousel from './home/ServiceCarousel.astro';
 import WhyGaldino from './home/WhyGaldino.astro';
 import CompanySnapshot from './home/CompanySnapshot.astro';
+import HomeIndustries from './home/HomeIndustries.astro';
 import CompanyVideo from './home/CompanyVideo.astro';
 import ExperienceShowcase from './home/ExperienceShowcase.astro';
 import HomeInsights from './home/HomeInsights.astro';
@@ -30,6 +31,7 @@ const seo = id ? {
     <HomeHero locale={locale} />
     <ClientMarquee locale={locale} />
     <CompanySnapshot locale={locale} />
+    <HomeIndustries locale={locale} />
     <ServiceCarousel locale={locale} />
     <WhyGaldino locale={locale} />
     <CompanyVideo locale={locale} />
@@ -73,6 +75,7 @@ const seo = id ? {
     color: var(--home-black);
   }
   .home-redesign .home-section { padding-block: var(--brand-section-space); }
+  .home-redesign .home-section:is(.company-section,.home-industries,.service-section,.why-section) { padding-block:clamp(5rem,7vw,7rem); }
   .home-redesign .home-kicker {
     display: inline-flex;
     align-items: center;
@@ -157,6 +160,7 @@ const seo = id ? {
   }
   @media (max-width: 640px) {
     .home-redesign .home-section { padding-block: 4.5rem; }
+    .home-redesign .home-section:is(.company-section,.home-industries,.service-section,.why-section) { padding-block:clamp(3rem,10vw,4rem); }
     .home-redesign .home-heading { font-size: var(--brand-type-section); line-height: 1.02; }
   }
   @media (prefers-reduced-motion: reduce) {

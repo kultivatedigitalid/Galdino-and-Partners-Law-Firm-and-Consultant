@@ -1,18 +1,18 @@
 import aboutBackdrop from '../assets/hero-about-layered-backdrop.webp';
-import aboutCutout from '../assets/hero-about-layered-cutout-v3.webp';
+import aboutCutout from '../assets/hero-about-layered-cutout-v4.webp';
 import insightsBackdrop from '../assets/hero-insights-layered-backdrop.webp';
 import insightsCutout from '../assets/hero-insights-layered-cutout.webp';
 import servicesBackdrop from '../assets/hero-services-layered-backdrop-v3.webp';
-import servicesCutout from '../assets/hero-services-layered-cutout-v3.webp';
+import servicesCutout from '../assets/hero-services-layered-cutout-v4.webp';
 import industriesBackdrop from '../assets/hero-industries-layered-backdrop.webp';
 import industriesCutout from '../assets/hero-industries-layered-cutout.webp';
 import experiencesBackdrop from '../assets/hero-experiences-layered-backdrop.webp';
-import experiencesCutout from '../assets/hero-experiences-layered-cutout.webp';
+import experiencesCutout from '../assets/hero-experiences-layered-cutout-v4.webp';
 
 // Source-space framing excludes transparent top padding, with an 8px visible-pixel reserve.
 export const layeredHeroes = {
  services: {
-  backdrop: servicesBackdrop, cutout: servicesCutout, photoTop: 159, destination: 'contact',
+  backdrop: servicesBackdrop, cutout: servicesCutout, photoTop: 297, destination: 'contact',
   content: {
    id: {titleStart:'Layanan Jasa', titleLines:['yang Dibutuhkan Bisnis Anda'], lead:'Kami bantu memetakan kebutuhan izin, menyiapkan dokumen, dan mengawal proses hingga tindak lanjut.', cta:'Mulai Konsultasi', alt:'Empat profesional menelaah dokumen perizinan bersama di meja konsultasi.', left:'Dari perencanaan hingga izin berjalan', right:'Solusi perizinan untuk pertumbuhan bisnis'},
    en: {titleStart:'Business Services', titleLines:['for Your Business Needs'], lead:'We help map permit requirements, prepare documents and guide the process through follow-up.', cta:'Start a Consultation', alt:'Four professionals reviewing permit documents together at a consultation desk.', left:'From planning to permits in place', right:'Permit support for business growth'}
@@ -26,7 +26,7 @@ export const layeredHeroes = {
   }
  },
  experiences: {
-  backdrop: experiencesBackdrop, cutout: experiencesCutout, photoTop: 138, destination: '#experiences',
+  backdrop: experiencesBackdrop, cutout: experiencesCutout, photoTop: 273, destination: '#experiences',
   content: {
    id: {titleStart:'Pengalaman Kami', titleLines:['dalam Berbagai Kebutuhan'], lead:'Pengalaman yang membantu kami memahami kebutuhan bisnis Anda.', cta:'Jelajahi Pendekatan Kami', alt:'Empat profesional memeriksa gambar teknis dan rencana proyek bersama.', left:'Pemahaman konteks yang lebih mendalam', right:'Arahan proses yang terukur dan realistis'},
    en: {titleStart:'Our Experience', titleLines:['Across Business Needs'], lead:'Experience that helps us understand your business needs.', cta:'Explore Our Approach', alt:'Four professionals reviewing technical drawings and project plans together.', left:'A deeper understanding of context', right:'Measured and realistic process guidance'}
@@ -40,10 +40,10 @@ export const layeredHeroes = {
   }
  },
  about: {
-  backdrop: aboutBackdrop, cutout: aboutCutout, photoTop: 148, destination: '#team',
+  backdrop: aboutBackdrop, cutout: aboutCutout, photoTop: 273, destination: '#team',
   content: {
-   id: {titleStart:'Tim Kami', titleLines:['untuk Perizinan dan','Dukungan Hukum Bisnis Anda'], lead:'Profesional, berpengalaman, dan berkomitmen membantu Anda mengurus perizinan serta menjawab kebutuhan hukum bisnis.', cta:'Kenali Tim Kami', alt:'Lima anggota tim berdiskusi bersama di sekitar laptop dan dokumen.', left:'Tim di balik pertumbuhan bisnis Anda', right:'Manusia, pengalaman, solusi berdampak'},
-   en: {titleStart:'Our Team', titleLines:['for Permits and','Business Legal Support'], lead:'Experienced professionals committed to helping you manage permits and address the legal needs of your business.', cta:'Meet Our Team', alt:'Five team members discussing documents around a laptop.', left:'The team behind your business growth', right:'People, experience and meaningful solutions'}
+   id: {titleStart:'Tim Kami', titleLines:['Untuk Perizinan Anda'], lead:'Tim berpengalaman untuk kebutuhan perizinan bisnis Anda.', cta:'Kenali Tim Kami', alt:'Lima anggota tim berdiskusi bersama di sekitar laptop dan dokumen.', left:'Tim di balik pertumbuhan bisnis Anda', right:'Manusia, pengalaman, solusi berdampak'},
+   en: {titleStart:'Our Team', titleLines:['For Your Permits'], lead:'An experienced team for your business permit needs.', cta:'Meet Our Team', alt:'Five team members discussing documents around a laptop.', left:'The team behind your business growth', right:'People, experience and meaningful solutions'}
   }
  }
 } as const;

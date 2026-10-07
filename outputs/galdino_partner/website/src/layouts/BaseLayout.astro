@@ -7,6 +7,8 @@ import {canIndex} from '../data/launch';
 import CookieConsent from '../components/legal/CookieConsent.astro';
 import '../styles/contrast.css';
 import '../styles/profile-polish.css';
+import '../styles/hero-motion.css';
+import '../styles/cta.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactDock from '../components/ContactDock.astro';
@@ -88,6 +90,7 @@ const organization = {
     <CookieConsent locale={locale} />
     <script>
       import '../scripts/dialogs';
+      import '../scripts/hero-motion';
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion-ready');
       const observer = 'IntersectionObserver' in window
         ? new IntersectionObserver((entries, instance) => {

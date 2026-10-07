@@ -3,30 +3,41 @@ import {Image} from 'astro:assets';
 import {SERVICE_GROUPS} from '../../data/service-catalog';
 import {INDUSTRIES} from '../../data/industries';
 import {serviceActivityImage} from '../../data/service-images';
+import {serviceStockImages} from '../../data/service-stock-images';
 import {serviceUrl,priceLabel,type Service} from '../../data/services';
 import type {Locale} from '../../data/site';
-interface Props{locale:Locale;services:Service[];searchOnly?:boolean;listId?:string}
-const {locale,services,searchOnly=false,listId="service-list"}=Astro.props,id=locale==='id';
+interface Props{locale:Locale;services:Service[];searchOnly?:boolean;listId?:string;compact?:boolean}
+const {locale,services,searchOnly=false,listId="service-list",compact=false}=Astro.props,id=locale==='id';
 ---
-<div id={listId} class="services-directory">
-{services.map(s=>{const visual=serviceActivityImage(s);return (
+<div id={listId} class:list={['services-directory',{'services-directory--compact':compact}]}>
+{services.map(s=>{const visual=compact?(serviceStockImages[s.id]||serviceActivityImage(s)):serviceActivityImage(s);return (
 <article id={s.group&&services.find(entry=>entry.group===s.group)?.id===s.id?SERVICE_GROUPS.find(g=>g.id===s.group)?.slug[locale]:undefined} class="service-entry" hidden={searchOnly} data-service-id={s.id} data-service-title={s.content[locale].title} data-service-search={s.keywords+' '+s.content[locale].description+' '+INDUSTRIES.filter(i=>i.services.includes(s.id)).map(i=>i.content[locale].title+' '+i.content[locale].issues.join(' ')).join(' ')}>
- <figure class="service-visual"><a href={serviceUrl(s,locale)} tabindex="-1" aria-hidden="true"><Image class="service-photo" src={visual.image} alt={visual.alt[locale]} widths={[480,800]} sizes="(min-width:801px) 45vw, 100vw" loading="lazy" quality={76}/></a></figure>
+ <figure class="service-visual"><a href={serviceUrl(s,locale)} tabindex="-1" aria-hidden="true"><Image class="service-photo" src={visual.image} alt={visual.alt[locale]} widths={[400,640,800]} sizes="(min-width:1025px) 30vw, (min-width:601px) 45vw,100vw" loading="lazy" quality={80}/></a></figure>
  <div class="service-copy">
- <div><h3><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></h3><p>{s.content[locale].description}</p>
- <div class="service-bottom"><strong>{priceLabel(s,locale)}</strong><a class="ed-link" href={serviceUrl(s,locale)}>{id?'Lihat layanan':'Explore service'} →</a></div></div></div>
+ <div class:list={{'service-heading-row':compact}}><h3><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></h3>
+ {compact?<a class="ed-link service-detail-link" href={serviceUrl(s,locale)} aria-label={`Detail: ${s.content[locale].title}`}>Detail →</a>:<><p>{s.content[locale].description}</p><div class="service-bottom"><strong>{priceLabel(s,locale)}</strong><a class="ed-link" href={serviceUrl(s,locale)}>{id?'Lihat layanan':'Explore service'} →</a></div></>}
+ </div></div>
 </article>)})}
 </div>
 <style>
-.services-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 2rem}
-.service-entry{padding-top:1.5rem;border-top:2px solid var(--brand-red)}
-.service-entry :global(.service-photo){width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;transition:transform 240ms var(--brand-ease)}
-.service-copy{padding-top:1.5rem}
-.service-entry h3{font-size:var(--brand-type-card)}
+.services-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.25rem 1.5rem}
+.service-entry{display:flex;flex-direction:column;padding-top:1rem;border-top:1px solid var(--brand-line-strong)}
+.service-entry :global(.service-photo){width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;object-position:center;transition:transform 240ms var(--brand-ease)}
+.service-copy{display:flex;flex:1;padding-top:1rem}.service-copy>div{display:flex;flex-direction:column;width:100%}
+.service-entry h3{min-height:2.2em;font-size:clamp(1.2rem,1.55vw,1.45rem);line-height:1.15}
 .service-entry h3 a{text-decoration:none}.service-entry h3 a:hover{color:var(--brand-red);text-decoration:underline;text-underline-offset:.2em}
-.service-entry p{font-size:.9rem;color:#56565b}
-.service-bottom{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;align-items:center;margin-top:1.5rem}
-.service-bottom strong{font-size:.9rem}
-.service-visual{margin:0}.service-visual>a{position:relative;display:block;overflow:hidden;border-left:2px solid var(--brand-red);border-bottom:2px solid var(--brand-red)}.service-entry:hover img{transform:scale(1.025)}
-@media(max-width:800px){.services-directory{grid-template-columns:1fr}}
+.service-entry p{font-size:.82rem;color:var(--brand-muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:.75rem 0 1rem}
+.service-bottom{display:flex;flex-wrap:wrap;gap:.5rem 1rem;justify-content:space-between;align-items:center;margin-top:auto}
+.service-bottom strong,.service-bottom .ed-link{font-size:.76rem}
+.service-visual{margin:0}.service-visual>a{position:relative;display:block;overflow:hidden;border-radius:var(--brand-cta-radius)}
+.services-directory--compact .service-entry{padding-top:0;border-top:0}
+.services-directory--compact :global(.service-photo){filter:saturate(.35)}
+.services-directory--compact .service-heading-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:.75rem}
+.services-directory--compact h3{min-height:0;min-width:0;margin:0}
+.services-directory--compact .service-detail-link{font-size:.76rem;white-space:nowrap}
+@media(hover:hover) and (pointer:fine){.service-entry:hover img{transform:scale(1.025)}}
+@media(max-width:1024px){.services-directory{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.services-directory{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.service-entry :global(.service-photo){transition:none}}
 </style>
+<style>.service-entry h3 a:is(:hover,:focus-visible){color:var(--brand-red)}</style>

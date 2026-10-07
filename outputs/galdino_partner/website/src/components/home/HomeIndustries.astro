@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets';
+import { INDUSTRIES, industryUrl } from '../../data/industries';
+import { industryImages } from '../../data/industry-images';
+import type { Locale } from '../../data/site';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const id = locale === 'id';
+---
+<section class="home-industries home-section" aria-labelledby="home-industries-title">
+ <div class="container-shell">
+  <header class="home-industries__header">
+   <div data-home-reveal>
+    <p class="home-kicker">{id ? 'Industri yang kami dampingi' : 'Industries we support'}</p>
+    <h2 id="home-industries-title" class="home-heading">{id ? 'Dukungan lintas industri.' : 'Support across industries.'}</h2>
+   </div>
+   <div class="home-industries__aside" data-home-reveal>
+    <a class="home-rule-link" href={`/${locale}/industries/`}>{id ? 'Lihat seluruh industri' : 'View all industries'}<ArrowIcon/></a>
+   </div>
+  </header>
+  <div class="home-industries__grid">
+   {INDUSTRIES.map(industry => (
+    <article class="home-industry" data-home-reveal>
+     <a class="home-industry__image" href={industryUrl(industry, locale)} tabindex="-1" aria-hidden="true">
+      <Image src={industryImages[industry.id]} alt="" widths={[400,640,800]} sizes="(min-width:1025px) 30vw, (min-width:601px) 45vw, 100vw" loading="lazy" quality={80}/>
+     </a>
+     <h3><a href={industryUrl(industry, locale)}>{industry.content[locale].short}<ArrowIcon/></a></h3>
+    </article>
+   ))}
+  </div>
+ </div>
+</section>
+<style>
+ .home-industries{background:var(--home-paper)}
+ .home-industries__header{display:grid;gap:2rem}
+ .home-industries__aside{max-width:34rem}
+ .home-industries__aside p{margin:0 0 1.25rem;color:var(--home-muted);font-size:.88rem}
+ .home-industries__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem 1.5rem;margin-top:clamp(2rem,3vw,3rem)}
+ .home-industry{display:flex;flex-direction:column;align-items:flex-start}
+ .home-industry__image{display:block;width:100%;overflow:hidden;aspect-ratio:2/1;border-radius:var(--brand-cta-radius)}
+ .home-industry__image :global(img){width:100%;height:100%;object-fit:cover;transition:transform 300ms var(--home-ease)}
+ .home-industry h3{width:100%;margin:1rem 0 0;font-family:var(--font-display);font-size:clamp(1.2rem,1.6vw,1.5rem);font-weight:570;letter-spacing:-.025em;line-height:1.2}
+ .home-industry h3 a{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:2.75rem;text-decoration:none}
+ .home-industry h3 :global(.arrow-icon){flex:0 0 auto;color:var(--home-red)}
+ .home-industry p{margin:0 0 1.25rem;color:var(--home-muted);font-size:.88rem;line-height:1.6}
+ .home-industry :global(.home-rule-link){margin-top:auto}
+ @media(min-width:850px){.home-industries__header{grid-template-columns:1.1fr .9fr;align-items:end;gap:clamp(2rem,3.5vw,3.5rem)}.home-industries__aside{justify-self:end}}
+ @media(max-width:1024px){.home-industries__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ @media(max-width:600px){.home-industries__grid{grid-template-columns:1fr;gap:2.75rem}}
+ @media(hover:hover) and (pointer:fine){.home-industry__image:hover :global(img){transform:scale(1.025)}.home-industry h3 a:hover{color:var(--home-red)}}
+ @media(prefers-reduced-motion:reduce){.home-industry__image :global(img){transition:none}}
+</style>

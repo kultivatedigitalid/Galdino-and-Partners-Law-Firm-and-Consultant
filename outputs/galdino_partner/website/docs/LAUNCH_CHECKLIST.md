@@ -4,6 +4,8 @@ Code completion and production launch are separate checks. The current branch is
 
 ## Local release
 
+The checked items below are historical QA milestones. For the final 7 October handover, use [HANDOVER.md](HANDOVER.md) and its tested commit; these marks alone do not certify the accepted local revision.
+
 - [x] npm ci completes.
 - [x] npm run check: zero errors.
 - [x] npm test: contact validation, injection, failure and rate-limit tests pass.

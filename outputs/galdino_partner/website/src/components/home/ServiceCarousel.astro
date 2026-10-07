@@ -2,7 +2,8 @@
 import { HOME_SERVICES } from '../../data/home';
 import type { Locale } from '../../data/site';
 import ArrowIcon from '../icons/ArrowIcon.astro';
-import ServiceVisual from './ServiceVisual.astro';
+import {Image} from 'astro:assets';
+import {categoryActivityImage} from '../../data/service-images';
 
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
@@ -51,14 +52,10 @@ const carouselId = `home-services-${locale}`;
               <span>{String(index + 1).padStart(2, '0')}</span>
               <small>{id ? 'PERIZINAN' : 'LICENSING'}</small>
             </div>
-            <ServiceVisual slug={service.slug} title={service.title} />
+            <figure class="service-card__visual"><Image src={categoryActivityImage(service.id).image} alt={categoryActivityImage(service.id).alt[locale]} widths={[320,480,640]} sizes="(max-width:640px) 86vw,(max-width:1050px) 45vw,24vw" loading="lazy"/></figure>
             <h3>{service.title}</h3>
             <p class="service-card__description">{service.description}</p>
             <div class="service-card__footer">
-              <div>
-                <small>{id ? 'Estimasi biaya' : 'Cost estimate'}</small>
-                <strong>{service.price}</strong>
-              </div>
               <a href={`/${locale}/services/${service.slug}/`} aria-label={`${id ? 'Lihat detail' : 'View details'}: ${service.title}`}>
                 {id ? 'Detail' : 'Details'} <ArrowIcon direction="right" />
               </a>
@@ -86,16 +83,16 @@ const carouselId = `home-services-${locale}`;
   .service-carousel__controls button:active:not(:disabled) { transform: scale(.97); }
   .service-carousel__track { display: flex; gap: .8rem; overflow-x: auto; padding: .1rem 0 1rem; scroll-behavior: smooth; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--home-red) var(--home-line); }
   .service-carousel__track:focus-visible { outline-offset: .3rem; }
-  .service-card { position: relative; flex: 0 0 calc((100% - 2.4rem) / 4); min-height: 31rem; display: flex; flex-direction: column; padding: 1.35rem; border: 1px solid var(--home-line); background: var(--home-white); scroll-snap-align: start; transition: border-color 180ms var(--home-ease), transform 180ms var(--home-ease); }
+  .service-card { position: relative; flex: 0 0 calc((100% - 2.4rem) / 4); min-height: 27rem; display: flex; flex-direction: column; padding: 1.35rem; border: 1px solid var(--home-line); background: var(--home-white); scroll-snap-align: start; transition: border-color 180ms var(--home-ease), transform 180ms var(--home-ease); }
   .service-card::before { position: absolute; top: -1px; right: -1px; left: -1px; height: .2rem; background: var(--home-red); content: ''; transform: scaleX(.22); transform-origin: left; transition: transform 220ms var(--home-ease); }
   .service-card__top { display: flex; align-items: center; justify-content: space-between; }
   .service-card__top > span { color: var(--home-red); font-size: .67rem; font-weight: 850; }
   .service-card small { color: var(--home-muted); font-size: .58rem; font-weight: 780; letter-spacing: .12em; text-transform: uppercase; }
-  .service-card h3 { max-width: 13ch; min-height: 2.08em; margin: 1.15rem 0 0; font-family: var(--font-display); font-size: clamp(1.45rem, 1.85vw, 1.95rem); font-weight: 590; letter-spacing: -.035em; line-height: 1.04; }
+  .service-card__visual{height:8.6rem;margin:1.1rem 0 0;overflow:hidden}
+  .service-card__visual :global(img){width:100%;height:100%;object-fit:cover;filter:saturate(.4)}
+  .service-card h3 { width:100%; max-width:none; min-height: 2.08em; margin: 1.15rem 0 0; font-family: var(--font-display); font-size: clamp(1.35rem, 1.65vw, 1.75rem); font-weight: 590; letter-spacing: -.025em; line-height: 1.12; text-wrap:pretty; }
   .service-card__description { min-height: 3.1em; margin: .8rem 0 0; color: var(--home-muted); font-size: .72rem; line-height: 1.5; }
   .service-card__footer { display: grid; gap: .9rem; margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--home-line); }
-  .service-card__footer > div { display: grid; gap: .3rem; }
-  .service-card__footer strong { font-size: .72rem; font-weight: 780; }
   .service-card__footer a { width: fit-content; min-height: 2.75rem; display: inline-flex; align-items: center; gap: .35rem; color: var(--home-red); font-size: .73rem; font-weight: 800; text-decoration: none; }
   .service-card__footer :global(.arrow-icon) { transition: transform 170ms var(--home-ease); }
 
@@ -110,10 +107,10 @@ const carouselId = `home-services-${locale}`;
     .service-section__aside { justify-self: end; }
   }
   @media (max-width: 1050px) {
-    .service-card { flex-basis: calc((100% - .8rem) / 2); min-height: 30rem; }
+    .service-card { flex-basis: calc((100% - .8rem) / 2); min-height: 26rem; }
   }
   @media (max-width: 640px) {
-    .service-card { flex-basis: 86%; min-height: 29rem; }
+    .service-card { flex-basis: 86%; min-height: 25rem; }
     .service-carousel__toolbar p { max-width: 12rem; line-height: 1.35; }
     .service-card h3 { min-height: 0; }
     .service-card__description { min-height: 0; }

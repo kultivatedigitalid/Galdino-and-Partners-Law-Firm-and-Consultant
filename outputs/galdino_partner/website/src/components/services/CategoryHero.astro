@@ -1,0 +1,68 @@
+---
+import {Image} from 'astro:assets';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+import {COPY,type Locale} from '../../data/site';
+import type {ServiceCategory} from '../../data/service-catalog';
+import {categoryHeroAssets} from '../../data/category-hero-assets';
+import {categoryActivityImage} from '../../data/service-images';
+import type {Service} from '../../data/services';
+import {SERVICE_HERO_LEADS} from '../../data/service-hero-copy';
+interface Props{locale:Locale;category:ServiceCategory;service?:Service}
+const {locale,category,service}=Astro.props;
+const text=category.content[locale],assets=categoryHeroAssets[category.id];
+const title=service?service.content[locale].title.replace(/^Jasa (Pendampingan )?/,'').replace(/ (Assistance|Support)$/,''):text.title;
+const heroLeads:Record<string,Record<Locale,string>>={
+ reklame:{id:'Izin, pajak, dan masa berlaku reklame dalam satu alur.',en:'Advertising permits, tax and renewals in one clear process.'},
+ 'tata-ruang':{id:'Kesesuaian lokasi dan rencana tapak untuk usaha Anda.',en:'Location suitability and site planning for your business.'},
+ 'bangunan-konstruksi':{id:'Pendampingan izin bangunan, instalasi, dan konstruksi.',en:'Permit support for buildings, installations and construction.'},
+ lingkungan:{id:'Dokumen dan persetujuan untuk kepatuhan lingkungan.',en:'Documents and approvals for environmental compliance.'},
+ 'lalu-lintas-akses':{id:'Kajian lalu lintas dan akses jalan sesuai kebutuhan usaha.',en:'Traffic studies and road access for your business needs.'},
+ iso:{id:'Persiapan sistem manajemen, audit, dan sertifikasi ISO.',en:'Management systems, audit readiness and ISO certification support.'}
+};
+---
+<header class:list={['category-hero','detail-hero',service?'detail-hero--service':'detail-hero--category']} data-service-hero={service?.id} data-hero-motion="ready" aria-labelledby="category-hero-title">
+ <div class="container-shell category-hero__copy">
+  <h1 id="category-hero-title" data-hero-part="title">{title}</h1>
+  <p class="category-hero__lead" data-hero-part="lead">{service?SERVICE_HERO_LEADS[service.id][locale]:heroLeads[category.id][locale]}</p>
+  <div class="category-hero__actions" data-hero-part="action">
+   <a class="ed-button" href={service?`/${locale}/contact/?service=${service.id}`:`/${locale}/contact/?category=${category.id}`}>{COPY[locale].consult}<ArrowIcon/></a>
+  </div>
+ </div>
+ <div class="category-hero__scene" aria-hidden="true">
+  <div class="category-hero__canvas" style={`--scene-aspect:${assets.backdrop.width}/${assets.backdrop.height}`}>
+  <Image class="category-hero__backdrop" src={assets.backdrop} alt="" widths={[480,800,1200,1536]} sizes="(max-width:640px) 100vw,80vw" loading="eager" fetchpriority="high" quality={85}/>
+  <Image class="category-hero__people" data-hero-part="people" src={assets.people} alt="" widths={[480,800,1200,1536]} sizes="(max-width:640px) 100vw,80vw" loading="eager" quality={85}/>
+  </div>
+ </div>
+ <span class="sr-only">{categoryActivityImage(category.id).alt[locale]}</span>
+</header>
+<style>
+ .category-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;height:100svh;min-height:0;overflow:clip;background:var(--hero-background,var(--brand-paper));color:var(--brand-black)}
+ .category-hero__copy{position:relative;z-index:2;flex-shrink:0;padding-top:calc(var(--site-header-height) + clamp(3rem,6svh,4.5rem));text-align:center}
+ .category-hero h1{max-width:25ch;margin:0 auto;font-size:clamp(2.5rem,4.6vw,4.75rem);font-family:var(--font-display);font-weight:570;letter-spacing:-.035em;line-height:1.06;text-wrap:balance}
+ .category-hero__lead{max-width:none;margin:1.25rem auto 0;color:var(--brand-muted);font-size:clamp(1rem,1.35vw,1.2rem);line-height:1.55}
+ .category-hero__actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1rem 1.75rem;margin-top:1.75rem}
+ .category-hero__actions :global(.ed-button){white-space:nowrap}
+ .category-hero__scene{position:relative;flex:1;min-height:0;width:min(100%,88rem);margin:1.5rem auto 0;pointer-events:none}
+ .category-hero__canvas{position:absolute;bottom:0;left:50%;height:100%;max-width:100%;aspect-ratio:var(--scene-aspect);translate:-50% 0}
+ .category-hero__scene :global(img){position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+ .category-hero__scene :global(.category-hero__backdrop){mix-blend-mode:multiply;opacity:.72;filter:saturate(.16);mask-image:linear-gradient(transparent,#000 38%,#000 82%,transparent),linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask-composite:intersect}
+ .category-hero__scene :global(.category-hero__people){filter:saturate(.4);opacity:1;mix-blend-mode:normal;--hero-delay:500ms;--hero-distance:22px}
+ @media(min-width:641px) and (max-height:700px){
+  .category-hero__copy{padding-top:calc(var(--site-header-height) + 2rem)}
+  .category-hero h1{font-size:clamp(2.5rem,4vw,3.5rem)}
+  .category-hero__lead{margin-top:1rem}
+  .category-hero__actions{margin-top:1.25rem}
+  .category-hero__scene{margin-top:1rem}
+ }
+ .detail-hero--service .category-hero__copy{padding-top:calc(var(--site-header-height) + clamp(4rem,15svh,9rem))}
+ @media(max-width:640px){
+  .category-hero{height:auto;min-height:0}
+  .category-hero__copy{padding-top:calc(var(--site-header-height) + 2.5rem)}
+  .category-hero h1{font-size:clamp(2.1rem,9vw,3rem)}
+  .category-hero__lead{font-size:.95rem;margin-top:1rem}
+  .category-hero__actions{gap:.5rem 1.25rem;margin-top:1.5rem}
+  .category-hero__scene{flex:none;height:clamp(18rem,72vw,27rem);margin-top:1.5rem}
+  .category-hero__canvas{height:auto;width:100%}
+ }
+</style>

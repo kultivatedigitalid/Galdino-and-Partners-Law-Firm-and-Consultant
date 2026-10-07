@@ -1,0 +1,15 @@
+/* Shared CTA response, matching the navbar consultation button. */
+:root body :is(.ed-button,.home-button,.profile-button,.nav-cta,.final-cta__button,.button-primary,.button-secondary,.button-light,.contact-dock__link,.person-contact a:first-child,.cookie-actions button) {
+ transition:background-color 170ms var(--brand-ease),border-color 170ms var(--brand-ease),color 170ms var(--brand-ease),transform 170ms var(--brand-ease);
+}
+@media(hover:hover) and (pointer:fine){
+ :root body :is(.ed-button,.home-button,.profile-button,.nav-cta,.final-cta__button,.button-primary,.button-secondary,.button-light,.contact-dock__link,.person-contact a:first-child,.cookie-actions button):hover:not(:disabled){background:var(--brand-black);border-color:var(--brand-black);color:#fff;transform:translateY(-2px)}
+ :root body :is(.ed-link,.home-rule-link,.rule-link,.reveal-link,.service-card__footer a):hover{color:var(--brand-black)}
+ :root body .reveal-link:hover::after{color:var(--brand-black)}
+}
+:root body :is(.ed-button,.home-button,.profile-button,.nav-cta,.final-cta__button,.button-primary,.button-secondary,.button-light,.contact-dock__link,.person-contact a:first-child,.cookie-actions button):focus-visible{background:var(--brand-black);border-color:var(--brand-black);color:#fff}
+:root body :is(.ed-button,.home-button,.profile-button,.nav-cta,.final-cta__button,.button-primary,.button-secondary,.button-light,.contact-dock__link,.person-contact a:first-child,.cookie-actions button):active:not(:disabled){transform:scale(.97)}
+@media(prefers-reduced-motion:reduce){
+ :root body :is(.ed-button,.home-button,.profile-button,.nav-cta,.final-cta__button,.button-primary,.button-secondary,.button-light,.contact-dock__link,.person-contact a:first-child,.cookie-actions button){transition:none}
+ :root body :is(.ed-button,.home-button,.profile-button,.nav-cta,.final-cta__button,.button-primary,.button-secondary,.button-light,.contact-dock__link,.person-contact a:first-child,.cookie-actions button):hover{transform:none}
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-09-30",
+  "updated": "2026-10-07",
   "indexingEnabled": false,
   "records": [
     {
@@ -1224,6 +1224,33 @@
       "provisional": true
     },
     {
+      "field": "aruna-pangan.challengeTitle",
+      "page": "/id/projects/aruna-pangan/",
+      "currentPrototypeValue": "Data Ekspansi Produksi Belum Terpadu.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "aruna-pangan.approachTitle",
+      "page": "/id/projects/aruna-pangan/",
+      "currentPrototypeValue": "Mencocokkan Proses dan Data Produksi.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "aruna-pangan.deliverablesTitle",
+      "page": "/id/projects/aruna-pangan/",
+      "currentPrototypeValue": "Matriks Izin dan Register Produksi.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
       "field": "nusa-teknologi.company",
       "page": "/id/projects/nusa-teknologi/",
       "currentPrototypeValue": "PT Nusa Teknologi Integrasi",
@@ -1343,6 +1370,33 @@
       "field": "nusa-teknologi.outcome",
       "page": "/id/projects/nusa-teknologi/",
       "currentPrototypeValue": "Tim memperoleh prioritas perbaikan dan daftar bukti yang perlu disiapkan sebelum proses audit independen.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "nusa-teknologi.challengeTitle",
+      "page": "/id/projects/nusa-teknologi/",
+      "currentPrototypeValue": "Dokumen Keamanan Informasi Tersebar.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "nusa-teknologi.approachTitle",
+      "page": "/id/projects/nusa-teknologi/",
+      "currentPrototypeValue": "Memetakan Aset, Risiko, dan Kontrol.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "nusa-teknologi.deliverablesTitle",
+      "page": "/id/projects/nusa-teknologi/",
+      "currentPrototypeValue": "Prioritas Perbaikan Sebelum Audit.",
       "dataType": "string",
       "replacementPriority": "P0",
       "source": "Simulated company/project; not evidence of an actual client relationship",
@@ -1475,6 +1529,33 @@
       "provisional": true
     },
     {
+      "field": "prima-distribusi.challengeTitle",
+      "page": "/id/projects/prima-distribusi/",
+      "currentPrototypeValue": "Arsip Reklame Antar-Outlet Tidak Seragam.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "prima-distribusi.approachTitle",
+      "page": "/id/projects/prima-distribusi/",
+      "currentPrototypeValue": "Mencocokkan Media dengan Arsip Outlet.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "prima-distribusi.deliverablesTitle",
+      "page": "/id/projects/prima-distribusi/",
+      "currentPrototypeValue": "Inventaris Reklame dan Kalender Perpanjangan.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
       "field": "vertex-konstruksi.company",
       "page": "/id/projects/vertex-konstruksi/",
       "currentPrototypeValue": "PT Vertex Konstruksi Utama",
@@ -1595,6 +1676,33 @@
       "field": "vertex-konstruksi.outcome",
       "page": "/id/projects/vertex-konstruksi/",
       "currentPrototypeValue": "Kesenjangan dokumen teridentifikasi dan paket administratif dipersiapkan untuk proses sertifikasi.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "vertex-konstruksi.challengeTitle",
+      "page": "/id/projects/vertex-konstruksi/",
+      "currentPrototypeValue": "Bukti Kapasitas Konstruksi Belum Selaras.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "vertex-konstruksi.approachTitle",
+      "page": "/id/projects/vertex-konstruksi/",
+      "currentPrototypeValue": "Menyelaraskan Lingkup dan Kompetensi.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "vertex-konstruksi.deliverablesTitle",
+      "page": "/id/projects/vertex-konstruksi/",
+      "currentPrototypeValue": "Register Kelengkapan Badan Usaha.",
       "dataType": "string",
       "replacementPriority": "P0",
       "source": "Simulated company/project; not evidence of an actual client relationship",
@@ -1728,6 +1836,33 @@
       "provisional": true
     },
     {
+      "field": "lintas-logistik.challengeTitle",
+      "page": "/id/projects/lintas-logistik/",
+      "currentPrototypeValue": "Arsip Gudang dan Akses Terpisah.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "lintas-logistik.approachTitle",
+      "page": "/id/projects/lintas-logistik/",
+      "currentPrototypeValue": "Mengonsolidasikan Bangunan dan Sirkulasi Truk.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "lintas-logistik.deliverablesTitle",
+      "page": "/id/projects/lintas-logistik/",
+      "currentPrototypeValue": "Kebutuhan Pemeriksaan dan Data Lanjutan.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
       "field": "karya-properti.company",
       "page": "/id/projects/karya-properti/",
       "currentPrototypeValue": "PT Karya Properti Sentosa",
@@ -1849,6 +1984,33 @@
       "field": "karya-properti.outcome",
       "page": "/id/projects/karya-properti/",
       "currentPrototypeValue": "Kebutuhan kajian dan dependensi regulasi dipetakan sebelum ruang lingkup pengembangan ditetapkan.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "karya-properti.challengeTitle",
+      "page": "/id/projects/karya-properti/",
+      "currentPrototypeValue": "Prioritas Izin Proyek Belum Jelas.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "karya-properti.approachTitle",
+      "page": "/id/projects/karya-properti/",
+      "currentPrototypeValue": "Menghubungkan Dokumen dengan Jadwal Proyek.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "karya-properti.deliverablesTitle",
+      "page": "/id/projects/karya-properti/",
+      "currentPrototypeValue": "Roadmap Izin dan Matriks Dependensi.",
       "dataType": "string",
       "replacementPriority": "P0",
       "source": "Simulated company/project; not evidence of an actual client relationship",
@@ -8775,6 +8937,33 @@
       "provisional": true
     },
     {
+      "field": "aruna-pangan.challengeTitle",
+      "page": "/en/projects/aruna-pangan/",
+      "currentPrototypeValue": "Expansion Records Were Fragmented.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "aruna-pangan.approachTitle",
+      "page": "/en/projects/aruna-pangan/",
+      "currentPrototypeValue": "Aligning Processes and Production Records.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "aruna-pangan.deliverablesTitle",
+      "page": "/en/projects/aruna-pangan/",
+      "currentPrototypeValue": "Permit Matrix and Production Register.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
       "field": "nusa-teknologi.company",
       "page": "/en/projects/nusa-teknologi/",
       "currentPrototypeValue": "PT Nusa Teknologi Integrasi",
@@ -8894,6 +9083,33 @@
       "field": "nusa-teknologi.outcome",
       "page": "/en/projects/nusa-teknologi/",
       "currentPrototypeValue": "The team received improvement priorities and an evidence list to prepare before an independent audit.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "nusa-teknologi.challengeTitle",
+      "page": "/en/projects/nusa-teknologi/",
+      "currentPrototypeValue": "Information Security Records Were Scattered.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "nusa-teknologi.approachTitle",
+      "page": "/en/projects/nusa-teknologi/",
+      "currentPrototypeValue": "Mapping Assets, Risks, and Controls.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "nusa-teknologi.deliverablesTitle",
+      "page": "/en/projects/nusa-teknologi/",
+      "currentPrototypeValue": "Improvement Priorities Before the Audit.",
       "dataType": "string",
       "replacementPriority": "P0",
       "source": "Simulated company/project; not evidence of an actual client relationship",
@@ -9026,6 +9242,33 @@
       "provisional": true
     },
     {
+      "field": "prima-distribusi.challengeTitle",
+      "page": "/en/projects/prima-distribusi/",
+      "currentPrototypeValue": "Outlet Advertising Records Were Inconsistent.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "prima-distribusi.approachTitle",
+      "page": "/en/projects/prima-distribusi/",
+      "currentPrototypeValue": "Reconciling Advertising Media and Outlet Records.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "prima-distribusi.deliverablesTitle",
+      "page": "/en/projects/prima-distribusi/",
+      "currentPrototypeValue": "Advertising Inventory and Renewal Calendar.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
       "field": "vertex-konstruksi.company",
       "page": "/en/projects/vertex-konstruksi/",
       "currentPrototypeValue": "PT Vertex Konstruksi Utama",
@@ -9146,6 +9389,33 @@
       "field": "vertex-konstruksi.outcome",
       "page": "/en/projects/vertex-konstruksi/",
       "currentPrototypeValue": "Document gaps were identified and an administrative pack prepared for certification.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "vertex-konstruksi.challengeTitle",
+      "page": "/en/projects/vertex-konstruksi/",
+      "currentPrototypeValue": "Construction Capability Evidence Needed Alignment.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "vertex-konstruksi.approachTitle",
+      "page": "/en/projects/vertex-konstruksi/",
+      "currentPrototypeValue": "Aligning Scope and Competence.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "vertex-konstruksi.deliverablesTitle",
+      "page": "/en/projects/vertex-konstruksi/",
+      "currentPrototypeValue": "Business Readiness Register.",
       "dataType": "string",
       "replacementPriority": "P0",
       "source": "Simulated company/project; not evidence of an actual client relationship",
@@ -9279,6 +9549,33 @@
       "provisional": true
     },
     {
+      "field": "lintas-logistik.challengeTitle",
+      "page": "/en/projects/lintas-logistik/",
+      "currentPrototypeValue": "Warehouse and Access Records Were Separate.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "lintas-logistik.approachTitle",
+      "page": "/en/projects/lintas-logistik/",
+      "currentPrototypeValue": "Consolidating Building and Truck-Access Records.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "lintas-logistik.deliverablesTitle",
+      "page": "/en/projects/lintas-logistik/",
+      "currentPrototypeValue": "Inspection and Further Information Requirements.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
       "field": "karya-properti.company",
       "page": "/en/projects/karya-properti/",
       "currentPrototypeValue": "PT Karya Properti Sentosa",
@@ -9400,6 +9697,33 @@
       "field": "karya-properti.outcome",
       "page": "/en/projects/karya-properti/",
       "currentPrototypeValue": "Study requirements and regulatory dependencies were mapped before the development scope was fixed.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "karya-properti.challengeTitle",
+      "page": "/en/projects/karya-properti/",
+      "currentPrototypeValue": "Project Approval Priorities Needed Clarity.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "karya-properti.approachTitle",
+      "page": "/en/projects/karya-properti/",
+      "currentPrototypeValue": "Connecting Documents to the Project Schedule.",
+      "dataType": "string",
+      "replacementPriority": "P0",
+      "source": "Simulated company/project; not evidence of an actual client relationship",
+      "provisional": true
+    },
+    {
+      "field": "karya-properti.deliverablesTitle",
+      "page": "/en/projects/karya-properti/",
+      "currentPrototypeValue": "Permit Roadmap and Dependency Matrix.",
       "dataType": "string",
       "replacementPriority": "P0",
       "source": "Simulated company/project; not evidence of an actual client relationship",
@@ -15148,6 +15472,33 @@
       "dataType": "image collection",
       "replacementPriority": "P0",
       "source": "Five AI-generated contextual hero photographs with two portrait mobile variants, 2026-09-30; illustrative, not client evidence. Prompts and source paths: docs/REVISION_2026-09-30.md",
+      "provisional": true
+    },
+    {
+      "field": "final category hero artwork",
+      "page": "/id/services/*; /en/services/*",
+      "currentPrototypeValue": "src/assets/category-heroes/*.webp",
+      "dataType": "image collection",
+      "replacementPriority": "P0",
+      "source": "AI-generated layered illustrations; provenance in reports/category-hero-assets.md. Final design accepted for handover, business/likeness approval still pending",
+      "provisional": true
+    },
+    {
+      "field": "final service hero and preview imagery",
+      "page": "/id/services/*; /en/services/*",
+      "currentPrototypeValue": "src/assets/service-heroes/*.webp; src/assets/service-previews/*.webp",
+      "dataType": "image collection",
+      "replacementPriority": "P0",
+      "source": "Supplied illustrations and stock photographs; source/license references in reports/service-stock-sources.json and revision history in reports/services-insight-revision.md. Validate rights and business association before production launch",
+      "provisional": true
+    },
+    {
+      "field": "repaired foreground people",
+      "page": "/id/services/; /id/projects/; /id/profile/; EN equivalents",
+      "currentPrototypeValue": "src/assets/hero-services-layered-cutout-v4.webp; src/assets/hero-experiences-layered-cutout-v4.webp; src/assets/hero-about-layered-cutout-v4.webp",
+      "dataType": "image collection",
+      "replacementPriority": "P0",
+      "source": "AI-repaired supplied cutouts; source framing documented in reports/services-insight-revision.md. Illustrative assets, not client evidence",
       "provisional": true
     },
     {

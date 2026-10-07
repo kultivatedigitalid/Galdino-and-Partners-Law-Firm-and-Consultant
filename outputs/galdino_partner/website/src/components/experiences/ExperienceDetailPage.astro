@@ -7,6 +7,7 @@ import PermitPathway from '../shared/PermitPathway.astro';
 import RelatedCases from '../shared/RelatedCases.astro';
 import {EXPERIENCES,type Experience,experienceUrl} from '../../data/experiences';
 import {experienceImages} from '../../data/experience-images';
+import {EXPERIENCE_HEADLINES} from '../../data/hero-headlines';
 import {serviceById,serviceUrl} from '../../data/services';
 import {INDUSTRIES,industryUrl} from '../../data/industries';
 import type {Locale} from '../../data/site';
@@ -17,7 +18,7 @@ const secondary=experienceImages[e.imageKey==='compliance'?'licensing':'complian
 ---
 <BaseLayout immersive locale={locale} title={c.title+' | Galdino & Partner'} description={c.outcome} alternateUrl={experienceUrl(e,id?'en':'id')}>
 <div class="editorial">
-<ImageHero locale={locale} title={c.title} description={c.outcome} image={experienceImages[e.imageKey]} breadcrumbs={[{name:id?'Our Experiences':'Our Experiences',href:'/'+locale+'/projects/'},{name:e.company}]}/><div class="container-shell"><dl class="case-metadata"><div><dt>{id?'Lokasi':'Location'}</dt><dd>{e.location}</dd></div><div><dt>{id?'Durasi pendampingan':'Engagement duration'}</dt><dd>{c.duration}</dd></div><div><dt>{id?'Tahap usaha':'Business stage'}</dt><dd>{c.stage}</dd></div><div><dt>{id?'Ruang lingkup':'Scope'}</dt><dd>{related.map(s=>s.content[locale].title).join(' · ')}</dd></div></dl></div>
+<ImageHero locale={locale} title={EXPERIENCE_HEADLINES[e.slug]?.[locale]||c.title} description={c.outcome} image={experienceImages[e.imageKey]} breadcrumbs={[{name:id?'Our Experiences':'Our Experiences',href:'/'+locale+'/projects/'},{name:e.company}]}/><div class="container-shell"><dl class="case-metadata"><div><dt>{id?'Lokasi':'Location'}</dt><dd>{e.location}</dd></div><div><dt>{id?'Durasi pendampingan':'Engagement duration'}</dt><dd>{c.duration}</dd></div><div><dt>{id?'Tahap usaha':'Business stage'}</dt><dd>{c.stage}</dd></div><div><dt>{id?'Ruang lingkup':'Scope'}</dt><dd>{related.map(s=>s.content[locale].title).join(' · ')}</dd></div></dl></div>
 <div class="container-shell">
 <section class="ed-section ed-split"><div><p class="ed-kicker">01 / {id?'Situasi & tantangan':'Situation & challenge'}</p><h2>{c.challengeTitle}</h2></div><p class="ed-lead">{c.challenge}</p></section>
 <section class="ed-section approach-layout"><figure class="ed-figure"><Image src={secondary} alt={id?'Review dan konsolidasi dokumen bersama tim':'Document review and consolidation with the team'} widths={[480,800,1200]} sizes="(min-width:800px) 50vw, 100vw" loading="lazy" quality={78}/></figure><div><p class="ed-kicker">02 / {id?'Pendekatan':'Approach'}</p><h2>{c.approachTitle}</h2><p class="ed-lead">{c.approach}</p><ul class="ed-list">{related.map(s=><li><a href={serviceUrl(s,locale)}>{s.content[locale].title}</a></li>)}</ul></div></section>

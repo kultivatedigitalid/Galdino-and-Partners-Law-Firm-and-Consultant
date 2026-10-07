@@ -1,0 +1,14 @@
+---
+interface Props { text: string }
+const { text } = Astro.props;
+---
+<span class="hero-highlight"><span class="hero-highlight__text">{text}</span><span class="hero-highlight__finish" aria-hidden="true">{text}</span></span>
+
+<style>
+ .hero-highlight{position:relative;display:inline-block;max-width:100%;padding:.12em .24em .17em;vertical-align:top}
+ .hero-highlight__text{color:var(--brand-black)}
+ .hero-highlight__finish{position:absolute;inset:0;display:block;padding:inherit;background:var(--brand-red);color:var(--brand-white);clip-path:inset(0);pointer-events:none;user-select:none}
+ :global([data-hero-motion="playing"]) .hero-highlight__finish{animation:hero-highlight-sweep 620ms cubic-bezier(.65,0,.25,1) 600ms both}
+ @keyframes hero-highlight-sweep{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+ @media(prefers-reduced-motion:reduce){:global([data-hero-motion="playing"]) .hero-highlight__finish{animation:none}}
+</style>

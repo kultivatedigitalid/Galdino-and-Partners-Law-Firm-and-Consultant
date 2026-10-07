@@ -2,11 +2,58 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ContactForm from './ContactForm.astro';
 import ContactNextSteps from './contact/ContactNextSteps.astro';
+import ArrowIcon from './icons/ArrowIcon.astro';
 import {SITE,type Locale} from '../data/site';
 interface Props{locale:Locale}
 const {locale}=Astro.props,id=locale==='id';
+const mapQuery=encodeURIComponent(SITE.address);
+const mapHref='https://www.google.com/maps/search/?api=1&query='+mapQuery;
 ---
-<BaseLayout locale={locale} title={id?'Konsultasi Awal Gratis | Galdino & Partner':'Free Initial Consultation | Galdino & Partner'} description={id?'Diskusikan kebutuhan legalitas dan perizinan bisnis. Konsultasi awal gratis melalui formulir, email, atau WhatsApp.':'Discuss business legal and licensing requirements. Free initial consultation through the form, email or WhatsApp.'}>
-<div class="editorial contact-page"><section class="container-shell contact-layout" aria-labelledby="contact-title"><div class="contact-copy"><h1 id="contact-title">{id?'Mulai dengan Konsultasi Gratis.':'Start with a Free Consultation.'}</h1><p class="ed-lead">{id?'Ceritakan kegiatan, lokasi, dan kebutuhan izin Anda. Kami memahami konteks terlebih dahulu, lalu menjelaskan ruang lingkup dan estimasi biaya yang diperlukan.':'Tell us about your activities, location and permit requirements. We first understand the context, then explain the scope and estimated fees you need.'}</p><ContactNextSteps locale={locale}/><address><h2>{id?'Hubungi langsung':'Direct contact'}</h2><a class="ed-link" href={SITE.whatsappHref}>WhatsApp →</a><br/><a class="ed-link" href={`mailto:${SITE.email}`}>{SITE.email}</a><p>{SITE.address}</p><p>{id?'Senin–Jumat, 09.00–17.00 WIB':'Monday–Friday, 09:00–17:00 WIB'}</p><a class="ed-link" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.address)}`} target="_blank" rel="noopener noreferrer">{id?'Lihat lokasi':'View location'} →</a></address></div><ContactForm locale={locale}/></section></div>
+<BaseLayout immersive={false} locale={locale} title={id?'Konsultasi Awal Gratis | Galdino & Partner':'Free Initial Consultation | Galdino & Partner'} description={id?'Diskusikan kebutuhan legalitas dan perizinan bisnis. Konsultasi awal gratis melalui formulir, email, atau WhatsApp.':'Discuss business legal and licensing requirements. Free initial consultation through the form, email or WhatsApp.'}>
+ <div class="editorial contact-page">
+  <section class="container-shell contact-layout" aria-labelledby="contact-title" data-hero-motion="ready">
+   <div class="contact-copy">
+    <h1 id="contact-title" data-hero-part="title">{id?'Konsultasi Awal Gratis.':'Free Initial Consultation.'}</h1>
+    <p class="ed-lead" data-hero-part="lead">{id?'Ceritakan kegiatan, lokasi, dan kebutuhan izin Anda. Kami bantu menentukan langkah awal, ruang lingkup, dan estimasi biaya.':'Share your activities, location and permit requirements. We help define the first step, scope and estimated fees.'}</p>
+    <ContactNextSteps locale={locale}/>
+    <address class="direct-contact">
+     <h2>{id?'Hubungi langsung':'Direct contact'}</h2>
+     <dl>
+      <div><dt>{id?'No. WhatsApp':'WhatsApp number'}</dt><dd><a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer">{SITE.whatsappDisplay}<ArrowIcon/></a></dd></div>
+      <div><dt>Email</dt><dd><a href={`mailto:${SITE.email}`}>{SITE.email}<ArrowIcon/></a></dd></div>
+      <div><dt>{id?'Alamat kantor':'Office address'}</dt><dd>{SITE.address}</dd></div>
+      <div><dt>{id?'Jam operasional':'Office hours'}</dt><dd>{id?'Senin–Jumat, 09.00–17.00 WIB':'Monday–Friday, 09:00–17:00 WIB'}</dd></div>
+     </dl>
+    </address>
+    <div class="contact-map">
+     <iframe title={id?'Peta lokasi kantor di Perigi Baru':'Office location map in Perigi Baru'} src={'https://maps.google.com/maps?q='+mapQuery+'&z=16&output=embed'} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+     <a class="ed-link" href={mapHref} target="_blank" rel="noopener noreferrer">{id?'Buka di Google Maps':'Open in Google Maps'}<ArrowIcon/></a>
+    </div>
+   </div>
+   <div class="contact-form-panel"><h2>{id?'Ceritakan kebutuhan Anda':'Tell us what you need'}</h2><p>{id?'Isi formulir untuk memulai konsultasi gratis.':'Complete the form to start your free consultation.'}</p><ContactForm locale={locale}/></div>
+  </section>
+ </div>
 </BaseLayout>
-<style>.contact-page{padding:clamp(7rem,10vw,9rem) 0 var(--brand-section-space)}.contact-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(2.5rem,6vw,6rem);align-items:start}.contact-copy h1{margin:0;max-width:15ch}.contact-copy>p{color:var(--brand-muted);line-height:1.65;margin-top:1.5rem}.contact-copy address{font-style:normal;border-top:1px solid var(--brand-line-strong);margin-top:2rem;padding-top:1.5rem;overflow-wrap:anywhere}.contact-copy address h2{font-size:var(--brand-type-card)}.contact-copy address p{color:var(--brand-muted);font-size:.9rem}@media(max-width:900px){.contact-layout{grid-template-columns:1fr}}</style>
+<style>
+ .contact-page{padding:clamp(1.5rem,3vw,2.75rem) 0 var(--brand-section-space)}
+ .contact-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(2.5rem,5vw,5rem);align-items:start}
+ .contact-copy h1{margin:0;max-width:18ch;font-size:clamp(2.4rem,3.5vw,3.5rem);line-height:1.06}
+ .contact-copy>.ed-lead{max-width:48ch;margin:1.25rem 0 0;color:var(--brand-muted);font-size:var(--brand-type-lead);line-height:1.6}
+ .direct-contact{font-style:normal;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--brand-line-strong)}
+ .direct-contact h2{margin:0 0 1rem;font-size:clamp(1.25rem,1.8vw,1.5rem)}
+ .direct-contact dl{margin:0;display:grid;gap:.65rem}
+ .direct-contact dl>div{display:grid;grid-template-columns:8rem minmax(0,1fr);gap:.75rem}
+ .direct-contact dt{color:var(--brand-muted);font-size:.8rem}
+ .direct-contact dd{margin:0;color:var(--brand-black);font-size:.85rem;line-height:1.5;overflow-wrap:anywhere}
+ .direct-contact dd a{display:inline-flex;align-items:center;gap:.6rem;min-height:1.5rem;font-weight:700;text-decoration:none}
+ .direct-contact dd a:hover{color:var(--brand-red)}
+ .contact-map{margin-top:1.5rem}
+ .contact-map iframe{display:block;width:100%;height:12rem;border:0;background:var(--brand-surface-soft)}
+ .contact-map :global(.ed-link){margin-top:.5rem;font-size:.8rem}
+ .contact-form-panel{padding:clamp(1.25rem,2.5vw,2rem);border-top:3px solid var(--brand-red);background:#fff}
+ .contact-form-panel>h2{margin:0 0 .6rem;font-size:clamp(1.35rem,1.8vw,1.7rem)}
+ .contact-form-panel>p{margin:0 0 1.5rem;color:var(--brand-muted);font-size:.85rem}
+ .contact-form-panel :global(#contact-form){padding:0;border:0}
+ @media(max-width:900px){.contact-layout{grid-template-columns:1fr}.contact-copy h1{max-width:20ch}.contact-form-panel{grid-row:2}}
+ @media(max-width:420px){.direct-contact dl>div{grid-template-columns:6.5rem minmax(0,1fr);gap:.5rem}}
+</style>

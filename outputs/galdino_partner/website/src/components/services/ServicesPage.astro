@@ -30,7 +30,7 @@ const {locale}=Astro.props,id=locale==='id';
 
 </div><PermitProcess locale={locale} kicker={id?"Cara kerja":"How we work"} title={id?"Dari konteks menjadi rencana kerja.":"From context to a working plan."} showNumbers={false}/><HomeFinalCta locale={locale}/></div></BaseLayout>
 <style>
-.category-block{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(2rem,5vw,5rem);padding:3rem 0;border-top:2px solid var(--brand-red);scroll-margin-top:7rem}
+.category-block{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(2rem,5vw,5rem);padding:3rem 0;scroll-margin-top:7rem}
 .category-summary h3{margin-top:0}.category-summary h3 a{text-decoration:none}
 .category-summary h3 a:hover{text-decoration:underline}
 .category-summary p{font-size:.9rem;color:#56565b}
@@ -43,3 +43,4 @@ const {locale}=Astro.props,id=locale==='id';
 @media(max-width:800px){.category-block{grid-template-columns:1fr;gap:1.5rem}.category-summary :global(img){max-width:32rem}}
 @media(max-width:480px){.category-services{grid-template-columns:1fr}}
 </style>
+<style>.category-services a:is(:hover,:focus-visible){color:var(--brand-red)}.category-summary h2 a:is(:hover,:focus-visible){color:var(--brand-red)}</style>

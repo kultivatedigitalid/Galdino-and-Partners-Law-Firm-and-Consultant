@@ -2,7 +2,7 @@ import type {Locale} from './site';
 import {SERVICES,priceLabel} from './services';
 import {SERVICE_CATEGORIES} from './service-catalog';
 export {HOME_STATS} from './stats';
-const homeServices=(locale:Locale)=>SERVICE_CATEGORIES.map(c=>({slug:c.slug[locale],title:c.content[locale].title,description:c.content[locale].description,price:priceLabel({price:Math.min(...SERVICES.filter(s=>s.category===c.id).map(s=>s.price))},locale)}));
+const homeServices=(locale:Locale)=>SERVICE_CATEGORIES.map(c=>({id:c.id,slug:c.slug[locale],title:c.content[locale].title,description:c.content[locale].description,price:priceLabel({price:Math.min(...SERVICES.filter(s=>s.category===c.id).map(s=>s.price))},locale)}));
 export const HOME_SERVICES={id:homeServices('id'),en:homeServices('en')};
 type ClientLogoVariant = 'block' | 'round' | 'outline' | 'split' | 'serif' | 'wide';
 

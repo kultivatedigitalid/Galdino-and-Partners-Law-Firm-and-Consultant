@@ -13,7 +13,7 @@ const {locale}=Astro.props,id=locale==='id';
 <div class="editorial">
 <LayeredHero locale={locale} page="industries"/>
 
-<div class="container-shell"><section class="ed-section"><IndustryTiles locale={locale}/></section></div>
+<div class="container-shell"><section class="ed-section" aria-labelledby="covered-industries-title"><h2 id="covered-industries-title">{id?'Industri yang Dicakup':'Industries We Cover'}</h2><div class="industry-index"><IndustryTiles locale={locale}/></div></section></div>
 <section class="regulatory-section" aria-labelledby="regulatory-title">
 <div class="container-shell"><p class="ed-kicker">{id?'Peta regulasi':'Regulatory landscape'}</p><h2 id="regulatory-title">{id?'Ketahui Izin yang Diperlukan.':'Know Which Approvals You Need.'}</h2><p class="regulatory-lead">{id?'Peta ini membantu menentukan apa yang perlu diperiksa sebelum usaha dibuka atau diperluas: kegiatan, lokasi, dampak lingkungan, bangunan, dan kesiapan operasional.':'Use this map to identify what to review before opening or expanding: activities, location, environmental impacts, buildings and operating readiness.'}</p><PermitPathway locale={locale} landscape dark/><p class="ed-note">{id?'Urutan dan kebutuhan akhir mengikuti jenis usaha, skala, lokasi, serta status dokumen. Peta ini merupakan titik awal asesmen.':'The final sequence and requirements depend on activity, scale, location and existing records. This map is a starting point for assessment.'}</p></div>
 </section>
@@ -21,6 +21,7 @@ const {locale}=Astro.props,id=locale==='id';
 <section class="ed-section"><p class="ed-kicker">{id?'Bidang layanan':'Practice areas'}</p><div class="ed-related">{SERVICE_CATEGORIES.map(c=><article><h3><a href={categoryUrl(c,locale)}>{c.content[locale].title}</a></h3><p>{c.content[locale].description}</p></article>)}</div></section>
 </div><HomeFinalCta locale={locale}/></div></BaseLayout>
 <style>
+.industry-index{border-top:2px solid var(--brand-red);padding-top:3rem}
 .sector-index{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;padding-block:1rem;border-bottom:1px solid #bbb}
 .sector-index a{font-size:.78rem;text-decoration:none;min-height:2.75rem;display:flex;align-items:center;gap:.5rem}
 .sector-index a:hover{color:var(--brand-red)}.sector-index span{color:var(--brand-red);font-size:.65rem}

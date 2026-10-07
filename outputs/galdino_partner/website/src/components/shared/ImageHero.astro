@@ -7,12 +7,12 @@ import {COPY} from '../../data/site';
 interface Props {locale:Locale;title:string;description?:string;image:ImageMetadata;mobileImage?:ImageMetadata;alt?:string;kicker?:string;consultation?:boolean;breadcrumbs?:{name:string;href?:string}[]}
 const {locale,title,description,image,mobileImage,alt='',kicker,consultation=false}=Astro.props;
 ---
-<header class="image-hero">
-  <picture class="image-hero__media">
+<header class="image-hero" data-hero-motion="ready">
+  <picture class="image-hero__media" data-hero-part="backdrop">
     {mobileImage&&<source media="(max-width:640px)" srcset={mobileImage.src}/>}
   <Image src={image} alt={alt} widths={[640,960,1440,1920]} sizes="100vw" loading="eager" fetchpriority="high" quality={80}/>
   </picture>
-  <div class="container-shell image-hero__copy">{kicker&&<span class="image-hero__kicker">{kicker}</span>}<h1>{title}</h1>{description&&<p>{description}</p>}{consultation&&<a class="ed-button image-hero__cta" href={`/${locale}/contact/`}>{COPY[locale].consult}<ArrowIcon/></a>}</div>
+  <div class="container-shell image-hero__copy">{kicker&&<span class="image-hero__kicker" data-hero-part="eyebrow">{kicker}</span>}<h1 data-hero-part="title">{title}</h1>{description&&<p data-hero-part="lead">{description}</p>}{consultation&&<a class="ed-button image-hero__cta" data-hero-part="action" href={`/${locale}/contact/`}>{COPY[locale].consult}<ArrowIcon/></a>}</div>
 </header>
 <style>
 .image-hero{position:relative;isolation:isolate;display:grid;align-items:center;min-height:max(34rem,100svh);padding:6.5rem 0 2.5rem;background:var(--brand-black);color:#fff}

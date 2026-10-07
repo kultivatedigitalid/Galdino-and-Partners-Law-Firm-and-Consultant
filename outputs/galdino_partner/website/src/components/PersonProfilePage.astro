@@ -43,12 +43,12 @@ const breadcrumbSchema = {
 
   <div class="person-page editorial">
 
-    <section class="person-hero" aria-labelledby="person-title">
+    <section class="person-hero" aria-labelledby="person-title" data-hero-motion="ready">
       <div class="container-shell person-hero__grid">
         <div class="person-hero__copy">
           <a class="person-back" href={`/${locale}/profile/#team`}><ArrowIcon direction="left" />{id ? 'Kembali ke tim' : 'Back to team'}</a>
-          <p class="person-label">{id ? 'Profil profesional' : 'Professional profile'}</p>
-          <h1 id="person-title">{member.name}</h1><p class="person-summary">{member.summary}</p>
+          <p class="person-label" data-hero-part="eyebrow">{id ? 'Profil profesional' : 'Professional profile'}</p>
+          <h1 id="person-title" data-hero-part="title">{member.name}</h1><p class="person-summary" data-hero-part="lead">{member.summary}</p>
           <p class="person-role">{member.role}</p>
           <dl class="person-quickfacts" aria-label={id ? 'Kontak profesional' : 'Professional contact'}>
             <div><dt>Email</dt><dd>{member.email}</dd></div>
@@ -58,12 +58,12 @@ const breadcrumbSchema = {
           <ul aria-label={id ? 'Keahlian' : 'Expertise'}>
             {member.expertise.map((item) => <li>{item}</li>)}
           </ul>
-          <div class="person-contact">
+          <div class="person-contact" data-hero-part="action">
             <a href={`/${locale}/contact/?person=${member.slug}`}>{id ? 'Hubungi melalui firma' : 'Contact through the firm'}<ArrowIcon /></a>
             <a href={`mailto:${SITE.email}?subject=${encodeURIComponent('Consultation — '+member.name)}`}>{SITE.email}</a>
           </div>
         </div>
-        <figure class="person-hero__visual">
+        <figure class="person-hero__visual" data-hero-part="visual">
           <Image
             src={imageByKey[member.imageKey]}
             alt={member.imageAlt}
@@ -107,7 +107,7 @@ const breadcrumbSchema = {
   .person-page { overflow: clip; background: var(--brand-paper); color: var(--brand-black); }
   body:has(.person-page) .contact-dock__link { background: linear-gradient(120deg, #710d1b 0%, #9c1021 48%, #c4142a 100%); background-position: 0 50%; background-size: 180% 100%; box-shadow: 0 12px 34px rgb(38 3 8 / .24); opacity: 1; transition: background-position 260ms var(--brand-ease), box-shadow 200ms var(--brand-ease), transform 170ms var(--brand-ease); }
   body:has(.person-page) .contact-dock__pulse { background: #fff; box-shadow: 0 0 0 4px rgb(255 255 255 / .16); }
-  .person-hero { background: #fff; }
+  .person-hero { background: var(--brand-paper); }
   .person-hero__grid { min-height: clamp(40rem, 100svh, 50rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(25rem, .88fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center; padding-top: 3rem; padding-bottom: clamp(3rem, 6vw, 5rem); }
   .person-back { width: fit-content; min-height: 2.75rem; display: inline-flex; align-items: center; gap: .5rem; color: var(--brand-muted); font-size: .7rem; font-weight: 780; text-decoration: none; }
   .person-label { width: fit-content; margin: 1.2rem 0 0; border-bottom: 2px solid var(--brand-red); padding-bottom: .3rem; color: var(--brand-black); font-size: .68rem; font-weight: 820; letter-spacing: .05em; text-transform: uppercase; }

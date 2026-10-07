@@ -1,0 +1,29 @@
+---
+import {Image} from 'astro:assets';
+import {blogImage} from '../../data/blog-images';
+import {postUrl,type BlogEntry} from '../../utils/blog';
+interface Props{post:BlogEntry;filterable?:boolean}
+const {post,filterable=false}=Astro.props;
+const id=post.data.locale==='id';
+const date=new Intl.DateTimeFormat(id?'id-ID':'en-GB',{dateStyle:'medium'}).format(post.data.publishDate);
+---
+<article class="insight-card" data-insight={filterable?true:undefined} data-search={filterable?[post.data.title,post.data.description,...post.data.tags,post.data.category].join(' '):undefined} data-category={post.data.category} data-tags={JSON.stringify(post.data.tags)}>
+ <a class="insight-card__photo" href={postUrl(post)} tabindex="-1" aria-hidden="true"><Image src={blogImage(post)} alt="" widths={[400,640,800]} sizes="(min-width:1025px) 30vw,(min-width:601px) 45vw,100vw" loading="lazy" quality={82}/></a>
+ <p class="insight-card__category">{post.data.category}</p>
+ <h3><a href={postUrl(post)}>{post.data.title}</a></h3>
+ <p class="insight-card__summary">{post.data.description}</p>
+ <p class="insight-card__meta"><span>{post.data.author}</span><time datetime={post.data.publishDate.toISOString()}>{date}</time></p>
+</article>
+<style>
+ .insight-card{display:flex;flex-direction:column;min-width:0}
+ .insight-card[hidden]{display:none}
+ .insight-card__photo{display:block;aspect-ratio:16/9;overflow:hidden;border-radius:var(--brand-cta-radius)}
+ .insight-card__photo :global(img){width:100%;height:100%;object-fit:cover;transition:transform 240ms var(--brand-ease)}
+ .insight-card__category{margin:1.25rem 0 .6rem;color:var(--brand-red);font-size:.8rem;font-weight:750}
+ .insight-card h3{margin:0;font-size:clamp(1.25rem,1.8vw,1.65rem);line-height:1.25;letter-spacing:-.025em}
+ .insight-card h3 a{text-decoration:none}
+ .insight-card__summary{margin:1rem 0 1.5rem;color:var(--brand-muted);font-size:.9rem;line-height:1.65}
+ .insight-card__meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;margin:auto 0 0;color:var(--brand-muted);font-size:.75rem;line-height:1.5}
+ @media(hover:hover){.insight-card__photo:hover :global(img){transform:scale(1.025)}.insight-card h3 a:hover{color:var(--brand-red)}}
+ @media(prefers-reduced-motion:reduce){.insight-card__photo :global(img){transition:none}}
+</style>

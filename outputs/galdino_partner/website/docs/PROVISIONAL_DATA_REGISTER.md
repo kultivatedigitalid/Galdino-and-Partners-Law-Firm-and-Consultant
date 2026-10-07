@@ -1,6 +1,6 @@
 # Provisional data register
 
-Updated 30 September 2026. All listed values are authorised prototype content, not verified representations of actual clients, credentials or completed matters. Indexing must remain disabled.
+Updated 7 October 2026. Final design/source acceptance for handover does not grant business or launch approval. All listed values are authorised prototype content, not verified representations of actual clients, credentials or completed matters. Indexing must remain disabled.
 
 The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured field-level inventory. P0 must be replaced or approved in writing before any public launch; P1 requires subject-matter/editorial review before indexing. Changing a value must update both the source and this generated inventory. Run npm run docs:inventory after changes. Keep approval evidence in the company records, never in public content.
 
@@ -126,6 +126,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | aruna-pangan.deliverables | /id/projects/aruna-pangan/ | Matriks izin fasilitas; Register data produksi; Daftar kekurangan dokumen; Jadwal tindak lanjut | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | aruna-pangan.duration | /id/projects/aruna-pangan/ | 6 minggu | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | aruna-pangan.outcome | /id/projects/aruna-pangan/ | Jalur perizinan diperjelas dan dokumen lintas tim terkonsolidasi untuk persiapan pengajuan. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| aruna-pangan.challengeTitle | /id/projects/aruna-pangan/ | Data Ekspansi Produksi Belum Terpadu. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| aruna-pangan.approachTitle | /id/projects/aruna-pangan/ | Mencocokkan Proses dan Data Produksi. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| aruna-pangan.deliverablesTitle | /id/projects/aruna-pangan/ | Matriks Izin dan Register Produksi. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.company | /id/projects/nusa-teknologi/ | PT Nusa Teknologi Integrasi | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.location | /id/projects/nusa-teknologi/ | Jakarta | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.year | /id/projects/nusa-teknologi/ | 2025 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -139,6 +142,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | nusa-teknologi.deliverables | /id/projects/nusa-teknologi/ | Peta ruang lingkup sistem; Register risiko informasi; Daftar bukti kontrol; Rencana audit internal | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.duration | /id/projects/nusa-teknologi/ | 3 minggu | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.outcome | /id/projects/nusa-teknologi/ | Tim memperoleh prioritas perbaikan dan daftar bukti yang perlu disiapkan sebelum proses audit independen. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| nusa-teknologi.challengeTitle | /id/projects/nusa-teknologi/ | Dokumen Keamanan Informasi Tersebar. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| nusa-teknologi.approachTitle | /id/projects/nusa-teknologi/ | Memetakan Aset, Risiko, dan Kontrol. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| nusa-teknologi.deliverablesTitle | /id/projects/nusa-teknologi/ | Prioritas Perbaikan Sebelum Audit. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.company | /id/projects/prima-distribusi/ | PT Prima Distribusi Indonesia | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.location | /id/projects/prima-distribusi/ | Bekasi | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.year | /id/projects/prima-distribusi/ | 2026 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -152,6 +158,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | prima-distribusi.deliverables | /id/projects/prima-distribusi/ | Inventaris objek per outlet; Rekonsiliasi arsip pajak; Kalender perpanjangan; Matriks tindak lanjut | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.duration | /id/projects/prima-distribusi/ | 5 minggu | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.outcome | /id/projects/prima-distribusi/ | Status setiap titik dapat ditelusuri dan prioritas pembaruan tersusun untuk koordinasi kantor pusat serta cabang. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| prima-distribusi.challengeTitle | /id/projects/prima-distribusi/ | Arsip Reklame Antar-Outlet Tidak Seragam. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| prima-distribusi.approachTitle | /id/projects/prima-distribusi/ | Mencocokkan Media dengan Arsip Outlet. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| prima-distribusi.deliverablesTitle | /id/projects/prima-distribusi/ | Inventaris Reklame dan Kalender Perpanjangan. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.company | /id/projects/vertex-konstruksi/ | PT Vertex Konstruksi Utama | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.location | /id/projects/vertex-konstruksi/ | Tangerang Selatan | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.year | /id/projects/vertex-konstruksi/ | 2026 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -165,6 +174,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | vertex-konstruksi.deliverables | /id/projects/vertex-konstruksi/ | Matriks subklasifikasi; Register tenaga ahli; Checklist LSBU; Arsip kelengkapan | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.duration | /id/projects/vertex-konstruksi/ | 4 minggu | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.outcome | /id/projects/vertex-konstruksi/ | Kesenjangan dokumen teridentifikasi dan paket administratif dipersiapkan untuk proses sertifikasi. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| vertex-konstruksi.challengeTitle | /id/projects/vertex-konstruksi/ | Bukti Kapasitas Konstruksi Belum Selaras. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| vertex-konstruksi.approachTitle | /id/projects/vertex-konstruksi/ | Menyelaraskan Lingkup dan Kompetensi. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| vertex-konstruksi.deliverablesTitle | /id/projects/vertex-konstruksi/ | Register Kelengkapan Badan Usaha. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.company | /id/projects/lintas-logistik/ | PT Lintas Logistik Nusantara | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.location | /id/projects/lintas-logistik/ | Surabaya | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.year | /id/projects/lintas-logistik/ | 2026 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -178,6 +190,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | lintas-logistik.deliverables | /id/projects/lintas-logistik/ | Register arsip bangunan; Daftar kebutuhan pemeriksaan; Peta akses dan sirkulasi; Rencana penutupan kekurangan data | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.duration | /id/projects/lintas-logistik/ | 3 minggu | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.outcome | /id/projects/lintas-logistik/ | Kebutuhan dokumen serta pemeriksaan lanjutan terpetakan sebelum pengajuan dan keputusan penggunaan fasilitas. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| lintas-logistik.challengeTitle | /id/projects/lintas-logistik/ | Arsip Gudang dan Akses Terpisah. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| lintas-logistik.approachTitle | /id/projects/lintas-logistik/ | Mengonsolidasikan Bangunan dan Sirkulasi Truk. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| lintas-logistik.deliverablesTitle | /id/projects/lintas-logistik/ | Kebutuhan Pemeriksaan dan Data Lanjutan. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.company | /id/projects/karya-properti/ | PT Karya Properti Sentosa | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.location | /id/projects/karya-properti/ | Bogor | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.year | /id/projects/karya-properti/ | 2026 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -191,6 +206,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | karya-properti.deliverables | /id/projects/karya-properti/ | Roadmap perizinan; Matriks dependensi; Daftar data teknis; Register isu terbuka | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.duration | /id/projects/karya-properti/ | 5 minggu | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.outcome | /id/projects/karya-properti/ | Kebutuhan kajian dan dependensi regulasi dipetakan sebelum ruang lingkup pengembangan ditetapkan. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| karya-properti.challengeTitle | /id/projects/karya-properti/ | Prioritas Izin Proyek Belum Jelas. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| karya-properti.approachTitle | /id/projects/karya-properti/ | Menghubungkan Dokumen dengan Jadwal Proyek. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| karya-properti.deliverablesTitle | /id/projects/karya-properti/ | Roadmap Izin dan Matriks Dependensi. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | price | /id/services/reklame/pajak-reklame/ | 2500000 | IDR | P0 | docs/PRICING_RESEARCH.md; estimated scope, not an approved quotation | true |
 | content.title | /id/services/reklame/pajak-reklame/ | Jasa Pajak Reklame | string | P1 | Editorial prototype based on public regulatory context; technical and commercial review required | true |
 | content.description | /id/services/reklame/pajak-reklame/ | Menyiapkan pendataan objek reklame, pemeriksaan dasar perhitungan, dan administrasi pajak daerah. | string | P1 | Editorial prototype based on public regulatory context; technical and commercial review required | true |
@@ -837,6 +855,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | aruna-pangan.deliverables | /en/projects/aruna-pangan/ | Facility permit matrix; Production data register; Document gap list; Follow-up schedule | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | aruna-pangan.duration | /en/projects/aruna-pangan/ | 6 weeks | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | aruna-pangan.outcome | /en/projects/aruna-pangan/ | The licensing pathway was clarified and cross-team documents consolidated for submission preparation. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| aruna-pangan.challengeTitle | /en/projects/aruna-pangan/ | Expansion Records Were Fragmented. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| aruna-pangan.approachTitle | /en/projects/aruna-pangan/ | Aligning Processes and Production Records. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| aruna-pangan.deliverablesTitle | /en/projects/aruna-pangan/ | Permit Matrix and Production Register. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.company | /en/projects/nusa-teknologi/ | PT Nusa Teknologi Integrasi | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.location | /en/projects/nusa-teknologi/ | Jakarta | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.year | /en/projects/nusa-teknologi/ | 2025 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -850,6 +871,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | nusa-teknologi.deliverables | /en/projects/nusa-teknologi/ | System scope map; Information-risk register; Control evidence list; Internal-audit plan | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.duration | /en/projects/nusa-teknologi/ | 3 weeks | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | nusa-teknologi.outcome | /en/projects/nusa-teknologi/ | The team received improvement priorities and an evidence list to prepare before an independent audit. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| nusa-teknologi.challengeTitle | /en/projects/nusa-teknologi/ | Information Security Records Were Scattered. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| nusa-teknologi.approachTitle | /en/projects/nusa-teknologi/ | Mapping Assets, Risks, and Controls. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| nusa-teknologi.deliverablesTitle | /en/projects/nusa-teknologi/ | Improvement Priorities Before the Audit. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.company | /en/projects/prima-distribusi/ | PT Prima Distribusi Indonesia | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.location | /en/projects/prima-distribusi/ | Bekasi | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.year | /en/projects/prima-distribusi/ | 2026 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -863,6 +887,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | prima-distribusi.deliverables | /en/projects/prima-distribusi/ | Per-outlet object inventory; Tax-record reconciliation; Renewal calendar; Follow-up matrix | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.duration | /en/projects/prima-distribusi/ | 5 weeks | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | prima-distribusi.outcome | /en/projects/prima-distribusi/ | Each location's status became traceable, with renewal priorities established for coordination between head office and branches. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| prima-distribusi.challengeTitle | /en/projects/prima-distribusi/ | Outlet Advertising Records Were Inconsistent. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| prima-distribusi.approachTitle | /en/projects/prima-distribusi/ | Reconciling Advertising Media and Outlet Records. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| prima-distribusi.deliverablesTitle | /en/projects/prima-distribusi/ | Advertising Inventory and Renewal Calendar. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.company | /en/projects/vertex-konstruksi/ | PT Vertex Konstruksi Utama | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.location | /en/projects/vertex-konstruksi/ | Tangerang Selatan | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.year | /en/projects/vertex-konstruksi/ | 2026 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -876,6 +903,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | vertex-konstruksi.deliverables | /en/projects/vertex-konstruksi/ | Classification matrix; Specialist register; LSBU checklist; Completeness archive | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.duration | /en/projects/vertex-konstruksi/ | 4 weeks | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | vertex-konstruksi.outcome | /en/projects/vertex-konstruksi/ | Document gaps were identified and an administrative pack prepared for certification. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| vertex-konstruksi.challengeTitle | /en/projects/vertex-konstruksi/ | Construction Capability Evidence Needed Alignment. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| vertex-konstruksi.approachTitle | /en/projects/vertex-konstruksi/ | Aligning Scope and Competence. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| vertex-konstruksi.deliverablesTitle | /en/projects/vertex-konstruksi/ | Business Readiness Register. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.company | /en/projects/lintas-logistik/ | PT Lintas Logistik Nusantara | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.location | /en/projects/lintas-logistik/ | Surabaya | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.year | /en/projects/lintas-logistik/ | 2026 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -889,6 +919,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | lintas-logistik.deliverables | /en/projects/lintas-logistik/ | Building archive register; Inspection requirements list; Access and circulation map; Information-gap closure plan | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.duration | /en/projects/lintas-logistik/ | 3 weeks | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | lintas-logistik.outcome | /en/projects/lintas-logistik/ | Document and inspection requirements were clarified before applications and decisions about facility use. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| lintas-logistik.challengeTitle | /en/projects/lintas-logistik/ | Warehouse and Access Records Were Separate. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| lintas-logistik.approachTitle | /en/projects/lintas-logistik/ | Consolidating Building and Truck-Access Records. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| lintas-logistik.deliverablesTitle | /en/projects/lintas-logistik/ | Inspection and Further Information Requirements. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.company | /en/projects/karya-properti/ | PT Karya Properti Sentosa | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.location | /en/projects/karya-properti/ | Bogor | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.year | /en/projects/karya-properti/ | 2026 | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
@@ -902,6 +935,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | karya-properti.deliverables | /en/projects/karya-properti/ | Licensing roadmap; Dependency matrix; Technical data list; Open issue register | array | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.duration | /en/projects/karya-properti/ | 5 weeks | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | karya-properti.outcome | /en/projects/karya-properti/ | Study requirements and regulatory dependencies were mapped before the development scope was fixed. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| karya-properti.challengeTitle | /en/projects/karya-properti/ | Project Approval Priorities Needed Clarity. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| karya-properti.approachTitle | /en/projects/karya-properti/ | Connecting Documents to the Project Schedule. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
+| karya-properti.deliverablesTitle | /en/projects/karya-properti/ | Permit Roadmap and Dependency Matrix. | string | P0 | Simulated company/project; not evidence of an actual client relationship | true |
 | price | /en/services/advertising-permits/advertising-tax/ | 2500000 | IDR | P0 | docs/PRICING_RESEARCH.md; estimated scope, not an approved quotation | true |
 | content.title | /en/services/advertising-permits/advertising-tax/ | Advertising Tax Assistance | string | P1 | Editorial prototype based on public regulatory context; technical and commercial review required | true |
 | content.description | /en/services/advertising-permits/advertising-tax/ | Prepare advertising-object records, review assessment inputs and coordinate local tax administration. | string | P1 | Editorial prototype based on public regulatory context; technical and commercial review required | true |
@@ -1433,6 +1469,9 @@ The companion [JSON register](PROVISIONAL_DATA_REGISTER.json) is the structured 
 | industry photography | /id/industries/; /en/industries/; service and case pages | src/assets/industry-*.webp | image collection | P0 | Five AI-generated contextual illustrations, 2026-09-29; not photographs of actual clients or company facilities. Prompts and sources: docs/VISUAL_REVISION.md | true |
 | service activity photography | /id/services/; /en/services/; service hubs and details | src/assets/service-*.webp | image collection | P0 | Nine AI-generated activity photographs, 2026-09-30; illustrative, not client evidence. Prompts and source paths: docs/REVISION_2026-09-30.md | true |
 | main page hero photography | /id/services/; /id/industries/; /id/projects/; /id/blog/; /id/contact/; and EN equivalents | src/assets/hero-*.webp | image collection | P0 | Five AI-generated contextual hero photographs with two portrait mobile variants, 2026-09-30; illustrative, not client evidence. Prompts and source paths: docs/REVISION_2026-09-30.md | true |
+| final category hero artwork | /id/services/*; /en/services/* | src/assets/category-heroes/*.webp | image collection | P0 | AI-generated layered illustrations; provenance in reports/category-hero-assets.md. Final design accepted for handover, business/likeness approval still pending | true |
+| final service hero and preview imagery | /id/services/*; /en/services/* | src/assets/service-heroes/*.webp; src/assets/service-previews/*.webp | image collection | P0 | Supplied illustrations and stock photographs; source/license references in reports/service-stock-sources.json and revision history in reports/services-insight-revision.md. Validate rights and business association before production launch | true |
+| repaired foreground people | /id/services/; /id/projects/; /id/profile/; EN equivalents | src/assets/hero-services-layered-cutout-v4.webp; src/assets/hero-experiences-layered-cutout-v4.webp; src/assets/hero-about-layered-cutout-v4.webp | image collection | P0 | AI-repaired supplied cutouts; source framing documented in reports/services-insight-revision.md. Illustrative assets, not client evidence | true |
 | legal policy content | /id/privacy/; /en/privacy/; /id/terms/; /en/terms/ | src/data/legal.ts | typescript reference | P0 | Draft privacy and engagement policy; company approval required, including 12-month retention and processor list | true |
 | structured-data identity | /id/*; /en/* | PT Karya Lintas Generasi; Galdino & Partner; https://galdino.co.id | string | P0 | User brief; verify business legal identity, address and domain ownership before index activation | true |
 

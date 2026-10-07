@@ -1,10 +1,63 @@
 ---
 import {Image} from 'astro:assets';
 import type {ImageMetadata} from 'astro';
-interface Props{title:string;description:string;image:ImageMetadata;alt?:string;href:string;action:string;variant?:'service'|'industry'}
-const {title,description,image,alt='',href,action,variant='service'}=Astro.props;
+import {COPY,type Locale} from '../../data/site';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+interface Props{locale:Locale;title:string;description:string;image:ImageMetadata;alt?:string;href:string;action:string;variant?:'service'|'industry';consultHref?:string}
+const {locale,title,description,image,alt='',href,action,variant='service',consultHref='/'+locale+'/contact/'}=Astro.props;
+const id=locale==='id';
+const heading=title.replace(/^Jasa Pendampingan Akreditasi /,'Akreditasi ').replace(/^Jasa /,'').replace(/ (Assistance|Support)$/,'').replace('AMDAL Environmental Impact Assessment','AMDAL Impact Assessment').replace('SLF Building Function Certificate','SLF Building Certification');
 ---
-<header class:list={['split-hero','split-hero--'+variant]}><div class="container-shell split-hero__layout"><div><h1>{title}</h1><p>{description}</p><a class="ed-button" href={href}>{action} →</a></div><figure><Image src={image} alt={alt} widths={[480,800,1200]} sizes="(min-width:800px) 45vw,100vw" loading="eager" fetchpriority="high" quality={82}/></figure></div></header>
+<header class:list={['detail-hero','detail-hero--'+variant]} data-hero-motion="ready">
+ {variant==='service' ? (
+  <div class="container-shell service-hero__layout">
+   <figure class="service-hero__visual" data-hero-part="visual"><Image src={image} alt={alt} widths={[480,800,1200]} sizes="(min-width:801px) 42vw,100vw" loading="eager" fetchpriority="high" quality={85}/></figure>
+   <div class="service-hero__copy">
+    <p class="detail-hero__label" data-hero-part="eyebrow">{id?'Layanan Perizinan':'Permit Services'}</p>
+    <h1 data-hero-part="title">{heading}</h1>
+    <p class="detail-hero__lead" data-hero-part="lead">{description}</p>
+    <div class="detail-hero__actions" data-hero-part="action"><a class="ed-button" href={consultHref}>{COPY[locale].consult}<ArrowIcon/></a><a class="ed-link" href={href}>{action}<ArrowIcon/></a></div>
+   </div>
+  </div>
+ ) : (
+  <>
+   <div class="container-shell industry-hero__heading"><p class="detail-hero__label" data-hero-part="eyebrow">{id?'Cakupan Industri':'Industry Support'}</p><h1 data-hero-part="title">{heading}</h1></div>
+   <div class="industry-hero__scene">
+    <figure class="industry-hero__visual" data-hero-part="visual"><Image src={image} alt={alt} widths={[640,960,1440,1920]} sizes="(min-width:801px) 78vw,100vw" loading="eager" fetchpriority="high" quality={85}/></figure>
+    <div class="industry-hero__panel" data-hero-part="lead"><p>{description}</p><div class="detail-hero__actions" data-hero-part="action"><a class="ed-button industry-hero__consult" href={consultHref}>{COPY[locale].consult}<ArrowIcon/></a><a class="industry-hero__link" href={href}>{action}<ArrowIcon/></a></div></div>
+   </div>
+  </>
+ )}
+</header>
 <style>
-.split-hero{background:#fff;color:var(--brand-black);padding:clamp(3rem,6vw,5rem) 0 clamp(3rem,6vw,5rem)}.split-hero__layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:center}.split-hero h1{font-size:var(--brand-type-hero);font-weight:570;line-height:.98;letter-spacing:-.035em;margin:0;max-width:16ch}.split-hero p{font-size:clamp(.92rem,1.5vw,1.08rem);color:var(--brand-muted);line-height:1.52;margin:1.5rem 0 2rem;max-width:48ch}.split-hero figure{margin:0;border-left:2px solid var(--brand-red);border-bottom:2px solid var(--brand-red);overflow:hidden}.split-hero :global(img){width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center}.split-hero--industry figure{aspect-ratio:16/11}.split-hero--industry :global(img){height:100%;aspect-ratio:16/11}@media(max-width:800px){.split-hero__layout{grid-template-columns:1fr}.split-hero{padding-top:3rem}.split-hero figure{max-width:40rem}}
+ .detail-hero{background:var(--hero-background,var(--brand-paper));color:var(--brand-black)}
+ .detail-hero h1{max-width:none;margin:0;font-size:clamp(2.5rem,3.5vw,3.5rem);font-weight:570;line-height:1.06;letter-spacing:-.03em;text-wrap:balance}
+ .detail-hero__label{margin:0 0 1.25rem;color:var(--brand-muted);font-size:.75rem;font-weight:700}
+ .detail-hero__lead{max-width:50ch;margin:1.5rem 0 0;color:var(--brand-muted);font-size:var(--brand-type-lead);line-height:1.6}
+ .detail-hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin-top:2rem}
+ .detail-hero__actions :global(.ed-button){white-space:nowrap}
+ .detail-hero__actions :global(.ed-link){font-size:.8rem}
+ .service-hero__layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2.5rem,5vw,5rem);align-items:center;padding-block:clamp(2.5rem,4.5vw,4rem)}
+ .service-hero__visual{height:clamp(21rem,44svh,28rem);margin:0;overflow:hidden}
+ .service-hero__visual :global(img){width:100%;height:100%;object-fit:cover;filter:saturate(.35)}
+ .industry-hero__heading{padding-block:clamp(2.75rem,5vw,4.5rem)}
+ .industry-hero__heading h1{max-width:32ch;font-size:clamp(2.75rem,4.25vw,4rem)}
+ .industry-hero__scene{position:relative;min-height:28rem;isolation:isolate}
+ .industry-hero__visual{width:78%;height:clamp(28rem,40vw,35rem);margin:0;overflow:hidden}
+ .industry-hero__visual :global(img){width:100%;height:100%;object-fit:cover}
+ .industry-hero__panel{position:absolute;top:12%;right:0;bottom:12%;width:46%;display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,4vw,4rem);background:var(--brand-red);color:#fff}
+ .industry-hero__panel>p{margin:0;max-width:35ch;font-size:clamp(1.2rem,1.65vw,1.65rem);font-weight:570;line-height:1.4;text-wrap:pretty}
+ .industry-hero__panel :global(.industry-hero__consult){background:#fff;border-color:#fff;color:var(--brand-black)}
+ .industry-hero__link{display:inline-flex;align-items:center;gap:.7rem;min-height:2.75rem;color:#fff;font-size:.8rem;font-weight:750;text-underline-offset:.3em}
+ @media(max-width:800px){
+  .service-hero__layout{grid-template-columns:1fr;gap:2rem;padding-block:2rem 3rem}
+  .service-hero__copy{grid-row:1}
+  .service-hero__visual{height:auto;aspect-ratio:16/10}
+  .detail-hero h1{font-size:clamp(2.15rem,7.5vw,3rem)}
+  .detail-hero__actions{gap:.8rem 1.25rem;margin-top:1.5rem}
+  .industry-hero__heading{padding-block:2.5rem}
+  .industry-hero__visual{width:100%;height:auto;aspect-ratio:16/10}
+  .industry-hero__panel{position:relative;inset:auto;width:100%;padding:2rem 1.5rem}
+  .industry-hero__scene{min-height:0}
+ }
 </style>

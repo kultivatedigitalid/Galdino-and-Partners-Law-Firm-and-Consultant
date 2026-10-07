@@ -17,3 +17,11 @@ reports/lighthouse-profile/
 
 # Local rendering of the supplied revision document
 reports/pdf-revision/
+
+# Local experiments and handover clone/evidence workspace
+tmp/
+reports/experiments-*/
+reports/screenshots/
+reports/handover-local/
+reports/validation.json
+*.tmp

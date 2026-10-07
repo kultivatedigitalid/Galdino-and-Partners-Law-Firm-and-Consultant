@@ -21,14 +21,14 @@ export const NAV = {
 export const COPY = {
   id: {
     skip: 'Lewati ke konten utama',
-    consult: 'Jadwalkan Konsultasi',
+    consult: 'Konsultasi Gratis',
     servicesCta: 'Lihat Layanan',
     footerSummary: 'Mitra hukum dan regulasi untuk membantu bisnis memahami, memperoleh, dan menjaga kepatuhan perizinan.',
     legal: 'Informasi pada situs ini bersifat umum dan bukan nasihat hukum untuk perkara tertentu.',
   },
   en: {
     skip: 'Skip to main content',
-    consult: 'Schedule a Consultation',
+    consult: 'Free Consultation',
     servicesCta: 'View Services',
     footerSummary: 'A legal and regulatory partner helping businesses understand, secure, and maintain licensing compliance.',
     legal: 'Information on this website is general and does not constitute legal advice for a specific matter.',

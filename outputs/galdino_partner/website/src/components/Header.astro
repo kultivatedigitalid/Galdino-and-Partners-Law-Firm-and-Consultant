@@ -19,7 +19,16 @@ const isCurrent = (href: string) => href === localeRoot
   : pathname === href || pathname.startsWith(href);
 ---
 
-<span class="header-sentinel" data-header-sentinel aria-hidden="true"></span>
+<script is:inline>
+  // Apply the destination's scroll state before a language-change page paints.
+  (() => {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem('gp-language-scroll') || 'null');
+      const pending = saved?.path === location.pathname && Date.now() - saved.savedAt < 15000 && saved.y > 0;
+      document.documentElement.dataset.headerScrolled = String(window.scrollY > 0 || pending);
+    } catch { document.documentElement.dataset.headerScrolled = String(window.scrollY > 0); }
+  })();
+</script>
 <header
   class:list={['site-header', usesImmersiveHeader && 'site-header--immersive', isHome && !usesImmersiveHeader && 'site-header--home', overlay && 'site-header--overlay']}
   data-scrolled="false"
@@ -56,7 +65,7 @@ const isCurrent = (href: string) => href === localeRoot
         >
           {other.toUpperCase()}
         </a>
-        <a class="nav-cta" href={`/${locale}/contact/`}>{locale==='id'?'Konsultasi':'Consultation'}<ArrowIcon /></a>
+        <a class="nav-cta" href={`/${locale}/contact/`}>{locale==='id'?'Konsultasi Gratis':'Free Consultation'}<ArrowIcon /></a>
         </div>
       </div>
     </nav>
@@ -81,7 +90,15 @@ const isCurrent = (href: string) => href === localeRoot
   }
   .site-header--home,.site-header--overlay { position: fixed; right: 0; left: 0; }
   .site-header--immersive { position: fixed; right: 0; left: 0; }
-  .site-header[data-scrolled='true'] { background: #fff; border-bottom-color: rgb(11 11 12 / .14); }
+  .site-header[data-scrolled='true'], :global(html[data-header-scrolled='true']) .site-header { background: #fff; border-bottom-color: rgb(11 11 12 / .14); }
+  /* Keep navigation readable above the dimmed page while the mega menu is open. */
+  .site-header:has(.services-nav[open]) { background: #fff; }
+  .site-header:has(.services-nav[open]) :is(.brand,.nav-link.active,.menu-toggle) { color: var(--brand-black); }
+  .site-header:has(.services-nav[open]) :is(.nav-link,.language-link) { color: #66666a; }
+  :global(html[data-header-scrolled='true']) .site-header :is(.brand,.nav-link.active,.menu-toggle){color:var(--brand-black)}
+  :global(html[data-header-scrolled='true']) .site-header :is(.nav-link,.language-link){color:#66666a}
+  :global(html[data-header-scrolled='true']) .site-header .language-link{border-left-color:var(--brand-line)}
+  :global(html[data-header-scrolled='true']) .site-header .menu-toggle{border-color:var(--brand-line-strong)}
   .header-inner { display: grid; grid-template-columns: 14rem minmax(0,1fr); min-height: var(--site-header-height); align-items: center; gap: 1.5rem; }
   .brand { display: inline-flex; min-height: 2.75rem; flex: 0 0 auto; align-items: center; gap: .65rem; color: #0b0b0c; text-decoration: none; transition: color 210ms cubic-bezier(.22, 1, .36, 1); }
   .brand-mark-frame { width: 3.6rem; height: 2.55rem; display: grid; flex: 0 0 auto; place-items: center; }
@@ -115,7 +132,7 @@ const isCurrent = (href: string) => href === localeRoot
     .nav-cta:hover { background: #0b0b0c; transform: translateY(-2px); }
     .nav-cta:hover :global(.arrow-icon) { transform: translateX(3px); }
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1120px) {
     .header-inner { display: flex; min-height: var(--site-header-height); justify-content: space-between; }
     .brand-mark-frame { width: 3.2rem; height: 2.25rem; }
     .brand-name { display: inline; max-width: 10rem; overflow: hidden; text-overflow: ellipsis; }
@@ -150,13 +167,16 @@ const isCurrent = (href: string) => href === localeRoot
 
 <script>
   const scrollHeader = document.querySelector<HTMLElement>('.site-header');
-  const headerSentinel = document.querySelector<HTMLElement>('[data-header-sentinel]');
-  if (scrollHeader && headerSentinel && 'IntersectionObserver' in window) {
-    const headerObserver = new IntersectionObserver(([entry]) => {
-      scrollHeader.dataset.scrolled = String(!entry.isIntersecting);
-    }, { threshold: 0 });
-    headerObserver.observe(headerSentinel);
-  }
+  const updateHeader = () => {
+    const scrolled = String(window.scrollY > 0);
+    if(scrollHeader) scrollHeader.dataset.scrolled = scrolled;
+    document.documentElement.dataset.headerScrolled = scrolled;
+  };
+  // Keep the pre-paint restoration state until the destination is restored.
+  if(document.documentElement.dataset.headerScrolled !== 'true') updateHeader();
+  window.addEventListener('scroll', updateHeader, {passive:true});
+  window.addEventListener('pageshow', updateHeader);
+  window.addEventListener('load', updateHeader);
 
   const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
   const nav = document.querySelector<HTMLElement>('.nav-panel');
@@ -200,7 +220,7 @@ const isCurrent = (href: string) => href === localeRoot
 
   document.addEventListener('click',event=>{if(servicesOpen && !servicesNav?.contains(event.target as Node))setServicesOpen(false);});
   document.addEventListener('focusin',event=>{if(servicesOpen && !servicesNav?.contains(event.target as Node))setServicesOpen(false);});
-  matchMedia('(max-width:1024px)').addEventListener('change',closeMenu);
+  matchMedia('(max-width:1120px)').addEventListener('change',closeMenu);
 
   const scrollKey = 'gp-language-scroll';
   const languageLink = document.querySelector<HTMLAnchorElement>('.language-link[data-preserve-scroll]');
@@ -227,6 +247,7 @@ const isCurrent = (href: string) => href === localeRoot
           const maxScroll = Math.max(0, root.scrollHeight - window.innerHeight);
           root.style.scrollBehavior = 'auto';
           window.scrollTo({ top: Math.min(saved.y ?? 0, maxScroll), left: 0, behavior: 'auto' });
+          updateHeader();
           root.style.scrollBehavior = previousBehavior;
         };
         requestAnimationFrame(() => requestAnimationFrame(restore));

@@ -1,0 +1,30 @@
+---
+import {Image} from 'astro:assets';
+import {COPY,type Locale} from '../../data/site';
+import type {Service} from '../../data/services';
+import {suppliedServiceHeroImages} from '../../data/supplied-service-hero-images';
+import ArrowIcon from '../icons/ArrowIcon.astro';
+interface Props{locale:Locale;service:Service}
+const {locale,service}=Astro.props,visual=suppliedServiceHeroImages[service.id];
+const title=service.content[locale].title.replace(/^Jasa /,'').replace(/ (Assistance|Support)$/,'');
+---
+<header class="reklame-detail-hero" data-service-hero={service.id} data-hero-motion="ready" aria-labelledby="reklame-detail-title">
+ <div class="container-shell reklame-detail-hero__copy">
+  <h1 id="reklame-detail-title" data-hero-part="title">{title}</h1>
+  <p data-hero-part="lead">{visual.lead[locale]}</p>
+  <a class="ed-button" data-hero-part="action" href={`/${locale}/contact/?service=${service.id}`}>{COPY[locale].consult}<ArrowIcon/></a>
+ </div>
+ <figure class="reklame-detail-hero__visual" data-hero-part="visual"><div class="reklame-detail-hero__canvas" style={`--scene-aspect:${visual.image.width}/${visual.image.height}`}><Image src={visual.image} alt={visual.alt[locale]} widths={[640,960,1280,1600]} sizes="(max-width:640px) 100vw,70vw" loading="eager" fetchpriority="high" quality={88}/></div></figure>
+</header>
+<style>
+ .reklame-detail-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;height:100svh;min-height:0;overflow:clip;background:var(--hero-background,var(--brand-paper));color:var(--brand-black)}
+ .reklame-detail-hero__copy{position:relative;z-index:1;flex-shrink:0;text-align:center;padding-top:calc(var(--site-header-height) + clamp(4rem,12svh,8rem))}
+ .reklame-detail-hero h1{max-width:30ch;margin:0 auto;font-family:var(--font-display);font-size:clamp(2.5rem,4.6vw,4.5rem);font-weight:570;line-height:1.06;letter-spacing:-.035em;text-wrap:balance}
+ .reklame-detail-hero__copy p{max-width:none;margin:1.25rem auto 0;color:var(--brand-muted);font-size:clamp(1rem,1.35vw,1.2rem);line-height:1.55}
+ .reklame-detail-hero__copy :global(.ed-button){margin-top:1.5rem}
+ .reklame-detail-hero__visual{position:absolute;inset:0;width:100%;height:100%;margin:0;pointer-events:none;mix-blend-mode:multiply}
+ .reklame-detail-hero__canvas{position:absolute;inset:auto 0 0 auto;width:auto;max-width:100%;height:70%;aspect-ratio:var(--scene-aspect)}
+ .reklame-detail-hero__visual :global(img){width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:saturate(.35) contrast(.98);mask-image:linear-gradient(transparent,#000 18%,#000 97%,transparent),linear-gradient(90deg,transparent,#000 18%,#000);mask-composite:intersect}
+ @media(min-width:641px) and (max-height:700px){.reklame-detail-hero__copy{padding-top:calc(var(--site-header-height) + 4rem)}.reklame-detail-hero h1{font-size:clamp(2.5rem,4vw,3.5rem)}.reklame-detail-hero__copy p{margin-top:1rem}.reklame-detail-hero__copy :global(.ed-button){margin-top:1.25rem}}
+ @media(max-width:640px){.reklame-detail-hero{height:auto}.reklame-detail-hero__copy{padding-top:calc(var(--site-header-height) + 2rem)}.reklame-detail-hero h1{font-size:clamp(2.1rem,9vw,3rem)}.reklame-detail-hero__copy p{font-size:.95rem}.reklame-detail-hero__visual{position:relative;inset:auto;height:auto;flex:none;aspect-ratio:1600/914;margin-top:1.5rem}.reklame-detail-hero__canvas{inset:0;width:100%;height:100%;aspect-ratio:auto}}
+</style>
