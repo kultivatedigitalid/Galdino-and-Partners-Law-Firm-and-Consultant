@@ -33,6 +33,8 @@ The current rate limiter is in memory per function instance. Counters reset with
 
 ## Local verification
 
+The Node runtime is pinned to `24.x`. The lockfile includes the optional WebAssembly dependencies required by newer npm clean-install validation. If an older deployment reports missing `@emnapi/core`, `@emnapi/runtime` or `@emnapi/wasi-threads`, deploy the latest commit containing the repaired lockfile. Keep the install command as `npm ci`.
+
 From the application root:
 
 ```sh
@@ -52,6 +54,7 @@ Use Vercel's deployment history to roll back to a previously verified deployment
 - `npm run build:vercel` and `npm run validate:vercel` passed for 167 pages, including assets, bilingual links, metadata and noindex checks.
 - The generated Node 24 function was imported locally and exercised: API 405/403/503 responses, both localized 404 responses and a legacy 301 redirect passed. SMTP was disabled and no email was sent.
 - The original Node standalone build and its 167-page validation also passed.
+- Follow-up for Vercel's `npm ci` error: reproduced missing optional dependency validation with npm 11.21.0, regenerated the lockfile without changing existing package versions, and verified both a full clean install and a Linux x64 clean-install dry run. Node is pinned to `24.x`.
 
 These results verify local deployment artifacts. Hosted SMTP, domain and Vercel account checks remain to be performed during deployment.
 

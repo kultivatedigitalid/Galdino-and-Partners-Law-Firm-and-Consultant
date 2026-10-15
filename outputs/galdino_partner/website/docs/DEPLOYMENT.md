@@ -6,7 +6,7 @@ For Vercel, follow [VERCEL.md](VERCEL.md). It covers the application root, commi
 
 ## Confirmed constraints
 
-Preferred target: Hostinger Managed Node.js, Node 22.12 or later. The user has not yet provided Hostinger access; the actual plan and account capability are unverified. GTM is also unavailable. Do not mark production delivery complete from a local build.
+Preferred target: Hostinger Managed Node.js, Node 24.x. The user has not yet provided Hostinger access; the actual plan and account capability are unverified. GTM is also unavailable. Do not mark production delivery complete from a local build.
 
 Official references:
 - [Hostinger Node.js options](https://www.hostinger.com/support/node-js-hosting-options-at-hostinger/)

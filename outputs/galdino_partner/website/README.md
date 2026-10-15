@@ -10,7 +10,7 @@ Bilingual Astro website for permitting and management-system advisory. Package m
 
 ## Development
 
-Use Node 22.12+ (local verification environment: Node 24.11.1).
+Use Node 24.x (local verification environment: Node 24.11.1).
 
 From the repository root, first run `cd outputs/galdino_partner/website`. Environment keys are in `.env.example`, with all values empty. See [environment configuration](docs/ENVIRONMENT.md) for build/runtime requirements, safe defaults and local email-sink tests. A page build does not require real credentials.
 

@@ -2,7 +2,7 @@
 
 Repository resmi handover: https://github.com/afinitasid/Galdino-Partner-Website (PRIVATE), branch `main`. Deadline handover: 8 Oktober 2026. Riwayat Git proyek Law dipertahankan.
 
-Aplikasi website bilingual Indonesia/Inggris memakai **Astro**, adapter **Node standalone**, dan package manager **npm**. Versi Node yang diperlukan: **>=22.12.0**; lingkungan verifikasi menggunakan Node 24.11.1.
+Aplikasi website bilingual Indonesia/Inggris memakai **Astro**, adapter **Node standalone**, dan package manager **npm**. Versi Node yang diperlukan: **24.x**; lingkungan verifikasi menggunakan Node 24.11.1.
 
 ```sh
 git clone https://github.com/afinitasid/Galdino-Partner-Website.git
