@@ -8,10 +8,10 @@ The application supports Vercel through `@astrojs/vercel`. Pages and images are 
 2. Set **Root Directory** to `outputs/galdino_partner/website`.
 3. Select **Astro** and **Node.js 24.x**. The app's `vercel.json` sets Install Command to `npm ci` and Build Command to `npm run build:vercel`. Leave Output Directory at the framework default; the adapter generates `.vercel/output`. No start command is needed.
 4. Add the environment settings below to the appropriate Preview and Production scopes, then deploy.
-5. Check `/` redirects to `/id/`, both language homepages and their images load, legacy links redirect, and an unknown `/en/` URL returns an English 404 with HTTP status 404.
+5. Check `/` returns an HTTP 307 redirect to `/id/` without displaying Astro's HTML redirect page, both language homepages and their images load, legacy links redirect, and an unknown `/en/` URL returns an English 404 with HTTP status 404.
 6. Check `GET /api/contact/` returns 405 and foreign-origin POSTs return 403. After SMTP is configured, submit one consented test from the actual deployed origin and confirm receipt and Reply-To.
 
-The committed `trailingSlash` setting matches Astro's slash-terminated routes. Do not add a catch-all rewrite to `index.html`: it would break the API and 404 handling.
+The committed `trailingSlash` setting matches Astro's slash-terminated routes. The root redirect in `vercel.json` runs at Vercel's edge before the generated HTML is served. Do not add a catch-all rewrite to `index.html`: it would break the API and 404 handling.
 
 ## Environment settings
 

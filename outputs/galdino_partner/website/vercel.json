@@ -3,5 +3,8 @@
   "framework": "astro",
   "installCommand": "npm ci",
   "buildCommand": "npm run build:vercel",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/", "destination": "/id/", "permanent": false }
+  ]
 }
