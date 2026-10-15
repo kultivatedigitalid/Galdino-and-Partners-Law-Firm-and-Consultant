@@ -5,10 +5,10 @@ import {SERVICE_CATEGORIES,SERVICE_GROUPS,categoryUrl,groupUrl} from '../src/dat
 import {INDUSTRIES,industryUrl} from '../src/data/industries.ts';
 import {EXPERIENCES,experienceUrl} from '../src/data/experiences.ts';
 import {PEOPLE} from '../src/data/people.ts';
-const root=process.cwd(),out=join(root,'dist/client'),errors=[],pages=new Map(),incoming=new Set(),locales=['id','en'];
+const root=process.cwd(),out=join(root,process.argv.includes('--vercel')?'.vercel/output/static':'dist/client'),errors=[],pages=new Map(),incoming=new Set(),locales=['id','en'];
 const assert=(condition,message)=>{if(!condition)errors.push(message);};
 const walk=dir=>readdirSync(dir,{withFileTypes:true}).flatMap(d=>d.isDirectory()?walk(join(dir,d.name)):[join(dir,d.name)]);
-assert(existsSync(out),'Missing build output. Run npm run build first.');
+assert(existsSync(out),'Missing build output. Run npm run '+(process.argv.includes('--vercel')?'build:vercel':'build')+' first.');
 if(!existsSync(out))throw Error(errors.join('\n'));
 for(const file of walk(out).filter(f=>f.endsWith('.html'))){const key='/'+relative(out,file).replaceAll('\\','/').replace(/index\.html$/,'');pages.set(key,{file,$:load(readFileSync(file,'utf8'))});}
 assert(SERVICES.length===38,'Expected exactly 38 services');assert(SERVICE_CATEGORIES.length===6,'Expected six service categories');assert(SERVICE_GROUPS.length===4,'Expected four environmental groups');assert(INDUSTRIES.length===6,'Expected six industries');

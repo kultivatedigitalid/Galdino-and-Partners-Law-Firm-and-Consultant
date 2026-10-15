@@ -1,5 +1,7 @@
 # Environment
 
+For Vercel, configure variables in the project environment settings; see [VERCEL.md](VERCEL.md). `HOST` and `PORT` are unnecessary there. Configure `CONTACT_ORIGIN` separately for each deployment origin and keep `CONTACT_TEST_MODE=false`.
+
 Copy `.env.example` to a private `.env` only when needed. Every example value is intentionally empty. `npm ci`, `npm run qa`, and ordinary page development need no credentials. Shell/hosting environment values must be supplied separately for `npm start`; do not assume Node standalone automatically loads the development `.env`.
 
 | Variable | Phase | Purpose and nonsecret configuration |

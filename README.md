@@ -19,6 +19,10 @@ Lihat [README aplikasi](outputs/galdino_partner/website/README.md), [environment
 
 `outputs/galdino_partner/website` adalah aplikasi yang dijalankan. Dokumen bisnis, brand, rencana, dan bukti historis di direktori lain tetap dipertahankan. File sementara di `tmp`, dependency, cache, build, log, dan eksperimen lokal dikecualikan; file yang sudah ada tetap berada di laptop.
 
+## Vercel
+
+Import repository ke Vercel dengan **Root Directory** `outputs/galdino_partner/website` dan **Node.js 24.x**. Konfigurasi `vercel.json` di direktori aplikasi memilih Astro, `npm ci`, dan `npm run build:vercel`. Panduan environment, verifikasi, dan deployment tersedia di [VERCEL.md](outputs/galdino_partner/website/docs/VERCEL.md). Build Node standalone tetap tersedia.
+
 ## Pending
 
 Handover belum boleh dinyatakan Completed sebelum bukti fresh clone dan screen recording tersedia. Status terkini dan commit yang diuji dicatat dalam laporan handover. Peluncuran produksi memerlukan persetujuan konten provisional, verifikasi Hostinger/Node, SMTP nyata, GTM/GA, domain/HTTPS, dan Search Console. Indexing tetap dinonaktifkan.

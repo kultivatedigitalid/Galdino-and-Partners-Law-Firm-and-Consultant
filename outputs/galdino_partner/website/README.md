@@ -24,6 +24,10 @@ Use `npm exec astro dev status`, `npm exec astro dev logs`, and `npm exec astro 
 
 ## Production
 
+For **Vercel**, import the repository with Root Directory `outputs/galdino_partner/website`. The committed `vercel.json` selects the Astro preset and `npm run build:vercel`. Use Node 24.x and configure the environment in [the Vercel deployment guide](docs/VERCEL.md). Verify locally with `npm run build:vercel` and `npm run validate:vercel`.
+
+For **Node standalone / Hostinger**:
+
 ```sh
 npm ci
 npm run build

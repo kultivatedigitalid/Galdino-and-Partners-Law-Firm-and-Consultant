@@ -1,4 +1,8 @@
-# Hostinger deployment
+# Deployment
+
+For Vercel, follow [VERCEL.md](VERCEL.md). It covers the application root, committed build settings, environment configuration and deployment checks. The instructions below retain the Node standalone deployment option.
+
+## Hostinger deployment
 
 ## Confirmed constraints
 
