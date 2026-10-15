@@ -37,6 +37,9 @@ const year = new Date().getFullYear();
       <p>&copy; {year} {SITE.displayName}. {locale === 'id' ? 'Hak cipta dilindungi.' : 'All rights reserved.'}</p>
       <p class="max-w-2xl md:text-right">{COPY[locale].legal}</p>
     </div>
+    <div class="container-shell footer-credit">
+      <p>Build by <span>Kultivate.id</span></p>
+    </div>
   </div>
 </footer>
 
@@ -53,6 +56,8 @@ const year = new Date().getFullYear();
   .footer-contact { color: rgb(255 255 255 / .78); }
   .footer-legal { border-top: 1px solid rgb(255 255 255 / .16); color: rgb(255 255 255 / .64); }
   .footer-legal p { margin: 0; }
+  .footer-credit { padding-bottom: 1.5rem; font-size: .75rem; line-height: 1.5; }
+  .footer-credit span { color: rgb(255 255 255 / .78); font-weight: 500; }
   @media (hover: hover) and (pointer: fine) {
     .footer-links a:hover, .footer-contact a:hover { color: #fff; }
   }
